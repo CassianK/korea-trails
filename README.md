@@ -26,7 +26,6 @@
 | 설악산 | 강원 | 1708m | 🔜 준비 중 |
 | 지리산 | 경남·전남·전북 | 1915m | 🔜 준비 중 |
 | 북한산 | 서울·경기 | 836m | 🔜 준비 중 |
-| ... 100개+ 명산 | | | |
 
 ---
 
@@ -37,19 +36,15 @@
 3. `index.html`의 `mountains` 배열에 산 데이터를 추가합니다.
 4. **Pull Request**를 보냅니다.
 
-### 플레이북 형식 참고
-
-`sikjangsan-playbook.html`을 템플릿으로 사용하세요.
-
 ---
 
 ## 🛠 기술 스택
 
 - **순수 HTML/CSS/JavaScript** (빌드 도구 없음)
-- **Lucide Icons** · **Noto Serif/Sans KR**
+- **Lucide Icons**, **Noto Serif/Sans KR**
 - **GitHub Pages** (배포)
 - SVG 인터랙티브 지도
 
 ---
 
-MIT License · Made with ❤️ by [Cassian](https://github.com/CassianK)
+Made with ❤️ by [Cassian](https://github.com/CassianK)
