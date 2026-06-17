@@ -46,17 +46,10 @@
 ## 🛠 기술 스택
 
 - **순수 HTML/CSS/JavaScript** (빌드 도구 없음)
-- **Lucide Icons** (아이콘)
-- **Noto Serif KR + Noto Sans KR** (폰트)
+- **Lucide Icons** · **Noto Serif/Sans KR**
 - **GitHub Pages** (배포)
 - SVG 인터랙티브 지도
 
 ---
 
-## 📜 라이선스
-
-MIT License
-
----
-
-Made with ❤️ by [Cassian](https://github.com/CassianK) · 함께 만드는 등산 아카이브
+MIT License · Made with ❤️ by [Cassian](https://github.com/CassianK)
