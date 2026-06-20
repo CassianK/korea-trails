@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소백산 등산 플레이북</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+<style>
+:root,[data-theme="light"]{
+  --bg:#f0f2f7;--surface:#f4f6fb;--surface2:#f8f9fd;--surfaceoff:#e4e8f2;--surfdyn:#d4daea;
+  --div:#c2cad8;--bor:#b8c2d4;
+  --txt:#1a1e2e;--muted:#6a7290;--faint:#a8b0c8;--inv:#f2f4f8;
+  --pri:#2550a0;--prih:#1a3a7a;--pria:#102858;--prihl:#c8d4f0;
+  --suc:#2a8a4a;--suchl:#c0e4cc;
+  --amber:#a07010;--amberhl:#ead8a0;
+  --warn:#b04018;--warnhl:#e8ccb0;
+  --rose:#a01840;--rosehl:#e8c0cc;
+  --sky:#1878b0;--skyhl:#b8d8ec;
+  --shadow1:0 1px 2px oklch(.18 .02 260/.06);
+  --shadow2:0 4px 12px oklch(.18 .02 260/.09);
+  --shadow3:0 12px 32px oklch(.18 .02 260/.13);
+  --r1:.375rem;--r2:.5rem;--r3:.75rem;--r4:1rem;--rf:9999px;
+  --fb:"Satoshi",sans-serif;--fd:"Cabinet Grotesk","Satoshi",sans-serif;
+  --xs:clamp(.75rem,.7rem+.25vw,.875rem);--sm:clamp(.875rem,.8rem+.35vw,1rem);
+  --base:clamp(1rem,.95rem+.25vw,1.125rem);--lg:clamp(1.125rem,1rem+.75vw,1.5rem);
+  --xl:clamp(1.5rem,1.2rem+1.25vw,2.25rem);--xxl:clamp(2rem,1.2rem+2.5vw,3.5rem);
+  --s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.25rem;--s6:1.5rem;--s8:2rem;--s10:2.5rem;--s12:3rem;--s16:4rem;
+  --tx:180ms cubic-bezier(.16,1,.3,1);
+}
+[data-theme="dark"]{
+  --bg:#08090e;--surface:#0d0f18;--surface2:#11141e;--surfaceoff:#141720;--surfdyn:#1c2030;
+  --div:#1e2234;--bor:#2a3050;
+  --txt:#c0c8e0;--muted:#68728e;--faint:#383e58;--inv:#18202e;
+  --pri:#6090e0;--prih:#4878cc;--pria:#3060b0;--prihl:#0c1a38;
+  --suc:#50b870;--suchl:#0a2818;
+  --amber:#e0b040;--amberhl:#281e08;
+  --warn:#e06838;--warnhl:#281208;
+  --rose:#e04870;--rosehl:#280a18;
+  --sky:#50a0d8;--skyhl:#0a2038;
+  --shadow1:0 1px 2px oklch(0 0 0/.35);--shadow2:0 4px 12px oklch(0 0 0/.45);--shadow3:0 12px 32px oklch(0 0 0/.55);
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){
+  --bg:#08090e;--surface:#0d0f18;--surface2:#11141e;--surfaceoff:#141720;--surfdyn:#1c2030;
+  --div:#1e2234;--bor:#2a3050;--txt:#c0c8e0;--muted:#68728e;--faint:#383e58;--inv:#18202e;
+  --pri:#6090e0;--prih:#4878cc;--pria:#3060b0;--prihl:#0c1a38;--suc:#50b870;--suchl:#0a2818;
+  --amber:#e0b040;--amberhl:#281e08;--warn:#e06838;--warnhl:#281208;--rose:#e04870;--rosehl:#280a18;
+  --sky:#50a0d8;--skyhl:#0a2038;
+}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fb);font-size:var(--base);color:var(--txt);background:var(--bg);min-height:100dvh;line-height:1.6}
+img,svg{display:block;max-width:100%}
+button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}
+a,button,[role=button]{transition:color var(--tx),background var(--tx),border-color var(--tx),box-shadow var(--tx)}
+.hdr{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--div);padding:var(--s3) var(--s6);display:flex;align-items:center;justify-content:space-between;gap:var(--s4)}
+.logo{display:flex;align-items:center;gap:var(--s3)}
+.logo-svg{width:36px;height:36px;flex-shrink:0}
+.logo-txt{font-family:var(--fd);font-size:var(--lg);font-weight:800;line-height:1}
+.thm-btn{width:36px;height:36px;border-radius:var(--rf);display:flex;align-items:center;justify-content:center;background:var(--surfaceoff);color:var(--muted)}
+.thm-btn:hover{background:var(--surfdyn);color:var(--txt)}
+.hero{padding:var(--s12) var(--s6) var(--s8);text-align:center;background:linear-gradient(180deg,var(--surface) 0%,var(--bg) 100%);border-bottom:1px solid var(--div)}
+.badge{display:inline-flex;align-items:center;gap:var(--s2);background:var(--prihl);color:var(--pri);padding:var(--s1) var(--s3);border-radius:var(--rf);font-size:var(--xs);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:var(--s4)}
+.hero h1{font-family:var(--fd);font-size:var(--xxl);font-weight:800;line-height:1.1;margin-bottom:var(--s4)}
+.hero p{font-size:var(--base);color:var(--muted);max-width:60ch;margin:0 auto var(--s8)}
+.cs-wrap{display:flex;gap:var(--s3);justify-content:center;flex-wrap:wrap}
+.cs-btn{padding:var(--s3) var(--s6);border-radius:var(--rf);font-weight:700;font-size:var(--sm);border:2px solid var(--bor);background:var(--surface);color:var(--muted);transition:all var(--tx)}
+.cs-btn:hover{border-color:var(--pri);color:var(--pri)}
+.cs-btn.ab{background:var(--suchl);color:var(--suc);border-color:var(--suc)}
+.cs-btn.ai{background:var(--prihl);color:var(--pri);border-color:var(--pri)}
+.cs-btn.aa{background:var(--warnhl);color:var(--warn);border-color:var(--warn)}
+.panel{display:none}.panel.active{display:block}
+.tabs{display:flex;border-bottom:1px solid var(--div);background:var(--surface);padding:0 var(--s6);position:sticky;top:57px;z-index:90;overflow-x:auto}
+.tab{padding:var(--s3) var(--s5);font-size:var(--sm);font-weight:600;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;transition:all var(--tx)}
+.tab:hover{color:var(--txt)}
+.beginner .tab.active{color:var(--suc);border-bottom-color:var(--suc)}
+.intermediate .tab.active{color:var(--pri);border-bottom-color:var(--pri)}
+.advanced .tab.active{color:var(--warn);border-bottom-color:var(--warn)}
+.main{max-width:1100px;margin:0 auto;padding:var(--s8) var(--s6)}
+.tc{display:none}.tc.active{display:block}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:var(--s4);margin-bottom:var(--s8)}
+.stat-card{background:var(--surface);border:1px solid var(--bor);border-radius:var(--r3);padding:var(--s4);text-align:center}
+.si{font-size:1.5rem;margin-bottom:var(--s2)}.sv{font-family:var(--fd);font-size:var(--xl);font-weight:800;line-height:1;margin-bottom:var(--s1)}.sl{font-size:var(--xs);color:var(--muted);font-weight:500}
+.beginner .sv{color:var(--suc)}.intermediate .sv{color:var(--pri)}.advanced .sv{color:var(--warn)}
+.elev-wrap{background:var(--surface);border:1px solid var(--bor);border-radius:var(--r4);padding:var(--s6);margin-bottom:var(--s8)}
+.elev-wrap h3{font-family:var(--fd);font-weight:700;font-size:var(--lg);margin-bottom:var(--s4)}
+.elev-svg{width:100%;height:180px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2);margin-bottom:var(--s8);padding:var(--s4) var(--s5);background:var(--surface);border:1px solid var(--bor);border-radius:var(--r4)}
+.fn{background:var(--surfaceoff);border-radius:var(--r2);padding:var(--s1) var(--s3);font-size:var(--sm);font-weight:600}
+.fn.pk{background:var(--warnhl);color:var(--warn)}.fn.bp{background:var(--prihl);color:var(--pri)}.fn.sk{background:var(--skyhl);color:var(--sky)}.fn.sh{background:var(--surfdyn);color:var(--muted)}.fn.am{background:var(--amberhl);color:var(--amber)}.fn.ro{background:var(--rosehl);color:var(--rose)}
+.fa{color:var(--faint);font-size:.9rem}
+.stitle{font-family:var(--fd);font-size:var(--xl);font-weight:800;margin-bottom:var(--s6);display:flex;align-items:center;gap:var(--s3)}
+.sico{width:32px;height:32px;border-radius:var(--r2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.beginner .sico{background:var(--suchl)}.intermediate .sico{background:var(--prihl)}.advanced .sico{background:var(--warnhl)}
+.acc-wrap{display:flex;flex-direction:column;gap:var(--s3);margin-bottom:var(--s8)}
+.acc-item{background:var(--surface);border:1px solid var(--bor);border-radius:var(--r3);overflow:hidden}
+.acc-hdr{display:flex;align-items:center;gap:var(--s4);padding:var(--s4) var(--s5);cursor:pointer;user-select:none;width:100%;text-align:left}
+.acc-hdr:hover{background:var(--surfaceoff)}
+.acc-num{width:28px;height:28px;border-radius:var(--rf);display:flex;align-items:center;justify-content:center;font-size:var(--xs);font-weight:700;flex-shrink:0}
+.beginner .acc-num{background:var(--suchl);color:var(--suc)}.intermediate .acc-num{background:var(--prihl);color:var(--pri)}.advanced .acc-num{background:var(--warnhl);color:var(--warn)}
+.acc-tw{flex:1}.acc-t{font-weight:700;font-size:var(--base);line-height:1.3}.acc-m{font-size:var(--xs);color:var(--muted);margin-top:2px}
+.acc-chev{color:var(--faint);transition:transform var(--tx);flex-shrink:0}
+.acc-item.open .acc-chev{transform:rotate(180deg)}
+.acc-body{display:none;padding:0 var(--s5) var(--s5);border-top:1px solid var(--div)}.acc-item.open .acc-body{display:block}
+.acc-desc{font-size:var(--sm);color:var(--muted);line-height:1.7;margin-bottom:var(--s4)}
+.dw{margin-bottom:var(--s4)}.dlb{font-size:var(--xs);color:var(--muted);margin-bottom:var(--s1)}
+.dbg{height:6px;background:var(--surfdyn);border-radius:var(--rf);overflow:hidden}
+.df{height:100%;border-radius:var(--rf)}
+.easy .df{background:var(--suc)}.med .df{background:var(--pri)}.hard .df{background:var(--warn)}.xh .df{background:var(--rose)}
+.tip{background:var(--prihl);border-left:3px solid var(--pri);border-radius:0 var(--r2) var(--r2) 0;padding:var(--s3) var(--s4);font-size:var(--sm);color:var(--pri);margin-bottom:var(--s3);line-height:1.6}
+.wrn{background:var(--warnhl);border-left:3px solid var(--warn);border-radius:0 var(--r2) var(--r2) 0;padding:var(--s3) var(--s4);font-size:var(--sm);color:var(--warn);margin-bottom:var(--s3);line-height:1.6}
+.cp-wrap{overflow-x:auto;margin-bottom:var(--s8)}
+.cpt{width:100%;border-collapse:collapse;font-size:var(--sm)}
+.cpt th{text-align:left;font-weight:700;font-size:var(--xs);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:var(--s2) var(--s4);border-bottom:2px solid var(--div);white-space:nowrap}
+.cpt td{padding:var(--s3) var(--s4);border-bottom:1px solid var(--div);vertical-align:middle}
+.cpt tr:last-child td{border-bottom:none}.cpt tr:hover td{background:var(--surfaceoff)}
+.bdg{display:inline-flex;align-items:center;padding:2px 8px;border-radius:var(--rf);font-size:var(--xs);font-weight:700}
+.b-pk{background:var(--warnhl);color:var(--warn)}.b-gr{background:var(--prihl);color:var(--pri)}
+.b-sk{background:var(--skyhl);color:var(--sky)}.b-st{background:var(--surfdyn);color:var(--muted)}
+.b-am{background:var(--amberhl);color:var(--amber)}.b-te{background:var(--suchl);color:var(--suc)}.b-ro{background:var(--rosehl);color:var(--rose)}
+.map-wrap{background:var(--surface);border:1px solid var(--bor);border-radius:var(--r4);padding:var(--s6);margin-bottom:var(--s8)}
+.map-wrap h3{font-family:var(--fd);font-weight:700;font-size:var(--lg);margin-bottom:var(--s4)}
+.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--s4);margin-bottom:var(--s8)}
+.tc-card{background:var(--surface);border:1px solid var(--bor);border-radius:var(--r3);padding:var(--s5)}
+.tc-icon{font-size:1.5rem;margin-bottom:var(--s3)}.tc-card h4{font-weight:700;margin-bottom:var(--s2)}
+.tc-card ul{list-style:none;display:flex;flex-direction:column;gap:var(--s1)}
+.tc-card ul li{font-size:var(--sm);color:var(--muted);padding-left:var(--s4);position:relative}
+.tc-card ul li::before{content:"·";position:absolute;left:var(--s2);color:var(--faint)}
+.ic{background:var(--surface);border:1px solid var(--bor);border-radius:var(--r4);padding:var(--s5);margin-bottom:var(--s6)}
+.ic h3{font-weight:700;margin-bottom:var(--s3)}.ic ul{list-style:none;display:flex;flex-direction:column;gap:var(--s2)}
+.ic ul li{font-size:var(--sm);color:var(--muted)}
+@media(max-width:640px){
+  .hdr,.main,.hero,.tabs{padding-left:var(--s4);padding-right:var(--s4)}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .cs-btn{padding:var(--s2) var(--s4);font-size:var(--xs)}
+}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="logo">
+    <svg class="logo-svg" viewBox="0 0 36 36" fill="none" aria-label="소백산 플레이북">
+      <rect width="36" height="36" rx="8" fill="var(--pri)"/>
+      <path d="M3 28 Q9 20 14 13 Q17 8 18 5 Q19 8 22 13 Q27 20 33 28" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="18" cy="5" r="2.5" fill="white"/>
+      <path d="M6 28 Q10 23 14 20 Q16 18 18 16 Q20 18 22 20 Q26 23 30 28" stroke="white" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".5"/>
+    </svg>
+    <span class="logo-txt">소백산 플레이북</span>
+  </div>
+  <button class="thm-btn" data-thm aria-label="테마 전환">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+</header>
+
+<section class="hero">
+  <div class="badge">🌸 철쭉의 산 · 충북 단양·경북 영주 · 비로봉 1,439m</div>
+  <h1>소백산 등산 코스 가이드</h1>
+  <p>봄철 분홍빛 철쭉 능선, 겨울 상고대, 천문대·희방폭포·주목군락 — 완만한 능선이 자랑인 소백산의 수준별 완벽 코스 가이드.</p>
+  <div class="cs-wrap">
+    <button class="cs-btn ab" onclick="selC('beginner',this)">🌿 초급 — 죽령·희방사 연화봉 탐방</button>
+    <button class="cs-btn" onclick="selC('intermediate',this)">🦶 중급 — 어의곡·비로봉 왕복</button>
+    <button class="cs-btn" onclick="selC('advanced',this)">🏔 고급 — 죽령↔어의곡 종주</button>
+  </div>
+</section>
+
+<!-- ═══ 초급 ═══ -->
+<div id="course-beginner" class="panel active beginner">
+  <nav class="tabs">
+    <button class="tab active" onclick="selT('beginner','ov',this)">📋 개요</button>
+    <button class="tab" onclick="selT('beginner','rt',this)">🗺 경로 안내</button>
+    <button class="tab" onclick="selT('beginner','mp',this)">📍 지도</button>
+    <button class="tab" onclick="selT('beginner','tp',this)">💡 팁 &amp; 주의</button>
+  </nav>
+  <main class="main">
+    <div id="beginner-ov" class="tc active">
+      <div class="stitle"><div class="sico">🌿</div><span>초급 코스 개요</span></div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="si">📏</div><div class="sv">7.4km</div><div class="sl">희방사 코스</div></div>
+        <div class="stat-card"><div class="si">⏱</div><div class="sv">3~4h</div><div class="sl">왕복 소요</div></div>
+        <div class="stat-card"><div class="si">⛰</div><div class="sv">1,394m</div><div class="sl">연화봉</div></div>
+        <div class="stat-card"><div class="si">📈</div><div class="sv">±700m</div><div class="sl">누적 고도차</div></div>
+        <div class="stat-card"><div class="si">🔥</div><div class="sv">~800</div><div class="sl">예상 칼로리</div></div>
+        <div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">난이도</div></div>
+      </div>
+      <div class="elev-wrap">
+        <h3>📊 고도 프로파일 — 희방사코스 (희방탐방센터 → 연화봉)</h3>
+        <svg class="elev-svg" viewBox="0 0 900 180" preserveAspectRatio="none">
+          <defs><linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--suc)" stop-opacity=".3"/>
+            <stop offset="100%" stop-color="var(--suc)" stop-opacity="0"/>
+          </linearGradient></defs>
+          <path d="M0 160 L0 155 C80 152 150 148 200 142 C240 136 260 126 280 108 C295 94 302 82 308 70 C316 54 326 38 340 22 L355 12 C370 22 390 42 420 62 C455 84 500 110 560 130 C630 150 720 158 900 160Z" fill="url(#bg1)"/>
+          <path d="M0 155 C80 152 150 148 200 142 C240 136 260 126 280 108 C295 94 302 82 308 70 C316 54 326 38 340 22" fill="none" stroke="var(--suc)" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M340 22 C355 32 375 52 420 72 C455 88 510 120 570 140 C640 158 750 162 900 162" fill="none" stroke="var(--suc)" stroke-width="2" stroke-dasharray="6,4" stroke-linecap="round"/>
+          <text x="5" y="158" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">희방탐방센터 700m</text>
+          <text x="170" y="138" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">희방폭포</text>
+          <text x="260" y="103" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">희방사 800m</text>
+          <text x="270" y="65" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">깔닥고개</text>
+          <text x="310" y="8" font-size="12" fill="var(--suc)" font-weight="700" font-family="Satoshi,sans-serif">연화봉 1,394m ★</text>
+          <circle cx="340" cy="22" r="5" fill="var(--suc)"/>
+          <text x="540" y="125" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">하산 (원점)</text>
+        </svg>
+      </div>
+      <div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+      <div class="flow">
+        <span class="fn sk">🅿 희방탐방센터</span><span class="fa">→</span>
+        <span class="fn am">희방폭포 (28m)</span><span class="fa">→</span>
+        <span class="fn">희방사 탐방</span><span class="fa">→</span>
+        <span class="fn">깔닥고개</span><span class="fa">→</span>
+        <span class="fn bp">연화봉 1,394m ★</span><span class="fa">→</span>
+        <span class="fn sh">소백산천문대 (선택)</span><span class="fa">→</span>
+        <span class="fn sk">🅿 희방 원점 하산</span>
+      </div>
+      <div class="ic"><h3>코스 특징</h3><ul>
+        <li>🌊 희방폭포(높이 28m) — 경북 내륙 최대 폭포, 사계절 절경</li>
+        <li>✅ 신라 643년 창건 희방사를 경유하는 천년고찰 탐방 코스</li>
+        <li>✅ 깔닥고개 이후 완만한 능선 — 연화봉에서 360도 파노라마 조망</li>
+        <li>✅ 소백산 천문대(연화봉 인근) 탐방 가능 — 한국천문연구원 운영</li>
+        <li>⚠ 깔닥고개 구간 급경사 — 초급자 주의 구간 (약 400m)</li>
+        <li>⚠ 희방탐방센터→연화봉 편도 3.7km / 왕복 7.4km</li>
+      </ul></div>
+    </div>
+    <div id="beginner-rt" class="tc">
+      <div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+      <div class="acc-wrap">
+        <div class="acc-item open">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">출</span>
+            <div class="acc-tw"><div class="acc-t">희방탐방지원센터 출발</div><div class="acc-m">해발 700m · 경북 영주시 풍기읍</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <p class="acc-desc">희방탐방지원센터 앞 주차장에서 출발합니다. 탐방지원센터에서 코스 확인 후 입산. 소백산국립공원 희방사지구 입장료(성인 1,600원) 납부.</p>
+            <div class="tip">💡 희방탐방센터 주차장은 협소합니다. 주말 성수기엔 조기 만차. 이른 아침 출발 권장. 탐방로 입구 화장실 이용 후 입산.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">1</span>
+            <div class="acc-tw"><div class="acc-t">희방폭포 → 희방사</div><div class="acc-m">약 1.0km · 30분 · 고도 ↑100m</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:20%"></div></div></div>
+            <p class="acc-desc">희방탐방센터에서 계곡길을 따라 약 1km 걸으면 희방폭포(높이 28m)를 만납니다. 경북 내륙 최대 폭포로 사계절 다른 표정을 보입니다. 폭포 옆 데크 계단을 올라 희방사(신라 선덕여왕 12년, 643년 창건)에 도착.</p>
+            <div class="tip">💡 희방폭포는 겨울에 얼어붙은 빙폭 장관으로 유명합니다. 여름에는 청량한 물보라로 피서 명소가 됩니다.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">2</span>
+            <div class="acc-tw"><div class="acc-t">희방사 → 깔닥고개</div><div class="acc-m">약 0.8km · 30분 · 고도 ↑250m 급경사</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:65%"></div></div></div>
+            <p class="acc-desc">희방사에서 깔닥고개까지 이 코스에서 가장 가파른 구간입니다. '깔닥깔닥' 숨이 차오른다 하여 붙여진 이름처럼 급경사가 이어집니다. 데크 계단 구간이 잘 정비되어 있으나 체력 소모가 큰 구간.</p>
+            <div class="wrn">⚠ 이 구간이 초급 코스의 핵심 난관입니다. 충분히 쉬어가며 천천히 오르세요. 하산 시 특히 미끄러울 수 있습니다.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">3</span>
+            <div class="acc-tw"><div class="acc-t">깔닥고개 → 연화봉 정상</div><div class="acc-m">약 1.9km · 50분 · 완만한 능선</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:25%"></div></div></div>
+            <p class="acc-desc">깔닥고개를 넘어서면 소백산의 특징인 완만하고 넓은 능선이 펼쳐집니다. 연화봉(1,394m) 정상에서 맑은 날 태백산·월악산·속리산까지 파노라마 조망. 소백산 천문대가 바로 옆에 위치.</p>
+            <div class="tip">💡 봄철(5월 말~6월 초) 연화봉 능선은 분홍빛 철쭉 터널이 펼쳐집니다. 연화봉 정상 전망대에서 철쭉 사진 명소.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">4</span>
+            <div class="acc-tw"><div class="acc-t">연화봉 → 원점 하산</div><div class="acc-m">약 3.7km · 1시간 20분 · 하산</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:30%"></div></div></div>
+            <p class="acc-desc">올라온 길로 깔닥고개→희방사→희방폭포→희방탐방센터 방향으로 원점 하산합니다. 하산 시 희방폭포에서 잠시 쉬며 물소리를 즐길 수 있습니다.</p>
+            <div class="tip">💡 죽령코스 연계 선택: 연화봉에서 제2연화봉까지 약 3km 추가 이동 후 죽령으로 하산 가능 (차량 2대 필요). 시간 여유 있는 분께 추천.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="beginner-mp" class="tc">
+      <div class="map-wrap">
+        <h3>📍 희방사·연화봉 코스 개념도</h3>
+        <svg viewBox="0 0 720 400" style="width:100%;height:auto;max-height:420px">
+          <rect width="720" height="400" fill="var(--surfaceoff)" rx="12"/>
+          <path d="M100 360 C120 330 145 300 165 272 C185 244 200 222 210 198 C220 174 225 156 228 136 C230 118 233 98 238 78" stroke="var(--suc)" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <path d="M238 78 C260 96 300 120 350 148 C400 176 460 210 530 248 C580 278 640 310 700 340" stroke="var(--suc)" stroke-width="2.5" stroke-dasharray="7,4" fill="none" stroke-linecap="round"/>
+          <path d="M70 340 C80 342 88 354 100 360" stroke="var(--sky)" stroke-width="2.5" stroke-dasharray="5,3" fill="none"/>
+          <!-- nodes -->
+          <circle cx="100" cy="360" r="14" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="118" y="365" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">희방탐방센터 P 700m</text>
+          <circle cx="140" cy="310" r="9" fill="var(--sky)" fill-opacity=".7" stroke="var(--bg)" stroke-width="2"/>
+          <text x="154" y="305" font-size="11" fill="var(--sky)" font-family="Satoshi,sans-serif">희방폭포 28m 💦</text>
+          <circle cx="175" cy="270" r="9" fill="var(--amber)" fill-opacity=".8" stroke="var(--bg)" stroke-width="2"/>
+          <text x="189" y="265" font-size="11" fill="var(--amber)" font-family="Satoshi,sans-serif">희방사 (643년 창건)</text>
+          <circle cx="220" cy="175" r="9" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
+          <text x="234" y="170" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">깔닥고개 ⚠ 급경사</text>
+          <circle cx="238" cy="78" r="17" fill="var(--suc)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="260" y="72" font-size="13" font-weight="800" fill="var(--suc)" font-family="Cabinet Grotesk,Satoshi,sans-serif">연화봉 1,394m</text>
+          <rect x="258" y="80" width="100" height="22" rx="7" fill="var(--prihl)" stroke="var(--pri)" stroke-width="1"/>
+          <text x="268" y="95" font-size="11" fill="var(--pri)" font-family="Satoshi,sans-serif">소백산 천문대</text>
+          <!-- compass -->
+          <circle cx="666" cy="44" r="24" fill="var(--surface)" stroke="var(--bor)" stroke-width="1.5"/>
+          <text x="663" y="31" font-size="10" font-weight="700" fill="var(--txt)" font-family="Satoshi,sans-serif">N</text>
+          <line x1="666" y1="34" x2="666" y2="44" stroke="var(--txt)" stroke-width="1.5"/>
+          <!-- legend -->
+          <rect x="16" y="368" width="230" height="26" rx="7" fill="var(--surface)" stroke="var(--bor)" stroke-width="1"/>
+          <line x1="28" y1="381" x2="50" y2="381" stroke="var(--suc)" stroke-width="3"/>
+          <text x="58" y="385" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">등정로</text>
+          <line x1="120" y1="381" x2="142" y2="381" stroke="var(--suc)" stroke-width="2.5" stroke-dasharray="5,3"/>
+          <text x="150" y="385" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">하산로</text>
+        </svg>
+      </div>
+      <div class="stitle"><div class="sico">📋</div><span>전체 체크포인트</span></div>
+      <div class="cp-wrap">
+        <table class="cpt">
+          <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>희방탐방지원센터</td><td>700m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실·매표소</td></tr>
+            <tr><td>2</td><td>희방폭포</td><td>750m</td><td>0.8km</td><td><span class="bdg b-sk">명소</span></td><td>전망데크·사진명소</td></tr>
+            <tr><td>3</td><td>희방사</td><td>800m</td><td>1.0km</td><td><span class="bdg b-am">사찰</span></td><td>화장실·신라 고찰</td></tr>
+            <tr><td>4</td><td>깔닥고개</td><td>1,100m</td><td>1.8km</td><td><span class="bdg b-ro">급경사</span></td><td>데크 계단</td></tr>
+            <tr><td>5</td><td>연화봉 정상</td><td>1,394m</td><td>3.7km</td><td><span class="bdg b-te">정상 ★</span></td><td>정상석·조망·천문대</td></tr>
+            <tr><td>6</td><td>희방탐방센터 귀환</td><td>700m</td><td>7.4km</td><td><span class="bdg b-st">종점</span></td><td>주차·식당</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="beginner-tp" class="tc">
+      <div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
+      <div class="tg">
+        <div class="tc-card"><div class="tc-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 or 운동화 (방수 권장)</li><li>방풍 재킷</li><li>트레킹 스틱 (깔닥고개 하산용)</li><li>겨울: 아이젠 필수</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🌸</div><h4>철쭉 시즌</h4><ul><li>5월 말 ~ 6월 초 철쭉 절정</li><li>연화봉~제1연화봉 철쭉 터널</li><li>비로봉 능선 분홍빛 융단</li><li>철쭉 기간 인파 최다 → 이른 출발</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">❄</div><h4>겨울 눈꽃·상고대</h4><ul><li>1~2월 연화봉 상고대 절정</li><li>희방폭포 빙폭 장관 (12~2월)</li><li>깔닥고개 아이젠 착용 구간</li><li>능선 강풍 주의·방한 완비</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🚌</div><h4>교통 정보</h4><ul><li>영주역 → 희방사 버스 운행</li><li>희방탐방센터 주차 유료</li><li>단양 IC → 희방사 30분</li><li>소백산국립공원 054-638-6196</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🌟</div><h4>소백산 천문대</h4><ul><li>연화봉 정상 인근 (도보 5분)</li><li>한국천문연구원 운영</li><li>야간 별 관측 프로그램 (예약)</li><li>설연화천문대 견학 코스 연계</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">📱</div><h4>유용한 정보</h4><ul><li>입산 시간: 하절기 04:00~14:00</li><li>소백산국립공원 054-638-6196</li><li>블랙야크 100대 명산 (비로봉)</li><li>죽령코스와 연계 원정 가능</li></ul></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══ 중급 ═══ -->
+<div id="course-intermediate" class="panel intermediate">
+  <nav class="tabs">
+    <button class="tab active" onclick="selT('intermediate','ov',this)">📋 개요</button>
+    <button class="tab" onclick="selT('intermediate','rt',this)">🗺 경로 안내</button>
+    <button class="tab" onclick="selT('intermediate','mp',this)">📍 지도</button>
+    <button class="tab" onclick="selT('intermediate','tp',this)">💡 팁 &amp; 주의</button>
+  </nav>
+  <main class="main">
+    <div id="intermediate-ov" class="tc active">
+      <div class="stitle"><div class="sico">🦶</div><span>중급 코스 개요</span></div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="si">📏</div><div class="sv">10.2km</div><div class="sl">왕복 거리</div></div>
+        <div class="stat-card"><div class="si">⏱</div><div class="sv">5~6h</div><div class="sl">소요 시간</div></div>
+        <div class="stat-card"><div class="si">⛰</div><div class="sv">1,439m</div><div class="sl">비로봉 정상</div></div>
+        <div class="stat-card"><div class="si">📈</div><div class="sv">±1,034m</div><div class="sl">누적 고도차</div></div>
+        <div class="stat-card"><div class="si">🔥</div><div class="sv">~1,600</div><div class="sl">예상 칼로리</div></div>
+        <div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">난이도</div></div>
+      </div>
+      <div class="elev-wrap">
+        <h3>📊 고도 프로파일 — 어의곡탐방센터 → 비로봉 왕복</h3>
+        <svg class="elev-svg" viewBox="0 0 900 180" preserveAspectRatio="none">
+          <defs><linearGradient id="ig1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--pri)" stop-opacity=".3"/>
+            <stop offset="100%" stop-color="var(--pri)" stop-opacity="0"/>
+          </linearGradient></defs>
+          <path d="M0 160 L0 152 C80 148 150 140 210 126 C260 114 300 96 336 76 C365 58 388 38 408 22 L425 12 C442 22 460 42 488 66 C516 90 548 116 600 134 C660 152 760 158 900 160Z" fill="url(#ig1)"/>
+          <path d="M0 152 C80 148 150 140 210 126 C260 114 300 96 336 76 C365 58 388 38 408 22" fill="none" stroke="var(--pri)" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M408 22 L425 12 C442 22 460 42 488 66 C516 90 548 116 600 134 C660 152 760 158 900 160" fill="none" stroke="var(--pri)" stroke-width="2" stroke-dasharray="6,4" stroke-linecap="round"/>
+          <text x="5" y="156" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">어의곡 405m</text>
+          <text x="210" y="120" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">어의곡삼거리</text>
+          <text x="340" y="70" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">주목군락지</text>
+          <text x="380" y="8" font-size="12" fill="var(--pri)" font-weight="700" font-family="Satoshi,sans-serif">비로봉 1,439m ★</text>
+          <circle cx="425" cy="12" r="5" fill="var(--pri)"/>
+          <text x="840" y="155" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif" text-anchor="end">어의곡 귀환</text>
+        </svg>
+      </div>
+      <div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+      <div class="flow">
+        <span class="fn sk">🅿 어의곡탐방센터</span><span class="fa">→</span>
+        <span class="fn">어의곡삼거리</span><span class="fa">→</span>
+        <span class="fn">주목군락지</span><span class="fa">→</span>
+        <span class="fn bp">비로봉 1,439m ★</span><span class="fa">→</span>
+        <span class="fn sh">(역방향 하산)</span><span class="fa">→</span>
+        <span class="fn sk">🅿 어의곡 귀환</span>
+      </div>
+      <div class="ic"><h3>코스 특징</h3><ul>
+        <li>✅ 소백산 정상(비로봉) 최단 코스 — 편도 5.1km, 약 2시간 40분</li>
+        <li>✅ 어의곡 계곡의 청량한 숲길로 출발 — 여름 피서 산행 최고</li>
+        <li>✅ 비로봉 직전 주목군락지 — 천연기념물 주목 群 장관</li>
+        <li>✅ 비로봉 정상에서 360도 조망 — 연화봉·국망봉 능선 한눈에</li>
+        <li>⚠ 어의곡 계곡 이후 능선 구간 꾸준한 오르막</li>
+        <li>⚠ 정상부 바람 강함 — 방풍 재킷 필수</li>
+      </ul></div>
+    </div>
+    <div id="intermediate-rt" class="tc">
+      <div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+      <div class="acc-wrap">
+        <div class="acc-item open">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">출</span>
+            <div class="acc-tw"><div class="acc-t">어의곡탐방지원센터 출발</div><div class="acc-m">해발 405m · 충북 단양군 가곡면</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <p class="acc-desc">어의곡탐방지원센터(새밭유원지주차장, 해발 405m) 앞에서 출발합니다. 탐방지원센터에서 등산로 확인 후 입산. 화장실은 탐방센터에 있습니다.</p>
+            <div class="tip">💡 어의곡은 소백산에서 가장 낮은 들머리(405m)이지만, 비로봉(1,439m)까지 고도 차이 1,034m로 체력 소모가 상당합니다. 충분한 준비 후 출발.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">1</span>
+            <div class="acc-tw"><div class="acc-t">어의곡탐방센터 → 어의곡삼거리</div><div class="acc-m">약 3.0km · 1시간 10분 · 고도 ↑520m</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:50%"></div></div></div>
+            <p class="acc-desc">어의곡 계곡을 따라 오르는 구간입니다. 맑은 계곡물 소리를 들으며 숲길을 걸어 어의곡삼거리(비로봉·국망봉 분기점)에 도착. 여름 피서철 계곡이 시원합니다.</p>
+            <div class="tip">💡 어의곡삼거리에서 국망봉 방향과 비로봉 방향이 갈립니다. 비로봉은 직진(왼쪽) 방향. 이정표 확인 필수.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">2</span>
+            <div class="acc-tw"><div class="acc-t">어의곡삼거리 → 주목군락지 → 비로봉</div><div class="acc-m">약 2.1km · 1시간 30분 · 고도 ↑514m</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:60%"></div></div></div>
+            <p class="acc-desc">어의곡삼거리에서 능선을 따라 비로봉까지 오르막이 이어집니다. 비로봉 직전 주목군락지(천연기념물)가 펼쳐집니다. 주목은 천 년 이상 사는 나무로 겨울 눈꽃과 어우러진 풍경이 압도적.</p>
+            <div class="tip">💡 비로봉(1,439m)은 소백산 최고봉. 맑은 날 연화봉·국망봉·태백산·월악산까지 360도 조망. 정상석에서 인증샷 필수!</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">3</span>
+            <div class="acc-tw"><div class="acc-t">비로봉 → 어의곡 원점 하산</div><div class="acc-m">약 5.1km · 1시간 40분 · 하산</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:35%"></div></div></div>
+            <p class="acc-desc">올라온 길로 어의곡삼거리→어의곡탐방센터 방향으로 원점 하산합니다. 또는 천동삼거리 방향으로 변형 하산 가능(천동 주차장 방향, 차량 필요).</p>
+            <div class="wrn">⚠ 하산 시 능선에서 계곡 방향으로 내려가는 급경사 구간 무릎 주의. 트레킹 스틱 적극 활용.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="intermediate-mp" class="tc">
+      <div class="map-wrap">
+        <h3>📍 어의곡·비로봉 코스 개념도</h3>
+        <svg viewBox="0 0 720 440" style="width:100%;height:auto;max-height:460px">
+          <rect width="720" height="440" fill="var(--surfaceoff)" rx="12"/>
+          <path d="M120 400 C148 368 172 334 196 300 C220 266 244 234 266 200 C284 172 300 148 316 122 C328 102 340 82 352 62 C358 50 363 38 368 26" stroke="var(--pri)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+          <path d="M368 26 C374 40 384 60 398 84 C414 110 434 142 460 170 C488 200 520 228 556 256 C590 282 630 310 670 336" stroke="var(--pri)" stroke-width="3" stroke-dasharray="7,4" fill="none" stroke-linecap="round"/>
+          <!-- mountain silhouette bg -->
+          <path d="M80 360 Q240 200 368 80 Q500 200 660 360" fill="var(--surfdyn)" fill-opacity=".15" stroke="none"/>
+          <!-- nodes -->
+          <circle cx="120" cy="400" r="14" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="140" y="405" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">어의곡탐방센터 P 405m</text>
+          <circle cx="240" cy="240" r="9" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
+          <text x="254" y="235" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">어의곡삼거리</text>
+          <text x="258" y="248" font-size="9" fill="var(--faint)" font-family="Satoshi,sans-serif">(국망봉 ↔ 비로봉 분기)</text>
+          <!-- jukmok -->
+          <circle cx="330" cy="118" r="9" fill="var(--suc)" fill-opacity=".7" stroke="var(--bg)" stroke-width="2"/>
+          <text x="344" y="113" font-size="11" fill="var(--suc)" font-family="Satoshi,sans-serif">주목군락지 🌲</text>
+          <!-- birobong -->
+          <circle cx="368" cy="26" r="18" fill="var(--pri)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="390" y="20" font-size="13" font-weight="800" fill="var(--pri)" font-family="Cabinet Grotesk,Satoshi,sans-serif">비로봉 1,439m ★</text>
+          <!-- return node -->
+          <circle cx="670" cy="336" r="13" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="600" y="358" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">어의곡 귀환 P</text>
+          <!-- compass -->
+          <circle cx="666" cy="44" r="24" fill="var(--surface)" stroke="var(--bor)" stroke-width="1.5"/>
+          <text x="663" y="31" font-size="10" font-weight="700" fill="var(--txt)" font-family="Satoshi,sans-serif">N</text>
+          <line x1="666" y1="34" x2="666" y2="44" stroke="var(--txt)" stroke-width="1.5"/>
+          <!-- legend -->
+          <rect x="16" y="410" width="220" height="24" rx="7" fill="var(--surface)" stroke="var(--bor)" stroke-width="1"/>
+          <line x1="28" y1="422" x2="50" y2="422" stroke="var(--pri)" stroke-width="3.5"/>
+          <text x="58" y="426" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">등정로</text>
+          <line x1="130" y1="422" x2="150" y2="422" stroke="var(--pri)" stroke-width="2.5" stroke-dasharray="5,3"/>
+          <text x="158" y="426" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">하산로</text>
+        </svg>
+      </div>
+      <div class="stitle"><div class="sico">📋</div><span>전체 체크포인트</span></div>
+      <div class="cp-wrap">
+        <table class="cpt">
+          <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>어의곡탐방지원센터</td><td>405m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실</td></tr>
+            <tr><td>2</td><td>어의곡 계곡 중간</td><td>700m</td><td>1.5km</td><td><span class="bdg b-sk">계곡</span></td><td>쉼터·식수</td></tr>
+            <tr><td>3</td><td>어의곡삼거리</td><td>925m</td><td>3.0km</td><td><span class="bdg b-sk">갈림길</span></td><td>이정표 (비로봉·국망봉)</td></tr>
+            <tr><td>4</td><td>주목군락지</td><td>1,300m</td><td>4.2km</td><td><span class="bdg b-te">명소</span></td><td>천연기념물 주목</td></tr>
+            <tr><td>5</td><td>비로봉 정상</td><td>1,439m</td><td>5.1km</td><td><span class="bdg b-pk">정상 ★</span></td><td>정상석·360도 조망</td></tr>
+            <tr><td>6</td><td>어의곡탐방센터 귀환</td><td>405m</td><td>10.2km</td><td><span class="bdg b-st">종점</span></td><td>주차·식당 (단양)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="intermediate-tp" class="tc">
+      <div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
+      <div class="tg">
+        <div class="tc-card"><div class="tc-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수·발목 지지)</li><li>트레킹 스틱</li><li>방풍·방수 재킷</li><li>겨울: 아이젠+방한복</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 1.5L 이상 (고도차 1,034m)</li><li>에너지바·간식</li><li>어의곡 계곡 식수 가능 (정수 권장)</li><li>단양 마늘국밥·천연 송어회</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">⏰</div><h4>입산 통제 시간</h4><ul><li>하절기 04:00~14:00 입산 가능</li><li>동절기 05:00~13:00 입산 가능</li><li>13~14시 이후 입산 통제</li><li>정상 강풍 시 통행 제한</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🌿</div><h4>주목군락지</h4><ul><li>비로봉 직전 천연기념물 구역</li><li>주목: 수명 1,000년 이상 가능</li><li>겨울 눈꽃 + 주목 = 최고 설경</li><li>등산로 이탈 금지 (훼손 방지)</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🚗</div><h4>교통 정보</h4><ul><li>단양역/단양버스터미널 접근</li><li>어의곡주차장 = 새밭유원지주차장</li><li>죽령~어의곡 셔틀 '소백내차부탁해'</li><li>소백산국립공원 043-422-5631</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🔄</div><h4>변형 코스</h4><ul><li>어의곡→비로봉→천동삼거리→천동</li><li>천동코스 연계 시 왕복 14.4km</li><li>차량 2대 이용 시 편도 가능</li><li>국망봉 추가 연계 (어의곡 원점)</li></ul></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══ 고급 ═══ -->
+<div id="course-advanced" class="panel advanced">
+  <nav class="tabs">
+    <button class="tab active" onclick="selT('advanced','ov',this)">📋 개요</button>
+    <button class="tab" onclick="selT('advanced','rt',this)">🗺 경로 안내</button>
+    <button class="tab" onclick="selT('advanced','mp',this)">📍 지도</button>
+    <button class="tab" onclick="selT('advanced','tp',this)">💡 팁 &amp; 주의</button>
+  </nav>
+  <main class="main">
+    <div id="advanced-ov" class="tc active">
+      <div class="stitle"><div class="sico">🏔</div><span>고급 코스 개요</span></div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="si">📏</div><div class="sv">21.1km</div><div class="sl">죽령↔어의곡 종주</div></div>
+        <div class="stat-card"><div class="si">⏱</div><div class="sv">8~9h</div><div class="sl">소요 시간</div></div>
+        <div class="stat-card"><div class="si">⛰</div><div class="sv">1,439m</div><div class="sl">비로봉 최고점</div></div>
+        <div class="stat-card"><div class="si">📈</div><div class="sv">1,061m</div><div class="sl">누적 상승 고도</div></div>
+        <div class="stat-card"><div class="si">🔥</div><div class="sv">~3,000</div><div class="sl">예상 칼로리</div></div>
+        <div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★☆</div><div class="sl">난이도</div></div>
+      </div>
+      <div class="elev-wrap">
+        <h3>📊 고도 프로파일 — 죽령 → 비로봉 → 국망봉 → 어의곡 종주</h3>
+        <svg class="elev-svg" viewBox="0 0 900 180" preserveAspectRatio="none">
+          <defs><linearGradient id="advg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--warn)" stop-opacity=".3"/>
+            <stop offset="100%" stop-color="var(--warn)" stop-opacity="0"/>
+          </linearGradient></defs>
+          <path d="M0 160 L0 100 C60 90 100 78 130 65 C155 54 170 44 185 32 L200 18 C214 28 228 46 250 64 C270 80 290 96 316 108 C344 120 364 128 384 132 C404 136 420 134 436 126 C452 118 466 104 482 86 C498 68 514 48 530 32 L545 18 C560 30 575 52 592 74 C610 98 628 118 654 134 C680 148 718 156 780 158 L900 160Z" fill="url(#advg)"/>
+          <path d="M0 100 C60 90 100 78 130 65 C155 54 170 44 185 32 L200 18 C214 28 228 46 250 64 C270 80 290 96 316 108 C344 120 364 128 384 132 C404 136 420 134 436 126 C452 118 466 104 482 86 C498 68 514 48 530 32 L545 18 C560 30 575 52 592 74 C610 98 628 118 654 134 C680 148 718 156 780 158" fill="none" stroke="var(--warn)" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="5" y="96" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">죽령 700m</text>
+          <text x="160" y="28" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">제2연화봉 1,357m</text>
+          <text x="183" y="14" font-size="11" fill="var(--warn)" font-weight="700" font-family="Satoshi,sans-serif">연화봉 1,394m</text>
+          <text x="410" y="128" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">비로봉 직전</text>
+          <text x="524" y="14" font-size="11" fill="var(--warn)" font-weight="700" font-family="Satoshi,sans-serif">비로봉 1,439m</text>
+          <text x="620" y="128" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">국망봉 1,421m</text>
+          <text x="850" y="156" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif" text-anchor="end">어의곡 405m</text>
+          <circle cx="200" cy="18" r="4" fill="var(--warn)"/>
+          <circle cx="545" cy="18" r="4" fill="var(--warn)"/>
+        </svg>
+      </div>
+      <div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+      <div class="flow">
+        <span class="fn sk">🅿 죽령 휴게소 700m</span><span class="fa">→</span>
+        <span class="fn">제2연화봉 1,357m</span><span class="fa">→</span>
+        <span class="fn bp">연화봉 1,394m</span><span class="fa">→</span>
+        <span class="fn">제1연화봉 1,386m</span><span class="fa">→</span>
+        <span class="fn">천동삼거리</span><span class="fa">→</span>
+        <span class="fn pk">비로봉 1,439m ★</span><span class="fa">→</span>
+        <span class="fn ro">국망봉 1,421m</span><span class="fa">→</span>
+        <span class="fn">상월봉</span><span class="fa">→</span>
+        <span class="fn">늦은맥이재</span><span class="fa">→</span>
+        <span class="fn sk">🏁 어의곡 주차장</span>
+      </div>
+      <div class="ic"><h3>코스 특징</h3><ul>
+        <li>🏆 소백산 대표 종주코스 — 죽령(700m)~어의곡(405m) 21.1km</li>
+        <li>✅ 제2연화봉·연화봉·제1연화봉·비로봉·국망봉 5개 봉우리 연계</li>
+        <li>✅ 봄철 철쭉 시즌(5말~6초) 전 코스 분홍빛 융단 — 전국 최고 철쭉 명소</li>
+        <li>✅ 완만한 능선 위주 — 22km임에도 고도차 완만해 당일 종주 가능</li>
+        <li>⚠ 오전 6~7시 죽령 출발 필수 (어의곡 입산통제 14시 이전 도착)</li>
+        <li>⚠ 죽령/어의곡 차량 2대 or 차량 탁송 서비스 이용 필요</li>
+      </ul></div>
+    </div>
+    <div id="advanced-rt" class="tc">
+      <div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+      <div class="acc-wrap">
+        <div class="acc-item open">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">출</span>
+            <div class="acc-tw"><div class="acc-t">죽령탐방지원센터 출발</div><div class="acc-m">해발 700m · 충북 단양군 대강면 · 오전 6~7시</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <p class="acc-desc">죽령탐방지원센터(죽령휴게소 주차장 인근, 해발 700m)에서 출발합니다. 어의곡이나 천동에 차를 맡기거나 차량 탁송 서비스 이용. 오전 6~7시 출발 필수 (14시 입산통제).</p>
+            <div class="tip">💡 '소백내차를부탁해' 카카오 채널에서 차량 탁송 서비스 이용 가능. 죽령↔어의곡 약 47,000원. 최소 1~2일 전 예약 필수.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">1</span>
+            <div class="acc-tw"><div class="acc-t">죽령 → 제2연화봉 → 연화봉</div><div class="acc-m">약 7.1km · 2시간 · 완만한 임도 능선</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:30%"></div></div></div>
+            <p class="acc-desc">죽령에서 제2연화봉(1,357m)까지 임도 구간이 있어 비교적 완만합니다. 제2연화봉 전망대에서 사방 조망. 소백산천문대를 지나 연화봉(1,394m)에 도착. 봄 철쭉, 겨울 상고대 명소.</p>
+            <div class="tip">💡 죽령~제2연화봉 구간(4.2km)은 임도 포함 완만. 한국천문연구원 소백산천문대가 연화봉 바로 아래에 있습니다.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">2</span>
+            <div class="acc-tw"><div class="acc-t">연화봉 → 제1연화봉 → 천동삼거리</div><div class="acc-m">약 2.8km · 1시간 · 철쭉 터널 능선</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:35%"></div></div></div>
+            <p class="acc-desc">연화봉에서 제1연화봉(1,386m)까지 약 300m 구간이 철쭉 터널 명소. 5월 말 철쭉 절정기에는 양쪽 철쭉 사이로 걷는 환상적인 경험. 천동삼거리에서 천동주차장 하산 탈출 가능(차량 필요).</p>
+            <div class="tip">💡 제1연화봉은 블랙야크 BAC 인증처. 봄철 철쭉과 하늘이 맞닿는 능선 풍경이 '한국의 알프스'로 불립니다.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">3</span>
+            <div class="acc-tw"><div class="acc-t">천동삼거리 → 비로봉</div><div class="acc-m">약 1.4km · 40분 · 주목군락 구간</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:45%"></div></div></div>
+            <p class="acc-desc">천동삼거리에서 비로봉까지 주목군락지를 통과합니다. 비로봉(1,439m) 정상에서 충분한 식사·휴식 후 국망봉 방향으로 진행. 정상 강풍 주의.</p>
+            <div class="tip">💡 비로봉 정상 주목감시소에서 잠시 쉬어가세요. 여기가 종주의 절반 지점. 체력·날씨·시간을 체크하고 후반 진행 여부 결정.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">4</span>
+            <div class="acc-tw"><div class="acc-t">비로봉 → 국망봉 → 상월봉 → 늦은맥이재</div><div class="acc-m">약 5.5km · 2시간 · 능선 종주 핵심</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:65%"></div></div></div>
+            <p class="acc-desc">비로봉에서 국망봉(1,421m)까지 바람이 강한 능선을 이동합니다. 국망봉은 기암괴석과 철쭉 군락 명소. 상월봉을 지나 늦은맥이재(어의곡 하산 분기점)에 도착.</p>
+            <div class="tip">💡 국망봉(고려 공민왕이 왕도를 그리며 바라봤다는 전설)은 비로봉보다 조용하고 철쭉이 더 화려합니다. 꼭 들러보세요.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">5</span>
+            <div class="acc-tw"><div class="acc-t">늦은맥이재 → 어의곡 주차장 하산</div><div class="acc-m">약 4.3km · 1시간 30분 · 계곡 하산</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:40%"></div></div></div>
+            <p class="acc-desc">늦은맥이재에서 어의곡 방향으로 하산합니다. 초반 300m 급경사 이후 완만한 계곡길. 겨울에는 어의곡 계곡이 얼어붙은 빙판·빙벽이 장관. 어의곡주차장(새밭유원지)에서 종주 완료.</p>
+            <div class="wrn">⚠ 늦은맥이재 초반 300m 급경사 구간 아이젠(겨울) 또는 스틱 필수. 하산 완료까지 약 4~5km — 속도 조절 필요.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="advanced-mp" class="tc">
+      <div class="map-wrap">
+        <h3>📍 죽령↔어의곡 종주 코스 개념도</h3>
+        <svg viewBox="0 0 820 500" style="width:100%;height:auto;max-height:520px">
+          <rect width="820" height="500" fill="var(--surfaceoff)" rx="12"/>
+          <!-- terrain bg -->
+          <path d="M40 420 Q160 280 270 170 Q340 100 410 50 Q480 100 540 160 Q600 220 640 280 Q680 340 710 400 Q730 430 750 460" fill="var(--surfdyn)" fill-opacity=".15" stroke="none"/>
+          <!-- trail: dead link to birobong -->
+          <path d="M80 440 C110 410 140 378 168 348 C194 320 218 295 244 268 C268 242 292 216 312 190 C330 166 348 144 364 122 C378 102 392 80 404 60 C408 52 412 44 416 36" stroke="var(--warn)" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <!-- birobong to kukmang -->
+          <path d="M416 36 C434 50 452 68 468 88 C484 108 500 132 516 160 C532 188 548 218 562 248 C576 274 590 300 602 324 C614 348 624 370 632 392" stroke="var(--warn)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <!-- kukmang to eoui-gok -->
+          <path d="M632 392 C645 405 658 418 668 430 C678 442 688 452 695 460 L705 470" stroke="var(--warn)" stroke-width="3" stroke-dasharray="7,4" fill="none" stroke-linecap="round"/>
+          <!-- nodes -->
+          <circle cx="80" cy="440" r="14" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="100" y="445" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">죽령 탐방센터 P 700m</text>
+          <!-- je2yeohwa -->
+          <circle cx="210" cy="308" r="10" fill="var(--pri)" fill-opacity=".7" stroke="var(--bg)" stroke-width="2"/>
+          <text x="224" y="303" font-size="11" fill="var(--pri)" font-family="Satoshi,sans-serif">제2연화봉 1,357m</text>
+          <!-- cheonmundae -->
+          <rect x="218" y="252" width="88" height="22" rx="7" fill="var(--prihl)" stroke="var(--pri)" stroke-width="1"/>
+          <text x="228" y="267" font-size="11" fill="var(--pri)" font-family="Satoshi,sans-serif">소백산 천문대</text>
+          <!-- yeohwa -->
+          <circle cx="270" cy="230" r="11" fill="var(--pri)" stroke="var(--bg)" stroke-width="2.5"/>
+          <text x="286" y="225" font-size="12" font-weight="700" fill="var(--pri)" font-family="Satoshi,sans-serif">연화봉 1,394m 🌸</text>
+          <!-- je1yeohwa -->
+          <circle cx="328" cy="168" r="10" fill="var(--pri)" fill-opacity=".7" stroke="var(--bg)" stroke-width="2"/>
+          <text x="344" y="163" font-size="11" fill="var(--pri)" font-family="Satoshi,sans-serif">제1연화봉 1,386m</text>
+          <!-- chondong -->
+          <circle cx="370" cy="125" r="8" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
+          <text x="384" y="120" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">천동삼거리 (탈출 ↓)</text>
+          <!-- birobong -->
+          <circle cx="416" cy="36" r="18" fill="var(--warn)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="438" y="30" font-size="13" font-weight="800" fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif">비로봉 1,439m ★</text>
+          <!-- kukmangbong -->
+          <circle cx="610" cy="310" r="13" fill="var(--rose)" stroke="var(--bg)" stroke-width="2.5"/>
+          <text x="626" y="304" font-size="12" font-weight="700" fill="var(--rose)" font-family="Satoshi,sans-serif">국망봉 1,421m 🌸</text>
+          <!-- sangwol -->
+          <circle cx="630" cy="390" r="9" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
+          <text x="644" y="385" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">상월봉</text>
+          <!-- neutneun maegi -->
+          <circle cx="670" cy="444" r="9" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
+          <text x="684" y="438" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">늦은맥이재</text>
+          <!-- eoui-gok -->
+          <circle cx="705" cy="470" r="13" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="624" y="490" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">어의곡주차장 405m 🏁</text>
+          <!-- compass -->
+          <circle cx="766" cy="44" r="24" fill="var(--surface)" stroke="var(--bor)" stroke-width="1.5"/>
+          <text x="763" y="31" font-size="10" font-weight="700" fill="var(--txt)" font-family="Satoshi,sans-serif">N</text>
+          <line x1="766" y1="34" x2="766" y2="44" stroke="var(--txt)" stroke-width="1.5"/>
+          <!-- legend -->
+          <rect x="16" y="474" width="280" height="22" rx="7" fill="var(--surface)" stroke="var(--bor)" stroke-width="1"/>
+          <line x1="28" y1="485" x2="50" y2="485" stroke="var(--warn)" stroke-width="3.5"/>
+          <text x="58" y="489" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">종주 주능선</text>
+          <line x1="140" y1="485" x2="162" y2="485" stroke="var(--warn)" stroke-width="2.5" stroke-dasharray="5,3"/>
+          <text x="170" y="489" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">하산 구간</text>
+        </svg>
+      </div>
+      <div class="stitle"><div class="sico">📋</div><span>전체 체크포인트 (종주)</span></div>
+      <div class="cp-wrap">
+        <table class="cpt">
+          <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>죽령탐방지원센터</td><td>700m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실</td></tr>
+            <tr><td>2</td><td>제2연화봉</td><td>1,357m</td><td>4.2km</td><td><span class="bdg b-gr">봉우리</span></td><td>전망대·이정표</td></tr>
+            <tr><td>3</td><td>소백산천문대</td><td>1,383m</td><td>6.0km</td><td><span class="bdg b-sk">명소</span></td><td>한국천문연구원</td></tr>
+            <tr><td>4</td><td>연화봉</td><td>1,394m</td><td>7.1km</td><td><span class="bdg b-gr">봉우리 🌸</span></td><td>정상석·철쭉명소</td></tr>
+            <tr><td>5</td><td>제1연화봉</td><td>1,386m</td><td>8.5km</td><td><span class="bdg b-gr">봉우리</span></td><td>BAC인증·철쭉터널</td></tr>
+            <tr><td>6</td><td>천동삼거리</td><td>1,360m</td><td>9.8km</td><td><span class="bdg b-sk">갈림길</span></td><td>천동 탈출 가능</td></tr>
+            <tr><td>7</td><td>비로봉 정상</td><td>1,439m</td><td>11.3km</td><td><span class="bdg b-pk">정상 ★</span></td><td>정상석·주목·360도조망</td></tr>
+            <tr><td>8</td><td>국망봉</td><td>1,421m</td><td>14.5km</td><td><span class="bdg b-ro">봉우리 🌸</span></td><td>기암괴석·조용한 명소</td></tr>
+            <tr><td>9</td><td>상월봉</td><td>1,394m</td><td>15.3km</td><td><span class="bdg b-sk">봉우리</span></td><td>—</td></tr>
+            <tr><td>10</td><td>늦은맥이재</td><td>1,260m</td><td>16.3km</td><td><span class="bdg b-sk">안부</span></td><td>어의곡 하산 분기</td></tr>
+            <tr><td>11</td><td>어의곡 계곡 (겨울 빙벽)</td><td>700m</td><td>19.5km</td><td><span class="bdg b-sk">계곡</span></td><td>겨울 빙폭 명소</td></tr>
+            <tr><td>12</td><td>어의곡주차장</td><td>405m</td><td>21.1km</td><td><span class="bdg b-st">종점 🏁</span></td><td>주차·단양 식당</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="advanced-tp" class="tc">
+      <div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
+      <div class="tg">
+        <div class="tc-card"><div class="tc-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수·발목 지지)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>겨울: 아이젠·방한복·핫팩</li><li>헤드램프 (이른 출발)</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 2L 이상 지참</li><li>에너지바·도시락 (2끼)</li><li>비로봉 정상 에너지 보충 필수</li><li>단양 마늘 돼지갈비·올갱이국</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🚗</div><h4>차량 탁송 서비스</h4><ul><li>카카오 '소백내차를부탁해'</li><li>죽령↔어의곡 약 47,000원</li><li>천동↔어의곡 약 23,000~30,000원</li><li>1~2일 전 사전 예약 필수</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🌸</div><h4>철쭉 시즌 종주</h4><ul><li>5월 말~6월 초 철쭉 절정</li><li>연화봉 철쭉 터널 300m</li><li>비로봉 분홍 능선 융단</li><li>국망봉 자색·진분홍 철쭉 군락</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">⏰</div><h4>시간 계획</h4><ul><li>죽령 오전 6~7시 출발 필수</li><li>비로봉 오전 11~12시 목표</li><li>어의곡 14시 전 입산통제 체크</li><li>늦으면 천동 하산으로 단축</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">📡</div><h4>안전 & 내비게이션</h4><ul><li>GPS 앱 사전 코스 저장</li><li>능선 강풍 체감기온 -15°C 이하</li><li>천동삼거리·늦은맥이재 탈출로</li><li>소백산국립공원 043-422-5631</li></ul></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer style="border-top:1px solid var(--div);padding:var(--s8) var(--s6);text-align:center;background:var(--surface)">
+  <p style="font-size:var(--xs);color:var(--faint)">소백산국립공원 공식 정보 기준. 산행 전 국립공원공단 예약시스템(reservation.knps.or.kr)과 기상·입산통제 정보를 반드시 확인하세요. 소백산국립공원 (경북)054-638-6196 (충북)043-422-5631</p>
+</footer>
+
+<script>
+(function(){
+  const t=document.querySelector("[data-thm]"),r=document.documentElement;
+  let d=r.getAttribute("data-theme")||"dark"; setIco(d);
+  if(t)t.addEventListener("click",()=>{d=d==="dark"?"light":"dark";r.setAttribute("data-theme",d);setIco(d)});
+  function setIco(th){if(!t)return;t.innerHTML=th==="dark"?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}
+})();
+function selC(lv,btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+  document.querySelectorAll(".cs-btn").forEach(b=>b.classList.remove("ab","ai","aa"));
+  document.getElementById("course-"+lv).classList.add("active");
+  btn.classList.add(lv==="beginner"?"ab":lv==="intermediate"?"ai":"aa");
+  const p=document.getElementById("course-"+lv);
+  p.querySelectorAll(".tab").forEach((b,i)=>b.classList.toggle("active",i===0));
+  p.querySelectorAll(".tc").forEach((c,i)=>c.classList.toggle("active",i===0));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function selT(c,t,btn){
+  const p=document.getElementById("course-"+c);
+  p.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+  p.querySelectorAll(".tc").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById(c+"-"+t).classList.add("active");
+}
+function togAcc(h){h.parentElement.classList.toggle("open")}
+document.querySelectorAll(".acc-wrap").forEach(w=>{const f=w.querySelector(".acc-item");if(f)f.classList.add("open")});
+</script>
+</body>
+</html>

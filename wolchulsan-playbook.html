@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>월출산 등산 플레이북</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+<style>
+:root,[data-theme="light"]{
+  --color-bg:#f7f5f0;--color-surface:#faf8f4;--color-surface-2:#fcfbf8;
+  --color-surface-offset:#f0ece4;--color-border:#ddd8ce;--color-divider:#e5e0d8;
+  --color-text:#1e1b14;--color-text-muted:#7a7568;--color-text-faint:#bbb5aa;
+  --color-text-inverse:#f9f7f3;
+  /* 초급=초록 / 중급=파랑 / 고급=빨강 */
+  --color-beginner:#2d7a3a;--color-beginner-light:#d6edd9;--color-beginner-hover:#1f5c2a;
+  --color-mid:#1a5fa8;--color-mid-light:#d0e4f5;--color-mid-hover:#134a87;
+  --color-adv:#b8251a;--color-adv-light:#f5d5d3;--color-adv-hover:#8f1b13;
+  --color-accent:#b8251a;
+  --shadow-sm:0 1px 3px oklch(0.2 0.01 60/0.07);
+  --shadow-md:0 4px 14px oklch(0.2 0.01 60/0.09);
+  --shadow-lg:0 12px 32px oklch(0.2 0.01 60/0.13);
+  --radius-sm:0.375rem;--radius-md:0.5rem;--radius-lg:0.75rem;--radius-xl:1rem;--radius-full:9999px;
+  --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;
+  --space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;
+  --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);
+  --text-sm:clamp(.875rem,.8rem + .35vw,1rem);
+  --text-base:clamp(1rem,.95rem + .25vw,1.125rem);
+  --text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
+  --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
+  --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+  --font-display:'Cabinet Grotesk',sans-serif;
+  --font-body:'Satoshi',sans-serif;
+  --transition:180ms cubic-bezier(.16,1,.3,1);
+}
+[data-theme="dark"]{
+  --color-bg:#161410;--color-surface:#1c1a16;--color-surface-2:#211f1a;
+  --color-surface-offset:#1a1815;--color-border:#363028;--color-divider:#282420;
+  --color-text:#d2cec6;--color-text-muted:#7a7568;--color-text-faint:#4a4840;
+  --color-beginner:#4cad5e;--color-beginner-light:#1a3320;--color-beginner-hover:#38943f;
+  --color-mid:#4d8fd4;--color-mid-light:#0e2640;--color-mid-hover:#3378be;
+  --color-adv:#e05a52;--color-adv-light:#3a1210;--color-adv-hover:#c94840;
+  --shadow-sm:0 1px 3px oklch(0 0 0/.25);--shadow-md:0 4px 14px oklch(0 0 0/.35);--shadow-lg:0 12px 32px oklch(0 0 0/.45);
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){
+  --color-bg:#161410;--color-surface:#1c1a16;--color-surface-2:#211f1a;
+  --color-surface-offset:#1a1815;--color-border:#363028;--color-divider:#282420;
+  --color-text:#d2cec6;--color-text-muted:#7a7568;--color-text-faint:#4a4840;
+  --color-beginner:#4cad5e;--color-beginner-light:#1a3320;--color-beginner-hover:#38943f;
+  --color-mid:#4d8fd4;--color-mid-light:#0e2640;--color-mid-hover:#3378be;
+  --color-adv:#e05a52;--color-adv-light:#3a1210;--color-adv-hover:#c94840;
+  --shadow-sm:0 1px 3px oklch(0 0 0/.25);--shadow-md:0 4px 14px oklch(0 0 0/.35);--shadow-lg:0 12px 32px oklch(0 0 0/.45);
+}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--space-16);-webkit-font-smoothing:antialiased}
+body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);line-height:1.6}
+img,svg{display:block;max-width:100%;height:auto}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+table{border-collapse:collapse;width:100%}
+a,button,[role="button"]{transition:color var(--transition),background var(--transition),border-color var(--transition),box-shadow var(--transition),transform var(--transition)}
+
+/* ── HEADER ── */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:var(--color-surface);border-bottom:1px solid var(--color-border);
+  box-shadow:var(--shadow-sm);
+  padding:var(--space-3) var(--space-6);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);
+}
+.logo{display:flex;align-items:center;gap:var(--space-3)}
+.logo svg{width:36px;height:36px;flex-shrink:0}
+.logo-text{font-family:var(--font-display);font-weight:800;font-size:var(--text-lg);line-height:1}
+.logo-sub{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:2px}
+.header-right{display:flex;align-items:center;gap:var(--space-3)}
+.theme-btn{
+  width:38px;height:38px;border-radius:var(--radius-full);
+  display:flex;align-items:center;justify-content:center;
+  background:var(--color-surface-offset);color:var(--color-text-muted);
+  border:1px solid var(--color-border);
+}
+.theme-btn:hover{color:var(--color-text);background:var(--color-divider)}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,var(--color-adv-light) 0%,var(--color-surface) 60%);
+  padding:clamp(var(--space-10),5vw,var(--space-16)) var(--space-6);
+  text-align:center;border-bottom:1px solid var(--color-border);
+}
+.hero-badge{
+  display:inline-block;
+  background:var(--color-adv);color:var(--color-text-inverse);
+  font-size:var(--text-xs);font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);
+  margin-bottom:var(--space-4);
+}
+.hero h1{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:800;line-height:1.1;margin-bottom:var(--space-3)}
+.hero p{font-size:var(--text-base);color:var(--color-text-muted);max-width:52ch;margin:0 auto var(--space-6)}
+.hero-stats{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-4);
+  max-width:700px;margin:0 auto;
+}
+.hero-stat{
+  background:var(--color-surface);border:1px solid var(--color-border);
+  border-radius:var(--radius-lg);padding:var(--space-3) var(--space-5);
+  min-width:110px;box-shadow:var(--shadow-sm);
+}
+.hero-stat-val{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);color:var(--color-adv)}
+.hero-stat-lbl{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:2px}
+
+/* ── COURSE SELECTOR ── */
+.course-selector{
+  display:flex;gap:var(--space-3);flex-wrap:wrap;justify-content:center;
+  padding:var(--space-6) var(--space-4);
+  border-bottom:1px solid var(--color-border);
+  background:var(--color-surface);
+}
+.course-btn{
+  display:flex;align-items:center;gap:var(--space-2);
+  padding:var(--space-2) var(--space-5);
+  border-radius:var(--radius-full);
+  border:2px solid var(--color-border);
+  font-weight:700;font-size:var(--text-sm);
+  background:var(--color-bg);
+  transition:all var(--transition);
+}
+.course-btn.beginner.active{background:var(--color-beginner);color:#fff;border-color:var(--color-beginner)}
+.course-btn.mid.active{background:var(--color-mid);color:#fff;border-color:var(--color-mid)}
+.course-btn.adv.active{background:var(--color-adv);color:#fff;border-color:var(--color-adv)}
+.course-btn:hover:not(.active){background:var(--color-surface-offset)}
+.course-dot{width:10px;height:10px;border-radius:var(--radius-full)}
+.course-btn.beginner .course-dot{background:var(--color-beginner)}
+.course-btn.mid .course-dot{background:var(--color-mid)}
+.course-btn.adv .course-dot{background:var(--color-adv)}
+
+/* ── COURSE PANELS ── */
+.course-panel{display:none}
+.course-panel.active{display:block}
+
+/* ── TABS ── */
+.tabs-container{background:var(--color-surface);border-bottom:1px solid var(--color-border);position:sticky;top:61px;z-index:90}
+.tabs{display:flex;overflow-x:auto;gap:0;padding:0 var(--space-4);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{
+  flex-shrink:0;padding:var(--space-3) var(--space-5);
+  font-size:var(--text-sm);font-weight:600;
+  border-bottom:3px solid transparent;
+  color:var(--color-text-muted);white-space:nowrap;
+  transition:color var(--transition),border-color var(--transition);
+}
+.tab-btn:hover{color:var(--color-text)}
+.course-panel.active .tab-btn.active{color:var(--color-text);border-bottom-color:currentColor}
+.beginner-panel .tab-btn.active{color:var(--color-beginner)}
+.mid-panel .tab-btn.active{color:var(--color-mid)}
+.adv-panel .tab-btn.active{color:var(--color-adv)}
+
+/* ── TAB CONTENT ── */
+.tab-content{padding:var(--space-8) var(--space-6);max-width:960px;margin:0 auto}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+
+/* ── SUMMARY CARDS ── */
+.summary-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:var(--space-4);margin-bottom:var(--space-8)}
+.summary-card{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-4);box-shadow:var(--shadow-sm)}
+.summary-icon{font-size:1.5rem;margin-bottom:var(--space-2)}
+.summary-val{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg)}
+.summary-lbl{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:2px}
+.beginner-panel .summary-val{color:var(--color-beginner)}
+.mid-panel .summary-val{color:var(--color-mid)}
+.adv-panel .summary-val{color:var(--color-adv)}
+
+/* ── ELEVATION CHART ── */
+.elevation-wrap{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-6);margin-bottom:var(--space-8);box-shadow:var(--shadow-sm)}
+.elevation-wrap h3{font-family:var(--font-display);font-size:var(--text-base);font-weight:700;margin-bottom:var(--space-4)}
+.elevation-svg{width:100%;height:180px}
+
+/* ── SEGMENT CARDS ── */
+.segments h3{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-5)}
+.segment-card{
+  background:var(--color-surface-2);border:1px solid var(--color-border);
+  border-radius:var(--radius-lg);margin-bottom:var(--space-4);
+  box-shadow:var(--shadow-sm);overflow:hidden;
+}
+.segment-header{
+  display:flex;align-items:center;gap:var(--space-3);
+  padding:var(--space-4) var(--space-5);cursor:pointer;
+  transition:background var(--transition);
+}
+.segment-header:hover{background:var(--color-surface-offset)}
+.segment-num{
+  width:32px;height:32px;border-radius:var(--radius-full);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:var(--text-sm);flex-shrink:0;
+}
+.beginner-panel .segment-num{background:var(--color-beginner-light);color:var(--color-beginner)}
+.mid-panel .segment-num{background:var(--color-mid-light);color:var(--color-mid)}
+.adv-panel .segment-num{background:var(--color-adv-light);color:var(--color-adv)}
+.segment-title{font-weight:700;font-size:var(--text-sm);flex:1}
+.segment-meta{font-size:var(--text-xs);color:var(--color-text-muted);white-space:nowrap}
+.segment-chevron{color:var(--color-text-faint);font-size:.8rem;transition:transform var(--transition)}
+.segment-card.open .segment-chevron{transform:rotate(180deg)}
+.segment-body{
+  display:none;padding:0 var(--space-5) var(--space-5);
+  border-top:1px solid var(--color-divider);
+}
+.segment-card.open .segment-body{display:block}
+.segment-desc{font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-3);padding-top:var(--space-3)}
+.diff-bar-wrap{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-3)}
+.diff-bar-label{font-size:var(--text-xs);color:var(--color-text-muted);width:40px;flex-shrink:0}
+.diff-bar-track{flex:1;height:6px;background:var(--color-divider);border-radius:var(--radius-full);overflow:hidden}
+.diff-bar-fill{height:100%;border-radius:var(--radius-full)}
+.beginner-panel .diff-bar-fill{background:var(--color-beginner)}
+.mid-panel .diff-bar-fill{background:var(--color-mid)}
+.adv-panel .diff-bar-fill{background:var(--color-adv)}
+.tip-box,.warn-box{
+  font-size:var(--text-xs);padding:var(--space-3) var(--space-4);
+  border-radius:var(--radius-md);margin-top:var(--space-2);line-height:1.5;
+}
+.tip-box{background:var(--color-surface-offset);color:var(--color-text-muted)}
+.warn-box{background:var(--color-adv-light);color:var(--color-adv)}
+
+/* ── MAP ── */
+.map-wrap{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-6);margin-bottom:var(--space-8);box-shadow:var(--shadow-sm)}
+.map-wrap h3{font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-4)}
+.map-svg-wrap{width:100%;overflow-x:auto}
+
+/* ── CHECKPOINTS TABLE ── */
+.cp-wrap{margin-top:var(--space-8)}
+.cp-wrap h3{font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-4)}
+.cp-table-wrap{overflow-x:auto;border-radius:var(--radius-lg);border:1px solid var(--color-border);box-shadow:var(--shadow-sm)}
+.cp-table{font-size:var(--text-xs)}
+.cp-table th{background:var(--color-surface-offset);padding:var(--space-2) var(--space-4);text-align:left;font-weight:700;color:var(--color-text-muted);border-bottom:1px solid var(--color-border);white-space:nowrap}
+.cp-table td{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-divider);vertical-align:top}
+.cp-table tr:last-child td{border-bottom:none}
+.cp-table tr:hover td{background:var(--color-surface-offset)}
+
+/* ── TIPS ── */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--space-5);margin-bottom:var(--space-8)}
+.tip-card{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);box-shadow:var(--shadow-sm)}
+.tip-card-icon{font-size:1.6rem;margin-bottom:var(--space-3)}
+.tip-card-title{font-weight:700;font-size:var(--text-sm);margin-bottom:var(--space-2)}
+.tip-card ul{list-style:none;padding:0}
+.tip-card ul li{font-size:var(--text-xs);color:var(--color-text-muted);padding:var(--space-1) 0;border-bottom:1px solid var(--color-divider);line-height:1.5}
+.tip-card ul li:last-child{border-bottom:none}
+.tip-card ul li::before{content:"· ";color:var(--color-text-faint)}
+
+/* ── TRANSPORT TABLE ── */
+.transport-wrap h3{font-family:var(--font-display);font-weight:700;margin-bottom:var(--space-4)}
+.transport-table-wrap{overflow-x:auto;border-radius:var(--radius-lg);border:1px solid var(--color-border)}
+.transport-table th,.transport-table td{padding:var(--space-3) var(--space-4);font-size:var(--text-xs);border-bottom:1px solid var(--color-divider);text-align:left}
+.transport-table th{background:var(--color-surface-offset);font-weight:700;color:var(--color-text-muted)}
+.transport-table tr:last-child td{border-bottom:none}
+
+/* ── SECTION HEADERS ── */
+.section-header{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-5)}
+.section-header h2{font-family:var(--font-display);font-size:var(--text-xl);font-weight:800}
+.section-divider{flex:1;height:1px;background:var(--color-divider)}
+
+/* ── COURSE OVERVIEW STRIP ── */
+.course-strip{
+  padding:var(--space-5) var(--space-6);margin-bottom:var(--space-6);
+  border-bottom:1px solid var(--color-border);
+  background:var(--color-surface);
+}
+.course-strip-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap}
+.course-level-badge{
+  display:inline-flex;align-items:center;gap:var(--space-2);
+  padding:var(--space-1) var(--space-4);border-radius:var(--radius-full);
+  font-weight:700;font-size:var(--text-sm);color:#fff;
+}
+.beginner-panel .course-level-badge{background:var(--color-beginner)}
+.mid-panel .course-level-badge{background:var(--color-mid)}
+.adv-panel .course-level-badge{background:var(--color-adv)}
+.course-strip-name{font-family:var(--font-display);font-weight:800;font-size:var(--text-lg)}
+.course-strip-detail{font-size:var(--text-xs);color:var(--color-text-muted)}
+
+/* ── FLOW ── */
+.course-flow{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2);margin-bottom:var(--space-6);padding:var(--space-4) var(--space-5);background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-lg)}
+.flow-item{font-size:var(--text-xs);font-weight:600;padding:var(--space-1) var(--space-3);background:var(--color-surface-offset);border-radius:var(--radius-full)}
+.flow-arrow{color:var(--color-text-faint);font-size:.8rem}
+
+/* ── FOOTER ── */
+footer{text-align:center;padding:var(--space-8) var(--space-4);font-size:var(--text-xs);color:var(--color-text-faint);border-top:1px solid var(--color-divider)}
+
+@media(max-width:600px){
+  .site-header{padding:var(--space-3) var(--space-4)}
+  .tab-content{padding:var(--space-6) var(--space-4)}
+  .course-strip{padding:var(--space-4)}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="logo">
+    <svg viewBox="0 0 36 36" fill="none" aria-label="월출산 로고">
+      <rect width="36" height="36" rx="10" fill="#b8251a"/>
+      <polyline points="4,28 12,14 18,20 24,10 32,22" stroke="white" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+      <circle cx="24" cy="10" r="3" fill="white"/>
+      <path d="M16 30 Q18 27 20 30" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="logo-text">월출산</div>
+      <div class="logo-sub">호남의 금강산 · 천황봉 809m</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <button class="theme-btn" data-theme-toggle aria-label="테마 전환">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">전남 영암 · 국립공원 제20호</div>
+  <h1>월출산 🌙 등산 플레이북</h1>
+  <p>달이 뜨는 산, 호남의 금강산. 초급·중급·고급 3개 코스로 만나는 월출산의 모든 것.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-val">809m</div><div class="hero-stat-lbl">천황봉 정상</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">510m</div><div class="hero-stat-lbl">구름다리 고도</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">120m</div><div class="hero-stat-lbl">구름다리 지상높이</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">1988</div><div class="hero-stat-lbl">국립공원 지정</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">56km²</div><div class="hero-stat-lbl">공원 면적</div></div>
+  </div>
+</section>
+
+<!-- COURSE SELECTOR -->
+<div class="course-selector">
+  <button class="course-btn beginner active" onclick="selectCourse('beginner')">
+    <span class="course-dot"></span> 🌿 초급 — 구름다리 코스
+  </button>
+  <button class="course-btn mid" onclick="selectCourse('mid')">
+    <span class="course-dot"></span> 🦶 중급 — 천황봉 순환 코스
+  </button>
+  <button class="course-btn adv" onclick="selectCourse('adv')">
+    <span class="course-dot"></span> 🏔 고급 — 천황~도갑 종주
+  </button>
+</div>
+
+<!-- ═══════════════════ 초급 패널 ═══════════════════ -->
+<div class="course-panel beginner-panel active" id="panel-beginner">
+  <div class="course-strip">
+    <div class="course-strip-inner">
+      <span class="course-level-badge">🌿 초급</span>
+      <div>
+        <div class="course-strip-name">구름다리 체험 코스</div>
+        <div class="course-strip-detail">천황탐방지원센터 → 구름다리 → 원점 회귀 · 3.3km · 2시간 30분</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tabs-container">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab(this,'beginner','overview')">📋 개요</button>
+      <button class="tab-btn" onclick="switchTab(this,'beginner','route')">🗺 경로 안내</button>
+      <button class="tab-btn" onclick="switchTab(this,'beginner','map')">📍 지도</button>
+      <button class="tab-btn" onclick="switchTab(this,'beginner','tips')">💡 팁 &amp; 주의</button>
+    </div>
+  </div>
+
+  <!-- 개요 -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="beginner-overview">
+      <div class="section-header"><h2>코스 개요</h2><div class="section-divider"></div></div>
+      <div class="summary-grid">
+        <div class="summary-card"><div class="summary-icon">📏</div><div class="summary-val">3.3km</div><div class="summary-lbl">총 거리 (편도 왕복)</div></div>
+        <div class="summary-card"><div class="summary-icon">⏱</div><div class="summary-val">2h 30m</div><div class="summary-lbl">예상 소요시간</div></div>
+        <div class="summary-card"><div class="summary-icon">⛰</div><div class="summary-val">510m</div><div class="summary-lbl">최고 도달 고도</div></div>
+        <div class="summary-card"><div class="summary-icon">📈</div><div class="summary-val">430m</div><div class="summary-lbl">누적 상승 고도</div></div>
+        <div class="summary-card"><div class="summary-icon">🌡</div><div class="summary-val">하</div><div class="summary-lbl">전체 난이도</div></div>
+        <div class="summary-card"><div class="summary-icon">👥</div><div class="summary-val">전연령</div><div class="summary-lbl">추천 대상</div></div>
+      </div>
+      <div class="elevation-wrap">
+        <h3>📊 고도 프로파일</h3>
+        <svg class="elevation-svg" viewBox="0 0 700 180" preserveAspectRatio="none">
+          <defs><linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2d7a3a" stop-opacity=".35"/><stop offset="100%" stop-color="#2d7a3a" stop-opacity=".04"/></linearGradient></defs>
+          <polygon points="0,160 0,130 100,90 200,70 280,40 350,28 420,40 500,70 600,90 700,130 700,160" fill="url(#bg1)"/>
+          <polyline points="0,130 100,90 200,70 280,40 350,28 420,40 500,70 600,90 700,130" fill="none" stroke="#2d7a3a" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="350" cy="28" r="5" fill="#2d7a3a"/>
+          <text x="350" y="20" text-anchor="middle" font-size="11" fill="#2d7a3a" font-family="Satoshi,sans-serif">구름다리 510m</text>
+          <text x="10" y="175" font-size="10" fill="#aaa" font-family="Satoshi,sans-serif">출발 80m</text>
+          <text x="680" y="175" text-anchor="end" font-size="10" fill="#aaa" font-family="Satoshi,sans-serif">도착 80m</text>
+        </svg>
+      </div>
+      <div class="section-header"><h2>코스 흐름</h2><div class="section-divider"></div></div>
+      <div class="course-flow">
+        <span class="flow-item">🅿 천황사 주차장(80m)</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">천황사 삼거리(160m)</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">🌉 구름다리(510m)</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">사자봉 전망대(540m)</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">구름다리 하산</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">🅿 원점 회귀(80m)</span>
+      </div>
+      <p style="font-size:var(--text-sm);color:var(--color-text-muted);">월출산의 상징 구름다리(해발 510m, 지상 120m 높이, 길이 54m)를 체험하는 가장 인기 있는 단거리 코스입니다. 거리가 짧지만 구간별 경사가 있어 소요시간을 여유있게 잡아야 합니다.</p>
+    </div>
+
+    <!-- 경로 -->
+    <div class="tab-pane" id="beginner-route">
+      <div class="section-header"><h2>구간별 경로 안내</h2><div class="section-divider"></div></div>
+      <div class="segments">
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header">
+            <div class="segment-num">출</div>
+            <div class="segment-title">🅿 천황탐방지원센터 출발</div>
+            <div class="segment-meta">0km · 80m</div>
+            <span class="segment-chevron">▼</span>
+          </div>
+          <div class="segment-body">
+            <p class="segment-desc">전남 영암군 영암읍 천황사로 280-43. 천황사 주차장(유료)에 주차 후 탐방안내소에서 입산. 화장실·매점·탐방 안내도 확인.</p>
+            <div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:10%"></div></div></div>
+            <div class="tip-box">💡 주차요금: 승용차 약 3,000~4,000원. 탐방안내소에서 코스 지도 수령 권장.</div>
+          </div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header">
+            <div class="segment-num">1</div>
+            <div class="segment-title">탐방지원센터 → 천황사 삼거리</div>
+            <div class="segment-meta">0.6km · 10분 · 160m</div>
+            <span class="segment-chevron">▼</span>
+          </div>
+          <div class="segment-body">
+            <p class="segment-desc">탐방로 입구에서 천황교를 건너 계류를 따라 완만하게 오름. 동백나무 군락지를 지나며 초반 워밍업 구간. 삼거리에서 구름다리 방향(좌측) 선택.</p>
+            <div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:25%"></div></div></div>
+            <div class="tip-box">💡 동백나무 군락지는 2~3월 개화. 계류 소리를 들으며 여유롭게 이동.</div>
+          </div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header">
+            <div class="segment-num">2</div>
+            <div class="segment-title">삼거리 → 구름다리</div>
+            <div class="segment-meta">0.8km · 40분 · 510m</div>
+            <span class="segment-chevron">▼</span>
+          </div>
+          <div class="segment-body">
+            <p class="segment-desc">급격한 오르막 구간. 바위틈을 오르는 계단과 로프 구간이 연속됨. 매봉-사자봉 능선에 설치된 구름다리 도달. 지상 120m 높이에서 전라남도 나주평야와 남해바다까지 조망.</p>
+            <div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:70%"></div></div></div>
+            <div class="warn-box">⚠ 구름다리 일방통행 시간이 있을 수 있음. 강풍 시 임시 통제. 폭 1m로 좁으므로 양보 예절 필수.</div>
+            <div class="tip-box">💡 구름다리 길이 54m. 완보해도 3분. 고소공포증 있는 경우 심호흡 후 진입.</div>
+          </div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header">
+            <div class="segment-num">3</div>
+            <div class="segment-title">구름다리 → 사자봉 전망대</div>
+            <div class="segment-meta">0.3km · 15분 · 540m</div>
+            <span class="segment-chevron">▼</span>
+          </div>
+          <div class="segment-body">
+            <p class="segment-desc">구름다리 건너편에서 사자봉 방향으로 짧게 오르면 탁 트인 암릉 전망대. 천황봉~구정봉~도갑봉으로 이어지는 월출산 전 능선 조망 가능.</p>
+            <div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:45%"></div></div></div>
+            <div class="tip-box">💡 포토스팟 1순위. 아침 7~9시 역광 없는 황금 조망.</div>
+          </div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header">
+            <div class="segment-num">하</div>
+            <div class="segment-title">원점 회귀 하산</div>
+            <div class="segment-meta">1.6km · 50분</div>
+            <span class="segment-chevron">▼</span>
+          </div>
+          <div class="segment-body">
+            <p class="segment-desc">왔던 길로 다시 하산. 내려올 때 무릎에 충격이 크므로 스틱 사용 권장. 삼거리에서 바람폭포 방향(우측)으로도 변경 하산 가능 (+0.4km).</p>
+            <div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:30%"></div></div></div>
+            <div class="tip-box">💡 하산 시 비가 오면 암반이 매우 미끄러움. 방수 트레킹화 또는 스패츠 준비.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 지도 -->
+    <div class="tab-pane" id="beginner-map">
+      <div class="section-header"><h2>코스 개념도</h2><div class="section-divider"></div></div>
+      <div class="map-wrap">
+        <h3>🗺 구름다리 코스 (3.3km)</h3>
+        <div class="map-svg-wrap">
+          <svg viewBox="0 0 600 380" width="100%" style="max-height:400px" font-family="Satoshi,sans-serif">
+            <rect width="600" height="380" fill="var(--color-surface-2)" rx="8"/>
+            <!-- terrain lines -->
+            <path d="M0,300 Q150,280 300,200 Q420,140 600,120" stroke="var(--color-divider)" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+            <path d="M0,340 Q200,320 400,240 Q500,200 600,180" stroke="var(--color-divider)" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+            <!-- trail path -->
+            <path d="M100,330 Q150,300 200,260 Q250,220 300,180 Q340,155 380,140" stroke="#2d7a3a" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- return -->
+            <path d="M380,140 Q340,155 300,180 Q250,220 200,260 Q150,300 100,330" stroke="#2d7a3a" stroke-width="1.5" fill="none" stroke-dasharray="5,4" stroke-linecap="round"/>
+            <!-- trailhead -->
+            <circle cx="100" cy="330" r="10" fill="#2d7a3a" opacity=".9"/>
+            <text x="100" y="333" text-anchor="middle" font-size="9" fill="white" font-weight="700">P</text>
+            <text x="118" y="340" font-size="10" fill="var(--color-text-muted)">천황탐방지원센터</text>
+            <text x="118" y="352" font-size="9" fill="var(--color-text-faint)">80m</text>
+            <!-- junction -->
+            <circle cx="220" cy="248" r="6" fill="white" stroke="#2d7a3a" stroke-width="2"/>
+            <text x="230" y="244" font-size="10" fill="var(--color-text-muted)">천황사 삼거리</text>
+            <text x="230" y="256" font-size="9" fill="var(--color-text-faint)">160m</text>
+            <!-- cloud bridge -->
+            <rect x="355" y="128" width="50" height="14" rx="4" fill="#2d7a3a" opacity=".9"/>
+            <text x="380" y="139" text-anchor="middle" font-size="8" fill="white" font-weight="700">구름다리</text>
+            <text x="380" y="155" text-anchor="middle" font-size="9" fill="#2d7a3a">510m</text>
+            <!-- viewpoint -->
+            <path d="M390,118 L395,108 L400,118 Z" fill="var(--color-beginner)"/>
+            <text x="405" y="112" font-size="9" fill="var(--color-text-muted)">사자봉 전망대</text>
+            <text x="405" y="122" font-size="9" fill="var(--color-text-faint)">540m</text>
+            <!-- wind falls side note -->
+            <circle cx="260" cy="290" r="4" fill="none" stroke="var(--color-text-faint)" stroke-width="1.5"/>
+            <text x="268" y="294" font-size="9" fill="var(--color-text-faint)">바람폭포(대안 하산)</text>
+            <path d="M258,290 Q240,295 220,248" stroke="var(--color-text-faint)" stroke-width="1" fill="none" stroke-dasharray="3,2"/>
+            <!-- compass -->
+            <g transform="translate(540,40)">
+              <circle r="22" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
+              <text y="-10" text-anchor="middle" font-size="10" font-weight="700" fill="var(--color-adv)">N</text>
+              <text y="15" text-anchor="middle" font-size="8" fill="var(--color-text-faint)">S</text>
+              <text x="-13" y="5" text-anchor="middle" font-size="8" fill="var(--color-text-faint)">W</text>
+              <text x="13" y="5" text-anchor="middle" font-size="8" fill="var(--color-text-faint)">E</text>
+              <line y1="-14" y2="14" stroke="var(--color-text-faint)" stroke-width="1"/>
+              <line x1="-14" x2="14" stroke="var(--color-text-faint)" stroke-width="1"/>
+            </g>
+            <!-- legend -->
+            <g transform="translate(20,20)">
+              <line x2="20" y1="8" y2="8" stroke="#2d7a3a" stroke-width="2.5"/>
+              <text x="25" y="12" font-size="10" fill="var(--color-text-muted)">등산로</text>
+              <line x2="20" y1="24" y2="24" stroke="#2d7a3a" stroke-width="1.5" stroke-dasharray="4,3"/>
+              <text x="25" y="28" font-size="10" fill="var(--color-text-muted)">하산로</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="cp-wrap">
+        <h3>📍 체크포인트 목록</h3>
+        <div class="cp-table-wrap">
+          <table class="cp-table">
+            <thead><tr><th>#</th><th>지점명</th><th>고도(m)</th><th>누적(km)</th><th>시설</th></tr></thead>
+            <tbody>
+              <tr><td>출발</td><td>천황탐방지원센터</td><td>80</td><td>0</td><td>주차·화장실·매점</td></tr>
+              <tr><td>1</td><td>천황교</td><td>100</td><td>0.3</td><td>-</td></tr>
+              <tr><td>2</td><td>천황사 삼거리</td><td>160</td><td>0.6</td><td>이정표·벤치</td></tr>
+              <tr><td>3</td><td>구름다리 삼거리</td><td>430</td><td>1.2</td><td>이정표</td></tr>
+              <tr><td>4</td><td>🌉 구름다리</td><td>510</td><td>1.5</td><td>포토스팟·조망</td></tr>
+              <tr><td>5</td><td>사자봉 전망대</td><td>540</td><td>1.8</td><td>조망대</td></tr>
+              <tr><td>하산</td><td>천황탐방지원센터</td><td>80</td><td>3.3</td><td>화장실</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- 팁 -->
+    <div class="tab-pane" id="beginner-tips">
+      <div class="section-header"><h2>팁 &amp; 주의사항</h2><div class="section-divider"></div></div>
+      <div class="tips-grid">
+        <div class="tip-card"><div class="tip-card-icon">👟</div><div class="tip-card-title">등산 장비</div><ul><li>트레킹화 (암반 구간 있음)</li><li>스틱 1개 이상 권장</li><li>장갑 (로프 구간)</li><li>물 1L 이상</li><li>행동식·간식</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">📸</div><div class="tip-card-title">포토스팟</div><ul><li>구름다리 위 전경 (나주평야)</li><li>사자봉 전망대 능선</li><li>천황사 동백꽃 군락 (2~3월)</li><li>봄 진달래 암릉 (4월)</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">⚠️</div><div class="tip-card-title">안전 주의</div><ul><li>강풍·우천시 구름다리 통제</li><li>암반 미끄러움 주의</li><li>일몰 후 산행 금지</li><li>어린이 동행시 보호자 손잡기</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">🚌</div><div class="tip-card-title">교통 안내</div><ul><li>KTX 용산→목포 (2h) 후 버스</li><li>영암 시외버스터미널→천황사 군내버스</li><li>목포역→영암 시외버스 약 30분</li><li>자차: 영암IC 진입</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">🌸</div><div class="tip-card-title">시즌 추천</div><ul><li>봄(3~5월): 동백·진달래</li><li>여름(6~8월): 시원한 계곡</li><li>가을(9~11월): 단풍·억새</li><li>겨울(12~2월): 눈덮인 암릉</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">🍽</div><div class="tip-card-title">주변 맛집</div><ul><li>영암 갈낙탕 (갈비+낙지)</li><li>영암 새우젓 굴비정식</li><li>강진 한정식</li><li>천황사 인근 산채정식</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ 중급 패널 ═══════════════════ -->
+<div class="course-panel mid-panel" id="panel-mid">
+  <div class="course-strip">
+    <div class="course-strip-inner">
+      <span class="course-level-badge">🦶 중급</span>
+      <div>
+        <div class="course-strip-name">천황봉 순환 코스</div>
+        <div class="course-strip-detail">천황탐방지원센터 → 구름다리 → 천황봉(809m) → 바람폭포 → 원점 · 6.7km · 4시간</div>
+      </div>
+    </div>
+  </div>
+  <div class="tabs-container">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab(this,'mid','overview')">📋 개요</button>
+      <button class="tab-btn" onclick="switchTab(this,'mid','route')">🗺 경로 안내</button>
+      <button class="tab-btn" onclick="switchTab(this,'mid','map')">📍 지도</button>
+      <button class="tab-btn" onclick="switchTab(this,'mid','tips')">💡 팁 &amp; 주의</button>
+    </div>
+  </div>
+  <div class="tab-content">
+    <div class="tab-pane active" id="mid-overview">
+      <div class="section-header"><h2>코스 개요</h2><div class="section-divider"></div></div>
+      <div class="summary-grid">
+        <div class="summary-card"><div class="summary-icon">📏</div><div class="summary-val">6.7km</div><div class="summary-lbl">총 거리 (순환)</div></div>
+        <div class="summary-card"><div class="summary-icon">⏱</div><div class="summary-val">4h</div><div class="summary-lbl">예상 소요시간</div></div>
+        <div class="summary-card"><div class="summary-icon">⛰</div><div class="summary-val">809m</div><div class="summary-lbl">천황봉 정상</div></div>
+        <div class="summary-card"><div class="summary-icon">📈</div><div class="summary-val">754m</div><div class="summary-lbl">누적 상승 고도</div></div>
+        <div class="summary-card"><div class="summary-icon">🌡</div><div class="summary-val">상</div><div class="summary-lbl">전체 난이도</div></div>
+        <div class="summary-card"><div class="summary-icon">👥</div><div class="summary-val">경험자</div><div class="summary-lbl">추천 대상</div></div>
+      </div>
+      <div class="elevation-wrap">
+        <h3>📊 고도 프로파일</h3>
+        <svg class="elevation-svg" viewBox="0 0 700 180" preserveAspectRatio="none">
+          <defs><linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a5fa8" stop-opacity=".35"/><stop offset="100%" stop-color="#1a5fa8" stop-opacity=".04"/></linearGradient></defs>
+          <polygon points="0,160 0,148 80,100 160,72 260,38 340,14 430,38 520,70 600,100 650,125 700,148 700,160" fill="url(#bg2)"/>
+          <polyline points="0,148 80,100 160,72 260,38 340,14 430,38 520,70 600,100 650,125 700,148" fill="none" stroke="#1a5fa8" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="340" cy="14" r="5" fill="#1a5fa8"/>
+          <text x="340" y="9" text-anchor="middle" font-size="11" fill="#1a5fa8" font-family="Satoshi,sans-serif">천황봉 809m</text>
+          <circle cx="200" cy="58" r="4" fill="#1a5fa8" opacity=".7"/>
+          <text x="200" y="53" text-anchor="middle" font-size="9" fill="#1a5fa8" font-family="Satoshi,sans-serif">구름다리 510m</text>
+          <text x="10" y="175" font-size="10" fill="#aaa" font-family="Satoshi,sans-serif">출발 80m</text>
+          <text x="690" y="175" text-anchor="end" font-size="10" fill="#aaa" font-family="Satoshi,sans-serif">도착 80m</text>
+        </svg>
+      </div>
+      <div class="section-header"><h2>코스 흐름</h2><div class="section-divider"></div></div>
+      <div class="course-flow">
+        <span class="flow-item">🅿 천황탐방(80m)</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">천황사 삼거리</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">🌉 구름다리(510m)</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">통천문 삼거리</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">🏔 천황봉(809m)</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">바람재</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">💧 바람폭포</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">🅿 원점(80m)</span>
+      </div>
+      <p style="font-size:var(--text-sm);color:var(--color-text-muted);">월출산 최고봉 천황봉(809m)을 정복하는 가장 사랑받는 순환코스. 오르막은 구름다리 경유, 하산은 바람폭포 경유로 다양한 경관을 한 번에 경험. 총 상승고도 754m로 체력 소모가 상당하다.</p>
+    </div>
+    <div class="tab-pane" id="mid-route">
+      <div class="section-header"><h2>구간별 경로 안내</h2><div class="section-divider"></div></div>
+      <div class="segments">
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header"><div class="segment-num">출</div><div class="segment-title">🅿 천황탐방지원센터 출발</div><div class="segment-meta">0km · 80m</div><span class="segment-chevron">▼</span></div>
+          <div class="segment-body"><p class="segment-desc">천황사 주차장에서 탐방 시작. 이른 아침 출발 권장(6~7시). 탐방안내소에서 현재 탐방 통제 구간 확인 필수.</p><div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:10%"></div></div></div><div class="tip-box">💡 낮 12시 이후 출발은 하산 시 어두워질 수 있음. 오전 6~8시 출발 권장.</div></div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header"><div class="segment-num">1</div><div class="segment-title">탐방지원센터 → 구름다리</div><div class="segment-meta">1.5km · 50분 · 510m</div><span class="segment-chevron">▼</span></div>
+          <div class="segment-body"><p class="segment-desc">천황교 건너 계류변 동백 군락 통과 후 급격한 암릉 오름. 매봉~사자봉 사이 구름다리(510m)에서 충분한 조망 및 휴식.</p><div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:65%"></div></div></div><div class="warn-box">⚠ 구름다리 강풍 통제 가능성. 통제 시 바람폭포 방향으로 우회.</div></div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header"><div class="segment-num">2</div><div class="segment-title">구름다리 → 통천문 삼거리</div><div class="segment-meta">0.7km · 40분 · 760m</div><span class="segment-chevron">▼</span></div>
+          <div class="segment-body"><p class="segment-desc">구름다리 이후 가장 가파른 암릉 구간. 육형제바위 통과 후 바위굴 통천문을 지나면 천황봉 직전 삼거리. 스틱 접고 손으로 암벽 잡으며 오르는 구간 포함.</p><div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:90%"></div></div></div><div class="warn-box">⚠ 가장 위험 구간. 비 오면 암벽 미끄럼 사고 다수. 우천시 등반 자제.</div><div class="tip-box">💡 육형제바위·통천문은 월출산 핵심 명소. 여유있게 감상하며 이동.</div></div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header"><div class="segment-num">3</div><div class="segment-title">🏔 천황봉 정상 (809m)</div><div class="segment-meta">0.3km · 15분</div><span class="segment-chevron">▼</span></div>
+          <div class="segment-body"><p class="segment-desc">월출산 최고봉. 신라 때부터 천제를 지낸 곳. 맑은 날 나주평야·목포·남해바다까지 360° 조망. 정상 인증 후 충분한 휴식·식사.</p><div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:30%"></div></div></div><div class="tip-box">💡 정상 체감온도 산 아래보다 5~8℃ 낮음. 방풍자켓 필수. 바람이 매우 강함.</div></div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header"><div class="segment-num">4</div><div class="segment-title">천황봉 → 바람폭포 → 원점 하산</div><div class="segment-meta">3.2km · 80분</div><span class="segment-chevron">▼</span></div>
+          <div class="segment-body"><p class="segment-desc">바람재 삼거리에서 바람폭포 방향 하산. 계곡을 따라 내려오며 바람폭포에서 여름엔 세족 가능. 천황사 삼거리에서 원점 복귀.</p><div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:40%"></div></div></div><div class="tip-box">💡 바람폭포 부근은 음수대 없음. 물 충분히 준비. 폭포 접근 시 바위 위 미끄러움 주의.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="mid-map">
+      <div class="section-header"><h2>코스 개념도</h2><div class="section-divider"></div></div>
+      <div class="map-wrap">
+        <h3>🗺 천황봉 순환 코스 (6.7km)</h3>
+        <div class="map-svg-wrap">
+          <svg viewBox="0 0 620 400" width="100%" style="max-height:420px" font-family="Satoshi,sans-serif">
+            <rect width="620" height="400" fill="var(--color-surface-2)" rx="8"/>
+            <path d="M0,330 Q150,300 300,220 Q430,155 620,110" stroke="var(--color-divider)" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+            <!-- uphill via cloud bridge -->
+            <path d="M100,350 Q160,310 200,270 Q240,230 290,200 Q330,175 370,145 Q400,125 430,100" stroke="#1a5fa8" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- downhill via wind falls -->
+            <path d="M430,100 Q430,150 410,200 Q390,250 350,290 Q300,330 220,355 Q170,365 100,350" stroke="#1a5fa8" stroke-width="2" fill="none" stroke-dasharray="6,4" stroke-linecap="round"/>
+            <!-- trailhead -->
+            <circle cx="100" cy="350" r="10" fill="#1a5fa8" opacity=".9"/>
+            <text x="100" y="353" text-anchor="middle" font-size="9" fill="white" font-weight="700">P</text>
+            <text x="118" y="360" font-size="10" fill="var(--color-text-muted)">천황탐방지원센터 80m</text>
+            <!-- cloud bridge -->
+            <rect x="255" y="190" width="50" height="13" rx="4" fill="#1a5fa8" opacity=".85"/>
+            <text x="280" y="200" text-anchor="middle" font-size="8" fill="white" font-weight="700">구름다리</text>
+            <text x="280" y="213" text-anchor="middle" font-size="8" fill="#1a5fa8">510m</text>
+            <!-- tunnel -->
+            <circle cx="380" cy="145" r="5" fill="white" stroke="#1a5fa8" stroke-width="2"/>
+            <text x="392" y="140" font-size="9" fill="var(--color-text-muted)">통천문</text>
+            <!-- summit -->
+            <circle cx="430" cy="100" r="12" fill="#1a5fa8"/>
+            <text x="430" y="103" text-anchor="middle" font-size="9" fill="white" font-weight="700">▲</text>
+            <text x="450" y="96" font-size="11" fill="#1a5fa8" font-weight="700">천황봉 809m</text>
+            <!-- wind falls -->
+            <circle cx="340" cy="295" r="6" fill="white" stroke="#1a5fa8" stroke-width="1.5"/>
+            <text x="352" y="300" font-size="9" fill="var(--color-text-muted)">💧 바람폭포</text>
+            <!-- compass -->
+            <g transform="translate(560,40)">
+              <circle r="22" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
+              <text y="-10" text-anchor="middle" font-size="10" font-weight="700" fill="var(--color-adv)">N</text>
+              <text y="15" text-anchor="middle" font-size="8" fill="var(--color-text-faint)">S</text>
+              <text x="-13" y="5" text-anchor="middle" font-size="8" fill="var(--color-text-faint)">W</text>
+              <text x="13" y="5" text-anchor="middle" font-size="8" fill="var(--color-text-faint)">E</text>
+              <line y1="-14" y2="14" stroke="var(--color-text-faint)" stroke-width="1"/>
+              <line x1="-14" x2="14" stroke="var(--color-text-faint)" stroke-width="1"/>
+            </g>
+            <!-- legend -->
+            <g transform="translate(20,20)">
+              <line x2="20" y1="8" y2="8" stroke="#1a5fa8" stroke-width="2.5"/>
+              <text x="25" y="12" font-size="10" fill="var(--color-text-muted)">오르막</text>
+              <line x2="20" y1="24" y2="24" stroke="#1a5fa8" stroke-width="1.5" stroke-dasharray="5,3"/>
+              <text x="25" y="28" font-size="10" fill="var(--color-text-muted)">내리막</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="cp-wrap">
+        <h3>📍 체크포인트 목록</h3>
+        <div class="cp-table-wrap">
+          <table class="cp-table">
+            <thead><tr><th>#</th><th>지점명</th><th>고도(m)</th><th>누적(km)</th><th>주요 특징</th></tr></thead>
+            <tbody>
+              <tr><td>출</td><td>천황탐방지원센터</td><td>80</td><td>0</td><td>주차·화장실·매점</td></tr>
+              <tr><td>1</td><td>천황교</td><td>100</td><td>0.3</td><td>-</td></tr>
+              <tr><td>2</td><td>천황사 삼거리</td><td>160</td><td>0.6</td><td>이정표</td></tr>
+              <tr><td>3</td><td>구름다리 삼거리</td><td>430</td><td>1.2</td><td>이정표</td></tr>
+              <tr><td>4</td><td>🌉 구름다리</td><td>510</td><td>1.5</td><td>조망·포토스팟</td></tr>
+              <tr><td>5</td><td>육형제바위</td><td>660</td><td>1.9</td><td>명소</td></tr>
+              <tr><td>6</td><td>통천문</td><td>760</td><td>2.2</td><td>바위굴·협곡</td></tr>
+              <tr><td>7</td><td>🏔 천황봉 정상</td><td>809</td><td>2.5</td><td>정상석·조망·식사</td></tr>
+              <tr><td>8</td><td>바람재 삼거리</td><td>700</td><td>3.0</td><td>이정표</td></tr>
+              <tr><td>9</td><td>💧 바람폭포</td><td>350</td><td>4.5</td><td>폭포·세족 (여름)</td></tr>
+              <tr><td>도</td><td>천황탐방지원센터</td><td>80</td><td>6.7</td><td>화장실·주차</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="mid-tips">
+      <div class="section-header"><h2>팁 &amp; 주의사항</h2><div class="section-divider"></div></div>
+      <div class="tips-grid">
+        <div class="tip-card"><div class="tip-card-icon">🎒</div><div class="tip-card-title">필수 장비</div><ul><li>등산화 (암릉 전문화 권장)</li><li>스틱 1쌍</li><li>방풍자켓·여벌 상의</li><li>물 1.5~2L</li><li>에너지바·점심도시락</li><li>구급약·무릎보호대</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">🕐</div><div class="tip-card-title">시간 계획</div><ul><li>6~7시 출발 권장</li><li>천황봉 도착 10~11시 목표</li><li>정상 식사·휴식 30~40분</li><li>15시 이전 하산 완료 목표</li><li>일몰 후 탐방 엄금</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">⛔</div><div class="tip-card-title">위험 구간</div><ul><li>통천문 직전 암벽 구간 최위험</li><li>구름다리 강풍 통제 빈번</li><li>우천·결빙 시 사고 급증</li><li>바람폭포 하단 바위 미끄러움</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">🌡</div><div class="tip-card-title">날씨·기온</div><ul><li>정상 체감온도 -5~8℃ 낮음</li><li>봄·가을 오전 안개 잦음</li><li>여름 뇌우 오후 주의</li><li>겨울 결빙 시 아이젠 필수</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">🏥</div><div class="tip-card-title">긴급 연락</div><ul><li>월출산국립공원: 061-473-5210</li><li>영암경찰서: 061-470-0112</li><li>119 구조 요청 시 위치 좌표 전달</li><li>위성 위치 앱(산악지도) 준비</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">🚗</div><div class="tip-card-title">주차·교통</div><ul><li>천황사 주차장: 영암읍 천황사로 280-43</li><li>주차요금 승용차 3,000~4,000원</li><li>영암IC → 천황사 약 15분</li><li>대중교통: 영암터미널→천황사 군내버스</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════ 고급 패널 ═══════════════════ -->
+<div class="course-panel adv-panel" id="panel-adv">
+  <div class="course-strip">
+    <div class="course-strip-inner">
+      <span class="course-level-badge">🏔 고급</span>
+      <div>
+        <div class="course-strip-name">천황~도갑 종주 코스</div>
+        <div class="course-strip-detail">천황탐방지원센터 → 천황봉(809m) → 구정봉(710m) → 억새밭 → 도갑사 · 9.5km · 6시간 30분 · 편도</div>
+      </div>
+    </div>
+  </div>
+  <div class="tabs-container">
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab(this,'adv','overview')">📋 개요</button>
+      <button class="tab-btn" onclick="switchTab(this,'adv','route')">🗺 경로 안내</button>
+      <button class="tab-btn" onclick="switchTab(this,'adv','map')">📍 지도</button>
+      <button class="tab-btn" onclick="switchTab(this,'adv','tips')">💡 팁 &amp; 주의</button>
+    </div>
+  </div>
+  <div class="tab-content">
+    <div class="tab-pane active" id="adv-overview">
+      <div class="section-header"><h2>코스 개요</h2><div class="section-divider"></div></div>
+      <div class="summary-grid">
+        <div class="summary-card"><div class="summary-icon">📏</div><div class="summary-val">9.5km</div><div class="summary-lbl">총 거리 (편도)</div></div>
+        <div class="summary-card"><div class="summary-icon">⏱</div><div class="summary-val">6h 30m</div><div class="summary-lbl">예상 소요시간</div></div>
+        <div class="summary-card"><div class="summary-icon">⛰</div><div class="summary-val">809m</div><div class="summary-lbl">천황봉 최고점</div></div>
+        <div class="summary-card"><div class="summary-icon">🏛</div><div class="summary-val">710m</div><div class="summary-lbl">구정봉</div></div>
+        <div class="summary-card"><div class="summary-icon">🌡</div><div class="summary-val">상급</div><div class="summary-lbl">전체 난이도</div></div>
+        <div class="summary-card"><div class="summary-icon">🚗</div><div class="summary-val">차량회수</div><div class="summary-lbl">편도 A→B</div></div>
+      </div>
+      <div class="elevation-wrap">
+        <h3>📊 고도 프로파일</h3>
+        <svg class="elevation-svg" viewBox="0 0 700 180" preserveAspectRatio="none">
+          <defs><linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b8251a" stop-opacity=".35"/><stop offset="100%" stop-color="#b8251a" stop-opacity=".04"/></linearGradient></defs>
+          <polygon points="0,160 0,150 70,115 140,80 210,20 280,50 350,45 420,70 490,90 560,110 620,135 700,155 700,160" fill="url(#bg3)"/>
+          <polyline points="0,150 70,115 140,80 210,20 280,50 350,45 420,70 490,90 560,110 620,135 700,155" fill="none" stroke="#b8251a" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="210" cy="20" r="5" fill="#b8251a"/>
+          <text x="210" y="13" text-anchor="middle" font-size="11" fill="#b8251a" font-family="Satoshi,sans-serif">천황봉 809m</text>
+          <circle cx="350" cy="45" r="4" fill="#b8251a" opacity=".7"/>
+          <text x="350" y="38" text-anchor="middle" font-size="9" fill="#b8251a" font-family="Satoshi,sans-serif">구정봉 710m</text>
+          <circle cx="490" cy="90" r="4" fill="#b8251a" opacity=".6"/>
+          <text x="490" y="83" text-anchor="middle" font-size="9" fill="#b8251a" font-family="Satoshi,sans-serif">억새밭</text>
+          <text x="10" y="175" font-size="10" fill="#aaa" font-family="Satoshi,sans-serif">출발 80m</text>
+          <text x="690" y="175" text-anchor="end" font-size="10" fill="#aaa" font-family="Satoshi,sans-serif">도갑사 90m</text>
+        </svg>
+      </div>
+      <div class="section-header"><h2>코스 흐름</h2><div class="section-divider"></div></div>
+      <div class="course-flow">
+        <span class="flow-item">🅿 천황탐방(80m)</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">🌉 구름다리(510m)</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">🏔 천황봉(809m)</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">바람재 삼거리</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">🗿 구정봉(710m)</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">🌾 억새밭(미왕재)</span><span class="flow-arrow">▶</span>
+        <span class="flow-item">⛩ 도갑사(90m)</span>
+      </div>
+      <p style="font-size:var(--text-sm);color:var(--color-text-muted);">월출산 전체 종주. 천황봉에서 구정봉·억새밭까지 이어지는 주능선 전부를 종주하며 남근바위·마애여래좌상(국보 제144호) 등 문화·자연명소를 한 번에 경험. 편도이므로 차량 2대 또는 택시 이용 필수.</p>
+    </div>
+    <div class="tab-pane" id="adv-route">
+      <div class="section-header"><h2>구간별 경로 안내</h2><div class="section-divider"></div></div>
+      <div class="segments">
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header"><div class="segment-num">출</div><div class="segment-title">🅿 천황탐방지원센터 출발</div><div class="segment-meta">0km · 80m</div><span class="segment-chevron">▼</span></div>
+          <div class="segment-body"><p class="segment-desc">도갑사 주차장에 차량 1대를 미리 주차한 뒤, 천황사 주차장에서 출발하는 방식이 일반적. 또는 당일 도갑사에서 택시 호출.</p><div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:10%"></div></div></div><div class="tip-box">💡 5~6시 이른 새벽 출발 강력 권장. 9.5km 완주에 6.5시간 이상 소요.</div></div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header"><div class="segment-num">1</div><div class="segment-title">탐방지원센터 → 천황봉</div><div class="segment-meta">2.5km · 2h 30m · 809m</div><span class="segment-chevron">▼</span></div>
+          <div class="segment-body"><p class="segment-desc">구름다리(510m) 경유 상행. 통천문 바위굴·육형제바위 통과 후 천황봉 정상 도달. 가장 가파른 구간이므로 에너지 배분 중요.</p><div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:95%"></div></div></div><div class="warn-box">⚠ 종주 시 초반 체력 과소비 금지. 정상까지만 2.5km이지만 잔여 7km 남음.</div></div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header"><div class="segment-num">2</div><div class="segment-title">천황봉 → 바람재 삼거리</div><div class="segment-meta">0.5km · 20분 · 700m</div><span class="segment-chevron">▼</span></div>
+          <div class="segment-body"><p class="segment-desc">천황봉 정상에서 남쪽 방향 하산. 바람재 삼거리는 도갑사 방면 진행. 바람폭포 방향(좌측)은 이번 코스에서 미경유.</p><div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:40%"></div></div></div><div class="tip-box">💡 바람재는 탁 트인 조망처. 잠시 휴식 후 도갑 방향 이정표 확인.</div></div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header"><div class="segment-num">3</div><div class="segment-title">바람재 → 구정봉 (710m)</div><div class="segment-meta">1.5km · 50분 · 710m</div><span class="segment-chevron">▼</span></div>
+          <div class="segment-body"><p class="segment-desc">월출산 세 번째 봉우리 구정봉(710.8m). 봉우리 아래 국보 제144호 마애여래좌상(해발 600m, 대한민국 국보 중 가장 높은 곳). 남근바위·큰 바위 얼굴 조망.</p><div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:65%"></div></div></div><div class="tip-box">💡 마애여래좌상은 명사탐방로로도 접근 가능. 구정봉 정상 암반 위 호박돌 조각 경관이 장관.</div></div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header"><div class="segment-num">4</div><div class="segment-title">구정봉 → 억새밭(미왕재)</div><div class="segment-meta">1.5km · 40분</div><span class="segment-chevron">▼</span></div>
+          <div class="segment-body"><p class="segment-desc">능선을 따라 완만하게 하강. 미왕재 억새밭은 9~10월 절정. 가을엔 억새와 암릉이 어우러진 월출산 최고 경관.</p><div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:35%"></div></div></div><div class="tip-box">💡 9~10월 억새철 주말 매우 혼잡. 평일 방문 권장.</div></div>
+        </div>
+        <div class="segment-card" onclick="toggleSegment(this)">
+          <div class="segment-header"><div class="segment-num">5</div><div class="segment-title">억새밭 → ⛩ 도갑사 도착</div><div class="segment-meta">3.5km · 90분 · 90m</div><span class="segment-chevron">▼</span></div>
+          <div class="segment-body"><p class="segment-desc">억새밭에서 도갑사까지 숲길 하산. 도갑사는 신라 도선국사 창건 사찰. 국보 제50호 도갑사해탈문 관람 가능. 도갑사 주차장에서 차량 회수 또는 택시.</p><div class="diff-bar-wrap"><span class="diff-bar-label">난이도</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:30%"></div></div></div><div class="tip-box">💡 도갑사 관람 시간 외 입장 불가(09:00~18:00). 도착 후 도갑사 주변 식당에서 보식 가능.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="adv-map">
+      <div class="section-header"><h2>코스 개념도</h2><div class="section-divider"></div></div>
+      <div class="map-wrap">
+        <h3>🗺 천황~도갑 종주 코스 (9.5km)</h3>
+        <div class="map-svg-wrap">
+          <svg viewBox="0 0 700 400" width="100%" style="max-height:420px" font-family="Satoshi,sans-serif">
+            <rect width="700" height="400" fill="var(--color-surface-2)" rx="8"/>
+            <!-- terrain -->
+            <path d="M0,350 Q200,330 400,260 Q550,210 700,180" stroke="var(--color-divider)" stroke-width="1" fill="none" stroke-dasharray="4,3"/>
+            <!-- route -->
+            <path d="M60,360 Q100,320 150,280 Q190,245 230,180 Q255,150 280,110 Q310,145 330,160 Q370,185 410,210 Q460,235 510,260 Q560,285 610,315 Q640,335 660,360" stroke="#b8251a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <!-- trailhead A -->
+            <circle cx="60" cy="360" r="10" fill="#b8251a" opacity=".9"/>
+            <text x="60" y="363" text-anchor="middle" font-size="9" fill="white" font-weight="700">A</text>
+            <text x="76" y="355" font-size="10" fill="var(--color-text-muted)">천황탐방 80m</text>
+            <!-- cloud bridge -->
+            <rect x="198" y="234" width="50" height="12" rx="4" fill="#b8251a" opacity=".7"/>
+            <text x="223" y="243" text-anchor="middle" font-size="8" fill="white">구름다리</text>
+            <!-- summit -->
+            <circle cx="280" cy="110" r="14" fill="#b8251a"/>
+            <text x="280" y="113" text-anchor="middle" font-size="10" fill="white" font-weight="700">▲</text>
+            <text x="300" y="106" font-size="12" fill="#b8251a" font-weight="700">천황봉 809m</text>
+            <!-- wind jct -->
+            <circle cx="312" cy="150" r="5" fill="white" stroke="#b8251a" stroke-width="1.5"/>
+            <text x="322" y="154" font-size="9" fill="var(--color-text-muted)">바람재</text>
+            <!-- gujung -->
+            <circle cx="410" cy="210" r="8" fill="#b8251a" opacity=".8"/>
+            <text x="410" y="213" text-anchor="middle" font-size="8" fill="white" font-weight="700">▲</text>
+            <text x="422" y="207" font-size="10" fill="#b8251a">구정봉 710m</text>
+            <!-- maae buddha -->
+            <text x="430" y="222" font-size="8" fill="var(--color-text-faint)">🗿 마애여래좌상(국보)</text>
+            <!-- reeds -->
+            <circle cx="510" cy="260" r="6" fill="white" stroke="#b8251a" stroke-width="1.5"/>
+            <text x="522" y="265" font-size="9" fill="var(--color-text-muted)">🌾 억새밭</text>
+            <!-- dogapsa B -->
+            <circle cx="660" cy="360" r="10" fill="#b8251a" opacity=".9"/>
+            <text x="660" y="363" text-anchor="middle" font-size="9" fill="white" font-weight="700">B</text>
+            <text x="640" y="378" font-size="10" fill="var(--color-text-muted)" text-anchor="middle">⛩ 도갑사 90m</text>
+            <!-- distance markers -->
+            <text x="350" y="390" text-anchor="middle" font-size="9" fill="var(--color-text-faint)">← 9.5km, 6시간 30분 →</text>
+            <!-- compass -->
+            <g transform="translate(640,40)">
+              <circle r="22" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
+              <text y="-10" text-anchor="middle" font-size="10" font-weight="700" fill="var(--color-adv)">N</text>
+              <text y="15" text-anchor="middle" font-size="8" fill="var(--color-text-faint)">S</text>
+              <text x="-13" y="5" text-anchor="middle" font-size="8" fill="var(--color-text-faint)">W</text>
+              <text x="13" y="5" text-anchor="middle" font-size="8" fill="var(--color-text-faint)">E</text>
+              <line y1="-14" y2="14" stroke="var(--color-text-faint)" stroke-width="1"/>
+              <line x1="-14" x2="14" stroke="var(--color-text-faint)" stroke-width="1"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="cp-wrap">
+        <h3>📍 체크포인트 목록</h3>
+        <div class="cp-table-wrap">
+          <table class="cp-table">
+            <thead><tr><th>#</th><th>지점명</th><th>고도(m)</th><th>누적(km)</th><th>주요 특징</th></tr></thead>
+            <tbody>
+              <tr><td>출</td><td>천황탐방지원센터(A)</td><td>80</td><td>0</td><td>주차·화장실·매점</td></tr>
+              <tr><td>1</td><td>천황사 삼거리</td><td>160</td><td>0.6</td><td>이정표</td></tr>
+              <tr><td>2</td><td>🌉 구름다리</td><td>510</td><td>1.5</td><td>조망·포토스팟</td></tr>
+              <tr><td>3</td><td>육형제바위</td><td>660</td><td>1.9</td><td>명소</td></tr>
+              <tr><td>4</td><td>통천문</td><td>760</td><td>2.2</td><td>바위굴</td></tr>
+              <tr><td>5</td><td>🏔 천황봉 (정상)</td><td>809</td><td>2.5</td><td>정상석·360°조망</td></tr>
+              <tr><td>6</td><td>바람재 삼거리</td><td>700</td><td>3.0</td><td>이정표·휴식</td></tr>
+              <tr><td>7</td><td>🗿 구정봉</td><td>711</td><td>4.0</td><td>마애여래좌상(국보)</td></tr>
+              <tr><td>8</td><td>남근바위·큰바위얼굴</td><td>680</td><td>4.5</td><td>명소</td></tr>
+              <tr><td>9</td><td>🌾 억새밭(미왕재)</td><td>450</td><td>5.5</td><td>가을 절경</td></tr>
+              <tr><td>10</td><td>도갑사 입구</td><td>120</td><td>8.5</td><td>사찰·국보 해탈문</td></tr>
+              <tr><td>도</td><td>⛩ 도갑사 주차장(B)</td><td>90</td><td>9.5</td><td>주차·식당·택시</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane" id="adv-tips">
+      <div class="section-header"><h2>팁 &amp; 주의사항</h2><div class="section-divider"></div></div>
+      <div class="tips-grid">
+        <div class="tip-card"><div class="tip-card-icon">🎒</div><div class="tip-card-title">필수 장비</div><ul><li>등산화 (발목 지지 강한 것)</li><li>스틱 1쌍</li><li>방풍자켓+여벌 상의 2개</li><li>물 2L 이상</li><li>고칼로리 점심·간식 충분히</li><li>헤드랜턴 (비상용)</li><li>겨울: 아이젠·장갑·방한복</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">🚗</div><div class="tip-card-title">편도 차량 계획</div><ul><li>차량 2대: 도갑사에 1대 미리 주차</li><li>택시: 도갑사에서 천황사 약 20~25분</li><li>도갑사 주소: 전남 영암군 군서면 도갑리 8</li><li>영암 콜택시: 061-473-0082</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">📅</div><div class="tip-card-title">추천 시즌</div><ul><li>봄(4~5월): 진달래·철쭉 암릉</li><li>가을(10월): 억새밭 절정</li><li>겨울 종주: 일출 후 결빙 해소 후 출발</li><li>여름: 수분 충분히, 오전 완주 목표</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">🏛</div><div class="tip-card-title">문화·역사 볼거리</div><ul><li>마애여래좌상 (국보 144호, 해발 600m)</li><li>도갑사 해탈문 (국보 50호)</li><li>구정봉 큰 바위 얼굴</li><li>천황봉 신라 천제 제단터</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">⏰</div><div class="tip-card-title">시간 계획</div><ul><li>5:30~6:00 출발 필수</li><li>천황봉 도착 목표: 8:30~9:30</li><li>구정봉 도착 목표: 11:00</li><li>도갑사 하산 완료: 14:00~15:00</li><li>총 소요: 6.5~8시간</li></ul></div>
+        <div class="tip-card"><div class="tip-card-icon">🆘</div><div class="tip-card-title">긴급 대응</div><ul><li>국립공원 긴급: 061-473-5210</li><li>119 위치: 가장 가까운 체크포인트 알려주기</li><li>부상 시 통천문~바람재 구간 대피 어려움</li><li>등산 전 지인에게 코스·예상 하산시간 공유</li></ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>월출산 국립공원 탐방 정보 · 실제 산행 전 국립공원 공식 웹사이트에서 탐방 통제 여부를 반드시 확인하세요.</p>
+  <p style="margin-top:var(--space-2)">knps.or.kr/parksvc/10/40/index.do (월출산국립공원)</p>
+</footer>
+
+<script>
+(function(){
+  const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
+  let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+  r.setAttribute('data-theme',d);
+  if(t)t.addEventListener('click',()=>{
+    d=d==='dark'?'light':'dark';
+    r.setAttribute('data-theme',d);
+    t.innerHTML=d==='dark'?
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  });
+})();
+
+function selectCourse(course){
+  document.querySelectorAll('.course-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.course-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+course).classList.add('active');
+  document.querySelectorAll('.course-btn.'+course).forEach(b=>b.classList.add('active'));
+}
+
+function switchTab(btn,course,tab){
+  const panel=document.getElementById('panel-'+course);
+  panel.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  panel.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  const target=panel.querySelector('#'+course+'-'+tab);
+  if(target)target.classList.add('active');
+}
+
+function toggleSegment(card){
+  card.classList.toggle('open');
+}
+</script>
+</body>
+</html>

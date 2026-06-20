@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오대산 등산 플레이북</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+<style>
+:root,[data-theme="light"]{
+  --bg:#f2f4f0;--surface:#f6f8f4;--surface2:#f9faf8;--surfaceoff:#e6ece0;--surfdyn:#d8e0d0;
+  --div:#c8d0c0;--bor:#bfc8b6;
+  --txt:#1c211a;--muted:#727a6a;--faint:#aab3a0;--inv:#f5f8f2;
+  --pri:#3d6b2e;--prih:#2b5020;--pria:#1e3a16;--prihl:#c8ddc0;
+  --suc:#4d8c3a;--suchl:#cce4c4;
+  --amber:#9a6a00;--amberhl:#e8d9a0;
+  --warn:#a84000;--warnhl:#e0ccb0;
+  --blue:#225e82;--bluehl:#bcd4e4;
+  --sky:#3478a0;--skyhl:#bcd8ec;
+  --shadow1:0 1px 2px oklch(.18 .01 130/.06);
+  --shadow2:0 4px 12px oklch(.18 .01 130/.09);
+  --shadow3:0 12px 32px oklch(.18 .01 130/.13);
+  --r1:.375rem;--r2:.5rem;--r3:.75rem;--r4:1rem;--rf:9999px;
+  --fb:"Satoshi",sans-serif;--fd:"Cabinet Grotesk","Satoshi",sans-serif;
+  --xs:clamp(.75rem,.7rem+.25vw,.875rem);--sm:clamp(.875rem,.8rem+.35vw,1rem);
+  --base:clamp(1rem,.95rem+.25vw,1.125rem);--lg:clamp(1.125rem,1rem+.75vw,1.5rem);
+  --xl:clamp(1.5rem,1.2rem+1.25vw,2.25rem);--xxl:clamp(2rem,1.2rem+2.5vw,3.5rem);
+  --s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.25rem;--s6:1.5rem;
+  --s8:2rem;--s10:2.5rem;--s12:3rem;--s16:4rem;
+  --tx:180ms cubic-bezier(.16,1,.3,1);
+}
+[data-theme="dark"]{
+  --bg:#0a0e09;--surface:#0f1410;--surface2:#141914;--surfaceoff:#161d15;--surfdyn:#1e2820;
+  --div:#1c2520;--bor:#283428;
+  --txt:#c4ccc0;--muted:#6c786a;--faint:#3c4838;--inv:#202a1e;
+  --pri:#5ab84a;--prih:#44a034;--pria:#2e8020;--prihl:#0c2008;
+  --suc:#6ac862;--suchl:#0c2208;
+  --amber:#e0b840;--amberhl:#261e08;
+  --warn:#e07038;--warnhl:#261408;
+  --blue:#5090c8;--bluehl:#0c1e30;
+  --sky:#50a8d0;--skyhl:#0a2030;
+  --shadow1:0 1px 2px oklch(0 0 0/.35);--shadow2:0 4px 12px oklch(0 0 0/.45);--shadow3:0 12px 32px oklch(0 0 0/.55);
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme]){
+  --bg:#0a0e09;--surface:#0f1410;--surface2:#141914;--surfaceoff:#161d15;--surfdyn:#1e2820;
+  --div:#1c2520;--bor:#283428;--txt:#c4ccc0;--muted:#6c786a;--faint:#3c4838;--inv:#202a1e;
+  --pri:#5ab84a;--prih:#44a034;--pria:#2e8020;--prihl:#0c2008;
+  --suc:#6ac862;--suchl:#0c2208;--amber:#e0b840;--amberhl:#261e08;
+  --warn:#e07038;--warnhl:#261408;--blue:#5090c8;--bluehl:#0c1e30;
+  --sky:#50a8d0;--skyhl:#0a2030;
+}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fb);font-size:var(--base);color:var(--txt);background:var(--bg);min-height:100dvh;line-height:1.6}
+img,svg{display:block;max-width:100%}
+button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}
+a,button,[role=button]{transition:color var(--tx),background var(--tx),border-color var(--tx),box-shadow var(--tx)}
+.hdr{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--div);padding:var(--s3) var(--s6);display:flex;align-items:center;justify-content:space-between;gap:var(--s4)}
+.logo{display:flex;align-items:center;gap:var(--s3)}
+.logo-svg{width:36px;height:36px;flex-shrink:0}
+.logo-txt{font-family:var(--fd);font-size:var(--lg);font-weight:800;line-height:1}
+.thm-btn{width:36px;height:36px;border-radius:var(--rf);display:flex;align-items:center;justify-content:center;background:var(--surfaceoff);color:var(--muted)}
+.thm-btn:hover{background:var(--surfdyn);color:var(--txt)}
+.hero{padding:var(--s12) var(--s6) var(--s8);text-align:center;background:linear-gradient(180deg,var(--surface) 0%,var(--bg) 100%);border-bottom:1px solid var(--div)}
+.badge{display:inline-flex;align-items:center;gap:var(--s2);background:var(--prihl);color:var(--pri);padding:var(--s1) var(--s3);border-radius:var(--rf);font-size:var(--xs);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:var(--s4)}
+.hero h1{font-family:var(--fd);font-size:var(--xxl);font-weight:800;line-height:1.1;margin-bottom:var(--s4)}
+.hero p{font-size:var(--base);color:var(--muted);max-width:60ch;margin:0 auto var(--s8)}
+.cs-wrap{display:flex;gap:var(--s3);justify-content:center;flex-wrap:wrap}
+.cs-btn{padding:var(--s3) var(--s6);border-radius:var(--rf);font-weight:700;font-size:var(--sm);border:2px solid var(--bor);background:var(--surface);color:var(--muted);transition:all var(--tx)}
+.cs-btn:hover{border-color:var(--pri);color:var(--pri)}
+.cs-btn.ab{background:var(--suchl);color:var(--suc);border-color:var(--suc)}
+.cs-btn.ai{background:var(--prihl);color:var(--pri);border-color:var(--pri)}
+.cs-btn.aa{background:var(--warnhl);color:var(--warn);border-color:var(--warn)}
+.panel{display:none}.panel.active{display:block}
+.tabs{display:flex;border-bottom:1px solid var(--div);background:var(--surface);padding:0 var(--s6);position:sticky;top:57px;z-index:90;overflow-x:auto}
+.tab{padding:var(--s3) var(--s5);font-size:var(--sm);font-weight:600;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;transition:all var(--tx)}
+.tab:hover{color:var(--txt)}.tab.active{color:var(--pri);border-bottom-color:var(--pri)}
+.main{max-width:1100px;margin:0 auto;padding:var(--s8) var(--s6)}
+.tc{display:none}.tc.active{display:block}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:var(--s4);margin-bottom:var(--s8)}
+.stat-card{background:var(--surface);border:1px solid var(--bor);border-radius:var(--r3);padding:var(--s4);text-align:center}
+.si{font-size:1.5rem;margin-bottom:var(--s2)}.sv{font-family:var(--fd);font-size:var(--xl);font-weight:800;line-height:1;margin-bottom:var(--s1)}.sl{font-size:var(--xs);color:var(--muted);font-weight:500}
+.beginner .sv{color:var(--suc)}.intermediate .sv{color:var(--pri)}.advanced .sv{color:var(--warn)}
+.elev-wrap{background:var(--surface);border:1px solid var(--bor);border-radius:var(--r4);padding:var(--s6);margin-bottom:var(--s8)}
+.elev-wrap h3{font-family:var(--fd);font-weight:700;font-size:var(--lg);margin-bottom:var(--s4)}
+.elev-svg{width:100%;height:180px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2);margin-bottom:var(--s8);padding:var(--s4) var(--s5);background:var(--surface);border:1px solid var(--bor);border-radius:var(--r4)}
+.fn{background:var(--surfaceoff);border-radius:var(--r2);padding:var(--s1) var(--s3);font-size:var(--sm);font-weight:600}
+.fn.pk{background:var(--prihl);color:var(--pri)}.fn.sk{background:var(--skyhl);color:var(--sky)}.fn.sh{background:var(--surfdyn);color:var(--muted)}.fn.am{background:var(--amberhl);color:var(--amber)}
+.fa{color:var(--faint);font-size:.9rem}
+.stitle{font-family:var(--fd);font-size:var(--xl);font-weight:800;margin-bottom:var(--s6);display:flex;align-items:center;gap:var(--s3)}
+.sico{width:32px;height:32px;border-radius:var(--r2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.beginner .sico{background:var(--suchl)}.intermediate .sico{background:var(--prihl)}.advanced .sico{background:var(--warnhl)}
+.acc-wrap{display:flex;flex-direction:column;gap:var(--s3);margin-bottom:var(--s8)}
+.acc-item{background:var(--surface);border:1px solid var(--bor);border-radius:var(--r3);overflow:hidden}
+.acc-hdr{display:flex;align-items:center;gap:var(--s4);padding:var(--s4) var(--s5);cursor:pointer;user-select:none;width:100%;text-align:left}
+.acc-hdr:hover{background:var(--surfaceoff)}
+.acc-num{width:28px;height:28px;border-radius:var(--rf);display:flex;align-items:center;justify-content:center;font-size:var(--xs);font-weight:700;flex-shrink:0}
+.beginner .acc-num{background:var(--suchl);color:var(--suc)}.intermediate .acc-num{background:var(--prihl);color:var(--pri)}.advanced .acc-num{background:var(--warnhl);color:var(--warn)}
+.acc-tw{flex:1}.acc-t{font-weight:700;font-size:var(--base);line-height:1.3}.acc-m{font-size:var(--xs);color:var(--muted);margin-top:2px}
+.acc-chev{color:var(--faint);transition:transform var(--tx);flex-shrink:0}
+.acc-item.open .acc-chev{transform:rotate(180deg)}
+.acc-body{display:none;padding:0 var(--s5) var(--s5);border-top:1px solid var(--div)}.acc-item.open .acc-body{display:block}
+.acc-desc{font-size:var(--sm);color:var(--muted);line-height:1.7;margin-bottom:var(--s4)}
+.dw{margin-bottom:var(--s4)}.dlb{font-size:var(--xs);color:var(--muted);margin-bottom:var(--s1)}
+.dbg{height:6px;background:var(--surfdyn);border-radius:var(--rf);overflow:hidden}
+.df{height:100%;border-radius:var(--rf)}
+.easy .df{background:var(--suc)}.med .df{background:var(--pri)}.hard .df{background:var(--warn)}.xh .df{background:#c00}
+.tip{background:var(--prihl);border-left:3px solid var(--pri);border-radius:0 var(--r2) var(--r2) 0;padding:var(--s3) var(--s4);font-size:var(--sm);color:var(--pri);margin-bottom:var(--s3);line-height:1.6}
+.wrn{background:var(--warnhl);border-left:3px solid var(--warn);border-radius:0 var(--r2) var(--r2) 0;padding:var(--s3) var(--s4);font-size:var(--sm);color:var(--warn);margin-bottom:var(--s3);line-height:1.6}
+.cp-wrap{overflow-x:auto;margin-bottom:var(--s8)}
+.cpt{width:100%;border-collapse:collapse;font-size:var(--sm)}
+.cpt th{text-align:left;font-weight:700;font-size:var(--xs);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:var(--s2) var(--s4);border-bottom:2px solid var(--div);white-space:nowrap}
+.cpt td{padding:var(--s3) var(--s4);border-bottom:1px solid var(--div);vertical-align:middle}
+.cpt tr:last-child td{border-bottom:none}.cpt tr:hover td{background:var(--surfaceoff)}
+.bdg{display:inline-flex;align-items:center;padding:2px 8px;border-radius:var(--rf);font-size:var(--xs);font-weight:700}
+.b-pk{background:var(--warnhl);color:var(--warn)}.b-gr{background:var(--prihl);color:var(--pri)}
+.b-sk{background:var(--skyhl);color:var(--sky)}.b-st{background:var(--surfdyn);color:var(--muted)}
+.b-am{background:var(--amberhl);color:var(--amber)}.b-te{background:var(--suchl);color:var(--suc)}
+.map-wrap{background:var(--surface);border:1px solid var(--bor);border-radius:var(--r4);padding:var(--s6);margin-bottom:var(--s8)}
+.map-wrap h3{font-family:var(--fd);font-weight:700;font-size:var(--lg);margin-bottom:var(--s4)}
+.tg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--s4);margin-bottom:var(--s8)}
+.tc-card{background:var(--surface);border:1px solid var(--bor);border-radius:var(--r3);padding:var(--s5)}
+.tc-icon{font-size:1.5rem;margin-bottom:var(--s3)}.tc-card h4{font-weight:700;margin-bottom:var(--s2)}
+.tc-card ul{list-style:none;display:flex;flex-direction:column;gap:var(--s1)}
+.tc-card ul li{font-size:var(--sm);color:var(--muted);padding-left:var(--s4);position:relative}
+.tc-card ul li::before{content:"·";position:absolute;left:var(--s2);color:var(--faint)}
+.ic{background:var(--surface);border:1px solid var(--bor);border-radius:var(--r4);padding:var(--s5);margin-bottom:var(--s6)}
+.ic h3{font-weight:700;margin-bottom:var(--s3)}.ic ul{list-style:none;display:flex;flex-direction:column;gap:var(--s2)}
+.ic ul li{font-size:var(--sm);color:var(--muted)}
+@media(max-width:640px){
+  .hdr,.main,.hero,.tabs{padding-left:var(--s4);padding-right:var(--s4)}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .cs-btn{padding:var(--s2) var(--s4);font-size:var(--xs)}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="logo">
+    <svg class="logo-svg" viewBox="0 0 36 36" fill="none" aria-label="오대산 플레이북">
+      <rect width="36" height="36" rx="8" fill="var(--pri)"/>
+      <!-- 5 peaks silhouette -->
+      <path d="M3 27 Q7 22 10 18 Q12 14 14 10 Q15.5 7 16 5 Q17 7 18 11 Q20 15 22 18 Q24 15 26 12 Q27.5 10 28 8 Q29 10 30 14 Q31 18 33 27" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="16" cy="5" r="2.2" fill="white"/>
+    </svg>
+    <span class="logo-txt">오대산 플레이북</span>
+  </div>
+  <button class="thm-btn" data-thm aria-label="테마 전환">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+</header>
+
+<section class="hero">
+  <div class="badge">🌲 다섯 봉우리의 산 · 강원도 평창·강릉 · 비로봉 1,563m</div>
+  <h1>오대산 등산 코스 가이드</h1>
+  <p>천년고찰 월정사·상원사, 전나무숲 선재길, 비로봉 설원까지 — 숲길 초급 산책부터 5봉 환종주 고급 코스까지 수준별 완벽 가이드.</p>
+  <div class="cs-wrap">
+    <button class="cs-btn ab" onclick="selC('beginner',this)">🌿 초급 — 선재길·상원사 탐방</button>
+    <button class="cs-btn" onclick="selC('intermediate',this)">🦶 중급 — 상원사·비로봉 왕복</button>
+    <button class="cs-btn" onclick="selC('advanced',this)">🏔 고급 — 5봉 환종주</button>
+  </div>
+</section>
+
+<!-- ═══ 초급 ═══ -->
+<div id="course-beginner" class="panel active beginner">
+  <nav class="tabs">
+    <button class="tab active" onclick="selT('beginner','ov',this)">📋 개요</button>
+    <button class="tab" onclick="selT('beginner','rt',this)">🗺 경로 안내</button>
+    <button class="tab" onclick="selT('beginner','mp',this)">📍 지도</button>
+    <button class="tab" onclick="selT('beginner','tp',this)">💡 팁 &amp; 주의</button>
+  </nav>
+  <main class="main">
+    <div id="beginner-ov" class="tc active">
+      <div class="stitle"><div class="sico">🌿</div><span>초급 코스 개요</span></div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="si">📏</div><div class="sv">10km</div><div class="sl">선재길 편도</div></div>
+        <div class="stat-card"><div class="si">⏱</div><div class="sv">3~4h</div><div class="sl">소요 시간</div></div>
+        <div class="stat-card"><div class="si">⛰</div><div class="sv">970m</div><div class="sl">상원사 최고점</div></div>
+        <div class="stat-card"><div class="si">📈</div><div class="sv">±370m</div><div class="sl">누적 고도차</div></div>
+        <div class="stat-card"><div class="si">🔥</div><div class="sv">~700</div><div class="sl">예상 칼로리</div></div>
+        <div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">난이도</div></div>
+      </div>
+      <div class="elev-wrap">
+        <h3>📊 고도 프로파일 — 선재길 (월정사 → 상원사)</h3>
+        <svg class="elev-svg" viewBox="0 0 900 180" preserveAspectRatio="none">
+          <defs><linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--suc)" stop-opacity=".3"/>
+            <stop offset="100%" stop-color="var(--suc)" stop-opacity="0"/>
+          </linearGradient></defs>
+          <path d="M0 160 L0 152 C100 148 200 142 300 134 C370 128 430 120 500 110 C570 100 640 94 720 88 C780 84 840 80 900 76 L900 160Z" fill="url(#bg1)"/>
+          <path d="M0 152 C100 148 200 142 300 134 C370 128 430 120 500 110 C570 100 640 94 720 88 C780 84 840 80 900 76" fill="none" stroke="var(--suc)" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="5" y="156" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">월정사 600m</text>
+          <text x="200" y="136" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">전나무숲길</text>
+          <text x="490" y="104" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">오대천 계곡</text>
+          <text x="840" y="70" font-size="12" fill="var(--suc)" font-weight="700" font-family="Satoshi,sans-serif">상원사 970m</text>
+          <circle cx="900" cy="76" r="5" fill="var(--suc)"/>
+        </svg>
+      </div>
+      <div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+      <div class="flow">
+        <span class="fn sk">🅿 월정사 주차장</span><span class="fa">→</span>
+        <span class="fn am">🌲 전나무숲길 (1km)</span><span class="fa">→</span>
+        <span class="fn">월정사 탐방</span><span class="fa">→</span>
+        <span class="fn">오대천 계곡길</span><span class="fa">→</span>
+        <span class="fn">선재길 숲길</span><span class="fa">→</span>
+        <span class="fn pk">상원사 970m ★</span><span class="fa">→</span>
+        <span class="fn sh">버스 or 역방향 하산</span>
+      </div>
+      <div class="ic"><h3>코스 특징</h3><ul>
+        <li>🌲 국내 최고 전나무숲길(1km, 1,700그루) 통과 — 사계절 청량한 숲 터널</li>
+        <li>✅ 월정사(신라 자장율사 창건, 643년) → 상원사까지 오대천 계곡길 10km</li>
+        <li>✅ 경사 거의 없는 완만한 숲길 — 유모차도 통행 가능한 구간 포함</li>
+        <li>✅ 가족 단위·어린이·노약자 적합 / 단풍·눈꽃 계절 산책 최고</li>
+        <li>⚠ 편도 10km — 역방향 하산(상원사→월정사) or 오후 셔틀버스 이용</li>
+        <li>⚠ 상원사~월정사 구간 일부 탐방 시간 제한 (계절별 확인)</li>
+      </ul></div>
+    </div>
+
+    <div id="beginner-rt" class="tc">
+      <div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+      <div class="acc-wrap">
+        <div class="acc-item open">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">출</span>
+            <div class="acc-tw"><div class="acc-t">월정사 일주문·주차장 출발</div><div class="acc-m">해발 600m · 강원도 평창군 진부면</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <p class="acc-desc">오대산국립공원 월정사 일주문 앞 주차장에서 출발합니다. 탐방 안내소에서 지도를 받고, 화장실 이용 후 전나무숲길로 진입합니다. 주차 후 월정사 탐방료 납부(성인 4,000원).</p>
+            <div class="tip">💡 월정사 탐방료에 전나무숲길·오대천 계곡 탐방이 포함됩니다. 매표소 옆 안내도 꼭 확인 후 출발하세요.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">1</span>
+            <div class="acc-tw"><div class="acc-t">전나무숲길 → 월정사 탐방</div><div class="acc-m">약 1.0km · 25분 · 평지</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:10%"></div></div></div>
+            <p class="acc-desc">일주문부터 월정사까지 이어지는 1km 전나무숲길은 1,700그루 이상의 거대한 전나무가 하늘을 덮는 국내 최고 숲 터널입니다. 사계절 내내 청량하며 겨울에는 설원 풍경이 압도적입니다. 월정사 경내 팔각구층석탑(국보) 탐방.</p>
+            <div class="tip">💡 전나무숲길은 이른 아침이나 저녁 노을 무렵 빛이 가장 아름답습니다. 계절별 사진 명소로도 유명합니다.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">2</span>
+            <div class="acc-tw"><div class="acc-t">월정사 → 오대천 계곡 선재길</div><div class="acc-m">약 6.5km · 2시간 · 계곡 숲길</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:20%"></div></div></div>
+            <p class="acc-desc">월정사에서 상원사까지 오대천 계곡을 따라 이어지는 선재길(깨달음의 길)을 걷습니다. 완만한 오르막의 숲길로 경사가 거의 없어 누구나 걸을 수 있습니다. 여름에는 시원한 계곡물 소리, 가을에는 단풍, 겨울에는 설경이 일품입니다.</p>
+            <div class="tip">💡 선재길은 불교의 '선재동자 구도의 여정'에서 이름을 따왔습니다. 중간중간 쉼터와 의자가 마련되어 있어 천천히 걸을 수 있습니다.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">3</span>
+            <div class="acc-tw"><div class="acc-t">상원사 도착 탐방 및 귀환</div><div class="acc-m">해발 970m · 관람·귀환 방법 선택</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:10%"></div></div></div>
+            <p class="acc-desc">상원사는 720년 창건 이래 문수보살 기도처로 유명한 사찰입니다. 우리나라 현존 최고 동종(국보 36호)과 문수동자좌상(국보)을 보유합니다. 탐방 후 역방향(상원사→월정사) 하산 또는 상원사 셔틀버스 이용.</p>
+            <div class="tip">💡 상원사에서 월정사 역방향 하산 시 선재길 반대 방향이라 같은 길을 다시 걷지 않아도 됩니다. 또는 상원사 주차장 셔틀버스로 편하게 귀환 가능.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="beginner-mp" class="tc">
+      <div class="map-wrap">
+        <h3>📍 선재길 코스 개념도 (월정사 → 상원사)</h3>
+        <svg viewBox="0 0 680 380" style="width:100%;height:auto;max-height:400px">
+          <rect width="680" height="380" fill="var(--surfaceoff)" rx="12"/>
+          <!-- ohdaecheon stream -->
+          <path d="M60 330 C80 310 100 295 130 278 C160 262 190 248 220 235 C260 218 300 205 340 192 C390 176 440 163 500 152 C545 142 590 135 640 128" stroke="var(--sky)" stroke-width="2" stroke-dasharray="5,4" stroke-opacity=".5" fill="none"/>
+          <!-- trail -->
+          <path d="M60 330 C82 312 108 298 140 282 C172 266 204 252 236 238 C276 220 316 207 356 194 C406 178 456 165 510 154 C556 144 600 137 645 130" stroke="var(--suc)" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <!-- nodes -->
+          <circle cx="60" cy="330" r="14" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="80" y="335" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">월정사 P 600m</text>
+          <!-- jeonnamu forest -->
+          <rect x="62" y="280" width="72" height="26" rx="7" fill="var(--suchl)" stroke="var(--suc)" stroke-width="1.5"/>
+          <text x="70" y="298" font-size="11" fill="var(--suc)" font-weight="700" font-family="Satoshi,sans-serif">전나무숲 1km</text>
+          <!-- woljeongsa -->
+          <circle cx="130" cy="278" r="9" fill="var(--amber)" fill-opacity=".8" stroke="var(--bg)" stroke-width="2"/>
+          <text x="144" y="273" font-size="11" fill="var(--amber)" font-family="Satoshi,sans-serif">월정사 (사찰)</text>
+          <!-- midpoint rest -->
+          <circle cx="356" cy="194" r="7" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="1.5"/>
+          <text x="370" y="198" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">중간 쉼터</text>
+          <!-- sangwonsa -->
+          <circle cx="645" cy="130" r="16" fill="var(--suc)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="560" y="116" font-size="12" font-weight="800" fill="var(--suc)" font-family="Cabinet Grotesk,Satoshi,sans-serif">상원사 970m</text>
+          <!-- ohdaecheon label -->
+          <text x="180" y="258" font-size="10" fill="var(--sky)" font-family="Satoshi,sans-serif">오대천 계곡</text>
+          <!-- distance markers -->
+          <text x="190" y="245" font-size="9" fill="var(--faint)" font-family="Satoshi,sans-serif">5km →</text>
+          <!-- tree symbols -->
+          <text x="75" y="275" font-size="20">🌲</text>
+          <text x="100" y="255" font-size="16">🌲</text>
+          <!-- compass -->
+          <circle cx="628" cy="48" r="25" fill="var(--surface)" stroke="var(--bor)" stroke-width="1.5"/>
+          <text x="625" y="34" font-size="10" font-weight="700" fill="var(--txt)" font-family="Satoshi,sans-serif">N</text>
+          <line x1="628" y1="38" x2="628" y2="47" stroke="var(--txt)" stroke-width="1.5"/>
+          <!-- legend -->
+          <rect x="16" y="336" width="224" height="30" rx="7" fill="var(--surface)" stroke="var(--bor)" stroke-width="1"/>
+          <line x1="30" y1="352" x2="52" y2="352" stroke="var(--suc)" stroke-width="3"/>
+          <text x="60" y="356" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">선재길 탐방로 (10km)</text>
+        </svg>
+      </div>
+      <div class="stitle"><div class="sico">📋</div><span>전체 체크포인트</span></div>
+      <div class="cp-wrap">
+        <table class="cpt">
+          <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>월정사 일주문 주차장</td><td>600m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실·매표소</td></tr>
+            <tr><td>2</td><td>전나무숲길 입구</td><td>610m</td><td>0.2km</td><td><span class="bdg b-te">숲길</span></td><td>안내판</td></tr>
+            <tr><td>3</td><td>월정사 (사찰)</td><td>630m</td><td>1.0km</td><td><span class="bdg b-am">사찰</span></td><td>화장실·팔각구층석탑(국보)</td></tr>
+            <tr><td>4</td><td>선재길 중간 쉼터</td><td>800m</td><td>5.0km</td><td><span class="bdg b-sk">쉼터</span></td><td>벤치·화장실</td></tr>
+            <tr><td>5</td><td>상원사 주차장 입구</td><td>940m</td><td>9.0km</td><td><span class="bdg b-sk">갈림길</span></td><td>주차·셔틀버스</td></tr>
+            <tr><td>6</td><td>상원사 (사찰)</td><td>970m</td><td>10.0km</td><td><span class="bdg b-am">사찰</span></td><td>화장실·동종(국보)·식수</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="beginner-tp" class="tc">
+      <div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
+      <div class="tg">
+        <div class="tc-card"><div class="tc-icon">🎒</div><h4>필수 장비</h4><ul><li>운동화 또는 트레킹화</li><li>방풍 재킷 (계곡 서늘함)</li><li>겨울: 아이젠·방한 장갑</li><li>카메라 (전나무숲·단풍)</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🚌</div><h4>교통 정보</h4><ul><li>서울 동서울터미널 → 진부 버스</li><li>진부 → 오대산 버스 운행</li><li>상원사 → 월정사 셔틀버스</li><li>월정사 주차 4,000원·탐방료 포함</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🌸</div><h4>계절별 매력</h4><ul><li>봄: 신록 전나무 상큼한 향기</li><li>여름: 오대천 계곡 시원함</li><li>가을: 단풍 10월 절정 (국내 손꼽힘)</li><li>겨울: 설원 전나무숲 장관</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🛡</div><h4>안전 수칙</h4><ul><li>계곡 내 취사·수영 금지</li><li>오대산 입산 통제 시간 확인</li><li>탐방 구역 외 출입 금지</li><li>사찰 내 정숙 유지</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🍱</div><h4>음식 &amp; 편의</h4><ul><li>물 1L 이상 지참 권장</li><li>월정사 인근 식당가 이용</li><li>상원사 매점 이용 가능</li><li>진부면 황태국밥 유명</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">📱</div><h4>유용한 정보</h4><ul><li>오대산국립공원 033-332-6417</li><li>월정사 033-339-6800</li><li>블랙야크 100대명산 인증 (비로봉)</li><li>국립공원공단 reservation.knps.or.kr</li></ul></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══ 중급 ═══ -->
+<div id="course-intermediate" class="panel intermediate">
+  <nav class="tabs">
+    <button class="tab active" onclick="selT('intermediate','ov',this)">📋 개요</button>
+    <button class="tab" onclick="selT('intermediate','rt',this)">🗺 경로 안내</button>
+    <button class="tab" onclick="selT('intermediate','mp',this)">📍 지도</button>
+    <button class="tab" onclick="selT('intermediate','tp',this)">💡 팁 &amp; 주의</button>
+  </nav>
+  <main class="main">
+    <div id="intermediate-ov" class="tc active">
+      <div class="stitle"><div class="sico">🦶</div><span>중급 코스 개요</span></div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="si">📏</div><div class="sv">왕복 7km</div><div class="sl">상원사·비로봉</div></div>
+        <div class="stat-card"><div class="si">⏱</div><div class="sv">3.5~5h</div><div class="sl">소요 시간</div></div>
+        <div class="stat-card"><div class="si">⛰</div><div class="sv">1,563m</div><div class="sl">비로봉 정상</div></div>
+        <div class="stat-card"><div class="si">📈</div><div class="sv">±593m</div><div class="sl">누적 고도차</div></div>
+        <div class="stat-card"><div class="si">🔥</div><div class="sv">~1,200</div><div class="sl">예상 칼로리</div></div>
+        <div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">난이도</div></div>
+      </div>
+      <div class="elev-wrap">
+        <h3>📊 고도 프로파일 — 상원사 → 비로봉 왕복</h3>
+        <svg class="elev-svg" viewBox="0 0 900 180" preserveAspectRatio="none">
+          <defs><linearGradient id="ig1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--pri)" stop-opacity=".3"/>
+            <stop offset="100%" stop-color="var(--pri)" stop-opacity="0"/>
+          </linearGradient></defs>
+          <path d="M0 160 L0 148 C80 142 160 128 230 110 C285 95 330 76 365 56 C390 42 410 28 430 18 L450 12 C470 18 490 32 510 48 C540 68 575 88 618 108 C668 128 728 142 820 148 L900 150 L900 160Z" fill="url(#ig1)"/>
+          <path d="M0 148 C80 142 160 128 230 110 C285 95 330 76 365 56 C390 42 410 28 430 18 L450 12 C470 18 490 32 510 48 C540 68 575 88 618 108 C668 128 728 142 820 148" fill="none" stroke="var(--pri)" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="5" y="152" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">상원사 970m</text>
+          <text x="195" y="104" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">중대사자암</text>
+          <text x="330" y="50" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">적멸보궁</text>
+          <text x="415" y="8" font-size="12" fill="var(--pri)" font-weight="700" font-family="Satoshi,sans-serif">비로봉 1,563m</text>
+          <text x="870" y="148" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif" text-anchor="end">상원사</text>
+          <circle cx="450" cy="12" r="5" fill="var(--pri)"/>
+        </svg>
+      </div>
+      <div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+      <div class="flow">
+        <span class="fn sk">🅿 상원사 주차장</span><span class="fa">→</span>
+        <span class="fn">상원사 탐방</span><span class="fa">→</span>
+        <span class="fn">중대사자암</span><span class="fa">→</span>
+        <span class="fn">적멸보궁 1,400m</span><span class="fa">→</span>
+        <span class="fn pk">비로봉 1,563m ★</span><span class="fa">→</span>
+        <span class="fn sh">(원점 하산)</span><span class="fa">→</span>
+        <span class="fn sk">🅿 상원사 귀환</span>
+      </div>
+      <div class="ic"><h3>코스 특징</h3><ul>
+        <li>✅ 오대산 최단 정상 코스 — 상원사(970m) 출발, 편도 3.5km</li>
+        <li>✅ 중대사자암·적멸보궁(석가모니 진신사리 봉안) 통과 — 불교 성지 탐방</li>
+        <li>✅ 비로봉 정상에서 상왕봉·호령봉·두로봉·동대산 오대 능선 파노라마 조망</li>
+        <li>✅ 겨울 눈꽃 코스로 전국 최고 — 적멸보궁~비로봉 상고대 절경</li>
+        <li>⚠ 상원사~적멸보궁 급경사 계단 구간 체력 소모 큼</li>
+        <li>⚠ 겨울 비로봉 정상 강풍·체감온도 주의</li>
+      </ul></div>
+    </div>
+
+    <div id="intermediate-rt" class="tc">
+      <div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+      <div class="acc-wrap">
+        <div class="acc-item open">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">출</span>
+            <div class="acc-tw"><div class="acc-t">상원사 주차장 출발</div><div class="acc-m">해발 970m · 강원도 평창군 진부면</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <p class="acc-desc">상원사 탐방지원센터 앞 주차장(해발 약 970m)에서 출발합니다. 탐방지원센터에서 코스 확인, 기상 확인 후 입산. 상원사는 상원탐방지원센터에서 약 500m 거리.</p>
+            <div class="tip">💡 상원사 주차장은 유료(소형 4,000원). 주말 조기 만차. 진부에서 오전 7시 이전 출발 권장. 매표소에서 탐방료 납부 후 입산.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">1</span>
+            <div class="acc-tw"><div class="acc-t">상원사 → 중대사자암</div><div class="acc-m">약 0.8km · 30분 · 고도 ↑160m</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:40%"></div></div></div>
+            <p class="acc-desc">상원사에서 중대사자암까지 오르는 구간은 경사 있는 계단길입니다. 중대사자암(오대산 중대 사찰)을 지나 더 높은 곳으로 오릅니다. 중대사자암에서 잠시 쉬며 오대천 계곡 내려다보기 가능.</p>
+            <div class="tip">💡 상원사 동종(국보 36호)과 문수동자좌상(국보 221호)은 꼭 관람하세요. 한국 현존 최고(最古) 동종입니다.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">2</span>
+            <div class="acc-tw"><div class="acc-t">중대사자암 → 적멸보궁</div><div class="acc-m">약 0.8km · 30분 · 고도 ↑270m</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:58%"></div></div></div>
+            <p class="acc-desc">중대사자암에서 적멸보궁까지 오대산에서 가장 가파른 구간입니다. 계단이 잘 설치되어 있으나 경사가 상당합니다. 적멸보궁(해발 약 1,400m)은 부처님 진신사리를 봉안한 성지로 불자뿐 아니라 많은 탐방객이 찾습니다.</p>
+            <div class="tip">💡 적멸보궁에서 비로봉까지는 완만한 능선. 여기서 에너지 보충 후 마지막 300m 고도 오르막을 시작합니다.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">3</span>
+            <div class="acc-tw"><div class="acc-t">적멸보궁 → 비로봉 정상</div><div class="acc-m">약 1.9km · 50분 · 고도 ↑163m</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:50%"></div></div></div>
+            <p class="acc-desc">적멸보궁에서 능선을 따라 비로봉까지 비교적 완만한 오르막이 이어집니다. 주목 군락지를 지나며 겨울에는 눈꽃 절경, 여름에는 서늘한 고산 숲길. 비로봉(1,563m) 정상에서 360도 파노라마 조망 가능.</p>
+            <div class="tip">💡 비로봉 정상에서 상왕봉, 호령봉, 두로봉, 동대산이 원형으로 감싸는 장관을 볼 수 있습니다. 맑은 날엔 설악산까지 조망 가능.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">4</span>
+            <div class="acc-tw"><div class="acc-t">비로봉 → 원점 하산</div><div class="acc-m">약 3.5km · 1시간 20분 · 하산</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:35%"></div></div></div>
+            <p class="acc-desc">올라온 길로 적멸보궁→중대사자암→상원사 방향으로 원점 하산합니다. 하산 시 중대사자암에서 다시 한번 오대천 계곡 전망을 즐길 수 있습니다.</p>
+            <div class="wrn">⚠ 적멸보궁~중대사자암 구간 하산 시 급경사 계단 미끄럼 주의. 트레킹 스틱 필수. 겨울 아이젠 착용 구간.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="intermediate-mp" class="tc">
+      <div class="map-wrap">
+        <h3>📍 상원사·비로봉 코스 개념도</h3>
+        <svg viewBox="0 0 680 460" style="width:100%;height:auto;max-height:480px">
+          <rect width="680" height="460" fill="var(--surfaceoff)" rx="12"/>
+          <path d="M120 400 Q160 280 240 200 Q300 140 360 90" stroke="var(--pri)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
+          <path d="M360 90 Q400 130 430 180 Q460 238 480 300 Q490 340 490 390" stroke="var(--pri)" stroke-width="3" stroke-dasharray="7,4" fill="none" stroke-linecap="round"/>
+          <!-- mountain bg -->
+          <path d="M90 340 Q200 180 360 80 Q520 180 610 340" fill="var(--surfdyn)" fill-opacity=".2" stroke="none"/>
+          <!-- nodes -->
+          <circle cx="120" cy="400" r="14" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="140" y="405" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">상원사 주차장 P</text>
+          <circle cx="145" cy="365" r="9" fill="var(--amber)" fill-opacity=".8" stroke="var(--bg)" stroke-width="2"/>
+          <text x="160" y="360" font-size="11" fill="var(--amber)" font-family="Satoshi,sans-serif">상원사 (국보 동종)</text>
+          <circle cx="196" cy="296" r="9" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
+          <text x="212" y="300" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">중대사자암</text>
+          <circle cx="262" cy="210" r="9" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
+          <text x="278" y="206" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">적멸보궁 1,400m</text>
+          <circle cx="360" cy="90" r="18" fill="var(--pri)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="382" y="83" font-size="13" font-weight="800" fill="var(--pri)" font-family="Cabinet Grotesk,Satoshi,sans-serif">비로봉</text>
+          <text x="382" y="98" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">1,563m ★</text>
+          <!-- return path node -->
+          <circle cx="490" cy="390" r="13" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="420" y="412" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">상원사 귀환 P</text>
+          <!-- jungmok (주목) -->
+          <text x="310" y="125" font-size="11" fill="var(--suc)" font-family="Satoshi,sans-serif">주목 군락지</text>
+          <!-- compass -->
+          <circle cx="628" cy="48" r="25" fill="var(--surface)" stroke="var(--bor)" stroke-width="1.5"/>
+          <text x="625" y="34" font-size="10" font-weight="700" fill="var(--txt)" font-family="Satoshi,sans-serif">N</text>
+          <line x1="628" y1="38" x2="628" y2="47" stroke="var(--txt)" stroke-width="1.5"/>
+          <!-- legend -->
+          <rect x="16" y="420" width="224" height="30" rx="7" fill="var(--surface)" stroke="var(--bor)" stroke-width="1"/>
+          <line x1="30" y1="436" x2="52" y2="436" stroke="var(--pri)" stroke-width="3.5"/>
+          <text x="60" y="440" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">등정로</text>
+          <line x1="130" y1="436" x2="152" y2="436" stroke="var(--pri)" stroke-width="2.5" stroke-dasharray="5,3"/>
+          <text x="160" y="440" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">하산로</text>
+        </svg>
+      </div>
+      <div class="stitle"><div class="sico">📋</div><span>전체 체크포인트</span></div>
+      <div class="cp-wrap">
+        <table class="cpt">
+          <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>상원사 주차장</td><td>970m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실·매표소</td></tr>
+            <tr><td>2</td><td>상원사</td><td>980m</td><td>0.5km</td><td><span class="bdg b-am">사찰</span></td><td>국보 동종·화장실</td></tr>
+            <tr><td>3</td><td>중대사자암</td><td>1,130m</td><td>1.3km</td><td><span class="bdg b-am">사찰</span></td><td>쉼터·조망</td></tr>
+            <tr><td>4</td><td>적멸보궁</td><td>1,400m</td><td>2.1km</td><td><span class="bdg b-am">성지</span></td><td>진신사리봉안·조망</td></tr>
+            <tr><td>5</td><td>비로봉 정상</td><td>1,563m</td><td>3.5km</td><td><span class="bdg b-pk">정상</span></td><td>정상석·360도조망</td></tr>
+            <tr><td>6</td><td>상원사 주차장 귀환</td><td>970m</td><td>7.0km</td><td><span class="bdg b-st">종점</span></td><td>주차·식당</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="intermediate-tp" class="tc">
+      <div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
+      <div class="tg">
+        <div class="tc-card"><div class="tc-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (미끄럼 방지)</li><li>트레킹 스틱</li><li>방풍 재킷</li><li>겨울: 아이젠+방한복 필수</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 1.2L 이상 지참</li><li>에너지바·도시락</li><li>상원사 인근 식수대</li><li>겨울 보온 음료 보온병</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">❄</div><h4>겨울 눈꽃 산행</h4><ul><li>12~2월 비로봉 눈꽃 절정</li><li>아이젠 착용 전 구간</li><li>정상 체감기온 -20°C 이하</li><li>방한 장갑·모자·핫팩 필수</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🛡</div><h4>안전 수칙</h4><ul><li>적멸보궁~비로봉 경사 주의</li><li>입산 통제 시간 엄수</li><li>정상 강풍 시 이동 주의</li><li>혼자 산행 자제 권장</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🌸</div><h4>봄철 철쭉</h4><ul><li>비로봉 철쭉 5월 하순 절정</li><li>적멸보궁~비로봉 철쭉 군락</li><li>상왕봉 능선까지 이어지는 장관</li><li>봄철 인파 최다 — 이른 출발 권장</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🚌</div><h4>교통 정보</h4><ul><li>동서울 → 진부 시외버스</li><li>진부 → 오대산 입구 버스</li><li>상원사 주차장 유료 4,000원</li><li>오대산국립공원 033-332-6417</li></ul></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══ 고급 ═══ -->
+<div id="course-advanced" class="panel advanced">
+  <nav class="tabs">
+    <button class="tab active" onclick="selT('advanced','ov',this)">📋 개요</button>
+    <button class="tab" onclick="selT('advanced','rt',this)">🗺 경로 안내</button>
+    <button class="tab" onclick="selT('advanced','mp',this)">📍 지도</button>
+    <button class="tab" onclick="selT('advanced','tp',this)">💡 팁 &amp; 주의</button>
+  </nav>
+  <main class="main">
+    <div id="advanced-ov" class="tc active">
+      <div class="stitle"><div class="sico">🏔</div><span>고급 코스 개요</span></div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="si">📏</div><div class="sv">~26km</div><div class="sl">5봉 환종주</div></div>
+        <div class="stat-card"><div class="si">⏱</div><div class="sv">8~10h</div><div class="sl">소요 시간</div></div>
+        <div class="stat-card"><div class="si">⛰</div><div class="sv">1,563m</div><div class="sl">비로봉 정상</div></div>
+        <div class="stat-card"><div class="si">📈</div><div class="sv">1,400m</div><div class="sl">누적 고도차</div></div>
+        <div class="stat-card"><div class="si">🔥</div><div class="sv">~3,200</div><div class="sl">예상 칼로리</div></div>
+        <div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★★</div><div class="sl">난이도</div></div>
+      </div>
+      <div class="elev-wrap">
+        <h3>📊 고도 프로파일 — 오대 5봉 환종주 (상원사 원점)</h3>
+        <svg class="elev-svg" viewBox="0 0 900 180" preserveAspectRatio="none">
+          <defs><linearGradient id="ag1" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--warn)" stop-opacity=".3"/>
+            <stop offset="100%" stop-color="var(--warn)" stop-opacity="0"/>
+          </linearGradient></defs>
+          <path d="M0 160 L0 148 C50 140 100 130 150 118 C185 108 210 95 235 78 C252 66 265 50 278 35 L288 22 C298 30 308 44 320 60 C338 82 358 102 382 118 C404 132 428 142 452 148 C472 152 490 154 508 152 C526 148 545 140 562 126 C578 114 590 98 604 82 C618 66 630 52 642 40 L652 28 C662 38 672 55 684 74 C698 96 714 118 732 134 C752 148 776 156 810 158 L900 160 L900 160Z" fill="url(#ag1)"/>
+          <path d="M0 148 C50 140 100 130 150 118 C185 108 210 95 235 78 C252 66 265 50 278 35 L288 22 C298 30 308 44 320 60 C338 82 358 102 382 118 C404 132 428 142 452 148 C472 152 490 154 508 152 C526 148 545 140 562 126 C578 114 590 98 604 82 C618 66 630 52 642 40 L652 28 C662 38 672 55 684 74 C698 96 714 118 732 134 C752 148 776 156 810 158" fill="none" stroke="var(--warn)" stroke-width="2.5" stroke-linecap="round"/>
+          <text x="5" y="152" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">상원사 970m</text>
+          <text x="264" y="17" font-size="11" fill="var(--warn)" font-weight="700" font-family="Satoshi,sans-serif">비로봉 1,563m</text>
+          <text x="370" y="112" font-size="9" fill="var(--muted)" font-family="Satoshi,sans-serif">상왕봉 1,491m</text>
+          <text x="490" y="146" font-size="9" fill="var(--muted)" font-family="Satoshi,sans-serif">두로령</text>
+          <text x="582" y="120" font-size="9" fill="var(--muted)" font-family="Satoshi,sans-serif">두로봉</text>
+          <text x="635" y="23" font-size="11" fill="var(--warn)" font-weight="700" font-family="Satoshi,sans-serif">동대산 1,434m</text>
+          <text x="870" y="155" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif" text-anchor="end">상원사(동피골)</text>
+          <circle cx="288" cy="22" r="4" fill="var(--warn)"/>
+          <circle cx="652" cy="28" r="4" fill="var(--warn)"/>
+          <line x1="452" y1="10" x2="452" y2="170" stroke="var(--faint)" stroke-width="1" stroke-dasharray="4,4"/>
+          <text x="350" y="12" font-size="8" fill="var(--faint)" font-family="Satoshi,sans-serif">비로봉 구간</text>
+          <text x="460" y="12" font-size="8" fill="var(--faint)" font-family="Satoshi,sans-serif">동대산 구간</text>
+        </svg>
+      </div>
+      <div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+      <div class="flow">
+        <span class="fn sk">🅿 상원사</span><span class="fa">→</span>
+        <span class="fn pk">비로봉 1,563m</span><span class="fa">→</span>
+        <span class="fn">상왕봉 1,491m</span><span class="fa">→</span>
+        <span class="fn sh">두로령</span><span class="fa">→</span>
+        <span class="fn">두로봉 1,422m</span><span class="fa">→</span>
+        <span class="fn sh">신선목이</span><span class="fa">→</span>
+        <span class="fn">차돌백이</span><span class="fa">→</span>
+        <span class="fn pk">동대산 1,434m</span><span class="fa">→</span>
+        <span class="fn sh">동피골</span><span class="fa">→</span>
+        <span class="fn sk">🏁 상원사 귀환</span>
+      </div>
+      <div class="ic"><h3>코스 특징</h3><ul>
+        <li>🏆 오대산 5대 봉우리 비로봉·호령봉·상왕봉·두로봉·동대산 연계 환종주</li>
+        <li>✅ 총 26km 당일 완주 or 상원사 원점 차량 회수 환종주</li>
+        <li>✅ 두로령·신선목이 능선 — 백두대간 오대산 핵심 구간 통과</li>
+        <li>✅ 동대산 하산 동피골 → 선재길로 상원사까지 연계 귀환 가능</li>
+        <li>⚠ 26km 장거리 — 오전 5~6시 상원사 출발 필수</li>
+        <li>⚠ 두로봉~동대산 구간 인적 드물고 길 험함 — 3인 이상 팀 산행 권장</li>
+      </ul></div>
+    </div>
+
+    <div id="advanced-rt" class="tc">
+      <div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+      <div class="acc-wrap">
+        <div class="acc-item open">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">출</span>
+            <div class="acc-tw"><div class="acc-t">상원사 새벽 출발</div><div class="acc-m">해발 970m · 오전 5~6시 출발 권장</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <p class="acc-desc">오대 5봉 환종주는 26km 장거리 산행입니다. 동피골에서 선재길로 귀환할 경우 차량은 상원사 또는 월정사에 주차. 오전 5~6시 새벽 출발 필수.</p>
+            <div class="tip">💡 GPS 앱(램블러·트랭글)에 코스를 미리 저장하세요. 두로봉~동대산 구간 이정표 드물어 GPS 없으면 길 잃을 위험.</div>
+            <div class="wrn">⚠ 단독 산행 절대 금지. 26km 능선 구간 조난 시 헬기 구조가 유일한 탈출 수단인 구간 존재.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">1</span>
+            <div class="acc-tw"><div class="acc-t">상원사 → 비로봉 (중급 구간)</div><div class="acc-m">약 3.5km · 1시간 40분 · 고도 ↑593m</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:55%"></div></div></div>
+            <p class="acc-desc">중급 코스와 동일합니다. 상원사→중대사자암→적멸보궁→비로봉. 비로봉에서 충분한 식사·에너지 보충 후 상왕봉 방향으로 동진합니다.</p>
+            <div class="tip">💡 새벽 출발 시 헤드램프 필수. 비로봉 일출은 이 코스 최고의 경험. 오전 6~7시 정상 도착 타이밍을 맞추면 장관.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">2</span>
+            <div class="acc-tw"><div class="acc-t">비로봉 → 호령봉 → 상왕봉</div><div class="acc-m">약 4.5km · 1시간 40분 · 능선 이동</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:60%"></div></div></div>
+            <p class="acc-desc">비로봉에서 호령봉(1,561m)을 거쳐 상왕봉(1,491m)까지 능선을 이어갑니다. 호령봉은 오대산에서 비로봉과 함께 가장 높은 봉우리(1,561m)로 조망이 빼어납니다. 상왕봉에서 두로령 방향 하산 시작.</p>
+            <div class="tip">💡 호령봉은 별도 등산로 없이 능선에서 짧게 왕복. 오대산 최고 경관 포인트 중 하나입니다. 꼭 들르세요.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">3</span>
+            <div class="acc-tw"><div class="acc-t">상왕봉 → 두로령 → 두로봉</div><div class="acc-m">약 5.5km · 2시간 30분 · 백두대간 구간</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:70%"></div></div></div>
+            <p class="acc-desc">상왕봉에서 두로령을 거쳐 두로봉(1,422m)까지 백두대간 능선을 따라 이동합니다. 인적이 드문 구간으로 야생동물(멧돼지·반달곰) 출몰 가능. 두로봉은 백두대간 인증 봉우리입니다.</p>
+            <div class="wrn">⚠ 두로령에서 탈출로(안성 or 구천동 방향) 존재. 체력 이상 시 탈출 고려. 두로봉 이후 구간은 복귀 불가 지점.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">4</span>
+            <div class="acc-tw"><div class="acc-t">두로봉 → 신선목이 → 차돌백이 → 동대산</div><div class="acc-m">약 7.0km · 2시간 30분 · 최고 난이도 구간</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg xh"><div class="df" style="width:85%"></div></div></div>
+            <p class="acc-desc">두로봉에서 신선목이(능선 안부)·차돌백이를 거쳐 동대산(1,434m)까지 가장 험난한 구간입니다. 깊은 숲 속 능선으로 이정표 간격이 넓습니다. 동대산 정상에서 오대산 전체 능선 조망 가능.</p>
+            <div class="tip">💡 차돌백이는 흰 차돌(규암) 바위 지형으로 이름을 따왔습니다. 특이한 암석 지형 감상 포인트.</div>
+          </div>
+        </div>
+        <div class="acc-item">
+          <div class="acc-hdr" onclick="togAcc(this)">
+            <span class="acc-num">5</span>
+            <div class="acc-tw"><div class="acc-t">동대산 → 동피골 → 선재길 → 상원사 귀환</div><div class="acc-m">약 5.5km · 1시간 40분 · 하산</div></div>
+            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="acc-body">
+            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:45%"></div></div></div>
+            <p class="acc-desc">동대산에서 동피골(오대천 상류 계곡)로 하산합니다. 동피골에서 선재길을 따라 상원사 방향으로 이동해 원점 귀환 완료. 동피골 계곡 맑은 물 소리 들으며 하산 피로 해소.</p>
+            <div class="tip">💡 동피골 하산로는 경사가 있습니다. 무릎 보호대 착용 권장. 선재길로 연계 후 오대천 계곡 따라 상원사까지 2.7km 평지.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="advanced-mp" class="tc">
+      <div class="map-wrap">
+        <h3>📍 오대 5봉 환종주 코스 개념도</h3>
+        <svg viewBox="0 0 820 520" style="width:100%;height:auto;max-height:540px">
+          <rect width="820" height="520" fill="var(--surfaceoff)" rx="12"/>
+          <!-- circular ridge concept -->
+          <ellipse cx="390" cy="260" rx="250" ry="190" fill="none" stroke="var(--surfdyn)" stroke-width="1.5" stroke-dasharray="10,8"/>
+          <!-- trail from sangwonsa up to biro -->
+          <path d="M200 440 Q210 405 224 368 Q240 330 258 296 Q276 262 295 230 Q314 200 332 175 Q350 150 362 128" stroke="var(--warn)" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <!-- biro to holyeong to sangwang -->
+          <path d="M362 128 Q390 122 418 128 Q440 136 456 155 Q472 174 478 196" stroke="var(--warn)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <!-- sangwang to durog -->
+          <path d="M478 196 Q490 220 496 248 Q500 272 498 298" stroke="var(--warn)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+          <!-- durog to durobong to dongdaesan -->
+          <path d="M498 298 Q504 326 508 355 Q510 378 510 400 Q518 390 530 372 Q548 346 564 322 Q580 298 598 276 Q614 256 628 238 Q644 220 656 202 Q666 186 672 170" stroke="var(--warn)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- dongdaesan down to dongpigol and back to sangwonsa -->
+          <path d="M672 170 Q680 190 684 214 Q688 240 688 268 Q684 302 674 332 Q660 365 640 395 Q618 422 590 444" stroke="var(--warn)" stroke-width="3" stroke-dasharray="7,4" fill="none" stroke-linecap="round"/>
+          <!-- return along seonjae-gil -->
+          <path d="M590 444 Q560 448 530 448 Q490 446 450 444 Q390 442 340 444 Q290 448 250 448 L200 448" stroke="var(--pri)" stroke-width="2" stroke-dasharray="5,3" fill="none" stroke-linecap="round" stroke-opacity=".7"/>
+          <!-- nodes -->
+          <circle cx="200" cy="440" r="14" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="220" y="445" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">상원사 주차장 P</text>
+          <circle cx="362" cy="128" r="18" fill="var(--warn)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="295" y="118" font-size="13" font-weight="800" fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif">비로봉 1,563m</text>
+          <!-- holyeong -->
+          <circle cx="390" cy="115" r="10" fill="var(--warn)" fill-opacity=".7" stroke="var(--bg)" stroke-width="2"/>
+          <text x="390" y="105" font-size="10" fill="var(--warn)" font-family="Satoshi,sans-serif" text-anchor="middle">호령봉 1,561m</text>
+          <!-- sangwang -->
+          <circle cx="478" cy="196" r="13" fill="var(--pri)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="494" y="190" font-size="12" font-weight="700" fill="var(--pri)" font-family="Satoshi,sans-serif">상왕봉 1,491m</text>
+          <!-- durognyeong -->
+          <circle cx="498" cy="298" r="9" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
+          <text x="512" y="302" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">두로령 탈출 ↓</text>
+          <!-- durobong -->
+          <circle cx="510" cy="400" r="13" fill="var(--pri)" stroke="var(--bg)" stroke-width="2"/>
+          <text x="526" y="404" font-size="11" font-weight="700" fill="var(--pri)" font-family="Satoshi,sans-serif">두로봉 1,422m</text>
+          <!-- sinsonmogi -->
+          <circle cx="622" cy="240" r="8" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
+          <text x="638" y="244" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">신선목이</text>
+          <!-- chadolbaegi -->
+          <circle cx="654" cy="200" r="8" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
+          <text x="668" y="196" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">차돌백이</text>
+          <!-- dongdaesan -->
+          <circle cx="672" cy="170" r="14" fill="var(--warn)" stroke="var(--bg)" stroke-width="3"/>
+          <text x="690" y="163" font-size="12" font-weight="800" fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif">동대산 1,434m</text>
+          <!-- dongpigol -->
+          <circle cx="590" cy="444" r="10" fill="var(--pri)" fill-opacity=".8" stroke="var(--bg)" stroke-width="2"/>
+          <text x="530" y="462" font-size="11" fill="var(--pri)" font-family="Satoshi,sans-serif">동피골 → 선재길 귀환</text>
+          <!-- compass -->
+          <circle cx="766" cy="48" r="25" fill="var(--surface)" stroke="var(--bor)" stroke-width="1.5"/>
+          <text x="763" y="34" font-size="10" font-weight="700" fill="var(--txt)" font-family="Satoshi,sans-serif">N</text>
+          <line x1="766" y1="38" x2="766" y2="47" stroke="var(--txt)" stroke-width="1.5"/>
+          <!-- legend -->
+          <rect x="16" y="468" width="270" height="44" rx="7" fill="var(--surface)" stroke="var(--bor)" stroke-width="1"/>
+          <line x1="30" y1="484" x2="52" y2="484" stroke="var(--warn)" stroke-width="3.5"/>
+          <text x="60" y="488" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">5봉 환종주 주능선</text>
+          <line x1="30" y1="503" x2="52" y2="503" stroke="var(--pri)" stroke-width="2.5" stroke-dasharray="5,3"/>
+          <text x="60" y="507" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">선재길 복귀 (동피골~상원사)</text>
+        </svg>
+      </div>
+      <div class="stitle"><div class="sico">📋</div><span>전체 체크포인트 (환종주)</span></div>
+      <div class="cp-wrap">
+        <table class="cpt">
+          <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>상원사 주차장</td><td>970m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실</td></tr>
+            <tr><td>2</td><td>적멸보궁</td><td>1,400m</td><td>2.1km</td><td><span class="bdg b-am">성지</span></td><td>진신사리봉안</td></tr>
+            <tr><td>3</td><td>비로봉</td><td>1,563m</td><td>3.5km</td><td><span class="bdg b-pk">정상 ★</span></td><td>정상석·360도 조망</td></tr>
+            <tr><td>4</td><td>호령봉</td><td>1,561m</td><td>5.5km</td><td><span class="bdg b-pk">봉우리</span></td><td>조망 포인트</td></tr>
+            <tr><td>5</td><td>상왕봉</td><td>1,491m</td><td>8.0km</td><td><span class="bdg b-pk">봉우리</span></td><td>정상석·조망</td></tr>
+            <tr><td>6</td><td>두로령</td><td>1,320m</td><td>11.0km</td><td><span class="bdg b-sk">탈출 가능</span></td><td>갈림길 이정표</td></tr>
+            <tr><td>7</td><td>두로봉</td><td>1,422m</td><td>13.0km</td><td><span class="bdg b-pk">봉우리</span></td><td>백두대간 인증</td></tr>
+            <tr><td>8</td><td>신선목이</td><td>1,290m</td><td>15.0km</td><td><span class="bdg b-sk">안부</span></td><td>—</td></tr>
+            <tr><td>9</td><td>차돌백이</td><td>1,350m</td><td>17.0km</td><td><span class="bdg b-sk">지형</span></td><td>규암 지형 명소</td></tr>
+            <tr><td>10</td><td>동대산</td><td>1,434m</td><td>20.5km</td><td><span class="bdg b-pk">봉우리</span></td><td>정상석·전망</td></tr>
+            <tr><td>11</td><td>동피골</td><td>780m</td><td>23.0km</td><td><span class="bdg b-sk">계곡</span></td><td>오대천 계곡</td></tr>
+            <tr><td>12</td><td>상원사 (선재길 귀환)</td><td>970m</td><td>~26km</td><td><span class="bdg b-st">종점</span></td><td>주차·식당</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="advanced-tp" class="tc">
+      <div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
+      <div class="tg">
+        <div class="tc-card"><div class="tc-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수·발목 지지)</li><li>트레킹 스틱 2개</li><li>무릎 보호대 (양쪽)</li><li>헤드램프+여분 배터리</li><li>겨울: 아이젠+방한복+핫팩</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 2.5L 이상 지참</li><li>에너지바·도시락 2끼 분량</li><li>동피골 계곡 식수 주의 (음용 확인)</li><li>상원사 도착 후 진부면 식당</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">📡</div><h4>내비게이션</h4><ul><li>GPS 앱 필수 (램블러·산길샘)</li><li>두로봉~동대산 이정표 희박</li><li>GPX 파일 사전 다운로드</li><li>배터리 팩 필수 (장시간 사용)</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🛡</div><h4>안전 수칙</h4><ul><li>오전 5~6시 새벽 출발</li><li>3인 이상 팀 산행 필수</li><li>두로령 탈출로 숙지</li><li>반달곰 서식 구간 — 소음 유지</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">💪</div><h4>체력 준비</h4><ul><li>중급 코스 10회 이상 경험</li><li>20km 이상 장거리 훈련</li><li>무릎·발목 강화 운동</li><li>전날 충분한 수면·수분 보충</li></ul></div>
+        <div class="tc-card"><div class="tc-icon">🌿</div><h4>생태 정보</h4><ul><li>반달가슴곰 서식 (오대산 복원)</li><li>열목어·산양 서식 보호 구역</li><li>취사·야영 전면 금지</li><li>오대산 탄소 중립 1호 국립공원</li></ul></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<footer style="border-top:1px solid var(--div);padding:var(--s8) var(--s6);text-align:center;background:var(--surface)">
+  <p style="font-size:var(--xs);color:var(--faint)">오대산국립공원 공식 정보 기준. 산행 전 국립공원공단 예약시스템(reservation.knps.or.kr)과 기상 정보를 반드시 확인하세요. 오대산국립공원 033-332-6417</p>
+</footer>
+
+<script>
+(function(){
+  const t=document.querySelector("[data-thm]"),r=document.documentElement;
+  let d=r.getAttribute("data-theme")||"dark"; setIco(d);
+  if(t)t.addEventListener("click",()=>{d=d==="dark"?"light":"dark";r.setAttribute("data-theme",d);setIco(d)});
+  function setIco(th){if(!t)return;t.innerHTML=th==="dark"?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}
+})();
+function selC(lv,btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+  document.querySelectorAll(".cs-btn").forEach(b=>b.classList.remove("ab","ai","aa"));
+  document.getElementById("course-"+lv).classList.add("active");
+  btn.classList.add(lv==="beginner"?"ab":lv==="intermediate"?"ai":"aa");
+  const p=document.getElementById("course-"+lv);
+  p.querySelectorAll(".tab").forEach((b,i)=>b.classList.toggle("active",i===0));
+  p.querySelectorAll(".tc").forEach((c,i)=>c.classList.toggle("active",i===0));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function selT(c,t,btn){
+  const p=document.getElementById("course-"+c);
+  p.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+  p.querySelectorAll(".tc").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById(c+"-"+t).classList.add("active");
+}
+function togAcc(h){h.parentElement.classList.toggle("open")}
+document.querySelectorAll(".acc-wrap").forEach(w=>{const f=w.querySelector(".acc-item");if(f)f.classList.add("open")});
+</script>
+</body>
+</html>
