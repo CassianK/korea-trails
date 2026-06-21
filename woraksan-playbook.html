@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="light">
+
+<html data-theme="light" lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>월악산 등산 플레이북</title>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>월악산 등산 플레이북</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<style>
     :root,[data-theme="light"]{--bg:#f6f4ef;--surface:#fcfbf8;--surface2:#ece7de;--border:#d9d0c3;--text:#241f18;--muted:#736b60;--faint:#afa79b;--green:#5f7d53;--greenbg:#dbe5d5;--blue:#667295;--bluebg:#dfe4ef;--red:#915d45;--redbg:#efdfd6;--gold:#b8924c;--shadow:0 10px 26px rgba(48,36,22,.08);--r:18px;--r2:12px;--xs:clamp(.75rem,.7rem+.2vw,.87rem);--sm:clamp(.9rem,.84rem+.2vw,1rem);--base:clamp(1rem,.95rem+.25vw,1.1rem);--lg:clamp(1.15rem,1rem+.5vw,1.45rem);--xl:clamp(1.6rem,1.2rem+1.2vw,2.4rem);--xxl:clamp(2.2rem,1.3rem+2vw,3.6rem)}
     [data-theme="dark"]{--bg:#181512;--surface:#221e1a;--surface2:#2f2923;--border:#413930;--text:#e9e2d8;--muted:#ab9f90;--faint:#756b60;--green:#90b07e;--greenbg:#263122;--blue:#9daacf;--bluebg:#273042;--red:#d39b80;--redbg:#412b21;--gold:#d7b36b;--shadow:0 12px 30px rgba(0,0,0,.34)}
     *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:'Satoshi',sans-serif;line-height:1.6} h1,h2,h3,h4,p{margin:0} button{font:inherit} table{border-collapse:collapse;width:100%}
@@ -22,36 +23,653 @@
     .map svg{width:100%;height:auto;max-height:430px}.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:16px;background:var(--surface);box-shadow:var(--shadow)} th,td{padding:12px 14px;border-bottom:1px solid var(--border);font-size:var(--xs);text-align:left} th{background:var(--surface2);color:var(--muted)} tr:last-child td{border-bottom:none}
     .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tipcard h4{font-size:var(--sm);margin-bottom:10px}.tipcard ul{padding-left:18px;margin:0}.tipcard li{margin:7px 0;color:var(--muted);font-size:var(--xs)} footer{padding:28px 0 40px;color:var(--muted);font-size:var(--xs)}
     @media(max-width:960px){.grid6{grid-template-columns:repeat(3,1fr)}.tips-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}} @media(max-width:640px){.grid6{grid-template-columns:repeat(2,1fr)}.tips-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
-  </style>
+  
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style>
 </head>
 <body>
-<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg viewBox="0 0 48 48" width="26" height="26" fill="none"><path d="M7 36c6-9 10-12 16-12 3 0 5 1 7 4 3-4 6-6 11-6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 40h36" stroke="white" stroke-width="3" stroke-linecap="round"/><path d="M16 16l3-5M25 14l3-4M33 18l3-6" stroke="white" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h1>월악산</h1><p>영봉 1,097m · 덕주사·신륵사·보덕암 대표 루트</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
-<section class="hero"><div class="wrap"><span class="hero-badge">Woraksan National Park</span><h2>월악산 3코스 등산 플레이북</h2><p>월악산 영봉을 중심으로 초급, 중급, 고급 3개 코스를 같은 방식의 인터랙티브 플레이북으로 정리했습니다. 신륵사 최단, 덕주사 대표, 보덕암-하봉-중봉 연계 종주형까지 한 번에 비교할 수 있습니다.</p><div class="stats"><div class="stat"><div class="v">1,097m</div><div class="l">영봉</div></div><div class="stat"><div class="v">3.6km</div><div class="l">신륵사 편도</div></div><div class="stat"><div class="v">6.0km</div><div class="l">덕주사 편도</div></div><div class="stat"><div class="v">6.2km</div><div class="l">보덕암 편도</div></div><div class="stat"><div class="v">계단 많음</div><div class="l">체감 특징</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 신륵사 최단</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 덕주사 대표</button><button class="course-btn red" data-course="advanced">🏔 고급 — 보덕암 종주형</button></div></div></section>
+<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M7 36c6-9 10-12 16-12 3 0 5 1 7 4 3-4 6-6 11-6" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M6 40h36" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M16 16l3-5M25 14l3-4M33 18l3-6" stroke="white" stroke-linecap="round" stroke-width="2.4"></path></svg></div><div><h1>월악산</h1><p>영봉 1,097m · 덕주사·신륵사·보덕암 대표 루트</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/woraksan/hero-640.avif 640w, assets/img/woraksan/hero-1024.avif 1024w, assets/img/woraksan/hero-1600.avif 1600w, assets/img/woraksan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/woraksan/hero-640.webp 640w, assets/img/woraksan/hero-1024.webp 1024w, assets/img/woraksan/hero-1600.webp 1600w, assets/img/woraksan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="월악산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Woraksan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/woraksan/hero-1600.jpg" srcset="assets/img/woraksan/hero-640.jpg 640w, assets/img/woraksan/hero-1024.jpg 1024w, assets/img/woraksan/hero-1600.jpg 1600w, assets/img/woraksan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="wrap"><span class="hero-badge">Woraksan National Park</span><h2>월악산 3코스 등산 플레이북</h2><p>월악산 영봉을 중심으로 초급, 중급, 고급 3개 코스를 같은 방식의 인터랙티브 플레이북으로 정리했습니다. 신륵사 최단, 덕주사 대표, 보덕암-하봉-중봉 연계 종주형까지 한 번에 비교할 수 있습니다.</p><div class="stats"><div class="stat"><div class="v">1,097m</div><div class="l">영봉</div></div><div class="stat"><div class="v">3.6km</div><div class="l">신륵사 편도</div></div><div class="stat"><div class="v">6.0km</div><div class="l">덕주사 편도</div></div><div class="stat"><div class="v">6.2km</div><div class="l">보덕암 편도</div></div><div class="stat"><div class="v">계단 많음</div><div class="l">체감 특징</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 신륵사 최단</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 덕주사 대표</button><button class="course-btn red" data-course="advanced">🏔 고급 — 보덕암 종주형</button></div></div>
+</div>
+<!-- Hero Credit Overlay -->
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" rel="noopener" target="_blank">정규송 Nui MALAMA</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
+</section>
 <main class="wrap">
-<section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">신륵사 최단 영봉 코스</div><div class="panel-sub">신륵사 주차장 → 신륵사삼거리 → 영봉 왕복 · 약 7.2km · 4~5시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.6km</div><div class="txt">편도 거리</div></div><div class="card kpi"><div class="num">4~5h</div><div class="txt">왕복 시간</div></div><div class="card kpi"><div class="num">1,097m</div><div class="txt">영봉 정상</div></div><div class="card kpi"><div class="num">최단</div><div class="txt">접근 성격</div></div><div class="card kpi"><div class="num">계단 多</div><div class="txt">체감 난이도</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">신륵사 주차장</span><span class="arr">→</span><span class="chip">신륵사</span><span class="arr">→</span><span class="chip">신륵사삼거리</span><span class="arr">→</span><span class="chip">영봉</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#5f7d53" stop-opacity=".35"/><stop offset="100%" stop-color="#5f7d53" stop-opacity=".06"/></linearGradient></defs><path d="M20 194 C160 176, 286 148, 414 110 S612 58, 740 34 L740 210 L20 210 Z" fill="url(#g1)"/><path d="M20 194 C160 176, 286 148, 414 110 S612 58, 740 34" fill="none" stroke="#5f7d53" stroke-width="4" stroke-linecap="round"/><circle cx="740" cy="34" r="6" fill="#5f7d53"/><text x="622" y="26" font-size="12" fill="#5f7d53">영봉 1,097m</text></svg></div><p class="desc">신륵사 코스는 영봉으로 가는 최단 대표 코스로 편도 3.6km, 약 2시간 30분 안팎이 많이 안내됩니다 [web:584][web:588]. 짧아 보여도 계단과 가파른 구간이 많아 초보자 기준으로는 만만한 산행은 아닙니다 [web:588].</p></div>
+<section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">신륵사 최단 영봉 코스</div><div class="panel-sub">신륵사 주차장 → 신륵사삼거리 → 영봉 왕복 · 약 7.2km · 4~5시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.6km</div><div class="txt">편도 거리</div></div><div class="card kpi"><div class="num">4~5h</div><div class="txt">왕복 시간</div></div><div class="card kpi"><div class="num">1,097m</div><div class="txt">영봉 정상</div></div><div class="card kpi"><div class="num">최단</div><div class="txt">접근 성격</div></div><div class="card kpi"><div class="num">계단 多</div><div class="txt">체감 난이도</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">신륵사 주차장</span><span class="arr">→</span><span class="chip">신륵사</span><span class="arr">→</span><span class="chip">신륵사삼거리</span><span class="arr">→</span><span class="chip">영봉</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#5f7d53" stop-opacity=".35"></stop><stop offset="100%" stop-color="#5f7d53" stop-opacity=".06"></stop></lineargradient></defs><path d="M20 194 C160 176, 286 148, 414 110 S612 58, 740 34 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 194 C160 176, 286 148, 414 110 S612 58, 740 34" fill="none" stroke="#5f7d53" stroke-linecap="round" stroke-width="4"></path><circle cx="740" cy="34" fill="#5f7d53" r="6"></circle><text fill="#5f7d53" font-size="12" x="622" y="26">영봉 1,097m</text></svg></div><p class="desc">신륵사 코스는 영봉으로 가는 최단 대표 코스로 편도 3.6km, 약 2시간 30분 안팎이 많이 안내됩니다 [web:584][web:588]. 짧아 보여도 계단과 가파른 구간이 많아 초보자 기준으로는 만만한 산행은 아닙니다 [web:588].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">신륵사 주차장 출발</div><div class="seg-meta">0km · 들머리</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>신륵사 코스는 월악산 영봉으로 가장 빠르게 접근하는 들머리입니다. 초반부터 리듬을 너무 올리지 않는 것이 좋습니다.</p><div class="bar"><div class="fill" style="width:28%"></div></div><div class="tip">💡 최단 코스이지만 하산까지 생각하면 체력 안배가 중요합니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">신륵사 → 신륵사삼거리</div><div class="seg-meta">중반 상승 · 계단 구간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>조망은 상대적으로 제한적이지만 꾸준한 오르막으로 고도를 올립니다. 계단이 많아 체감상 다리에 피로가 빨리 올 수 있습니다.</p><div class="bar"><div class="fill" style="width:52%"></div></div><div class="warn">⚠ 짧다고 과속하면 정상 전 급경사에서 급격히 힘이 빠질 수 있습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">신륵사삼거리 → 영봉</div><div class="seg-meta">정상 접근부 · 가파름</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>정상 직전으로 갈수록 조망이 열리며 월악산 특유의 암릉감이 느껴집니다. 정상부는 바람이 강할 수 있습니다.</p><div class="bar"><div class="fill" style="width:70%"></div></div><div class="tip">💡 정상 인증 후 바로 하산하지 말고 바람과 체온을 먼저 확인하세요.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M96 326 C212 276, 330 212, 448 140 S620 66, 720 48" stroke="#5f7d53" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="96" cy="326" r="10" fill="#5f7d53"/><circle cx="340" cy="206" r="9" fill="#5f7d53"/><circle cx="720" cy="48" r="12" fill="#5f7d53"/><text x="110" y="320" font-size="12">신륵사 주차장</text><text x="352" y="200" font-size="12">신륵사삼거리</text><text x="602" y="40" font-size="12">영봉</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>신륵사 주차장</td><td>저지대 들머리</td><td>0km</td><td>최단 코스 시작</td></tr><tr><td>신륵사</td><td>-</td><td>초반</td><td>사찰 구간</td></tr><tr><td>신륵사삼거리</td><td>-</td><td>중반</td><td>영봉 접근 분기</td></tr><tr><td>영봉</td><td>1,097m</td><td>3.6km</td><td>월악산 주봉</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M96 326 C212 276, 330 212, 448 140 S620 66, 720 48" fill="none" stroke="#5f7d53" stroke-linecap="round" stroke-width="6"></path><circle cx="96" cy="326" fill="#5f7d53" r="10"></circle><circle cx="340" cy="206" fill="#5f7d53" r="9"></circle><circle cx="720" cy="48" fill="#5f7d53" r="12"></circle><text font-size="12" x="110" y="320">신륵사 주차장</text><text font-size="12" x="352" y="200">신륵사삼거리</text><text font-size="12" x="602" y="40">영봉</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>신륵사 주차장</td><td>저지대 들머리</td><td>0km</td><td>최단 코스 시작</td></tr><tr><td>신륵사</td><td>-</td><td>초반</td><td>사찰 구간</td></tr><tr><td>신륵사삼거리</td><td>-</td><td>중반</td><td>영봉 접근 분기</td></tr><tr><td>영봉</td><td>1,097m</td><td>3.6km</td><td>월악산 주봉</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🎒 준비물</h4><ul><li>스틱 추천</li><li>충분한 물</li><li>바람막이</li></ul></div><div class="card tipcard"><h4>📷 포인트</h4><ul><li>영봉 정상 조망</li><li>암릉 전망</li><li>일출 산행 가능</li></ul></div><div class="card tipcard"><h4>⚠️ 주의</h4><ul><li>계단 연속</li><li>정상 강풍</li><li>무릎 피로</li></ul></div></div></div></section>
-
-<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level">🦶 중급</span><div><div class="panel-name">덕주사 대표 영봉 코스</div><div class="panel-sub">덕주골 → 덕주사 → 마애불 → 송계삼거리 → 신륵사삼거리 → 영봉 왕복 · 약 12km · 7~8시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">6.0km</div><div class="txt">편도 거리</div></div><div class="card kpi"><div class="num">7~8h</div><div class="txt">왕복 시간</div></div><div class="card kpi"><div class="num">덕주사</div><div class="txt">문화 포인트</div></div><div class="card kpi"><div class="num">마애불</div><div class="txt">볼거리</div></div><div class="card kpi"><div class="num">계단·장거리</div><div class="txt">체감 특징</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">덕주골</span><span class="arr">→</span><span class="chip">덕주사</span><span class="arr">→</span><span class="chip">마애불</span><span class="arr">→</span><span class="chip">송계삼거리</span><span class="arr">→</span><span class="chip">신륵사삼거리</span><span class="arr">→</span><span class="chip">영봉</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#667295" stop-opacity=".35"/><stop offset="100%" stop-color="#667295" stop-opacity=".06"/></linearGradient></defs><path d="M20 196 C126 184, 214 166, 298 146 S436 116, 514 98 S646 64, 740 38 L740 210 L20 210 Z" fill="url(#g2)"/><path d="M20 196 C126 184, 214 166, 298 146 S436 116, 514 98 S646 64, 740 38" fill="none" stroke="#667295" stroke-width="4" stroke-linecap="round"/><circle cx="740" cy="38" r="6" fill="#667295"/><text x="626" y="30" font-size="12" fill="#667295">영봉 1,097m</text></svg></div><p class="desc">덕주사 코스는 편도 6km, 약 3시간 30~40분으로 많이 소개되며 문화유산과 계곡, 마애불을 함께 보는 대표 루트입니다 [web:584][web:588]. 신륵사보다 길고 계단도 많아 체력 소모가 더 크지만, 월악산의 볼거리를 가장 균형 있게 경험하기 좋습니다 [web:588].</p></div>
+<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level">🦶 중급</span><div><div class="panel-name">덕주사 대표 영봉 코스</div><div class="panel-sub">덕주골 → 덕주사 → 마애불 → 송계삼거리 → 신륵사삼거리 → 영봉 왕복 · 약 12km · 7~8시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">6.0km</div><div class="txt">편도 거리</div></div><div class="card kpi"><div class="num">7~8h</div><div class="txt">왕복 시간</div></div><div class="card kpi"><div class="num">덕주사</div><div class="txt">문화 포인트</div></div><div class="card kpi"><div class="num">마애불</div><div class="txt">볼거리</div></div><div class="card kpi"><div class="num">계단·장거리</div><div class="txt">체감 특징</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">덕주골</span><span class="arr">→</span><span class="chip">덕주사</span><span class="arr">→</span><span class="chip">마애불</span><span class="arr">→</span><span class="chip">송계삼거리</span><span class="arr">→</span><span class="chip">신륵사삼거리</span><span class="arr">→</span><span class="chip">영봉</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#667295" stop-opacity=".35"></stop><stop offset="100%" stop-color="#667295" stop-opacity=".06"></stop></lineargradient></defs><path d="M20 196 C126 184, 214 166, 298 146 S436 116, 514 98 S646 64, 740 38 L740 210 L20 210 Z" fill="url(#g2)"></path><path d="M20 196 C126 184, 214 166, 298 146 S436 116, 514 98 S646 64, 740 38" fill="none" stroke="#667295" stroke-linecap="round" stroke-width="4"></path><circle cx="740" cy="38" fill="#667295" r="6"></circle><text fill="#667295" font-size="12" x="626" y="30">영봉 1,097m</text></svg></div><p class="desc">덕주사 코스는 편도 6km, 약 3시간 30~40분으로 많이 소개되며 문화유산과 계곡, 마애불을 함께 보는 대표 루트입니다 [web:584][web:588]. 신륵사보다 길고 계단도 많아 체력 소모가 더 크지만, 월악산의 볼거리를 가장 균형 있게 경험하기 좋습니다 [web:588].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">덕주골 → 덕주사 → 마애불</div><div class="seg-meta">초반 접근 · 볼거리 구간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>덕주계곡을 따라 올라가며 사찰과 마애불을 만나는 구간입니다. 초반 분위기는 여유롭지만 이후부터 오르막이 본격화됩니다.</p><div class="bar"><div class="fill" style="width:34%"></div></div><div class="tip">💡 경관 감상은 좋지만 초반에 시간을 너무 많이 쓰면 후반이 길어집니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">마애불 → 송계삼거리</div><div class="seg-meta">연속 상승 · 계단 구간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>월악산 특유의 계단과 급경사가 이어지는 핵심 체력 구간입니다. 심박이 빠르게 오르므로 꾸준한 호흡이 중요합니다.</p><div class="bar"><div class="fill" style="width:66%"></div></div><div class="warn">⚠ 덕주사 코스는 길이보다 누적 피로가 크게 오는 편입니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">송계삼거리 → 신륵사삼거리 → 영봉</div><div class="seg-meta">정상 접근 · 노출 구간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>정상부로 갈수록 바위와 조망이 열립니다. 바람이 세면 체감 난이도가 확 올라갈 수 있습니다.</p><div class="bar"><div class="fill" style="width:78%"></div></div><div class="tip">💡 정상 직전 마지막 계단과 바위 구간에서 페이스 조절이 중요합니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M84 330 C162 292, 242 258, 314 218 S444 150, 528 118 S646 74, 736 54" stroke="#667295" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="84" cy="330" r="10" fill="#667295"/><circle cx="208" cy="274" r="8" fill="#667295"/><circle cx="284" cy="232" r="8" fill="#667295"/><circle cx="736" cy="54" r="12" fill="#667295"/><text x="96" y="324" font-size="12">덕주골</text><text x="220" y="268" font-size="12">덕주사</text><text x="296" y="226" font-size="12">마애불</text><text x="620" y="46" font-size="12">영봉</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>덕주골</td><td>들머리</td><td>0km</td><td>주차·접근 편함</td></tr><tr><td>덕주사</td><td>-</td><td>초반</td><td>사찰</td></tr><tr><td>마애불</td><td>-</td><td>중반</td><td>보물급 볼거리</td></tr><tr><td>송계삼거리</td><td>-</td><td>후반</td><td>주요 분기</td></tr><tr><td>신륵사삼거리</td><td>-</td><td>정상 직전</td><td>영봉 연결</td></tr><tr><td>영봉</td><td>1,097m</td><td>6km</td><td>정상</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M84 330 C162 292, 242 258, 314 218 S444 150, 528 118 S646 74, 736 54" fill="none" stroke="#667295" stroke-linecap="round" stroke-width="6"></path><circle cx="84" cy="330" fill="#667295" r="10"></circle><circle cx="208" cy="274" fill="#667295" r="8"></circle><circle cx="284" cy="232" fill="#667295" r="8"></circle><circle cx="736" cy="54" fill="#667295" r="12"></circle><text font-size="12" x="96" y="324">덕주골</text><text font-size="12" x="220" y="268">덕주사</text><text font-size="12" x="296" y="226">마애불</text><text font-size="12" x="620" y="46">영봉</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>덕주골</td><td>들머리</td><td>0km</td><td>주차·접근 편함</td></tr><tr><td>덕주사</td><td>-</td><td>초반</td><td>사찰</td></tr><tr><td>마애불</td><td>-</td><td>중반</td><td>보물급 볼거리</td></tr><tr><td>송계삼거리</td><td>-</td><td>후반</td><td>주요 분기</td></tr><tr><td>신륵사삼거리</td><td>-</td><td>정상 직전</td><td>영봉 연결</td></tr><tr><td>영봉</td><td>1,097m</td><td>6km</td><td>정상</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🧭 추천 대상</h4><ul><li>월악산 첫 대표 코스</li><li>풍경+문화유산 함께 보고 싶은 경우</li><li>중급 체력 산행</li></ul></div><div class="card tipcard"><h4>🎒 장비</h4><ul><li>무릎 보호대</li><li>스틱 적극 추천</li><li>여분 간식</li></ul></div><div class="card tipcard"><h4>⚠️ 주의</h4><ul><li>계단 누적 피로</li><li>정상부 강풍</li><li>하산 후반 집중력 저하</li></ul></div></div></div></section>
-
-<section class="panel red" id="advanced"><div class="panel-top"><span class="level">🏔 고급</span><div><div class="panel-name">보덕암–하봉–중봉–영봉 종주형</div><div class="panel-sub">수산리/보덕암 → 하봉 → 중봉 → 영봉 → 덕주사 하산 · 약 11km 전후 · 6~8시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">6.2km</div><div class="txt">보덕암 편도</div></div><div class="card kpi"><div class="num">11km±</div><div class="txt">종주형 거리</div></div><div class="card kpi"><div class="num">6~8h</div><div class="txt">총 소요</div></div><div class="card kpi"><div class="num">하봉·중봉</div><div class="txt">능선 연계</div></div><div class="card kpi"><div class="num">조망 우수</div><div class="txt">비경 구간</div></div><div class="card kpi"><div class="num">상</div><div class="txt">난이도</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">수산리/보덕암</span><span class="arr">→</span><span class="chip">하봉</span><span class="arr">→</span><span class="chip">중봉</span><span class="arr">→</span><span class="chip">영봉</span><span class="arr">→</span><span class="chip">덕주사 하산</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#915d45" stop-opacity=".35"/><stop offset="100%" stop-color="#915d45" stop-opacity=".06"/></linearGradient></defs><path d="M20 198 C124 186, 212 166, 292 122 S412 84, 476 110 S588 80, 650 58 S714 42, 740 46 L740 210 L20 210 Z" fill="url(#g3)"/><path d="M20 198 C124 186, 212 166, 292 122 S412 84, 476 110 S588 80, 650 58 S714 42, 740 46" fill="none" stroke="#915d45" stroke-width="4" stroke-linecap="round"/><circle cx="292" cy="122" r="6" fill="#915d45"/><circle cx="476" cy="110" r="6" fill="#915d45"/><circle cx="720" cy="44" r="6" fill="#915d45"/><text x="250" y="114" font-size="12" fill="#915d45">하봉</text><text x="442" y="102" font-size="12" fill="#915d45">중봉</text><text x="610" y="36" font-size="12" fill="#915d45">영봉</text></svg></div><p class="desc">보덕암 코스는 편도 6.2km, 약 3시간 30분으로 안내되며 하봉–중봉–영봉을 잇는 비경 구간으로 자주 소개됩니다 [web:584][web:588]. 보덕암 출발 후 덕주사로 내려오는 종주형 기록은 약 11km, 6시간 30분 전후 사례도 확인됩니다 [web:589].</p></div>
+<section class="panel red" id="advanced"><div class="panel-top"><span class="level">🏔 고급</span><div><div class="panel-name">보덕암–하봉–중봉–영봉 종주형</div><div class="panel-sub">수산리/보덕암 → 하봉 → 중봉 → 영봉 → 덕주사 하산 · 약 11km 전후 · 6~8시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">6.2km</div><div class="txt">보덕암 편도</div></div><div class="card kpi"><div class="num">11km±</div><div class="txt">종주형 거리</div></div><div class="card kpi"><div class="num">6~8h</div><div class="txt">총 소요</div></div><div class="card kpi"><div class="num">하봉·중봉</div><div class="txt">능선 연계</div></div><div class="card kpi"><div class="num">조망 우수</div><div class="txt">비경 구간</div></div><div class="card kpi"><div class="num">상</div><div class="txt">난이도</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">수산리/보덕암</span><span class="arr">→</span><span class="chip">하봉</span><span class="arr">→</span><span class="chip">중봉</span><span class="arr">→</span><span class="chip">영봉</span><span class="arr">→</span><span class="chip">덕주사 하산</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#915d45" stop-opacity=".35"></stop><stop offset="100%" stop-color="#915d45" stop-opacity=".06"></stop></lineargradient></defs><path d="M20 198 C124 186, 212 166, 292 122 S412 84, 476 110 S588 80, 650 58 S714 42, 740 46 L740 210 L20 210 Z" fill="url(#g3)"></path><path d="M20 198 C124 186, 212 166, 292 122 S412 84, 476 110 S588 80, 650 58 S714 42, 740 46" fill="none" stroke="#915d45" stroke-linecap="round" stroke-width="4"></path><circle cx="292" cy="122" fill="#915d45" r="6"></circle><circle cx="476" cy="110" fill="#915d45" r="6"></circle><circle cx="720" cy="44" fill="#915d45" r="6"></circle><text fill="#915d45" font-size="12" x="250" y="114">하봉</text><text fill="#915d45" font-size="12" x="442" y="102">중봉</text><text fill="#915d45" font-size="12" x="610" y="36">영봉</text></svg></div><p class="desc">보덕암 코스는 편도 6.2km, 약 3시간 30분으로 안내되며 하봉–중봉–영봉을 잇는 비경 구간으로 자주 소개됩니다 [web:584][web:588]. 보덕암 출발 후 덕주사로 내려오는 종주형 기록은 약 11km, 6시간 30분 전후 사례도 확인됩니다 [web:589].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">수산리/보덕암 → 하봉</div><div class="seg-meta">초반 급상승 · 조망 시작</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>보덕암 기점은 초반부터 경사가 만만치 않으며 고도를 빠르게 올립니다. 월악산의 조망이 본격적으로 열리기 시작합니다.</p><div class="bar"><div class="fill" style="width:62%"></div></div><div class="warn">⚠ 초반 급오르막에서 체력 소모가 큰 편이라 출발 페이스 조절이 필수입니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">하봉 → 중봉 → 영봉</div><div class="seg-meta">업다운 반복 · 핵심 비경</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>능선의 오르내림이 반복되어 거리보다 더 길게 느껴집니다. 풍경은 좋지만 체감 난이도는 월악산 대표 상급 구간입니다.</p><div class="bar"><div class="fill" style="width:86%"></div></div><div class="tip">💡 사진 포인트가 많아도 정지 시간이 길어지면 전체 산행 시간이 크게 늘어납니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">영봉 → 덕주사 하산</div><div class="seg-meta">긴 하산 · 계단 부담</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>정상 이후 덕주사 방향 하산은 길고 무릎 부담이 큽니다. 체력과 집중력이 모두 떨어지는 마지막 구간이므로 미끄럼에 주의해야 합니다.</p><div class="bar"><div class="fill" style="width:72%"></div></div><div class="warn">⚠ 상·하봉 연계 후 하산까지 포함하면 총 피로도는 매우 높습니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M82 328 C154 298, 234 246, 306 184 S406 110, 478 134 S590 92, 652 64 S706 46, 738 60" stroke="#915d45" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="82" cy="328" r="10" fill="#915d45"/><circle cx="306" cy="184" r="9" fill="#915d45"/><circle cx="478" cy="134" r="9" fill="#915d45"/><circle cx="652" cy="64" r="10" fill="#915d45"/><text x="94" y="322" font-size="12">보덕암</text><text x="270" y="176" font-size="12">하봉</text><text x="442" y="126" font-size="12">중봉</text><text x="614" y="56" font-size="12">영봉</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>수산리/보덕암</td><td>들머리</td><td>0km</td><td>고급 코스 시작</td></tr><tr><td>하봉</td><td>-</td><td>중반</td><td>조망 포인트</td></tr><tr><td>중봉</td><td>-</td><td>후반</td><td>능선 업다운</td></tr><tr><td>영봉</td><td>1,097m</td><td>6.2km</td><td>주봉</td></tr><tr><td>덕주사 방면 하산</td><td>-</td><td>11km 전후</td><td>종주형 마무리</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M82 328 C154 298, 234 246, 306 184 S406 110, 478 134 S590 92, 652 64 S706 46, 738 60" fill="none" stroke="#915d45" stroke-linecap="round" stroke-width="6"></path><circle cx="82" cy="328" fill="#915d45" r="10"></circle><circle cx="306" cy="184" fill="#915d45" r="9"></circle><circle cx="478" cy="134" fill="#915d45" r="9"></circle><circle cx="652" cy="64" fill="#915d45" r="10"></circle><text font-size="12" x="94" y="322">보덕암</text><text font-size="12" x="270" y="176">하봉</text><text font-size="12" x="442" y="126">중봉</text><text font-size="12" x="614" y="56">영봉</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>수산리/보덕암</td><td>들머리</td><td>0km</td><td>고급 코스 시작</td></tr><tr><td>하봉</td><td>-</td><td>중반</td><td>조망 포인트</td></tr><tr><td>중봉</td><td>-</td><td>후반</td><td>능선 업다운</td></tr><tr><td>영봉</td><td>1,097m</td><td>6.2km</td><td>주봉</td></tr><tr><td>덕주사 방면 하산</td><td>-</td><td>11km 전후</td><td>종주형 마무리</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>💪 추천 대상</h4><ul><li>영봉 경험자</li><li>능선 업다운 선호자</li><li>경치 우선 산행</li></ul></div><div class="card tipcard"><h4>🎒 준비 장비</h4><ul><li>무릎 보호대</li><li>충분한 식수</li><li>장갑·스틱</li></ul></div><div class="card tipcard"><h4>⚠️ 주의</h4><ul><li>업다운 반복</li><li>긴 하산</li><li>체력 고갈 시 위험</li></ul></div></div></div></section>
 </main>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon">📸</span> 월악산의 사계 &amp; 명소
+  </h3>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Woraksan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@sudal' target='_blank' rel='noopener'&gt;Kwangho Cha&lt;/a&gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/woraksan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/woraksan/g1.webp" type="image/webp"/>
+<img alt="월악산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/woraksan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">월악산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Woraksan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/woraksan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/woraksan/g2.webp" type="image/webp"/>
+<img alt="월악산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/woraksan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">월악산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="Harmonious view of Woraksan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@suki-lee-110686949' target='_blank' rel='noopener'&gt;Suki Lee&lt;/a&gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/woraksan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/woraksan/g3.webp" type="image/webp"/>
+<img alt="월악산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/woraksan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">월악산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Woraksan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@suki-lee-110686949' target='_blank' rel='noopener'&gt;Suki Lee&lt;/a&gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/woraksan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/woraksan/g4.webp" type="image/webp"/>
+<img alt="월악산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/woraksan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">월악산 탐방로</span>
+</div>
+</button>
+</div>
+</section>
 <footer><div class="wrap">실제 산행 전 월악산국립공원 탐방로 통제, 기상, 주차, 들머리 접근과 하산 교통을 반드시 다시 확인하세요.</div></footer>
 <script>
 const themeBtn=document.getElementById('themeBtn');let mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',mode);themeBtn.addEventListener('click',()=>{mode=mode==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',mode)});
 const courseBtns=[...document.querySelectorAll('.course-btn')],panels=[...document.querySelectorAll('.panel')];courseBtns.forEach(btn=>btn.addEventListener('click',()=>{courseBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');panels.forEach(p=>p.classList.remove('active'));document.getElementById(btn.dataset.course).classList.add('active')}));
 document.querySelectorAll('.panel').forEach(panel=>{const tabs=[...panel.querySelectorAll('.tab')],panes=[...panel.querySelectorAll('.tabpane')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));tab.classList.add('active');panel.querySelector(`.tabpane[data-pane="${tab.dataset.tab}"]`).classList.add('active')}))});
 document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
