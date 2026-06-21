@@ -1,0 +1,2342 @@
+[
+  {
+    "mountain_id": "baekhaksan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/baekhaksan/g1.avif",
+      "webp": "assets/img/baekhaksan/g1.webp",
+      "jpg": "assets/img/baekhaksan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "백학산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Baekhaksan",
+    "credit": {
+      "author": "Theodore Nguyen",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@thejourneyofframes"
+    }
+  },
+  {
+    "mountain_id": "baekhaksan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/baekhaksan/g2.avif",
+      "webp": "assets/img/baekhaksan/g2.webp",
+      "jpg": "assets/img/baekhaksan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "백학산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Baekhaksan National Park",
+    "credit": {
+      "author": "Theodore Nguyen",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@thejourneyofframes"
+    }
+  },
+  {
+    "mountain_id": "baekhaksan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/baekhaksan/g3.avif",
+      "webp": "assets/img/baekhaksan/g3.webp",
+      "jpg": "assets/img/baekhaksan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "백학산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Baekhaksan mountain ridges under a clear sky",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "baekhaksan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/baekhaksan/g4.avif",
+      "webp": "assets/img/baekhaksan/g4.webp",
+      "jpg": "assets/img/baekhaksan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "백학산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Baekhaksan",
+    "credit": {
+      "author": "Theodore Nguyen",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@thejourneyofframes"
+    }
+  },
+  {
+    "mountain_id": "baekhaksan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/baekhaksan/hero.avif",
+      "webp": "assets/img/baekhaksan/hero.webp",
+      "jpg": "assets/img/baekhaksan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "백학산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Baekhaksan mountain peaks and ridges",
+    "credit": {
+      "author": "Theodore Nguyen",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@thejourneyofframes"
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/bukhansan/g1.avif",
+      "webp": "assets/img/bukhansan/g1.webp",
+      "jpg": "assets/img/bukhansan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Bukhansan",
+    "credit": {
+      "author": "vignesh srivatsav",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@vignesh-srivatsav-857495254"
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/bukhansan/g2.avif",
+      "webp": "assets/img/bukhansan/g2.webp",
+      "jpg": "assets/img/bukhansan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Bukhansan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/bukhansan/g3.avif",
+      "webp": "assets/img/bukhansan/g3.webp",
+      "jpg": "assets/img/bukhansan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Bukhansan mountain ridges under a clear sky",
+    "credit": {
+      "author": "Saksham Vikram",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@saksham-vikram-2148641748"
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/bukhansan/g4.avif",
+      "webp": "assets/img/bukhansan/g4.webp",
+      "jpg": "assets/img/bukhansan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Bukhansan",
+    "credit": {
+      "author": "Theodore Nguyen",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@thejourneyofframes"
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/bukhansan/hero.avif",
+      "webp": "assets/img/bukhansan/hero.webp",
+      "jpg": "assets/img/bukhansan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "북한산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Bukhansan mountain peaks and ridges",
+    "credit": {
+      "author": "Elliot Gouy",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@gouyelliot"
+    }
+  },
+  {
+    "mountain_id": "chiaksan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/chiaksan/g1.avif",
+      "webp": "assets/img/chiaksan/g1.webp",
+      "jpg": "assets/img/chiaksan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "치악산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Chiaksan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "chiaksan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/chiaksan/g2.avif",
+      "webp": "assets/img/chiaksan/g2.webp",
+      "jpg": "assets/img/chiaksan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "치악산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Chiaksan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "chiaksan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/chiaksan/g3.avif",
+      "webp": "assets/img/chiaksan/g3.webp",
+      "jpg": "assets/img/chiaksan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "치악산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Chiaksan mountain ridges under a clear sky",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "chiaksan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/chiaksan/g4.avif",
+      "webp": "assets/img/chiaksan/g4.webp",
+      "jpg": "assets/img/chiaksan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "치악산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Chiaksan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "chiaksan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/chiaksan/hero.avif",
+      "webp": "assets/img/chiaksan/hero.webp",
+      "jpg": "assets/img/chiaksan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "치악산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Chiaksan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "deogyusan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/deogyusan/g1.avif",
+      "webp": "assets/img/deogyusan/g1.webp",
+      "jpg": "assets/img/deogyusan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "덕유산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Deogyusan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "deogyusan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/deogyusan/g2.avif",
+      "webp": "assets/img/deogyusan/g2.webp",
+      "jpg": "assets/img/deogyusan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "덕유산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Deogyusan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "deogyusan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/deogyusan/g3.avif",
+      "webp": "assets/img/deogyusan/g3.webp",
+      "jpg": "assets/img/deogyusan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "덕유산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Deogyusan mountain ridges under a clear sky",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "deogyusan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/deogyusan/g4.avif",
+      "webp": "assets/img/deogyusan/g4.webp",
+      "jpg": "assets/img/deogyusan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "덕유산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Deogyusan",
+    "credit": {
+      "author": "kevin yung",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@kevin-yung-2152346613"
+    }
+  },
+  {
+    "mountain_id": "deogyusan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/deogyusan/hero.avif",
+      "webp": "assets/img/deogyusan/hero.webp",
+      "jpg": "assets/img/deogyusan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "덕유산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Deogyusan mountain peaks and ridges",
+    "credit": {
+      "author": "Anthony Taewan Kim",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@anthony-taewan-kim-1326772885"
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/dobongsan/g1.avif",
+      "webp": "assets/img/dobongsan/g1.webp",
+      "jpg": "assets/img/dobongsan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Dobongsan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/dobongsan/g2.avif",
+      "webp": "assets/img/dobongsan/g2.webp",
+      "jpg": "assets/img/dobongsan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Dobongsan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/dobongsan/g3.avif",
+      "webp": "assets/img/dobongsan/g3.webp",
+      "jpg": "assets/img/dobongsan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Dobongsan mountain ridges under a clear sky",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/dobongsan/g4.avif",
+      "webp": "assets/img/dobongsan/g4.webp",
+      "jpg": "assets/img/dobongsan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Dobongsan",
+    "credit": {
+      "author": "영화 정",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@1605595076"
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/dobongsan/hero.avif",
+      "webp": "assets/img/dobongsan/hero.webp",
+      "jpg": "assets/img/dobongsan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "도봉산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Dobongsan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "duryunsan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/duryunsan/g1.avif",
+      "webp": "assets/img/duryunsan/g1.webp",
+      "jpg": "assets/img/duryunsan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "두륜산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Duryunsan",
+    "credit": {
+      "author": "대정 김",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@daejeung"
+    }
+  },
+  {
+    "mountain_id": "duryunsan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/duryunsan/g2.avif",
+      "webp": "assets/img/duryunsan/g2.webp",
+      "jpg": "assets/img/duryunsan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "두륜산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Duryunsan National Park",
+    "credit": {
+      "author": "Henry Acevedo",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@henry-acevedo-382866382"
+    }
+  },
+  {
+    "mountain_id": "duryunsan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/duryunsan/g3.avif",
+      "webp": "assets/img/duryunsan/g3.webp",
+      "jpg": "assets/img/duryunsan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "두륜산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Duryunsan mountain ridges under a clear sky",
+    "credit": {
+      "author": "대정 김",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@daejeung"
+    }
+  },
+  {
+    "mountain_id": "duryunsan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/duryunsan/g4.avif",
+      "webp": "assets/img/duryunsan/g4.webp",
+      "jpg": "assets/img/duryunsan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "두륜산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Duryunsan",
+    "credit": {
+      "author": "TimePRO TV",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@timepro-tv-2148736540"
+    }
+  },
+  {
+    "mountain_id": "duryunsan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/duryunsan/hero.avif",
+      "webp": "assets/img/duryunsan/hero.webp",
+      "jpg": "assets/img/duryunsan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "두륜산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Duryunsan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "gayasan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/gayasan/g1.avif",
+      "webp": "assets/img/gayasan/g1.webp",
+      "jpg": "assets/img/gayasan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "가야산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Gayasan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "gayasan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/gayasan/g2.avif",
+      "webp": "assets/img/gayasan/g2.webp",
+      "jpg": "assets/img/gayasan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "가야산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Gayasan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "gayasan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/gayasan/g3.avif",
+      "webp": "assets/img/gayasan/g3.webp",
+      "jpg": "assets/img/gayasan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "가야산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Gayasan mountain ridges under a clear sky",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "gayasan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/gayasan/g4.avif",
+      "webp": "assets/img/gayasan/g4.webp",
+      "jpg": "assets/img/gayasan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "가야산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Gayasan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "gayasan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/gayasan/hero.avif",
+      "webp": "assets/img/gayasan/hero.webp",
+      "jpg": "assets/img/gayasan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "가야산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Gayasan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "gyeryongsan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/gyeryongsan/g1.avif",
+      "webp": "assets/img/gyeryongsan/g1.webp",
+      "jpg": "assets/img/gyeryongsan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "계룡산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Gyeryongsan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "gyeryongsan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/gyeryongsan/g2.avif",
+      "webp": "assets/img/gyeryongsan/g2.webp",
+      "jpg": "assets/img/gyeryongsan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "계룡산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Gyeryongsan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "gyeryongsan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/gyeryongsan/g3.avif",
+      "webp": "assets/img/gyeryongsan/g3.webp",
+      "jpg": "assets/img/gyeryongsan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "계룡산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Gyeryongsan mountain ridges under a clear sky",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "gyeryongsan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/gyeryongsan/g4.avif",
+      "webp": "assets/img/gyeryongsan/g4.webp",
+      "jpg": "assets/img/gyeryongsan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "계룡산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Gyeryongsan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "gyeryongsan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/gyeryongsan/hero.avif",
+      "webp": "assets/img/gyeryongsan/hero.webp",
+      "jpg": "assets/img/gyeryongsan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "계룡산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Gyeryongsan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "hallasan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/hallasan/g1.avif",
+      "webp": "assets/img/hallasan/g1.webp",
+      "jpg": "assets/img/hallasan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "한라산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Hallasan",
+    "credit": {
+      "author": "shuping zhao",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@suping1555"
+    }
+  },
+  {
+    "mountain_id": "hallasan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/hallasan/g2.avif",
+      "webp": "assets/img/hallasan/g2.webp",
+      "jpg": "assets/img/hallasan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "한라산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Hallasan National Park",
+    "credit": {
+      "author": "Nizar Firmansyah",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@rfniza"
+    }
+  },
+  {
+    "mountain_id": "hallasan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/hallasan/g3.avif",
+      "webp": "assets/img/hallasan/g3.webp",
+      "jpg": "assets/img/hallasan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "한라산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Hallasan mountain ridges under a clear sky",
+    "credit": {
+      "author": "Nizar Firmansyah",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@rfniza"
+    }
+  },
+  {
+    "mountain_id": "hallasan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/hallasan/g4.avif",
+      "webp": "assets/img/hallasan/g4.webp",
+      "jpg": "assets/img/hallasan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "한라산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Hallasan",
+    "credit": {
+      "author": "Muhammad Rahiman Abdulmanab",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@mdrhmn"
+    }
+  },
+  {
+    "mountain_id": "hallasan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/hallasan/hero.avif",
+      "webp": "assets/img/hallasan/hero.webp",
+      "jpg": "assets/img/hallasan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "한라산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Hallasan mountain peaks and ridges",
+    "credit": {
+      "author": "Julien Manival",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@julien_manival"
+    }
+  },
+  {
+    "mountain_id": "jirisan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/jirisan/g1.avif",
+      "webp": "assets/img/jirisan/g1.webp",
+      "jpg": "assets/img/jirisan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "지리산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Jirisan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "jirisan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/jirisan/g2.avif",
+      "webp": "assets/img/jirisan/g2.webp",
+      "jpg": "assets/img/jirisan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "지리산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Jirisan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "jirisan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/jirisan/g3.avif",
+      "webp": "assets/img/jirisan/g3.webp",
+      "jpg": "assets/img/jirisan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "지리산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Jirisan mountain ridges under a clear sky",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "jirisan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/jirisan/g4.avif",
+      "webp": "assets/img/jirisan/g4.webp",
+      "jpg": "assets/img/jirisan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "지리산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Jirisan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "jirisan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/jirisan/hero.avif",
+      "webp": "assets/img/jirisan/hero.webp",
+      "jpg": "assets/img/jirisan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "지리산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Jirisan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "juwangsan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/juwangsan/g1.avif",
+      "webp": "assets/img/juwangsan/g1.webp",
+      "jpg": "assets/img/juwangsan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "주왕산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Juwangsan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "juwangsan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/juwangsan/g2.avif",
+      "webp": "assets/img/juwangsan/g2.webp",
+      "jpg": "assets/img/juwangsan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "주왕산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Juwangsan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "juwangsan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/juwangsan/g3.avif",
+      "webp": "assets/img/juwangsan/g3.webp",
+      "jpg": "assets/img/juwangsan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "주왕산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Juwangsan mountain ridges under a clear sky",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "juwangsan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/juwangsan/g4.avif",
+      "webp": "assets/img/juwangsan/g4.webp",
+      "jpg": "assets/img/juwangsan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "주왕산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Juwangsan",
+    "credit": {
+      "author": "영화 정",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@1605595076"
+    }
+  },
+  {
+    "mountain_id": "juwangsan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/juwangsan/hero.avif",
+      "webp": "assets/img/juwangsan/hero.webp",
+      "jpg": "assets/img/juwangsan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "주왕산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Juwangsan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "minjusan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/minjusan/g1.avif",
+      "webp": "assets/img/minjusan/g1.webp",
+      "jpg": "assets/img/minjusan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "민주지산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Minjujisan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "minjusan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/minjusan/g2.avif",
+      "webp": "assets/img/minjusan/g2.webp",
+      "jpg": "assets/img/minjusan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "민주지산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Minjujisan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "minjusan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/minjusan/g3.avif",
+      "webp": "assets/img/minjusan/g3.webp",
+      "jpg": "assets/img/minjusan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "민주지산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Minjujisan mountain ridges under a clear sky",
+    "credit": {
+      "author": "Boo Normi",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@boonormi"
+    }
+  },
+  {
+    "mountain_id": "minjusan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/minjusan/g4.avif",
+      "webp": "assets/img/minjusan/g4.webp",
+      "jpg": "assets/img/minjusan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "민주지산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Minjujisan",
+    "credit": {
+      "author": "Kwangho Cha",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@sudal"
+    }
+  },
+  {
+    "mountain_id": "minjusan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/minjusan/hero.avif",
+      "webp": "assets/img/minjusan/hero.webp",
+      "jpg": "assets/img/minjusan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "민주지산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Minjujisan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "mudeungsan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/mudeungsan/g1.avif",
+      "webp": "assets/img/mudeungsan/g1.webp",
+      "jpg": "assets/img/mudeungsan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "무등산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of 무등산",
+    "credit": {
+      "author": "Kwangho Cha",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@sudal"
+    }
+  },
+  {
+    "mountain_id": "mudeungsan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/mudeungsan/g2.avif",
+      "webp": "assets/img/mudeungsan/g2.webp",
+      "jpg": "assets/img/mudeungsan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "무등산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of 무등산 National Park",
+    "credit": {
+      "author": "Kwangho Cha",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@sudal"
+    }
+  },
+  {
+    "mountain_id": "mudeungsan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/mudeungsan/g3.avif",
+      "webp": "assets/img/mudeungsan/g3.webp",
+      "jpg": "assets/img/mudeungsan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "무등산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of 무등산 mountain ridges under a clear sky",
+    "credit": {
+      "author": "창균 이",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@722721370"
+    }
+  },
+  {
+    "mountain_id": "mudeungsan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/mudeungsan/g4.avif",
+      "webp": "assets/img/mudeungsan/g4.webp",
+      "jpg": "assets/img/mudeungsan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "무등산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in 무등산",
+    "credit": {
+      "author": "창균 이",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@722721370"
+    }
+  },
+  {
+    "mountain_id": "mudeungsan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/mudeungsan/hero.avif",
+      "webp": "assets/img/mudeungsan/hero.webp",
+      "jpg": "assets/img/mudeungsan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "무등산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of 무등산 mountain peaks and ridges",
+    "credit": {
+      "author": "Kemal Güneş",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@wkgunes"
+    }
+  },
+  {
+    "mountain_id": "myeongseongsan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/myeongseongsan/g1.avif",
+      "webp": "assets/img/myeongseongsan/g1.webp",
+      "jpg": "assets/img/myeongseongsan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "명성산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Myeongseongsan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/rocky-mountain-with-plants-18959280/"
+    }
+  },
+  {
+    "mountain_id": "myeongseongsan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/myeongseongsan/g2.avif",
+      "webp": "assets/img/myeongseongsan/g2.webp",
+      "jpg": "assets/img/myeongseongsan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "명성산 산행 중 마주하는 산정호수의 수려한 모습",
+    "alt_en": "Scenic view of Sanjeong Lake encountered during the Myeongseongsan climb",
+    "credit": {
+      "author": "jia yi",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/hill-behind-lake-in-black-and-white-19207220/"
+    }
+  },
+  {
+    "mountain_id": "myeongseongsan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/myeongseongsan/g3.avif",
+      "webp": "assets/img/myeongseongsan/g3.webp",
+      "jpg": "assets/img/myeongseongsan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "명성산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Myeongseongsan mountain ridges under a clear sky",
+    "credit": {
+      "author": "한기 장",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/serene-view-of-jara-island-south-korea-33268308/"
+    }
+  },
+  {
+    "mountain_id": "myeongseongsan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/myeongseongsan/g4.avif",
+      "webp": "assets/img/myeongseongsan/g4.webp",
+      "jpg": "assets/img/myeongseongsan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "명성산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Myeongseongsan",
+    "credit": {
+      "author": "Joel M B Marrinan",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/red-temple-near-green-trees-under-blue-sky-5863417/"
+    }
+  },
+  {
+    "mountain_id": "myeongseongsan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/myeongseongsan/hero.avif",
+      "webp": "assets/img/myeongseongsan/hero.webp",
+      "jpg": "assets/img/myeongseongsan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "명성산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Myeongseongsan mountain peaks and ridges",
+    "credit": {
+      "author": "Flavio Mori",
+      "source": "Unsplash",
+      "url": "https://unsplash.com/@flvision_"
+    }
+  },
+  {
+    "mountain_id": "naejangsan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/naejangsan/g1.avif",
+      "webp": "assets/img/naejangsan/g1.webp",
+      "jpg": "assets/img/naejangsan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "내장산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Naejangsan",
+    "credit": {
+      "author": "Nuhyil Ahammed",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nuhyil-ahammed-282191113"
+    }
+  },
+  {
+    "mountain_id": "naejangsan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/naejangsan/g2.avif",
+      "webp": "assets/img/naejangsan/g2.webp",
+      "jpg": "assets/img/naejangsan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "내장산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Naejangsan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "naejangsan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/naejangsan/g3.avif",
+      "webp": "assets/img/naejangsan/g3.webp",
+      "jpg": "assets/img/naejangsan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "내장산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Naejangsan mountain ridges under a clear sky",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "naejangsan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/naejangsan/g4.avif",
+      "webp": "assets/img/naejangsan/g4.webp",
+      "jpg": "assets/img/naejangsan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "내장산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Naejangsan",
+    "credit": {
+      "author": "Vasilij Zajcev",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@vasilij-zajcev-3061980"
+    }
+  },
+  {
+    "mountain_id": "naejangsan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/naejangsan/hero.avif",
+      "webp": "assets/img/naejangsan/hero.webp",
+      "jpg": "assets/img/naejangsan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "내장산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Naejangsan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "odaesan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/odaesan/g1.avif",
+      "webp": "assets/img/odaesan/g1.webp",
+      "jpg": "assets/img/odaesan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "오대산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Odaesan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "odaesan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/odaesan/g2.avif",
+      "webp": "assets/img/odaesan/g2.webp",
+      "jpg": "assets/img/odaesan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "오대산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Odaesan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "odaesan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/odaesan/g3.avif",
+      "webp": "assets/img/odaesan/g3.webp",
+      "jpg": "assets/img/odaesan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "오대산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Odaesan mountain ridges under a clear sky",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "odaesan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/odaesan/g4.avif",
+      "webp": "assets/img/odaesan/g4.webp",
+      "jpg": "assets/img/odaesan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "오대산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Odaesan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "odaesan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/odaesan/hero.avif",
+      "webp": "assets/img/odaesan/hero.webp",
+      "jpg": "assets/img/odaesan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "오대산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Odaesan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "seoraksan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/seoraksan/g1.avif",
+      "webp": "assets/img/seoraksan/g1.webp",
+      "jpg": "assets/img/seoraksan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "설악산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Seoraksan",
+    "credit": {
+      "author": "Austin Curtis",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@afcurtis"
+    }
+  },
+  {
+    "mountain_id": "seoraksan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/seoraksan/g2.avif",
+      "webp": "assets/img/seoraksan/g2.webp",
+      "jpg": "assets/img/seoraksan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "설악산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Seoraksan National Park",
+    "credit": {
+      "author": "yebin kim",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@kimyebin"
+    }
+  },
+  {
+    "mountain_id": "seoraksan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/seoraksan/g3.avif",
+      "webp": "assets/img/seoraksan/g3.webp",
+      "jpg": "assets/img/seoraksan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "설악산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Seoraksan mountain ridges under a clear sky",
+    "credit": {
+      "author": "Julien Manival",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@julien_manival"
+    }
+  },
+  {
+    "mountain_id": "seoraksan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/seoraksan/g4.avif",
+      "webp": "assets/img/seoraksan/g4.webp",
+      "jpg": "assets/img/seoraksan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "설악산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Seoraksan",
+    "credit": {
+      "author": "Minku Kang",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@minkus"
+    }
+  },
+  {
+    "mountain_id": "seoraksan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/seoraksan/hero.avif",
+      "webp": "assets/img/seoraksan/hero.webp",
+      "jpg": "assets/img/seoraksan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "설악산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Seoraksan mountain peaks and ridges",
+    "credit": {
+      "author": "Austin Curtis",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@afcurtis"
+    }
+  },
+  {
+    "mountain_id": "sikjangsan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/sikjangsan/g1.avif",
+      "webp": "assets/img/sikjangsan/g1.webp",
+      "jpg": "assets/img/sikjangsan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "식장산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Sikjangsan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "sikjangsan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/sikjangsan/g2.avif",
+      "webp": "assets/img/sikjangsan/g2.webp",
+      "jpg": "assets/img/sikjangsan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "식장산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Sikjangsan National Park",
+    "credit": {
+      "author": "Kemal Güneş",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@wkgunes"
+    }
+  },
+  {
+    "mountain_id": "sikjangsan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/sikjangsan/g3.avif",
+      "webp": "assets/img/sikjangsan/g3.webp",
+      "jpg": "assets/img/sikjangsan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "식장산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Sikjangsan mountain ridges under a clear sky",
+    "credit": {
+      "author": "Kwangho Cha",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@sudal"
+    }
+  },
+  {
+    "mountain_id": "sikjangsan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/sikjangsan/g4.avif",
+      "webp": "assets/img/sikjangsan/g4.webp",
+      "jpg": "assets/img/sikjangsan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "식장산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Sikjangsan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "sikjangsan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/sikjangsan/hero.avif",
+      "webp": "assets/img/sikjangsan/hero.webp",
+      "jpg": "assets/img/sikjangsan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "식장산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Sikjangsan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "sobaeksan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/sobaeksan/g1.avif",
+      "webp": "assets/img/sobaeksan/g1.webp",
+      "jpg": "assets/img/sobaeksan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소백산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Sobaeksan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "sobaeksan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/sobaeksan/g2.avif",
+      "webp": "assets/img/sobaeksan/g2.webp",
+      "jpg": "assets/img/sobaeksan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소백산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Sobaeksan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "sobaeksan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/sobaeksan/g3.avif",
+      "webp": "assets/img/sobaeksan/g3.webp",
+      "jpg": "assets/img/sobaeksan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소백산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Sobaeksan mountain ridges under a clear sky",
+    "credit": {
+      "author": "kevin yung",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@kevin-yung-2152346613"
+    }
+  },
+  {
+    "mountain_id": "sobaeksan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/sobaeksan/g4.avif",
+      "webp": "assets/img/sobaeksan/g4.webp",
+      "jpg": "assets/img/sobaeksan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소백산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Sobaeksan",
+    "credit": {
+      "author": "Kemal Güneş",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@wkgunes"
+    }
+  },
+  {
+    "mountain_id": "sobaeksan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/sobaeksan/hero.avif",
+      "webp": "assets/img/sobaeksan/hero.webp",
+      "jpg": "assets/img/sobaeksan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "소백산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Sobaeksan mountain peaks and ridges",
+    "credit": {
+      "author": "Pan soo Yi",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@pan-soo-yi-9278113"
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/soyosan/g1.avif",
+      "webp": "assets/img/soyosan/g1.webp",
+      "jpg": "assets/img/soyosan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Soyosan",
+    "credit": {
+      "author": "Dmitriy Ryndin",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@dimafromcrimea"
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/soyosan/g2.avif",
+      "webp": "assets/img/soyosan/g2.webp",
+      "jpg": "assets/img/soyosan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Soyosan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/soyosan/g3.avif",
+      "webp": "assets/img/soyosan/g3.webp",
+      "jpg": "assets/img/soyosan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Soyosan mountain ridges under a clear sky",
+    "credit": {
+      "author": "pipop kunachon",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@daddysky"
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/soyosan/g4.avif",
+      "webp": "assets/img/soyosan/g4.webp",
+      "jpg": "assets/img/soyosan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Soyosan",
+    "credit": {
+      "author": "Hokusai",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@hokusai-509091422"
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/soyosan/hero.avif",
+      "webp": "assets/img/soyosan/hero.webp",
+      "jpg": "assets/img/soyosan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "소요산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Soyosan mountain peaks and ridges",
+    "credit": {
+      "author": "Nizar Firmansyah",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@rfniza"
+    }
+  },
+  {
+    "mountain_id": "taebaeksan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/taebaeksan/g1.avif",
+      "webp": "assets/img/taebaeksan/g1.webp",
+      "jpg": "assets/img/taebaeksan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "태백산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Taebaeksan",
+    "credit": {
+      "author": "대정 김",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/temple-near-forest-and-with-garden-11525000/"
+    }
+  },
+  {
+    "mountain_id": "taebaeksan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/taebaeksan/g2.avif",
+      "webp": "assets/img/taebaeksan/g2.webp",
+      "jpg": "assets/img/taebaeksan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "태백산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Taebaeksan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/trees-on-hills-in-winter-15113673/"
+    }
+  },
+  {
+    "mountain_id": "taebaeksan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/taebaeksan/g3.avif",
+      "webp": "assets/img/taebaeksan/g3.webp",
+      "jpg": "assets/img/taebaeksan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "태백산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Taebaeksan mountain ridges under a clear sky",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/rocky-mountains-in-a-valley-18959301/"
+    }
+  },
+  {
+    "mountain_id": "taebaeksan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/taebaeksan/g4.avif",
+      "webp": "assets/img/taebaeksan/g4.webp",
+      "jpg": "assets/img/taebaeksan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "태백산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Taebaeksan",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/drone-shot-of-hills-15113686/"
+    }
+  },
+  {
+    "mountain_id": "taebaeksan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/taebaeksan/hero.avif",
+      "webp": "assets/img/taebaeksan/hero.webp",
+      "jpg": "assets/img/taebaeksan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "태백산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Taebaeksan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/scenic-view-of-the-snowy-mountains-14170848/"
+    }
+  },
+  {
+    "mountain_id": "wolchulsan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/wolchulsan/g1.avif",
+      "webp": "assets/img/wolchulsan/g1.webp",
+      "jpg": "assets/img/wolchulsan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "월출산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Wolchulsan",
+    "credit": {
+      "author": "Kwangho Cha",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@sudal"
+    }
+  },
+  {
+    "mountain_id": "wolchulsan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/wolchulsan/g2.avif",
+      "webp": "assets/img/wolchulsan/g2.webp",
+      "jpg": "assets/img/wolchulsan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "월출산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Wolchulsan National Park",
+    "credit": {
+      "author": "Suki Lee",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@suki-lee-110686949"
+    }
+  },
+  {
+    "mountain_id": "wolchulsan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/wolchulsan/g3.avif",
+      "webp": "assets/img/wolchulsan/g3.webp",
+      "jpg": "assets/img/wolchulsan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "월출산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Wolchulsan mountain ridges under a clear sky",
+    "credit": {
+      "author": "Suki Lee",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@suki-lee-110686949"
+    }
+  },
+  {
+    "mountain_id": "wolchulsan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/wolchulsan/g4.avif",
+      "webp": "assets/img/wolchulsan/g4.webp",
+      "jpg": "assets/img/wolchulsan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "월출산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Wolchulsan",
+    "credit": {
+      "author": "대정 김",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@daejeung"
+    }
+  },
+  {
+    "mountain_id": "wolchulsan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/wolchulsan/hero.avif",
+      "webp": "assets/img/wolchulsan/hero.webp",
+      "jpg": "assets/img/wolchulsan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "월출산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Wolchulsan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "woraksan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/woraksan/g1.avif",
+      "webp": "assets/img/woraksan/g1.webp",
+      "jpg": "assets/img/woraksan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "월악산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Woraksan",
+    "credit": {
+      "author": "Kwangho Cha",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@sudal"
+    }
+  },
+  {
+    "mountain_id": "woraksan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/woraksan/g2.avif",
+      "webp": "assets/img/woraksan/g2.webp",
+      "jpg": "assets/img/woraksan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "월악산 국립공원의 사계절 자연미가 느껴지는 풍경",
+    "alt_en": "Beautiful landscape showcasing the natural beauty of Woraksan National Park",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "woraksan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/woraksan/g3.avif",
+      "webp": "assets/img/woraksan/g3.webp",
+      "jpg": "assets/img/woraksan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "월악산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Woraksan mountain ridges under a clear sky",
+    "credit": {
+      "author": "Suki Lee",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@suki-lee-110686949"
+    }
+  },
+  {
+    "mountain_id": "woraksan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/woraksan/g4.avif",
+      "webp": "assets/img/woraksan/g4.webp",
+      "jpg": "assets/img/woraksan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "월악산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Woraksan",
+    "credit": {
+      "author": "Suki Lee",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@suki-lee-110686949"
+    }
+  },
+  {
+    "mountain_id": "woraksan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/woraksan/hero.avif",
+      "webp": "assets/img/woraksan/hero.webp",
+      "jpg": "assets/img/woraksan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "월악산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Woraksan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
+    }
+  },
+  {
+    "mountain_id": "xueshan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/xueshan/g1.avif",
+      "webp": "assets/img/xueshan/g1.webp",
+      "jpg": "assets/img/xueshan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "설산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Xueshan",
+    "credit": {
+      "author": "P Hsuan Wang",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/grass-on-hill-11893668/"
+    }
+  },
+  {
+    "mountain_id": "xueshan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/xueshan/g2.avif",
+      "webp": "assets/img/xueshan/g2.webp",
+      "jpg": "assets/img/xueshan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "설산 산행 중 마주하는 설산 주봉의 수려한 모습",
+    "alt_en": "Scenic view of Xueshan Main Peak encountered during the Xueshan climb",
+    "credit": {
+      "author": "P Hsuan Wang",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/golden-grass-on-hill-11893662/"
+    }
+  },
+  {
+    "mountain_id": "xueshan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/xueshan/g3.avif",
+      "webp": "assets/img/xueshan/g3.webp",
+      "jpg": "assets/img/xueshan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "설산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Xueshan mountain ridges under a clear sky",
+    "credit": {
+      "author": "P Hsuan Wang",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/scenic-view-of-mountains-and-hills-15612615/"
+    }
+  },
+  {
+    "mountain_id": "xueshan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/xueshan/g4.avif",
+      "webp": "assets/img/xueshan/g4.webp",
+      "jpg": "assets/img/xueshan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "설산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Xueshan",
+    "credit": {
+      "author": "P Hsuan Wang",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/view-of-mountains-and-trees-15612617/"
+    }
+  },
+  {
+    "mountain_id": "xueshan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/xueshan/hero.avif",
+      "webp": "assets/img/xueshan/hero.webp",
+      "jpg": "assets/img/xueshan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "설산 국립공원의 대표 명소인 설산 주봉와 아름다운 산세 풍경",
+    "alt_en": "Beautiful landscape of Xueshan Main Peak and majestic mountain ridges in Xueshan National Park",
+    "credit": {
+      "author": "小小 兵",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/aerial-view-of-lush-mountain-ridge-in-taiwan-34434574/"
+    }
+  },
+  {
+    "mountain_id": "yangmingshan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/yangmingshan/g1.avif",
+      "webp": "assets/img/yangmingshan/g1.webp",
+      "jpg": "assets/img/yangmingshan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "양명산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Yangmingshan",
+    "credit": {
+      "author": "Timo Volz",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/photo-of-a-green-mountain-6502832/"
+    }
+  },
+  {
+    "mountain_id": "yangmingshan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/yangmingshan/g2.avif",
+      "webp": "assets/img/yangmingshan/g2.webp",
+      "jpg": "assets/img/yangmingshan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "양명산 산행 중 마주하는 양명산의 수려한 모습",
+    "alt_en": "Scenic view of Yangmingshan encountered during the Yangmingshan climb",
+    "credit": {
+      "author": "Andy Kuo",
+      "source": "Unsplash",
+      "url": "https://unsplash.com/@chyi826"
+    }
+  },
+  {
+    "mountain_id": "yangmingshan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/yangmingshan/g3.avif",
+      "webp": "assets/img/yangmingshan/g3.webp",
+      "jpg": "assets/img/yangmingshan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "양명산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Yangmingshan mountain ridges under a clear sky",
+    "credit": {
+      "author": "Andy Kuo",
+      "source": "Unsplash",
+      "url": "https://unsplash.com/@chyi826"
+    }
+  },
+  {
+    "mountain_id": "yangmingshan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/yangmingshan/g4.avif",
+      "webp": "assets/img/yangmingshan/g4.webp",
+      "jpg": "assets/img/yangmingshan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "양명산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Yangmingshan",
+    "credit": {
+      "author": "Chen Wen-Yu",
+      "source": "Unsplash",
+      "url": "https://unsplash.com/@waterfay"
+    }
+  },
+  {
+    "mountain_id": "yangmingshan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/yangmingshan/hero.avif",
+      "webp": "assets/img/yangmingshan/hero.webp",
+      "jpg": "assets/img/yangmingshan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "양명산 국립공원의 대표 명소인 양명산와 아름다운 산세 풍경",
+    "alt_en": "Beautiful landscape of Yangmingshan and majestic mountain ridges in Yangmingshan National Park",
+    "credit": {
+      "author": "CHIA-HAO HSU",
+      "source": "Unsplash",
+      "url": "https://unsplash.com/@roberthsu1054"
+    }
+  },
+  {
+    "mountain_id": "yushan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/yushan/g1.avif",
+      "webp": "assets/img/yushan/g1.webp",
+      "jpg": "assets/img/yushan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "위산 등산로를 따라 펼쳐진 수려한 주변 경관",
+    "alt_en": "Scenic hiking trail and beautiful surroundings of Yushan",
+    "credit": {
+      "author": "P Hsuan Wang",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/tents-pitched-on-a-mountaintop-12279808/"
+    }
+  },
+  {
+    "mountain_id": "yushan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/yushan/g2.avif",
+      "webp": "assets/img/yushan/g2.webp",
+      "jpg": "assets/img/yushan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "위산 산행 중 마주하는 위산 주봉의 수려한 모습",
+    "alt_en": "Scenic view of Yushan Main Peak encountered during the Yushan climb",
+    "credit": {
+      "author": "P Hsuan Wang",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/landscape-from-a-mountain-peak-above-clouds-12279810/"
+    }
+  },
+  {
+    "mountain_id": "yushan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/yushan/g3.avif",
+      "webp": "assets/img/yushan/g3.webp",
+      "jpg": "assets/img/yushan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "위산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
+    "alt_en": "Harmonious view of Yushan mountain ridges under a clear sky",
+    "credit": {
+      "author": "P Hsuan Wang",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/people-on-a-mountain-peak-above-clouds-12279813/"
+    }
+  },
+  {
+    "mountain_id": "yushan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/yushan/g4.avif",
+      "webp": "assets/img/yushan/g4.webp",
+      "jpg": "assets/img/yushan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "위산 숲길과 기암괴석이 어우러진 아름다운 비경",
+    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Yushan",
+    "credit": {
+      "author": "P Hsuan Wang",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/group-of-backpackers-in-mountains-12247773/"
+    }
+  },
+  {
+    "mountain_id": "yushan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/yushan/hero.avif",
+      "webp": "assets/img/yushan/hero.webp",
+      "jpg": "assets/img/yushan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "위산 국립공원의 대표 명소인 위산 주봉와 아름다운 산세 풍경",
+    "alt_en": "Beautiful landscape of Yushan Main Peak and majestic mountain ridges in Yushan National Park",
+    "credit": {
+      "author": "小小 兵",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/breathtaking-mountain-view-above-clouds-in-taiwan-34434573/"
+    }
+  }
+]
