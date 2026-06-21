@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="dark">
+
+<html data-theme="dark" lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>한라산 등산 플레이북</title>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
 <style>
 :root,[data-theme="light"]{
   --color-bg:#f5f4f0;--color-surface:#f8f7f4;--color-surface-2:#fafaf8;
@@ -177,660 +178,1133 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
   .stat-grid{grid-template-columns:repeat(2,1fr);}
   .course-btn{padding:var(--space-2) var(--space-4);font-size:var(--text-xs);}
 }
+
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
 </style>
 </head>
 <body>
-
 <header class="site-header">
-  <div class="logo-wrap">
-    <svg class="logo-svg" viewBox="0 0 36 36" fill="none" aria-label="한라산 플레이북 로고">
-      <rect width="36" height="36" rx="8" fill="var(--color-primary)"/>
-      <ellipse cx="18" cy="22" rx="14" ry="9" fill="rgba(255,255,255,0.12)"/>
-      <path d="M4 26 Q9 16 14 18 Q16 13 18 9 Q20 13 22 18 Q27 16 32 26" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <circle cx="18" cy="9" r="2.5" fill="white"/>
-    </svg>
-    <span class="logo-text">한라산 플레이북</span>
-  </div>
-  <button class="theme-btn" data-theme-toggle aria-label="테마 전환">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-  </button>
+<div class="logo-wrap">
+<svg aria-label="한라산 플레이북 로고" class="logo-svg" fill="none" viewbox="0 0 36 36">
+<rect fill="var(--color-primary)" height="36" rx="8" width="36"></rect>
+<ellipse cx="18" cy="22" fill="rgba(255,255,255,0.12)" rx="14" ry="9"></ellipse>
+<path d="M4 26 Q9 16 14 18 Q16 13 18 9 Q20 13 22 18 Q27 16 32 26" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+<circle cx="18" cy="9" fill="white" r="2.5"></circle>
+</svg>
+<span class="logo-text">한라산 플레이북</span>
+</div>
+<button aria-label="테마 전환" class="theme-btn" data-theme-toggle="">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
 </header>
-
-<section class="hero">
-  <div class="hero-badge">🌋 대한민국 최고봉 · 제주특별자치도 · 해발 1,947m</div>
-  <h1>한라산 등산 코스 가이드</h1>
-  <p>백록담을 품은 유네스코 세계자연유산. 영실 탐방부터 성판악·관음사 종주까지 — 나에게 맞는 코스를 선택하세요.</p>
-  <div class="course-selector">
-    <button class="course-btn ab" onclick="selectCourse('beginner',this)">🌿 초급 — 영실·윗세오름</button>
-    <button class="course-btn" onclick="selectCourse('intermediate',this)">🦶 중급 — 성판악 백록담 왕복</button>
-    <button class="course-btn" onclick="selectCourse('advanced',this)">🏔 고급 — 관음사↑ 성판악↓ 종주</button>
-  </div>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/hallasan/hero-640.avif 640w, assets/img/hallasan/hero-1024.avif 1024w, assets/img/hallasan/hero-1600.avif 1600w, assets/img/hallasan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/hallasan/hero-640.webp 640w, assets/img/hallasan/hero-1024.webp 1024w, assets/img/hallasan/hero-1600.webp 1600w, assets/img/hallasan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="한라산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Hallasan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/hallasan/hero-1600.jpg" srcset="assets/img/hallasan/hero-640.jpg 640w, assets/img/hallasan/hero-1024.jpg 1024w, assets/img/hallasan/hero-1600.jpg 1600w, assets/img/hallasan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge">🌋 대한민국 최고봉 · 제주특별자치도 · 해발 1,947m</div>
+<h1>한라산 등산 코스 가이드</h1>
+<p>백록담을 품은 유네스코 세계자연유산. 영실 탐방부터 성판악·관음사 종주까지 — 나에게 맞는 코스를 선택하세요.</p>
+<div class="course-selector">
+<button class="course-btn ab" onclick="selectCourse('beginner',this)">🌿 초급 — 영실·윗세오름</button>
+<button class="course-btn" onclick="selectCourse('intermediate',this)">🦶 중급 — 성판악 백록담 왕복</button>
+<button class="course-btn" onclick="selectCourse('advanced',this)">🏔 고급 — 관음사↑ 성판악↓ 종주</button>
+</div>
+</div>
+<!-- Hero Credit Overlay -->
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://unsplash.com/@julien_manival" rel="noopener" target="_blank">Julien Manival</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">unsplash</a></span>
+</div>
 </section>
-
 <!-- ═══ 초급 ═══ -->
-<div id="course-beginner" class="course-panel active beginner">
-  <nav class="tab-bar">
-    <button class="tab-btn active" onclick="selectTab('beginner','overview',this)">📋 개요</button>
-    <button class="tab-btn" onclick="selectTab('beginner','route',this)">🗺 경로 안내</button>
-    <button class="tab-btn" onclick="selectTab('beginner','map',this)">📍 지도</button>
-    <button class="tab-btn" onclick="selectTab('beginner','tips',this)">💡 팁 &amp; 주의</button>
-  </nav>
-  <main class="main">
-
-    <div id="beginner-overview" class="tab-content active">
-      <div class="section-title"><div class="section-icon">🌿</div><span>초급 코스 개요</span></div>
-      <div class="stat-grid">
-        <div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">11.6km</div><div class="stat-label">영실↑ 어리목↓ 환종주</div></div>
-        <div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">4~5h</div><div class="stat-label">소요 시간</div></div>
-        <div class="stat-card"><div class="stat-icon">⛰</div><div class="stat-value">1,700m</div><div class="stat-label">윗세오름·남벽분기점</div></div>
-        <div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">±420m</div><div class="stat-label">누적 고도차</div></div>
-        <div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~1,000</div><div class="stat-label">예상 칼로리</div></div>
-        <div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★☆☆☆</div><div class="stat-label">난이도</div></div>
-      </div>
-      <div class="elevation-wrap">
-        <h3>📊 고도 프로파일 — 영실↑ 어리목↓ 환종주</h3>
-        <svg class="elev-svg" viewBox="0 0 900 180" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="bGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="var(--color-success)" stop-opacity=".35"/>
-              <stop offset="100%" stop-color="var(--color-success)" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <path d="M0 160 L0 135 C80 125 140 100 200 75 C250 55 290 42 340 35 L400 32 C440 34 470 36 500 37 C540 38 560 40 590 42 C640 50 700 80 760 110 C810 130 860 145 900 150 L900 160Z" fill="url(#bGrad)"/>
-          <path d="M0 135 C80 125 140 100 200 75 C250 55 290 42 340 35 L400 32 C440 34 470 36 500 37 C540 38 560 40 590 42 C640 50 700 80 760 110 C810 130 860 145 900 150" fill="none" stroke="var(--color-success)" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="5" y="150" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">영실 1,280m</text>
-          <text x="185" y="70" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">병풍바위</text>
-          <text x="320" y="28" font-size="11" fill="var(--color-success)" font-weight="700" font-family="Satoshi,sans-serif">윗세오름 1,700m</text>
-          <text x="460" y="32" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">남벽분기점</text>
-          <text x="875" y="148" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" text-anchor="end">어리목 970m</text>
-          <circle cx="400" cy="32" r="4" fill="var(--color-success)"/>
-        </svg>
-      </div>
-      <div class="section-title"><div class="section-icon">🗺</div><span>전체 코스 흐름</span></div>
-      <div class="course-flow">
-        <span class="flow-node peak">🅿 영실 탐방로 입구</span><span class="flow-arrow">→</span>
-        <span class="flow-node">병풍바위</span><span class="flow-arrow">→</span>
-        <span class="flow-node peak">윗세오름 1,700m</span><span class="flow-arrow">→</span>
-        <span class="flow-node">남벽분기점</span><span class="flow-arrow">→</span>
-        <span class="flow-node">만세동산</span><span class="flow-arrow">→</span>
-        <span class="flow-node">사제비동산</span><span class="flow-arrow">→</span>
-        <span class="flow-node peak">🅿 어리목 탐방로 입구</span>
-      </div>
-      <div class="info-card">
-        <h3>코스 특징</h3>
-        <ul>
-          <li>✅ 영실 탐방로 입구 해발 1,280m — 시작 고도가 높아 단거리에 고지대 경관 감상</li>
-          <li>✅ 병풍바위 기암절벽 + 오백나한 한라산 최고 경관 구간</li>
-          <li>✅ 윗세오름 대피소 컵라면·음료 판매 (현금 필수)</li>
-          <li>✅ 예약 불필요 (성판악·관음사와 달리 사전 예약 없이 입산 가능)</li>
-          <li>⚠ 영실매표소→영실탐방로 입구 도보 40분 또는 차량 이용</li>
-          <li>⚠ 백록담 정상은 이 코스로 불가 — 정상은 중·고급 코스 이용</li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="beginner-route" class="tab-content">
-      <div class="section-title"><div class="section-icon">🗺</div><span>구간별 상세 경로</span></div>
-      <div class="accordion">
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">출</span>
-            <div class="acc-tw"><div class="acc-title">영실 탐방로 입구 출발</div><div class="acc-meta">해발 1,280m · 서귀포시 하원동</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <p class="acc-desc">영실 매표소에서 차량으로 진입하거나 도보 40분으로 탐방로 입구에 도착합니다. 탐방안내소에서 안전 수칙을 확인하고 출발하세요. 화장실 이용 후 입산합니다.</p>
-            <div class="tip-box">💡 영실 매표소 주차 후 탐방로 입구까지 도보 40분 소요. 셔틀버스 운영 시 이용 가능. 일찍 출발할수록 주차 여유.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">1</span>
-            <div class="acc-tw"><div class="acc-title">영실 탐방로 입구 → 병풍바위</div><div class="acc-meta">약 1.5km · 50분 · 고도 ↑300m (깔딱고개)</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg med"><div class="diff-fill" style="width:55%"></div></div></div>
-            <p class="acc-desc">이 코스 유일의 급경사 구간 '깔딱고개'. 40~50분 가파른 계단 구간을 오르면 병풍바위에 도달합니다. 오백나한(오백장군)과 기암절벽이 펼쳐지며 한라산 최고의 경관을 감상할 수 있습니다.</p>
-            <div class="warn-box">⚠ 이 구간이 코스 중 가장 힘든 구간. 충분히 쉬어가며 천천히 오르세요. 이후 선작지왓(평원) 구간은 매우 완만합니다.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">2</span>
-            <div class="acc-tw"><div class="acc-title">병풍바위 → 선작지왓 → 윗세오름 대피소</div><div class="acc-meta">약 1.3km · 50분 · 완만한 평원</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg easy"><div class="diff-fill" style="width:20%"></div></div></div>
-            <p class="acc-desc">병풍바위를 지나면 선작지왓(고산 평원)이 펼쳐집니다. 경사 거의 없는 완만한 탐방로로 한라산 특유의 고산 식물(구상나무·철쭉)을 감상하며 걷습니다. 윗세오름 대피소에서 컵라면·음료 구매 가능.</p>
-            <div class="tip-box">💡 윗세오름 대피소에서 컵라면 1,500원, 물 구매 가능. 현금 준비 필수! 야외 테이블에서 백록담 남벽을 바라보며 식사하는 특별한 경험.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">3</span>
-            <div class="acc-tw"><div class="acc-title">윗세오름 → 남벽분기점 (선택 조망)</div><div class="acc-meta">왕복 약 1km · 30분 · 백록담 남벽 조망</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg easy"><div class="diff-fill" style="width:15%"></div></div></div>
-            <p class="acc-desc">윗세오름에서 남벽분기점(0.5km)까지 왕복 탐방 시 백록담 남벽의 웅장한 화산 절벽을 정면으로 감상할 수 있습니다. 백록담 정상은 이 지점에서도 불가합니다. 남벽분기점에서 사진 촬영 후 어리목 방향으로 하산 시작.</p>
-            <div class="tip-box">💡 남벽분기점은 백록담 남벽을 가장 가까이 볼 수 있는 포인트. 맑은 날 화산 절벽의 웅장함이 압도적!</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">4</span>
-            <div class="acc-tw"><div class="acc-title">남벽분기점 → 만세동산 → 사제비동산 → 어리목</div><div class="acc-meta">약 4.7km · 1시간 40분 · 하산</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg med"><div class="diff-fill" style="width:40%"></div></div></div>
-            <p class="acc-desc">어리목 방향으로 하산합니다. 만세동산, 사제비동산을 지나 울창한 구상나무 숲을 통과하며 어리목 탐방로 입구에 도착합니다. 사제비동산 이후 완만한 숲길이 이어집니다.</p>
-            <div class="tip-box">💡 어리목 버스 정류장에서 제주 시내버스로 이동 가능. 탐방로 입구에서 정류장까지 도보 15분. 자가용 이용 시 영실 주차장으로 별도 이동 필요.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="beginner-map" class="tab-content">
-      <div class="map-wrap">
-        <h3>📍 영실↑ 어리목↓ 환종주 개념도</h3>
-        <svg viewBox="0 0 700 480" style="width:100%;height:auto;max-height:500px">
-          <rect width="700" height="480" fill="var(--color-surface-offset)" rx="12"/>
-          <ellipse cx="350" cy="240" rx="260" ry="200" fill="var(--color-success)" fill-opacity=".05"/>
-          <!-- up path: left bottom → center top -->
-          <path d="M140 400 Q160 360 185 320 Q210 280 240 245 Q265 215 295 190 Q320 168 350 155" stroke="var(--color-success)" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <!-- witseoorm horizontal -->
-          <path d="M350 155 Q370 152 400 153 Q430 154 455 157" stroke="var(--color-success)" stroke-width="3" fill="none" stroke-dasharray="8,4"/>
-          <!-- down path: right top → right bottom -->
-          <path d="M455 157 Q470 175 475 200 Q480 230 478 260 Q476 295 465 330 Q450 370 435 400 Q425 425 415 445" stroke="var(--color-primary)" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <!-- nodes -->
-          <circle cx="140" cy="400" r="14" fill="var(--color-success)" stroke="var(--color-bg)" stroke-width="3"/>
-          <text x="160" y="405" font-size="12" font-weight="700" fill="var(--color-success)" font-family="Satoshi,sans-serif">영실 탐방로 입구 P</text>
-          <circle cx="220" cy="250" r="9" fill="var(--color-surface-dynamic)" stroke="var(--color-border)" stroke-width="2"/>
-          <text x="235" y="254" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">병풍바위</text>
-          <circle cx="350" cy="155" r="16" fill="var(--color-success)" stroke="var(--color-bg)" stroke-width="3"/>
-          <text x="290" y="138" font-size="12" font-weight="700" fill="var(--color-success)" font-family="Satoshi,sans-serif">윗세오름 1,700m</text>
-          <circle cx="455" cy="157" r="10" fill="var(--color-gold)" fill-opacity=".85" stroke="var(--color-bg)" stroke-width="2"/>
-          <text x="468" y="161" font-size="11" fill="var(--color-gold)" font-family="Satoshi,sans-serif">남벽분기점</text>
-          <!-- Baengnoktam silhouette -->
-          <path d="M350 80 Q365 70 380 68 Q395 72 410 75 Q420 78 415 88 Q410 96 395 98 Q380 100 365 96 Q352 92 350 80Z" fill="var(--color-surface-dynamic)" stroke="var(--color-border)" stroke-width="1.5"/>
-          <text x="378" y="92" font-size="10" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" text-anchor="middle">백록담</text>
-          <circle cx="415" cy="445" r="14" fill="var(--color-primary)" stroke="var(--color-bg)" stroke-width="3"/>
-          <text x="435" y="450" font-size="12" font-weight="700" fill="var(--color-primary)" font-family="Satoshi,sans-serif">어리목 탐방로 입구 P</text>
-          <!-- compass -->
-          <circle cx="635" cy="55" r="28" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
-          <text x="632" y="40" font-size="10" font-weight="700" fill="var(--color-text)" font-family="Satoshi,sans-serif">N</text>
-          <line x1="635" y1="43" x2="635" y2="54" stroke="var(--color-text)" stroke-width="1.5"/>
-          <!-- legend -->
-          <rect x="18" y="420" width="225" height="50" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1"/>
-          <line x1="32" y1="436" x2="56" y2="436" stroke="var(--color-success)" stroke-width="3"/>
-          <text x="64" y="440" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">영실 오르막 등로</text>
-          <line x1="32" y1="456" x2="56" y2="456" stroke="var(--color-primary)" stroke-width="3"/>
-          <text x="64" y="460" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">어리목 하산 등로</text>
-        </svg>
-      </div>
-      <div class="section-title"><div class="section-icon">📋</div><span>전체 체크포인트</span></div>
-      <div class="cp-wrap">
-        <table class="cp-table">
-          <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-          <tbody>
-            <tr><td>1</td><td>영실 탐방로 입구</td><td>1,280m</td><td>0km</td><td><span class="badge b-start">출발점</span></td><td>화장실·주차장</td></tr>
-            <tr><td>2</td><td>깔딱고개 (급경사 시작)</td><td>1,400m</td><td>0.5km</td><td><span class="badge b-landmark">주의구간</span></td><td>—</td></tr>
-            <tr><td>3</td><td>병풍바위 (오백나한)</td><td>1,580m</td><td>1.5km</td><td><span class="badge b-landmark">명소</span></td><td>조망·쉼터</td></tr>
-            <tr><td>4</td><td>선작지왓 (고산 평원)</td><td>1,630m</td><td>2.3km</td><td><span class="badge b-landmark">경관</span></td><td>—</td></tr>
-            <tr><td>5</td><td>윗세오름 대피소</td><td>1,700m</td><td>2.8km</td><td><span class="badge b-shelter">대피소</span></td><td>매점·화장실·음수</td></tr>
-            <tr><td>6</td><td>남벽분기점</td><td>1,600m</td><td>3.3km</td><td><span class="badge b-control">갈림길</span></td><td>조망대</td></tr>
-            <tr><td>7</td><td>만세동산</td><td>1,580m</td><td>4.5km</td><td><span class="badge b-landmark">능선</span></td><td>—</td></tr>
-            <tr><td>8</td><td>사제비동산</td><td>1,400m</td><td>6.5km</td><td><span class="badge b-landmark">능선</span></td><td>—</td></tr>
-            <tr><td>9</td><td>어리목 탐방로 입구</td><td>970m</td><td>7.6km</td><td><span class="badge b-start">종점</span></td><td>주차장·버스정류장</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div id="beginner-tips" class="tab-content">
-      <div class="section-title"><div class="section-icon">💡</div><span>팁 &amp; 주의사항</span></div>
-      <div class="tips-grid">
-        <div class="tip-card"><div class="tip-card-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (미끄럼 방지)</li><li>트레킹 스틱</li><li>방풍·방수 재킷</li><li>모자·선글라스</li><li>헤드램프</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 1.5L 이상</li><li>에너지바·간식</li><li>현금 준비 (대피소 매점)</li><li>윗세오름 컵라면 판매</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">🛡</div><h4>안전 수칙</h4><ul><li>입산통제 시간 전 탐방로 입구 통과</li><li>동절기 입산통제 12:00, 하절기 15:00</li><li>예약 불필요 (영실·어리목)</li><li>고산 기상 급변 대비</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">🚌</div><h4>교통 정보</h4><ul><li>제주시내 → 어리목: 240번 버스</li><li>서귀포 → 영실: 서귀포 시내버스</li><li>영실·어리목 주차장 유료</li><li>환종주 시 각 방향 교통 계획 필수</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">🌸</div><h4>계절별 정보</h4><ul><li>봄(4~5월): 철쭉 대군락 절정</li><li>여름: 구름 속 선작지왓 신비로운 운해</li><li>가을: 억새·단풍, 10월 최고</li><li>겨울: 설경 압도적, 아이젠 필수</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">📱</div><h4>유용한 정보</h4><ul><li>한라산탐방예약 visithalla.jeju.go.kr</li><li>입산통제 전화: 064-713-9950</li><li>제주 날씨 제주기상청 064-752-0365</li><li>람블러 GPS 앱 활용</li></ul></div>
-      </div>
-    </div>
-
-  </main>
+<div class="course-panel active beginner" id="course-beginner">
+<nav class="tab-bar">
+<button class="tab-btn active" onclick="selectTab('beginner','overview',this)">📋 개요</button>
+<button class="tab-btn" onclick="selectTab('beginner','route',this)">🗺 경로 안내</button>
+<button class="tab-btn" onclick="selectTab('beginner','map',this)">📍 지도</button>
+<button class="tab-btn" onclick="selectTab('beginner','tips',this)">💡 팁 &amp; 주의</button>
+</nav>
+<main class="main">
+<div class="tab-content active" id="beginner-overview">
+<div class="section-title"><div class="section-icon">🌿</div><span>초급 코스 개요</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">11.6km</div><div class="stat-label">영실↑ 어리목↓ 환종주</div></div>
+<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">4~5h</div><div class="stat-label">소요 시간</div></div>
+<div class="stat-card"><div class="stat-icon">⛰</div><div class="stat-value">1,700m</div><div class="stat-label">윗세오름·남벽분기점</div></div>
+<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">±420m</div><div class="stat-label">누적 고도차</div></div>
+<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~1,000</div><div class="stat-label">예상 칼로리</div></div>
+<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★☆☆☆</div><div class="stat-label">난이도</div></div>
 </div>
-
+<div class="elevation-wrap">
+<h3>📊 고도 프로파일 — 영실↑ 어리목↓ 환종주</h3>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs>
+<lineargradient id="bGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--color-success)" stop-opacity=".35"></stop>
+<stop offset="100%" stop-color="var(--color-success)" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0 160 L0 135 C80 125 140 100 200 75 C250 55 290 42 340 35 L400 32 C440 34 470 36 500 37 C540 38 560 40 590 42 C640 50 700 80 760 110 C810 130 860 145 900 150 L900 160Z" fill="url(#bGrad)"></path>
+<path d="M0 135 C80 125 140 100 200 75 C250 55 290 42 340 35 L400 32 C440 34 470 36 500 37 C540 38 560 40 590 42 C640 50 700 80 760 110 C810 130 860 145 900 150" fill="none" stroke="var(--color-success)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="5" y="150">영실 1,280m</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="185" y="70">병풍바위</text>
+<text fill="var(--color-success)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="320" y="28">윗세오름 1,700m</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="460" y="32">남벽분기점</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" text-anchor="end" x="875" y="148">어리목 970m</text>
+<circle cx="400" cy="32" fill="var(--color-success)" r="4"></circle>
+</svg>
+</div>
+<div class="section-title"><div class="section-icon">🗺</div><span>전체 코스 흐름</span></div>
+<div class="course-flow">
+<span class="flow-node peak">🅿 영실 탐방로 입구</span><span class="flow-arrow">→</span>
+<span class="flow-node">병풍바위</span><span class="flow-arrow">→</span>
+<span class="flow-node peak">윗세오름 1,700m</span><span class="flow-arrow">→</span>
+<span class="flow-node">남벽분기점</span><span class="flow-arrow">→</span>
+<span class="flow-node">만세동산</span><span class="flow-arrow">→</span>
+<span class="flow-node">사제비동산</span><span class="flow-arrow">→</span>
+<span class="flow-node peak">🅿 어리목 탐방로 입구</span>
+</div>
+<div class="info-card">
+<h3>코스 특징</h3>
+<ul>
+<li>✅ 영실 탐방로 입구 해발 1,280m — 시작 고도가 높아 단거리에 고지대 경관 감상</li>
+<li>✅ 병풍바위 기암절벽 + 오백나한 한라산 최고 경관 구간</li>
+<li>✅ 윗세오름 대피소 컵라면·음료 판매 (현금 필수)</li>
+<li>✅ 예약 불필요 (성판악·관음사와 달리 사전 예약 없이 입산 가능)</li>
+<li>⚠ 영실매표소→영실탐방로 입구 도보 40분 또는 차량 이용</li>
+<li>⚠ 백록담 정상은 이 코스로 불가 — 정상은 중·고급 코스 이용</li>
+</ul>
+</div>
+</div>
+<div class="tab-content" id="beginner-route">
+<div class="section-title"><div class="section-icon">🗺</div><span>구간별 상세 경로</span></div>
+<div class="accordion">
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">출</span>
+<div class="acc-tw"><div class="acc-title">영실 탐방로 입구 출발</div><div class="acc-meta">해발 1,280m · 서귀포시 하원동</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<p class="acc-desc">영실 매표소에서 차량으로 진입하거나 도보 40분으로 탐방로 입구에 도착합니다. 탐방안내소에서 안전 수칙을 확인하고 출발하세요. 화장실 이용 후 입산합니다.</p>
+<div class="tip-box">💡 영실 매표소 주차 후 탐방로 입구까지 도보 40분 소요. 셔틀버스 운영 시 이용 가능. 일찍 출발할수록 주차 여유.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">1</span>
+<div class="acc-tw"><div class="acc-title">영실 탐방로 입구 → 병풍바위</div><div class="acc-meta">약 1.5km · 50분 · 고도 ↑300m (깔딱고개)</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg med"><div class="diff-fill" style="width:55%"></div></div></div>
+<p class="acc-desc">이 코스 유일의 급경사 구간 '깔딱고개'. 40~50분 가파른 계단 구간을 오르면 병풍바위에 도달합니다. 오백나한(오백장군)과 기암절벽이 펼쳐지며 한라산 최고의 경관을 감상할 수 있습니다.</p>
+<div class="warn-box">⚠ 이 구간이 코스 중 가장 힘든 구간. 충분히 쉬어가며 천천히 오르세요. 이후 선작지왓(평원) 구간은 매우 완만합니다.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">2</span>
+<div class="acc-tw"><div class="acc-title">병풍바위 → 선작지왓 → 윗세오름 대피소</div><div class="acc-meta">약 1.3km · 50분 · 완만한 평원</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg easy"><div class="diff-fill" style="width:20%"></div></div></div>
+<p class="acc-desc">병풍바위를 지나면 선작지왓(고산 평원)이 펼쳐집니다. 경사 거의 없는 완만한 탐방로로 한라산 특유의 고산 식물(구상나무·철쭉)을 감상하며 걷습니다. 윗세오름 대피소에서 컵라면·음료 구매 가능.</p>
+<div class="tip-box">💡 윗세오름 대피소에서 컵라면 1,500원, 물 구매 가능. 현금 준비 필수! 야외 테이블에서 백록담 남벽을 바라보며 식사하는 특별한 경험.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">3</span>
+<div class="acc-tw"><div class="acc-title">윗세오름 → 남벽분기점 (선택 조망)</div><div class="acc-meta">왕복 약 1km · 30분 · 백록담 남벽 조망</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg easy"><div class="diff-fill" style="width:15%"></div></div></div>
+<p class="acc-desc">윗세오름에서 남벽분기점(0.5km)까지 왕복 탐방 시 백록담 남벽의 웅장한 화산 절벽을 정면으로 감상할 수 있습니다. 백록담 정상은 이 지점에서도 불가합니다. 남벽분기점에서 사진 촬영 후 어리목 방향으로 하산 시작.</p>
+<div class="tip-box">💡 남벽분기점은 백록담 남벽을 가장 가까이 볼 수 있는 포인트. 맑은 날 화산 절벽의 웅장함이 압도적!</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">4</span>
+<div class="acc-tw"><div class="acc-title">남벽분기점 → 만세동산 → 사제비동산 → 어리목</div><div class="acc-meta">약 4.7km · 1시간 40분 · 하산</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg med"><div class="diff-fill" style="width:40%"></div></div></div>
+<p class="acc-desc">어리목 방향으로 하산합니다. 만세동산, 사제비동산을 지나 울창한 구상나무 숲을 통과하며 어리목 탐방로 입구에 도착합니다. 사제비동산 이후 완만한 숲길이 이어집니다.</p>
+<div class="tip-box">💡 어리목 버스 정류장에서 제주 시내버스로 이동 가능. 탐방로 입구에서 정류장까지 도보 15분. 자가용 이용 시 영실 주차장으로 별도 이동 필요.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content" id="beginner-map">
+<div class="map-wrap">
+<h3>📍 영실↑ 어리목↓ 환종주 개념도</h3>
+<svg style="width:100%;height:auto;max-height:500px" viewbox="0 0 700 480">
+<rect fill="var(--color-surface-offset)" height="480" rx="12" width="700"></rect>
+<ellipse cx="350" cy="240" fill="var(--color-success)" fill-opacity=".05" rx="260" ry="200"></ellipse>
+<!-- up path: left bottom → center top -->
+<path d="M140 400 Q160 360 185 320 Q210 280 240 245 Q265 215 295 190 Q320 168 350 155" fill="none" stroke="var(--color-success)" stroke-linecap="round" stroke-width="4"></path>
+<!-- witseoorm horizontal -->
+<path d="M350 155 Q370 152 400 153 Q430 154 455 157" fill="none" stroke="var(--color-success)" stroke-dasharray="8,4" stroke-width="3"></path>
+<!-- down path: right top → right bottom -->
+<path d="M455 157 Q470 175 475 200 Q480 230 478 260 Q476 295 465 330 Q450 370 435 400 Q425 425 415 445" fill="none" stroke="var(--color-primary)" stroke-linecap="round" stroke-width="4"></path>
+<!-- nodes -->
+<circle cx="140" cy="400" fill="var(--color-success)" r="14" stroke="var(--color-bg)" stroke-width="3"></circle>
+<text fill="var(--color-success)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="160" y="405">영실 탐방로 입구 P</text>
+<circle cx="220" cy="250" fill="var(--color-surface-dynamic)" r="9" stroke="var(--color-border)" stroke-width="2"></circle>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="235" y="254">병풍바위</text>
+<circle cx="350" cy="155" fill="var(--color-success)" r="16" stroke="var(--color-bg)" stroke-width="3"></circle>
+<text fill="var(--color-success)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="290" y="138">윗세오름 1,700m</text>
+<circle cx="455" cy="157" fill="var(--color-gold)" fill-opacity=".85" r="10" stroke="var(--color-bg)" stroke-width="2"></circle>
+<text fill="var(--color-gold)" font-family="Satoshi,sans-serif" font-size="11" x="468" y="161">남벽분기점</text>
+<!-- Baengnoktam silhouette -->
+<path d="M350 80 Q365 70 380 68 Q395 72 410 75 Q420 78 415 88 Q410 96 395 98 Q380 100 365 96 Q352 92 350 80Z" fill="var(--color-surface-dynamic)" stroke="var(--color-border)" stroke-width="1.5"></path>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="middle" x="378" y="92">백록담</text>
+<circle cx="415" cy="445" fill="var(--color-primary)" r="14" stroke="var(--color-bg)" stroke-width="3"></circle>
+<text fill="var(--color-primary)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="435" y="450">어리목 탐방로 입구 P</text>
+<!-- compass -->
+<circle cx="635" cy="55" fill="var(--color-surface)" r="28" stroke="var(--color-border)" stroke-width="1.5"></circle>
+<text fill="var(--color-text)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="632" y="40">N</text>
+<line stroke="var(--color-text)" stroke-width="1.5" x1="635" x2="635" y1="43" y2="54"></line>
+<!-- legend -->
+<rect fill="var(--color-surface)" height="50" rx="8" stroke="var(--color-border)" stroke-width="1" width="225" x="18" y="420"></rect>
+<line stroke="var(--color-success)" stroke-width="3" x1="32" x2="56" y1="436" y2="436"></line>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="64" y="440">영실 오르막 등로</text>
+<line stroke="var(--color-primary)" stroke-width="3" x1="32" x2="56" y1="456" y2="456"></line>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="64" y="460">어리목 하산 등로</text>
+</svg>
+</div>
+<div class="section-title"><div class="section-icon">📋</div><span>전체 체크포인트</span></div>
+<div class="cp-wrap">
+<table class="cp-table">
+<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>영실 탐방로 입구</td><td>1,280m</td><td>0km</td><td><span class="badge b-start">출발점</span></td><td>화장실·주차장</td></tr>
+<tr><td>2</td><td>깔딱고개 (급경사 시작)</td><td>1,400m</td><td>0.5km</td><td><span class="badge b-landmark">주의구간</span></td><td>—</td></tr>
+<tr><td>3</td><td>병풍바위 (오백나한)</td><td>1,580m</td><td>1.5km</td><td><span class="badge b-landmark">명소</span></td><td>조망·쉼터</td></tr>
+<tr><td>4</td><td>선작지왓 (고산 평원)</td><td>1,630m</td><td>2.3km</td><td><span class="badge b-landmark">경관</span></td><td>—</td></tr>
+<tr><td>5</td><td>윗세오름 대피소</td><td>1,700m</td><td>2.8km</td><td><span class="badge b-shelter">대피소</span></td><td>매점·화장실·음수</td></tr>
+<tr><td>6</td><td>남벽분기점</td><td>1,600m</td><td>3.3km</td><td><span class="badge b-control">갈림길</span></td><td>조망대</td></tr>
+<tr><td>7</td><td>만세동산</td><td>1,580m</td><td>4.5km</td><td><span class="badge b-landmark">능선</span></td><td>—</td></tr>
+<tr><td>8</td><td>사제비동산</td><td>1,400m</td><td>6.5km</td><td><span class="badge b-landmark">능선</span></td><td>—</td></tr>
+<tr><td>9</td><td>어리목 탐방로 입구</td><td>970m</td><td>7.6km</td><td><span class="badge b-start">종점</span></td><td>주차장·버스정류장</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="tab-content" id="beginner-tips">
+<div class="section-title"><div class="section-icon">💡</div><span>팁 &amp; 주의사항</span></div>
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (미끄럼 방지)</li><li>트레킹 스틱</li><li>방풍·방수 재킷</li><li>모자·선글라스</li><li>헤드램프</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 1.5L 이상</li><li>에너지바·간식</li><li>현금 준비 (대피소 매점)</li><li>윗세오름 컵라면 판매</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🛡</div><h4>안전 수칙</h4><ul><li>입산통제 시간 전 탐방로 입구 통과</li><li>동절기 입산통제 12:00, 하절기 15:00</li><li>예약 불필요 (영실·어리목)</li><li>고산 기상 급변 대비</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🚌</div><h4>교통 정보</h4><ul><li>제주시내 → 어리목: 240번 버스</li><li>서귀포 → 영실: 서귀포 시내버스</li><li>영실·어리목 주차장 유료</li><li>환종주 시 각 방향 교통 계획 필수</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🌸</div><h4>계절별 정보</h4><ul><li>봄(4~5월): 철쭉 대군락 절정</li><li>여름: 구름 속 선작지왓 신비로운 운해</li><li>가을: 억새·단풍, 10월 최고</li><li>겨울: 설경 압도적, 아이젠 필수</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📱</div><h4>유용한 정보</h4><ul><li>한라산탐방예약 visithalla.jeju.go.kr</li><li>입산통제 전화: 064-713-9950</li><li>제주 날씨 제주기상청 064-752-0365</li><li>람블러 GPS 앱 활용</li></ul></div>
+</div>
+</div>
+</main>
+</div>
 <!-- ═══ 중급 ═══ -->
-<div id="course-intermediate" class="course-panel intermediate">
-  <nav class="tab-bar">
-    <button class="tab-btn active" onclick="selectTab('intermediate','overview',this)">📋 개요</button>
-    <button class="tab-btn" onclick="selectTab('intermediate','route',this)">🗺 경로 안내</button>
-    <button class="tab-btn" onclick="selectTab('intermediate','map',this)">📍 지도</button>
-    <button class="tab-btn" onclick="selectTab('intermediate','tips',this)">💡 팁 &amp; 주의</button>
-  </nav>
-  <main class="main">
-
-    <div id="intermediate-overview" class="tab-content active">
-      <div class="section-title"><div class="section-icon">🦶</div><span>중급 코스 개요</span></div>
-      <div class="stat-grid">
-        <div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">19.2km</div><div class="stat-label">왕복 거리</div></div>
-        <div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">8~10h</div><div class="stat-label">소요 시간</div></div>
-        <div class="stat-card"><div class="stat-icon">⛰</div><div class="stat-value">1,947m</div><div class="stat-label">백록담 정상</div></div>
-        <div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">1,300m</div><div class="stat-label">누적 고도차</div></div>
-        <div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~2,500</div><div class="stat-label">예상 칼로리</div></div>
-        <div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★★☆☆</div><div class="stat-label">난이도</div></div>
-      </div>
-      <div class="elevation-wrap">
-        <h3>📊 고도 프로파일 — 성판악 백록담 왕복</h3>
-        <svg class="elev-svg" viewBox="0 0 900 180" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="iGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="var(--color-gold)" stop-opacity=".35"/>
-              <stop offset="100%" stop-color="var(--color-gold)" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <path d="M0 160 L0 150 C100 145 160 138 220 125 C270 115 310 105 360 88 C395 75 420 58 445 32 L455 18 C460 20 465 30 480 50 C500 75 530 105 580 125 C630 140 700 150 780 154 L900 156 L900 160Z" fill="url(#iGrad)"/>
-          <path d="M0 150 C100 145 160 138 220 125 C270 115 310 105 360 88 C395 75 420 58 445 32 L455 18 C460 20 465 30 480 50 C500 75 530 105 580 125 C630 140 700 150 780 154" fill="none" stroke="var(--color-gold)" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="5" y="155" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">성판악 750m</text>
-          <text x="208" y="120" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">속밭대피소</text>
-          <text x="330" y="83" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">진달래밭</text>
-          <text x="432" y="13" font-size="11" fill="var(--color-gold)" font-weight="700" font-family="Satoshi,sans-serif">백록담 1,947m</text>
-          <text x="530" y="100" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">하산(역방향)</text>
-          <text x="875" y="152" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" text-anchor="end">성판악 귀환</text>
-          <circle cx="455" cy="18" r="4" fill="var(--color-gold)"/>
-        </svg>
-      </div>
-      <div class="section-title"><div class="section-icon">🗺</div><span>전체 코스 흐름</span></div>
-      <div class="course-flow">
-        <span class="flow-node peak">🅿 성판악탐방지원센터</span><span class="flow-arrow">→</span>
-        <span class="flow-node shelter">속밭대피소</span><span class="flow-arrow">→</span>
-        <span class="flow-node">사라오름 입구</span><span class="flow-arrow">→</span>
-        <span class="flow-node shelter">진달래밭대피소</span><span class="flow-arrow">→</span>
-        <span class="flow-node peak">백록담 1,947m</span><span class="flow-arrow">→</span>
-        <span class="flow-node">(원점 하산)</span><span class="flow-arrow">→</span>
-        <span class="flow-node peak">🅿 성판악 귀환</span>
-      </div>
-      <div class="info-card">
-        <h3>코스 특징</h3>
-        <ul>
-          <li>✅ 한라산 정상 백록담 등정 가능 코스 (2개 중 하나)</li>
-          <li>✅ 비교적 완만한 능선 — 관음사 대비 상대적으로 수월</li>
-          <li>✅ 사라오름 탐방 추가 선택 가능 (왕복 +1.3km)</li>
-          <li>⚠ 편도 9.6km · 왕복 19.2km — 충분한 체력 필수</li>
-          <li>⚠ 성판악·관음사 코스 사전 예약 필수 (visithalla.jeju.go.kr)</li>
-          <li>⚠ 하절기 입산통제 12:30, 동절기 11:30 — 이른 출발 필수</li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="intermediate-route" class="tab-content">
-      <div class="section-title"><div class="section-icon">🗺</div><span>구간별 상세 경로</span></div>
-      <div class="accordion">
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">출</span>
-            <div class="acc-tw"><div class="acc-title">성판악탐방지원센터 출발</div><div class="acc-meta">해발 750m · 제주시 조천읍 516로</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <p class="acc-desc">제주시 방향 516도로(성판악) 탐방지원센터에서 출발합니다. 예약 확인 후 입산. 화장실 이용 후 배낭 점검 완료 뒤 탐방로 진입합니다.</p>
-            <div class="tip-box">💡 오전 5시~6시 조기 출발 권장. 정상 인증샷 대기 시간(1~2시간) 포함 시 전체 12시간 소요 가능.</div>
-            <div class="warn-box">⚠ 사전 예약 없이 입산 불가! visithalla.jeju.go.kr에서 반드시 사전 예약.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">1</span>
-            <div class="acc-tw"><div class="acc-title">성판악 → 속밭대피소</div><div class="acc-meta">약 3.8km · 1시간 20분 · 고도 ↑300m</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg easy"><div class="diff-fill" style="width:30%"></div></div></div>
-            <p class="acc-desc">넓고 완만한 탐방로가 이어집니다. 울창한 제주 난대림·구상나무 숲을 지나며 걷습니다. 속밭대피소에서 화장실 이용·물 보충 가능. 초반 워밍업 구간.</p>
-            <div class="tip-box">💡 속밭대피소에서 간식 섭취 및 스트레칭 권장. 이후 고도가 점점 높아집니다.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">2</span>
-            <div class="acc-tw"><div class="acc-title">속밭대피소 → 사라오름 입구 → 진달래밭대피소</div><div class="acc-meta">약 4.0km · 1시간 30분 · 고도 ↑450m</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg med"><div class="diff-fill" style="width:50%"></div></div></div>
-            <p class="acc-desc">경사가 완만하게 이어집니다. 사라오름 입구(왕복 1.3km 탐방 가능)를 지나 진달래밭대피소에 도착합니다. 진달래밭 일대는 봄(4월 말~5월 초) 철쭉 개화 시 한라산 최고의 경관.</p>
-            <div class="tip-box">💡 진달래밭대피소에서 반드시 물 보충. 이후 정상까지 식수 없음. 여기서 에너지 보충 후 최종 오르막 준비.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">3</span>
-            <div class="acc-tw"><div class="acc-title">진달래밭대피소 → 백록담 정상</div><div class="acc-meta">약 1.8km · 1시간 30분 · 고도 ↑550m (급경사)</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg hard"><div class="diff-fill" style="width:75%"></div></div></div>
-            <p class="acc-desc">진달래밭부터 정상까지가 가장 힘든 구간입니다. 암반·돌길·급경사가 반복됩니다. 정상에서 백록담 화구호 전망 및 360도 파노라마. 정상석 인증샷 대기 시간 30분~1시간 이상.</p>
-            <div class="warn-box">⚠ 정상 구간 기상 급변 빈번. 강풍·안개·비 대비 방풍재킷 필수. 겨울 아이젠 착용 구간.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">4</span>
-            <div class="acc-tw"><div class="acc-title">백록담 → 성판악 (하산)</div><div class="acc-meta">9.6km · 3시간~3시간 30분 · 원점 하산</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg med"><div class="diff-fill" style="width:45%"></div></div></div>
-            <p class="acc-desc">올라왔던 성판악 방향으로 원점 하산합니다. 하산 통제 시간(하절기 14:30, 동절기 13:30)을 지켜야 합니다. 무릎 보호대 착용, 스틱 2개 활용으로 무릎 충격 분산.</p>
-            <div class="tip-box">💡 진달래밭 통제소에서 하산 시간 체크. 성판악으로 하산 시 관음사 방향 탐방 불가(일방통행 아님).</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="intermediate-map" class="tab-content">
-      <div class="map-wrap">
-        <h3>📍 성판악 백록담 왕복 코스 개념도</h3>
-        <svg viewBox="0 0 700 480" style="width:100%;height:auto;max-height:500px">
-          <rect width="700" height="480" fill="var(--color-surface-offset)" rx="12"/>
-          <ellipse cx="350" cy="250" rx="260" ry="190" fill="var(--color-gold)" fill-opacity=".04"/>
-          <path d="M350 440 Q348 395 345 350 Q340 305 332 265 Q322 225 308 190 Q295 158 278 125 Q265 100 260 75" stroke="var(--color-gold)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-          <path d="M260 75 Q267 100 275 130 Q290 165 305 200 Q318 235 328 272 Q338 310 344 355 Q347 400 350 440" stroke="var(--color-gold)" stroke-width="2.5" stroke-dasharray="6,4" fill="none" stroke-linecap="round" stroke-opacity=".55"/>
-          <!-- nodes -->
-          <circle cx="350" cy="440" r="14" fill="var(--color-primary)" stroke="var(--color-bg)" stroke-width="3"/>
-          <text x="370" y="445" font-size="12" font-weight="700" fill="var(--color-primary)" font-family="Satoshi,sans-serif">성판악탐방지원센터 P</text>
-          <circle cx="342" cy="355" r="9" fill="var(--color-primary)" fill-opacity=".8" stroke="var(--color-bg)" stroke-width="2"/>
-          <text x="356" y="359" font-size="11" fill="var(--color-primary)" font-family="Satoshi,sans-serif">속밭대피소</text>
-          <!-- saraorm branch -->
-          <path d="M318 215 Q340 210 360 218" stroke="var(--color-success)" stroke-width="2" stroke-dasharray="4,3" fill="none"/>
-          <circle cx="364" cy="218" r="7" fill="var(--color-success)" fill-opacity=".7" stroke="var(--color-bg)" stroke-width="1.5"/>
-          <text x="372" y="222" font-size="11" fill="var(--color-success)" font-family="Satoshi,sans-serif">사라오름 (선택)</text>
-          <circle cx="318" cy="215" r="9" fill="var(--color-surface-dynamic)" stroke="var(--color-border)" stroke-width="2"/>
-          <text x="332" y="219" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">사라오름입구</text>
-          <circle cx="290" cy="155" r="10" fill="var(--color-primary)" fill-opacity=".8" stroke="var(--color-bg)" stroke-width="2"/>
-          <text x="305" y="159" font-size="11" fill="var(--color-primary)" font-family="Satoshi,sans-serif">진달래밭대피소</text>
-          <circle cx="260" cy="75" r="18" fill="var(--color-gold)" stroke="var(--color-bg)" stroke-width="3"/>
-          <text x="283" y="69" font-size="13" font-weight="700" fill="var(--color-gold)" font-family="Satoshi,sans-serif">백록담</text>
-          <text x="283" y="84" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">1,947m</text>
-          <!-- compass -->
-          <circle cx="635" cy="55" r="28" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
-          <text x="632" y="40" font-size="10" font-weight="700" fill="var(--color-text)" font-family="Satoshi,sans-serif">N</text>
-          <line x1="635" y1="43" x2="635" y2="54" stroke="var(--color-text)" stroke-width="1.5"/>
-          <!-- legend -->
-          <rect x="18" y="425" width="210" height="44" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1"/>
-          <line x1="32" y1="441" x2="56" y2="441" stroke="var(--color-gold)" stroke-width="3.5"/>
-          <text x="64" y="445" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">등정 (성판악↑)</text>
-          <line x1="32" y1="460" x2="56" y2="460" stroke="var(--color-gold)" stroke-width="2" stroke-dasharray="5,3"/>
-          <text x="64" y="464" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">하산 (역방향↓)</text>
-        </svg>
-      </div>
-      <div class="section-title"><div class="section-icon">📋</div><span>전체 체크포인트</span></div>
-      <div class="cp-wrap">
-        <table class="cp-table">
-          <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-          <tbody>
-            <tr><td>1</td><td>성판악탐방지원센터</td><td>750m</td><td>0km</td><td><span class="badge b-start">출발점</span></td><td>주차·화장실·안내소</td></tr>
-            <tr><td>2</td><td>속밭대피소</td><td>1,050m</td><td>3.8km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실·음수대</td></tr>
-            <tr><td>3</td><td>사라오름 분기점</td><td>1,310m</td><td>5.8km</td><td><span class="badge b-landmark">갈림길</span></td><td>—</td></tr>
-            <tr><td>4</td><td>사라오름 (선택)</td><td>1,322m</td><td>6.5km</td><td><span class="badge b-landmark">분화구</span></td><td>전망대</td></tr>
-            <tr><td>5</td><td>진달래밭대피소</td><td>1,500m</td><td>7.3km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실·음수·쉼터</td></tr>
-            <tr><td>6</td><td>진달래밭 통제소</td><td>1,500m</td><td>7.3km</td><td><span class="badge b-control">입산통제</span></td><td>—</td></tr>
-            <tr><td>7</td><td>정상 직전 암반 구간</td><td>1,850m</td><td>8.8km</td><td><span class="badge b-landmark">급경사</span></td><td>—</td></tr>
-            <tr><td>8</td><td>백록담 (정상)</td><td>1,947m</td><td>9.6km</td><td><span class="badge b-summit">정상</span></td><td>표지석·전망대</td></tr>
-            <tr><td>9</td><td>성판악 귀환</td><td>750m</td><td>19.2km</td><td><span class="badge b-start">종점</span></td><td>주차장·식당</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div id="intermediate-tips" class="tab-content">
-      <div class="section-title"><div class="section-icon">💡</div><span>팁 &amp; 주의사항</span></div>
-      <div class="tips-grid">
-        <div class="tip-card"><div class="tip-card-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수·미끄럼 방지)</li><li>무릎 보호대 (필수)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>헤드램프</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 2L 이상 (중간 보충 제한)</li><li>진달래밭 이후 식수 없음</li><li>도시락·에너지바 충분히</li><li>당질·단백질 균형 행동식</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">🛡</div><h4>안전 수칙</h4><ul><li>오전 5~6시 출발 필수</li><li>사전 예약 (visithalla.jeju.go.kr)</li><li>입산통제 시간 엄수</li><li>정상 기상 급변 대비</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">🚌</div><h4>교통 정보</h4><ul><li>제주 시내 → 성판악: 181번 버스</li><li>서귀포 → 성판악: 서귀포시 버스</li><li>성판악 주차장 유료 (혼잡)</li><li>조기 도착 주차 권장</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">📋</div><h4>예약 안내</h4><ul><li>성판악·관음사 사전 예약 필수</li><li>매월 1일 09:00 다음달 예약 오픈</li><li>선착순 조기 마감 (인기 날짜 수분 내)</li><li>예약 취소 페널티 유의</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">🌡</div><h4>정상 환경</h4><ul><li>정상 기온 여름 10°C 내외</li><li>강풍·안개 빈발</li><li>정상석 대기 성수기 1~2시간</li><li>겨울 아이젠·스패츠 필수</li></ul></div>
-      </div>
-    </div>
-
-  </main>
+<div class="course-panel intermediate" id="course-intermediate">
+<nav class="tab-bar">
+<button class="tab-btn active" onclick="selectTab('intermediate','overview',this)">📋 개요</button>
+<button class="tab-btn" onclick="selectTab('intermediate','route',this)">🗺 경로 안내</button>
+<button class="tab-btn" onclick="selectTab('intermediate','map',this)">📍 지도</button>
+<button class="tab-btn" onclick="selectTab('intermediate','tips',this)">💡 팁 &amp; 주의</button>
+</nav>
+<main class="main">
+<div class="tab-content active" id="intermediate-overview">
+<div class="section-title"><div class="section-icon">🦶</div><span>중급 코스 개요</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">19.2km</div><div class="stat-label">왕복 거리</div></div>
+<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">8~10h</div><div class="stat-label">소요 시간</div></div>
+<div class="stat-card"><div class="stat-icon">⛰</div><div class="stat-value">1,947m</div><div class="stat-label">백록담 정상</div></div>
+<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">1,300m</div><div class="stat-label">누적 고도차</div></div>
+<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~2,500</div><div class="stat-label">예상 칼로리</div></div>
+<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★★☆☆</div><div class="stat-label">난이도</div></div>
 </div>
-
+<div class="elevation-wrap">
+<h3>📊 고도 프로파일 — 성판악 백록담 왕복</h3>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs>
+<lineargradient id="iGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--color-gold)" stop-opacity=".35"></stop>
+<stop offset="100%" stop-color="var(--color-gold)" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0 160 L0 150 C100 145 160 138 220 125 C270 115 310 105 360 88 C395 75 420 58 445 32 L455 18 C460 20 465 30 480 50 C500 75 530 105 580 125 C630 140 700 150 780 154 L900 156 L900 160Z" fill="url(#iGrad)"></path>
+<path d="M0 150 C100 145 160 138 220 125 C270 115 310 105 360 88 C395 75 420 58 445 32 L455 18 C460 20 465 30 480 50 C500 75 530 105 580 125 C630 140 700 150 780 154" fill="none" stroke="var(--color-gold)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="5" y="155">성판악 750m</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="208" y="120">속밭대피소</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="330" y="83">진달래밭</text>
+<text fill="var(--color-gold)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="432" y="13">백록담 1,947m</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="530" y="100">하산(역방향)</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" text-anchor="end" x="875" y="152">성판악 귀환</text>
+<circle cx="455" cy="18" fill="var(--color-gold)" r="4"></circle>
+</svg>
+</div>
+<div class="section-title"><div class="section-icon">🗺</div><span>전체 코스 흐름</span></div>
+<div class="course-flow">
+<span class="flow-node peak">🅿 성판악탐방지원센터</span><span class="flow-arrow">→</span>
+<span class="flow-node shelter">속밭대피소</span><span class="flow-arrow">→</span>
+<span class="flow-node">사라오름 입구</span><span class="flow-arrow">→</span>
+<span class="flow-node shelter">진달래밭대피소</span><span class="flow-arrow">→</span>
+<span class="flow-node peak">백록담 1,947m</span><span class="flow-arrow">→</span>
+<span class="flow-node">(원점 하산)</span><span class="flow-arrow">→</span>
+<span class="flow-node peak">🅿 성판악 귀환</span>
+</div>
+<div class="info-card">
+<h3>코스 특징</h3>
+<ul>
+<li>✅ 한라산 정상 백록담 등정 가능 코스 (2개 중 하나)</li>
+<li>✅ 비교적 완만한 능선 — 관음사 대비 상대적으로 수월</li>
+<li>✅ 사라오름 탐방 추가 선택 가능 (왕복 +1.3km)</li>
+<li>⚠ 편도 9.6km · 왕복 19.2km — 충분한 체력 필수</li>
+<li>⚠ 성판악·관음사 코스 사전 예약 필수 (visithalla.jeju.go.kr)</li>
+<li>⚠ 하절기 입산통제 12:30, 동절기 11:30 — 이른 출발 필수</li>
+</ul>
+</div>
+</div>
+<div class="tab-content" id="intermediate-route">
+<div class="section-title"><div class="section-icon">🗺</div><span>구간별 상세 경로</span></div>
+<div class="accordion">
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">출</span>
+<div class="acc-tw"><div class="acc-title">성판악탐방지원센터 출발</div><div class="acc-meta">해발 750m · 제주시 조천읍 516로</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<p class="acc-desc">제주시 방향 516도로(성판악) 탐방지원센터에서 출발합니다. 예약 확인 후 입산. 화장실 이용 후 배낭 점검 완료 뒤 탐방로 진입합니다.</p>
+<div class="tip-box">💡 오전 5시~6시 조기 출발 권장. 정상 인증샷 대기 시간(1~2시간) 포함 시 전체 12시간 소요 가능.</div>
+<div class="warn-box">⚠ 사전 예약 없이 입산 불가! visithalla.jeju.go.kr에서 반드시 사전 예약.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">1</span>
+<div class="acc-tw"><div class="acc-title">성판악 → 속밭대피소</div><div class="acc-meta">약 3.8km · 1시간 20분 · 고도 ↑300m</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg easy"><div class="diff-fill" style="width:30%"></div></div></div>
+<p class="acc-desc">넓고 완만한 탐방로가 이어집니다. 울창한 제주 난대림·구상나무 숲을 지나며 걷습니다. 속밭대피소에서 화장실 이용·물 보충 가능. 초반 워밍업 구간.</p>
+<div class="tip-box">💡 속밭대피소에서 간식 섭취 및 스트레칭 권장. 이후 고도가 점점 높아집니다.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">2</span>
+<div class="acc-tw"><div class="acc-title">속밭대피소 → 사라오름 입구 → 진달래밭대피소</div><div class="acc-meta">약 4.0km · 1시간 30분 · 고도 ↑450m</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg med"><div class="diff-fill" style="width:50%"></div></div></div>
+<p class="acc-desc">경사가 완만하게 이어집니다. 사라오름 입구(왕복 1.3km 탐방 가능)를 지나 진달래밭대피소에 도착합니다. 진달래밭 일대는 봄(4월 말~5월 초) 철쭉 개화 시 한라산 최고의 경관.</p>
+<div class="tip-box">💡 진달래밭대피소에서 반드시 물 보충. 이후 정상까지 식수 없음. 여기서 에너지 보충 후 최종 오르막 준비.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">3</span>
+<div class="acc-tw"><div class="acc-title">진달래밭대피소 → 백록담 정상</div><div class="acc-meta">약 1.8km · 1시간 30분 · 고도 ↑550m (급경사)</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg hard"><div class="diff-fill" style="width:75%"></div></div></div>
+<p class="acc-desc">진달래밭부터 정상까지가 가장 힘든 구간입니다. 암반·돌길·급경사가 반복됩니다. 정상에서 백록담 화구호 전망 및 360도 파노라마. 정상석 인증샷 대기 시간 30분~1시간 이상.</p>
+<div class="warn-box">⚠ 정상 구간 기상 급변 빈번. 강풍·안개·비 대비 방풍재킷 필수. 겨울 아이젠 착용 구간.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">4</span>
+<div class="acc-tw"><div class="acc-title">백록담 → 성판악 (하산)</div><div class="acc-meta">9.6km · 3시간~3시간 30분 · 원점 하산</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg med"><div class="diff-fill" style="width:45%"></div></div></div>
+<p class="acc-desc">올라왔던 성판악 방향으로 원점 하산합니다. 하산 통제 시간(하절기 14:30, 동절기 13:30)을 지켜야 합니다. 무릎 보호대 착용, 스틱 2개 활용으로 무릎 충격 분산.</p>
+<div class="tip-box">💡 진달래밭 통제소에서 하산 시간 체크. 성판악으로 하산 시 관음사 방향 탐방 불가(일방통행 아님).</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content" id="intermediate-map">
+<div class="map-wrap">
+<h3>📍 성판악 백록담 왕복 코스 개념도</h3>
+<svg style="width:100%;height:auto;max-height:500px" viewbox="0 0 700 480">
+<rect fill="var(--color-surface-offset)" height="480" rx="12" width="700"></rect>
+<ellipse cx="350" cy="250" fill="var(--color-gold)" fill-opacity=".04" rx="260" ry="190"></ellipse>
+<path d="M350 440 Q348 395 345 350 Q340 305 332 265 Q322 225 308 190 Q295 158 278 125 Q265 100 260 75" fill="none" stroke="var(--color-gold)" stroke-linecap="round" stroke-width="4.5"></path>
+<path d="M260 75 Q267 100 275 130 Q290 165 305 200 Q318 235 328 272 Q338 310 344 355 Q347 400 350 440" fill="none" stroke="var(--color-gold)" stroke-dasharray="6,4" stroke-linecap="round" stroke-opacity=".55" stroke-width="2.5"></path>
+<!-- nodes -->
+<circle cx="350" cy="440" fill="var(--color-primary)" r="14" stroke="var(--color-bg)" stroke-width="3"></circle>
+<text fill="var(--color-primary)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="370" y="445">성판악탐방지원센터 P</text>
+<circle cx="342" cy="355" fill="var(--color-primary)" fill-opacity=".8" r="9" stroke="var(--color-bg)" stroke-width="2"></circle>
+<text fill="var(--color-primary)" font-family="Satoshi,sans-serif" font-size="11" x="356" y="359">속밭대피소</text>
+<!-- saraorm branch -->
+<path d="M318 215 Q340 210 360 218" fill="none" stroke="var(--color-success)" stroke-dasharray="4,3" stroke-width="2"></path>
+<circle cx="364" cy="218" fill="var(--color-success)" fill-opacity=".7" r="7" stroke="var(--color-bg)" stroke-width="1.5"></circle>
+<text fill="var(--color-success)" font-family="Satoshi,sans-serif" font-size="11" x="372" y="222">사라오름 (선택)</text>
+<circle cx="318" cy="215" fill="var(--color-surface-dynamic)" r="9" stroke="var(--color-border)" stroke-width="2"></circle>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="332" y="219">사라오름입구</text>
+<circle cx="290" cy="155" fill="var(--color-primary)" fill-opacity=".8" r="10" stroke="var(--color-bg)" stroke-width="2"></circle>
+<text fill="var(--color-primary)" font-family="Satoshi,sans-serif" font-size="11" x="305" y="159">진달래밭대피소</text>
+<circle cx="260" cy="75" fill="var(--color-gold)" r="18" stroke="var(--color-bg)" stroke-width="3"></circle>
+<text fill="var(--color-gold)" font-family="Satoshi,sans-serif" font-size="13" font-weight="700" x="283" y="69">백록담</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="283" y="84">1,947m</text>
+<!-- compass -->
+<circle cx="635" cy="55" fill="var(--color-surface)" r="28" stroke="var(--color-border)" stroke-width="1.5"></circle>
+<text fill="var(--color-text)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="632" y="40">N</text>
+<line stroke="var(--color-text)" stroke-width="1.5" x1="635" x2="635" y1="43" y2="54"></line>
+<!-- legend -->
+<rect fill="var(--color-surface)" height="44" rx="8" stroke="var(--color-border)" stroke-width="1" width="210" x="18" y="425"></rect>
+<line stroke="var(--color-gold)" stroke-width="3.5" x1="32" x2="56" y1="441" y2="441"></line>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="64" y="445">등정 (성판악↑)</text>
+<line stroke="var(--color-gold)" stroke-dasharray="5,3" stroke-width="2" x1="32" x2="56" y1="460" y2="460"></line>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="64" y="464">하산 (역방향↓)</text>
+</svg>
+</div>
+<div class="section-title"><div class="section-icon">📋</div><span>전체 체크포인트</span></div>
+<div class="cp-wrap">
+<table class="cp-table">
+<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>성판악탐방지원센터</td><td>750m</td><td>0km</td><td><span class="badge b-start">출발점</span></td><td>주차·화장실·안내소</td></tr>
+<tr><td>2</td><td>속밭대피소</td><td>1,050m</td><td>3.8km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실·음수대</td></tr>
+<tr><td>3</td><td>사라오름 분기점</td><td>1,310m</td><td>5.8km</td><td><span class="badge b-landmark">갈림길</span></td><td>—</td></tr>
+<tr><td>4</td><td>사라오름 (선택)</td><td>1,322m</td><td>6.5km</td><td><span class="badge b-landmark">분화구</span></td><td>전망대</td></tr>
+<tr><td>5</td><td>진달래밭대피소</td><td>1,500m</td><td>7.3km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실·음수·쉼터</td></tr>
+<tr><td>6</td><td>진달래밭 통제소</td><td>1,500m</td><td>7.3km</td><td><span class="badge b-control">입산통제</span></td><td>—</td></tr>
+<tr><td>7</td><td>정상 직전 암반 구간</td><td>1,850m</td><td>8.8km</td><td><span class="badge b-landmark">급경사</span></td><td>—</td></tr>
+<tr><td>8</td><td>백록담 (정상)</td><td>1,947m</td><td>9.6km</td><td><span class="badge b-summit">정상</span></td><td>표지석·전망대</td></tr>
+<tr><td>9</td><td>성판악 귀환</td><td>750m</td><td>19.2km</td><td><span class="badge b-start">종점</span></td><td>주차장·식당</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="tab-content" id="intermediate-tips">
+<div class="section-title"><div class="section-icon">💡</div><span>팁 &amp; 주의사항</span></div>
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수·미끄럼 방지)</li><li>무릎 보호대 (필수)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>헤드램프</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 2L 이상 (중간 보충 제한)</li><li>진달래밭 이후 식수 없음</li><li>도시락·에너지바 충분히</li><li>당질·단백질 균형 행동식</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🛡</div><h4>안전 수칙</h4><ul><li>오전 5~6시 출발 필수</li><li>사전 예약 (visithalla.jeju.go.kr)</li><li>입산통제 시간 엄수</li><li>정상 기상 급변 대비</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🚌</div><h4>교통 정보</h4><ul><li>제주 시내 → 성판악: 181번 버스</li><li>서귀포 → 성판악: 서귀포시 버스</li><li>성판악 주차장 유료 (혼잡)</li><li>조기 도착 주차 권장</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📋</div><h4>예약 안내</h4><ul><li>성판악·관음사 사전 예약 필수</li><li>매월 1일 09:00 다음달 예약 오픈</li><li>선착순 조기 마감 (인기 날짜 수분 내)</li><li>예약 취소 페널티 유의</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🌡</div><h4>정상 환경</h4><ul><li>정상 기온 여름 10°C 내외</li><li>강풍·안개 빈발</li><li>정상석 대기 성수기 1~2시간</li><li>겨울 아이젠·스패츠 필수</li></ul></div>
+</div>
+</div>
+</main>
+</div>
 <!-- ═══ 고급 ═══ -->
-<div id="course-advanced" class="course-panel advanced">
-  <nav class="tab-bar">
-    <button class="tab-btn active" onclick="selectTab('advanced','overview',this)">📋 개요</button>
-    <button class="tab-btn" onclick="selectTab('advanced','route',this)">🗺 경로 안내</button>
-    <button class="tab-btn" onclick="selectTab('advanced','map',this)">📍 지도</button>
-    <button class="tab-btn" onclick="selectTab('advanced','tips',this)">💡 팁 &amp; 주의</button>
-  </nav>
-  <main class="main">
-
-    <div id="advanced-overview" class="tab-content active">
-      <div class="section-title"><div class="section-icon">🏔</div><span>고급 코스 개요</span></div>
-      <div class="stat-grid">
-        <div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">18.3km</div><div class="stat-label">편도 종주 거리</div></div>
-        <div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">9~11h</div><div class="stat-label">소요 시간</div></div>
-        <div class="stat-card"><div class="stat-icon">⛰</div><div class="stat-value">1,947m</div><div class="stat-label">백록담 정상</div></div>
-        <div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">1,350m</div><div class="stat-label">누적 고도차</div></div>
-        <div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~3,000</div><div class="stat-label">예상 칼로리</div></div>
-        <div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★★★★</div><div class="stat-label">난이도</div></div>
-      </div>
-      <div class="elevation-wrap">
-        <h3>📊 고도 프로파일 — 관음사↑ 성판악↓ 종주</h3>
-        <svg class="elev-svg" viewBox="0 0 900 180" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="aGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="var(--color-warning)" stop-opacity=".35"/>
-              <stop offset="100%" stop-color="var(--color-warning)" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <!-- up: left to center -->
-          <path d="M0 160 L0 150 C80 145 130 135 180 118 C220 104 250 90 290 72 C320 58 350 42 385 25 L400 15 L400 160Z" fill="url(#aGrad)" fill-opacity=".65"/>
-          <!-- down: center to right -->
-          <path d="M400 15 L400 160 L900 160 L900 153 C840 150 800 148 760 150 C720 152 680 148 640 135 C590 118 550 98 510 78 C480 62 460 40 440 25 L400 15Z" fill="url(#aGrad)" fill-opacity=".3"/>
-          <path d="M0 150 C80 145 130 135 180 118 C220 104 250 90 290 72 C320 58 350 42 385 25 L400 15 C415 25 428 42 445 58 C468 82 492 105 530 125 C570 143 630 150 700 153 L900 153" fill="none" stroke="var(--color-warning)" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="5" y="155" font-size="10" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">관음사 620m</text>
-          <text x="160" y="113" font-size="10" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">탐라계곡</text>
-          <text x="250" y="85" font-size="10" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">개미등</text>
-          <text x="308" y="65" font-size="10" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">삼각봉대피소</text>
-          <text x="385" y="10" font-size="11" fill="var(--color-warning)" font-weight="700" font-family="Satoshi,sans-serif">백록담 1,947m</text>
-          <text x="453" y="53" font-size="10" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">진달래밭</text>
-          <text x="548" y="120" font-size="10" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">속밭대피소</text>
-          <text x="875" y="151" font-size="10" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" text-anchor="end">성판악 750m</text>
-          <circle cx="400" cy="15" r="4" fill="var(--color-warning)"/>
-          <line x1="400" y1="0" x2="400" y2="160" stroke="var(--color-primary)" stroke-width="1.5" stroke-dasharray="4,4" stroke-opacity=".6"/>
-          <text x="338" y="10" font-size="9" fill="var(--color-primary)" font-family="Satoshi,sans-serif">관음사↑</text>
-          <text x="408" y="10" font-size="9" fill="var(--color-primary)" font-family="Satoshi,sans-serif">↓성판악</text>
-        </svg>
-      </div>
-      <div class="section-title"><div class="section-icon">🗺</div><span>전체 코스 흐름</span></div>
-      <div class="course-flow">
-        <span class="flow-node peak">🅿 관음사탐방지원센터</span><span class="flow-arrow">→</span>
-        <span class="flow-node">탐라계곡</span><span class="flow-arrow">→</span>
-        <span class="flow-node">개미등</span><span class="flow-arrow">→</span>
-        <span class="flow-node shelter">삼각봉대피소</span><span class="flow-arrow">→</span>
-        <span class="flow-node peak">백록담 1,947m</span><span class="flow-arrow">→</span>
-        <span class="flow-node shelter">진달래밭대피소</span><span class="flow-arrow">→</span>
-        <span class="flow-node shelter">속밭대피소</span><span class="flow-arrow">→</span>
-        <span class="flow-node peak">🅿 성판악탐방지원센터</span>
-      </div>
-      <div class="info-card">
-        <h3>코스 특징</h3>
-        <ul>
-          <li>🏆 관음사(북) → 백록담 → 성판악(동) 한라산 완전 관통 종주</li>
-          <li>✅ 관음사 코스: 탐라계곡·구상나무 원시림·개미등 절경 구간 포함</li>
-          <li>✅ 성판악 하산: 완만한 능선 따라 안전하게 하산</li>
-          <li>⚠ 편도 18.3km — 왕복보다 더 힘든 당일 종주</li>
-          <li>⚠ 관음사·성판악 양방향 사전 예약 필수 (같은 날 각각 예약)</li>
-          <li>⚠ 관음사 코스 급경사 구간 3.5km — 상급자 전용</li>
-        </ul>
-      </div>
-    </div>
-
-    <div id="advanced-route" class="tab-content">
-      <div class="section-title"><div class="section-icon">🗺</div><span>구간별 상세 경로</span></div>
-      <div class="accordion">
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">출</span>
-            <div class="acc-tw"><div class="acc-title">관음사탐방지원센터 출발</div><div class="acc-meta">해발 620m · 제주시 아라동</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <p class="acc-desc">제주 시내에서 관음사 방향으로 이동. 관음사 탐방지원센터에서 예약 확인 후 입산합니다. 화장실 이용 후 출발.</p>
-            <div class="tip-box">💡 오전 5시 입산 시 여유 있는 종주 가능. 늦어도 7시까지 관음사 출발 권장.</div>
-            <div class="warn-box">⚠ 관음사·성판악 양쪽 모두 사전 예약 필수. 예약 없이 입산 불가!</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">1</span>
-            <div class="acc-tw"><div class="acc-title">관음사 → 탐라계곡</div><div class="acc-meta">약 3.2km · 1시간 10분 · 고도 ↑300m</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg med"><div class="diff-fill" style="width:45%"></div></div></div>
-            <p class="acc-desc">울창한 제주 난대림 속 탐방로를 따라 탐라계곡까지 걷습니다. 비교적 완만한 산책로 분위기. 탐라계곡 목교를 건너며 본격적인 등산이 시작됩니다.</p>
-            <div class="tip-box">💡 탐라계곡 목교에서 잠시 쉬어 물·간식 보충. 이후 개미등까지 2.8km 급경사 시작.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">2</span>
-            <div class="acc-tw"><div class="acc-title">탐라계곡 → 개미등 → 삼각봉대피소</div><div class="acc-meta">약 2.8km · 2시간 · 고도 ↑700m (최급경사)</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg xhard"><div class="diff-fill" style="width:95%"></div></div></div>
-            <p class="acc-desc">관음사 코스 최고 난이도 구간. 개미등이라 불리는 가파른 능선 오르막이 끊임없이 이어집니다. 계단·암릉이 반복되며 700m 고도를 높입니다. 삼각봉대피소(1,500m)에서 반드시 충분한 휴식.</p>
-            <div class="warn-box">⚠ 이 코스의 핵심 난이도 구간. 무릎 보호대·스틱 없이는 정상 등정 후 부상 위험. 삼각봉 통제소에서 통과 시간 확인 필수.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">3</span>
-            <div class="acc-tw"><div class="acc-title">삼각봉대피소 → 용진각 현수교 → 백록담 정상</div><div class="acc-meta">약 2.7km · 1시간 30분 · 고도 ↑447m</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg hard"><div class="diff-fill" style="width:70%"></div></div></div>
-            <p class="acc-desc">삼각봉대피소에서 용진각 현수교를 건너 암릉 구간을 통해 정상에 오릅니다. 관음사 코스만의 절경 — 북벽과 장구목의 웅장한 화산 지형이 펼쳐집니다. 백록담 북쪽 정상에 도달.</p>
-            <div class="tip-box">💡 정상에서 성판악 방향 하산로 확인 필수. 관음사 쪽과 성판악 쪽 하산 방향 혼동 주의!</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-header" onclick="toggleAcc(this)">
-            <span class="acc-num">4</span>
-            <div class="acc-tw"><div class="acc-title">백록담 → 진달래밭대피소 → 속밭대피소 → 성판악</div><div class="acc-meta">9.6km · 3시간~3시간 30분 · 하산</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg med"><div class="diff-fill" style="width:42%"></div></div></div>
-            <p class="acc-desc">정상에서 성판악 방향으로 하산합니다. 진달래밭대피소에서 물·간식 보충 후 속밭대피소를 거쳐 성판악 탐방지원센터에 도착합니다. 관음사보다 경사가 완만한 하산 루트.</p>
-            <div class="tip-box">💡 성판악에서 181번 버스로 제주 시내 이동 가능. 관음사 주차장 이용 시 차량 회수 필요 — 버스 또는 택시 활용.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="advanced-map" class="tab-content">
-      <div class="map-wrap">
-        <h3>📍 관음사↑ 성판악↓ 종주 개념도</h3>
-        <svg viewBox="0 0 760 500" style="width:100%;height:auto;max-height:520px">
-          <rect width="760" height="500" fill="var(--color-surface-offset)" rx="12"/>
-          <ellipse cx="380" cy="250" rx="320" ry="210" fill="var(--color-warning)" fill-opacity=".03"/>
-          <!-- up path (left) -->
-          <path d="M90 430 Q120 395 155 358 Q185 325 215 295 Q248 260 272 230 Q295 202 315 175 Q332 152 348 125 Q360 105 368 82" stroke="var(--color-warning)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-          <!-- down path (right) -->
-          <path d="M368 82 Q380 100 395 125 Q412 155 428 185 Q445 218 458 252 Q472 288 484 325 Q498 365 510 400 Q522 430 530 455" stroke="var(--color-primary)" stroke-width="4.5" fill="none" stroke-linecap="round"/>
-          <!-- nodes left (up) -->
-          <circle cx="90" cy="430" r="14" fill="var(--color-warning)" fill-opacity=".85" stroke="var(--color-bg)" stroke-width="3"/>
-          <text x="110" y="435" font-size="12" font-weight="700" fill="var(--color-warning)" font-family="Satoshi,sans-serif">관음사탐방지원센터 P</text>
-          <circle cx="168" cy="347" r="9" fill="var(--color-surface-dynamic)" stroke="var(--color-border)" stroke-width="2"/>
-          <text x="183" y="351" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">탐라계곡</text>
-          <circle cx="240" cy="270" r="9" fill="var(--color-surface-dynamic)" stroke="var(--color-border)" stroke-width="2"/>
-          <text x="255" y="274" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">개미등</text>
-          <circle cx="312" cy="173" r="11" fill="var(--color-warning)" fill-opacity=".75" stroke="var(--color-bg)" stroke-width="2"/>
-          <text x="327" y="169" font-size="11" fill="var(--color-warning)" font-family="Satoshi,sans-serif">삼각봉대피소</text>
-          <text x="327" y="183" font-size="10" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">1,500m</text>
-          <!-- summit -->
-          <circle cx="368" cy="82" r="20" fill="var(--color-warning)" stroke="var(--color-bg)" stroke-width="3"/>
-          <text x="392" y="76" font-size="14" font-weight="800" fill="var(--color-warning)" font-family="Cabinet Grotesk,Satoshi,sans-serif">백록담</text>
-          <text x="392" y="91" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">1,947m</text>
-          <!-- nodes right (down) -->
-          <circle cx="446" cy="183" r="10" fill="var(--color-primary)" fill-opacity=".8" stroke="var(--color-bg)" stroke-width="2"/>
-          <text x="460" y="187" font-size="11" fill="var(--color-primary)" font-family="Satoshi,sans-serif">진달래밭대피소</text>
-          <circle cx="484" cy="320" r="9" fill="var(--color-primary)" fill-opacity=".7" stroke="var(--color-bg)" stroke-width="2"/>
-          <text x="498" y="324" font-size="11" fill="var(--color-primary)" font-family="Satoshi,sans-serif">속밭대피소</text>
-          <circle cx="530" cy="455" r="14" fill="var(--color-primary)" stroke="var(--color-bg)" stroke-width="3"/>
-          <text x="445" y="473" font-size="12" font-weight="700" fill="var(--color-primary)" font-family="Satoshi,sans-serif">성판악탐방지원센터 P →</text>
-          <!-- divider -->
-          <line x1="368" y1="30" x2="368" y2="480" stroke="var(--color-text-faint)" stroke-width="1" stroke-dasharray="5,5"/>
-          <text x="210" y="484" font-size="11" fill="var(--color-text-faint)" text-anchor="middle" font-family="Satoshi,sans-serif">← 관음사 북쪽</text>
-          <text x="500" y="484" font-size="11" fill="var(--color-text-faint)" text-anchor="middle" font-family="Satoshi,sans-serif">성판악 동쪽 →</text>
-          <!-- compass -->
-          <circle cx="698" cy="52" r="28" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
-          <text x="695" y="37" font-size="10" font-weight="700" fill="var(--color-text)" font-family="Satoshi,sans-serif">N</text>
-          <line x1="698" y1="41" x2="698" y2="52" stroke="var(--color-text)" stroke-width="1.5"/>
-          <!-- legend -->
-          <rect x="18" y="438" width="248" height="50" rx="8" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1"/>
-          <line x1="32" y1="454" x2="56" y2="454" stroke="var(--color-warning)" stroke-width="3.5"/>
-          <text x="64" y="458" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">관음사 오르막 (등정)</text>
-          <line x1="32" y1="474" x2="56" y2="474" stroke="var(--color-primary)" stroke-width="3.5"/>
-          <text x="64" y="478" font-size="11" fill="var(--color-text-muted)" font-family="Satoshi,sans-serif">성판악 하산 (종주)</text>
-        </svg>
-      </div>
-      <div class="section-title"><div class="section-icon">📋</div><span>전체 체크포인트 (종주)</span></div>
-      <div class="cp-wrap">
-        <table class="cp-table">
-          <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-          <tbody>
-            <tr><td>1</td><td>관음사탐방지원센터</td><td>620m</td><td>0km</td><td><span class="badge b-start">출발점</span></td><td>주차·화장실·안내소</td></tr>
-            <tr><td>2</td><td>탐라계곡 목교</td><td>920m</td><td>3.2km</td><td><span class="badge b-landmark">계곡</span></td><td>쉼터</td></tr>
-            <tr><td>3</td><td>개미등 급경사 시작</td><td>1,100m</td><td>4.0km</td><td><span class="badge b-landmark">주의구간</span></td><td>—</td></tr>
-            <tr><td>4</td><td>삼각봉대피소</td><td>1,500m</td><td>6.0km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실·음수</td></tr>
-            <tr><td>5</td><td>삼각봉 통제소</td><td>1,500m</td><td>6.0km</td><td><span class="badge b-control">입산통제</span></td><td>—</td></tr>
-            <tr><td>6</td><td>용진각 현수교</td><td>1,650m</td><td>7.0km</td><td><span class="badge b-landmark">명소</span></td><td>—</td></tr>
-            <tr><td>7</td><td>북벽 / 장구목</td><td>1,850m</td><td>7.8km</td><td><span class="badge b-landmark">절경</span></td><td>—</td></tr>
-            <tr><td>8</td><td>백록담 (정상)</td><td>1,947m</td><td>8.7km</td><td><span class="badge b-summit">정상</span></td><td>표지석·전망대</td></tr>
-            <tr><td>9</td><td>진달래밭대피소</td><td>1,500m</td><td>10.9km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실·음수</td></tr>
-            <tr><td>10</td><td>사라오름 분기점</td><td>1,310m</td><td>12.5km</td><td><span class="badge b-landmark">갈림길</span></td><td>—</td></tr>
-            <tr><td>11</td><td>속밭대피소</td><td>1,050m</td><td>14.5km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실</td></tr>
-            <tr><td>12</td><td>성판악탐방지원센터</td><td>750m</td><td>18.3km</td><td><span class="badge b-start">종점</span></td><td>주차장·버스·식당</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div id="advanced-tips" class="tab-content">
-      <div class="section-title"><div class="section-icon">💡</div><span>팁 &amp; 주의사항</span></div>
-      <div class="tips-grid">
-        <div class="tip-card"><div class="tip-card-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수·발목 지지형)</li><li>무릎 보호대 (양쪽 필수)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>헤드램프 + 여분 건전지</li><li>선글라스·자외선 차단제</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 2.5L 이상</li><li>삼각봉·진달래밭 음수대 확인</li><li>도시락·에너지바 2끼 분량</li><li>고열량 행동식 충분히 준비</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">📋</div><h4>예약 안내</h4><ul><li>관음사·성판악 양쪽 모두 예약</li><li>같은 날 각각 별도 예약 신청</li><li>visithalla.jeju.go.kr</li><li>매월 1일 09:00 오픈, 선착순</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">🛡</div><h4>안전 수칙</h4><ul><li>오전 5시 관음사 출발 권장</li><li>삼각봉 통제 전 통과 필수</li><li>입산통제 하절기 12:30 엄수</li><li>1인 산행 절대 금지</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">🚌</div><h4>교통 정보</h4><ul><li>관음사→성판악 편도 종주</li><li>성판악에서 181번 버스 귀환</li><li>관음사 주차 시 차량 회수 필요</li><li>렌터카 이용 시 택시 대안</li></ul></div>
-        <div class="tip-card"><div class="tip-card-icon">💪</div><h4>체력 준비</h4><ul><li>최소 3~4개월 등산 훈련</li><li>중급 코스 성판악 왕복 선행</li><li>10km 이상 산행 5회 이상</li><li>무릎·발목 강화 운동 병행</li></ul></div>
-      </div>
-    </div>
-
-  </main>
+<div class="course-panel advanced" id="course-advanced">
+<nav class="tab-bar">
+<button class="tab-btn active" onclick="selectTab('advanced','overview',this)">📋 개요</button>
+<button class="tab-btn" onclick="selectTab('advanced','route',this)">🗺 경로 안내</button>
+<button class="tab-btn" onclick="selectTab('advanced','map',this)">📍 지도</button>
+<button class="tab-btn" onclick="selectTab('advanced','tips',this)">💡 팁 &amp; 주의</button>
+</nav>
+<main class="main">
+<div class="tab-content active" id="advanced-overview">
+<div class="section-title"><div class="section-icon">🏔</div><span>고급 코스 개요</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">18.3km</div><div class="stat-label">편도 종주 거리</div></div>
+<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">9~11h</div><div class="stat-label">소요 시간</div></div>
+<div class="stat-card"><div class="stat-icon">⛰</div><div class="stat-value">1,947m</div><div class="stat-label">백록담 정상</div></div>
+<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">1,350m</div><div class="stat-label">누적 고도차</div></div>
+<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~3,000</div><div class="stat-label">예상 칼로리</div></div>
+<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★★★★</div><div class="stat-label">난이도</div></div>
 </div>
-
+<div class="elevation-wrap">
+<h3>📊 고도 프로파일 — 관음사↑ 성판악↓ 종주</h3>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs>
+<lineargradient id="aGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--color-warning)" stop-opacity=".35"></stop>
+<stop offset="100%" stop-color="var(--color-warning)" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<!-- up: left to center -->
+<path d="M0 160 L0 150 C80 145 130 135 180 118 C220 104 250 90 290 72 C320 58 350 42 385 25 L400 15 L400 160Z" fill="url(#aGrad)" fill-opacity=".65"></path>
+<!-- down: center to right -->
+<path d="M400 15 L400 160 L900 160 L900 153 C840 150 800 148 760 150 C720 152 680 148 640 135 C590 118 550 98 510 78 C480 62 460 40 440 25 L400 15Z" fill="url(#aGrad)" fill-opacity=".3"></path>
+<path d="M0 150 C80 145 130 135 180 118 C220 104 250 90 290 72 C320 58 350 42 385 25 L400 15 C415 25 428 42 445 58 C468 82 492 105 530 125 C570 143 630 150 700 153 L900 153" fill="none" stroke="var(--color-warning)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="10" x="5" y="155">관음사 620m</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="10" x="160" y="113">탐라계곡</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="10" x="250" y="85">개미등</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="10" x="308" y="65">삼각봉대피소</text>
+<text fill="var(--color-warning)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="385" y="10">백록담 1,947m</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="10" x="453" y="53">진달래밭</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="10" x="548" y="120">속밭대피소</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="end" x="875" y="151">성판악 750m</text>
+<circle cx="400" cy="15" fill="var(--color-warning)" r="4"></circle>
+<line stroke="var(--color-primary)" stroke-dasharray="4,4" stroke-opacity=".6" stroke-width="1.5" x1="400" x2="400" y1="0" y2="160"></line>
+<text fill="var(--color-primary)" font-family="Satoshi,sans-serif" font-size="9" x="338" y="10">관음사↑</text>
+<text fill="var(--color-primary)" font-family="Satoshi,sans-serif" font-size="9" x="408" y="10">↓성판악</text>
+</svg>
+</div>
+<div class="section-title"><div class="section-icon">🗺</div><span>전체 코스 흐름</span></div>
+<div class="course-flow">
+<span class="flow-node peak">🅿 관음사탐방지원센터</span><span class="flow-arrow">→</span>
+<span class="flow-node">탐라계곡</span><span class="flow-arrow">→</span>
+<span class="flow-node">개미등</span><span class="flow-arrow">→</span>
+<span class="flow-node shelter">삼각봉대피소</span><span class="flow-arrow">→</span>
+<span class="flow-node peak">백록담 1,947m</span><span class="flow-arrow">→</span>
+<span class="flow-node shelter">진달래밭대피소</span><span class="flow-arrow">→</span>
+<span class="flow-node shelter">속밭대피소</span><span class="flow-arrow">→</span>
+<span class="flow-node peak">🅿 성판악탐방지원센터</span>
+</div>
+<div class="info-card">
+<h3>코스 특징</h3>
+<ul>
+<li>🏆 관음사(북) → 백록담 → 성판악(동) 한라산 완전 관통 종주</li>
+<li>✅ 관음사 코스: 탐라계곡·구상나무 원시림·개미등 절경 구간 포함</li>
+<li>✅ 성판악 하산: 완만한 능선 따라 안전하게 하산</li>
+<li>⚠ 편도 18.3km — 왕복보다 더 힘든 당일 종주</li>
+<li>⚠ 관음사·성판악 양방향 사전 예약 필수 (같은 날 각각 예약)</li>
+<li>⚠ 관음사 코스 급경사 구간 3.5km — 상급자 전용</li>
+</ul>
+</div>
+</div>
+<div class="tab-content" id="advanced-route">
+<div class="section-title"><div class="section-icon">🗺</div><span>구간별 상세 경로</span></div>
+<div class="accordion">
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">출</span>
+<div class="acc-tw"><div class="acc-title">관음사탐방지원센터 출발</div><div class="acc-meta">해발 620m · 제주시 아라동</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<p class="acc-desc">제주 시내에서 관음사 방향으로 이동. 관음사 탐방지원센터에서 예약 확인 후 입산합니다. 화장실 이용 후 출발.</p>
+<div class="tip-box">💡 오전 5시 입산 시 여유 있는 종주 가능. 늦어도 7시까지 관음사 출발 권장.</div>
+<div class="warn-box">⚠ 관음사·성판악 양쪽 모두 사전 예약 필수. 예약 없이 입산 불가!</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">1</span>
+<div class="acc-tw"><div class="acc-title">관음사 → 탐라계곡</div><div class="acc-meta">약 3.2km · 1시간 10분 · 고도 ↑300m</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg med"><div class="diff-fill" style="width:45%"></div></div></div>
+<p class="acc-desc">울창한 제주 난대림 속 탐방로를 따라 탐라계곡까지 걷습니다. 비교적 완만한 산책로 분위기. 탐라계곡 목교를 건너며 본격적인 등산이 시작됩니다.</p>
+<div class="tip-box">💡 탐라계곡 목교에서 잠시 쉬어 물·간식 보충. 이후 개미등까지 2.8km 급경사 시작.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">2</span>
+<div class="acc-tw"><div class="acc-title">탐라계곡 → 개미등 → 삼각봉대피소</div><div class="acc-meta">약 2.8km · 2시간 · 고도 ↑700m (최급경사)</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg xhard"><div class="diff-fill" style="width:95%"></div></div></div>
+<p class="acc-desc">관음사 코스 최고 난이도 구간. 개미등이라 불리는 가파른 능선 오르막이 끊임없이 이어집니다. 계단·암릉이 반복되며 700m 고도를 높입니다. 삼각봉대피소(1,500m)에서 반드시 충분한 휴식.</p>
+<div class="warn-box">⚠ 이 코스의 핵심 난이도 구간. 무릎 보호대·스틱 없이는 정상 등정 후 부상 위험. 삼각봉 통제소에서 통과 시간 확인 필수.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">3</span>
+<div class="acc-tw"><div class="acc-title">삼각봉대피소 → 용진각 현수교 → 백록담 정상</div><div class="acc-meta">약 2.7km · 1시간 30분 · 고도 ↑447m</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg hard"><div class="diff-fill" style="width:70%"></div></div></div>
+<p class="acc-desc">삼각봉대피소에서 용진각 현수교를 건너 암릉 구간을 통해 정상에 오릅니다. 관음사 코스만의 절경 — 북벽과 장구목의 웅장한 화산 지형이 펼쳐집니다. 백록담 북쪽 정상에 도달.</p>
+<div class="tip-box">💡 정상에서 성판악 방향 하산로 확인 필수. 관음사 쪽과 성판악 쪽 하산 방향 혼동 주의!</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-header" onclick="toggleAcc(this)">
+<span class="acc-num">4</span>
+<div class="acc-tw"><div class="acc-title">백록담 → 진달래밭대피소 → 속밭대피소 → 성판악</div><div class="acc-meta">9.6km · 3시간~3시간 30분 · 하산</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg med"><div class="diff-fill" style="width:42%"></div></div></div>
+<p class="acc-desc">정상에서 성판악 방향으로 하산합니다. 진달래밭대피소에서 물·간식 보충 후 속밭대피소를 거쳐 성판악 탐방지원센터에 도착합니다. 관음사보다 경사가 완만한 하산 루트.</p>
+<div class="tip-box">💡 성판악에서 181번 버스로 제주 시내 이동 가능. 관음사 주차장 이용 시 차량 회수 필요 — 버스 또는 택시 활용.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content" id="advanced-map">
+<div class="map-wrap">
+<h3>📍 관음사↑ 성판악↓ 종주 개념도</h3>
+<svg style="width:100%;height:auto;max-height:520px" viewbox="0 0 760 500">
+<rect fill="var(--color-surface-offset)" height="500" rx="12" width="760"></rect>
+<ellipse cx="380" cy="250" fill="var(--color-warning)" fill-opacity=".03" rx="320" ry="210"></ellipse>
+<!-- up path (left) -->
+<path d="M90 430 Q120 395 155 358 Q185 325 215 295 Q248 260 272 230 Q295 202 315 175 Q332 152 348 125 Q360 105 368 82" fill="none" stroke="var(--color-warning)" stroke-linecap="round" stroke-width="4.5"></path>
+<!-- down path (right) -->
+<path d="M368 82 Q380 100 395 125 Q412 155 428 185 Q445 218 458 252 Q472 288 484 325 Q498 365 510 400 Q522 430 530 455" fill="none" stroke="var(--color-primary)" stroke-linecap="round" stroke-width="4.5"></path>
+<!-- nodes left (up) -->
+<circle cx="90" cy="430" fill="var(--color-warning)" fill-opacity=".85" r="14" stroke="var(--color-bg)" stroke-width="3"></circle>
+<text fill="var(--color-warning)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="110" y="435">관음사탐방지원센터 P</text>
+<circle cx="168" cy="347" fill="var(--color-surface-dynamic)" r="9" stroke="var(--color-border)" stroke-width="2"></circle>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="183" y="351">탐라계곡</text>
+<circle cx="240" cy="270" fill="var(--color-surface-dynamic)" r="9" stroke="var(--color-border)" stroke-width="2"></circle>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="255" y="274">개미등</text>
+<circle cx="312" cy="173" fill="var(--color-warning)" fill-opacity=".75" r="11" stroke="var(--color-bg)" stroke-width="2"></circle>
+<text fill="var(--color-warning)" font-family="Satoshi,sans-serif" font-size="11" x="327" y="169">삼각봉대피소</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="10" x="327" y="183">1,500m</text>
+<!-- summit -->
+<circle cx="368" cy="82" fill="var(--color-warning)" r="20" stroke="var(--color-bg)" stroke-width="3"></circle>
+<text fill="var(--color-warning)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="14" font-weight="800" x="392" y="76">백록담</text>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="392" y="91">1,947m</text>
+<!-- nodes right (down) -->
+<circle cx="446" cy="183" fill="var(--color-primary)" fill-opacity=".8" r="10" stroke="var(--color-bg)" stroke-width="2"></circle>
+<text fill="var(--color-primary)" font-family="Satoshi,sans-serif" font-size="11" x="460" y="187">진달래밭대피소</text>
+<circle cx="484" cy="320" fill="var(--color-primary)" fill-opacity=".7" r="9" stroke="var(--color-bg)" stroke-width="2"></circle>
+<text fill="var(--color-primary)" font-family="Satoshi,sans-serif" font-size="11" x="498" y="324">속밭대피소</text>
+<circle cx="530" cy="455" fill="var(--color-primary)" r="14" stroke="var(--color-bg)" stroke-width="3"></circle>
+<text fill="var(--color-primary)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="445" y="473">성판악탐방지원센터 P →</text>
+<!-- divider -->
+<line stroke="var(--color-text-faint)" stroke-dasharray="5,5" stroke-width="1" x1="368" x2="368" y1="30" y2="480"></line>
+<text fill="var(--color-text-faint)" font-family="Satoshi,sans-serif" font-size="11" text-anchor="middle" x="210" y="484">← 관음사 북쪽</text>
+<text fill="var(--color-text-faint)" font-family="Satoshi,sans-serif" font-size="11" text-anchor="middle" x="500" y="484">성판악 동쪽 →</text>
+<!-- compass -->
+<circle cx="698" cy="52" fill="var(--color-surface)" r="28" stroke="var(--color-border)" stroke-width="1.5"></circle>
+<text fill="var(--color-text)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="695" y="37">N</text>
+<line stroke="var(--color-text)" stroke-width="1.5" x1="698" x2="698" y1="41" y2="52"></line>
+<!-- legend -->
+<rect fill="var(--color-surface)" height="50" rx="8" stroke="var(--color-border)" stroke-width="1" width="248" x="18" y="438"></rect>
+<line stroke="var(--color-warning)" stroke-width="3.5" x1="32" x2="56" y1="454" y2="454"></line>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="64" y="458">관음사 오르막 (등정)</text>
+<line stroke="var(--color-primary)" stroke-width="3.5" x1="32" x2="56" y1="474" y2="474"></line>
+<text fill="var(--color-text-muted)" font-family="Satoshi,sans-serif" font-size="11" x="64" y="478">성판악 하산 (종주)</text>
+</svg>
+</div>
+<div class="section-title"><div class="section-icon">📋</div><span>전체 체크포인트 (종주)</span></div>
+<div class="cp-wrap">
+<table class="cp-table">
+<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>관음사탐방지원센터</td><td>620m</td><td>0km</td><td><span class="badge b-start">출발점</span></td><td>주차·화장실·안내소</td></tr>
+<tr><td>2</td><td>탐라계곡 목교</td><td>920m</td><td>3.2km</td><td><span class="badge b-landmark">계곡</span></td><td>쉼터</td></tr>
+<tr><td>3</td><td>개미등 급경사 시작</td><td>1,100m</td><td>4.0km</td><td><span class="badge b-landmark">주의구간</span></td><td>—</td></tr>
+<tr><td>4</td><td>삼각봉대피소</td><td>1,500m</td><td>6.0km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실·음수</td></tr>
+<tr><td>5</td><td>삼각봉 통제소</td><td>1,500m</td><td>6.0km</td><td><span class="badge b-control">입산통제</span></td><td>—</td></tr>
+<tr><td>6</td><td>용진각 현수교</td><td>1,650m</td><td>7.0km</td><td><span class="badge b-landmark">명소</span></td><td>—</td></tr>
+<tr><td>7</td><td>북벽 / 장구목</td><td>1,850m</td><td>7.8km</td><td><span class="badge b-landmark">절경</span></td><td>—</td></tr>
+<tr><td>8</td><td>백록담 (정상)</td><td>1,947m</td><td>8.7km</td><td><span class="badge b-summit">정상</span></td><td>표지석·전망대</td></tr>
+<tr><td>9</td><td>진달래밭대피소</td><td>1,500m</td><td>10.9km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실·음수</td></tr>
+<tr><td>10</td><td>사라오름 분기점</td><td>1,310m</td><td>12.5km</td><td><span class="badge b-landmark">갈림길</span></td><td>—</td></tr>
+<tr><td>11</td><td>속밭대피소</td><td>1,050m</td><td>14.5km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실</td></tr>
+<tr><td>12</td><td>성판악탐방지원센터</td><td>750m</td><td>18.3km</td><td><span class="badge b-start">종점</span></td><td>주차장·버스·식당</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="tab-content" id="advanced-tips">
+<div class="section-title"><div class="section-icon">💡</div><span>팁 &amp; 주의사항</span></div>
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수·발목 지지형)</li><li>무릎 보호대 (양쪽 필수)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>헤드램프 + 여분 건전지</li><li>선글라스·자외선 차단제</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 2.5L 이상</li><li>삼각봉·진달래밭 음수대 확인</li><li>도시락·에너지바 2끼 분량</li><li>고열량 행동식 충분히 준비</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📋</div><h4>예약 안내</h4><ul><li>관음사·성판악 양쪽 모두 예약</li><li>같은 날 각각 별도 예약 신청</li><li>visithalla.jeju.go.kr</li><li>매월 1일 09:00 오픈, 선착순</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🛡</div><h4>안전 수칙</h4><ul><li>오전 5시 관음사 출발 권장</li><li>삼각봉 통제 전 통과 필수</li><li>입산통제 하절기 12:30 엄수</li><li>1인 산행 절대 금지</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🚌</div><h4>교통 정보</h4><ul><li>관음사→성판악 편도 종주</li><li>성판악에서 181번 버스 귀환</li><li>관음사 주차 시 차량 회수 필요</li><li>렌터카 이용 시 택시 대안</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">💪</div><h4>체력 준비</h4><ul><li>최소 3~4개월 등산 훈련</li><li>중급 코스 성판악 왕복 선행</li><li>10km 이상 산행 5회 이상</li><li>무릎·발목 강화 운동 병행</li></ul></div>
+</div>
+</div>
+</main>
+</div>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon">📸</span> 한라산의 사계 &amp; 명소
+  </h3>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Hallasan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@suping1555' target='_blank' rel='noopener'&gt;shuping zhao&lt;/a&gt; on unsplash" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/hallasan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/hallasan/g1.webp" type="image/webp"/>
+<img alt="한라산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/hallasan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">한라산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Hallasan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@rfniza' target='_blank' rel='noopener'&gt;Nizar Firmansyah&lt;/a&gt; on unsplash" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/hallasan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/hallasan/g2.webp" type="image/webp"/>
+<img alt="한라산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/hallasan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">한라산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="Harmonious view of Hallasan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@rfniza' target='_blank' rel='noopener'&gt;Nizar Firmansyah&lt;/a&gt; on unsplash" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/hallasan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/hallasan/g3.webp" type="image/webp"/>
+<img alt="한라산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/hallasan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">한라산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Hallasan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@mdrhmn' target='_blank' rel='noopener'&gt;Muhammad Rahiman Abdulmanab&lt;/a&gt; on unsplash" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/hallasan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/hallasan/g4.webp" type="image/webp"/>
+<img alt="한라산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/hallasan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">한라산 탐방로</span>
+</div>
+</button>
+</div>
+</section>
 <footer style="border-top:1px solid var(--color-divider);padding:var(--space-8) var(--space-6);text-align:center;background:var(--color-surface);">
-  <p style="font-size:var(--text-xs);color:var(--color-text-faint);">한라산국립공원 탐방 정보 기준. 실제 산행 전 한라산탐방예약 공식 홈페이지(visithalla.jeju.go.kr)에서 최신 예약 정보·입산통제 시간을 반드시 확인하세요. 064-713-9950</p>
+<p style="font-size:var(--text-xs);color:var(--color-text-faint);">한라산국립공원 탐방 정보 기준. 실제 산행 전 한라산탐방예약 공식 홈페이지(visithalla.jeju.go.kr)에서 최신 예약 정보·입산통제 시간을 반드시 확인하세요. 064-713-9950</p>
 </footer>
-
 <script>
 (function(){
   const t=document.querySelector("[data-theme-toggle]"),r=document.documentElement;
@@ -859,6 +1333,128 @@ function selectTab(c,t,btn){
 }
 function toggleAcc(h){h.parentElement.classList.toggle("open");}
 document.querySelectorAll(".accordion").forEach(a=>{const f=a.querySelector(".acc-item");if(f)f.classList.add("open");});
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
