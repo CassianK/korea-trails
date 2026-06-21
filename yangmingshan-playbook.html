@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="light">
+
+<html data-theme="light" lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>양명산 등산 플레이북</title>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>양명산 등산 플레이북</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<style>
     :root,[data-theme="light"]{--bg:#f4f5f1;--surface:#fcfcfa;--surface2:#eef1ea;--border:#d8ddd2;--text:#1d221b;--muted:#667061;--faint:#a7b0a2;--green:#4f7d4a;--greenbg:#dfeadf;--blue:#326f95;--bluebg:#dcebf3;--red:#9d4f36;--redbg:#f1dfd7;--teal:#3d8a7f;--shadow:0 10px 24px rgba(21,30,20,.08);--r:18px;--r2:12px;--xs:clamp(.75rem,.7rem+.2vw,.87rem);--sm:clamp(.9rem,.84rem+.2vw,1rem);--base:clamp(1rem,.95rem+.25vw,1.1rem);--lg:clamp(1.15rem,1rem+.5vw,1.45rem);--xl:clamp(1.6rem,1.2rem+1.2vw,2.4rem);--xxl:clamp(2.2rem,1.3rem+2vw,3.6rem)}
     [data-theme="dark"]{--bg:#151815;--surface:#1f241f;--surface2:#283028;--border:#394338;--text:#e4ebe1;--muted:#96a292;--faint:#667165;--green:#73b06f;--greenbg:#243525;--blue:#73b6df;--bluebg:#1d2f39;--red:#d28c74;--redbg:#3a2620;--teal:#74c0b2;--shadow:0 12px 28px rgba(0,0,0,.3)}
     *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:'Satoshi',sans-serif;line-height:1.6} h1,h2,h3,h4,p{margin:0} button{font:inherit} table{border-collapse:collapse;width:100%}
@@ -22,36 +23,653 @@
     .map svg{width:100%;height:auto;max-height:430px}.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:16px;background:var(--surface);box-shadow:var(--shadow)} th,td{padding:12px 14px;border-bottom:1px solid var(--border);font-size:var(--xs);text-align:left} th{background:var(--surface2);color:var(--muted)} tr:last-child td{border-bottom:none}
     .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tipcard h4{font-size:var(--sm);margin-bottom:10px}.tipcard ul{padding-left:18px;margin:0}.tipcard li{margin:7px 0;color:var(--muted);font-size:var(--xs)} footer{padding:28px 0 40px;color:var(--muted);font-size:var(--xs)}
     @media(max-width:960px){.grid6{grid-template-columns:repeat(3,1fr)}.tips-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}} @media(max-width:640px){.grid6{grid-template-columns:repeat(2,1fr)}.tips-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
-  </style>
+  
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style>
 </head>
 <body>
-<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg viewBox="0 0 48 48" width="26" height="26" fill="none"><path d="M7 33c5-9 10-14 16-14 4 0 7 2 10 6 2-1 5-2 8-2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 38h32" stroke="white" stroke-width="3" stroke-linecap="round"/><path d="M14 14c3 1 5 3 7 6M24 11c2 2 4 5 5 8M33 13c2 1 3 3 4 5" stroke="white" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h1>양명산</h1><p>타이베이 근교 · 칠성산 1,120m · 화산지형·유황·초원·온천</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
-<section class="hero"><div class="wrap"><span class="hero-badge">Yangmingshan National Park · Qixingshan</span><h2>양명산 3코스 등산 플레이북</h2><p>타이베이에서 당일로 다녀오기 좋은 양명산·칠성산 코스를 초급·중급·고급으로 나눠 만든 인터랙티브 가이드입니다. 소유갱, 냉수갱, 칭티엔강을 중심으로 가장 많이 걷는 대표 루트를 기준으로 구성했습니다.</p><div class="stats"><div class="stat"><div class="v">1,120m</div><div class="l">칠성산 최고봉</div></div><div class="stat"><div class="v">4.0km</div><div class="l">대표 당일 코스</div></div><div class="stat"><div class="v">5.5km</div><div class="l">연장 트레킹</div></div><div class="stat"><div class="v">화산지형</div><div class="l">유황·분기공</div></div><div class="stat"><div class="v">온천</div><div class="l">냉수갱 연계</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 소유갱 왕복</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 소유갱→냉수갱</button><button class="course-btn red" data-course="advanced">🏔 고급 — 칭티엔강 연계</button></div></div></section>
+<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M7 33c5-9 10-14 16-14 4 0 7 2 10 6 2-1 5-2 8-2" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M8 38h32" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M14 14c3 1 5 3 7 6M24 11c2 2 4 5 5 8M33 13c2 1 3 3 4 5" stroke="white" stroke-linecap="round" stroke-width="2.4"></path></svg></div><div><h1>양명산</h1><p>타이베이 근교 · 칠성산 1,120m · 화산지형·유황·초원·온천</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/yangmingshan/hero-640.avif 640w, assets/img/yangmingshan/hero-1024.avif 1024w, assets/img/yangmingshan/hero-1600.avif 1600w, assets/img/yangmingshan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/yangmingshan/hero-640.webp 640w, assets/img/yangmingshan/hero-1024.webp 1024w, assets/img/yangmingshan/hero-1600.webp 1600w, assets/img/yangmingshan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="양명산 국립공원의 대표 명소인 양명산와 아름다운 산세 풍경 / Beautiful landscape of Yangmingshan and majestic mountain ridges in Yangmingshan National Park" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/yangmingshan/hero-1600.jpg" srcset="assets/img/yangmingshan/hero-640.jpg 640w, assets/img/yangmingshan/hero-1024.jpg 1024w, assets/img/yangmingshan/hero-1600.jpg 1600w, assets/img/yangmingshan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="wrap"><span class="hero-badge">Yangmingshan National Park · Qixingshan</span><h2>양명산 3코스 등산 플레이북</h2><p>타이베이에서 당일로 다녀오기 좋은 양명산·칠성산 코스를 초급·중급·고급으로 나눠 만든 인터랙티브 가이드입니다. 소유갱, 냉수갱, 칭티엔강을 중심으로 가장 많이 걷는 대표 루트를 기준으로 구성했습니다.</p><div class="stats"><div class="stat"><div class="v">1,120m</div><div class="l">칠성산 최고봉</div></div><div class="stat"><div class="v">4.0km</div><div class="l">대표 당일 코스</div></div><div class="stat"><div class="v">5.5km</div><div class="l">연장 트레킹</div></div><div class="stat"><div class="v">화산지형</div><div class="l">유황·분기공</div></div><div class="stat"><div class="v">온천</div><div class="l">냉수갱 연계</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 소유갱 왕복</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 소유갱→냉수갱</button><button class="course-btn red" data-course="advanced">🏔 고급 — 칭티엔강 연계</button></div></div>
+</div>
+<!-- Hero Credit Overlay -->
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://unsplash.com/@roberthsu1054" rel="noopener" target="_blank">CHIA-HAO HSU</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">Unsplash</a></span>
+</div>
+</section>
 <main class="wrap">
-<section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">소유갱 왕복 코스</div><div class="panel-sub">소유갱 → 칠성산 주봉 → 소유갱 원점회귀 · 약 3.2km · 1시간 40분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.2km</div><div class="txt">왕복 거리</div></div><div class="card kpi"><div class="num">1h 40m</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">1,120m</div><div class="txt">칠성산 주봉</div></div><div class="card kpi"><div class="num">중하</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">계단길</div><div class="txt">주요 지형</div></div><div class="card kpi"><div class="num">당일 가능</div><div class="txt">접근성</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">🚌 소유갱</span><span class="arr">→</span><span class="chip">칠성산 주봉</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#4f7d4a" stop-opacity=".34"/><stop offset="100%" stop-color="#4f7d4a" stop-opacity=".05"/></linearGradient></defs><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176 L740 210 L20 210 Z" fill="url(#g1)"/><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176" fill="none" stroke="#4f7d4a" stroke-width="4" stroke-linecap="round"/><circle cx="382" cy="60" r="6" fill="#4f7d4a"/><text x="396" y="54" font-size="12" fill="#4f7d4a">칠성산 1,120m</text></svg></div><p class="desc">소유갱에서 칠성산 정상만 찍고 돌아오는 가장 짧은 대표 코스는 정상까지 약 1.6km, 왕복 3.2km 정도로 많이 안내되며, 실제 후기도 약 1시간 40분 전후가 자주 보입니다 [web:553][web:559]. 타이베이 당일 여행자에게 가장 부담이 적은 입문 코스입니다 [web:556].</p></div>
+<section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">소유갱 왕복 코스</div><div class="panel-sub">소유갱 → 칠성산 주봉 → 소유갱 원점회귀 · 약 3.2km · 1시간 40분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.2km</div><div class="txt">왕복 거리</div></div><div class="card kpi"><div class="num">1h 40m</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">1,120m</div><div class="txt">칠성산 주봉</div></div><div class="card kpi"><div class="num">중하</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">계단길</div><div class="txt">주요 지형</div></div><div class="card kpi"><div class="num">당일 가능</div><div class="txt">접근성</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">🚌 소유갱</span><span class="arr">→</span><span class="chip">칠성산 주봉</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#4f7d4a" stop-opacity=".34"></stop><stop offset="100%" stop-color="#4f7d4a" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="4"></path><circle cx="382" cy="60" fill="#4f7d4a" r="6"></circle><text fill="#4f7d4a" font-size="12" x="396" y="54">칠성산 1,120m</text></svg></div><p class="desc">소유갱에서 칠성산 정상만 찍고 돌아오는 가장 짧은 대표 코스는 정상까지 약 1.6km, 왕복 3.2km 정도로 많이 안내되며, 실제 후기도 약 1시간 40분 전후가 자주 보입니다 [web:553][web:559]. 타이베이 당일 여행자에게 가장 부담이 적은 입문 코스입니다 [web:556].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">소유갱 출발</div><div class="seg-meta">0km · 유황 분기공 전망대</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>버스 정류장과 전망대를 지나 칠성산 방향 계단길로 진입합니다. 초반부터 계단 비중이 높아 천천히 리듬을 잡는 편이 좋습니다.</p><div class="bar"><div class="fill" style="width:28%"></div></div><div class="tip">💡 출발 전 소유갱 분기공과 유황 지형을 먼저 보고 올라가면 양명산 특색을 제대로 느끼기 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">소유갱 → 칠성산 주봉</div><div class="seg-meta">1.6km · 50~60분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>주요 구간은 돌계단과 나무계단으로 이어지며, 날씨가 좋으면 타이베이 도심 방향 조망도 열립니다. 해발은 높지 않지만 계단이 계속 이어져 숨이 차는 편입니다.</p><div class="bar"><div class="fill" style="width:62%"></div></div><div class="tip">💡 바람이 강하면 정상 체감온도가 낮으니 얇은 바람막이를 준비하는 편이 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">정상 감상 후 원점 하산</div><div class="seg-meta">1.6km · 40~50분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>올라온 길로 그대로 내려옵니다. 비 온 뒤에는 계단과 바위에 미끄러움이 생기므로 보폭을 줄여 하산하세요.</p><div class="bar"><div class="fill" style="width:36%"></div></div><div class="tip">💡 하산 뒤 바로 버스로 시내 복귀가 가능해 반나절 일정에 적합합니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M98 308 C190 244, 280 162, 384 86 C450 104, 560 180, 660 312" stroke="#4f7d4a" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="98" cy="308" r="10" fill="#4f7d4a"/><circle cx="384" cy="86" r="12" fill="#4f7d4a"/><circle cx="660" cy="312" r="10" fill="#4f7d4a"/><text x="112" y="302" font-size="12">소유갱</text><text x="398" y="80" font-size="12">칠성산 주봉</text><text x="612" y="330" font-size="12">원점 회귀</text><text x="34" y="44" font-size="12" fill="var(--muted)">가장 짧은 입문형 정상 코스</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>버스·유황 분기공</td></tr><tr><td>능선 계단 구간</td><td>약 980m</td><td>1.0km</td><td>조망 시작</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>양명산 최고점</td></tr><tr><td>소유갱 복귀</td><td>약 800m</td><td>3.2km</td><td>원점 회귀</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M98 308 C190 244, 280 162, 384 86 C450 104, 560 180, 660 312" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="6"></path><circle cx="98" cy="308" fill="#4f7d4a" r="10"></circle><circle cx="384" cy="86" fill="#4f7d4a" r="12"></circle><circle cx="660" cy="312" fill="#4f7d4a" r="10"></circle><text font-size="12" x="112" y="302">소유갱</text><text font-size="12" x="398" y="80">칠성산 주봉</text><text font-size="12" x="612" y="330">원점 회귀</text><text fill="var(--muted)" font-size="12" x="34" y="44">가장 짧은 입문형 정상 코스</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>버스·유황 분기공</td></tr><tr><td>능선 계단 구간</td><td>약 980m</td><td>1.0km</td><td>조망 시작</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>양명산 최고점</td></tr><tr><td>소유갱 복귀</td><td>약 800m</td><td>3.2km</td><td>원점 회귀</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>👟 준비물</h4><ul><li>운동화보다 접지 좋은 트레킹화 권장</li><li>물 500mL~1L</li><li>바람막이 1벌</li></ul></div><div class="card tipcard"><h4>🌋 포인트</h4><ul><li>소유갱 유황 분기공</li><li>정상 조망</li><li>짧고 굵은 타이베이 근교 산행</li></ul></div><div class="card tipcard"><h4>🚌 교통</h4><ul><li>타이베이 시내에서 버스로 접근</li><li>주말엔 등산객 많음</li><li>오전 출발이 전망 확보에 유리</li></ul></div></div></div></section>
-
-<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level">🦶 중급</span><div><div class="panel-name">소유갱 → 냉수갱 종주 코스</div><div class="panel-sub">소유갱 → 칠성산 주봉 → 칠성산 동봉 → 냉수갱 · 약 3.5~4.0km · 2시간 30분~3시간 30분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.5~4km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">2.5~3.5h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">주봉+동봉</div><div class="txt">정상 2개</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">냉수갱</div><div class="txt">하산 포인트</div></div><div class="card kpi"><div class="num">당일 최적</div><div class="txt">대표 루트</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">소유갱</span><span class="arr">→</span><span class="chip">칠성산 주봉</span><span class="arr">→</span><span class="chip">칠성산 동봉</span><span class="arr">→</span><span class="chip">♨ 냉수갱</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#326f95" stop-opacity=".34"/><stop offset="100%" stop-color="#326f95" stop-opacity=".05"/></linearGradient></defs><path d="M20 184 C150 150, 250 106, 364 66 S470 70, 548 88 S620 108, 740 178 L740 210 L20 210 Z" fill="url(#g2)"/><path d="M20 184 C150 150, 250 106, 364 66 S470 70, 548 88 S620 108, 740 178" fill="none" stroke="#326f95" stroke-width="4" stroke-linecap="round"/><circle cx="364" cy="66" r="6" fill="#326f95"/><circle cx="468" cy="72" r="6" fill="#326f95"/><text x="378" y="60" font-size="12" fill="#326f95">주봉</text><text x="482" y="66" font-size="12" fill="#326f95">동봉</text></svg></div><p class="desc">냉수갱까지 이어지는 가장 보편적인 칠성산 종주 루트는 4km 안팎, 평균 2.5~3.5시간 정도로 소개됩니다 [web:552][web:557]. 소유갱에서 올라 주봉과 동봉을 잇고 냉수갱 온천 지대로 하산하는 구성이 가장 균형이 좋습니다 [web:550][web:554].</p></div>
+<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level">🦶 중급</span><div><div class="panel-name">소유갱 → 냉수갱 종주 코스</div><div class="panel-sub">소유갱 → 칠성산 주봉 → 칠성산 동봉 → 냉수갱 · 약 3.5~4.0km · 2시간 30분~3시간 30분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.5~4km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">2.5~3.5h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">주봉+동봉</div><div class="txt">정상 2개</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">냉수갱</div><div class="txt">하산 포인트</div></div><div class="card kpi"><div class="num">당일 최적</div><div class="txt">대표 루트</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">소유갱</span><span class="arr">→</span><span class="chip">칠성산 주봉</span><span class="arr">→</span><span class="chip">칠성산 동봉</span><span class="arr">→</span><span class="chip">♨ 냉수갱</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#326f95" stop-opacity=".34"></stop><stop offset="100%" stop-color="#326f95" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 184 C150 150, 250 106, 364 66 S470 70, 548 88 S620 108, 740 178 L740 210 L20 210 Z" fill="url(#g2)"></path><path d="M20 184 C150 150, 250 106, 364 66 S470 70, 548 88 S620 108, 740 178" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="4"></path><circle cx="364" cy="66" fill="#326f95" r="6"></circle><circle cx="468" cy="72" fill="#326f95" r="6"></circle><text fill="#326f95" font-size="12" x="378" y="60">주봉</text><text fill="#326f95" font-size="12" x="482" y="66">동봉</text></svg></div><p class="desc">냉수갱까지 이어지는 가장 보편적인 칠성산 종주 루트는 4km 안팎, 평균 2.5~3.5시간 정도로 소개됩니다 [web:552][web:557]. 소유갱에서 올라 주봉과 동봉을 잇고 냉수갱 온천 지대로 하산하는 구성이 가장 균형이 좋습니다 [web:550][web:554].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">소유갱 → 주봉</div><div class="seg-meta">1.6km · 50~60분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>초급 코스와 같은 길로 오르지만 정상 후 하산 동선이 달라집니다. 계단 구간이 길어 초반부터 과속하지 않는 것이 좋습니다.</p><div class="bar"><div class="fill" style="width:54%"></div></div><div class="tip">💡 안개가 낄 때는 시야가 짧아져도 표지판은 비교적 잘 정비된 편입니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">주봉 → 동봉</div><div class="seg-meta">0.5km · 15~20분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>능선을 따라 동봉으로 이동합니다. 오르내림이 짧지만 바람과 습기에 따라 미끄러운 날이 있습니다.</p><div class="bar"><div class="fill" style="width:40%"></div></div><div class="tip">💡 주봉보다 동봉 쪽이 능선 시야가 더 시원하게 열리는 날이 많습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">동봉 → 냉수갱</div><div class="seg-meta">1.5~1.9km · 1시간 내외</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>냉수갱 방향은 계단과 흙길이 섞여 있으며 하산 후 온천 지대와 버스 정류장을 이용하기 좋습니다. 무릎 부담은 소유갱 왕복보다 약간 더 큽니다.</p><div class="bar"><div class="fill" style="width:58%"></div></div><div class="tip">💡 하산 후 냉수갱 족욕·온천 분위기를 함께 즐기기 좋습니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M90 314 C170 246, 252 168, 360 92 S472 98, 548 118 S650 174, 710 290" stroke="#326f95" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="90" cy="314" r="10" fill="#326f95"/><circle cx="360" cy="92" r="11" fill="#326f95"/><circle cx="472" cy="100" r="10" fill="#326f95"/><circle cx="710" cy="290" r="10" fill="#326f95"/><text x="104" y="308" font-size="12">소유갱</text><text x="374" y="86" font-size="12">주봉</text><text x="486" y="94" font-size="12">동봉</text><text x="670" y="308" font-size="12">냉수갱</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>들머리</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>최고점</td></tr><tr><td>칠성산 동봉</td><td>약 1,107m</td><td>2.1km</td><td>능선 조망</td></tr><tr><td>냉수갱</td><td>약 740m</td><td>3.5~4.0km</td><td>버스·온천 지대</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M90 314 C170 246, 252 168, 360 92 S472 98, 548 118 S650 174, 710 290" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="6"></path><circle cx="90" cy="314" fill="#326f95" r="10"></circle><circle cx="360" cy="92" fill="#326f95" r="11"></circle><circle cx="472" cy="100" fill="#326f95" r="10"></circle><circle cx="710" cy="290" fill="#326f95" r="10"></circle><text font-size="12" x="104" y="308">소유갱</text><text font-size="12" x="374" y="86">주봉</text><text font-size="12" x="486" y="94">동봉</text><text font-size="12" x="670" y="308">냉수갱</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>들머리</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>최고점</td></tr><tr><td>칠성산 동봉</td><td>약 1,107m</td><td>2.1km</td><td>능선 조망</td></tr><tr><td>냉수갱</td><td>약 740m</td><td>3.5~4.0km</td><td>버스·온천 지대</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🥾 장비</h4><ul><li>트레킹화 권장</li><li>물 1L</li><li>안개 대비 얇은 겉옷</li></ul></div><div class="card tipcard"><h4>♨️ 매력 포인트</h4><ul><li>정상 2개 연계</li><li>냉수갱 온천 분위기</li><li>대중교통 연계 편리</li></ul></div><div class="card tipcard"><h4>⚠️ 주의</h4><ul><li>비 오는 날 계단 미끄러움</li><li>정상부 강풍</li><li>하산 버스 시간 확인 필요</li></ul></div></div></div></section>
-
-<section class="panel red" id="advanced"><div class="panel-top"><span class="level">🏔 고급</span><div><div class="panel-name">칭티엔강 연계 장거리 코스</div><div class="panel-sub">소유갱 → 칠성산 주봉 → 칠성산 동봉 → 몽환호 → 냉수갱 → 칭티엔강 · 약 5.5km · 3시간~3시간 30분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">5.5km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">3~3.5h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">몽환호</div><div class="txt">추가 포인트</div></div><div class="card kpi"><div class="num">초원</div><div class="txt">칭티엔강</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">풀코스</div><div class="txt">당일 종주형</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">소유갱</span><span class="arr">→</span><span class="chip">주봉</span><span class="arr">→</span><span class="chip">동봉</span><span class="arr">→</span><span class="chip">몽환호</span><span class="arr">→</span><span class="chip">냉수갱</span><span class="arr">→</span><span class="chip">🌿 칭티엔강</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#9d4f36" stop-opacity=".34"/><stop offset="100%" stop-color="#9d4f36" stop-opacity=".05"/></linearGradient></defs><path d="M20 186 C140 154, 246 114, 360 70 S466 72, 542 92 S608 128, 648 150 S698 156, 740 146 L740 210 L20 210 Z" fill="url(#g3)"/><path d="M20 186 C140 154, 246 114, 360 70 S466 72, 542 92 S608 128, 648 150 S698 156, 740 146" fill="none" stroke="#9d4f36" stroke-width="4" stroke-linecap="round"/><circle cx="360" cy="70" r="6" fill="#9d4f36"/><circle cx="540" cy="92" r="6" fill="#9d4f36"/><circle cx="738" cy="146" r="6" fill="#9d4f36"/><text x="374" y="64" font-size="12" fill="#9d4f36">주봉</text><text x="554" y="86" font-size="12" fill="#9d4f36">몽환호</text><text x="650" y="164" font-size="12" fill="#9d4f36">칭티엔강</text></svg></div><p class="desc">소유갱에서 칠성산 주봉·동봉을 거쳐 몽환호, 냉수갱, 칭티엔강까지 잇는 루트는 약 5.5km에 3~3시간 30분 전후로 널리 추천됩니다 [web:551]. 정상 산행에 초원 풍경과 온천 지대까지 한 번에 연결할 수 있어 양명산 풀코스 성격이 강합니다 [web:558][web:556].</p></div>
+<section class="panel red" id="advanced"><div class="panel-top"><span class="level">🏔 고급</span><div><div class="panel-name">칭티엔강 연계 장거리 코스</div><div class="panel-sub">소유갱 → 칠성산 주봉 → 칠성산 동봉 → 몽환호 → 냉수갱 → 칭티엔강 · 약 5.5km · 3시간~3시간 30분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">5.5km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">3~3.5h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">몽환호</div><div class="txt">추가 포인트</div></div><div class="card kpi"><div class="num">초원</div><div class="txt">칭티엔강</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">풀코스</div><div class="txt">당일 종주형</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">소유갱</span><span class="arr">→</span><span class="chip">주봉</span><span class="arr">→</span><span class="chip">동봉</span><span class="arr">→</span><span class="chip">몽환호</span><span class="arr">→</span><span class="chip">냉수갱</span><span class="arr">→</span><span class="chip">🌿 칭티엔강</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#9d4f36" stop-opacity=".34"></stop><stop offset="100%" stop-color="#9d4f36" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 186 C140 154, 246 114, 360 70 S466 72, 542 92 S608 128, 648 150 S698 156, 740 146 L740 210 L20 210 Z" fill="url(#g3)"></path><path d="M20 186 C140 154, 246 114, 360 70 S466 72, 542 92 S608 128, 648 150 S698 156, 740 146" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="4"></path><circle cx="360" cy="70" fill="#9d4f36" r="6"></circle><circle cx="540" cy="92" fill="#9d4f36" r="6"></circle><circle cx="738" cy="146" fill="#9d4f36" r="6"></circle><text fill="#9d4f36" font-size="12" x="374" y="64">주봉</text><text fill="#9d4f36" font-size="12" x="554" y="86">몽환호</text><text fill="#9d4f36" font-size="12" x="650" y="164">칭티엔강</text></svg></div><p class="desc">소유갱에서 칠성산 주봉·동봉을 거쳐 몽환호, 냉수갱, 칭티엔강까지 잇는 루트는 약 5.5km에 3~3시간 30분 전후로 널리 추천됩니다 [web:551]. 정상 산행에 초원 풍경과 온천 지대까지 한 번에 연결할 수 있어 양명산 풀코스 성격이 강합니다 [web:558][web:556].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">소유갱 → 칠성산 주봉</div><div class="seg-meta">1.6km · 50~60분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>정상까지는 동일한 핵심 오르막입니다. 인파가 많은 날은 초반 계단에서 속도가 느려질 수 있습니다.</p><div class="bar"><div class="fill" style="width:56%"></div></div><div class="tip">💡 오전 일찍 출발하면 안개·인파를 모두 줄이기 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">주봉 → 동봉 → 몽환호</div><div class="seg-meta">1.2km · 35~45분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>능선을 지나 몽환호 쪽으로 이어집니다. 날씨가 맑으면 초원과 분화구 지형 느낌을 함께 즐기기 좋습니다.</p><div class="bar"><div class="fill" style="width:48%"></div></div><div class="tip">💡 몽환호는 계절과 수위에 따라 분위기가 크게 달라집니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">몽환호 → 냉수갱</div><div class="seg-meta">1.0km · 25~35분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>냉수갱 방향으로 내려서며 지열 지대와 온천 감성을 느낄 수 있습니다. 하산 후 휴식 포인트가 생겨 체감상 여유가 있습니다.</p><div class="bar"><div class="fill" style="width:42%"></div></div><div class="tip">💡 냉수갱에서 간단히 쉬고 칭티엔강으로 이어가면 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">냉수갱 → 칭티엔강</div><div class="seg-meta">1.7km · 40~50분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>초원 지형으로 연결되는 마무리 구간입니다. 숲과 능선 위주의 칠성산과 달리 개방감이 큰 목초지 풍경이 특징입니다.</p><div class="bar"><div class="fill" style="width:46%"></div></div><div class="warn">⚠ 비나 안개가 짙은 날은 초원 구간 시야가 급격히 줄 수 있어 버스 시간과 일몰 시간을 고려하세요.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M90 318 C162 246, 246 166, 360 94 S474 100, 548 124 S618 170, 658 214 S696 256, 728 284" stroke="#9d4f36" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="90" cy="318" r="10" fill="#9d4f36"/><circle cx="360" cy="94" r="10" fill="#9d4f36"/><circle cx="474" cy="100" r="10" fill="#9d4f36"/><circle cx="606" cy="168" r="10" fill="#9d4f36"/><circle cx="728" cy="284" r="10" fill="#9d4f36"/><text x="104" y="312" font-size="12">소유갱</text><text x="374" y="88" font-size="12">주봉</text><text x="488" y="94" font-size="12">동봉</text><text x="620" y="162" font-size="12">냉수갱</text><text x="672" y="302" font-size="12">칭티엔강</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>버스·분기공</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>최고점</td></tr><tr><td>칠성산 동봉</td><td>약 1,107m</td><td>2.1km</td><td>능선 조망</td></tr><tr><td>몽환호</td><td>약 880m</td><td>3.1km</td><td>호수·습지 분위기</td></tr><tr><td>냉수갱</td><td>약 740m</td><td>3.8km</td><td>온천 지대</td></tr><tr><td>칭티엔강</td><td>약 760m</td><td>5.5km</td><td>초원 풍경·버스 연계</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M90 318 C162 246, 246 166, 360 94 S474 100, 548 124 S618 170, 658 214 S696 256, 728 284" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="6"></path><circle cx="90" cy="318" fill="#9d4f36" r="10"></circle><circle cx="360" cy="94" fill="#9d4f36" r="10"></circle><circle cx="474" cy="100" fill="#9d4f36" r="10"></circle><circle cx="606" cy="168" fill="#9d4f36" r="10"></circle><circle cx="728" cy="284" fill="#9d4f36" r="10"></circle><text font-size="12" x="104" y="312">소유갱</text><text font-size="12" x="374" y="88">주봉</text><text font-size="12" x="488" y="94">동봉</text><text font-size="12" x="620" y="162">냉수갱</text><text font-size="12" x="672" y="302">칭티엔강</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>버스·분기공</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>최고점</td></tr><tr><td>칠성산 동봉</td><td>약 1,107m</td><td>2.1km</td><td>능선 조망</td></tr><tr><td>몽환호</td><td>약 880m</td><td>3.1km</td><td>호수·습지 분위기</td></tr><tr><td>냉수갱</td><td>약 740m</td><td>3.8km</td><td>온천 지대</td></tr><tr><td>칭티엔강</td><td>약 760m</td><td>5.5km</td><td>초원 풍경·버스 연계</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🎒 장비</h4><ul><li>트레킹화와 방풍자켓</li><li>물 1~1.5L</li><li>간식과 보조배터리</li></ul></div><div class="card tipcard"><h4>🌿 볼거리</h4><ul><li>화산 지형 + 정상</li><li>몽환호 습지</li><li>칭티엔강 초원</li></ul></div><div class="card tipcard"><h4>🚌 운영 팁</h4><ul><li>종점이 달라 귀가 버스 동선 확인</li><li>주말엔 버스 혼잡 가능</li><li>안개 시즌엔 시간 여유 필수</li></ul></div></div></div></section>
 </main>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon">📸</span> 양명산의 사계 &amp; 명소
+  </h3>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Yangmingshan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/photo-of-a-green-mountain-6502832/' target='_blank' rel='noopener'&gt;Timo Volz&lt;/a&gt; on Pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/yangmingshan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/yangmingshan/g1.webp" type="image/webp"/>
+<img alt="양명산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/yangmingshan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">양명산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="Scenic view of Yangmingshan encountered during the Yangmingshan climb 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'&gt;Andy Kuo&lt;/a&gt; on Unsplash" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/yangmingshan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/yangmingshan/g2.webp" type="image/webp"/>
+<img alt="양명산 산행 중 마주하는 양명산의 수려한 모습" class="gallery-img" decoding="async" loading="lazy" src="assets/img/yangmingshan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">양명산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="Harmonious view of Yangmingshan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'&gt;Andy Kuo&lt;/a&gt; on Unsplash" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/yangmingshan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/yangmingshan/g3.webp" type="image/webp"/>
+<img alt="양명산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/yangmingshan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">양명산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Yangmingshan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@waterfay' target='_blank' rel='noopener'&gt;Chen Wen-Yu&lt;/a&gt; on Unsplash" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/yangmingshan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/yangmingshan/g4.webp" type="image/webp"/>
+<img alt="양명산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/yangmingshan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">양명산 탐방로</span>
+</div>
+</button>
+</div>
+</section>
 <footer><div class="wrap">실제 산행 전 양명산 국립공원 탐방 정보, 버스 운행, 기상, 정상부 안개·강풍 여부를 다시 확인하세요.</div></footer>
 <script>
 const themeBtn=document.getElementById('themeBtn');let mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',mode);themeBtn.addEventListener('click',()=>{mode=mode==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',mode)});
 const courseBtns=[...document.querySelectorAll('.course-btn')],panels=[...document.querySelectorAll('.panel')];courseBtns.forEach(btn=>btn.addEventListener('click',()=>{courseBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');panels.forEach(p=>p.classList.remove('active'));document.getElementById(btn.dataset.course).classList.add('active')}));
 document.querySelectorAll('.panel').forEach(panel=>{const tabs=[...panel.querySelectorAll('.tab')],panes=[...panel.querySelectorAll('.tabpane')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));tab.classList.add('active');panel.querySelector(`.tabpane[data-pane="${tab.dataset.tab}"]`).classList.add('active')}))});
 document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
