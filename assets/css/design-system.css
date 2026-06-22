@@ -115,6 +115,9 @@
   --error: #f87171;
   --error-highlight: #7f1d1d;
 
+  --color-gold: #fbbf24;
+  --color-gold-highlight: #78350f;
+
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
@@ -415,11 +418,17 @@ tr:last-child td {
   position: absolute;
   top: -40px;
   left: 0;
-  background: var(--primary);
-  color: white;
+  background: #0f172a;
+  color: #f8fafc;
   padding: var(--space-2) var(--space-4);
   z-index: 1000;
   transition: top var(--transition);
+  font-weight: 700;
+}
+
+[data-theme="dark"] .skip-link {
+  background: #f8fafc;
+  color: #0f172a;
 }
 
 .skip-link:focus {
@@ -441,3 +450,50 @@ tr:last-child td {
     scroll-behavior: auto !important;
   }
 }
+
+/* Accessibility contrast overrides for alerts, tip boxes, and badges */
+.tip-box {
+  color: #0369a1 !important; /* High contrast dark blue for light mode */
+}
+[data-theme="dark"] .tip-box {
+  color: #bae6fd !important; /* High contrast light blue for dark mode */
+}
+.warn-box {
+  color: #c2410c !important; /* High contrast dark orange for light mode */
+}
+[data-theme="dark"] .warn-box {
+  color: #fed7aa !important; /* High contrast light orange for dark mode */
+}
+.hero-bleed .hero-badge {
+  color: #0369a1 !important;
+}
+[data-theme="dark"] .hero-bleed .hero-badge {
+  color: #bae6fd !important;
+}
+
+/* Checkpoint table badges accessibility contrast overrides */
+.badge-summit {
+  color: #c2410c !important; /* Dark orange */
+}
+[data-theme="dark"] .badge-summit {
+  color: #fdba74 !important; /* Light orange */
+}
+.badge-shelter {
+  color: #0369a1 !important; /* Dark blue */
+}
+[data-theme="dark"] .badge-shelter {
+  color: #7dd3fc !important; /* Light blue */
+}
+.badge-temple {
+  color: #047857 !important; /* Dark green */
+}
+[data-theme="dark"] .badge-temple {
+  color: #6ee7b7 !important; /* Light green */
+}
+.badge-landmark {
+  color: #b45309 !important; /* Dark amber/gold */
+}
+[data-theme="dark"] .badge-landmark {
+  color: #fcd34d !important; /* Light amber/gold */
+}
+
