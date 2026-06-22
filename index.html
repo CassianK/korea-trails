@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Korea Trails — 한국 & 대만 명산 등산 플레이북</title>
+<title>Korea Trails — 한국 & 아시아 명산 등산 플레이북</title>
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="한국과 대만 명산의 코스 정보, 지도, 교통편, 등산 팁을 제공하는 프리미엄 아웃도어 플레이북 가이드.">
-<meta property="og:title" content="Korea Trails — 한국 & 대만 명산 등산 플레이북">
-<meta property="og:description" content="한국과 대만 명산의 코스 정보, 지도, 교통편, 등산 팁을 제공하는 프리미엄 아웃도어 플레이북 가이드.">
+<meta name="description" content="한국과 아시아 명산의 코스 정보, 지도, 교통편, 등산 팁을 제공하는 프리미엄 아웃도어 플레이북 가이드.">
+<meta property="og:title" content="Korea Trails — 한국 & 아시아 명산 등산 플레이북">
+<meta property="og:description" content="한국과 아시아 명산의 코스 정보, 지도, 교통편, 등산 팁을 제공하는 프리미엄 아웃도어 플레이북 가이드.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://trinos-strategy.github.io/korea-trails/">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="assets/img/brand-og.png">
+<meta name="twitter:image" content="assets/img/brand-og.png">
 
 <!-- Core CSS from Design System -->
 <link rel="stylesheet" href="assets/css/design-system.css">
@@ -19,27 +21,147 @@
 
 <style>
   /* Local index-specific overrides to match Sleek Modern Explorer aesthetic */
-  .hero-gradient-overlay {
-    background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.15), transparent 60%);
+  .hero-cinematic {
+    position: relative;
+    min-height: 520px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: var(--space-12) 0;
+    background-color: #09090b; /* Fallback dark bg */
+    border-bottom: 1px solid var(--border);
+  }
+  @media (min-width: 1024px) {
+    .hero-cinematic {
+      min-height: min(88vh, 920px);
+      padding: var(--space-16) 0;
+    }
+  }
+
+  .hero-bg-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.05);
+    transition: transform var(--transition-slow);
   }
   
+  /* Scroll parallax for hero background */
+  @media (min-width: 1024px) {
+    .hero-bg-img {
+      will-change: transform;
+    }
+  }
+
+  .hero-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(9, 9, 11, 0.45) 0%,
+      rgba(9, 9, 11, 0.75) 60%,
+      var(--bg) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Cinematic Vignette */
+  .hero-cinematic::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle,
+      transparent 30%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .hero-content-wrap {
+    position: relative;
+    z-index: 4;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-title-giant {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #ffffff; /* Contrast on dark hero overlay */
+    font-size: clamp(2.5rem, 5vw, 5.5rem);
+    margin-bottom: var(--space-4);
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  .hero-desc-large {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: rgba(244, 244, 245, 0.85); /* Light gray for readability */
+    max-width: 60ch;
+    margin: 0 auto var(--space-8);
+    line-height: 1.65;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Micro grain effect */
+  .grain-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
   .search-hero-input {
-    background-color: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text);
+    background-color: rgba(24, 24, 27, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff !important;
     padding: var(--space-4) var(--space-6);
     border-radius: var(--radius-full);
     width: 100%;
     max-width: 520px;
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
     font-size: var(--text-base);
+    backdrop-filter: blur(8px);
     transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  [data-theme="light"] .search-hero-input {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(9, 9, 11, 0.1);
+    color: #09090b !important;
   }
   
   .search-hero-input:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.35);
   }
   
   .filter-bar-card {
@@ -95,46 +217,72 @@
       <path d="M4 28 L10 16 L15 22 L20 12 L25 20 L30 10" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       <circle cx="30" cy="10" r="2.5" fill="white"/>
     </svg>
-    <a href="index.html" class="logo-text" style="color: var(--text);">Korea Trails</a>
+    <a href="index.html" class="logo-text">Korea Trails</a>
   </div>
+  <nav class="header-nav" aria-label="메인 네비게이션">
+    <a href="index.html" class="header-nav-link active">홈</a>
+    <a href="#mountainGrid" class="header-nav-link">명산 탐색</a>
+    <a href="https://github.com/Trinos-Strategy/korea-trails" target="_blank" class="header-nav-link">GitHub</a>
+  </nav>
   <div class="header-right">
     <button class="theme-btn" id="themeBtn" aria-label="테마 전환">◐</button>
   </div>
 </header>
 
 <main id="mainContent">
-  <!-- Hero Section -->
-  <section class="hero hero-gradient-overlay" style="padding: var(--space-16) 0 var(--space-12); position: relative; border-bottom: none;">
-    <div class="wrap" style="text-align: center;">
-      <div class="hero-badge">🏔 Premium Outdoor Guide</div>
-      <h1 style="font-size: var(--type.scale.2xl); margin-bottom: var(--space-3); color: var(--text);">한국과 대만의 명산을<br>정복하세요</h1>
-      <p style="margin-bottom: var(--space-6); color: var(--muted); font-size: var(--text-base);">
-        한눈에 비교하는 거리와 고도 정보, 다크모드 대응 실사 지도, 그리고 대중교통 정보까지 탑재된 완성형 명산 가이드북.
-      </p>
-      
-      <!-- Integrated Search Input in Hero -->
-      <div style="display: flex; justify-content: center; margin-bottom: var(--space-6);">
-        <input 
-          type="search" 
-          id="searchInput" 
-          class="search-hero-input" 
-          placeholder="산 이름, 고도, 지역 또는 설명 검색..." 
-          aria-label="명산 검색">
-      </div>
+  <!-- Cinematic Hero Section -->
+  <section class="hero-cinematic">
+    <!-- Background Picture -->
+    <div class="hero-bg-wrap">
+      <picture id="heroFallbackImage">
+        <source srcset="assets/img/seoraksan/hero-640.webp 640w, assets/img/seoraksan/hero-1024.webp 1024w, assets/img/seoraksan/hero-1600.webp 1600w" type="image/webp" sizes="100vw">
+        <img src="assets/img/seoraksan/hero-1600.jpg" srcset="assets/img/seoraksan/hero-640.jpg 640w, assets/img/seoraksan/hero-1024.jpg 1024w, assets/img/seoraksan/hero-1600.jpg 1600w" sizes="100vw" alt="설악산 대청봉의 기암괴석과 웅장한 아침 안개" class="hero-bg-img" loading="eager" decoding="async">
+      </picture>
+      <!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
+      <video id="heroVideo" class="hero-bg-video" muted loop playsinline poster="assets/video/yangmingshan/hero-poster.jpg" preload="none" style="display: none;">
+        <source src="assets/video/yangmingshan/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero-gradient-overlay"></div>
+      <div class="grain-overlay"></div>
+    </div>
 
-      <div class="hero-stats" style="margin-bottom: 0;">
-        <div class="hero-stat" style="margin: 0 var(--space-4);">
-          <div class="hero-stat-value" style="font-size: var(--text-xl);">26</div>
-          <div class="hero-stat-label">등록 명산</div>
+    <div class="hero-content-wrap">
+      <div class="wrap">
+        <div class="hero-badge">
+          <svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"/></svg>
+          Premium Outdoor Guide
         </div>
-        <div class="hero-stat" style="margin: 0 var(--space-4);">
-          <div class="hero-stat-value" style="font-size: var(--text-xl);">17</div>
-          <div class="hero-stat-label">플레이북 완성</div>
+        <h1 class="hero-title-giant">한국과 아시아의 명산을<br>정복하세요</h1>
+        <p class="hero-desc-large">
+          한눈에 비교하는 거리와 고도 정보, 다크모드 대응 실사 지도, 그리고 대중교통 정보까지 탑재된 완성형 명산 가이드북.
+        </p>
+        
+        <!-- Integrated Search Input in Hero -->
+        <div class="search-hero-container">
+          <input 
+            type="search" 
+            id="searchInput" 
+            class="search-hero-input" 
+            placeholder="산 이름, 고도, 지역 또는 설명 검색..." 
+            aria-label="명산 검색">
         </div>
-        <div class="hero-stat" style="margin: 0 var(--space-4);">
-          <div class="hero-stat-value" style="font-size: var(--text-xl);">4단계</div>
-          <div class="hero-stat-label">난이도별 가이드</div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">26</div>
+            <div class="hero-stat-label">등록 명산</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">17</div>
+            <div class="hero-stat-label">플레이북 완성</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">4단계</div>
+            <div class="hero-stat-label">난이도별 가이드</div>
         </div>
+      </div>
+      <div style="position: absolute; bottom: 12px; right: var(--space-6); font-size: 10px; opacity: 0.6; color: #ffffff; pointer-events: none; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
+        Ambient loop generated by Gemini
       </div>
     </div>
   </section>
@@ -145,36 +293,45 @@
       
       <!-- Filters Card Panel -->
       <div class="card filter-bar-card">
-        <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; justify-content: space-between;">
-          <div style="display: flex; flex-wrap: wrap; gap: var(--space-3);">
-            <select id="regionSelect" class="filter-select" aria-label="지역 필터">
-              <option value="all">📍 지역: 전체</option>
-              <option value="korea">대한민국 전체</option>
-              <option value="강원">강원</option>
-              <option value="경기">경기/서울</option>
-              <option value="충청">충청</option>
-              <option value="경상">경상</option>
-              <option value="전라">전라</option>
-              <option value="제주">제주</option>
-              <option value="대만">대만</option>
-            </select>
+        <div class="filter-bar-content">
+          <div class="filter-group">
+            <div class="filter-select-wrapper">
+              <svg class="filter-icon"><use href="assets/icons/icons.svg#icon-location"/></svg>
+              <select id="regionSelect" class="filter-select" aria-label="지역 필터">
+                <option value="all">지역: 전체</option>
+                <option value="korea">대한민국 전체</option>
+                <option value="강원">강원</option>
+                <option value="경기">경기/서울</option>
+                <option value="충청">충청</option>
+                <option value="경상">경상</option>
+                <option value="전라">전라</option>
+                <option value="제주">제주</option>
+                <option value="대만">대만</option>
+              </select>
+            </div>
 
-            <select id="diffSelect" class="filter-select" aria-label="난이도 필터">
-              <option value="all">⚡ 난이도: 전체</option>
-              <option value="easy">초급</option>
-              <option value="medium">중급</option>
-              <option value="hard">고급</option>
-              <option value="expert">전문가</option>
-            </select>
+            <div class="filter-select-wrapper">
+              <svg class="filter-icon"><use href="assets/icons/icons.svg#icon-lightning"/></svg>
+              <select id="diffSelect" class="filter-select" aria-label="난이도 필터">
+                <option value="all">난이도: 전체</option>
+                <option value="easy">초급</option>
+                <option value="medium">중급</option>
+                <option value="hard">고급</option>
+                <option value="expert">전문가</option>
+              </select>
+            </div>
 
-            <select id="doneSelect" class="filter-select" aria-label="플레이북 상태 필터">
-              <option value="all">📖 플레이북: 전체</option>
-              <option value="done">완성됨 (17)</option>
-              <option value="pending">준비 중 (9)</option>
-            </select>
+            <div class="filter-select-wrapper">
+              <svg class="filter-icon"><use href="assets/icons/icons.svg#icon-book"/></svg>
+              <select id="doneSelect" class="filter-select" aria-label="플레이북 상태 필터">
+                <option value="all">플레이북: 전체</option>
+                <option value="done">완성됨 (17)</option>
+                <option value="pending">준비 중 (9)</option>
+              </select>
+            </div>
           </div>
 
-          <div style="display: flex; gap: var(--space-3); align-items: center;">
+          <div class="filter-sort-group">
             <select id="sortSelect" class="filter-select" aria-label="정렬 순서">
               <option value="elevation-desc">높은 고도 순</option>
               <option value="elevation-asc">낮은 고도 순</option>
@@ -182,7 +339,7 @@
               <option value="difficulty-asc">낮은 난이도 순</option>
               <option value="difficulty-desc">높은 난이도 순</option>
             </select>
-            <span id="resultsCount" style="font-size: var(--text-xs); color: var(--muted); font-weight: 700; min-width: 80px; text-align: right;"></span>
+            <span id="resultsCount" class="filter-results-count"></span>
           </div>
         </div>
       </div>
@@ -191,7 +348,7 @@
       <div class="accordion" style="margin-top: var(--space-6); margin-bottom: var(--space-6);">
         <button class="accordion-header" id="mapToggleBtn" aria-expanded="false" aria-controls="nationalMapPanel">
           <span style="font-family: var(--font-display); font-weight: 800; font-size: var(--text-base); display: flex; align-items: center; gap: 8px;">
-            🗺️ 인터랙티브 전국 지도 펼치기 (한국 & 대만)
+            <svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"/></svg> 인터랙티브 전국 지도 펼치기 (한국 & 아시아)
           </span>
         </button>
         <div class="accordion-content" id="nationalMapPanel" aria-hidden="true" style="padding: 0;">
@@ -315,11 +472,20 @@ document.addEventListener('DOMContentLoaded', () => {
               const popupHtml = `
                 <div style="font-family: var(--font-body); padding: 4px;">
                   <h4 style="margin: 0 0 4px 0; font-size: 14px; font-weight: 800;">${m.name}</h4>
-                  <div style="font-size: 11px; margin-bottom: 2px;">⛰️ 고도: <strong>${m.alt}</strong></div>
-                  <div style="font-size: 11px; margin-bottom: 6px;">⚡ 난이도: <strong>${DIFF_LABEL[m.diff]}</strong></div>
+                  <div style="font-size: 11px; margin-bottom: 2px; display: inline-flex; align-items: center; gap: 4px;">
+                    <svg class="icon-svg" style="width: 12px; height: 12px;"><use href="assets/icons/icons.svg#icon-mountain"/></svg>
+                    고도: <strong>${m.alt}</strong>
+                  </div>
+                  <div style="font-size: 11px; margin-bottom: 6px; display: inline-flex; align-items: center; gap: 4px;">
+                    <svg class="icon-svg" style="width: 12px; height: 12px;"><use href="assets/icons/icons.svg#icon-lightning"/></svg>
+                    난이도: <strong>${DIFF_LABEL[m.diff]}</strong>
+                  </div>
                   ${m.done 
-                    ? `<a href="${m.url}" style="font-size: 11px; font-weight: 700; color: var(--primary);">🗺️ 플레이북 바로가기</a>` 
-                    : `<span style="font-size: 11px; color: var(--faint);">⏳ 플레이북 준비 중</span>`
+                    ? `<a href="${m.url}" style="font-size: 11px; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 4px;">
+                         <svg class="icon-svg" style="width: 12px; height: 12px;"><use href="assets/icons/icons.svg#icon-book"/></svg>
+                         플레이북 바로가기
+                       </a>` 
+                    : `<span style="font-size: 11px; color: var(--faint);">⏳ 준비 중</span>`
                   }
                 </div>
               `;
@@ -336,6 +502,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
+  }
+
+  // Desktop Cinematic Video Lazy Loader
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-cinematic'));
   }
 });
 </script>

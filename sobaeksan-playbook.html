@@ -5,9 +5,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>소백산 등산 플레이북</title>
-<meta name="description" content="대한민국 최고의 명산 중 하나인 소백산 국립공원 가이드. 초급 , 중급 , 고급  코스의 상세 경로, 실사 지도 및 팁을 제공합니다.">
+<meta content="대한민국 최고의 명산 중 하나인 소백산 국립공원 가이드. 초급 , 중급 , 고급  코스의 상세 경로, 실사 지도 및 팁을 제공합니다." name="description"/>
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/css/design-system.css">
+<link href="assets/css/design-system.css" rel="stylesheet"/>
 <style>
 /* COURSE SELECTOR */
 .course-selector {
@@ -100,7 +100,7 @@
 
 /* MAP SVG */
 .map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
-.map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
 .map-svg{width:100%;height:auto;max-height:520px;}
 
 /* TIPS GRID */
@@ -551,9 +551,9 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 </style>
-</head>
+<meta content="assets/img/brand-og.png" property="og:image"/><meta content="assets/img/brand-og.png" name="twitter:image"/></head>
 <body>
-<a href="#mainContent" class="skip-link">본문 바로가기</a>
+<a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="hdr">
 <div class="logo">
 <svg aria-label="소백산 플레이북" class="logo-svg" fill="none" viewbox="0 0 36 36">
@@ -569,51 +569,48 @@
 </button>
 </header>
 <section class="hero hero-bleed">
-  
-  <!-- Background Picture -->
-  <picture class="hero-picture">
-    <source type="image/avif" srcset="assets/img/sobaeksan/hero-640.avif 640w, assets/img/sobaeksan/hero-1024.avif 1024w, assets/img/sobaeksan/hero-1600.avif 1600w, assets/img/sobaeksan/hero-2400.avif 2400w" sizes="100vw">
-    <source type="image/webp" srcset="assets/img/sobaeksan/hero-640.webp 640w, assets/img/sobaeksan/hero-1024.webp 1024w, assets/img/sobaeksan/hero-1600.webp 1600w, assets/img/sobaeksan/hero-2400.webp 2400w" sizes="100vw">
-    <img src="assets/img/sobaeksan/hero-1600.jpg" srcset="assets/img/sobaeksan/hero-640.jpg 640w, assets/img/sobaeksan/hero-1024.jpg 1024w, assets/img/sobaeksan/hero-1600.jpg 1600w, assets/img/sobaeksan/hero-2400.jpg 2400w" sizes="100vw" alt="소백산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Sobaeksan mountain peaks and ridges" class="hero-img">
-  </picture>
-  <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-    <div class="hero-badge">🏔 소백산 플레이북</div>
-    <h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">소백산 등산 플레이북</h1>
-    <p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/sobaeksan/hero-640.avif 640w, assets/img/sobaeksan/hero-1024.avif 1024w, assets/img/sobaeksan/hero-1600.avif 1600w, assets/img/sobaeksan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/sobaeksan/hero-640.webp 640w, assets/img/sobaeksan/hero-1024.webp 1024w, assets/img/sobaeksan/hero-1600.webp 1600w, assets/img/sobaeksan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="소백산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Sobaeksan mountain peaks and ridges" class="hero-img" sizes="100vw" src="assets/img/sobaeksan/hero-1600.jpg" srcset="assets/img/sobaeksan/hero-640.jpg 640w, assets/img/sobaeksan/hero-1024.jpg 1024w, assets/img/sobaeksan/hero-1600.jpg 1600w, assets/img/sobaeksan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 소백산 플레이북</div>
+<h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">소백산 등산 플레이북</h1>
+<p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
       대한민국 최고의 명산 중 하나인 소백산 국립공원 가이드. 초급 , 중급 , 고급  코스의 상세 경로, 실사 지도 및 팁을 제공합니다.
     </p>
-    
-    <!-- Course Selector Buttons -->
-    <div class="course-selector">
-      <button class="course-btn diff-btn beginner beginner active" onclick="selC('beginner',this)">🌿 초급: </button>
-      <button class="course-btn diff-btn intermediate intermediate" onclick="selC('intermediate',this)">🦶 중급: </button>
-      <button class="course-btn diff-btn advanced advanced" onclick="selC('advanced',this)">🏔 고급: </button>
-    </div>
-  </div>
-  <div class="photo-credit hero-credit">
-    <span class="credit-author">Photo by <a href="https://www.pexels.com/@pan-soo-yi-9278113" target="_blank" rel="noopener">Pan soo Yi</a></span>
-    <span class="credit-divider">/</span>
-    <span class="credit-source"><a href="https://pexels.com" target="_blank" rel="noopener">pexels</a></span>
-  </div>
+<!-- Course Selector Buttons -->
+<div class="course-selector">
+<button class="course-btn diff-btn beginner beginner active" onclick="selC('beginner',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 초급: </button>
+<button class="course-btn diff-btn intermediate intermediate" onclick="selC('intermediate',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 중급: </button>
+<button class="course-btn diff-btn advanced advanced" onclick="selC('advanced',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 고급: </button>
+</div>
+</div>
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@pan-soo-yi-9278113" rel="noopener" target="_blank">Pan soo Yi</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
 </section>
 <!-- ═══ 초급 ═══ -->
 <main class="wrap" id="mainContent">
 <div class="panel active beginner" id="course-beginner">
 <nav class="tabs">
-<button class="tab active" onclick="selT('beginner','ov',this)">📋 개요</button>
-<button class="tab" onclick="selT('beginner','rt',this)">🗺 경로 안내</button>
-<button class="tab" onclick="selT('beginner','mp',this)">📍 지도</button>
-<button class="tab" onclick="selT('beginner','tp',this)">💡 팁 &amp; 주의</button>
+<button class="tab active" onclick="selT('beginner','ov',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab" onclick="selT('beginner','rt',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab" onclick="selT('beginner','mp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab" onclick="selT('beginner','tp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
 </nav>
 <div class="main">
-<div class="tc active" id="beginner-ov">
-<div class="stitle"><div class="sico">🌿</div><span>초급 코스 개요</span></div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="beginner-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><span>초급 코스 개요</span></div>
 <div class="stat-grid">
 <div class="stat-card"><div class="si">📏</div><div class="sv">7.4km</div><div class="sl">희방사 코스</div></div>
 <div class="stat-card"><div class="si">⏱</div><div class="sv">3~4h</div><div class="sl">왕복 소요</div></div>
-<div class="stat-card"><div class="si">⛰</div><div class="sv">1,394m</div><div class="sl">연화봉</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,394m</div><div class="sl">연화봉</div></div>
 <div class="stat-card"><div class="si">📈</div><div class="sv">±700m</div><div class="sl">누적 고도차</div></div>
 <div class="stat-card"><div class="si">🔥</div><div class="sv">~800</div><div class="sl">예상 칼로리</div></div>
 <div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">난이도</div></div>
@@ -637,7 +634,7 @@
 <text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="540" y="125">하산 (원점)</text>
 </svg>
 </div>
-<div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>전체 코스 흐름</span></div>
 <div class="flow">
 <span class="fn sk">🅿 희방탐방센터</span><span class="fa">→</span>
 <span class="fn am">희방폭포 (28m)</span><span class="fa">→</span>
@@ -652,12 +649,11 @@
 <li>✅ 신라 643년 창건 희방사를 경유하는 천년고찰 탐방 코스</li>
 <li>✅ 깔닥고개 이후 완만한 능선 — 연화봉에서 360도 파노라마 조망</li>
 <li>✅ 소백산 천문대(연화봉 인근) 탐방 가능 — 한국천문연구원 운영</li>
-<li>⚠ 깔닥고개 구간 급경사 — 초급자 주의 구간 (약 400m)</li>
-<li>⚠ 희방탐방센터→연화봉 편도 3.7km / 왕복 7.4km</li>
+<li><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 깔닥고개 구간 급경사 — 초급자 주의 구간 (약 400m)</li>
+<li><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 희방탐방센터→연화봉 편도 3.7km / 왕복 7.4km</li>
 </ul></div>
-</div>
-<div class="tc" id="beginner-rt">
-<div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+</div><div class="tc" id="beginner-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
 <div class="acc-wrap">
 <div class="acc-item open">
 <div class="acc-hdr" onclick="togAcc(this)">
@@ -667,7 +663,7 @@
 </div>
 <div class="acc-body">
 <p class="acc-desc">희방탐방지원센터 앞 주차장에서 출발합니다. 탐방지원센터에서 코스 확인 후 입산. 소백산국립공원 희방사지구 입장료(성인 1,600원) 납부.</p>
-<div class="tip">💡 희방탐방센터 주차장은 협소합니다. 주말 성수기엔 조기 만차. 이른 아침 출발 권장. 탐방로 입구 화장실 이용 후 입산.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 희방탐방센터 주차장은 협소합니다. 주말 성수기엔 조기 만차. 이른 아침 출발 권장. 탐방로 입구 화장실 이용 후 입산.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -679,7 +675,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:20%"></div></div></div>
 <p class="acc-desc">희방탐방센터에서 계곡길을 따라 약 1km 걸으면 희방폭포(높이 28m)를 만납니다. 경북 내륙 최대 폭포로 사계절 다른 표정을 보입니다. 폭포 옆 데크 계단을 올라 희방사(신라 선덕여왕 12년, 643년 창건)에 도착.</p>
-<div class="tip">💡 희방폭포는 겨울에 얼어붙은 빙폭 장관으로 유명합니다. 여름에는 청량한 물보라로 피서 명소가 됩니다.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 희방폭포는 겨울에 얼어붙은 빙폭 장관으로 유명합니다. 여름에는 청량한 물보라로 피서 명소가 됩니다.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -691,7 +687,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:65%"></div></div></div>
 <p class="acc-desc">희방사에서 깔닥고개까지 이 코스에서 가장 가파른 구간입니다. '깔닥깔닥' 숨이 차오른다 하여 붙여진 이름처럼 급경사가 이어집니다. 데크 계단 구간이 잘 정비되어 있으나 체력 소모가 큰 구간.</p>
-<div class="wrn">⚠ 이 구간이 초급 코스의 핵심 난관입니다. 충분히 쉬어가며 천천히 오르세요. 하산 시 특히 미끄러울 수 있습니다.</div>
+<div class="wrn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 이 구간이 초급 코스의 핵심 난관입니다. 충분히 쉬어가며 천천히 오르세요. 하산 시 특히 미끄러울 수 있습니다.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -703,7 +699,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:25%"></div></div></div>
 <p class="acc-desc">깔닥고개를 넘어서면 소백산의 특징인 완만하고 넓은 능선이 펼쳐집니다. 연화봉(1,394m) 정상에서 맑은 날 태백산·월악산·속리산까지 파노라마 조망. 소백산 천문대가 바로 옆에 위치.</p>
-<div class="tip">💡 봄철(5월 말~6월 초) 연화봉 능선은 분홍빛 철쭉 터널이 펼쳐집니다. 연화봉 정상 전망대에서 철쭉 사진 명소.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 봄철(5월 말~6월 초) 연화봉 능선은 분홍빛 철쭉 터널이 펼쳐집니다. 연화봉 정상 전망대에서 철쭉 사진 명소.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -715,14 +711,23 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:30%"></div></div></div>
 <p class="acc-desc">올라온 길로 깔닥고개→희방사→희방폭포→희방탐방센터 방향으로 원점 하산합니다. 하산 시 희방폭포에서 잠시 쉬며 물소리를 즐길 수 있습니다.</p>
-<div class="tip">💡 죽령코스 연계 선택: 연화봉에서 제2연화봉까지 약 3km 추가 이동 후 죽령으로 하산 가능 (차량 2대 필요). 시간 여유 있는 분께 추천.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 죽령코스 연계 선택: 연화봉에서 제2연화봉까지 약 3km 추가 이동 후 죽령으로 하산 가능 (차량 2대 필요). 시간 여유 있는 분께 추천.</div>
 </div>
 </div>
 </div>
+</div><div class="tc" id="beginner-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>필수 장비</h2><ul><li>등산화 or 운동화 (방수 권장)</li><li>방풍 재킷</li><li>트레킹 스틱 (깔닥고개 하산용)</li><li>겨울: 아이젠 필수</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌸</div><h2>철쭉 시즌</h2><ul><li>5월 말 ~ 6월 초 철쭉 절정</li><li>연화봉~제1연화봉 철쭉 터널</li><li>비로봉 능선 분홍빛 융단</li><li>철쭉 기간 인파 최다 → 이른 출발</li></ul></div>
+<div class="tc-card"><div class="tc-icon">❄</div><h2>겨울 눈꽃·상고대</h2><ul><li>1~2월 연화봉 상고대 절정</li><li>희방폭포 빙폭 장관 (12~2월)</li><li>깔닥고개 아이젠 착용 구간</li><li>능선 강풍 주의·방한 완비</li></ul></div>
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg></div><h2>교통 정보</h2><ul><li>영주역 → 희방사 버스 운행</li><li>희방탐방센터 주차 유료</li><li>단양 IC → 희방사 30분</li><li>소백산국립공원 054-638-6196</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌟</div><h2>소백산 천문대</h2><ul><li>연화봉 정상 인근 (도보 5분)</li><li>한국천문연구원 운영</li><li>야간 별 관측 프로그램 (예약)</li><li>설연화천문대 견학 코스 연계</li></ul></div>
+<div class="tc-card"><div class="tc-icon">📱</div><h2>유용한 정보</h2><ul><li>입산 시간: 하절기 04:00~14:00</li><li>소백산국립공원 054-638-6196</li><li>블랙야크 100대 명산 (비로봉)</li><li>죽령코스와 연계 원정 가능</li></ul></div>
 </div>
-<div class="tc" id="beginner-mp">
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="beginner-mp">
 <div class="map-wrap">
-<h2>📍 희방사·연화봉 코스 개념도</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 희방사·연화봉 코스 개념도</h2>
 <svg style="width:100%;height:auto;max-height:420px" viewbox="0 0 720 400">
 <rect fill="var(--surfaceoff)" height="400" rx="12" width="720"></rect>
 <path d="M100 360 C120 330 145 300 165 272 C185 244 200 222 210 198 C220 174 225 156 228 136 C230 118 233 98 238 78" fill="none" stroke="var(--suc)" stroke-linecap="round" stroke-width="4"></path>
@@ -736,7 +741,7 @@
 <circle cx="175" cy="270" fill="var(--amber)" fill-opacity=".8" r="9" stroke="var(--bg)" stroke-width="2"></circle>
 <text fill="var(--amber)" font-family="Satoshi,sans-serif" font-size="11" x="189" y="265">희방사 (643년 창건)</text>
 <circle cx="220" cy="175" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
-<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="234" y="170">깔닥고개 ⚠ 급경사</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="234" y="170">깔닥고개 <svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 급경사</text>
 <circle cx="238" cy="78" fill="var(--suc)" r="17" stroke="var(--bg)" stroke-width="3"></circle>
 <text fill="var(--suc)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="260" y="72">연화봉 1,394m</text>
 <rect fill="var(--prihl)" height="22" rx="7" stroke="var(--pri)" stroke-width="1" width="100" x="258" y="80"></rect>
@@ -753,7 +758,7 @@
 <text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="150" y="385">하산로</text>
 </svg>
 </div>
-<div class="stitle"><div class="sico">📋</div><span>전체 체크포인트</span></div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
 <div class="cp-wrap">
 <table class="cpt">
 <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
@@ -767,35 +772,23 @@
 </tbody>
 </table>
 </div>
-</div>
-<div class="tc" id="beginner-tp">
-<div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
-<div class="tg">
-<div class="tc-card"><div class="tc-icon">🎒</div><h3>필수 장비</h3><ul><li>등산화 or 운동화 (방수 권장)</li><li>방풍 재킷</li><li>트레킹 스틱 (깔닥고개 하산용)</li><li>겨울: 아이젠 필수</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🌸</div><h3>철쭉 시즌</h3><ul><li>5월 말 ~ 6월 초 철쭉 절정</li><li>연화봉~제1연화봉 철쭉 터널</li><li>비로봉 능선 분홍빛 융단</li><li>철쭉 기간 인파 최다 → 이른 출발</li></ul></div>
-<div class="tc-card"><div class="tc-icon">❄</div><h3>겨울 눈꽃·상고대</h3><ul><li>1~2월 연화봉 상고대 절정</li><li>희방폭포 빙폭 장관 (12~2월)</li><li>깔닥고개 아이젠 착용 구간</li><li>능선 강풍 주의·방한 완비</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🚌</div><h3>교통 정보</h3><ul><li>영주역 → 희방사 버스 운행</li><li>희방탐방센터 주차 유료</li><li>단양 IC → 희방사 30분</li><li>소백산국립공원 054-638-6196</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🌟</div><h3>소백산 천문대</h3><ul><li>연화봉 정상 인근 (도보 5분)</li><li>한국천문연구원 운영</li><li>야간 별 관측 프로그램 (예약)</li><li>설연화천문대 견학 코스 연계</li></ul></div>
-<div class="tc-card"><div class="tc-icon">📱</div><h3>유용한 정보</h3><ul><li>입산 시간: 하절기 04:00~14:00</li><li>소백산국립공원 054-638-6196</li><li>블랙야크 100대 명산 (비로봉)</li><li>죽령코스와 연계 원정 가능</li></ul></div>
-</div>
-</div>
-</main>
-</div>
+</div></div></div>
+</div></div></main>
 <!-- ═══ 중급 ═══ -->
 <div class="panel intermediate" id="course-intermediate">
 <nav class="tabs">
-<button class="tab active" onclick="selT('intermediate','ov',this)">📋 개요</button>
-<button class="tab" onclick="selT('intermediate','rt',this)">🗺 경로 안내</button>
-<button class="tab" onclick="selT('intermediate','mp',this)">📍 지도</button>
-<button class="tab" onclick="selT('intermediate','tp',this)">💡 팁 &amp; 주의</button>
+<button class="tab active" onclick="selT('intermediate','ov',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab" onclick="selT('intermediate','rt',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab" onclick="selT('intermediate','mp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab" onclick="selT('intermediate','tp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
 </nav>
 <div class="main">
-<div class="tc active" id="intermediate-ov">
-<div class="stitle"><div class="sico">🦶</div><span>중급 코스 개요</span></div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="intermediate-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg></div><span>중급 코스 개요</span></div>
 <div class="stat-grid">
 <div class="stat-card"><div class="si">📏</div><div class="sv">10.2km</div><div class="sl">왕복 거리</div></div>
 <div class="stat-card"><div class="si">⏱</div><div class="sv">5~6h</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si">⛰</div><div class="sv">1,439m</div><div class="sl">비로봉 정상</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,439m</div><div class="sl">비로봉 정상</div></div>
 <div class="stat-card"><div class="si">📈</div><div class="sv">±1,034m</div><div class="sl">누적 고도차</div></div>
 <div class="stat-card"><div class="si">🔥</div><div class="sv">~1,600</div><div class="sl">예상 칼로리</div></div>
 <div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">난이도</div></div>
@@ -818,7 +811,7 @@
 <text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" text-anchor="end" x="840" y="155">어의곡 귀환</text>
 </svg>
 </div>
-<div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>전체 코스 흐름</span></div>
 <div class="flow">
 <span class="fn sk">🅿 어의곡탐방센터</span><span class="fa">→</span>
 <span class="fn">어의곡삼거리</span><span class="fa">→</span>
@@ -832,12 +825,11 @@
 <li>✅ 어의곡 계곡의 청량한 숲길로 출발 — 여름 피서 산행 최고</li>
 <li>✅ 비로봉 직전 주목군락지 — 천연기념물 주목 群 장관</li>
 <li>✅ 비로봉 정상에서 360도 조망 — 연화봉·국망봉 능선 한눈에</li>
-<li>⚠ 어의곡 계곡 이후 능선 구간 꾸준한 오르막</li>
-<li>⚠ 정상부 바람 강함 — 방풍 재킷 필수</li>
+<li><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 어의곡 계곡 이후 능선 구간 꾸준한 오르막</li>
+<li><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 정상부 바람 강함 — 방풍 재킷 필수</li>
 </ul></div>
-</div>
-<div class="tc" id="intermediate-rt">
-<div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+</div><div class="tc" id="intermediate-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
 <div class="acc-wrap">
 <div class="acc-item open">
 <div class="acc-hdr" onclick="togAcc(this)">
@@ -847,7 +839,7 @@
 </div>
 <div class="acc-body">
 <p class="acc-desc">어의곡탐방지원센터(새밭유원지주차장, 해발 405m) 앞에서 출발합니다. 탐방지원센터에서 등산로 확인 후 입산. 화장실은 탐방센터에 있습니다.</p>
-<div class="tip">💡 어의곡은 소백산에서 가장 낮은 들머리(405m)이지만, 비로봉(1,439m)까지 고도 차이 1,034m로 체력 소모가 상당합니다. 충분한 준비 후 출발.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 어의곡은 소백산에서 가장 낮은 들머리(405m)이지만, 비로봉(1,439m)까지 고도 차이 1,034m로 체력 소모가 상당합니다. 충분한 준비 후 출발.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -859,7 +851,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:50%"></div></div></div>
 <p class="acc-desc">어의곡 계곡을 따라 오르는 구간입니다. 맑은 계곡물 소리를 들으며 숲길을 걸어 어의곡삼거리(비로봉·국망봉 분기점)에 도착. 여름 피서철 계곡이 시원합니다.</p>
-<div class="tip">💡 어의곡삼거리에서 국망봉 방향과 비로봉 방향이 갈립니다. 비로봉은 직진(왼쪽) 방향. 이정표 확인 필수.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 어의곡삼거리에서 국망봉 방향과 비로봉 방향이 갈립니다. 비로봉은 직진(왼쪽) 방향. 이정표 확인 필수.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -871,7 +863,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:60%"></div></div></div>
 <p class="acc-desc">어의곡삼거리에서 능선을 따라 비로봉까지 오르막이 이어집니다. 비로봉 직전 주목군락지(천연기념물)가 펼쳐집니다. 주목은 천 년 이상 사는 나무로 겨울 눈꽃과 어우러진 풍경이 압도적.</p>
-<div class="tip">💡 비로봉(1,439m)은 소백산 최고봉. 맑은 날 연화봉·국망봉·태백산·월악산까지 360도 조망. 정상석에서 인증샷 필수!</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 비로봉(1,439m)은 소백산 최고봉. 맑은 날 연화봉·국망봉·태백산·월악산까지 360도 조망. 정상석에서 인증샷 필수!</div>
 </div>
 </div>
 <div class="acc-item">
@@ -883,14 +875,23 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:35%"></div></div></div>
 <p class="acc-desc">올라온 길로 어의곡삼거리→어의곡탐방센터 방향으로 원점 하산합니다. 또는 천동삼거리 방향으로 변형 하산 가능(천동 주차장 방향, 차량 필요).</p>
-<div class="wrn">⚠ 하산 시 능선에서 계곡 방향으로 내려가는 급경사 구간 무릎 주의. 트레킹 스틱 적극 활용.</div>
+<div class="wrn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 하산 시 능선에서 계곡 방향으로 내려가는 급경사 구간 무릎 주의. 트레킹 스틱 적극 활용.</div>
 </div>
 </div>
 </div>
+</div><div class="tc" id="intermediate-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>필수 장비</h2><ul><li>등산화 (방수·발목 지지)</li><li>트레킹 스틱</li><li>방풍·방수 재킷</li><li>겨울: 아이젠+방한복</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🥗</div><h2>음식 &amp; 수분</h2><ul><li>물 1.5L 이상 (고도차 1,034m)</li><li>에너지바·간식</li><li>어의곡 계곡 식수 가능 (정수 권장)</li><li>단양 마늘국밥·천연 송어회</li></ul></div>
+<div class="tc-card"><div class="tc-icon">⏰</div><h2>입산 통제 시간</h2><ul><li>하절기 04:00~14:00 입산 가능</li><li>동절기 05:00~13:00 입산 가능</li><li>13~14시 이후 입산 통제</li><li>정상 강풍 시 통행 제한</li></ul></div>
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><h2>주목군락지</h2><ul><li>비로봉 직전 천연기념물 구역</li><li>주목: 수명 1,000년 이상 가능</li><li>겨울 눈꽃 + 주목 = 최고 설경</li><li>등산로 이탈 금지 (훼손 방지)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🚗</div><h2>교통 정보</h2><ul><li>단양역/단양버스터미널 접근</li><li>어의곡주차장 = 새밭유원지주차장</li><li>죽령~어의곡 셔틀 '소백내차부탁해'</li><li>소백산국립공원 043-422-5631</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🔄</div><h2>변형 코스</h2><ul><li>어의곡→비로봉→천동삼거리→천동</li><li>천동코스 연계 시 왕복 14.4km</li><li>차량 2대 이용 시 편도 가능</li><li>국망봉 추가 연계 (어의곡 원점)</li></ul></div>
 </div>
-<div class="tc" id="intermediate-mp">
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="intermediate-mp">
 <div class="map-wrap">
-<h2>📍 어의곡·비로봉 코스 개념도</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 어의곡·비로봉 코스 개념도</h2>
 <svg style="width:100%;height:auto;max-height:460px" viewbox="0 0 720 440">
 <rect fill="var(--surfaceoff)" height="440" rx="12" width="720"></rect>
 <path d="M120 400 C148 368 172 334 196 300 C220 266 244 234 266 200 C284 172 300 148 316 122 C328 102 340 82 352 62 C358 50 363 38 368 26" fill="none" stroke="var(--pri)" stroke-linecap="round" stroke-width="4.5"></path>
@@ -924,7 +925,7 @@
 <text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="158" y="426">하산로</text>
 </svg>
 </div>
-<div class="stitle"><div class="sico">📋</div><span>전체 체크포인트</span></div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
 <div class="cp-wrap">
 <table class="cpt">
 <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
@@ -938,35 +939,23 @@
 </tbody>
 </table>
 </div>
-</div>
-<div class="tc" id="intermediate-tp">
-<div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
-<div class="tg">
-<div class="tc-card"><div class="tc-icon">🎒</div><h3>필수 장비</h3><ul><li>등산화 (방수·발목 지지)</li><li>트레킹 스틱</li><li>방풍·방수 재킷</li><li>겨울: 아이젠+방한복</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🥗</div><h3>음식 &amp; 수분</h3><ul><li>물 1.5L 이상 (고도차 1,034m)</li><li>에너지바·간식</li><li>어의곡 계곡 식수 가능 (정수 권장)</li><li>단양 마늘국밥·천연 송어회</li></ul></div>
-<div class="tc-card"><div class="tc-icon">⏰</div><h3>입산 통제 시간</h3><ul><li>하절기 04:00~14:00 입산 가능</li><li>동절기 05:00~13:00 입산 가능</li><li>13~14시 이후 입산 통제</li><li>정상 강풍 시 통행 제한</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🌿</div><h3>주목군락지</h3><ul><li>비로봉 직전 천연기념물 구역</li><li>주목: 수명 1,000년 이상 가능</li><li>겨울 눈꽃 + 주목 = 최고 설경</li><li>등산로 이탈 금지 (훼손 방지)</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🚗</div><h3>교통 정보</h3><ul><li>단양역/단양버스터미널 접근</li><li>어의곡주차장 = 새밭유원지주차장</li><li>죽령~어의곡 셔틀 '소백내차부탁해'</li><li>소백산국립공원 043-422-5631</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🔄</div><h3>변형 코스</h3><ul><li>어의곡→비로봉→천동삼거리→천동</li><li>천동코스 연계 시 왕복 14.4km</li><li>차량 2대 이용 시 편도 가능</li><li>국망봉 추가 연계 (어의곡 원점)</li></ul></div>
-</div>
-</div>
-</main>
+</div></div></div>
 </div>
 <!-- ═══ 고급 ═══ -->
 <div class="panel advanced" id="course-advanced">
 <nav class="tabs">
-<button class="tab active" onclick="selT('advanced','ov',this)">📋 개요</button>
-<button class="tab" onclick="selT('advanced','rt',this)">🗺 경로 안내</button>
-<button class="tab" onclick="selT('advanced','mp',this)">📍 지도</button>
-<button class="tab" onclick="selT('advanced','tp',this)">💡 팁 &amp; 주의</button>
+<button class="tab active" onclick="selT('advanced','ov',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab" onclick="selT('advanced','rt',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab" onclick="selT('advanced','mp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab" onclick="selT('advanced','tp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
 </nav>
 <div class="main">
-<div class="tc active" id="advanced-ov">
-<div class="stitle"><div class="sico">🏔</div><span>고급 코스 개요</span></div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="advanced-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><span>고급 코스 개요</span></div>
 <div class="stat-grid">
 <div class="stat-card"><div class="si">📏</div><div class="sv">21.1km</div><div class="sl">죽령↔어의곡 종주</div></div>
 <div class="stat-card"><div class="si">⏱</div><div class="sv">8~9h</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si">⛰</div><div class="sv">1,439m</div><div class="sl">비로봉 최고점</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,439m</div><div class="sl">비로봉 최고점</div></div>
 <div class="stat-card"><div class="si">📈</div><div class="sv">1,061m</div><div class="sl">누적 상승 고도</div></div>
 <div class="stat-card"><div class="si">🔥</div><div class="sv">~3,000</div><div class="sl">예상 칼로리</div></div>
 <div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★☆</div><div class="sl">난이도</div></div>
@@ -991,7 +980,7 @@
 <circle cx="545" cy="18" fill="var(--warn)" r="4"></circle>
 </svg>
 </div>
-<div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>전체 코스 흐름</span></div>
 <div class="flow">
 <span class="fn sk">🅿 죽령 휴게소 700m</span><span class="fa">→</span>
 <span class="fn">제2연화봉 1,357m</span><span class="fa">→</span>
@@ -1009,12 +998,11 @@
 <li>✅ 제2연화봉·연화봉·제1연화봉·비로봉·국망봉 5개 봉우리 연계</li>
 <li>✅ 봄철 철쭉 시즌(5말~6초) 전 코스 분홍빛 융단 — 전국 최고 철쭉 명소</li>
 <li>✅ 완만한 능선 위주 — 22km임에도 고도차 완만해 당일 종주 가능</li>
-<li>⚠ 오전 6~7시 죽령 출발 필수 (어의곡 입산통제 14시 이전 도착)</li>
-<li>⚠ 죽령/어의곡 차량 2대 or 차량 탁송 서비스 이용 필요</li>
+<li><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 오전 6~7시 죽령 출발 필수 (어의곡 입산통제 14시 이전 도착)</li>
+<li><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 죽령/어의곡 차량 2대 or 차량 탁송 서비스 이용 필요</li>
 </ul></div>
-</div>
-<div class="tc" id="advanced-rt">
-<div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+</div><div class="tc" id="advanced-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
 <div class="acc-wrap">
 <div class="acc-item open">
 <div class="acc-hdr" onclick="togAcc(this)">
@@ -1024,7 +1012,7 @@
 </div>
 <div class="acc-body">
 <p class="acc-desc">죽령탐방지원센터(죽령휴게소 주차장 인근, 해발 700m)에서 출발합니다. 어의곡이나 천동에 차를 맡기거나 차량 탁송 서비스 이용. 오전 6~7시 출발 필수 (14시 입산통제).</p>
-<div class="tip">💡 '소백내차를부탁해' 카카오 채널에서 차량 탁송 서비스 이용 가능. 죽령↔어의곡 약 47,000원. 최소 1~2일 전 예약 필수.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> '소백내차를부탁해' 카카오 채널에서 차량 탁송 서비스 이용 가능. 죽령↔어의곡 약 47,000원. 최소 1~2일 전 예약 필수.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -1036,7 +1024,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:30%"></div></div></div>
 <p class="acc-desc">죽령에서 제2연화봉(1,357m)까지 임도 구간이 있어 비교적 완만합니다. 제2연화봉 전망대에서 사방 조망. 소백산천문대를 지나 연화봉(1,394m)에 도착. 봄 철쭉, 겨울 상고대 명소.</p>
-<div class="tip">💡 죽령~제2연화봉 구간(4.2km)은 임도 포함 완만. 한국천문연구원 소백산천문대가 연화봉 바로 아래에 있습니다.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 죽령~제2연화봉 구간(4.2km)은 임도 포함 완만. 한국천문연구원 소백산천문대가 연화봉 바로 아래에 있습니다.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -1048,7 +1036,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:35%"></div></div></div>
 <p class="acc-desc">연화봉에서 제1연화봉(1,386m)까지 약 300m 구간이 철쭉 터널 명소. 5월 말 철쭉 절정기에는 양쪽 철쭉 사이로 걷는 환상적인 경험. 천동삼거리에서 천동주차장 하산 탈출 가능(차량 필요).</p>
-<div class="tip">💡 제1연화봉은 블랙야크 BAC 인증처. 봄철 철쭉과 하늘이 맞닿는 능선 풍경이 '한국의 알프스'로 불립니다.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 제1연화봉은 블랙야크 BAC 인증처. 봄철 철쭉과 하늘이 맞닿는 능선 풍경이 '한국의 알프스'로 불립니다.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -1060,7 +1048,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:45%"></div></div></div>
 <p class="acc-desc">천동삼거리에서 비로봉까지 주목군락지를 통과합니다. 비로봉(1,439m) 정상에서 충분한 식사·휴식 후 국망봉 방향으로 진행. 정상 강풍 주의.</p>
-<div class="tip">💡 비로봉 정상 주목감시소에서 잠시 쉬어가세요. 여기가 종주의 절반 지점. 체력·날씨·시간을 체크하고 후반 진행 여부 결정.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 비로봉 정상 주목감시소에서 잠시 쉬어가세요. 여기가 종주의 절반 지점. 체력·날씨·시간을 체크하고 후반 진행 여부 결정.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -1072,7 +1060,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:65%"></div></div></div>
 <p class="acc-desc">비로봉에서 국망봉(1,421m)까지 바람이 강한 능선을 이동합니다. 국망봉은 기암괴석과 철쭉 군락 명소. 상월봉을 지나 늦은맥이재(어의곡 하산 분기점)에 도착.</p>
-<div class="tip">💡 국망봉(고려 공민왕이 왕도를 그리며 바라봤다는 전설)은 비로봉보다 조용하고 철쭉이 더 화려합니다. 꼭 들러보세요.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 국망봉(고려 공민왕이 왕도를 그리며 바라봤다는 전설)은 비로봉보다 조용하고 철쭉이 더 화려합니다. 꼭 들러보세요.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -1084,14 +1072,23 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:40%"></div></div></div>
 <p class="acc-desc">늦은맥이재에서 어의곡 방향으로 하산합니다. 초반 300m 급경사 이후 완만한 계곡길. 겨울에는 어의곡 계곡이 얼어붙은 빙판·빙벽이 장관. 어의곡주차장(새밭유원지)에서 종주 완료.</p>
-<div class="wrn">⚠ 늦은맥이재 초반 300m 급경사 구간 아이젠(겨울) 또는 스틱 필수. 하산 완료까지 약 4~5km — 속도 조절 필요.</div>
+<div class="wrn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 늦은맥이재 초반 300m 급경사 구간 아이젠(겨울) 또는 스틱 필수. 하산 완료까지 약 4~5km — 속도 조절 필요.</div>
 </div>
 </div>
 </div>
+</div><div class="tc" id="advanced-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>필수 장비</h2><ul><li>등산화 (방수·발목 지지)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>겨울: 아이젠·방한복·핫팩</li><li>헤드램프 (이른 출발)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🥗</div><h2>음식 &amp; 수분</h2><ul><li>물 2L 이상 지참</li><li>에너지바·도시락 (2끼)</li><li>비로봉 정상 에너지 보충 필수</li><li>단양 마늘 돼지갈비·올갱이국</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🚗</div><h2>차량 탁송 서비스</h2><ul><li>카카오 '소백내차를부탁해'</li><li>죽령↔어의곡 약 47,000원</li><li>천동↔어의곡 약 23,000~30,000원</li><li>1~2일 전 사전 예약 필수</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌸</div><h2>철쭉 시즌 종주</h2><ul><li>5월 말~6월 초 철쭉 절정</li><li>연화봉 철쭉 터널 300m</li><li>비로봉 분홍 능선 융단</li><li>국망봉 자색·진분홍 철쭉 군락</li></ul></div>
+<div class="tc-card"><div class="tc-icon">⏰</div><h2>시간 계획</h2><ul><li>죽령 오전 6~7시 출발 필수</li><li>비로봉 오전 11~12시 목표</li><li>어의곡 14시 전 입산통제 체크</li><li>늦으면 천동 하산으로 단축</li></ul></div>
+<div class="tc-card"><div class="tc-icon">📡</div><h2>안전 &amp; 내비게이션</h2><ul><li>GPS 앱 사전 코스 저장</li><li>능선 강풍 체감기온 -15°C 이하</li><li>천동삼거리·늦은맥이재 탈출로</li><li>소백산국립공원 043-422-5631</li></ul></div>
 </div>
-<div class="tc" id="advanced-mp">
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="advanced-mp">
 <div class="map-wrap">
-<h2>📍 죽령↔어의곡 종주 코스 개념도</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 죽령↔어의곡 종주 코스 개념도</h2>
 <svg style="width:100%;height:auto;max-height:520px" viewbox="0 0 820 500">
 <rect fill="var(--surfaceoff)" height="500" rx="12" width="820"></rect>
 <!-- terrain bg -->
@@ -1147,7 +1144,7 @@
 <text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="170" y="489">하산 구간</text>
 </svg>
 </div>
-<div class="stitle"><div class="sico">📋</div><span>전체 체크포인트 (종주)</span></div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트 (종주)</span></div>
 <div class="cp-wrap">
 <table class="cpt">
 <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
@@ -1167,81 +1164,60 @@
 </tbody>
 </table>
 </div>
+</div></div></div>
 </div>
-<div class="tc" id="advanced-tp">
-<div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
-<div class="tg">
-<div class="tc-card"><div class="tc-icon">🎒</div><h3>필수 장비</h3><ul><li>등산화 (방수·발목 지지)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>겨울: 아이젠·방한복·핫팩</li><li>헤드램프 (이른 출발)</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🥗</div><h3>음식 &amp; 수분</h3><ul><li>물 2L 이상 지참</li><li>에너지바·도시락 (2끼)</li><li>비로봉 정상 에너지 보충 필수</li><li>단양 마늘 돼지갈비·올갱이국</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🚗</div><h3>차량 탁송 서비스</h3><ul><li>카카오 '소백내차를부탁해'</li><li>죽령↔어의곡 약 47,000원</li><li>천동↔어의곡 약 23,000~30,000원</li><li>1~2일 전 사전 예약 필수</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🌸</div><h3>철쭉 시즌 종주</h3><ul><li>5월 말~6월 초 철쭉 절정</li><li>연화봉 철쭉 터널 300m</li><li>비로봉 분홍 능선 융단</li><li>국망봉 자색·진분홍 철쭉 군락</li></ul></div>
-<div class="tc-card"><div class="tc-icon">⏰</div><h3>시간 계획</h3><ul><li>죽령 오전 6~7시 출발 필수</li><li>비로봉 오전 11~12시 목표</li><li>어의곡 14시 전 입산통제 체크</li><li>늦으면 천동 하산으로 단축</li></ul></div>
-<div class="tc-card"><div class="tc-icon">📡</div><h3>안전 &amp; 내비게이션</h3><ul><li>GPS 앱 사전 코스 저장</li><li>능선 강풍 체감기온 -15°C 이하</li><li>천동삼거리·늦은맥이재 탈출로</li><li>소백산국립공원 043-422-5631</li></ul></div>
-</div>
-</div>
-</main>
-</div>
-
-
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-  <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-    <span class="section-title-icon">📸</span> 소백산의 사계 &amp; 명소
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 소백산의 사계 &amp; 명소
   </h2>
-  <div class="gallery-grid">
-    
-    <!-- Gallery Image Button 1 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Sobaeksan 크게 보기" data-index="0" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
-      <picture class="gallery-picture">
-        <source type="image/avif" srcset="assets/img/sobaeksan/g1.avif">
-        <source type="image/webp" srcset="assets/img/sobaeksan/g1.webp">
-        <img src="assets/img/sobaeksan/g1.jpg" alt="소백산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" loading="lazy" decoding="async">
-      </picture>
-      <div class="gallery-caption-overlay">
-        <span class="gallery-caption-text">소백산 등산코스</span>
-      </div>
-    </button>
-
-    <!-- Gallery Image Button 2 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Sobaeksan National Park 크게 보기" data-index="1" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
-      <picture class="gallery-picture">
-        <source type="image/avif" srcset="assets/img/sobaeksan/g2.avif">
-        <source type="image/webp" srcset="assets/img/sobaeksan/g2.webp">
-        <img src="assets/img/sobaeksan/g2.jpg" alt="소백산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" loading="lazy" decoding="async">
-      </picture>
-      <div class="gallery-caption-overlay">
-        <span class="gallery-caption-text">소백산 절경</span>
-      </div>
-    </button>
-
-    <!-- Gallery Image Button 3 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Harmonious view of Sobaeksan mountain ridges under a clear sky 크게 보기" data-index="2" data-credit="Photo by <a href='https://www.pexels.com/@kevin-yung-2152346613' target='_blank' rel='noopener'>kevin yung</a> on pexels">
-      <picture class="gallery-picture">
-        <source type="image/avif" srcset="assets/img/sobaeksan/g3.avif">
-        <source type="image/webp" srcset="assets/img/sobaeksan/g3.webp">
-        <img src="assets/img/sobaeksan/g3.jpg" alt="소백산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" loading="lazy" decoding="async">
-      </picture>
-      <div class="gallery-caption-overlay">
-        <span class="gallery-caption-text">소백산 풍경</span>
-      </div>
-    </button>
-
-    <!-- Gallery Image Button 4 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Sobaeksan 크게 보기" data-index="3" data-credit="Photo by <a href='https://www.pexels.com/@wkgunes' target='_blank' rel='noopener'>Kemal Güneş</a> on pexels">
-      <picture class="gallery-picture">
-        <source type="image/avif" srcset="assets/img/sobaeksan/g4.avif">
-        <source type="image/webp" srcset="assets/img/sobaeksan/g4.webp">
-        <img src="assets/img/sobaeksan/g4.jpg" alt="소백산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" loading="lazy" decoding="async">
-      </picture>
-      <div class="gallery-caption-overlay">
-        <span class="gallery-caption-text">소백산 탐방로</span>
-      </div>
-    </button>
-
-  </div>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="소백산 등산코스 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/sobaeksan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/sobaeksan/g1.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/sobaeksan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">소백산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="소백산 절경 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/sobaeksan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/sobaeksan/g2.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/sobaeksan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">소백산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="소백산 풍경 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@kevin-yung-2152346613' target='_blank' rel='noopener'&gt;kevin yung&lt;/a&gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/sobaeksan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/sobaeksan/g3.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/sobaeksan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">소백산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="소백산 탐방로 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@wkgunes' target='_blank' rel='noopener'&gt;Kemal Güneş&lt;/a&gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/sobaeksan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/sobaeksan/g4.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/sobaeksan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">소백산 탐방로</span>
+</div>
+</button>
+</div>
 </section>
-</main>
-
 <footer style="border-top:1px solid var(--div);padding:var(--s8) var(--s6);text-align:center;background:var(--surface)">
 <p style="font-size:var(--xs);color:var(--faint)">소백산국립공원 공식 정보 기준. 산행 전 국립공원공단 예약시스템(reservation.knps.or.kr)과 기상·입산통제 정보를 반드시 확인하세요. 소백산국립공원 (경북)054-638-6196 (충북)043-422-5631</p>
 </footer>
@@ -1272,21 +1248,18 @@ function selT(c,t,btn){
 function togAcc(h){h.parentElement.classList.toggle("open")}
 document.querySelectorAll(".acc-wrap").forEach(w=>{const f=w.querySelector(".acc-item");if(f)f.classList.add("open")});
 </script>
-
-
 <!-- Lightbox Dialog Overlay -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
-  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
-  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
-  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
-  <div class="lightbox-content">
-    <figure class="lightbox-figure">
-      <figcaption class="lightbox-caption"></figcaption>
-    </figure>
-    <div class="photo-credit lightbox-credit"></div>
-  </div>
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
 </div>
-
+</div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');
@@ -1397,7 +1370,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
 <script>
 // Unified course switcher override for rebranding compatibility
 (function() {
@@ -1435,5 +1407,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
 })();
 </script>
-</body>
+</div></div></body>
 </html>

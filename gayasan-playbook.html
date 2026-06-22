@@ -5,9 +5,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>가야산 등산 플레이북</title>
-<meta name="description" content="대한민국 최고의 명산 중 하나인 가야산 국립공원 가이드. 초급 , 중급 , 고급  코스의 상세 경로, 실사 지도 및 팁을 제공합니다.">
+<meta content="대한민국 최고의 명산 중 하나인 가야산 국립공원 가이드. 초급 , 중급 , 고급  코스의 상세 경로, 실사 지도 및 팁을 제공합니다." name="description"/>
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/css/design-system.css">
+<link href="assets/css/design-system.css" rel="stylesheet"/>
 <style>
 /* COURSE SELECTOR */
 .course-selector {
@@ -100,7 +100,7 @@
 
 /* MAP SVG */
 .map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
-.map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
 .map-svg{width:100%;height:auto;max-height:520px;}
 
 /* TIPS GRID */
@@ -551,9 +551,9 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 </style>
-</head>
+<meta content="assets/img/brand-og.png" property="og:image"/><meta content="assets/img/brand-og.png" name="twitter:image"/></head>
 <body>
-<a href="#mainContent" class="skip-link">본문 바로가기</a>
+<a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="hdr">
 <div class="logo">
 <svg aria-label="가야산 플레이북" class="logo-svg" fill="none" viewbox="0 0 36 36">
@@ -570,51 +570,48 @@
 </button>
 </header>
 <section class="hero hero-bleed">
-  
-  <!-- Background Picture -->
-  <picture class="hero-picture">
-    <source type="image/avif" srcset="assets/img/gayasan/hero-640.avif 640w, assets/img/gayasan/hero-1024.avif 1024w, assets/img/gayasan/hero-1600.avif 1600w, assets/img/gayasan/hero-2400.avif 2400w" sizes="100vw">
-    <source type="image/webp" srcset="assets/img/gayasan/hero-640.webp 640w, assets/img/gayasan/hero-1024.webp 1024w, assets/img/gayasan/hero-1600.webp 1600w, assets/img/gayasan/hero-2400.webp 2400w" sizes="100vw">
-    <img src="assets/img/gayasan/hero-1600.jpg" srcset="assets/img/gayasan/hero-640.jpg 640w, assets/img/gayasan/hero-1024.jpg 1024w, assets/img/gayasan/hero-1600.jpg 1600w, assets/img/gayasan/hero-2400.jpg 2400w" sizes="100vw" alt="가야산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Gayasan mountain peaks and ridges" class="hero-img">
-  </picture>
-  <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-    <div class="hero-badge">🏔 가야산 플레이북</div>
-    <h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">가야산 등산 플레이북</h1>
-    <p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/gayasan/hero-640.avif 640w, assets/img/gayasan/hero-1024.avif 1024w, assets/img/gayasan/hero-1600.avif 1600w, assets/img/gayasan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/gayasan/hero-640.webp 640w, assets/img/gayasan/hero-1024.webp 1024w, assets/img/gayasan/hero-1600.webp 1600w, assets/img/gayasan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="가야산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Gayasan mountain peaks and ridges" class="hero-img" sizes="100vw" src="assets/img/gayasan/hero-1600.jpg" srcset="assets/img/gayasan/hero-640.jpg 640w, assets/img/gayasan/hero-1024.jpg 1024w, assets/img/gayasan/hero-1600.jpg 1600w, assets/img/gayasan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 가야산 플레이북</div>
+<h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">가야산 등산 플레이북</h1>
+<p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
       대한민국 최고의 명산 중 하나인 가야산 국립공원 가이드. 초급 , 중급 , 고급  코스의 상세 경로, 실사 지도 및 팁을 제공합니다.
     </p>
-    
-    <!-- Course Selector Buttons -->
-    <div class="course-selector">
-      <button class="course-btn diff-btn beginner beginner active" onclick="selC('beginner',this)">🌿 초급: </button>
-      <button class="course-btn diff-btn intermediate intermediate" onclick="selC('intermediate',this)">🦶 중급: </button>
-      <button class="course-btn diff-btn advanced advanced" onclick="selC('advanced',this)">🏔 고급: </button>
-    </div>
-  </div>
-  <div class="photo-credit hero-credit">
-    <span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" target="_blank" rel="noopener">정규송 Nui MALAMA</a></span>
-    <span class="credit-divider">/</span>
-    <span class="credit-source"><a href="https://pexels.com" target="_blank" rel="noopener">pexels</a></span>
-  </div>
+<!-- Course Selector Buttons -->
+<div class="course-selector">
+<button class="course-btn diff-btn beginner beginner active" onclick="selC('beginner',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 초급: </button>
+<button class="course-btn diff-btn intermediate intermediate" onclick="selC('intermediate',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 중급: </button>
+<button class="course-btn diff-btn advanced advanced" onclick="selC('advanced',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 고급: </button>
+</div>
+</div>
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" rel="noopener" target="_blank">정규송 Nui MALAMA</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
 </section>
 <!-- ═══ 초급 ═══ -->
 <main class="wrap" id="mainContent">
 <div class="panel active beginner" id="course-beginner">
 <nav class="tabs">
-<button class="tab active" onclick="selT('beginner','ov',this)">📋 개요</button>
-<button class="tab" onclick="selT('beginner','rt',this)">🗺 경로 안내</button>
-<button class="tab" onclick="selT('beginner','mp',this)">📍 지도</button>
-<button class="tab" onclick="selT('beginner','tp',this)">💡 팁 &amp; 주의</button>
+<button class="tab active" onclick="selT('beginner','ov',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab" onclick="selT('beginner','rt',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab" onclick="selT('beginner','mp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab" onclick="selT('beginner','tp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
 </nav>
 <div class="main">
-<div class="tc active" id="beginner-ov">
-<div class="stitle"><div class="sico">🌿</div><span>초급 코스 개요</span></div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="beginner-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><span>초급 코스 개요</span></div>
 <div class="stat-grid">
 <div class="stat-card"><div class="si">📏</div><div class="sv">6km</div><div class="sl">소리길 왕복</div></div>
 <div class="stat-card"><div class="si">⏱</div><div class="sv">2~3h</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si">⛰</div><div class="sv">900m</div><div class="sl">최고 도달 고도</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">900m</div><div class="sl">최고 도달 고도</div></div>
 <div class="stat-card"><div class="si">📈</div><div class="sv">±300m</div><div class="sl">누적 고도차</div></div>
 <div class="stat-card"><div class="si">🔥</div><div class="sv">~500</div><div class="sl">예상 칼로리</div></div>
 <div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">난이도</div></div>
@@ -637,7 +634,7 @@
 <text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="750" y="100">원점 하산</text>
 </svg>
 </div>
-<div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>전체 코스 흐름</span></div>
 <div class="flow">
 <span class="fn sk">🅿 해인사 주차장</span><span class="fa">→</span>
 <span class="fn am">해인사 (팔만대장경)</span><span class="fa">→</span>
@@ -652,12 +649,11 @@
 <li>✅ 홍류동 계곡 — 가을 단풍이 계곡에 붉게 물드는 전국 최고 단풍 명소</li>
 <li>✅ 경사 완만한 계곡 숲길 — 남녀노소, 가족 산행에 최적</li>
 <li>✅ 소리길: 계곡 물소리 들으며 걷는 치유형 트레킹 코스</li>
-<li>⚠ 정상 등정 없음 — 트레킹·힐링 목적 코스</li>
-<li>⚠ 해인사 입장료 성인 3,000원 (가야산국립공원 탐방료 포함)</li>
+<li><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 정상 등정 없음 — 트레킹·힐링 목적 코스</li>
+<li><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 해인사 입장료 성인 3,000원 (가야산국립공원 탐방료 포함)</li>
 </ul></div>
-</div>
-<div class="tc" id="beginner-rt">
-<div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+</div><div class="tc" id="beginner-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
 <div class="acc-wrap">
 <div class="acc-item open">
 <div class="acc-hdr" onclick="togAcc(this)">
@@ -667,7 +663,7 @@
 </div>
 <div class="acc-body">
 <p class="acc-desc">해인사 일주문 주차장(치인주차장 또는 해인사 주차장)에서 출발합니다. 주차장에서 해인사 방향으로 약 15분 걸으면 해인사 경내에 진입합니다. 입장료 납부 후 팔만대장경 장경판전 관람.</p>
-<div class="tip">💡 해인사 팔만대장경(국보 제32호)은 13세기 고려시대 제작, 81,258장의 목판에 새겨진 세계 최대·최고 완성도의 대장경. 유네스코 세계기록유산 등재. 관람 시간 30~40분 여유.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 해인사 팔만대장경(국보 제32호)은 13세기 고려시대 제작, 81,258장의 목판에 새겨진 세계 최대·최고 완성도의 대장경. 유네스코 세계기록유산 등재. 관람 시간 30~40분 여유.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -690,7 +686,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div>
 <p class="acc-desc">홍류동 계곡은 가야산의 진수입니다. 맑은 계곡물이 바위를 타고 흐르는 소리, 울창한 활엽수림의 시원한 그늘. 가을 단풍이 계곡에 붉게 물들어 '홍류동'이란 이름이 붙었습니다. 청량대 바위 전망대에서 잠시 쉬어가세요.</p>
-<div class="tip">💡 홍류동 계곡은 가을(10월 중~11월 초)에 가장 아름답습니다. 단풍이 계곡물에 붉게 반영되는 풍경은 전국 손꼽히는 단풍 명소.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 홍류동 계곡은 가을(10월 중~11월 초)에 가장 아름답습니다. 단풍이 계곡물에 붉게 반영되는 풍경은 전국 손꼽히는 단풍 명소.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -702,7 +698,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:20%"></div></div></div>
 <p class="acc-desc">청량대에서 홍류문까지 계속되는 계곡 숲길. 홍류문은 가야산 소리길의 상징적 종착 지점으로, 고려 최치원이 은거하며 즐겨 산책했다는 전설이 있는 곳입니다. 홍류문에서 인증샷 후 원점 하산.</p>
-<div class="tip">💡 홍류문은 최치원 선생이 세상을 등지고 가야산에 은거할 때 즐겨 찾았다는 유서 깊은 장소. 자연과 역사가 겹치는 명상 포인트.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 홍류문은 최치원 선생이 세상을 등지고 가야산에 은거할 때 즐겨 찾았다는 유서 깊은 장소. 자연과 역사가 겹치는 명상 포인트.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -717,10 +713,19 @@
 </div>
 </div>
 </div>
+</div><div class="tc" id="beginner-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>필수 장비</h2><ul><li>운동화 (등산화 불필요)</li><li>편안한 트레킹 의류</li><li>물 1L (계곡 인근 식수 가능)</li><li>카메라 (단풍·계곡 사진)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🍂</div><h2>단풍 시즌</h2><ul><li>10월 중순~11월 초 단풍 절정</li><li>홍류동 계곡 단풍 — 전국 최고</li><li>단풍 시즌 주말 주차 극혼잡</li><li>셔틀버스 또는 이른 아침 출발</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🏛</div><h2>해인사 관람</h2><ul><li>팔만대장경 (국보 32호) 관람</li><li>입장료 성인 3,000원</li><li>유네스코 세계문화유산 1995년 등재</li><li>관람시간 최소 30~40분 배정</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🚗</div><h2>교통 정보</h2><ul><li>합천IC → 해인사 약 30분</li><li>대구서부터미널 → 해인사 버스</li><li>해인사 주차장 (유료)</li><li>가야산국립공원 055-930-8000</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🍖</div><h2>주변 먹거리</h2><ul><li>합천 황매산 돼지국밥</li><li>가야면 산채비빔밥</li><li>해인사 주변 막걸리·파전</li><li>합천 내나루 메기매운탕</li></ul></div>
+<div class="tc-card"><div class="tc-icon">📱</div><h2>유용한 정보</h2><ul><li>입산 통제 시간 없음 (탐방로)</li><li>해인사 일몰 후 입장 불가</li><li>가야산국립공원 공식앱 활용</li><li>블랙야크 BAC: 상왕봉 인증</li></ul></div>
 </div>
-<div class="tc" id="beginner-mp">
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="beginner-mp">
 <div class="map-wrap">
-<h2>📍 홍류동 소리길 코스 개념도</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 홍류동 소리길 코스 개념도</h2>
 <svg style="width:100%;height:auto;max-height:420px" viewbox="0 0 720 400">
 <rect fill="var(--surfaceoff)" height="400" rx="12" width="720"></rect>
 <!-- water/valley bg -->
@@ -752,7 +757,7 @@
 <text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="148" y="388">하산로</text>
 </svg>
 </div>
-<div class="stitle"><div class="sico">📋</div><span>전체 체크포인트</span></div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
 <div class="cp-wrap">
 <table class="cpt">
 <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
@@ -766,35 +771,23 @@
 </tbody>
 </table>
 </div>
-</div>
-<div class="tc" id="beginner-tp">
-<div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
-<div class="tg">
-<div class="tc-card"><div class="tc-icon">🎒</div><h3>필수 장비</h3><ul><li>운동화 (등산화 불필요)</li><li>편안한 트레킹 의류</li><li>물 1L (계곡 인근 식수 가능)</li><li>카메라 (단풍·계곡 사진)</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🍂</div><h3>단풍 시즌</h3><ul><li>10월 중순~11월 초 단풍 절정</li><li>홍류동 계곡 단풍 — 전국 최고</li><li>단풍 시즌 주말 주차 극혼잡</li><li>셔틀버스 또는 이른 아침 출발</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🏛</div><h3>해인사 관람</h3><ul><li>팔만대장경 (국보 32호) 관람</li><li>입장료 성인 3,000원</li><li>유네스코 세계문화유산 1995년 등재</li><li>관람시간 최소 30~40분 배정</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🚗</div><h3>교통 정보</h3><ul><li>합천IC → 해인사 약 30분</li><li>대구서부터미널 → 해인사 버스</li><li>해인사 주차장 (유료)</li><li>가야산국립공원 055-930-8000</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🍖</div><h3>주변 먹거리</h3><ul><li>합천 황매산 돼지국밥</li><li>가야면 산채비빔밥</li><li>해인사 주변 막걸리·파전</li><li>합천 내나루 메기매운탕</li></ul></div>
-<div class="tc-card"><div class="tc-icon">📱</div><h3>유용한 정보</h3><ul><li>입산 통제 시간 없음 (탐방로)</li><li>해인사 일몰 후 입장 불가</li><li>가야산국립공원 공식앱 활용</li><li>블랙야크 BAC: 상왕봉 인증</li></ul></div>
-</div>
-</div>
-</main>
-</div>
+</div></div></div>
+</div></div></main>
 <!-- ═══ 중급 ═══ -->
 <div class="panel intermediate" id="course-intermediate">
 <nav class="tabs">
-<button class="tab active" onclick="selT('intermediate','ov',this)">📋 개요</button>
-<button class="tab" onclick="selT('intermediate','rt',this)">🗺 경로 안내</button>
-<button class="tab" onclick="selT('intermediate','mp',this)">📍 지도</button>
-<button class="tab" onclick="selT('intermediate','tp',this)">💡 팁 &amp; 주의</button>
+<button class="tab active" onclick="selT('intermediate','ov',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab" onclick="selT('intermediate','rt',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab" onclick="selT('intermediate','mp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab" onclick="selT('intermediate','tp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
 </nav>
 <div class="main">
-<div class="tc active" id="intermediate-ov">
-<div class="stitle"><div class="sico">🦶</div><span>중급 코스 개요</span></div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="intermediate-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg></div><span>중급 코스 개요</span></div>
 <div class="stat-grid">
 <div class="stat-card"><div class="si">📏</div><div class="sv">11km</div><div class="sl">왕복 거리</div></div>
 <div class="stat-card"><div class="si">⏱</div><div class="sv">4~5h</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si">⛰</div><div class="sv">1,430m</div><div class="sl">상왕봉 정상</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,430m</div><div class="sl">상왕봉 정상</div></div>
 <div class="stat-card"><div class="si">📈</div><div class="sv">±730m</div><div class="sl">누적 고도차</div></div>
 <div class="stat-card"><div class="si">🔥</div><div class="sv">~1,400</div><div class="sl">예상 칼로리</div></div>
 <div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">난이도</div></div>
@@ -820,7 +813,7 @@
 <text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" text-anchor="end" x="820" y="160">치인주차장 귀환</text>
 </svg>
 </div>
-<div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>전체 코스 흐름</span></div>
 <div class="flow">
 <span class="fn sk">🅿 치인주차장</span><span class="fa">→</span>
 <span class="fn am">해인사 경내</span><span class="fa">→</span>
@@ -837,12 +830,11 @@
 <li>✅ 해인사·팔만대장경·석조여래입상 문화유산 탐방 포함</li>
 <li>✅ 상왕봉(1,430m)·칠불봉(1,432m) 두 정상 모두 방문 가능</li>
 <li>✅ 능선 조망 — 합천호·가야평야·덕유산 조망 탁트인 절경</li>
-<li>⚠ 봉천대 이후 급경사 철계단 구간 — 무릎 보호대 권장</li>
-<li>⚠ 상왕봉~칠불봉 구간 암릉 — 가파른 철계단·로프 주의</li>
+<li><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 봉천대 이후 급경사 철계단 구간 — 무릎 보호대 권장</li>
+<li><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 상왕봉~칠불봉 구간 암릉 — 가파른 철계단·로프 주의</li>
 </ul></div>
-</div>
-<div class="tc" id="intermediate-rt">
-<div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+</div><div class="tc" id="intermediate-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
 <div class="acc-wrap">
 <div class="acc-item open">
 <div class="acc-hdr" onclick="togAcc(this)">
@@ -852,7 +844,7 @@
 </div>
 <div class="acc-body">
 <p class="acc-desc">치인주차장에서 해인사 방향으로 약 1.5km 걸으면 해인사 경내에 진입합니다. 해인사에서 토신골탐방지원센터는 해인사 왼쪽(북쪽) 계곡 방향입니다.</p>
-<div class="tip">💡 치인주차장은 해인사 진입 주차장으로 규모가 크고 편의시설이 좋습니다. 주말에는 조기 만차되므로 이른 아침 출발 권장.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 치인주차장은 해인사 진입 주차장으로 규모가 크고 편의시설이 좋습니다. 주말에는 조기 만차되므로 이른 아침 출발 권장.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -864,7 +856,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:20%"></div></div></div>
 <p class="acc-desc">해인사 경내 왼쪽 계곡을 따라 토신골탐방지원센터에 도착합니다. 입산 시간 확인 후 탐방로 진입. 약 300m 더 가면 신라 말 석조여래입상이 있는 불교 문화재 지점.</p>
-<div class="tip">💡 토신골탐방지원센터 입산 시간: 하절기 04:00~13:00, 동절기 05:00~12:00. 시간 체크 필수!</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 토신골탐방지원센터 입산 시간: 하절기 04:00~13:00, 동절기 05:00~12:00. 시간 체크 필수!</div>
 </div>
 </div>
 <div class="acc-item">
@@ -876,7 +868,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:45%"></div></div></div>
 <p class="acc-desc">점점 가팔라지는 숲길을 오릅니다. 봉천대는 넓은 암반 위에 조성된 옛 제단터로, 탁 트인 조망 포인트입니다. 여기서 잠시 쉬며 체력 비축.</p>
-<div class="wrn">⚠ 봉천대 이후 정상까지 급경사 철계단 구간이 연속됩니다. 충분한 수분 보충 후 진행.</div>
+<div class="wrn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 봉천대 이후 정상까지 급경사 철계단 구간이 연속됩니다. 충분한 수분 보충 후 진행.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -888,7 +880,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:70%"></div></div></div>
 <p class="acc-desc">봉천대에서 상왕봉(1,430m, 일명 우두봉)까지 가파른 철계단과 암릉이 이어집니다. 정상에 오르면 칠불봉·남산제일봉·합천호·덕유산 방향으로 사방 조망이 탁 트입니다.</p>
-<div class="tip">💡 상왕봉 정상에서 칠불봉(1,432m)이 바로 보입니다. 약 0.2km, 18분 거리. 가야산 최고봉은 칠불봉이므로 꼭 방문하세요!</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 상왕봉 정상에서 칠불봉(1,432m)이 바로 보입니다. 약 0.2km, 18분 거리. 가야산 최고봉은 칠불봉이므로 꼭 방문하세요!</div>
 </div>
 </div>
 <div class="acc-item">
@@ -900,14 +892,23 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:40%"></div></div></div>
 <p class="acc-desc">상왕봉에서 칠불봉까지 칠불봉 삼거리를 경유해 방문 후, 원래 코스(봉천대→토신골→해인사)로 하산합니다. 칠불봉 정상 철계단과 로프 구간 주의.</p>
-<div class="wrn">⚠ 하산 시 봉천대~토신골 구간 암반 습기 주의. 하산은 올라갈 때보다 체력 소모가 많습니다.</div>
+<div class="wrn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 하산 시 봉천대~토신골 구간 암반 습기 주의. 하산은 올라갈 때보다 체력 소모가 많습니다.</div>
 </div>
 </div>
 </div>
+</div><div class="tc" id="intermediate-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>필수 장비</h2><ul><li>등산화 (발목 지지)</li><li>트레킹 스틱 (하산 필수)</li><li>방풍 재킷 (정상 바람)</li><li>무릎 보호대 권장</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌅</div><h2>일출·일몰 명소</h2><ul><li>칠불봉 일출 전국 손꼽히는 명소</li><li>새해 일출: 01/01 00시부터 산행</li><li>합천호 방향 일몰도 압도적</li><li>헤드램프 지참 시 야간 산행 가능</li></ul></div>
+<div class="tc-card"><div class="tc-icon">⏰</div><h2>입산 통제</h2><ul><li>하절기 04:00~13:00 입산</li><li>동절기 05:00~12:00 입산</li><li>토신골 입산통제 시간 준수</li><li>13시 이후 입산 불가</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🗿</div><h2>정상부 암릉 주의</h2><ul><li>봉천대~칠불봉 철계단 연속</li><li>마지막 칠불봉 철계단+로프 구간</li><li>비·눈 오면 매우 미끄러움</li><li>장갑 착용 권장</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🚗</div><h2>교통 정보</h2><ul><li>합천IC → 치인주차장 약 30분</li><li>대구서부터미널 → 해인사 버스</li><li>치인주차장 (유료, 규모 큼)</li><li>가야산국립공원 055-930-8000</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🔄</div><h2>변형 코스</h2><ul><li>토신골(해인사)→상왕봉→서성재→백운동 종주</li><li>백운동 주차 후 차량 탁송 필요</li><li>총 거리 약 10km, 4시간 30분</li><li>BAC 100대 명산 도장 인증</li></ul></div>
 </div>
-<div class="tc" id="intermediate-mp">
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="intermediate-mp">
 <div class="map-wrap">
-<h2>📍 해인사·토신골 코스 개념도</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 해인사·토신골 코스 개념도</h2>
 <svg style="width:100%;height:auto;max-height:460px" viewbox="0 0 720 440">
 <rect fill="var(--surfaceoff)" height="440" rx="12" width="720"></rect>
 <path d="M80 400 C110 370 145 338 178 305 C210 274 238 245 262 215 C284 188 305 163 322 138 C336 116 347 95 355 75 C360 62 364 50 368 38" fill="none" stroke="var(--amber)" stroke-linecap="round" stroke-width="4"></path>
@@ -926,7 +927,7 @@
 <circle cx="255" cy="222" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
 <text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="268" y="216">석조여래입상</text>
 <circle cx="330" cy="130" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
-<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="344" y="124">봉천대 ⚠ 급경사 시작</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="344" y="124">봉천대 <svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 급경사 시작</text>
 <circle cx="368" cy="38" fill="var(--amber)" r="17" stroke="var(--bg)" stroke-width="3"></circle>
 <text fill="var(--amber)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="12" font-weight="800" x="390" y="30">상왕봉 1,430m</text>
 <circle cx="400" cy="24" fill="var(--warn)" r="13" stroke="var(--bg)" stroke-width="3"></circle>
@@ -943,7 +944,7 @@
 <text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="158" y="428">하산로</text>
 </svg>
 </div>
-<div class="stitle"><div class="sico">📋</div><span>전체 체크포인트</span></div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
 <div class="cp-wrap">
 <table class="cpt">
 <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
@@ -959,35 +960,23 @@
 </tbody>
 </table>
 </div>
-</div>
-<div class="tc" id="intermediate-tp">
-<div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
-<div class="tg">
-<div class="tc-card"><div class="tc-icon">🎒</div><h3>필수 장비</h3><ul><li>등산화 (발목 지지)</li><li>트레킹 스틱 (하산 필수)</li><li>방풍 재킷 (정상 바람)</li><li>무릎 보호대 권장</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🌅</div><h3>일출·일몰 명소</h3><ul><li>칠불봉 일출 전국 손꼽히는 명소</li><li>새해 일출: 01/01 00시부터 산행</li><li>합천호 방향 일몰도 압도적</li><li>헤드램프 지참 시 야간 산행 가능</li></ul></div>
-<div class="tc-card"><div class="tc-icon">⏰</div><h3>입산 통제</h3><ul><li>하절기 04:00~13:00 입산</li><li>동절기 05:00~12:00 입산</li><li>토신골 입산통제 시간 준수</li><li>13시 이후 입산 불가</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🗿</div><h3>정상부 암릉 주의</h3><ul><li>봉천대~칠불봉 철계단 연속</li><li>마지막 칠불봉 철계단+로프 구간</li><li>비·눈 오면 매우 미끄러움</li><li>장갑 착용 권장</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🚗</div><h3>교통 정보</h3><ul><li>합천IC → 치인주차장 약 30분</li><li>대구서부터미널 → 해인사 버스</li><li>치인주차장 (유료, 규모 큼)</li><li>가야산국립공원 055-930-8000</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🔄</div><h3>변형 코스</h3><ul><li>토신골(해인사)→상왕봉→서성재→백운동 종주</li><li>백운동 주차 후 차량 탁송 필요</li><li>총 거리 약 10km, 4시간 30분</li><li>BAC 100대 명산 도장 인증</li></ul></div>
-</div>
-</div>
-</main>
+</div></div></div>
 </div>
 <!-- ═══ 고급 ═══ -->
 <div class="panel advanced" id="course-advanced">
 <nav class="tabs">
-<button class="tab active" onclick="selT('advanced','ov',this)">📋 개요</button>
-<button class="tab" onclick="selT('advanced','rt',this)">🗺 경로 안내</button>
-<button class="tab" onclick="selT('advanced','mp',this)">📍 지도</button>
-<button class="tab" onclick="selT('advanced','tp',this)">💡 팁 &amp; 주의</button>
+<button class="tab active" onclick="selT('advanced','ov',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab" onclick="selT('advanced','rt',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab" onclick="selT('advanced','mp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab" onclick="selT('advanced','tp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
 </nav>
 <div class="main">
-<div class="tc active" id="advanced-ov">
-<div class="stitle"><div class="sico">🏔</div><span>고급 코스 개요</span></div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="advanced-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><span>고급 코스 개요</span></div>
 <div class="stat-grid">
 <div class="stat-card"><div class="si">📏</div><div class="sv">9.2km</div><div class="sl">만물상 종주</div></div>
 <div class="stat-card"><div class="si">⏱</div><div class="sv">5~6h</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si">⛰</div><div class="sv">1,432m</div><div class="sl">칠불봉 최고봉</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,432m</div><div class="sl">칠불봉 최고봉</div></div>
 <div class="stat-card"><div class="si">📈</div><div class="sv">830m</div><div class="sl">누적 상승 고도</div></div>
 <div class="stat-card"><div class="si">🔥</div><div class="sv">~1,800</div><div class="sl">예상 칼로리</div></div>
 <div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★☆</div><div class="sl">난이도</div></div>
@@ -1019,7 +1008,7 @@
 <circle cx="438" cy="20" fill="var(--warn)" r="5"></circle>
 </svg>
 </div>
-<div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>전체 코스 흐름</span></div>
 <div class="flow">
 <span class="fn sk">🅿 백운동탐방센터</span><span class="fa">→</span>
 <span class="fn pk">만물상 암릉 ★</span><span class="fa">→</span>
@@ -1035,12 +1024,11 @@
 <li>✅ 만물상 암릉: 수백 개의 기이한 바위형상이 연속되는 장관</li>
 <li>✅ 백운동→칠불봉 편도 4.2km, 원점보다 해인사 종주가 정석</li>
 <li>✅ 칠불봉(1,432m) + 상왕봉(1,430m) 두 봉우리 모두 정복</li>
-<li>⚠ 만물상 구간 전국 최고난도 암릉 — 철봉·로프·급경사 연속</li>
-<li>⚠ 9~10월 만물상 탐방로 예약 입산 필요 (국립공원 예약시스템)</li>
+<li><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 만물상 구간 전국 최고난도 암릉 — 철봉·로프·급경사 연속</li>
+<li><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 9~10월 만물상 탐방로 예약 입산 필요 (국립공원 예약시스템)</li>
 </ul></div>
-</div>
-<div class="tc" id="advanced-rt">
-<div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+</div><div class="tc" id="advanced-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
 <div class="acc-wrap">
 <div class="acc-item open">
 <div class="acc-hdr" onclick="togAcc(this)">
@@ -1050,7 +1038,7 @@
 </div>
 <div class="acc-body">
 <p class="acc-desc">백운동탐방지원센터(백운동주차장 인근, 경북 성주군)에서 출발합니다. 만물상 탐방로와 용기골 탐방로 분기점을 확인 후, 만물상 탐방로(왼쪽) 진입. 9~10월 성수기엔 사전 예약 필수.</p>
-<div class="tip">💡 만물상 탐방로는 9월 1일~10월 31일 성수기에 국립공원 예약시스템(reservation.knps.or.kr)에서 사전 예약 후 입산. 비수기에는 자유 탐방.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 만물상 탐방로는 9월 1일~10월 31일 성수기에 국립공원 예약시스템(reservation.knps.or.kr)에서 사전 예약 후 입산. 비수기에는 자유 탐방.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -1062,7 +1050,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:40%"></div></div></div>
 <p class="acc-desc">처음 1km는 경사진 숲길로 웜업 구간입니다. 숲이 끊기고 갑자기 시야가 열리면서 만물상 암릉 지대가 시작됩니다. 첫 철봉 구간 앞에서 장갑 착용 권장.</p>
-<div class="tip">💡 만물상 암릉 구간은 세계 각지의 기이한 지형을 연상시키는 수백 개 바위들로 가득합니다. 육교바위·거북바위·불상바위 등 이름 붙은 바위들을 찾아가는 재미가 있습니다.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 만물상 암릉 구간은 세계 각지의 기이한 지형을 연상시키는 수백 개 바위들로 가득합니다. 육교바위·거북바위·불상바위 등 이름 붙은 바위들을 찾아가는 재미가 있습니다.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -1074,7 +1062,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg xh"><div class="df" style="width:95%"></div></div></div>
 <p class="acc-desc">이 구간이 가야산에서 가장 험난하고 장관인 핵심 구간입니다. 철봉·철계단·로프가 연속으로 나옵니다. 상아덤(1,300m)은 거대한 코끼리 코(상아)를 닮은 바위로 최고의 조망 포인트.</p>
-<div class="wrn">⚠ 만물상 암릉은 '한국 최고 난도 암릉' 중 하나입니다. 비·눈·안개 시 매우 위험. 날씨 확인 필수. 장갑 착용 강력 권장.</div>
+<div class="wrn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 만물상 암릉은 '한국 최고 난도 암릉' 중 하나입니다. 비·눈·안개 시 매우 위험. 날씨 확인 필수. 장갑 착용 강력 권장.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -1086,7 +1074,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:50%"></div></div></div>
 <p class="acc-desc">상아덤에서 서성재(1,280m, 안부)까지 내려가는 구간. 서성재는 만물상 탐방로와 용기골 탐방로가 만나는 지점으로 칠불봉·상왕봉 방향 분기점.</p>
-<div class="tip">💡 서성재에서 용기골 방향으로 탈출 가능(백운동 주차장 하산). 체력이 부족하거나 날씨가 나쁘면 여기서 하산 고려.</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 서성재에서 용기골 방향으로 탈출 가능(백운동 주차장 하산). 체력이 부족하거나 날씨가 나쁘면 여기서 하산 고려.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -1098,7 +1086,7 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div>
 <p class="acc-desc">서성재에서 칠불봉(1,432m)까지 가야산의 핵심 암릉 능선 구간. 마지막 철계단·로프를 돌파하면 칠불봉 삼거리에 올라섭니다. 칠불봉에서 상왕봉(0.2km)까지 방문. 두 정상 모두 인증.</p>
-<div class="tip">💡 칠불봉 정상에서 만물상 암릉 전체와 합천호·남해 방향이 파노라마로 펼쳐집니다. 흐리지 않은 날 한려수도까지 보입니다!</div>
+<div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 칠불봉 정상에서 만물상 암릉 전체와 합천호·남해 방향이 파노라마로 펼쳐집니다. 흐리지 않은 날 한려수도까지 보입니다!</div>
 </div>
 </div>
 <div class="acc-item">
@@ -1110,14 +1098,23 @@
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:45%"></div></div></div>
 <p class="acc-desc">상왕봉에서 토신골탐방로를 따라 봉천대→석조여래입상→해인사→치인주차장으로 하산합니다. 차량은 백운동에 두고 치인주차장까지 하산 시 택시 또는 셔틀 이용.</p>
-<div class="wrn">⚠ 백운동(출발)과 치인주차장(종착)이 다릅니다. 차량 탁송 서비스 또는 합차·택시 사전 준비 필수.</div>
+<div class="wrn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 백운동(출발)과 치인주차장(종착)이 다릅니다. 차량 탁송 서비스 또는 합차·택시 사전 준비 필수.</div>
 </div>
 </div>
 </div>
+</div><div class="tc" id="advanced-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>필수 장비</h2><ul><li>등산화 (발목 지지·방수)</li><li>장갑 (암릉 필수)</li><li>트레킹 스틱</li><li>방풍·방수 재킷</li><li>헬멧 (선택, 암릉 낙석)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🗿</div><h2>만물상 암릉 핵심 정보</h2><ul><li>한국 최고 수준 암릉 구간</li><li>철봉·로프·철계단 연속</li><li>상아덤: 가야산 최고 포토 스팟</li><li>9~10월 성수기 예약 입산</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🚗</div><h2>차량 정보</h2><ul><li>백운동 출발 → 치인(해인사) 도착</li><li>백운동~해인사 택시 약 40분</li><li>합천·성주 지역 콜택시 활용</li><li>산행 전날 귀환 교통 예약 권장</li></ul></div>
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><h2>사전 예약</h2><ul><li>성수기(9~10월) 만물상 예약 필수</li><li>reservation.knps.or.kr</li><li>백운동탐방센터→만물상→서성재 편도 3km</li><li>평일 비수기 예약 불필요</li></ul></div>
+<div class="tc-card"><div class="tc-icon">⏰</div><h2>시간 계획</h2><ul><li>백운동 오전 7~8시 출발 권장</li><li>만물상 통과 오전 10~11시 목표</li><li>칠불봉 점심 전후 도착</li><li>해인사 오후 3~4시 하산 완료</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🔄</div><h2>원점 변형 코스</h2><ul><li>백운동→용기골→서성재→칠불봉→상왕봉→원점</li><li>왕복 8km, 4시간 30분</li><li>차량 탁송 없이 원점 회귀</li><li>만물상 대신 용기골 계곡 선택 가능</li></ul></div>
 </div>
-<div class="tc" id="advanced-mp">
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="advanced-mp">
 <div class="map-wrap">
-<h2>📍 만물상 종주 코스 개념도 (백운동 → 칠불봉 → 해인사)</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 만물상 종주 코스 개념도 (백운동 → 칠불봉 → 해인사)</h2>
 <svg style="width:100%;height:auto;max-height:520px" viewbox="0 0 820 500">
 <rect fill="var(--surfaceoff)" height="500" rx="12" width="820"></rect>
 <!-- terrain bg -->
@@ -1158,7 +1155,7 @@
 <text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="190" y="488">정상→해인사 하산로</text>
 </svg>
 </div>
-<div class="stitle"><div class="sico">📋</div><span>전체 체크포인트 (종주)</span></div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트 (종주)</span></div>
 <div class="cp-wrap">
 <table class="cpt">
 <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
@@ -1178,81 +1175,60 @@
 </tbody>
 </table>
 </div>
+</div></div></div>
 </div>
-<div class="tc" id="advanced-tp">
-<div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
-<div class="tg">
-<div class="tc-card"><div class="tc-icon">🎒</div><h3>필수 장비</h3><ul><li>등산화 (발목 지지·방수)</li><li>장갑 (암릉 필수)</li><li>트레킹 스틱</li><li>방풍·방수 재킷</li><li>헬멧 (선택, 암릉 낙석)</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🗿</div><h3>만물상 암릉 핵심 정보</h3><ul><li>한국 최고 수준 암릉 구간</li><li>철봉·로프·철계단 연속</li><li>상아덤: 가야산 최고 포토 스팟</li><li>9~10월 성수기 예약 입산</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🚗</div><h3>차량 정보</h3><ul><li>백운동 출발 → 치인(해인사) 도착</li><li>백운동~해인사 택시 약 40분</li><li>합천·성주 지역 콜택시 활용</li><li>산행 전날 귀환 교통 예약 권장</li></ul></div>
-<div class="tc-card"><div class="tc-icon">📋</div><h3>사전 예약</h3><ul><li>성수기(9~10월) 만물상 예약 필수</li><li>reservation.knps.or.kr</li><li>백운동탐방센터→만물상→서성재 편도 3km</li><li>평일 비수기 예약 불필요</li></ul></div>
-<div class="tc-card"><div class="tc-icon">⏰</div><h3>시간 계획</h3><ul><li>백운동 오전 7~8시 출발 권장</li><li>만물상 통과 오전 10~11시 목표</li><li>칠불봉 점심 전후 도착</li><li>해인사 오후 3~4시 하산 완료</li></ul></div>
-<div class="tc-card"><div class="tc-icon">🔄</div><h3>원점 변형 코스</h3><ul><li>백운동→용기골→서성재→칠불봉→상왕봉→원점</li><li>왕복 8km, 4시간 30분</li><li>차량 탁송 없이 원점 회귀</li><li>만물상 대신 용기골 계곡 선택 가능</li></ul></div>
-</div>
-</div>
-</main>
-</div>
-
-
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-  <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-    <span class="section-title-icon">📸</span> 가야산의 사계 &amp; 명소
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 가야산의 사계 &amp; 명소
   </h2>
-  <div class="gallery-grid">
-    
-    <!-- Gallery Image Button 1 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Gayasan 크게 보기" data-index="0" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
-      <picture class="gallery-picture">
-        <source type="image/avif" srcset="assets/img/gayasan/g1.avif">
-        <source type="image/webp" srcset="assets/img/gayasan/g1.webp">
-        <img src="assets/img/gayasan/g1.jpg" alt="가야산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" loading="lazy" decoding="async">
-      </picture>
-      <div class="gallery-caption-overlay">
-        <span class="gallery-caption-text">가야산 등산코스</span>
-      </div>
-    </button>
-
-    <!-- Gallery Image Button 2 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Gayasan National Park 크게 보기" data-index="1" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
-      <picture class="gallery-picture">
-        <source type="image/avif" srcset="assets/img/gayasan/g2.avif">
-        <source type="image/webp" srcset="assets/img/gayasan/g2.webp">
-        <img src="assets/img/gayasan/g2.jpg" alt="가야산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" loading="lazy" decoding="async">
-      </picture>
-      <div class="gallery-caption-overlay">
-        <span class="gallery-caption-text">가야산 절경</span>
-      </div>
-    </button>
-
-    <!-- Gallery Image Button 3 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Harmonious view of Gayasan mountain ridges under a clear sky 크게 보기" data-index="2" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
-      <picture class="gallery-picture">
-        <source type="image/avif" srcset="assets/img/gayasan/g3.avif">
-        <source type="image/webp" srcset="assets/img/gayasan/g3.webp">
-        <img src="assets/img/gayasan/g3.jpg" alt="가야산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" loading="lazy" decoding="async">
-      </picture>
-      <div class="gallery-caption-overlay">
-        <span class="gallery-caption-text">가야산 풍경</span>
-      </div>
-    </button>
-
-    <!-- Gallery Image Button 4 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Gayasan 크게 보기" data-index="3" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
-      <picture class="gallery-picture">
-        <source type="image/avif" srcset="assets/img/gayasan/g4.avif">
-        <source type="image/webp" srcset="assets/img/gayasan/g4.webp">
-        <img src="assets/img/gayasan/g4.jpg" alt="가야산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" loading="lazy" decoding="async">
-      </picture>
-      <div class="gallery-caption-overlay">
-        <span class="gallery-caption-text">가야산 탐방로</span>
-      </div>
-    </button>
-
-  </div>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="가야산 등산코스 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/gayasan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/gayasan/g1.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/gayasan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">가야산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="가야산 절경 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/gayasan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/gayasan/g2.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/gayasan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">가야산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="가야산 풍경 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/gayasan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/gayasan/g3.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/gayasan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">가야산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="가야산 탐방로 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/gayasan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/gayasan/g4.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/gayasan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">가야산 탐방로</span>
+</div>
+</button>
+</div>
 </section>
-</main>
-
 <footer style="border-top:1px solid var(--div);padding:var(--s8) var(--s6);text-align:center;background:var(--surface)">
 <p style="font-size:var(--xs);color:var(--faint)">가야산국립공원 공식 정보 기준. 산행 전 국립공원 예약시스템(reservation.knps.or.kr)과 기상·입산통제 정보를 반드시 확인하세요. 가야산국립공원 055-930-8000</p>
 </footer>
@@ -1283,21 +1259,18 @@ function selT(c,t,btn){
 function togAcc(h){h.parentElement.classList.toggle("open")}
 document.querySelectorAll(".acc-wrap").forEach(w=>{const f=w.querySelector(".acc-item");if(f)f.classList.add("open")});
 </script>
-
-
 <!-- Lightbox Dialog Overlay -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
-  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
-  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
-  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
-  <div class="lightbox-content">
-    <figure class="lightbox-figure">
-      <figcaption class="lightbox-caption"></figcaption>
-    </figure>
-    <div class="photo-credit lightbox-credit"></div>
-  </div>
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
 </div>
-
+</div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');
@@ -1408,7 +1381,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
 <script>
 // Unified course switcher override for rebranding compatibility
 (function() {
@@ -1446,5 +1418,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
 })();
 </script>
-</body>
+</div></div></body>
 </html>
