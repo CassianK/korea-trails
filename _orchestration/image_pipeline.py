@@ -4,6 +4,8 @@ import urllib.request
 import urllib.parse
 import ssl
 import sys
+import re
+import hashlib
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from PIL import Image
 import pillow_avif
@@ -52,6 +54,20 @@ os.makedirs("assets/img", exist_ok=True)
 
 # SSL context
 ssl_context = ssl._create_unverified_context()
+
+def get_image_hash(filepath):
+    """Calculate MD5 hash of a file to check for duplicates."""
+    hasher = hashlib.md5()
+    try:
+        with open(filepath, 'rb') as f:
+            buf = f.read(65536)
+            while len(buf) > 0:
+                hasher.update(buf)
+                buf = f.read(65536)
+        return hasher.hexdigest()
+    except Exception as e:
+        print(f"Error hashing {filepath}: {e}")
+        return None
 
 def trigger_unsplash_download(url_trigger):
     if not UNSPLASH_ACCESS_KEY or not url_trigger:
@@ -141,8 +157,14 @@ def generate_alt_texts(m, role, geo_hint):
         alt_ko = f"{name_ko} 숲길과 기암괴석이 어우러진 아름다운 비경"
         alt_en = f"Beautiful scenery of lush forests and rugged rocks in {name_en}"
     else:
-        alt_ko = f"{name_ko}의 아름다운 자연 풍경"
-        alt_en = f"Beautiful nature scenery of {name_en}"
+        # Dynamic gallery number representation
+        try:
+            num = role.split('_')[1]
+            alt_ko = f"{name_ko}의 수려한 자연 경관 (사진 {num})"
+            alt_en = f"Beautiful scenic views of {name_en} (Photo {num})"
+        except Exception:
+            alt_ko = f"{name_ko}의 아름다운 자연 풍경"
+            alt_en = f"Beautiful nature scenery of {name_en}"
         
     return alt_ko, alt_en
 
@@ -164,14 +186,7 @@ def save_image_with_budget(img, output_path, format_name, base_quality=80, max_s
     return os.path.getsize(output_path) / 1024.0
 
 def check_files_exist(m_id, role):
-    role_map = {
-        "hero": "hero",
-        "gallery_1": "g1",
-        "gallery_2": "g2",
-        "gallery_3": "g3",
-        "gallery_4": "g4"
-    }
-    prefix = role_map[role]
+    prefix = "hero" if role == "hero" else f"g{role.split('_')[1]}"
     m_dir = f"assets/img/{m_id}"
     
     if role == "hero":
@@ -237,15 +252,7 @@ def process_single_photo(photo_data):
                 
             orig_w, orig_h = img.size
             
-            # Map role to filename prefix
-            role_map = {
-                "hero": "hero",
-                "gallery_1": "g1",
-                "gallery_2": "g2",
-                "gallery_3": "g3",
-                "gallery_4": "g4"
-            }
-            prefix = role_map[role]
+            prefix = "hero" if role == "hero" else f"g{role.split('_')[1]}"
             
             alt_ko, alt_en = generate_alt_texts(m, role, geo_hint)
             
@@ -329,21 +336,189 @@ def process_single_photo(photo_data):
     print(f"[{m_id}] Completed processing for {role} (ID: {photo_id})")
     return manifest_entry
 
-def main():
-    print(f"Starting image processing pipeline for {len(selected_photos)} photos...")
+def process_local_mountain(m_id):
+    """Processes user-uploaded local photos for a mountain, filtering duplicates."""
+    print(f"[{m_id}] Processing user-uploaded local photos...")
+    m_dir = f"assets/img/{m_id}"
     
-    # Process photos in parallel
+    # 1. Scrape raw source files (skip generated formats)
+    all_files = []
+    if os.path.exists(m_dir):
+        for f in os.listdir(m_dir):
+            if f.startswith('.') or f.startswith('temp_'):
+                continue
+            
+            # Skip generated formats
+            if f.startswith('hero-') or f.startswith('g'):
+                if re.match(r'^g\d+\.(webp|avif|jpg)$', f) or re.match(r'^g\d+-640\.(webp|jpg)$', f) or re.match(r'^hero-\d+\.(webp|avif|jpg)$', f):
+                    continue
+            
+            ext = os.path.splitext(f)[1].lower()
+            if ext in ['.jpg', '.jpeg', '.png']:
+                all_files.append(os.path.join(m_dir, f))
+                
+    # 2. Duplicate Detection via MD5 Hashing
+    seen_hashes = set()
+    unique_files = []
+    for fp in all_files:
+        h = get_image_hash(fp)
+        if h and h not in seen_hashes:
+            seen_hashes.add(h)
+            unique_files.append(fp)
+        else:
+            print(f"[{m_id}] Deleting duplicate file: {fp}")
+            try:
+                os.remove(fp)
+            except Exception as e:
+                print(f"[{m_id}] Error deleting duplicate {fp}: {e}")
+                
+    # Sort files alphabetically
+    unique_files.sort()
+    
+    # Limit to 100 photos total (1 hero + 99 gallery)
+    unique_files = unique_files[:100]
+    print(f"[{m_id}] Total unique photos found: {len(unique_files)}")
+    
+    # 3. Clean up older generated files
+    if os.path.exists(m_dir):
+        for f in os.listdir(m_dir):
+            if re.match(r'^g\d+\.(webp|avif|jpg)$', f) or re.match(r'^g\d+-640\.(webp|jpg)$', f) or re.match(r'^hero-\d+\.(webp|avif|jpg)$', f):
+                try:
+                    os.remove(os.path.join(m_dir, f))
+                except Exception:
+                    pass
+                    
+    if not unique_files:
+        print(f"[{m_id}] Error: No unique source photos found!")
+        return []
+        
+    m = mountains_map[m_id]
+    name_ko = m["name_ko"]
+    name_en = m["name_en"]
+    
     results = []
-    # Use max_workers=8 to run parallel downloads and image processing
+    
+    # Process photos
+    for idx, fp in enumerate(unique_files):
+        role = "hero" if idx == 0 else f"gallery_{idx}"
+        prefix = "hero" if idx == 0 else f"g{idx}"
+        
+        print(f"[{m_id}] Processing local photo {idx+1}/{len(unique_files)}: {fp} as {role}")
+        
+        try:
+            with Image.open(fp) as img:
+                if img.mode != "RGB":
+                    img = img.convert("RGB")
+                    
+                orig_w, orig_h = img.size
+                
+                alt_ko, alt_en = generate_alt_texts(m, role, "")
+                if idx > 0:
+                    alt_ko = f"{name_ko} 산행 중에 촬영한 자연 풍경 (사진 {idx})"
+                    alt_en = f"Scenic view captured during the {name_en} hike (Photo {idx})"
+                
+                if role == "hero":
+                    widths = [640, 1024, 1600, 2400]
+                    for w in widths:
+                        h = int(orig_h * (w / orig_w))
+                        img_resized = img.resize((w, h), Image.Resampling.LANCZOS)
+                        for fmt in ["avif", "webp", "jpg"]:
+                            out_path = f"{m_dir}/{prefix}-{w}.{fmt}"
+                            save_image_with_budget(img_resized, out_path, fmt, base_quality=80, max_size_kb=400)
+                            
+                    manifest_entry = {
+                        "mountain_id": m_id,
+                        "role": role,
+                        "files": {
+                            "avif": f"assets/img/{m_id}/{prefix}.avif",
+                            "webp": f"assets/img/{m_id}/{prefix}.webp",
+                            "jpg":  f"assets/img/{m_id}/{prefix}.jpg"
+                        },
+                        "widths": widths,
+                        "alt_ko": alt_ko,
+                        "alt_en": alt_en,
+                        "credit": {
+                            "author": "Dokyung Kim",
+                            "source": "Local",
+                            "url": ""
+                        }
+                    }
+                else:
+                    w = min(1600, orig_w)
+                    h = int(orig_h * (w / orig_w))
+                    img_resized = img.resize((w, h), Image.Resampling.LANCZOS)
+                    
+                    for fmt in ["avif", "webp", "jpg"]:
+                        out_path = f"{m_dir}/{prefix}.{fmt}"
+                        save_image_with_budget(img_resized, out_path, fmt, base_quality=80, max_size_kb=400)
+                        
+                    if prefix == "g1":
+                        w_card = 640
+                        h_card = int(orig_h * (w_card / orig_w))
+                        img_card = img.resize((w_card, h_card), Image.Resampling.LANCZOS)
+                        save_image_with_budget(img_card, f"{m_dir}/g1-640.webp", "webp", base_quality=75, max_size_kb=100)
+                        save_image_with_budget(img_card, f"{m_dir}/g1-640.jpg", "jpg", base_quality=80, max_size_kb=100)
+                        
+                    manifest_entry = {
+                        "mountain_id": m_id,
+                        "role": role,
+                        "files": {
+                            "avif": f"assets/img/{m_id}/{prefix}.avif",
+                            "webp": f"assets/img/{m_id}/{prefix}.webp",
+                            "jpg":  f"assets/img/{m_id}/{prefix}.jpg"
+                        },
+                        "widths": [],
+                        "alt_ko": alt_ko,
+                        "alt_en": alt_en,
+                        "credit": {
+                            "author": "Dokyung Kim",
+                            "source": "Local",
+                            "url": ""
+                        }
+                    }
+                results.append(manifest_entry)
+        except Exception as e:
+            print(f"Error processing local file {fp} for {m_id}: {e}")
+            
+    return results
+
+def main():
+    # Filter selected_photos to exclude local mountains
+    local_mountains = {"dobongsan", "bukhansan", "soyosan"}
+    remote_selected_photos = [p for p in selected_photos if p["mountain_id"] not in local_mountains]
+    
+    print(f"Starting image processing pipeline for {len(remote_selected_photos)} remote photos...")
+    
+    # Process remote photos in parallel
+    results = []
     with ThreadPoolExecutor(max_workers=8) as executor:
-        futures = {executor.submit(process_single_photo, photo): photo for photo in selected_photos}
+        futures = {executor.submit(process_single_photo, photo): photo for photo in remote_selected_photos}
         for fut in as_completed(futures):
             res = fut.result()
             if res:
                 results.append(res)
                 
+    # Process local mountains sequentially (or parallelized per mountain)
+    for lm in local_mountains:
+        local_results = process_local_mountain(lm)
+        results.extend(local_results)
+                
     # Sort results for stability
-    results.sort(key=lambda x: (x["mountain_id"], x["role"]))
+    # Sort by mountain_id first, then role. Since role can be gallery_10, gallery_2, etc.,
+    # we sort numerically on the gallery index.
+    def sort_key(entry):
+        m_id = entry["mountain_id"]
+        role = entry["role"]
+        if role == "hero":
+            role_val = 0
+        else:
+            try:
+                role_val = int(role.split('_')[1])
+            except Exception:
+                role_val = 9999
+        return (m_id, role_val)
+        
+    results.sort(key=sort_key)
     
     # Save manifest
     with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
@@ -366,7 +541,7 @@ def generate_credits_file(manifest_entries):
         
     credits_content = """# Photo Credits & Attributions
 
-This document acknowledges and credits the talented photographers whose beautiful work brings the Korea Trails site to life. All photos are used under the free Unsplash License or Pexels License.
+This document acknowledges and credits the talented photographers whose beautiful work brings the Korea Trails site to life. All photos are used under the free Unsplash License or Pexels License, or are user-contributed local photos.
 
 """
     
@@ -375,7 +550,17 @@ This document acknowledges and credits the talented photographers whose beautifu
         m_name = mountains_map[m_id]["name_ko"] + " (" + mountains_map[m_id]["name_en"] + ")"
         credits_content += f"## {m_name}\n\n"
         
-        for entry in sorted(by_mountain[m_id], key=lambda x: x["role"]):
+        # Sort within mountain by role index
+        def role_sort_key(entry):
+            r = entry["role"]
+            if r == "hero":
+                return 0
+            try:
+                return int(r.split('_')[1])
+            except:
+                return 9999
+                
+        for entry in sorted(by_mountain[m_id], key=role_sort_key):
             role = entry["role"]
             credit = entry["credit"]
             author = credit["author"]
@@ -383,7 +568,11 @@ This document acknowledges and credits the talented photographers whose beautifu
             url = credit["url"]
             
             role_display = "Hero Header" if role == "hero" else f"Gallery {role.split('_')[1]}"
-            credits_content += f"- **{role_display}**: Photo by [{author}]({url}) via [{source}]({source.lower() == 'unsplash' and 'https://unsplash.com' or 'https://pexels.com'}).\n"
+            if source.lower() == "local":
+                credits_content += f"- **{role_display}**: Photo by {author} (User-contributed / Local).\n"
+            else:
+                credit_url_str = f"[{author}]({url})" if url else author
+                credits_content += f"- **{role_display}**: Photo by {credit_url_str} via [{source}]({source.lower() == 'unsplash' and 'https://unsplash.com' or 'https://pexels.com'}).\n"
             
         credits_content += "\n"
         

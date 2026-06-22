@@ -633,10 +633,28 @@ def update_playbook_html(file_path, m_id):
     with open(file_path, "r", encoding="utf-8") as f:
         html = f.read()
         
-    # Check if already upgraded
-    if "hero-bleed" in html:
-        print(f"Playbook {file_path} is already upgraded. Skipping.")
-        return
+    # 0. Rollback previous upgrade if exists to allow clean re-injection
+    # Remove CSS
+    css_regex = re.compile(r'/\* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- \*/[\s\S]*?\.lightbox-credit a:hover \{\s*color:\s*var\(--color-primary,\s*var\(--primary,\s*#4f98a3\)\);\s*\}')
+    html = css_regex.sub("", html)
+    
+    # Restore Hero Section
+    hero_section_regex = re.compile(r'<section class="hero hero-bleed">[\s\S]*?<div class="hero-content">([\s\S]*?)</div>[\s\S]*?</section>')
+    hero_header_regex = re.compile(r'<header class="site-header hero-bleed">[\s\S]*?<div class="hero-content">([\s\S]*?)</div>[\s\S]*?</header>')
+    if hero_section_regex.search(html):
+        html = hero_section_regex.sub(r'<section class="hero">\1</section>', html)
+    elif hero_header_regex.search(html):
+        html = hero_header_regex.sub(r'<header class="site-header">\1</header>', html)
+        
+    # Remove Gallery
+    gallery_regex = re.compile(r'<!-- Photo Gallery Grid -->[\s\S]*?</section>')
+    html = gallery_regex.sub("", html)
+    
+    # Remove Lightbox JS & HTML
+    lightbox_regex = re.compile(r'<!-- Lightbox Dialog Overlay -->[\s\S]*?</script>')
+    html = lightbox_regex.sub("", html)
+    # Simple backup replace for exact matches
+    html = html.replace(LIGHTBOX_JS, "")
         
     # 1. Inject Styles
     style_close_idx = html.find("</style>")
@@ -676,10 +694,22 @@ def update_playbook_html(file_path, m_id):
   <div class="hero-overlay"></div>
 """
         
-        credit_tag = f"""
+        # Format credit link safely
+        if source.lower() == "local":
+            credit_tag = f"""
   <!-- Hero Credit Overlay -->
   <div class="photo-credit hero-credit">
-    <span class="credit-author">Photo by <a href="{author_url}" target="_blank" rel="noopener">{author}</a></span>
+    <span class="credit-author">Photo by {author}</span>
+    <span class="credit-divider">/</span>
+    <span class="credit-source">Local</span>
+  </div>
+"""
+        else:
+            credit_url_str = f'<a href="{author_url}" target="_blank" rel="noopener">{author}</a>' if author_url else author
+            credit_tag = f"""
+  <!-- Hero Credit Overlay -->
+  <div class="photo-credit hero-credit">
+    <span class="credit-author">Photo by {credit_url_str}</span>
     <span class="credit-divider">/</span>
     <span class="credit-source"><a href="https://{source.lower()}.com" target="_blank" rel="noopener">{source}</a></span>
   </div>
@@ -709,9 +739,13 @@ def update_playbook_html(file_path, m_id):
         return
         
     # 3. Inject Photo Gallery Section
-    # Construct gallery HTML
+    # Find all gallery roles for this mountain in manifest
+    gallery_roles = [k for k in manifest_by_mountain[m_id].keys() if k.startswith("gallery_")]
+    # Extract index numbers and sort them numerically
+    gallery_indices = sorted([int(k.split("_")[1]) for k in gallery_roles])
+    
     gallery_items_html = ""
-    for idx in range(1, 5):
+    for idx in gallery_indices:
         role = f"gallery_{idx}"
         photo = manifest_by_mountain[m_id][role]
         alt_ko = photo["alt_ko"]
@@ -722,13 +756,20 @@ def update_playbook_html(file_path, m_id):
         author_url = credit["url"]
         
         # Get source metadata for the caption matching
-        matching_selected = next(p for p in manifest_entries if p["mountain_id"] == m_id and p["role"] == role)
-        geo_hint = matching_selected.get("geo_hint", "")
+        matching_selected = next((p for p in manifest_entries if p["mountain_id"] == m_id and p["role"] == role), None)
+        geo_hint = matching_selected.get("geo_hint", "") if matching_selected else ""
         short_caption = generate_short_caption_ko(m_name, role, geo_hint)
         
+        # Format credit label for data-credit attribute
+        if source.lower() == "local":
+            credit_label = f"Photo by {author} (Local)"
+        else:
+            credit_url_str = f"<a href='{author_url}' target='_blank' rel='noopener'>{author}</a>" if author_url else author
+            credit_label = f"Photo by {credit_url_str} on {source}"
+            
         gallery_items_html += f"""
     <!-- Gallery Image Button {idx} -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="{alt_en} 크게 보기" data-index="{idx-1}" data-credit="Photo by <a href='{author_url}' target='_blank' rel='noopener'>{author}</a> on {source}">
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="{alt_en} 크게 보기" data-index="{idx-1}" data-credit="{credit_label}">
       <picture class="gallery-picture">
         <source type="image/avif" srcset="assets/img/{m_id}/g{idx}.avif">
         <source type="image/webp" srcset="assets/img/{m_id}/g{idx}.webp">
