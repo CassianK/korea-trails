@@ -1,0 +1,490 @@
+{
+  "bukhansan-playbook.html": {
+    "file": "bukhansan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "data-theme-toggle",
+    "tokens": [
+      "--color-accent",
+      "--color-advanced",
+      "--color-advanced-bg",
+      "--color-advanced-light",
+      "--color-beginner",
+      "--color-beginner-bg",
+      "--color-beginner-light",
+      "--color-bg",
+      "--color-border",
+      "--color-divider"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "deogyusan-playbook.html": {
+    "file": "deogyusan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "unknown",
+    "tokens": [
+      "--base",
+      "--bg",
+      "--blue",
+      "--bluehl",
+      "--bor",
+      "--div",
+      "--faint",
+      "--fb",
+      "--fd",
+      "--gold"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "dobongsan-playbook.html": {
+    "file": "dobongsan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "data-theme-toggle",
+    "tokens": [
+      "--color-adv",
+      "--color-adv-border",
+      "--color-adv-light",
+      "--color-beginner",
+      "--color-beginner-border",
+      "--color-beginner-light",
+      "--color-bg",
+      "--color-border",
+      "--color-divider",
+      "--color-inter"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "gayasan-playbook.html": {
+    "file": "gayasan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "unknown",
+    "tokens": [
+      "--amber",
+      "--amberhl",
+      "--base",
+      "--bg",
+      "--bor",
+      "--div",
+      "--faint",
+      "--fb",
+      "--fd",
+      "--hero-badge-bg"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "gyeryongsan-playbook.html": {
+    "file": "gyeryongsan-playbook.html",
+    "template": "yangmingshan-style",
+    "theme_toggle": "id=\"themeBtn\"",
+    "tokens": [
+      "--base",
+      "--bg",
+      "--blue",
+      "--bluebg",
+      "--border",
+      "--faint",
+      "--green",
+      "--greenbg",
+      "--hero-badge-bg",
+      "--hero-badge-color"
+    ],
+    "issues": [
+      "[web:xxx] tags (13 instances)",
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 13,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "hallasan-playbook.html": {
+    "file": "hallasan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "data-theme-toggle",
+    "tokens": [
+      "--color-bg",
+      "--color-blue",
+      "--color-blue-highlight",
+      "--color-border",
+      "--color-divider",
+      "--color-error",
+      "--color-gold",
+      "--color-gold-highlight",
+      "--color-primary",
+      "--color-primary-highlight"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "jirisan-playbook.html": {
+    "file": "jirisan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "data-theme-toggle",
+    "tokens": [
+      "--c1",
+      "--c1l",
+      "--c1p",
+      "--c2",
+      "--c2l",
+      "--c2p",
+      "--c3",
+      "--c3l",
+      "--c3p",
+      "--color-bg"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "juwangsan-playbook.html": {
+    "file": "juwangsan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "data-theme-toggle",
+    "tokens": [
+      "--color-accent",
+      "--color-accent-light",
+      "--color-bg",
+      "--color-border",
+      "--color-divider",
+      "--color-easy",
+      "--color-easy-light",
+      "--color-easy-mid",
+      "--color-hard",
+      "--color-hard-light"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "myeongseongsan-playbook.html": {
+    "file": "myeongseongsan-playbook.html",
+    "template": "yangmingshan-style",
+    "theme_toggle": "id=\"themeBtn\"",
+    "tokens": [
+      "--amber",
+      "--base",
+      "--bg",
+      "--blue",
+      "--bluebg",
+      "--border",
+      "--faint",
+      "--green",
+      "--greenbg",
+      "--hero-badge-bg"
+    ],
+    "issues": [
+      "[web:xxx] tags (12 instances)",
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 12,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "naejangsan-playbook.html": {
+    "file": "naejangsan-playbook.html",
+    "template": "yangmingshan-style",
+    "theme_toggle": "id=\"themeBtn\"",
+    "tokens": [
+      "--base",
+      "--bg",
+      "--blue",
+      "--bluebg",
+      "--border",
+      "--faint",
+      "--green",
+      "--greenbg",
+      "--hero-badge-bg",
+      "--hero-badge-color"
+    ],
+    "issues": [
+      "[web:xxx] tags (12 instances)",
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 12,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "odaesan-playbook.html": {
+    "file": "odaesan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "unknown",
+    "tokens": [
+      "--amber",
+      "--amberhl",
+      "--base",
+      "--bg",
+      "--blue",
+      "--bluehl",
+      "--bor",
+      "--div",
+      "--faint",
+      "--fb"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "seoraksan-playbook.html": {
+    "file": "seoraksan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "data-theme-toggle",
+    "tokens": [
+      "--color-bg",
+      "--color-border",
+      "--color-divider",
+      "--color-error",
+      "--color-gold",
+      "--color-gold-highlight",
+      "--color-orange",
+      "--color-primary",
+      "--color-primary-highlight",
+      "--color-primary-hover"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "sikjangsan-playbook.html": {
+    "file": "sikjangsan-playbook.html",
+    "template": "yangmingshan-style",
+    "theme_toggle": "id=\"themeBtn\"",
+    "tokens": [
+      "--amber",
+      "--amberbg",
+      "--base",
+      "--bg",
+      "--border",
+      "--crag",
+      "--cragbg",
+      "--faint",
+      "--hero-badge-bg",
+      "--hero-badge-color"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "sobaeksan-playbook.html": {
+    "file": "sobaeksan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "unknown",
+    "tokens": [
+      "--amber",
+      "--amberhl",
+      "--base",
+      "--bg",
+      "--bor",
+      "--div",
+      "--faint",
+      "--fb",
+      "--fd",
+      "--hero-badge-bg"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "soyosan-playbook.html": {
+    "file": "soyosan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "data-theme-toggle",
+    "tokens": [
+      "--color-bg",
+      "--color-border",
+      "--color-divider",
+      "--color-error",
+      "--color-error-highlight",
+      "--color-gold",
+      "--color-orange",
+      "--color-primary",
+      "--color-primary-highlight",
+      "--color-primary-hover"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "taebaeksan-playbook.html": {
+    "file": "taebaeksan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "unknown",
+    "tokens": [
+      "--base",
+      "--bg",
+      "--blue",
+      "--bluehl",
+      "--bor",
+      "--div",
+      "--faint",
+      "--fb",
+      "--fd",
+      "--gold"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "wolchulsan-playbook.html": {
+    "file": "wolchulsan-playbook.html",
+    "template": "seoraksan-style",
+    "theme_toggle": "data-theme-toggle",
+    "tokens": [
+      "--color-accent",
+      "--color-adv",
+      "--color-adv-hover",
+      "--color-adv-light",
+      "--color-beginner",
+      "--color-beginner-hover",
+      "--color-beginner-light",
+      "--color-bg",
+      "--color-border",
+      "--color-divider"
+    ],
+    "issues": [
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "woraksan-playbook.html": {
+    "file": "woraksan-playbook.html",
+    "template": "yangmingshan-style",
+    "theme_toggle": "id=\"themeBtn\"",
+    "tokens": [
+      "--base",
+      "--bg",
+      "--blue",
+      "--bluebg",
+      "--border",
+      "--faint",
+      "--gold",
+      "--green",
+      "--greenbg",
+      "--hero-badge-bg"
+    ],
+    "issues": [
+      "[web:xxx] tags (9 instances)",
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 9,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "xueshan-playbook.html": {
+    "file": "xueshan-playbook.html",
+    "template": "yangmingshan-style",
+    "theme_toggle": "id=\"themeBtn\"",
+    "tokens": [
+      "--base",
+      "--bg",
+      "--blue",
+      "--bluebg",
+      "--border",
+      "--faint",
+      "--green",
+      "--greenbg",
+      "--hero-badge-bg",
+      "--hero-badge-color"
+    ],
+    "issues": [
+      "[web:xxx] tags (10 instances)",
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 10,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "yangmingshan-playbook.html": {
+    "file": "yangmingshan-playbook.html",
+    "template": "yangmingshan-style",
+    "theme_toggle": "id=\"themeBtn\"",
+    "tokens": [
+      "--base",
+      "--bg",
+      "--blue",
+      "--bluebg",
+      "--border",
+      "--faint",
+      "--green",
+      "--greenbg",
+      "--hero-badge-bg",
+      "--hero-badge-color"
+    ],
+    "issues": [
+      "Emoji icons used in layout"
+    ],
+    "web_tags_count": 0,
+    "migration": "Link design-system.css and apply unified components"
+  },
+  "yushan-playbook.html": {
+    "file": "yushan-playbook.html",
+    "template": "yangmingshan-style",
+    "theme_toggle": "id=\"themeBtn\"",
+    "tokens": [
+      "--base",
+      "--bg",
+      "--blue",
+      "--bluebg",
+      "--border",
+      "--faint",
+      "--gold",
+      "--green",
+      "--greenbg",
+      "--hero-badge-bg"
+    ],
+    "issues": [
+      "[web:xxx] tags (11 instances)",
+      "Emoji icons used in layout",
+      "SVG schematic map (needs Leaflet upgrade)"
+    ],
+    "web_tags_count": 11,
+    "migration": "Link design-system.css and apply unified components"
+  }
+}

@@ -5,25 +5,445 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>식장산 4봉 환종주 플레이북</title>
+<meta name="description" content="대한민국 최고의 명산 중 하나인 식장산 국립공원 가이드. 상세 등산 경로 및 코스 안내 정보를 실사 지도와 함께 제공합니다.">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/design-system.css">
 <style>
-    :root,[data-theme="light"]{--bg:#f5f7f4;--surface:#fbfcfb;--surface2:#e8eee6;--border:#d4ddd1;--text:#192218;--muted:#687464;--faint:#9fac9a;--pine:#5c7d63;--pinebg:#dce8df;--amber:#b68d4e;--amberbg:#efe3ce;--crag:#6f6779;--cragbg:#e3dfeb;--shadow:0 10px 24px rgba(28,40,28,.08);--r:18px;--r2:12px;--xs:clamp(.75rem,.7rem+.2vw,.87rem);--sm:clamp(.9rem,.84rem+.2vw,1rem);--base:clamp(1rem,.95rem+.25vw,1.1rem);--lg:clamp(1.15rem,1rem+.5vw,1.45rem);--xl:clamp(1.6rem,1.2rem+1.2vw,2.4rem);--xxl:clamp(2.2rem,1.3rem+2vw,3.6rem)}
-    [data-theme="dark"]{--bg:#121613;--surface:#1b221c;--surface2:#263028;--border:#384439;--text:#e1e8de;--muted:#96a392;--faint:#697565;--pine:#88b394;--pinebg:#233128;--amber:#d7b06d;--amberbg:#403320;--crag:#ada0c0;--cragbg:#302a3a;--shadow:0 12px 28px rgba(0,0,0,.32)}
-    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:'Satoshi',sans-serif;line-height:1.6} h1,h2,h3,h4,p{margin:0} button{font:inherit} table{border-collapse:collapse;width:100%}
-    .wrap{max-width:1160px;margin:0 auto;padding:0 20px}.header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--surface) 90%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}.brand{display:flex;gap:14px;align-items:center}.logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#6e8f75,#c7d4ba);display:grid;place-items:center;box-shadow:var(--shadow)} .brand h1{font:800 var(--lg) 'Cabinet Grotesk',sans-serif}.brand p{font-size:var(--xs);color:var(--muted)} .theme-btn{width:42px;height:42px;border-radius:999px;border:1px solid var(--border);background:var(--surface);cursor:pointer;color:var(--text)}
-    .hero{padding:44px 0 28px;background:linear-gradient(180deg,color-mix(in srgb,var(--pine) 12%,var(--bg)),transparent)} .hero-badge{display:inline-block;background:var(--pine);color:#fff;padding:7px 12px;border-radius:999px;font-size:var(--xs);font-weight:700}.hero h2{margin-top:14px;font:800 var(--xxl) 'Cabinet Grotesk',sans-serif;line-height:1.05}.hero p{margin-top:12px;max-width:780px;color:var(--muted);font-size:var(--base)}
-    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:24px}.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:16px;box-shadow:var(--shadow)} .stat .v{font:800 var(--lg) 'Cabinet Grotesk',sans-serif;color:var(--pine)} .stat .l{font-size:var(--xs);color:var(--muted)}
-    .panel{padding:24px 0 46px}.tabs{display:flex;gap:8px;overflow:auto;padding-bottom:4px;margin:18px 0 24px}.tab{border:none;background:var(--surface2);padding:11px 14px;border-radius:999px;cursor:pointer;white-space:nowrap;color:var(--muted);font-weight:700}.tab.active{background:var(--pine);color:#fff}.tabpane{display:none}.tabpane.active{display:block}
-    .grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)} .kpi .num{font:800 var(--lg) 'Cabinet Grotesk',sans-serif;color:var(--pine)} .kpi .txt{font-size:var(--xs);color:var(--muted)}
-    .section-title{display:flex;align-items:center;gap:12px;margin:10px 0 16px}.section-title h3{font:800 var(--lg) 'Cabinet Grotesk',sans-serif}.line{height:1px;background:var(--border);flex:1}.flow{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:7px 12px;border-radius:999px;background:var(--surface2);font-size:var(--xs);font-weight:700}.arr{align-self:center;color:var(--faint)} .elev svg{width:100%;height:220px}.desc{margin-top:14px;color:var(--muted);font-size:var(--sm)}
-    .peak-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.peak-card h4{font-size:var(--sm);margin-bottom:10px}.peak-card .m{display:inline-block;padding:5px 10px;border-radius:999px;background:var(--pinebg);color:var(--pine);font-size:var(--xs);font-weight:800;margin-bottom:10px}.peak-card p{font-size:var(--xs);color:var(--muted)}
-    .segments{display:grid;gap:12px}.seg{border:1px solid var(--border);border-radius:16px;background:var(--surface);box-shadow:var(--shadow);overflow:hidden}.seg-head{display:flex;gap:14px;align-items:center;padding:16px 18px;cursor:pointer}.seg-no{width:34px;height:34px;border-radius:999px;display:grid;place-items:center;font-size:var(--xs);font-weight:800;background:var(--pinebg);color:var(--pine)} .seg-title{font-weight:800}.seg-meta{font-size:var(--xs);color:var(--muted)} .seg-arrow{margin-left:auto;color:var(--muted)} .seg-body{display:none;padding:0 18px 18px;border-top:1px solid var(--border)} .seg.open .seg-body{display:block}.seg.open .seg-arrow{transform:rotate(180deg)} .seg-body p{margin-top:14px;color:var(--muted);font-size:var(--sm)} .bar{height:7px;background:var(--surface2);border-radius:999px;overflow:hidden;margin:12px 0}.fill{height:100%;background:var(--pine)} .tip,.warn{padding:11px 12px;border-radius:12px;font-size:var(--xs);margin-top:10px}.tip{background:var(--surface2);color:var(--muted)}.warn{background:var(--amberbg);color:#8a672a}
-    .map svg{width:100%;height:auto;max-height:430px}.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:16px;background:var(--surface);box-shadow:var(--shadow)} th,td{padding:12px 14px;border-bottom:1px solid var(--border);font-size:var(--xs);text-align:left} th{background:var(--surface2);color:var(--muted)} tr:last-child td{border-bottom:none}
-    .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tipcard h4{font-size:var(--sm);margin-bottom:10px}.tipcard ul{padding-left:18px;margin:0}.tipcard li{margin:7px 0;color:var(--muted);font-size:var(--xs)} footer{padding:28px 0 40px;color:var(--muted);font-size:var(--xs)}
-    @media(max-width:960px){.grid6{grid-template-columns:repeat(3,1fr)}.peak-grid{grid-template-columns:1fr 1fr}.tips-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}} @media(max-width:640px){.grid6{grid-template-columns:repeat(2,1fr)}.peak-grid,.tips-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
-  
+  :root {
+    --pine: #5c7d63;
+    --pinebg: #dce8df;
+    --amber: #b68d4e;
+    --amberbg: #efe3ce;
+    --crag: #6f6779;
+    --cragbg: #e3dfeb;
+  }
 
+  [data-theme="dark"] {
+    --pine: #88b394;
+    --pinebg: #233128;
+    --amber: #d7b06d;
+    --amberbg: #403320;
+    --crag: #ada0c0;
+    --cragbg: #302a3a;
+  }
+
+  /* Header & Navigation */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-3) var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  
+  .logo {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--teal, var(--primary)), var(--primary));
+    display: grid;
+    place-items: center;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .brand h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+    line-height: 1;
+  }
+  
+  .brand p {
+    font-size: var(--text-xs);
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  
+  .theme-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface2);
+    color: var(--muted);
+    cursor: pointer;
+    border: none;
+    transition: background-color var(--transition), color var(--transition);
+  }
+  
+  .theme-btn:hover {
+    background: var(--border);
+    color: var(--text);
+  }
+
+  /* Selector & Course Buttons */
+  .selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding: var(--space-5) 0 var(--space-3);
+  }
+  
+  .course-btn {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text);
+    transition: all var(--transition);
+  }
+  
+  .course-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  
+  .course-btn.active.green { background: var(--greenbg); border-color: var(--green); color: #273e16; }
+  .course-btn.active.blue { background: var(--bluebg); border-color: var(--blue); color: #1e3a5f; }
+  .course-btn.active.red { background: var(--redbg); border-color: var(--red); color: #6a2a18; }
+
+  [data-theme="dark"] .course-btn.active.green { background: var(--greenbg); border-color: var(--green); color: var(--green); }
+  [data-theme="dark"] .course-btn.active.blue { background: var(--bluebg); border-color: var(--blue); color: var(--blue); }
+  [data-theme="dark"] .course-btn.active.red { background: var(--redbg); border-color: var(--red); color: var(--red); }
+
+  /* Panels & Course Info */
+  .panel {
+    display: none;
+    padding: var(--space-4) 0 var(--space-10);
+  }
+  
+  .panel.active {
+    display: block;
+  }
+  
+  .panel-top {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-5);
+  }
+  
+  .level {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 800;
+  }
+  
+  .green .level { background: var(--greenbg); color: #273e16; border: 1px solid var(--green); }
+  .blue .level { background: var(--bluebg); color: #1e3a5f; border: 1px solid var(--blue); }
+  .red .level { background: var(--redbg); color: #6a2a18; border: 1px solid var(--red); }
+
+  [data-theme="dark"] .green .level { background: var(--greenbg); color: var(--green); }
+  [data-theme="dark"] .blue .level { background: var(--bluebg); color: var(--blue); }
+  [data-theme="dark"] .red .level { background: var(--redbg); color: var(--red); }
+  
+  .panel-name {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 800;
+  }
+  
+  .panel-sub {
+    font-size: var(--text-sm);
+    color: var(--muted);
+  }
+
+  /* Tabs Customizations (Keep Pill Style matching original design) */
+  .tabs {
+    display: flex;
+    gap: var(--space-2);
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+    margin: var(--space-4) 0 var(--space-6);
+    border-bottom: none;
+  }
+  
+  .tab {
+    border: none;
+    background: var(--surface2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    white-space: nowrap;
+    color: var(--muted);
+    font-weight: 700;
+    transition: all var(--transition);
+  }
+  
+  .tab:hover {
+    background: var(--border);
+    color: var(--text);
+  }
+  
+  .green .tab.active { background: var(--greenbg); color: #273e16; border: 1px solid var(--green); }
+  .blue .tab.active { background: var(--bluebg); color: #1e3a5f; border: 1px solid var(--blue); }
+  .red .tab.active { background: var(--redbg); color: #6a2a18; border: 1px solid var(--red); }
+
+  [data-theme="dark"] .green .tab.active { background: var(--greenbg); color: var(--green); }
+  [data-theme="dark"] .blue .tab.active { background: var(--bluebg); color: var(--blue); }
+  [data-theme="dark"] .red .tab.active { background: var(--redbg); color: var(--red); }
+
+  /* Grid & KPI Cards Layout */
+  .grid6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .kpi .num {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+  }
+  
+  .green .kpi .num { color: var(--green); }
+  .blue .kpi .num { color: var(--blue); }
+  .red .kpi .num { color: var(--red); }
+  
+  .kpi .txt {
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+
+  /* Section Titles */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin: var(--space-4) 0 var(--space-4);
+  }
+  
+  .section-title h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+  }
+  
+  .line {
+    height: 1px;
+    background: var(--border);
+    flex: 1;
+  }
+
+  /* Course Flow */
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .chip {
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
+    background: var(--surface2);
+    font-size: var(--text-xs);
+    font-weight: 700;
+  }
+  
+  .arr {
+    align-self: center;
+    color: var(--faint);
+  }
+  
+  .elev svg {
+    width: 100%;
+    height: 220px;
+  }
+  
+  .desc {
+    margin-top: var(--space-4);
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+
+  /* Segment Accordions */
+  .segments {
+    display: grid;
+    gap: var(--space-3);
+  }
+  
+  .seg {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: all var(--transition);
+  }
+  
+  .seg-head {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    padding: var(--space-4) var(--space-5);
+    cursor: pointer;
+  }
+  
+  .seg-no {
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-full);
+    display: grid;
+    place-items: center;
+    font-size: var(--text-xs);
+    font-weight: 800;
+  }
+  
+  .green .seg-no { background: var(--greenbg); color: var(--green); }
+  .blue .seg-no { background: var(--bluebg); color: var(--blue); }
+  .red .seg-no { background: var(--redbg); color: var(--red); }
+  
+  .seg-title {
+    font-weight: 800;
+    font-size: var(--text-base);
+  }
+  
+  .seg-meta {
+    font-size: var(--text-xs);
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  
+  .seg-arrow {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.85rem;
+    transition: transform var(--transition);
+  }
+  
+  .seg-body {
+    display: none;
+    padding: 0 var(--space-5) var(--space-5);
+    border-top: 1px solid var(--border);
+  }
+  
+  .seg.open .seg-body {
+    display: block;
+  }
+  
+  .seg.open .seg-arrow {
+    transform: rotate(180deg);
+  }
+  
+  .seg-body p {
+    margin-top: var(--space-4);
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+  
+  .bar {
+    height: 7px;
+    background: var(--surface2);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin: var(--space-3) 0;
+  }
+  
+  .fill {
+    height: 100%;
+  }
+  
+  .green .fill { background: var(--green); }
+  .blue .fill { background: var(--blue); }
+  .red .fill { background: var(--red); }
+  
+  .tip, .warn {
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: var(--text-xs);
+    margin-top: var(--space-3);
+    line-height: 1.5;
+  }
+  
+  .tip {
+    background: var(--surface2);
+    color: var(--muted);
+  }
+  
+  .warn {
+    background: var(--redbg);
+    color: var(--red);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  th, td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border);
+    font-size: var(--text-xs);
+    text-align: left;
+  }
+  
+  th {
+    background: var(--surface2);
+    color: var(--muted);
+    font-weight: 800;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .tipcard h4 {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-2);
+  }
+  
+  .tipcard ul {
+    padding-left: var(--space-4);
+    margin: 0;
+  }
+  
+  .tipcard li {
+    margin: var(--space-2) 0;
+    color: var(--muted);
+    font-size: var(--text-xs);
+  }
+  
+  @media (max-width: 960px) {
+    .grid6 { grid-template-columns: repeat(3, 1fr); }
+    .tips-grid { grid-template-columns: 1fr 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width: 640px) {
+    .grid6 { grid-template-columns: repeat(2, 1fr); }
+    .tips-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr; }
+    .selector { gap: var(--space-2); }
+    .course-btn { padding: var(--space-2) var(--space-4); font-size: var(--text-xs); }
+  }
 
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
@@ -455,6 +875,7 @@
 </style>
 </head>
 <body>
+<a href="#mainContent" class="skip-link">본문 바로가기</a>
 <header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M6 36c6-7 10-11 14-11 4 0 6 3 8 6 3-4 6-7 14-7" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M6 40h36" stroke="white" stroke-linecap="round" stroke-width="3"></path><circle cx="14" cy="14" fill="white" r="2"></circle><circle cx="24" cy="10" fill="white" r="2"></circle><circle cx="33" cy="16" fill="white" r="2"></circle></svg></div><div><h1>식장산</h1><p>꾀꼬리봉 · 국사봉 · 독수리봉 · 정상 4봉 환종주 플레이북</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
 <section class="hero hero-bleed">
   
@@ -466,32 +887,32 @@
   </picture>
   <div class="hero-overlay"></div>
 
-  <div class="hero-content">
-    
-<div class="wrap"><span class="hero-badge">Sikjangsan 4-Peak Loop</span><h2>식장산 4봉 환종주 플레이북</h2><p>꾀꼬리봉, 국사봉, 독수리봉, 식장산 정상을 잇는 약 10.4km 환종주 코스를 한 화면에 정리했습니다. 전체 개요, 구간별 경로, 4개 봉우리, 지도형 체크포인트, 준비 팁을 같은 형식으로 확인할 수 있습니다.</p><div class="stats"><div class="stat"><div class="v">10.4km
-  </div>
-  
-  <!-- Hero Credit Overlay -->
+    <div class="hero-content">
+    <div class="hero-badge">🏔 식장산 플레이북</div>
+    <h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">식장산 등산 플레이북</h1>
+    <p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
+      대한민국 최고의 명산 중 하나인 식장산 국립공원 가이드. 상세 등산 경로 및 코스 안내 정보를 실사 지도와 함께 제공합니다.
+    </p>
+      </div>
   <div class="photo-credit hero-credit">
     <span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" target="_blank" rel="noopener">정규송 Nui MALAMA</a></span>
     <span class="credit-divider">/</span>
     <span class="credit-source"><a href="https://pexels.com" target="_blank" rel="noopener">pexels</a></span>
   </div>
-
 </section>
 <main class="wrap"><section class="panel"><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="peaks">⛰ 4봉 소개</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">10.4km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">4.5~5.5h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">598m</div><div class="txt">최고점</div></div><div class="card kpi"><div class="num">4봉</div><div class="txt">꾀꼬리·국사·독수리·정상</div></div><div class="card kpi"><div class="num">루프형</div><div class="txt">원점 회귀</div></div><div class="card kpi"><div class="num">조망 다양</div><div class="txt">능선·전망 포인트</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">출발지</span><span class="arr">→</span><span class="chip">꾀꼬리봉 479m</span><span class="arr">→</span><span class="chip">국사봉 511m</span><span class="arr">→</span><span class="chip">독수리봉 587m</span><span class="arr">→</span><span class="chip">식장산 598m</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#5c7d63" stop-opacity=".34"></stop><stop offset="100%" stop-color="#5c7d63" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 192 C118 180, 184 156, 250 138 S360 118, 426 130 S522 92, 590 74 S676 56, 740 46 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 192 C118 180, 184 156, 250 138 S360 118, 426 130 S522 92, 590 74 S676 56, 740 46" fill="none" stroke="#5c7d63" stroke-linecap="round" stroke-width="4"></path><circle cx="186" cy="156" fill="#5c7d63" r="6"></circle><circle cx="356" cy="118" fill="#5c7d63" r="6"></circle><circle cx="526" cy="92" fill="#5c7d63" r="6"></circle><circle cx="740" cy="46" fill="#5c7d63" r="6"></circle><text fill="#5c7d63" font-size="12" x="126" y="148">꾀꼬리봉 479m</text><text fill="#5c7d63" font-size="12" x="298" y="110">국사봉 511m</text><text fill="#5c7d63" font-size="12" x="462" y="84">독수리봉 587m</text><text fill="#5c7d63" font-size="12" x="626" y="38">식장산 598m</text></svg></div><p class="desc">이 코스는 식장산권의 대표 봉우리 4개를 한 번에 잇는 환종주형 루트로, 거리 대비 봉우리 변화가 뚜렷해 지루하지 않은 편입니다. 후반으로 갈수록 고도가 높아지지만 전체적으로는 당일 중거리 산행으로 운영하기 좋습니다.</p></div>
-<div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">출발지 → 꾀꼬리봉</div><div class="seg-meta">초반 워밍업 · 첫 봉우리 479m</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>초반은 리듬을 잡으며 첫 봉우리인 꾀꼬리봉으로 향하는 구간입니다. 몸이 덜 풀린 상태이므로 무리한 속도보다 호흡 정렬이 중요합니다.</p><div class="bar"><div class="fill" style="width:34%"></div></div><div class="tip">💡 처음부터 오버페이스를 피하면 뒤 구간이 훨씬 편해집니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">꾀꼬리봉 → 국사봉</div><div class="seg-meta">봉우리 연계 · 511m</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>첫 봉 이후 능선 흐름을 타며 국사봉으로 이어집니다. 등락이 반복되기 시작해 누적 피로를 느끼기 쉬운 구간입니다.</p><div class="bar"><div class="fill" style="width:48%"></div></div><div class="tip">💡 짧은 업다운에서도 보폭을 줄이면 체력 소모를 줄일 수 있습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">국사봉 → 독수리봉</div><div class="seg-meta">중후반 핵심 · 587m</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>독수리봉은 조망과 분위기 모두 살아나는 구간으로 체감상 핵심 능선입니다. 고도도 한 단계 높아져 숨이 차기 쉬울 수 있습니다.</p><div class="bar"><div class="fill" style="width:68%"></div></div><div class="warn">⚠ 이 구간부터 피로 누적이 시작되므로 수분과 간식 타이밍을 놓치지 않는 편이 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">4</div><div><div class="seg-title">독수리봉 → 식장산 정상 → 하산</div><div class="seg-meta">최고점 598m · 환종주 마무리</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>식장산 정상에서 가장 높은 지점을 밟은 뒤 원점 회귀로 마무리합니다. 정상 이후 하산 구간은 방심하면 미끄럼이나 무릎 피로가 크게 올 수 있습니다.</p><div class="bar"><div class="fill" style="width:58%"></div></div><div class="tip">💡 정상에서는 조망 확인 후 바람과 체온을 살피고 하산 집중력을 유지하세요.</div></div></div></div></div>
-<div class="tabpane" data-pane="peaks"><div class="section-title"><h3>4개 봉우리 소개</h3><div class="line"></div></div><div class="peak-grid"><div class="card peak-card"><span class="m">479m</span><h4>꾀꼬리봉</h4><p>4봉 환종주의 첫 봉우리로, 산행 리듬을 시작하는 워밍업 성격이 강합니다. 초반 분위기를 좌우하는 지점입니다.</p></div><div class="card peak-card"><span class="m">511m</span><h4>국사봉</h4><p>두 번째 봉우리로 능선 연결감을 느끼기 좋은 지점입니다. 꾀꼬리봉 이후 페이스를 점검하기 좋습니다.</p></div><div class="card peak-card"><span class="m">587m</span><h4>독수리봉</h4><p>후반 핵심 봉우리로 조망과 체감 고도가 모두 살아납니다. 산행 만족도가 높아지는 포인트입니다.</p></div><div class="card peak-card"><span class="m">598m</span><h4>식장산 정상</h4><p>환종주의 최고점이자 마무리 상징 지점입니다. 정상 확인 후 하산 집중력이 중요합니다.</p></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M86 320 C154 284, 222 246, 290 220 S390 170, 452 184 S544 128, 606 106 S686 78, 724 90" fill="none" stroke="#5c7d63" stroke-linecap="round" stroke-width="6"></path><path d="M724 90 C680 162, 584 234, 478 286 S272 338, 124 334" fill="none" stroke="#b68d4e" stroke-dasharray="10 10" stroke-linecap="round" stroke-width="5"></path><circle cx="86" cy="320" fill="#5c7d63" r="10"></circle><circle cx="218" cy="246" fill="#5c7d63" r="9"></circle><circle cx="388" cy="170" fill="#5c7d63" r="9"></circle><circle cx="544" cy="128" fill="#5c7d63" r="9"></circle><circle cx="724" cy="90" fill="#5c7d63" r="11"></circle><text font-size="12" x="96" y="314">출발지</text><text font-size="12" x="150" y="238">꾀꼬리봉</text><text font-size="12" x="330" y="162">국사봉</text><text font-size="12" x="478" y="120">독수리봉</text><text font-size="12" x="612" y="82">식장산 정상</text><text fill="var(--muted)" font-size="12" x="56" y="50">점선: 환종주 하산/복귀 흐름</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>역할</th><th>비고</th></tr></thead><tbody><tr><td>출발지</td><td>저지대</td><td>루프 시작</td><td>원점 회귀형 운영</td></tr><tr><td>꾀꼬리봉</td><td>479m</td><td>첫 봉</td><td>초반 리듬 형성</td></tr><tr><td>국사봉</td><td>511m</td><td>두 번째 봉</td><td>능선 연결</td></tr><tr><td>독수리봉</td><td>587m</td><td>후반 핵심</td><td>조망 포인트</td></tr><tr><td>식장산 정상</td><td>598m</td><td>최고점</td><td>4봉 완성</td></tr><tr><td>하산 복귀</td><td>하강</td><td>환종주 마무리</td><td>무릎 피로 주의</td></tr></tbody></table></div></div>
-<div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🎒 준비물</h4><ul><li>물 1L 이상</li><li>행동식</li><li>스틱 있으면 편함</li></ul></div><div class="card tipcard"><h4>🧭 운영 팁</h4><ul><li>초반 페이스 조절</li><li>독수리봉 전 간식 타이밍</li><li>정상 후 하산 집중</li></ul></div><div class="card tipcard"><h4>⚠️ 주의</h4><ul><li>봉우리 사이 업다운</li><li>후반 누적 피로</li><li>하산 시 무릎 부담</li></ul></div></div></div></section></main>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">10.4km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">4.5~5.5h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">598m</div><div class="txt">최고점</div></div><div class="card kpi"><div class="num">4봉</div><div class="txt">꾀꼬리·국사·독수리·정상</div></div><div class="card kpi"><div class="num">루프형</div><div class="txt">원점 회귀</div></div><div class="card kpi"><div class="num">조망 다양</div><div class="txt">능선·전망 포인트</div></div></div><div class="section-title"><h2>코스 흐름</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">출발지</span><span class="arr">→</span><span class="chip">꾀꼬리봉 479m</span><span class="arr">→</span><span class="chip">국사봉 511m</span><span class="arr">→</span><span class="chip">독수리봉 587m</span><span class="arr">→</span><span class="chip">식장산 598m</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h2>고도 프로파일</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#5c7d63" stop-opacity=".34"></stop><stop offset="100%" stop-color="#5c7d63" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 192 C118 180, 184 156, 250 138 S360 118, 426 130 S522 92, 590 74 S676 56, 740 46 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 192 C118 180, 184 156, 250 138 S360 118, 426 130 S522 92, 590 74 S676 56, 740 46" fill="none" stroke="#5c7d63" stroke-linecap="round" stroke-width="4"></path><circle cx="186" cy="156" fill="#5c7d63" r="6"></circle><circle cx="356" cy="118" fill="#5c7d63" r="6"></circle><circle cx="526" cy="92" fill="#5c7d63" r="6"></circle><circle cx="740" cy="46" fill="#5c7d63" r="6"></circle><text fill="#5c7d63" font-size="12" x="126" y="148">꾀꼬리봉 479m</text><text fill="#5c7d63" font-size="12" x="298" y="110">국사봉 511m</text><text fill="#5c7d63" font-size="12" x="462" y="84">독수리봉 587m</text><text fill="#5c7d63" font-size="12" x="626" y="38">식장산 598m</text></svg></div><p class="desc">이 코스는 식장산권의 대표 봉우리 4개를 한 번에 잇는 환종주형 루트로, 거리 대비 봉우리 변화가 뚜렷해 지루하지 않은 편입니다. 후반으로 갈수록 고도가 높아지지만 전체적으로는 당일 중거리 산행으로 운영하기 좋습니다.</p></div>
+<div class="tabpane" data-pane="route"><div class="section-title"><h2>구간별 경로 안내</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">출발지 → 꾀꼬리봉</div><div class="seg-meta">초반 워밍업 · 첫 봉우리 479m</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>초반은 리듬을 잡으며 첫 봉우리인 꾀꼬리봉으로 향하는 구간입니다. 몸이 덜 풀린 상태이므로 무리한 속도보다 호흡 정렬이 중요합니다.</p><div class="bar"><div class="fill" style="width:34%"></div></div><div class="tip">💡 처음부터 오버페이스를 피하면 뒤 구간이 훨씬 편해집니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">꾀꼬리봉 → 국사봉</div><div class="seg-meta">봉우리 연계 · 511m</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>첫 봉 이후 능선 흐름을 타며 국사봉으로 이어집니다. 등락이 반복되기 시작해 누적 피로를 느끼기 쉬운 구간입니다.</p><div class="bar"><div class="fill" style="width:48%"></div></div><div class="tip">💡 짧은 업다운에서도 보폭을 줄이면 체력 소모를 줄일 수 있습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">국사봉 → 독수리봉</div><div class="seg-meta">중후반 핵심 · 587m</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>독수리봉은 조망과 분위기 모두 살아나는 구간으로 체감상 핵심 능선입니다. 고도도 한 단계 높아져 숨이 차기 쉬울 수 있습니다.</p><div class="bar"><div class="fill" style="width:68%"></div></div><div class="warn">⚠ 이 구간부터 피로 누적이 시작되므로 수분과 간식 타이밍을 놓치지 않는 편이 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">4</div><div><div class="seg-title">독수리봉 → 식장산 정상 → 하산</div><div class="seg-meta">최고점 598m · 환종주 마무리</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>식장산 정상에서 가장 높은 지점을 밟은 뒤 원점 회귀로 마무리합니다. 정상 이후 하산 구간은 방심하면 미끄럼이나 무릎 피로가 크게 올 수 있습니다.</p><div class="bar"><div class="fill" style="width:58%"></div></div><div class="tip">💡 정상에서는 조망 확인 후 바람과 체온을 살피고 하산 집중력을 유지하세요.</div></div></div></div></div>
+<div class="tabpane" data-pane="peaks"><div class="section-title"><h2>4개 봉우리 소개</h2><div class="line"></div></div><div class="peak-grid"><div class="card peak-card"><span class="m">479m</span><h3>꾀꼬리봉</h3><p>4봉 환종주의 첫 봉우리로, 산행 리듬을 시작하는 워밍업 성격이 강합니다. 초반 분위기를 좌우하는 지점입니다.</p></div><div class="card peak-card"><span class="m">511m</span><h3>국사봉</h3><p>두 번째 봉우리로 능선 연결감을 느끼기 좋은 지점입니다. 꾀꼬리봉 이후 페이스를 점검하기 좋습니다.</p></div><div class="card peak-card"><span class="m">587m</span><h3>독수리봉</h3><p>후반 핵심 봉우리로 조망과 체감 고도가 모두 살아납니다. 산행 만족도가 높아지는 포인트입니다.</p></div><div class="card peak-card"><span class="m">598m</span><h3>식장산 정상</h3><p>환종주의 최고점이자 마무리 상징 지점입니다. 정상 확인 후 하산 집중력이 중요합니다.</p></div></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h2>코스 개념도</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M86 320 C154 284, 222 246, 290 220 S390 170, 452 184 S544 128, 606 106 S686 78, 724 90" fill="none" stroke="#5c7d63" stroke-linecap="round" stroke-width="6"></path><path d="M724 90 C680 162, 584 234, 478 286 S272 338, 124 334" fill="none" stroke="#b68d4e" stroke-dasharray="10 10" stroke-linecap="round" stroke-width="5"></path><circle cx="86" cy="320" fill="#5c7d63" r="10"></circle><circle cx="218" cy="246" fill="#5c7d63" r="9"></circle><circle cx="388" cy="170" fill="#5c7d63" r="9"></circle><circle cx="544" cy="128" fill="#5c7d63" r="9"></circle><circle cx="724" cy="90" fill="#5c7d63" r="11"></circle><text font-size="12" x="96" y="314">출발지</text><text font-size="12" x="150" y="238">꾀꼬리봉</text><text font-size="12" x="330" y="162">국사봉</text><text font-size="12" x="478" y="120">독수리봉</text><text font-size="12" x="612" y="82">식장산 정상</text><text fill="var(--muted)" font-size="12" x="56" y="50">점선: 환종주 하산/복귀 흐름</text></svg></div><div class="section-title"><h2>체크포인트 표</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>역할</th><th>비고</th></tr></thead><tbody><tr><td>출발지</td><td>저지대</td><td>루프 시작</td><td>원점 회귀형 운영</td></tr><tr><td>꾀꼬리봉</td><td>479m</td><td>첫 봉</td><td>초반 리듬 형성</td></tr><tr><td>국사봉</td><td>511m</td><td>두 번째 봉</td><td>능선 연결</td></tr><tr><td>독수리봉</td><td>587m</td><td>후반 핵심</td><td>조망 포인트</td></tr><tr><td>식장산 정상</td><td>598m</td><td>최고점</td><td>4봉 완성</td></tr><tr><td>하산 복귀</td><td>하강</td><td>환종주 마무리</td><td>무릎 피로 주의</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h3>🎒 준비물</h3><ul><li>물 1L 이상</li><li>행동식</li><li>스틱 있으면 편함</li></ul></div><div class="card tipcard"><h3>🧭 운영 팁</h3><ul><li>초반 페이스 조절</li><li>독수리봉 전 간식 타이밍</li><li>정상 후 하산 집중</li></ul></div><div class="card tipcard"><h3>⚠️ 주의</h3><ul><li>봉우리 사이 업다운</li><li>후반 누적 피로</li><li>하산 시 무릎 부담</li></ul></div></div></div></section></main>
 
 
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+  <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
     <span class="section-title-icon">📸</span> 식장산의 사계 &amp; 명소
-  </h3>
+  </h2>
   <div class="gallery-grid">
     
     <!-- Gallery Image Button 1 -->
@@ -674,6 +1095,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+</script>
+
+<script>
+// Unified course switcher override for rebranding compatibility
+(function() {
+  const switcher = function(lv, btn) {
+    document.querySelectorAll('.course-btn').forEach(b => {
+      b.classList.remove('active');
+    });
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      const targetBtn = document.querySelector('.course-btn.' + lv) || document.querySelector('.course-btn[onclick*="' + lv + '"]');
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+    document.querySelectorAll('.course-panel, .panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    const panel = document.getElementById('panel-' + lv) || 
+                  document.getElementById('course-' + lv) || 
+                  document.getElementById(lv) ||
+                  document.querySelector('.course-panel.' + lv) ||
+                  document.querySelector('.panel.' + lv);
+    if (panel) {
+      panel.classList.add('active');
+      setTimeout(() => {
+        panel.querySelectorAll('.diff-bar-fill').forEach(b => {
+          const w = b.style.width;
+          if (w && w !== '0%') {
+            b.style.width = '0%';
+            requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = w; }));
+          }
+        });
+      }, 50);
+    }
+  };
+  window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
+})();
 </script>
 </body>
 </html>
