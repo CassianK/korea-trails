@@ -5,9 +5,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>내장산 등산 플레이북</title>
-<meta name="description" content="대한민국 최고의 명산 중 하나인 내장산 국립공원 가이드. 초급 자연관찰로 코스, 중급 서래봉 대표 코스, 고급 능선일주 코스 코스의 상세 경로, 실사 지도 및 팁을 제공합니다.">
+<meta content="대한민국 최고의 명산 중 하나인 내장산 국립공원 가이드. 초급 자연관찰로 코스, 중급 서래봉 대표 코스, 고급 능선일주 코스 코스의 상세 경로, 실사 지도 및 팁을 제공합니다." name="description"/>
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="assets/css/design-system.css">
+<link href="assets/css/design-system.css" rel="stylesheet"/>
 <style>
   :root {
     --green: #3e7d3f;
@@ -875,9 +875,9 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 </style>
-</head>
+<meta content="assets/img/yangmingshan/og.png" property="og:image"/><meta content="assets/img/yangmingshan/og.png" name="twitter:image"/></head>
 <body>
-<a href="#mainContent" class="skip-link">본문 바로가기</a>
+<a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="header">
 <div class="wrap header-inner">
 <div class="brand">
@@ -897,43 +897,37 @@
 </div>
 </header>
 <section class="hero hero-bleed">
-  
-  <!-- Background Picture -->
-  <picture class="hero-picture">
-    <source type="image/avif" srcset="assets/img/naejangsan/hero-640.avif 640w, assets/img/naejangsan/hero-1024.avif 1024w, assets/img/naejangsan/hero-1600.avif 1600w, assets/img/naejangsan/hero-2400.avif 2400w" sizes="100vw">
-    <source type="image/webp" srcset="assets/img/naejangsan/hero-640.webp 640w, assets/img/naejangsan/hero-1024.webp 1024w, assets/img/naejangsan/hero-1600.webp 1600w, assets/img/naejangsan/hero-2400.webp 2400w" sizes="100vw">
-    <img src="assets/img/naejangsan/hero-1600.jpg" srcset="assets/img/naejangsan/hero-640.jpg 640w, assets/img/naejangsan/hero-1024.jpg 1024w, assets/img/naejangsan/hero-1600.jpg 1600w, assets/img/naejangsan/hero-2400.jpg 2400w" sizes="100vw" alt="내장산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Naejangsan mountain peaks and ridges" class="hero-img">
-  </picture>
-  <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-    <div class="hero-badge">🏔 내장산 플레이북</div>
-    <h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">내장산 등산 플레이북</h1>
-    <p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/naejangsan/hero-640.avif 640w, assets/img/naejangsan/hero-1024.avif 1024w, assets/img/naejangsan/hero-1600.avif 1600w, assets/img/naejangsan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/naejangsan/hero-640.webp 640w, assets/img/naejangsan/hero-1024.webp 1024w, assets/img/naejangsan/hero-1600.webp 1600w, assets/img/naejangsan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="내장산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Naejangsan mountain peaks and ridges" class="hero-img" sizes="100vw" src="assets/img/naejangsan/hero-1600.jpg" srcset="assets/img/naejangsan/hero-640.jpg 640w, assets/img/naejangsan/hero-1024.jpg 1024w, assets/img/naejangsan/hero-1600.jpg 1600w, assets/img/naejangsan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 내장산 플레이북</div>
+<h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">내장산 등산 플레이북</h1>
+<p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
       대한민국 최고의 명산 중 하나인 내장산 국립공원 가이드. 초급 자연관찰로 코스, 중급 서래봉 대표 코스, 고급 능선일주 코스 코스의 상세 경로, 실사 지도 및 팁을 제공합니다.
     </p>
-    
-      <!-- Course Selector Buttons -->
-      <div class="selector" style="justify-content: center; margin-top: var(--space-6); margin-bottom: var(--space-4);">
-        <button class="course-btn active green" data-course="beginner">🌿 초급: 자연관찰로 코스</button>
-        <button class="course-btn blue" data-course="intermediate">🦶 중급: 서래봉 대표 코스</button>
-        <button class="course-btn red" data-course="advanced">🏔 고급: 능선일주 코스</button>
-      </div>
-  </div>
-  <div class="photo-credit hero-credit">
-    <span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" target="_blank" rel="noopener">정규송 Nui MALAMA</a></span>
-    <span class="credit-divider">/</span>
-    <span class="credit-source"><a href="https://pexels.com" target="_blank" rel="noopener">pexels</a></span>
-  </div>
+<!-- Course Selector Buttons -->
+<div class="selector" style="justify-content: center; margin-top: var(--space-6); margin-bottom: var(--space-4);">
+<button class="course-btn active green" data-course="beginner"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 초급: 자연관찰로 코스</button>
+<button class="course-btn blue" data-course="intermediate"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 중급: 서래봉 대표 코스</button>
+<button class="course-btn red" data-course="advanced"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 고급: 능선일주 코스</button>
+</div>
+</div>
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" rel="noopener" target="_blank">정규송 Nui MALAMA</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
 </section>
 <main class="wrap">
 <main class="wrap" id="mainContent">
-<section class="panel green active" id="beginner">
-<div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">자연관찰로 코스</div><div class="panel-sub">일주문 → 내장사 → 원적암 → 사랑의다리 → 벽련암 → 일주문 · 3.9km · 1시간 20분</div></div></div>
-<div class="tabs">
-<button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button>
-</div>
-<div class="tabpane active" data-pane="overview">
+<section class="panel green active" id="beginner"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 초급</span><div><div class="panel-name">자연관찰로 코스</div><div class="panel-sub">일주문 → 내장사 → 원적암 → 사랑의다리 → 벽련암 → 일주문 · 3.9km · 1시간 20분</div></div></div><div class="tabs">
+<button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</div><div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview">
 <div class="grid6">
 <div class="card kpi"><div class="num">3.9km</div><div class="txt">총 거리</div></div>
 <div class="card kpi"><div class="num">1h 20m</div><div class="txt">예상 시간</div></div>
@@ -947,141 +941,115 @@
 <div class="section-title"><h2>고도 프로파일</h2><div class="line"></div></div>
 <div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#3e7d3f" stop-opacity=".35"></stop><stop offset="100%" stop-color="#3e7d3f" stop-opacity=".06"></stop></lineargradient></defs><path d="M20 180 C120 168, 180 155, 260 148 S430 142, 520 134 S650 144, 740 154 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 180 C120 168, 180 155, 260 148 S430 142, 520 134 S650 144, 740 154" fill="none" stroke="#3e7d3f" stroke-linecap="round" stroke-width="4"></path><circle cx="380" cy="144" fill="#3e7d3f" r="6"></circle><text fill="#3e7d3f" font-size="12" x="395" y="138">내장사</text><text fill="#7a7367" font-size="11" x="20" y="205">일주문</text><text fill="#7a7367" font-size="11" x="690" y="205">원점</text></svg></div>
 <p class="desc">내장산 국립공원에서 가장 부담이 적은 코스로, 국립공원 최초 자연관찰로 중 하나로 알려진 완만한 탐방길입니다 . 단풍터널과 내장사, 벽련암을 함께 둘러보기 좋아 가족·노약자·가벼운 산책 수요에 잘 맞습니다 .</p>
-</div>
-<div class="tabpane" data-pane="route">
+</div><div class="tabpane" data-pane="route">
 <div class="section-title"><h2>구간별 경로 안내</h2><div class="line"></div></div>
 <div class="segments">
-<div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">일주문 출발</div><div class="seg-meta">0km · 집단시설지구</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>주차장과 매표소, 화장실을 지나 일주문에서 본격적으로 시작합니다. 초반부터 단풍나무와 넓은 탐방로가 이어져 워밍업 구간으로 적당합니다.</p><div class="bar"><div class="fill" style="width:15%"></div></div><div class="tip">💡 가을 성수기에는 오전 9시 이전 도착이 혼잡 회피에 유리합니다.</div></div></div>
-<div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">일주문 → 단풍터널</div><div class="seg-meta">0.8km · 15분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>내장산의 상징인 단풍길 구간입니다. 경사가 거의 없고 폭이 넓어 유모차·가벼운 보행도 가능한 수준입니다.</p><div class="bar"><div class="fill" style="width:12%"></div></div><div class="tip">💡 사진 촬영은 오전 역광 전 시간대가 좋습니다.</div></div></div>
-<div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">단풍터널 → 내장사</div><div class="seg-meta">0.7km · 15분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>계곡과 숲길을 따라 사찰 구역으로 진입합니다. 내장사 주변은 가을철 탐방객이 특히 몰리는 포인트입니다.</p><div class="bar"><div class="fill" style="width:18%"></div></div><div class="tip">💡 내장사 경내에서는 조용한 관람 예절을 지켜야 합니다.</div></div></div>
-<div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">내장사 → 원적암 → 사랑의다리</div><div class="seg-meta">1.3km · 25분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>자연관찰로의 핵심 완주 구간입니다. 완만한 숲길과 계류, 다리 구간이 이어져 초보자도 안정적으로 걸을 수 있습니다.</p><div class="bar"><div class="fill" style="width:22%"></div></div><div class="tip">💡 원적암 주변은 그늘이 많아 여름에도 비교적 시원합니다.</div></div></div>
-<div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">벽련암 경유 일주문 복귀</div><div class="seg-meta">1.1km · 25분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>벽련암을 지나 원점 회귀합니다. 마무리 구간도 완만하여 무릎 부담이 적은 편입니다.</p><div class="bar"><div class="fill" style="width:15%"></div></div><div class="tip">💡 하산 후 내장산 문화광장 카페·식당 이용 동선이 좋습니다.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">일주문 출발</div><div class="seg-meta">0km · 집단시설지구</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>주차장과 매표소, 화장실을 지나 일주문에서 본격적으로 시작합니다. 초반부터 단풍나무와 넓은 탐방로가 이어져 워밍업 구간으로 적당합니다.</p><div class="bar"><div class="fill" style="width:15%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 가을 성수기에는 오전 9시 이전 도착이 혼잡 회피에 유리합니다.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">일주문 → 단풍터널</div><div class="seg-meta">0.8km · 15분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>내장산의 상징인 단풍길 구간입니다. 경사가 거의 없고 폭이 넓어 유모차·가벼운 보행도 가능한 수준입니다.</p><div class="bar"><div class="fill" style="width:12%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 사진 촬영은 오전 역광 전 시간대가 좋습니다.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">단풍터널 → 내장사</div><div class="seg-meta">0.7km · 15분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>계곡과 숲길을 따라 사찰 구역으로 진입합니다. 내장사 주변은 가을철 탐방객이 특히 몰리는 포인트입니다.</p><div class="bar"><div class="fill" style="width:18%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 내장사 경내에서는 조용한 관람 예절을 지켜야 합니다.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">내장사 → 원적암 → 사랑의다리</div><div class="seg-meta">1.3km · 25분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>자연관찰로의 핵심 완주 구간입니다. 완만한 숲길과 계류, 다리 구간이 이어져 초보자도 안정적으로 걸을 수 있습니다.</p><div class="bar"><div class="fill" style="width:22%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 원적암 주변은 그늘이 많아 여름에도 비교적 시원합니다.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">벽련암 경유 일주문 복귀</div><div class="seg-meta">1.1km · 25분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>벽련암을 지나 원점 회귀합니다. 마무리 구간도 완만하여 무릎 부담이 적은 편입니다.</p><div class="bar"><div class="fill" style="width:15%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 하산 후 내장산 문화광장 카페·식당 이용 동선이 좋습니다.</div></div></div>
 </div>
+</div><div class="tabpane" data-pane="tips">
+<div class="tips-grid">
+<div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg> 준비물</h2><ul><li>가벼운 운동화 또는 트레킹화</li><li>물 500mL~1L</li><li>가을엔 얇은 겉옷</li></ul></div>
+<div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg> 추천 포인트</h2><ul><li>단풍터널</li><li>내장사 앞 연못</li><li>벽련암 숲길</li></ul></div>
+<div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg> 교통</h2><ul><li>정읍역 후 시내버스 171번 등 이용 가능</li><li>성수기 셔틀 운행 여부 확인</li><li>내장산 관광단지 하차 후 도보 이동</li></ul></div>
 </div>
-<div class="tabpane" data-pane="map">
+</div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map">
 <div class="section-title"><h2>코스 개념도</h2><div class="line"></div></div>
 <div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M90 330 C170 300, 210 245, 285 225 S430 225, 520 245 S630 290, 690 320" fill="none" stroke="#3e7d3f" stroke-linecap="round" stroke-width="6"></path><circle cx="90" cy="330" fill="#3e7d3f" r="11"></circle><circle cx="250" cy="236" fill="#3e7d3f" r="9"></circle><circle cx="405" cy="228" fill="#3e7d3f" r="9"></circle><circle cx="530" cy="252" fill="#3e7d3f" r="9"></circle><circle cx="690" cy="320" fill="#3e7d3f" r="11"></circle><text fill="var(--text)" font-size="12" x="103" y="325">일주문</text><text fill="var(--text)" font-size="12" x="262" y="230">단풍터널</text><text fill="var(--text)" font-size="12" x="417" y="222">내장사</text><text fill="var(--text)" font-size="12" x="542" y="246">원적암</text><text fill="var(--text)" font-size="12" x="622" y="344">벽련암·복귀</text><text fill="var(--muted)" font-size="12" x="30" y="48">평탄한 산책형 순환 코스</text></svg></div>
 <div class="section-title"><h2>체크포인트 표</h2><div class="line"></div></div>
 <div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>일주문</td><td>약 180m</td><td>0km</td><td>주차장·관광지구 인접</td></tr><tr><td>단풍터널</td><td>약 190m</td><td>0.8km</td><td>대표 포토존</td></tr><tr><td>내장사</td><td>약 220m</td><td>1.5km</td><td>사찰·휴식 포인트</td></tr><tr><td>원적암</td><td>약 250m</td><td>2.3km</td><td>조용한 숲길 구간</td></tr><tr><td>사랑의다리</td><td>약 240m</td><td>2.9km</td><td>계곡·다리 포인트</td></tr><tr><td>벽련암</td><td>약 210m</td><td>3.3km</td><td>복귀 직전 명소</td></tr></tbody></table></div>
-</div>
-<div class="tabpane" data-pane="tips">
-<div class="tips-grid">
-<div class="card tipcard"><h3>👟 준비물</h3><ul><li>가벼운 운동화 또는 트레킹화</li><li>물 500mL~1L</li><li>가을엔 얇은 겉옷</li></ul></div>
-<div class="card tipcard"><h3>📸 추천 포인트</h3><ul><li>단풍터널</li><li>내장사 앞 연못</li><li>벽련암 숲길</li></ul></div>
-<div class="card tipcard"><h3>🚌 교통</h3><ul><li>정읍역 후 시내버스 171번 등 이용 가능</li><li>성수기 셔틀 운행 여부 확인</li><li>내장산 관광단지 하차 후 도보 이동</li></ul></div>
-</div>
-</div>
-</section>
-<section class="panel blue" id="intermediate">
-<div class="panel-top"><span class="level">🦶 중급</span><div><div class="panel-name">서래봉 대표 코스</div><div class="panel-sub">일주문 → 벽련암 → 서래봉(624m) → 불출봉(622m) → 원적암 → 일주문 · 5.9km · 4시간</div></div></div>
-<div class="tabs">
-<button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button>
-</div>
-<div class="tabpane active" data-pane="overview">
+</div></div></div></section>
+<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 중급</span><div><div class="panel-name">서래봉 대표 코스</div><div class="panel-sub">일주문 → 벽련암 → 서래봉(624m) → 불출봉(622m) → 원적암 → 일주문 · 5.9km · 4시간</div></div></div><div class="tabs">
+<button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</div><div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview">
 <div class="grid6">
 <div class="card kpi"><div class="num">5.9km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">4시간</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">624m</div><div class="txt">서래봉</div></div><div class="card kpi"><div class="num">622m</div><div class="txt">불출봉</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">암릉</div><div class="txt">핵심 매력</div></div>
 </div>
 <div class="section-title"><h2>코스 흐름</h2><div class="line"></div></div>
-<div class="card"><div class="flow"><span class="chip">🚩 일주문</span><span class="arr">→</span><span class="chip">벽련암</span><span class="arr">→</span><span class="chip">⛰ 서래봉 624m</span><span class="arr">→</span><span class="chip">불출봉 622m</span><span class="arr">→</span><span class="chip">원적암</span><span class="arr">→</span><span class="chip">🚩 일주문</span></div></div>
+<div class="card"><div class="flow"><span class="chip">🚩 일주문</span><span class="arr">→</span><span class="chip">벽련암</span><span class="arr">→</span><span class="chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 서래봉 624m</span><span class="arr">→</span><span class="chip">불출봉 622m</span><span class="arr">→</span><span class="chip">원적암</span><span class="arr">→</span><span class="chip">🚩 일주문</span></div></div>
 <div class="section-title"><h2>고도 프로파일</h2><div class="line"></div></div>
 <div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#2d6faa" stop-opacity=".34"></stop><stop offset="100%" stop-color="#2d6faa" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 186 C120 170, 180 140, 250 92 S350 46, 410 76 S500 120, 560 98 S660 130, 740 178 L740 210 L20 210 Z" fill="url(#g2)"></path><path d="M20 186 C120 170, 180 140, 250 92 S350 46, 410 76 S500 120, 560 98 S660 130, 740 178" fill="none" stroke="#2d6faa" stroke-linecap="round" stroke-width="4"></path><circle cx="330" cy="54" fill="#2d6faa" r="6"></circle><circle cx="560" cy="98" fill="#2d6faa" r="6"></circle><text fill="#2d6faa" font-size="12" x="344" y="48">서래봉</text><text fill="#2d6faa" font-size="12" x="574" y="92">불출봉</text></svg></div>
 <p class="desc">서래봉 코스는 내장산의 대표 탐방로로, 일주문에서 벽련암·서래봉·불출봉·원적암을 잇는 5.9km, 약 4시간 코스로 널리 안내됩니다 . 기암과 암릉 조망이 뛰어나면서도 지나치게 길지 않아 중급자용 대표 루트로 적합합니다 .</p>
-</div>
-<div class="tabpane" data-pane="route"><div class="section-title"><h2>구간별 경로 안내</h2><div class="line"></div></div><div class="segments">
-<div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">일주문 출발</div><div class="seg-meta">0km · 내장사 지구</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>내장사 방면으로 진입해 벽련암까지 몸을 푸는 구간입니다. 초반은 완만하지만 본격 오르막 전 체력 안배가 중요합니다.</p><div class="bar"><div class="fill" style="width:18%"></div></div><div class="tip">💡 탐방안내소에서 당일 통제 여부를 먼저 확인하세요.</div></div></div>
-<div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">벽련암 → 서래봉</div><div class="seg-meta">1.8km · 1시간 20분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>서래봉 구간은 계단과 암릉 오름이 본격적으로 이어집니다. 이름처럼 농기구 써레를 닮은 바위 능선이 특징입니다.</p><div class="bar"><div class="fill" style="width:68%"></div></div><div class="warn">⚠ 비 온 뒤에는 바위와 낙엽이 미끄러워 주의가 필요합니다.</div></div></div>
-<div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">서래봉 → 불출봉</div><div class="seg-meta">1.1km · 40분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>능선 조망이 가장 화려한 핵심 구간입니다. 바위 전망대에서 내장산 봉우리와 단풍 능선을 한눈에 볼 수 있습니다.</p><div class="bar"><div class="fill" style="width:74%"></div></div><div class="tip">💡 서래봉 정상 사진 촬영 후 불출봉 구간에서 긴 휴식을 잡으면 좋습니다.</div></div></div>
-<div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">불출봉 → 원적암</div><div class="seg-meta">1.5km · 55분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>하산 구간은 경사가 이어지지만 숲 그늘이 많아 체감 부담은 조금 줄어듭니다. 무릎 부담이 있어 스틱 사용이 유리합니다.</p><div class="bar"><div class="fill" style="width:55%"></div></div><div class="tip">💡 하산 후 원적암에서 물·간식을 짧게 보충하기 좋습니다.</div></div></div>
-<div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">원적암 → 일주문 복귀</div><div class="seg-meta">1.5km · 1시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>완만한 산책로로 마무리됩니다. 성수기에는 하산 후 일주문까지 인파가 많을 수 있습니다.</p><div class="bar"><div class="fill" style="width:25%"></div></div><div class="tip">💡 집단시설지구 식당가 접근성이 좋아 산행 후 식사 연결이 편합니다.</div></div></div>
-</div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h2>코스 개념도</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M92 336 C170 298, 216 248, 286 170 S380 80, 430 112 S505 188, 562 142 S660 210, 696 324" fill="none" stroke="#2d6faa" stroke-linecap="round" stroke-width="6"></path><circle cx="92" cy="336" fill="#2d6faa" r="11"></circle><circle cx="260" cy="190" fill="#2d6faa" r="10"></circle><circle cx="430" cy="112" fill="#2d6faa" r="10"></circle><circle cx="560" cy="142" fill="#2d6faa" r="10"></circle><circle cx="696" cy="324" fill="#2d6faa" r="11"></circle><text font-size="12" x="108" y="332">일주문</text><text font-size="12" x="220" y="204">벽련암</text><text font-size="12" x="444" y="106">서래봉 624m</text><text font-size="12" x="574" y="136">불출봉 622m</text><text font-size="12" x="616" y="338">원적암·복귀</text></svg></div><div class="section-title"><h2>체크포인트 표</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>일주문</td><td>약 180m</td><td>0km</td><td>출발점</td></tr><tr><td>벽련암</td><td>약 300m</td><td>1.0km</td><td>본격 오름 시작</td></tr><tr><td>서래봉</td><td>624m</td><td>2.8km</td><td>대표 암릉 전망</td></tr><tr><td>불출봉</td><td>622m</td><td>3.9km</td><td>능선 핵심 포인트</td></tr><tr><td>원적암</td><td>약 260m</td><td>5.0km</td><td>하산 휴식 지점</td></tr><tr><td>일주문</td><td>약 180m</td><td>5.9km</td><td>원점 회귀</td></tr></tbody></table></div></div>
-<div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h3>🥾 장비</h3><ul><li>접지 좋은 트레킹화</li><li>스틱 1개 이상 권장</li><li>물 1~1.5L</li></ul></div><div class="card tipcard"><h3>⚠️ 주의</h3><ul><li>암릉·계단 구간 많음</li><li>우천 후 낙엽 미끄럼</li><li>가을 인파 혼잡 심함</li></ul></div><div class="card tipcard"><h3>🚗 교통·주차</h3><ul><li>정읍IC 또는 내장산IC 접근</li><li>1~3주차장 유료, 성수기 혼잡</li><li>정읍역에서 시내버스 접근 가능</li></ul></div></div></div>
-</section>
-<section class="panel red" id="advanced">
-<div class="panel-top"><span class="level">🏔 고급</span><div><div class="panel-name">능선일주 코스</div><div class="panel-sub">일주문 → 서래봉 → 불출봉 → 망해봉 → 연지봉 → 까치봉 → 신선봉 → 연자봉 → 장군봉 → 동구리 · 11.7km · 7시간</div></div></div>
-<div class="tabs">
-<button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button>
-</div>
-<div class="tabpane active" data-pane="overview">
+</div><div class="tabpane" data-pane="route"><div class="section-title"><h2>구간별 경로 안내</h2><div class="line"></div></div><div class="segments">
+<div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">일주문 출발</div><div class="seg-meta">0km · 내장사 지구</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>내장사 방면으로 진입해 벽련암까지 몸을 푸는 구간입니다. 초반은 완만하지만 본격 오르막 전 체력 안배가 중요합니다.</p><div class="bar"><div class="fill" style="width:18%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 탐방안내소에서 당일 통제 여부를 먼저 확인하세요.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">벽련암 → 서래봉</div><div class="seg-meta">1.8km · 1시간 20분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>서래봉 구간은 계단과 암릉 오름이 본격적으로 이어집니다. 이름처럼 농기구 써레를 닮은 바위 능선이 특징입니다.</p><div class="bar"><div class="fill" style="width:68%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 비 온 뒤에는 바위와 낙엽이 미끄러워 주의가 필요합니다.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">서래봉 → 불출봉</div><div class="seg-meta">1.1km · 40분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>능선 조망이 가장 화려한 핵심 구간입니다. 바위 전망대에서 내장산 봉우리와 단풍 능선을 한눈에 볼 수 있습니다.</p><div class="bar"><div class="fill" style="width:74%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 서래봉 정상 사진 촬영 후 불출봉 구간에서 긴 휴식을 잡으면 좋습니다.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">불출봉 → 원적암</div><div class="seg-meta">1.5km · 55분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>하산 구간은 경사가 이어지지만 숲 그늘이 많아 체감 부담은 조금 줄어듭니다. 무릎 부담이 있어 스틱 사용이 유리합니다.</p><div class="bar"><div class="fill" style="width:55%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 하산 후 원적암에서 물·간식을 짧게 보충하기 좋습니다.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">원적암 → 일주문 복귀</div><div class="seg-meta">1.5km · 1시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>완만한 산책로로 마무리됩니다. 성수기에는 하산 후 일주문까지 인파가 많을 수 있습니다.</p><div class="bar"><div class="fill" style="width:25%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 집단시설지구 식당가 접근성이 좋아 산행 후 식사 연결이 편합니다.</div></div></div>
+</div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg> 장비</h2><ul><li>접지 좋은 트레킹화</li><li>스틱 1개 이상 권장</li><li>물 1~1.5L</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 주의</h2><ul><li>암릉·계단 구간 많음</li><li>우천 후 낙엽 미끄럼</li><li>가을 인파 혼잡 심함</li></ul></div><div class="card tipcard"><h2>🚗 교통·주차</h2><ul><li>정읍IC 또는 내장산IC 접근</li><li>1~3주차장 유료, 성수기 혼잡</li><li>정읍역에서 시내버스 접근 가능</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>코스 개념도</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M92 336 C170 298, 216 248, 286 170 S380 80, 430 112 S505 188, 562 142 S660 210, 696 324" fill="none" stroke="#2d6faa" stroke-linecap="round" stroke-width="6"></path><circle cx="92" cy="336" fill="#2d6faa" r="11"></circle><circle cx="260" cy="190" fill="#2d6faa" r="10"></circle><circle cx="430" cy="112" fill="#2d6faa" r="10"></circle><circle cx="560" cy="142" fill="#2d6faa" r="10"></circle><circle cx="696" cy="324" fill="#2d6faa" r="11"></circle><text font-size="12" x="108" y="332">일주문</text><text font-size="12" x="220" y="204">벽련암</text><text font-size="12" x="444" y="106">서래봉 624m</text><text font-size="12" x="574" y="136">불출봉 622m</text><text font-size="12" x="616" y="338">원적암·복귀</text></svg></div><div class="section-title"><h2>체크포인트 표</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>일주문</td><td>약 180m</td><td>0km</td><td>출발점</td></tr><tr><td>벽련암</td><td>약 300m</td><td>1.0km</td><td>본격 오름 시작</td></tr><tr><td>서래봉</td><td>624m</td><td>2.8km</td><td>대표 암릉 전망</td></tr><tr><td>불출봉</td><td>622m</td><td>3.9km</td><td>능선 핵심 포인트</td></tr><tr><td>원적암</td><td>약 260m</td><td>5.0km</td><td>하산 휴식 지점</td></tr><tr><td>일주문</td><td>약 180m</td><td>5.9km</td><td>원점 회귀</td></tr></tbody></table></div></div></div></div></section>
+<section class="panel red" id="advanced"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 고급</span><div><div class="panel-name">능선일주 코스</div><div class="panel-sub">일주문 → 서래봉 → 불출봉 → 망해봉 → 연지봉 → 까치봉 → 신선봉 → 연자봉 → 장군봉 → 동구리 · 11.7km · 7시간</div></div></div><div class="tabs">
+<button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</div><div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview">
 <div class="grid6"><div class="card kpi"><div class="num">11.7km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">7시간</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">763m</div><div class="txt">신선봉</div></div><div class="card kpi"><div class="num">8봉</div><div class="txt">주요 봉우리</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">종주형</div><div class="txt">성격</div></div></div>
 <div class="section-title"><h2>코스 흐름</h2><div class="line"></div></div>
 <div class="card"><div class="flow"><span class="chip">일주문</span><span class="arr">→</span><span class="chip">서래봉</span><span class="arr">→</span><span class="chip">불출봉</span><span class="arr">→</span><span class="chip">망해봉</span><span class="arr">→</span><span class="chip">연지봉</span><span class="arr">→</span><span class="chip">까치봉</span><span class="arr">→</span><span class="chip">신선봉</span><span class="arr">→</span><span class="chip">연자봉</span><span class="arr">→</span><span class="chip">장군봉</span><span class="arr">→</span><span class="chip">동구리</span></div></div>
 <div class="section-title"><h2>고도 프로파일</h2><div class="line"></div></div>
 <div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#b93a2f" stop-opacity=".34"></stop><stop offset="100%" stop-color="#b93a2f" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 190 C80 150, 140 100, 200 84 S280 68, 330 95 S420 115, 470 98 S540 55, 590 80 S650 120, 740 165 L740 210 L20 210 Z" fill="url(#g3)"></path><path d="M20 190 C80 150, 140 100, 200 84 S280 68, 330 95 S420 115, 470 98 S540 55, 590 80 S650 120, 740 165" fill="none" stroke="#b93a2f" stroke-linecap="round" stroke-width="4"></path><circle cx="548" cy="58" fill="#b93a2f" r="6"></circle><text fill="#b93a2f" font-size="12" x="561" y="53">신선봉 763m</text></svg></div>
 <p class="desc">능선일주 코스는 일주문에서 시작해 서래봉, 불출봉, 망해봉, 연지봉, 까치봉, 신선봉, 연자봉, 장군봉, 동구리를 잇는 11.7km, 약 7시간의 종주형 루트로 소개됩니다 . 내장산의 핵심 봉우리를 대부분 연결하기 때문에 숙련자용 하루 산행으로 적합합니다 .</p>
-</div>
-<div class="tabpane" data-pane="route"><div class="section-title"><h2>구간별 경로 안내</h2><div class="line"></div></div><div class="segments">
-<div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">일주문 → 서래봉</div><div class="seg-meta">2.8km · 1시간 40분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>능선일주의 첫 관문입니다. 초반에 고도를 많이 올리므로 속도 조절이 중요합니다.</p><div class="bar"><div class="fill" style="width:72%"></div></div><div class="tip">💡 오전 일찍 시작해 첫 봉우리 도달 시간을 8~9시대로 맞추면 여유가 생깁니다.</div></div></div>
-<div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">서래봉 → 불출봉 → 망해봉</div><div class="seg-meta">2.2km · 1시간 20분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>연속되는 능선 이동 구간으로 조망은 뛰어나지만 짧은 오르내림이 반복됩니다. 체력 소모가 누적되기 쉬운 파트입니다.</p><div class="bar"><div class="fill" style="width:78%"></div></div><div class="warn">⚠ 여름철엔 그늘이 적어 일사 노출이 큽니다.</div></div></div>
-<div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">망해봉 → 연지봉 → 까치봉</div><div class="seg-meta">2.6km · 1시간 30분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>내장산 주능선을 타는 느낌이 가장 강한 구간입니다. 까치봉 전후로 조망이 넓게 열려 사진 촬영 수요가 많습니다.</p><div class="bar"><div class="fill" style="width:70%"></div></div><div class="tip">💡 중간중간 간식과 수분 보충을 짧게 자주 하는 편이 좋습니다.</div></div></div>
-<div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">까치봉 → 신선봉 → 연자봉</div><div class="seg-meta">2.3km · 1시간 20분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>신선봉은 내장산 최고봉으로 종주 하이라이트입니다. 케이블카 상부 방면 능선이 가까워지지만 여전히 주의 깊은 보행이 필요합니다.</p><div class="bar"><div class="fill" style="width:74%"></div></div><div class="tip">💡 신선봉에서 조망 휴식을 충분히 가진 뒤 후반 하산을 준비하세요.</div></div></div>
-<div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">연자봉 → 장군봉 → 동구리 하산</div><div class="seg-meta">1.8km · 1시간 10분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>마지막까지 고저차가 남아 있는 하산 구간입니다. 피로 누적으로 발목 사고가 나기 쉬워 집중력이 필요합니다.</p><div class="bar"><div class="fill" style="width:62%"></div></div><div class="warn">⚠ 일몰 전 하산 완료를 목표로 계획해야 합니다.</div></div></div>
-</div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h2>코스 개념도</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M70 330 C120 286, 170 185, 230 145 S330 120, 380 160 S450 190, 500 156 S560 108, 610 132 S670 200, 700 280" fill="none" stroke="#b93a2f" stroke-linecap="round" stroke-width="6"></path><g fill="#b93a2f"><circle cx="70" cy="330" r="9"></circle><circle cx="210" cy="150" r="9"></circle><circle cx="315" cy="135" r="9"></circle><circle cx="400" cy="170" r="9"></circle><circle cx="490" cy="160" r="9"></circle><circle cx="560" cy="110" r="9"></circle><circle cx="635" cy="145" r="9"></circle><circle cx="700" cy="280" r="9"></circle></g><text font-size="12" x="84" y="324">일주문</text><text font-size="12" x="222" y="144">서래봉</text><text font-size="12" x="327" y="129">불출봉</text><text font-size="12" x="412" y="164">망해봉</text><text font-size="12" x="502" y="154">까치봉</text><text font-size="12" x="572" y="104">신선봉</text><text font-size="12" x="647" y="139">연자봉</text><text font-size="12" x="646" y="298">장군봉·동구리</text></svg></div><div class="section-title"><h2>체크포인트 표</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>일주문</td><td>약 180m</td><td>0km</td><td>출발</td></tr><tr><td>서래봉</td><td>624m</td><td>2.8km</td><td>첫 핵심 조망점</td></tr><tr><td>불출봉</td><td>622m</td><td>3.9km</td><td>암릉 능선</td></tr><tr><td>망해봉</td><td>약 680m</td><td>5.0km</td><td>연속 오르내림</td></tr><tr><td>까치봉</td><td>약 717m</td><td>7.3km</td><td>넓은 조망</td></tr><tr><td>신선봉</td><td>763m</td><td>8.5km</td><td>최고봉</td></tr><tr><td>연자봉</td><td>약 675m</td><td>9.5km</td><td>케이블카 상부 연계권</td></tr><tr><td>동구리</td><td>약 260m</td><td>11.7km</td><td>종주 종료</td></tr></tbody></table></div></div>
-<div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h3>🎒 필수 장비</h3><ul><li>등산화, 스틱, 장갑</li><li>물 1.5~2L</li><li>점심·행동식 충분히</li><li>헤드랜턴 비상용</li></ul></div><div class="card tipcard"><h3>⏰ 시간 계획</h3><ul><li>오전 6~7시 출발 권장</li><li>신선봉 전후 점심 타이밍 추천</li><li>일몰 전 동구리 하산 목표</li></ul></div><div class="card tipcard"><h3>🚕 교통 운영</h3><ul><li>종점 회수 동선 사전 확인</li><li>정읍역·주차장 연계 교통 체크</li><li>성수기 셔틀·주차 분산 정보 확인</li></ul></div></div></div>
-</section>
+</div><div class="tabpane" data-pane="route"><div class="section-title"><h2>구간별 경로 안내</h2><div class="line"></div></div><div class="segments">
+<div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">일주문 → 서래봉</div><div class="seg-meta">2.8km · 1시간 40분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>능선일주의 첫 관문입니다. 초반에 고도를 많이 올리므로 속도 조절이 중요합니다.</p><div class="bar"><div class="fill" style="width:72%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 오전 일찍 시작해 첫 봉우리 도달 시간을 8~9시대로 맞추면 여유가 생깁니다.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">서래봉 → 불출봉 → 망해봉</div><div class="seg-meta">2.2km · 1시간 20분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>연속되는 능선 이동 구간으로 조망은 뛰어나지만 짧은 오르내림이 반복됩니다. 체력 소모가 누적되기 쉬운 파트입니다.</p><div class="bar"><div class="fill" style="width:78%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 여름철엔 그늘이 적어 일사 노출이 큽니다.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">망해봉 → 연지봉 → 까치봉</div><div class="seg-meta">2.6km · 1시간 30분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>내장산 주능선을 타는 느낌이 가장 강한 구간입니다. 까치봉 전후로 조망이 넓게 열려 사진 촬영 수요가 많습니다.</p><div class="bar"><div class="fill" style="width:70%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 중간중간 간식과 수분 보충을 짧게 자주 하는 편이 좋습니다.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">까치봉 → 신선봉 → 연자봉</div><div class="seg-meta">2.3km · 1시간 20분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>신선봉은 내장산 최고봉으로 종주 하이라이트입니다. 케이블카 상부 방면 능선이 가까워지지만 여전히 주의 깊은 보행이 필요합니다.</p><div class="bar"><div class="fill" style="width:74%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 신선봉에서 조망 휴식을 충분히 가진 뒤 후반 하산을 준비하세요.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">연자봉 → 장군봉 → 동구리 하산</div><div class="seg-meta">1.8km · 1시간 10분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>마지막까지 고저차가 남아 있는 하산 구간입니다. 피로 누적으로 발목 사고가 나기 쉬워 집중력이 필요합니다.</p><div class="bar"><div class="fill" style="width:62%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 일몰 전 하산 완료를 목표로 계획해야 합니다.</div></div></div>
+</div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg> 필수 장비</h2><ul><li>등산화, 스틱, 장갑</li><li>물 1.5~2L</li><li>점심·행동식 충분히</li><li>헤드랜턴 비상용</li></ul></div><div class="card tipcard"><h2>⏰ 시간 계획</h2><ul><li>오전 6~7시 출발 권장</li><li>신선봉 전후 점심 타이밍 추천</li><li>일몰 전 동구리 하산 목표</li></ul></div><div class="card tipcard"><h2>🚕 교통 운영</h2><ul><li>종점 회수 동선 사전 확인</li><li>정읍역·주차장 연계 교통 체크</li><li>성수기 셔틀·주차 분산 정보 확인</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>코스 개념도</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M70 330 C120 286, 170 185, 230 145 S330 120, 380 160 S450 190, 500 156 S560 108, 610 132 S670 200, 700 280" fill="none" stroke="#b93a2f" stroke-linecap="round" stroke-width="6"></path><g fill="#b93a2f"><circle cx="70" cy="330" r="9"></circle><circle cx="210" cy="150" r="9"></circle><circle cx="315" cy="135" r="9"></circle><circle cx="400" cy="170" r="9"></circle><circle cx="490" cy="160" r="9"></circle><circle cx="560" cy="110" r="9"></circle><circle cx="635" cy="145" r="9"></circle><circle cx="700" cy="280" r="9"></circle></g><text font-size="12" x="84" y="324">일주문</text><text font-size="12" x="222" y="144">서래봉</text><text font-size="12" x="327" y="129">불출봉</text><text font-size="12" x="412" y="164">망해봉</text><text font-size="12" x="502" y="154">까치봉</text><text font-size="12" x="572" y="104">신선봉</text><text font-size="12" x="647" y="139">연자봉</text><text font-size="12" x="646" y="298">장군봉·동구리</text></svg></div><div class="section-title"><h2>체크포인트 표</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>일주문</td><td>약 180m</td><td>0km</td><td>출발</td></tr><tr><td>서래봉</td><td>624m</td><td>2.8km</td><td>첫 핵심 조망점</td></tr><tr><td>불출봉</td><td>622m</td><td>3.9km</td><td>암릉 능선</td></tr><tr><td>망해봉</td><td>약 680m</td><td>5.0km</td><td>연속 오르내림</td></tr><tr><td>까치봉</td><td>약 717m</td><td>7.3km</td><td>넓은 조망</td></tr><tr><td>신선봉</td><td>763m</td><td>8.5km</td><td>최고봉</td></tr><tr><td>연자봉</td><td>약 675m</td><td>9.5km</td><td>케이블카 상부 연계권</td></tr><tr><td>동구리</td><td>약 260m</td><td>11.7km</td><td>종주 종료</td></tr></tbody></table></div></div></div></div></section>
 </main>
-
-
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-  <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-    <span class="section-title-icon">📸</span> 내장산의 사계 &amp; 명소
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 내장산의 사계 &amp; 명소
   </h2>
-  <div class="gallery-grid">
-    
-    <!-- Gallery Image Button 1 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Naejangsan 크게 보기" data-index="0" data-credit="Photo by <a href='https://www.pexels.com/@nuhyil-ahammed-282191113' target='_blank' rel='noopener'>Nuhyil Ahammed</a> on pexels">
-      <picture class="gallery-picture">
-        <source type="image/avif" srcset="assets/img/naejangsan/g1.avif">
-        <source type="image/webp" srcset="assets/img/naejangsan/g1.webp">
-        <img src="assets/img/naejangsan/g1.jpg" alt="내장산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" loading="lazy" decoding="async">
-      </picture>
-      <div class="gallery-caption-overlay">
-        <span class="gallery-caption-text">내장산 등산코스</span>
-      </div>
-    </button>
-
-    <!-- Gallery Image Button 2 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Naejangsan National Park 크게 보기" data-index="1" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
-      <picture class="gallery-picture">
-        <source type="image/avif" srcset="assets/img/naejangsan/g2.avif">
-        <source type="image/webp" srcset="assets/img/naejangsan/g2.webp">
-        <img src="assets/img/naejangsan/g2.jpg" alt="내장산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" loading="lazy" decoding="async">
-      </picture>
-      <div class="gallery-caption-overlay">
-        <span class="gallery-caption-text">내장산 절경</span>
-      </div>
-    </button>
-
-    <!-- Gallery Image Button 3 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Harmonious view of Naejangsan mountain ridges under a clear sky 크게 보기" data-index="2" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
-      <picture class="gallery-picture">
-        <source type="image/avif" srcset="assets/img/naejangsan/g3.avif">
-        <source type="image/webp" srcset="assets/img/naejangsan/g3.webp">
-        <img src="assets/img/naejangsan/g3.jpg" alt="내장산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" loading="lazy" decoding="async">
-      </picture>
-      <div class="gallery-caption-overlay">
-        <span class="gallery-caption-text">내장산 풍경</span>
-      </div>
-    </button>
-
-    <!-- Gallery Image Button 4 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Naejangsan 크게 보기" data-index="3" data-credit="Photo by <a href='https://www.pexels.com/@vasilij-zajcev-3061980' target='_blank' rel='noopener'>Vasilij Zajcev</a> on pexels">
-      <picture class="gallery-picture">
-        <source type="image/avif" srcset="assets/img/naejangsan/g4.avif">
-        <source type="image/webp" srcset="assets/img/naejangsan/g4.webp">
-        <img src="assets/img/naejangsan/g4.jpg" alt="내장산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" loading="lazy" decoding="async">
-      </picture>
-      <div class="gallery-caption-overlay">
-        <span class="gallery-caption-text">내장산 탐방로</span>
-      </div>
-    </button>
-
-  </div>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="내장산 등산코스 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nuhyil-ahammed-282191113' target='_blank' rel='noopener'&gt;Nuhyil Ahammed&lt;/a&gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/naejangsan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/naejangsan/g1.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/naejangsan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">내장산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="내장산 절경 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/naejangsan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/naejangsan/g2.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/naejangsan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">내장산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="내장산 풍경 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/naejangsan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/naejangsan/g3.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/naejangsan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">내장산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="내장산 탐방로 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@vasilij-zajcev-3061980' target='_blank' rel='noopener'&gt;Vasilij Zajcev&lt;/a&gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/naejangsan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/naejangsan/g4.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/naejangsan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">내장산 탐방로</span>
+</div>
+</button>
+</div>
 </section>
 </main>
-
 <footer>
 <div class="wrap">실제 산행 전 탐방 통제, 주차, 셔틀, 케이블카 운행 여부는 내장산국립공원 및 현장 안내를 반드시 재확인하세요.</div>
 </footer>
@@ -1114,21 +1082,18 @@
 
     document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
   </script>
-
-
 <!-- Lightbox Dialog Overlay -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
-  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
-  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
-  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
-  <div class="lightbox-content">
-    <figure class="lightbox-figure">
-      <figcaption class="lightbox-caption"></figcaption>
-    </figure>
-    <div class="photo-credit lightbox-credit"></div>
-  </div>
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
 </div>
-
+</div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');
@@ -1239,7 +1204,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-
 <script>
 // Unified course switcher override for rebranding compatibility
 (function() {
