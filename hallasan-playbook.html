@@ -5,115 +5,54 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>한라산 등산 플레이북</title>
+<meta name="description" content="대한민국 최고의 명산 중 하나인 한라산 국립공원 가이드. 초급 , 중급 , 고급  코스의 상세 경로, 실사 지도 및 팁을 제공합니다.">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/design-system.css">
 <style>
-:root,[data-theme="light"]{
-  --color-bg:#f5f4f0;--color-surface:#f8f7f4;--color-surface-2:#fafaf8;
-  --color-surface-offset:#f0ede9;--color-surface-dynamic:#e5e2dd;
-  --color-divider:#d9d6d0;--color-border:#d0cdc6;
-  --color-text:#26231b;--color-text-muted:#787570;--color-text-faint:#b6b4af;
-  --color-primary:#0f6b4f;--color-primary-hover:#0a5540;--color-primary-highlight:#c4ddd6;
-  --color-success:#3d7a1c;--color-success-highlight:#ccdbc2;
-  --color-gold:#c49200;--color-gold-highlight:#e6dab9;
-  --color-warning:#8f3e18;--color-warning-highlight:#d9c5b5;
-  --color-error:#9e2670;--color-blue:#005f8a;--color-blue-highlight:#bed6e3;
-  --shadow-sm:0 1px 2px oklch(0.2 0.01 90/0.06);
-  --shadow-md:0 4px 12px oklch(0.2 0.01 90/0.08);
-  --shadow-lg:0 12px 32px oklch(0.2 0.01 90/0.12);
-  --radius-sm:.375rem;--radius-md:.5rem;--radius-lg:.75rem;--radius-xl:1rem;--radius-full:9999px;
-  --font-body:"Satoshi",sans-serif;--font-display:"Cabinet Grotesk",sans-serif;
-  --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);
-  --text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);
-  --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
-  --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;
-  --space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;
-  --tx:180ms cubic-bezier(.16,1,.3,1);
+/* COURSE SELECTOR */
+.course-selector {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
 }
-[data-theme="dark"]{
-  --color-bg:#0d0f0e;--color-surface:#131614;--color-surface-2:#181b19;
-  --color-surface-offset:#1a1d1b;--color-surface-dynamic:#262a27;
-  --color-divider:#202420;--color-border:#2e3330;
-  --color-text:#ccceca;--color-text-muted:#75786f;--color-text-faint:#474a44;
-  --color-primary:#3d9e7a;--color-primary-hover:#2a8265;--color-primary-highlight:#1a2e26;
-  --color-success:#65a63c;--color-success-highlight:#1e2e15;
-  --color-gold:#dba820;--color-gold-highlight:#2a2210;
-  --color-warning:#b86040;--color-warning-highlight:#281a10;
-  --color-error:#c95a9a;--color-blue:#4d93c0;--color-blue-highlight:#152030;
-  --shadow-sm:0 1px 2px oklch(0 0 0/.3);--shadow-md:0 4px 12px oklch(0 0 0/.4);--shadow-lg:0 12px 32px oklch(0 0 0/.5);
+.course-btn {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all var(--transition);
 }
-@media(prefers-color-scheme:dark){:root:not([data-theme]){
-  --color-bg:#0d0f0e;--color-surface:#131614;--color-surface-2:#181b19;
-  --color-surface-offset:#1a1d1b;--color-surface-dynamic:#262a27;
-  --color-divider:#202420;--color-border:#2e3330;
-  --color-text:#ccceca;--color-text-muted:#75786f;--color-text-faint:#474a44;
-  --color-primary:#3d9e7a;--color-primary-hover:#2a8265;--color-primary-highlight:#1a2e26;
-  --color-success:#65a63c;--color-success-highlight:#1e2e15;
-  --color-gold:#dba820;--color-gold-highlight:#2a2210;
-  --color-warning:#b86040;--color-warning-highlight:#281a10;
-  --color-error:#c95a9a;--color-blue:#4d93c0;--color-blue-highlight:#152030;
-}}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
-body{font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);min-height:100dvh;line-height:1.6;}
-img,svg{display:block;max-width:100%;}
-button{cursor:pointer;border:none;background:none;font:inherit;color:inherit;}
-a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-color var(--tx),box-shadow var(--tx);}
+.course-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.course-btn.active.beginner, .course-btn.active-beginner {
+  background: var(--success-highlight);
+  color: var(--success);
+  border-color: var(--success);
+}
+.course-btn.active.intermediate, .course-btn.active-intermediate {
+  background: var(--color-gold-highlight);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+.course-btn.active.advanced, .course-btn.active-advanced {
+  background: var(--warning-highlight);
+  color: var(--warning);
+  border-color: var(--warning);
+}
 
-.site-header{position:sticky;top:0;z-index:100;background:var(--color-bg);border-bottom:1px solid var(--color-divider);padding:var(--space-3) var(--space-6);display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);}
-.logo-wrap{display:flex;align-items:center;gap:var(--space-3);}
-.logo-svg{width:36px;height:36px;flex-shrink:0;}
-.logo-text{font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;line-height:1;}
-.theme-btn{width:36px;height:36px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;background:var(--color-surface-offset);color:var(--color-text-muted);}
-.theme-btn:hover{background:var(--color-surface-dynamic);color:var(--color-text);}
+.intermediate .section-title-icon{background:var(--color-gold-highlight);}
+.advanced .section-title-icon{background:var(--color-warning-highlight);}
 
-.hero{padding:var(--space-12) var(--space-6) var(--space-8);text-align:center;background:linear-gradient(180deg,var(--color-surface) 0%,var(--color-bg) 100%);border-bottom:1px solid var(--color-divider);}
-.hero-badge{display:inline-flex;align-items:center;gap:var(--space-2);background:var(--color-primary-highlight);color:var(--color-primary);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-bottom:var(--space-4);}
-.hero h1{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:800;line-height:1.1;margin-bottom:var(--space-4);}
-.hero p{font-size:var(--text-base);color:var(--color-text-muted);max-width:58ch;margin:0 auto var(--space-8);}
-.course-selector{display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;}
-.course-btn{padding:var(--space-3) var(--space-6);border-radius:var(--radius-full);font-weight:700;font-size:var(--text-sm);border:2px solid var(--color-border);background:var(--color-surface);color:var(--color-text-muted);transition:all var(--tx);}
-.course-btn:hover{border-color:var(--color-primary);color:var(--color-primary);}
-.course-btn.ab{background:var(--color-success-highlight);color:var(--color-success);border-color:var(--color-success);}
-.course-btn.ai{background:var(--color-gold-highlight);color:var(--color-gold);border-color:var(--color-gold);}
-.course-btn.aa{background:var(--color-warning-highlight);color:var(--color-warning);border-color:var(--color-warning);}
-
-.course-panel{display:none;}
-.course-panel.active{display:block;}
-
-.tab-bar{display:flex;gap:0;border-bottom:1px solid var(--color-divider);background:var(--color-surface);padding:0 var(--space-6);position:sticky;top:57px;z-index:90;overflow-x:auto;}
-.tab-btn{padding:var(--space-3) var(--space-5);font-size:var(--text-sm);font-weight:600;color:var(--color-text-muted);border-bottom:2px solid transparent;white-space:nowrap;transition:all var(--tx);}
-.tab-btn:hover{color:var(--color-text);}
-.tab-btn.active{color:var(--color-primary);border-bottom-color:var(--color-primary);}
-
-.main{max-width:1100px;margin:0 auto;padding:var(--space-8) var(--space-6);}
-.tab-content{display:none;}
-.tab-content.active{display:block;}
-
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--space-4);margin-bottom:var(--space-8);}
-.stat-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-4);text-align:center;}
-.stat-icon{font-size:1.5rem;margin-bottom:var(--space-2);}
-.stat-value{font-family:var(--font-display);font-size:var(--text-xl);font-weight:800;line-height:1;margin-bottom:var(--space-1);}
-.stat-label{font-size:var(--text-xs);color:var(--color-text-muted);font-weight:500;}
-.beginner .stat-value{color:var(--color-success);}
-.intermediate .stat-value{color:var(--color-gold);}
-.advanced .stat-value{color:var(--color-warning);}
-
-.elevation-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
-.elevation-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
-.elev-svg{width:100%;height:180px;}
-
-.course-flow{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2);margin-bottom:var(--space-8);padding:var(--space-4) var(--space-5);background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);}
-.flow-node{background:var(--color-surface-offset);border-radius:var(--radius-md);padding:var(--space-1) var(--space-3);font-size:var(--text-sm);font-weight:600;}
-.flow-node.peak{background:var(--color-primary-highlight);color:var(--color-primary);}
-.flow-node.shelter{background:var(--color-surface-dynamic);color:var(--color-text-muted);}
-.flow-arrow{color:var(--color-text-faint);font-size:.9rem;}
-
-.section-title{font-family:var(--font-display);font-size:var(--text-xl);font-weight:800;margin-bottom:var(--space-6);display:flex;align-items:center;gap:var(--space-3);}
-.section-icon{width:32px;height:32px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-.beginner .section-icon{background:var(--color-success-highlight);}
-.intermediate .section-icon{background:var(--color-gold-highlight);}
-.advanced .section-icon{background:var(--color-warning-highlight);}
-
+/* ACCORDION */
 .accordion{display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-8);}
 .acc-item{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;}
 .acc-header{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-4) var(--space-5);cursor:pointer;user-select:none;width:100%;text-align:left;}
@@ -122,44 +61,49 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 .beginner .acc-num{background:var(--color-success-highlight);color:var(--color-success);}
 .intermediate .acc-num{background:var(--color-gold-highlight);color:var(--color-gold);}
 .advanced .acc-num{background:var(--color-warning-highlight);color:var(--color-warning);}
-.acc-tw{flex:1;}
+.acc-title-wrap{flex:1;}
 .acc-title{font-weight:700;font-size:var(--text-base);line-height:1.3;}
 .acc-meta{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:2px;}
-.acc-chev{color:var(--color-text-faint);transition:transform var(--tx);flex-shrink:0;}
-.acc-item.open .acc-chev{transform:rotate(180deg);}
+.acc-chevron{color:var(--color-text-faint);transition:transform var(--transition);flex-shrink:0;}
+.acc-item.open .acc-chevron{transform:rotate(180deg);}
 .acc-body{display:none;padding:0 var(--space-5) var(--space-5);border-top:1px solid var(--color-divider);}
 .acc-item.open .acc-body{display:block;}
 .acc-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;margin-bottom:var(--space-4);}
 
-.diff-wrap{margin-bottom:var(--space-4);}
+/* DIFF BAR */
+.diff-bar-wrap{margin-bottom:var(--space-4);}
 .diff-label{font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-1);}
-.diff-bg{height:6px;background:var(--color-surface-dynamic);border-radius:var(--radius-full);overflow:hidden;}
-.diff-fill{height:100%;border-radius:var(--radius-full);}
-.easy .diff-fill{background:var(--color-success);}
-.med .diff-fill{background:var(--color-gold);}
-.hard .diff-fill{background:var(--color-warning);}
-.xhard .diff-fill{background:var(--color-error);}
+.diff-bar-bg{height:6px;background:var(--color-surface-dynamic);border-radius:var(--radius-full);overflow:hidden;}
+.diff-bar-fill{height:100%;border-radius:var(--radius-full);}
+.diff-easy .diff-bar-fill{background:var(--color-success);}
+.diff-medium .diff-bar-fill{background:var(--color-gold);}
+.diff-hard .diff-bar-fill{background:var(--color-warning);}
+.diff-expert .diff-bar-fill{background:var(--color-error);}
 
+/* TIP / WARN BOX */
 .tip-box{background:var(--color-primary-highlight);border-left:3px solid var(--color-primary);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-primary);margin-bottom:var(--space-3);line-height:1.6;}
 .warn-box{background:var(--color-warning-highlight);border-left:3px solid var(--color-warning);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-warning);margin-bottom:var(--space-3);line-height:1.6;}
 
-.cp-wrap{overflow-x:auto;margin-bottom:var(--space-8);}
+/* CHECKPOINT TABLE */
+.cp-table-wrap{overflow-x:auto;margin-bottom:var(--space-8);}
 .cp-table{width:100%;border-collapse:collapse;font-size:var(--text-sm);}
-.cp-table th{text-align:left;font-weight:700;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-muted);padding:var(--space-2) var(--space-4);border-bottom:2px solid var(--color-divider);white-space:nowrap;}
+.cp-table th{text-align:left;font-weight:700;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);padding:var(--space-2) var(--space-4);border-bottom:2px solid var(--color-divider);white-space:nowrap;}
 .cp-table td{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-divider);vertical-align:middle;}
 .cp-table tr:last-child td{border-bottom:none;}
 .cp-table tr:hover td{background:var(--color-surface-offset);}
 .badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;}
-.b-summit{background:var(--color-warning-highlight);color:var(--color-warning);}
-.b-shelter{background:var(--color-primary-highlight);color:var(--color-primary);}
-.b-control{background:var(--color-blue-highlight);color:var(--color-blue);}
-.b-start{background:var(--color-surface-dynamic);color:var(--color-text-muted);}
-.b-landmark{background:var(--color-gold-highlight);color:var(--color-gold);}
-.b-temple{background:var(--color-success-highlight);color:var(--color-success);}
+.badge-summit{background:var(--color-warning-highlight);color:var(--color-warning);}
+.badge-shelter{background:var(--color-primary-highlight);color:var(--color-primary);}
+.badge-temple{background:var(--color-success-highlight);color:var(--color-success);}
+.badge-trailhead{background:var(--color-surface-dynamic);color:var(--color-text-muted);}
+.badge-landmark{background:var(--color-gold-highlight);color:var(--color-gold);}
 
+/* MAP SVG */
 .map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
 .map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-svg{width:100%;height:auto;max-height:520px;}
 
+/* TIPS GRID */
 .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-4);margin-bottom:var(--space-8);}
 .tip-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);}
 .tip-card-icon{font-size:1.5rem;margin-bottom:var(--space-3);}
@@ -168,18 +112,16 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 .tip-card ul li{font-size:var(--text-sm);color:var(--color-text-muted);padding-left:var(--space-4);position:relative;}
 .tip-card ul li::before{content:"·";position:absolute;left:var(--space-2);color:var(--color-text-faint);}
 
-.info-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-5);margin-bottom:var(--space-6);}
-.info-card h3{font-weight:700;margin-bottom:var(--space-3);}
-.info-card ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-2);}
-.info-card ul li{font-size:var(--text-sm);color:var(--color-text-muted);}
-
+/* RESPONSIVE */
 @media(max-width:640px){
-  .site-header,.main,.hero,.tab-bar{padding-left:var(--space-4);padding-right:var(--space-4);}
+  .site-header{padding:var(--space-3) var(--space-4);}
+  .main{padding:var(--space-6) var(--space-4);}
+  .hero{padding:var(--space-8) var(--space-4) var(--space-6);}
+  .tab-bar{padding:0 var(--space-4);}
   .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .course-selector{gap:var(--space-2);}
   .course-btn{padding:var(--space-2) var(--space-4);font-size:var(--text-xs);}
 }
-
-
 
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
@@ -611,6 +553,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 </style>
 </head>
 <body>
+<a href="#mainContent" class="skip-link">본문 바로가기</a>
 <header class="site-header">
 <div class="logo-wrap">
 <svg aria-label="한라산 플레이북 로고" class="logo-svg" fill="none" viewbox="0 0 36 36">
@@ -635,20 +578,28 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
   </picture>
   <div class="hero-overlay"></div>
 
-  <div class="hero-content">
+    <div class="hero-content">
+    <div class="hero-badge">🏔 한라산 플레이북</div>
+    <h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">한라산 등산 플레이북</h1>
+    <p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
+      대한민국 최고의 명산 중 하나인 한라산 국립공원 가이드. 초급 , 중급 , 고급  코스의 상세 경로, 실사 지도 및 팁을 제공합니다.
+    </p>
     
-<div class="hero-badge">🌋 대한민국 최고봉 · 제주특별자치도 · 해발 1,947m
+    <!-- Course Selector Buttons -->
+    <div class="course-selector">
+      <button class="course-btn diff-btn beginner beginner active" onclick="selectCourse('beginner',this)">🌿 초급: </button>
+      <button class="course-btn diff-btn intermediate intermediate" onclick="selectCourse('intermediate',this)">🦶 중급: </button>
+      <button class="course-btn diff-btn advanced advanced" onclick="selectCourse('advanced',this)">🏔 고급: </button>
+    </div>
   </div>
-  
-  <!-- Hero Credit Overlay -->
   <div class="photo-credit hero-credit">
     <span class="credit-author">Photo by <a href="https://unsplash.com/@julien_manival" target="_blank" rel="noopener">Julien Manival</a></span>
     <span class="credit-divider">/</span>
     <span class="credit-source"><a href="https://unsplash.com" target="_blank" rel="noopener">unsplash</a></span>
   </div>
-
 </section>
 <!-- ═══ 초급 ═══ -->
+<main class="wrap" id="mainContent">
 <div class="course-panel active beginner" id="course-beginner">
 <nav class="tab-bar">
 <button class="tab-btn active" onclick="selectTab('beginner','overview',this)">📋 개요</button>
@@ -656,7 +607,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 <button class="tab-btn" onclick="selectTab('beginner','map',this)">📍 지도</button>
 <button class="tab-btn" onclick="selectTab('beginner','tips',this)">💡 팁 &amp; 주의</button>
 </nav>
-<main class="main">
+<div class="main">
 <div class="tab-content active" id="beginner-overview">
 <div class="section-title"><div class="section-icon">🌿</div><span>초급 코스 개요</span></div>
 <div class="stat-grid">
@@ -668,7 +619,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 <div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★☆☆☆</div><div class="stat-label">난이도</div></div>
 </div>
 <div class="elevation-wrap">
-<h3>📊 고도 프로파일 — 영실↑ 어리목↓ 환종주</h3>
+<h2>📊 고도 프로파일 — 영실↑ 어리목↓ 환종주</h2>
 <svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
 <defs>
 <lineargradient id="bGrad" x1="0" x2="0" y1="0" y2="1">
@@ -697,7 +648,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 <span class="flow-node peak">🅿 어리목 탐방로 입구</span>
 </div>
 <div class="info-card">
-<h3>코스 특징</h3>
+<h2>코스 특징</h2>
 <ul>
 <li>✅ 영실 탐방로 입구 해발 1,280m — 시작 고도가 높아 단거리에 고지대 경관 감상</li>
 <li>✅ 병풍바위 기암절벽 + 오백나한 한라산 최고 경관 구간</li>
@@ -774,7 +725,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 </div>
 <div class="tab-content" id="beginner-map">
 <div class="map-wrap">
-<h3>📍 영실↑ 어리목↓ 환종주 개념도</h3>
+<h2>📍 영실↑ 어리목↓ 환종주 개념도</h2>
 <svg style="width:100%;height:auto;max-height:500px" viewbox="0 0 700 480">
 <rect fill="var(--color-surface-offset)" height="480" rx="12" width="700"></rect>
 <ellipse cx="350" cy="240" fill="var(--color-success)" fill-opacity=".05" rx="260" ry="200"></ellipse>
@@ -831,12 +782,12 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 <div class="tab-content" id="beginner-tips">
 <div class="section-title"><div class="section-icon">💡</div><span>팁 &amp; 주의사항</span></div>
 <div class="tips-grid">
-<div class="tip-card"><div class="tip-card-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (미끄럼 방지)</li><li>트레킹 스틱</li><li>방풍·방수 재킷</li><li>모자·선글라스</li><li>헤드램프</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 1.5L 이상</li><li>에너지바·간식</li><li>현금 준비 (대피소 매점)</li><li>윗세오름 컵라면 판매</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">🛡</div><h4>안전 수칙</h4><ul><li>입산통제 시간 전 탐방로 입구 통과</li><li>동절기 입산통제 12:00, 하절기 15:00</li><li>예약 불필요 (영실·어리목)</li><li>고산 기상 급변 대비</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">🚌</div><h4>교통 정보</h4><ul><li>제주시내 → 어리목: 240번 버스</li><li>서귀포 → 영실: 서귀포 시내버스</li><li>영실·어리목 주차장 유료</li><li>환종주 시 각 방향 교통 계획 필수</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">🌸</div><h4>계절별 정보</h4><ul><li>봄(4~5월): 철쭉 대군락 절정</li><li>여름: 구름 속 선작지왓 신비로운 운해</li><li>가을: 억새·단풍, 10월 최고</li><li>겨울: 설경 압도적, 아이젠 필수</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">📱</div><h4>유용한 정보</h4><ul><li>한라산탐방예약 visithalla.jeju.go.kr</li><li>입산통제 전화: 064-713-9950</li><li>제주 날씨 제주기상청 064-752-0365</li><li>람블러 GPS 앱 활용</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🎒</div><h3>필수 장비</h3><ul><li>등산화 (미끄럼 방지)</li><li>트레킹 스틱</li><li>방풍·방수 재킷</li><li>모자·선글라스</li><li>헤드램프</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🥗</div><h3>음식 &amp; 수분</h3><ul><li>물 1.5L 이상</li><li>에너지바·간식</li><li>현금 준비 (대피소 매점)</li><li>윗세오름 컵라면 판매</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🛡</div><h3>안전 수칙</h3><ul><li>입산통제 시간 전 탐방로 입구 통과</li><li>동절기 입산통제 12:00, 하절기 15:00</li><li>예약 불필요 (영실·어리목)</li><li>고산 기상 급변 대비</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🚌</div><h3>교통 정보</h3><ul><li>제주시내 → 어리목: 240번 버스</li><li>서귀포 → 영실: 서귀포 시내버스</li><li>영실·어리목 주차장 유료</li><li>환종주 시 각 방향 교통 계획 필수</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🌸</div><h3>계절별 정보</h3><ul><li>봄(4~5월): 철쭉 대군락 절정</li><li>여름: 구름 속 선작지왓 신비로운 운해</li><li>가을: 억새·단풍, 10월 최고</li><li>겨울: 설경 압도적, 아이젠 필수</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📱</div><h3>유용한 정보</h3><ul><li>한라산탐방예약 visithalla.jeju.go.kr</li><li>입산통제 전화: 064-713-9950</li><li>제주 날씨 제주기상청 064-752-0365</li><li>람블러 GPS 앱 활용</li></ul></div>
 </div>
 </div>
 </main>
@@ -849,7 +800,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 <button class="tab-btn" onclick="selectTab('intermediate','map',this)">📍 지도</button>
 <button class="tab-btn" onclick="selectTab('intermediate','tips',this)">💡 팁 &amp; 주의</button>
 </nav>
-<main class="main">
+<div class="main">
 <div class="tab-content active" id="intermediate-overview">
 <div class="section-title"><div class="section-icon">🦶</div><span>중급 코스 개요</span></div>
 <div class="stat-grid">
@@ -861,7 +812,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 <div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★★☆☆</div><div class="stat-label">난이도</div></div>
 </div>
 <div class="elevation-wrap">
-<h3>📊 고도 프로파일 — 성판악 백록담 왕복</h3>
+<h2>📊 고도 프로파일 — 성판악 백록담 왕복</h2>
 <svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
 <defs>
 <lineargradient id="iGrad" x1="0" x2="0" y1="0" y2="1">
@@ -891,7 +842,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 <span class="flow-node peak">🅿 성판악 귀환</span>
 </div>
 <div class="info-card">
-<h3>코스 특징</h3>
+<h2>코스 특징</h2>
 <ul>
 <li>✅ 한라산 정상 백록담 등정 가능 코스 (2개 중 하나)</li>
 <li>✅ 비교적 완만한 능선 — 관음사 대비 상대적으로 수월</li>
@@ -969,7 +920,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 </div>
 <div class="tab-content" id="intermediate-map">
 <div class="map-wrap">
-<h3>📍 성판악 백록담 왕복 코스 개념도</h3>
+<h2>📍 성판악 백록담 왕복 코스 개념도</h2>
 <svg style="width:100%;height:auto;max-height:500px" viewbox="0 0 700 480">
 <rect fill="var(--color-surface-offset)" height="480" rx="12" width="700"></rect>
 <ellipse cx="350" cy="250" fill="var(--color-gold)" fill-opacity=".04" rx="260" ry="190"></ellipse>
@@ -1024,12 +975,12 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 <div class="tab-content" id="intermediate-tips">
 <div class="section-title"><div class="section-icon">💡</div><span>팁 &amp; 주의사항</span></div>
 <div class="tips-grid">
-<div class="tip-card"><div class="tip-card-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수·미끄럼 방지)</li><li>무릎 보호대 (필수)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>헤드램프</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 2L 이상 (중간 보충 제한)</li><li>진달래밭 이후 식수 없음</li><li>도시락·에너지바 충분히</li><li>당질·단백질 균형 행동식</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">🛡</div><h4>안전 수칙</h4><ul><li>오전 5~6시 출발 필수</li><li>사전 예약 (visithalla.jeju.go.kr)</li><li>입산통제 시간 엄수</li><li>정상 기상 급변 대비</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">🚌</div><h4>교통 정보</h4><ul><li>제주 시내 → 성판악: 181번 버스</li><li>서귀포 → 성판악: 서귀포시 버스</li><li>성판악 주차장 유료 (혼잡)</li><li>조기 도착 주차 권장</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">📋</div><h4>예약 안내</h4><ul><li>성판악·관음사 사전 예약 필수</li><li>매월 1일 09:00 다음달 예약 오픈</li><li>선착순 조기 마감 (인기 날짜 수분 내)</li><li>예약 취소 페널티 유의</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">🌡</div><h4>정상 환경</h4><ul><li>정상 기온 여름 10°C 내외</li><li>강풍·안개 빈발</li><li>정상석 대기 성수기 1~2시간</li><li>겨울 아이젠·스패츠 필수</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🎒</div><h3>필수 장비</h3><ul><li>등산화 (방수·미끄럼 방지)</li><li>무릎 보호대 (필수)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>헤드램프</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🥗</div><h3>음식 &amp; 수분</h3><ul><li>물 2L 이상 (중간 보충 제한)</li><li>진달래밭 이후 식수 없음</li><li>도시락·에너지바 충분히</li><li>당질·단백질 균형 행동식</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🛡</div><h3>안전 수칙</h3><ul><li>오전 5~6시 출발 필수</li><li>사전 예약 (visithalla.jeju.go.kr)</li><li>입산통제 시간 엄수</li><li>정상 기상 급변 대비</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🚌</div><h3>교통 정보</h3><ul><li>제주 시내 → 성판악: 181번 버스</li><li>서귀포 → 성판악: 서귀포시 버스</li><li>성판악 주차장 유료 (혼잡)</li><li>조기 도착 주차 권장</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📋</div><h3>예약 안내</h3><ul><li>성판악·관음사 사전 예약 필수</li><li>매월 1일 09:00 다음달 예약 오픈</li><li>선착순 조기 마감 (인기 날짜 수분 내)</li><li>예약 취소 페널티 유의</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🌡</div><h3>정상 환경</h3><ul><li>정상 기온 여름 10°C 내외</li><li>강풍·안개 빈발</li><li>정상석 대기 성수기 1~2시간</li><li>겨울 아이젠·스패츠 필수</li></ul></div>
 </div>
 </div>
 </main>
@@ -1042,7 +993,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 <button class="tab-btn" onclick="selectTab('advanced','map',this)">📍 지도</button>
 <button class="tab-btn" onclick="selectTab('advanced','tips',this)">💡 팁 &amp; 주의</button>
 </nav>
-<main class="main">
+<div class="main">
 <div class="tab-content active" id="advanced-overview">
 <div class="section-title"><div class="section-icon">🏔</div><span>고급 코스 개요</span></div>
 <div class="stat-grid">
@@ -1054,7 +1005,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 <div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★★★★</div><div class="stat-label">난이도</div></div>
 </div>
 <div class="elevation-wrap">
-<h3>📊 고도 프로파일 — 관음사↑ 성판악↓ 종주</h3>
+<h2>📊 고도 프로파일 — 관음사↑ 성판악↓ 종주</h2>
 <svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
 <defs>
 <lineargradient id="aGrad" x1="0" x2="0" y1="0" y2="1">
@@ -1093,7 +1044,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 <span class="flow-node peak">🅿 성판악탐방지원센터</span>
 </div>
 <div class="info-card">
-<h3>코스 특징</h3>
+<h2>코스 특징</h2>
 <ul>
 <li>🏆 관음사(북) → 백록담 → 성판악(동) 한라산 완전 관통 종주</li>
 <li>✅ 관음사 코스: 탐라계곡·구상나무 원시림·개미등 절경 구간 포함</li>
@@ -1171,7 +1122,7 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 </div>
 <div class="tab-content" id="advanced-map">
 <div class="map-wrap">
-<h3>📍 관음사↑ 성판악↓ 종주 개념도</h3>
+<h2>📍 관음사↑ 성판악↓ 종주 개념도</h2>
 <svg style="width:100%;height:auto;max-height:520px" viewbox="0 0 760 500">
 <rect fill="var(--color-surface-offset)" height="500" rx="12" width="760"></rect>
 <ellipse cx="380" cy="250" fill="var(--color-warning)" fill-opacity=".03" rx="320" ry="210"></ellipse>
@@ -1240,12 +1191,12 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 <div class="tab-content" id="advanced-tips">
 <div class="section-title"><div class="section-icon">💡</div><span>팁 &amp; 주의사항</span></div>
 <div class="tips-grid">
-<div class="tip-card"><div class="tip-card-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수·발목 지지형)</li><li>무릎 보호대 (양쪽 필수)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>헤드램프 + 여분 건전지</li><li>선글라스·자외선 차단제</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 2.5L 이상</li><li>삼각봉·진달래밭 음수대 확인</li><li>도시락·에너지바 2끼 분량</li><li>고열량 행동식 충분히 준비</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">📋</div><h4>예약 안내</h4><ul><li>관음사·성판악 양쪽 모두 예약</li><li>같은 날 각각 별도 예약 신청</li><li>visithalla.jeju.go.kr</li><li>매월 1일 09:00 오픈, 선착순</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">🛡</div><h4>안전 수칙</h4><ul><li>오전 5시 관음사 출발 권장</li><li>삼각봉 통제 전 통과 필수</li><li>입산통제 하절기 12:30 엄수</li><li>1인 산행 절대 금지</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">🚌</div><h4>교통 정보</h4><ul><li>관음사→성판악 편도 종주</li><li>성판악에서 181번 버스 귀환</li><li>관음사 주차 시 차량 회수 필요</li><li>렌터카 이용 시 택시 대안</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">💪</div><h4>체력 준비</h4><ul><li>최소 3~4개월 등산 훈련</li><li>중급 코스 성판악 왕복 선행</li><li>10km 이상 산행 5회 이상</li><li>무릎·발목 강화 운동 병행</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🎒</div><h3>필수 장비</h3><ul><li>등산화 (방수·발목 지지형)</li><li>무릎 보호대 (양쪽 필수)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>헤드램프 + 여분 건전지</li><li>선글라스·자외선 차단제</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🥗</div><h3>음식 &amp; 수분</h3><ul><li>물 2.5L 이상</li><li>삼각봉·진달래밭 음수대 확인</li><li>도시락·에너지바 2끼 분량</li><li>고열량 행동식 충분히 준비</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📋</div><h3>예약 안내</h3><ul><li>관음사·성판악 양쪽 모두 예약</li><li>같은 날 각각 별도 예약 신청</li><li>visithalla.jeju.go.kr</li><li>매월 1일 09:00 오픈, 선착순</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🛡</div><h3>안전 수칙</h3><ul><li>오전 5시 관음사 출발 권장</li><li>삼각봉 통제 전 통과 필수</li><li>입산통제 하절기 12:30 엄수</li><li>1인 산행 절대 금지</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🚌</div><h3>교통 정보</h3><ul><li>관음사→성판악 편도 종주</li><li>성판악에서 181번 버스 귀환</li><li>관음사 주차 시 차량 회수 필요</li><li>렌터카 이용 시 택시 대안</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">💪</div><h3>체력 준비</h3><ul><li>최소 3~4개월 등산 훈련</li><li>중급 코스 성판악 왕복 선행</li><li>10km 이상 산행 5회 이상</li><li>무릎·발목 강화 운동 병행</li></ul></div>
 </div>
 </div>
 </main>
@@ -1254,9 +1205,9 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+  <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
     <span class="section-title-icon">📸</span> 한라산의 사계 &amp; 명소
-  </h3>
+  </h2>
   <div class="gallery-grid">
     
     <!-- Gallery Image Button 1 -->
@@ -1309,6 +1260,8 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 
   </div>
 </section>
+</main>
+
 <footer style="border-top:1px solid var(--color-divider);padding:var(--space-8) var(--space-6);text-align:center;background:var(--color-surface);">
 <p style="font-size:var(--text-xs);color:var(--color-text-faint);">한라산국립공원 탐방 정보 기준. 실제 산행 전 한라산탐방예약 공식 홈페이지(visithalla.jeju.go.kr)에서 최신 예약 정보·입산통제 시간을 반드시 확인하세요. 064-713-9950</p>
 </footer>
@@ -1465,6 +1418,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+</script>
+
+<script>
+// Unified course switcher override for rebranding compatibility
+(function() {
+  const switcher = function(lv, btn) {
+    document.querySelectorAll('.course-btn').forEach(b => {
+      b.classList.remove('active');
+    });
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      const targetBtn = document.querySelector('.course-btn.' + lv) || document.querySelector('.course-btn[onclick*="' + lv + '"]');
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+    document.querySelectorAll('.course-panel, .panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    const panel = document.getElementById('panel-' + lv) || 
+                  document.getElementById('course-' + lv) || 
+                  document.getElementById(lv) ||
+                  document.querySelector('.course-panel.' + lv) ||
+                  document.querySelector('.panel.' + lv);
+    if (panel) {
+      panel.classList.add('active');
+      setTimeout(() => {
+        panel.querySelectorAll('.diff-bar-fill').forEach(b => {
+          const w = b.style.width;
+          if (w && w !== '0%') {
+            b.style.width = '0%';
+            requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = w; }));
+          }
+        });
+      }, 50);
+    }
+  };
+  window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
+})();
 </script>
 </body>
 </html>

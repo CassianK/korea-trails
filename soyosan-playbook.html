@@ -5,208 +5,126 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>소요산 등산 플레이북</title>
+<meta name="description" content="대한민국 최고의 명산 중 하나인 소요산 국립공원 가이드. 초급 📊 고도 프로파일, 중급 📊 고도 프로파일, 고급 📊 고도 프로파일 코스의 상세 경로, 실사 지도 및 팁을 제공합니다.">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/design-system.css">
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=Black+Han+Sans&amp;display=swap" rel="stylesheet"/>
 <style>
-:root,[data-theme="light"]{
---color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#fbfbf9;
---color-surface-offset:#f3f0ec;--color-surface-dynamic:#e6e4df;
---color-divider:#dcd9d5;--color-border:#d4d1ca;
---color-text:#28251d;--color-text-muted:#7a7974;--color-text-faint:#bab9b4;
---color-primary:#01696f;--color-primary-hover:#0c4e54;
---color-primary-highlight:#cedcd8;
---color-success:#437a22;--color-success-highlight:#d4dfcc;
---color-warning:#964219;--color-warning-highlight:#ddcfc6;
---color-error:#a12c7b;--color-error-highlight:#e0ced7;
---color-orange:#da7101;--color-gold:#d19900;
---shadow-sm:0 1px 2px oklch(0.2 0.01 80/0.06);
---shadow-md:0 4px 12px oklch(0.2 0.01 80/0.08);
---shadow-lg:0 12px 32px oklch(0.2 0.01 80/0.12);
---radius-sm:0.375rem;--radius-md:0.5rem;--radius-lg:0.75rem;--radius-xl:1rem;--radius-full:9999px;
---text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
---text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
---text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);
---text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
---text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
---text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
---space-1:0.25rem;--space-2:0.5rem;--space-3:0.75rem;--space-4:1rem;
---space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
---space-12:3rem;--space-16:4rem;
---font-body:'Noto Sans KR',sans-serif;
---font-display:'Black Han Sans',sans-serif;
---transition:180ms cubic-bezier(0.16,1,0.3,1);
+/* COURSE SELECTOR */
+.course-selector {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
 }
-[data-theme="dark"]{
---color-bg:#171614;--color-surface:#1c1b19;--color-surface-2:#201f1d;
---color-surface-offset:#1d1c1a;--color-surface-dynamic:#2d2c2a;
---color-divider:#262523;--color-border:#393836;
---color-text:#cdccca;--color-text-muted:#797876;--color-text-faint:#5a5957;
---color-primary:#4f98a3;--color-primary-hover:#227f8b;
---color-primary-highlight:#313b3b;
---color-success:#6daa45;--color-success-highlight:#3a4435;
---color-warning:#bb653b;--color-warning-highlight:#564942;
---color-error:#d163a7;--color-error-highlight:#4c3d46;
---color-orange:#fdab43;--color-gold:#e8af34;
---shadow-sm:0 1px 2px oklch(0 0 0/0.2);
---shadow-md:0 4px 12px oklch(0 0 0/0.3);
---shadow-lg:0 12px 32px oklch(0 0 0/0.4);
+.course-btn {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all var(--transition);
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);line-height:1.6;transition:background var(--transition),color var(--transition)}
-img,svg{display:block;max-width:100%;height:auto}
-button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
-a{color:inherit;text-decoration:none}
-
-/* ── HERO ── */
-.hero{
-  background:linear-gradient(160deg,#0a3a3d 0%,#0c5c4a 40%,#1a7a3a 100%);
-  padding:var(--space-12) var(--space-6) var(--space-10);
-  text-align:center;position:relative;overflow:hidden;
+.course-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
 }
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+.course-btn.active.beginner, .course-btn.active-beginner {
+  background: var(--success-highlight);
+  color: var(--success);
+  border-color: var(--success);
 }
-.hero-logo{display:flex;align-items:center;justify-content:center;gap:var(--space-3);margin-bottom:var(--space-4)}
-.logo-icon{width:48px;height:48px}
-.hero-title{font-family:var(--font-display);font-size:var(--text-2xl);color:#fff;letter-spacing:-0.02em;line-height:1.1;position:relative}
-.hero-title span{color:#7dd9a0}
-.hero-subtitle{color:rgba(255,255,255,0.7);margin-top:var(--space-2);font-size:var(--text-sm);position:relative}
-.hero-badges{display:flex;gap:var(--space-2);justify-content:center;flex-wrap:wrap;margin-top:var(--space-5);position:relative}
-.hero-badge{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.9);border:1px solid rgba(255,255,255,0.2);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);font-size:var(--text-xs);backdrop-filter:blur(4px)}
-
-/* ── THEME TOGGLE ── */
-.theme-btn{position:absolute;top:var(--space-4);right:var(--space-4);width:40px;height:40px;border-radius:var(--radius-full);background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;display:flex;align-items:center;justify-content:center;transition:background var(--transition);z-index:10}
-.theme-btn:hover{background:rgba(255,255,255,0.22)}
-
-/* ── COURSE SELECTOR ── */
-.course-selector{background:var(--color-surface);border-bottom:1px solid var(--color-border);padding:var(--space-4) var(--space-6);display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;position:sticky;top:0;z-index:50;box-shadow:var(--shadow-sm)}
-.course-btn{padding:var(--space-2) var(--space-5);border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:500;border:2px solid var(--color-border);color:var(--color-text-muted);transition:all var(--transition);white-space:nowrap}
-.course-btn:hover{border-color:var(--color-primary);color:var(--color-primary)}
-.course-btn.active{background:var(--color-primary);border-color:var(--color-primary);color:#fff;box-shadow:var(--shadow-sm)}
-.course-btn.beginner.active{background:#437a22;border-color:#437a22}
-.course-btn.intermediate.active{background:#da7101;border-color:#da7101}
-.course-btn.advanced.active{background:#a12c7b;border-color:#a12c7b}
-
-/* ── MAIN LAYOUT ── */
-.container{max-width:960px;margin:0 auto;padding:var(--space-8) var(--space-4)}
-
-/* ── STATS GRID ── */
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-3);margin-bottom:var(--space-8)}
-@media(min-width:600px){.stats-grid{grid-template-columns:repeat(6,1fr)}}
-.stat-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-4) var(--space-3);text-align:center;box-shadow:var(--shadow-sm);transition:box-shadow var(--transition)}
-.stat-card:hover{box-shadow:var(--shadow-md)}
-.stat-icon{font-size:1.5rem;margin-bottom:var(--space-1)}
-.stat-value{font-weight:700;font-size:var(--text-lg);color:var(--color-text);line-height:1.2}
-.stat-label{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-1)}
-
-/* ── COURSE DESCRIPTION ── */
-.course-desc{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-6);box-shadow:var(--shadow-sm)}
-.course-desc-header{display:flex;align-items:center;gap:var(--space-3);margin-bottom:var(--space-3)}
-.course-level-badge{padding:var(--space-1) var(--space-4);border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;letter-spacing:0.05em}
-.badge-beginner{background:var(--color-success-highlight);color:var(--color-success)}
-.badge-intermediate{background:var(--color-warning-highlight);color:var(--color-warning)}
-.badge-advanced{background:var(--color-error-highlight);color:var(--color-error)}
-.course-desc h2{font-family:var(--font-display);font-size:var(--text-xl);letter-spacing:-0.01em}
-.course-desc p{color:var(--color-text-muted);font-size:var(--text-sm);line-height:1.7}
-
-/* ── ELEVATION CHART ── */
-.elevation-section{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-6);box-shadow:var(--shadow-sm)}
-.section-title{font-size:var(--text-sm);font-weight:700;color:var(--color-text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:var(--space-4)}
-.elevation-wrap{position:relative;width:100%;height:160px}
-.elevation-wrap svg{width:100%;height:100%}
-
-/* ── TABS ── */
-.tabs{display:flex;gap:0;border-bottom:2px solid var(--color-border);margin-bottom:var(--space-6);overflow-x:auto;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tab-btn{padding:var(--space-3) var(--space-5);font-size:var(--text-sm);font-weight:500;color:var(--color-text-muted);border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;transition:all var(--transition)}
-.tab-btn:hover{color:var(--color-text)}
-.tab-btn.active{color:var(--color-primary);border-bottom-color:var(--color-primary);font-weight:700}
-.tab-panel{display:none}
-.tab-panel.active{display:block}
-
-/* ── ROUTE CARDS (accordion) ── */
-.route-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);margin-bottom:var(--space-3);overflow:hidden;box-shadow:var(--shadow-sm)}
-.route-card-header{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-4);cursor:pointer;transition:background var(--transition);user-select:none}
-.route-card-header:hover{background:var(--color-surface-offset)}
-.route-step{width:28px;height:28px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:var(--text-xs);font-weight:700;color:#fff;flex-shrink:0}
-.step-beginner{background:#437a22}
-.step-intermediate{background:#da7101}
-.step-advanced{background:#a12c7b}
-.route-card-title{flex:1}
-.route-card-title strong{display:block;font-size:var(--text-sm);font-weight:700}
-.route-card-meta{display:flex;gap:var(--space-3);margin-top:2px}
-.route-meta-item{font-size:var(--text-xs);color:var(--color-text-muted)}
-.route-arrow{transition:transform var(--transition);color:var(--color-text-faint)}
-.route-card.open .route-arrow{transform:rotate(180deg)}
-.route-card-body{display:none;padding:0 var(--space-4) var(--space-4);border-top:1px solid var(--color-divider)}
-.route-card.open .route-card-body{display:block}
-.diff-bar-wrap{display:flex;align-items:center;gap:var(--space-2);margin:var(--space-3) 0}
-.diff-label{font-size:var(--text-xs);color:var(--color-text-muted);width:36px;flex-shrink:0}
-.diff-bar{flex:1;height:6px;background:var(--color-surface-dynamic);border-radius:var(--radius-full);overflow:hidden}
-.diff-fill{height:100%;border-radius:var(--radius-full);transition:width 0.6s ease}
-.diff-easy{background:#437a22}
-.diff-medium{background:#da7101}
-.diff-hard{background:#a12c7b}
-.tip-box{background:var(--color-primary-highlight);border-left:3px solid var(--color-primary);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3);margin-top:var(--space-3);font-size:var(--text-xs);color:var(--color-text)}
-.warn-box{background:var(--color-warning-highlight);border-left:3px solid var(--color-warning);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3);margin-top:var(--space-2);font-size:var(--text-xs);color:var(--color-text)}
-.route-desc{font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-3);line-height:1.7}
-
-/* ── MAP SVG ── */
-.map-section{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-6);box-shadow:var(--shadow-sm)}
-.map-wrap{width:100%;aspect-ratio:4/3;background:var(--color-surface-offset);border-radius:var(--radius-lg);overflow:hidden;position:relative}
-.map-wrap svg{width:100%;height:100%}
-.map-legend{display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-4)}
-.legend-item{display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);color:var(--color-text-muted)}
-.legend-dot{width:10px;height:10px;border-radius:var(--radius-full);flex-shrink:0}
-
-/* ── CHECKPOINT TABLE ── */
-.checkpoint-table{width:100%;border-collapse:collapse;font-size:var(--text-xs)}
-.checkpoint-table th{background:var(--color-surface-offset);padding:var(--space-2) var(--space-3);text-align:left;font-weight:700;color:var(--color-text-muted);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.05em}
-.checkpoint-table td{padding:var(--space-2) var(--space-3);border-bottom:1px solid var(--color-divider);color:var(--color-text)}
-.checkpoint-table tr:last-child td{border-bottom:none}
-.checkpoint-table tr:hover td{background:var(--color-surface-offset)}
-
-/* ── TIPS GRID ── */
-.tips-grid{display:grid;grid-template-columns:1fr;gap:var(--space-4)}
-@media(min-width:600px){.tips-grid{grid-template-columns:1fr 1fr}}
-.tip-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);box-shadow:var(--shadow-sm)}
-.tip-card-icon{font-size:1.5rem;margin-bottom:var(--space-2)}
-.tip-card h3{font-size:var(--text-sm);font-weight:700;margin-bottom:var(--space-2)}
-.tip-card ul{padding-left:var(--space-4);font-size:var(--text-xs);color:var(--color-text-muted);display:flex;flex-direction:column;gap:var(--space-1)}
-
-/* ── PEAK CARDS ── */
-.peaks-grid{display:grid;grid-template-columns:1fr;gap:var(--space-4)}
-@media(min-width:600px){.peaks-grid{grid-template-columns:1fr 1fr}}
-.peak-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-5);box-shadow:var(--shadow-sm)}
-.peak-alt{font-family:var(--font-display);font-size:var(--text-xl);color:var(--color-primary);line-height:1}
-.peak-name{font-size:var(--text-base);font-weight:700;margin-top:var(--space-1)}
-.peak-desc{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-2);line-height:1.6}
-.peak-features{display:flex;flex-wrap:wrap;gap:var(--space-1);margin-top:var(--space-3)}
-.peak-tag{background:var(--color-primary-highlight);color:var(--color-primary);padding:2px var(--space-2);border-radius:var(--radius-full);font-size:var(--text-xs)}
-
-/* ── COURSE PANEL ── */
-.course-panel{display:none}
-.course-panel.active{display:block}
-
-/* ── TRANSPORT TABLE ── */
-.transport-table{width:100%;border-collapse:collapse;font-size:var(--text-xs);margin-top:var(--space-3)}
-.transport-table th{background:var(--color-surface-offset);padding:var(--space-2) var(--space-3);text-align:left;font-weight:700;color:var(--color-text-muted)}
-.transport-table td{padding:var(--space-2) var(--space-3);border-bottom:1px solid var(--color-divider)}
-
-/* ── RESPONSIVE ── */
-@media(max-width:480px){
-.container{padding:var(--space-4) var(--space-3)}
-.course-selector{padding:var(--space-3)}
-.tabs{gap:0}
-.tab-btn{padding:var(--space-2) var(--space-3)}
-.stats-grid{grid-template-columns:repeat(3,1fr)}
+.course-btn.active.intermediate, .course-btn.active-intermediate {
+  background: var(--color-gold-highlight);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+.course-btn.active.advanced, .course-btn.active-advanced {
+  background: var(--warning-highlight);
+  color: var(--warning);
+  border-color: var(--warning);
 }
 
+.intermediate .section-title-icon{background:var(--color-gold-highlight);}
+.advanced .section-title-icon{background:var(--color-warning-highlight);}
 
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-8);}
+.acc-item{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;}
+.acc-header{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-4) var(--space-5);cursor:pointer;user-select:none;width:100%;text-align:left;}
+.acc-header:hover{background:var(--color-surface-offset);}
+.acc-num{width:28px;height:28px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:var(--text-xs);font-weight:700;flex-shrink:0;}
+.beginner .acc-num{background:var(--color-success-highlight);color:var(--color-success);}
+.intermediate .acc-num{background:var(--color-gold-highlight);color:var(--color-gold);}
+.advanced .acc-num{background:var(--color-warning-highlight);color:var(--color-warning);}
+.acc-title-wrap{flex:1;}
+.acc-title{font-weight:700;font-size:var(--text-base);line-height:1.3;}
+.acc-meta{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:2px;}
+.acc-chevron{color:var(--color-text-faint);transition:transform var(--transition);flex-shrink:0;}
+.acc-item.open .acc-chevron{transform:rotate(180deg);}
+.acc-body{display:none;padding:0 var(--space-5) var(--space-5);border-top:1px solid var(--color-divider);}
+.acc-item.open .acc-body{display:block;}
+.acc-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;margin-bottom:var(--space-4);}
+
+/* DIFF BAR */
+.diff-bar-wrap{margin-bottom:var(--space-4);}
+.diff-label{font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-1);}
+.diff-bar-bg{height:6px;background:var(--color-surface-dynamic);border-radius:var(--radius-full);overflow:hidden;}
+.diff-bar-fill{height:100%;border-radius:var(--radius-full);}
+.diff-easy .diff-bar-fill{background:var(--color-success);}
+.diff-medium .diff-bar-fill{background:var(--color-gold);}
+.diff-hard .diff-bar-fill{background:var(--color-warning);}
+.diff-expert .diff-bar-fill{background:var(--color-error);}
+
+/* TIP / WARN BOX */
+.tip-box{background:var(--color-primary-highlight);border-left:3px solid var(--color-primary);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-primary);margin-bottom:var(--space-3);line-height:1.6;}
+.warn-box{background:var(--color-warning-highlight);border-left:3px solid var(--color-warning);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-warning);margin-bottom:var(--space-3);line-height:1.6;}
+
+/* CHECKPOINT TABLE */
+.cp-table-wrap{overflow-x:auto;margin-bottom:var(--space-8);}
+.cp-table{width:100%;border-collapse:collapse;font-size:var(--text-sm);}
+.cp-table th{text-align:left;font-weight:700;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);padding:var(--space-2) var(--space-4);border-bottom:2px solid var(--color-divider);white-space:nowrap;}
+.cp-table td{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-divider);vertical-align:middle;}
+.cp-table tr:last-child td{border-bottom:none;}
+.cp-table tr:hover td{background:var(--color-surface-offset);}
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;}
+.badge-summit{background:var(--color-warning-highlight);color:var(--color-warning);}
+.badge-shelter{background:var(--color-primary-highlight);color:var(--color-primary);}
+.badge-temple{background:var(--color-success-highlight);color:var(--color-success);}
+.badge-trailhead{background:var(--color-surface-dynamic);color:var(--color-text-muted);}
+.badge-landmark{background:var(--color-gold-highlight);color:var(--color-gold);}
+
+/* MAP SVG */
+.map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
+.map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-svg{width:100%;height:auto;max-height:520px;}
+
+/* TIPS GRID */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-4);margin-bottom:var(--space-8);}
+.tip-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);}
+.tip-card-icon{font-size:1.5rem;margin-bottom:var(--space-3);}
+.tip-card h4{font-weight:700;margin-bottom:var(--space-2);}
+.tip-card ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-1);}
+.tip-card ul li{font-size:var(--text-sm);color:var(--color-text-muted);padding-left:var(--space-4);position:relative;}
+.tip-card ul li::before{content:"·";position:absolute;left:var(--space-2);color:var(--color-text-faint);}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .site-header{padding:var(--space-3) var(--space-4);}
+  .main{padding:var(--space-6) var(--space-4);}
+  .hero{padding:var(--space-8) var(--space-4) var(--space-6);}
+  .tab-bar{padding:0 var(--space-4);}
+  .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .course-selector{gap:var(--space-2);}
+  .course-btn{padding:var(--space-2) var(--space-4);font-size:var(--text-xs);}
+}
 
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
@@ -638,6 +556,7 @@ a{color:inherit;text-decoration:none}
 </style>
 </head>
 <body>
+<a href="#mainContent" class="skip-link">본문 바로가기</a>
 <!-- HERO -->
 <section class="hero hero-bleed">
   
@@ -649,28 +568,25 @@ a{color:inherit;text-decoration:none}
   </picture>
   <div class="hero-overlay"></div>
 
-  <div class="hero-content">
+    <div class="hero-content">
+    <div class="hero-badge">🏔 소요산 플레이북</div>
+    <h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">소요산 등산 플레이북</h1>
+    <p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
+      대한민국 최고의 명산 중 하나인 소요산 국립공원 가이드. 초급 📊 고도 프로파일, 중급 📊 고도 프로파일, 고급 📊 고도 프로파일 코스의 상세 경로, 실사 지도 및 팁을 제공합니다.
+    </p>
     
-<button aria-label="다크모드 전환" class="theme-btn" data-theme-toggle="">
-<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-</button>
-<div class="hero-logo">
-<svg aria-label="소요산 로고" class="logo-icon" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<circle cx="24" cy="24" fill="rgba(255,255,255,0.1)" r="22" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"></circle>
-<path d="M8 34 L18 16 L24 26 L30 18 L40 34 Z" fill="rgba(125,217,160,0.4)" stroke="#7dd9a0" stroke-linejoin="round" stroke-width="1.5"></path>
-<path d="M18 16 L24 10 L30 18" fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-linejoin="round" stroke-width="1.5"></path>
-<circle cx="24" cy="10" fill="#7dd9a0" r="2.5"></circle>
-</svg>
-
+    <!-- Course Selector Buttons -->
+    <div class="course-selector">
+      <button class="course-btn diff-btn beginner beginner active" onclick="selectCourse('beginner',this)">🌿 초급: 📊 고도 프로파일</button>
+      <button class="course-btn diff-btn intermediate intermediate" onclick="selectCourse('intermediate',this)">🦶 중급: 📊 고도 프로파일</button>
+      <button class="course-btn diff-btn advanced advanced" onclick="selectCourse('advanced',this)">🏔 고급: 📊 고도 프로파일</button>
+    </div>
   </div>
-  
-  <!-- Hero Credit Overlay -->
   <div class="photo-credit hero-credit">
     <span class="credit-author">Photo by Dokyung Kim</span>
     <span class="credit-divider">/</span>
     <span class="credit-source">Local</span>
   </div>
-
 </section>
 <!-- COURSE SELECTOR -->
 <div class="course-selector">
@@ -679,6 +595,7 @@ a{color:inherit;text-decoration:none}
 <button class="course-btn advanced" onclick="selectCourse('advanced')">🏔 고급 · 의상대 완주코스</button>
 </div>
 <!-- ════ BEGINNER ════ -->
+<main class="wrap" id="mainContent">
 <div class="course-panel active" id="panel-beginner">
 <div class="container">
 <!-- STATS -->
@@ -920,7 +837,7 @@ a{color:inherit;text-decoration:none}
 <!-- TIPS TAB -->
 <div class="tab-panel" id="b-tips">
 <div class="tips-grid">
-<div class="tip-card"><div class="tip-card-icon">🚇</div><h3>대중교통 안내</h3>
+<div class="tip-card"><div class="tip-card-icon">🚇</div><h2>대중교통 안내</h2>
 <ul>
 <li>수도권 전철 1호선 <strong>소요산역</strong> 1번 출구</li>
 <li>서울역 기준 약 70분 소요</li>
@@ -932,7 +849,7 @@ a{color:inherit;text-decoration:none}
 <tr><td>승용차</td><td>3호선 소요산IC → 소요산 사거리 우회전</td></tr>
 </tbody></table>
 </div>
-<div class="tip-card"><div class="tip-card-icon">🎒</div><h3>초급 필수 장비</h3>
+<div class="tip-card"><div class="tip-card-icon">🎒</div><h2>초급 필수 장비</h2>
 <ul>
 <li>등산화 또는 트레킹화 (슬리퍼·샌들 금지)</li>
 <li>물 500ml 이상 (자재암 약수 가능)</li>
@@ -940,7 +857,7 @@ a{color:inherit;text-decoration:none}
 <li>스틱(선택, 하산 시 도움)</li>
 </ul>
 </div>
-<div class="tip-card"><div class="tip-card-icon">🍁</div><h3>시즌 &amp; 날씨</h3>
+<div class="tip-card"><div class="tip-card-icon">🍁</div><h2>시즌 &amp; 날씨</h2>
 <ul>
 <li><strong>단풍 절정</strong>: 10월 하순 ~ 11월 초</li>
 <li>봄(4~5월): 철쭉·산벚꽃</li>
@@ -948,7 +865,7 @@ a{color:inherit;text-decoration:none}
 <li>겨울: 설경 아름다움, 아이젠 필수</li>
 </ul>
 </div>
-<div class="tip-card"><div class="tip-card-icon">⚠️</div><h3>안전 주의사항</h3>
+<div class="tip-card"><div class="tip-card-icon">⚠️</div><h2>안전 주의사항</h2>
 <ul>
 <li>108계단 이후 로프 구간 장갑 착용</li>
 <li>선녀탕 하산로 가장 미끄러운 구간</li>
@@ -956,14 +873,14 @@ a{color:inherit;text-decoration:none}
 <li>일몰 이후 산행 금지</li>
 </ul>
 </div>
-<div class="tip-card"><div class="tip-card-icon">🅿</div><h3>주차 &amp; 입장</h3>
+<div class="tip-card"><div class="tip-card-icon">🅿</div><h2>주차 &amp; 입장</h2>
 <ul>
 <li>소요산 주차장 하루 2,000원</li>
 <li>입장료: 2023년 5월부터 무료</li>
 <li>단풍철 주말 주차 만차 → 전철 이용 추천</li>
 </ul>
 </div>
-<div class="tip-card"><div class="tip-card-icon">🍽</div><h3>식당 &amp; 편의시설</h3>
+<div class="tip-card"><div class="tip-card-icon">🍽</div><h2>식당 &amp; 편의시설</h2>
 <ul>
 <li>일주문 앞 식당가 — 순두부·파전·막걸리</li>
 <li>화장실: 매표소·자재암</li>
@@ -1172,16 +1089,16 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="tab-panel" id="i-tips">
 <div class="tips-grid">
-<div class="tip-card"><div class="tip-card-icon">🧤</div><h3>중급 필수 장비</h3>
+<div class="tip-card"><div class="tip-card-icon">🧤</div><h2>중급 필수 장비</h2>
 <ul><li>등산화 (발목 지지 필수)</li><li>장갑 (칼바위 로프 구간)</li><li>무릎 보호대 (하산 시 유용)</li><li>물 1L 이상 (중간 보급 없음)</li><li>등산 스틱 (하산 안전)</li></ul>
 </div>
-<div class="tip-card"><div class="tip-card-icon">⚠️</div><h3>칼바위 안전수칙</h3>
+<div class="tip-card"><div class="tip-card-icon">⚠️</div><h2>칼바위 안전수칙</h2>
 <ul><li>장갑 필수 착용</li><li>무게중심을 낮게 유지</li><li>배낭 너무 크면 통과 어려움</li><li>앞사람과 충분한 간격 유지</li><li>비·안개·결빙 시 우회로 이용</li></ul>
 </div>
-<div class="tip-card"><div class="tip-card-icon">🍁</div><h3>추천 시즌</h3>
+<div class="tip-card"><div class="tip-card-icon">🍁</div><h2>추천 시즌</h2>
 <ul><li>단풍 절정: 10월 하순~11월 초</li><li>봄(4~5월): 철쭉 군락</li><li>겨울 암릉 설경 장관 — 아이젠 필수</li><li>여름 장마철·폭우 후 산행 자제</li></ul>
 </div>
-<div class="tip-card"><div class="tip-card-icon">🚇</div><h3>교통 안내</h3>
+<div class="tip-card"><div class="tip-card-icon">🚇</div><h2>교통 안내</h2>
 <ul><li>1호선 소요산역 1번출구 → 도보 15분</li><li>단풍철 주말 극심한 혼잡</li><li>오전 7시 이전 입산 추천</li></ul>
 </div>
 </div>
@@ -1436,22 +1353,22 @@ a{color:inherit;text-decoration:none}
 </div>
 <div class="tab-panel" id="a-tips">
 <div class="tips-grid">
-<div class="tip-card"><div class="tip-card-icon">🎒</div><h3>고급 필수 장비</h3>
+<div class="tip-card"><div class="tip-card-icon">🎒</div><h2>고급 필수 장비</h2>
 <ul><li>등산화 (발목 지지형 필수)</li><li>장갑 (칼바위 필수)</li><li>무릎 보호대 (긴 하산 대비)</li><li>물 1.5~2L (중간 보급 없음)</li><li>간식·에너지바 충분히</li><li>등산 스틱 (하산 안전)</li><li>100대명산 스탬프북</li></ul>
 </div>
-<div class="tip-card"><div class="tip-card-icon">⏰</div><h3>일정 계획</h3>
+<div class="tip-card"><div class="tip-card-icon">⏰</div><h2>일정 계획</h2>
 <ul><li>오전 7~8시 출발 추천 (4~5시간 소요)</li><li>단풍철 주말은 오전 6시 이전 입산</li><li>일몰 전 하산 완료 필수</li><li>점심 도시락 지참 (정상 부근 취식)</li></ul>
 </div>
-<div class="tip-card"><div class="tip-card-icon">⚠️</div><h3>안전 수칙</h3>
+<div class="tip-card"><div class="tip-card-icon">⚠️</div><h2>안전 수칙</h2>
 <ul><li>칼바위: 고소공포증 있으면 우회로</li><li>결빙·폭우 시 칼바위 진입 금지</li><li>나홀로 산행 시 위치 공유</li><li>체력 70% 이하면 의상대에서 샘터하산로 이용</li><li>긴급: 동두천 소방서 119</li></ul>
 </div>
-<div class="tip-card"><div class="tip-card-icon">📱</div><h3>유용한 앱·정보</h3>
+<div class="tip-card"><div class="tip-card-icon">📱</div><h2>유용한 앱·정보</h2>
 <ul><li>산림청 안전산행 앱</li><li>블랙야크 100대 명산 앱 (스탬프)</li><li>기상청 동네예보 (산 날씨)</li><li>소요산 관리소: 031-865-5043</li></ul>
 </div>
-<div class="tip-card"><div class="tip-card-icon">🍁</div><h3>시즌 &amp; 베스트타임</h3>
+<div class="tip-card"><div class="tip-card-icon">🍁</div><h2>시즌 &amp; 베스트타임</h2>
 <ul><li>단풍 절정: 10월 20일~11월 5일</li><li>철쭉: 4월 하순~5월 초</li><li>설경: 12~2월 (아이젠 필수)</li><li>비추천: 장마철(7~8월 중 폭우 직후)</li></ul>
 </div>
-<div class="tip-card"><div class="tip-card-icon">🚇</div><h3>교통 &amp; 주차</h3>
+<div class="tip-card"><div class="tip-card-icon">🚇</div><h2>교통 &amp; 주차</h2>
 <ul><li>전철 1호선 소요산역 1번출구</li><li>주차: 하루 2,000원 (단풍철 혼잡)</li><li>입장료 무료 (2023년 5월부터)</li><li>전철 이용 강력 추천 (단풍철 주말)</li></ul>
 </div>
 </div>
@@ -1462,10 +1379,12 @@ a{color:inherit;text-decoration:none}
 
 
 <!-- Photo Gallery Grid -->
+</main>
+
 <section class="photo-gallery-section">
-  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+  <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
     <span class="section-title-icon">📸</span> 소요산의 사계 &amp; 명소
-  </h3>
+  </h2>
   <div class="gallery-grid">
     
     <!-- Gallery Image Button 1 -->
@@ -1733,6 +1652,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+</script>
+
+<script>
+// Unified course switcher override for rebranding compatibility
+(function() {
+  const switcher = function(lv, btn) {
+    document.querySelectorAll('.course-btn').forEach(b => {
+      b.classList.remove('active');
+    });
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      const targetBtn = document.querySelector('.course-btn.' + lv) || document.querySelector('.course-btn[onclick*="' + lv + '"]');
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+    document.querySelectorAll('.course-panel, .panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    const panel = document.getElementById('panel-' + lv) || 
+                  document.getElementById('course-' + lv) || 
+                  document.getElementById(lv) ||
+                  document.querySelector('.course-panel.' + lv) ||
+                  document.querySelector('.panel.' + lv);
+    if (panel) {
+      panel.classList.add('active');
+      setTimeout(() => {
+        panel.querySelectorAll('.diff-bar-fill').forEach(b => {
+          const w = b.style.width;
+          if (w && w !== '0%') {
+            b.style.width = '0%';
+            requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = w; }));
+          }
+        });
+      }, 50);
+    }
+  };
+  window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
+})();
 </script>
 </body>
 </html>
