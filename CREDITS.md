@@ -12,7 +12,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 북한산 (Bukhansan)
 - **OG Card (assets/img/bukhansan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
-- **Cinematic Ambient Loop (assets/video/bukhansan/hero.mp4)**: AI-generated video (slow cinematic panning on actual photo).
+- **Cinematic Ambient Loop (assets/video/bukhansan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by Dokyung Kim (User-contributed / Local).
 - **Gallery 1**: Photo by Dokyung Kim (User-contributed / Local).
@@ -53,6 +53,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 덕유산 (Deogyusan)
 - **OG Card (assets/img/deogyusan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/deogyusan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [Anthony Taewan Kim](https://www.pexels.com/@anthony-taewan-kim-1326772885) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -62,6 +63,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 도봉산 (Dobongsan)
 - **OG Card (assets/img/dobongsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/dobongsan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by Dokyung Kim (User-contributed / Local).
 - **Gallery 1**: Photo by Dokyung Kim (User-contributed / Local).
@@ -149,6 +151,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 가야산 (Gayasan)
 - **OG Card (assets/img/gayasan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/gayasan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -158,6 +161,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 계룡산 (Gyeryongsan)
 - **OG Card (assets/img/gyeryongsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/gyeryongsan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -167,6 +171,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 한라산 (Hallasan)
 - **OG Card (assets/img/hallasan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/hallasan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [Julien Manival](https://unsplash.com/@julien_manival) via [unsplash](https://unsplash.com).
 - **Gallery 1**: Photo by [shuping zhao](https://unsplash.com/@suping1555) via [unsplash](https://unsplash.com).
@@ -176,6 +181,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 지리산 (Jirisan)
 - **OG Card (assets/img/jirisan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/jirisan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -185,6 +191,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 주왕산 (Juwangsan)
 - **OG Card (assets/img/juwangsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/juwangsan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -210,6 +217,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 명성산 (Myeongseongsan)
 - **OG Card (assets/img/myeongseongsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/myeongseongsan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [Flavio Mori](https://unsplash.com/@flvision_) via [Unsplash](https://unsplash.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/photo/rocky-mountain-with-plants-18959280/) via [Pexels](https://pexels.com).
@@ -219,6 +227,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 내장산 (Naejangsan)
 - **OG Card (assets/img/naejangsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/naejangsan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [Nuhyil Ahammed](https://www.pexels.com/@nuhyil-ahammed-282191113) via [pexels](https://pexels.com).
@@ -228,6 +237,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 오대산 (Odaesan)
 - **OG Card (assets/img/odaesan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/odaesan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -237,7 +247,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 설악산 (Seoraksan)
 - **OG Card (assets/img/seoraksan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
-- **Cinematic Ambient Loop (assets/video/seoraksan/hero.mp4)**: AI-generated video (slow cinematic panning on actual photo).
+- **Cinematic Ambient Loop (assets/video/seoraksan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [Austin Curtis](https://unsplash.com/@afcurtis) via [unsplash](https://unsplash.com).
 - **Gallery 1**: Photo by [Austin Curtis](https://unsplash.com/@afcurtis) via [unsplash](https://unsplash.com).
@@ -247,6 +257,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 식장산 (Sikjangsan)
 - **OG Card (assets/img/sikjangsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/sikjangsan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -256,6 +267,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 소백산 (Sobaeksan)
 - **OG Card (assets/img/sobaeksan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/sobaeksan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [Pan soo Yi](https://www.pexels.com/@pan-soo-yi-9278113) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -265,6 +277,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 소요산 (Soyosan)
 - **OG Card (assets/img/soyosan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/soyosan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by Dokyung Kim (User-contributed / Local).
 - **Gallery 1**: Photo by Dokyung Kim (User-contributed / Local).
@@ -279,6 +292,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 태백산 (Taebaeksan)
 - **OG Card (assets/img/taebaeksan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/taebaeksan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/photo/scenic-view-of-the-snowy-mountains-14170848/) via [Pexels](https://pexels.com).
 - **Gallery 1**: Photo by [대정 김](https://www.pexels.com/photo/temple-near-forest-and-with-garden-11525000/) via [Pexels](https://pexels.com).
@@ -288,6 +302,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 월출산 (Wolchulsan)
 - **OG Card (assets/img/wolchulsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/wolchulsan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [Kwangho Cha](https://www.pexels.com/@sudal) via [pexels](https://pexels.com).
@@ -297,6 +312,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 월악산 (Woraksan)
 - **OG Card (assets/img/woraksan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/woraksan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [Kwangho Cha](https://www.pexels.com/@sudal) via [pexels](https://pexels.com).
@@ -306,6 +322,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 ## 설산 (Xueshan)
 - **OG Card (assets/img/xueshan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/xueshan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [小小 兵](https://www.pexels.com/photo/aerial-view-of-lush-mountain-ridge-in-taiwan-34434574/) via [Pexels](https://pexels.com).
 - **Gallery 1**: Photo by [P Hsuan Wang](https://www.pexels.com/photo/grass-on-hill-11893668/) via [Pexels](https://pexels.com).
@@ -314,6 +331,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [P Hsuan Wang](https://www.pexels.com/photo/view-of-mountains-and-trees-15612617/) via [Pexels](https://pexels.com).
 
 ## 양명산 (Yangmingshan)
+- **Cinematic Ambient Loop (assets/video/yangmingshan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [CHIA-HAO HSU](https://unsplash.com/@roberthsu1054) via [Unsplash](https://unsplash.com).
 - **Gallery 1**: Photo by [Timo Volz](https://www.pexels.com/photo/photo-of-a-green-mountain-6502832/) via [Pexels](https://pexels.com).
@@ -321,12 +339,12 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 3**: Photo by [Andy Kuo](https://unsplash.com/@chyi826) via [Unsplash](https://unsplash.com).
 - **Gallery 4**: Photo by [Chen Wen-Yu](https://unsplash.com/@waterfay) via [Unsplash](https://unsplash.com).
 - **OG Card (assets/img/yangmingshan/og.png)**: AI-generated image (Gemini Image Generator).
-- **Cinematic Ambient Loop (assets/video/yangmingshan/hero.mp4)**: AI-generated video (Gemini-generated panoramic frame & cinematic panning pipeline).
 - **Unified SVG Icons (assets/icons/icons.svg)**: AI-generated vector design paths.
 
 
 ## 위산 (Yushan)
 - **OG Card (assets/img/yushan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/yushan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [小小 兵](https://www.pexels.com/photo/breathtaking-mountain-view-above-clouds-in-taiwan-34434573/) via [Pexels](https://pexels.com).
 - **Gallery 1**: Photo by [P Hsuan Wang](https://www.pexels.com/photo/tents-pitched-on-a-mountaintop-12279808/) via [Pexels](https://pexels.com).
