@@ -553,7 +553,7 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 </style>
-<meta content="assets/img/yangmingshan/og.png" property="og:image"/><meta content="assets/img/yangmingshan/og.png" name="twitter:image"/></head>
+<meta content="assets/img/brand-og.png" property="og:image"/><meta content="assets/img/brand-og.png" name="twitter:image"/></head>
 <body>
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="site-header">
@@ -603,7 +603,19 @@
 <!-- 초급 -->
 <main class="wrap" id="mainContent">
 <div class="course-panel active" id="panel-beginner">
-<div class="main-container"><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="tab-beginner-overview">
+<div class="main-container">
+<div class="course-banner beginner">
+<div><div class="banner-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 초급 — 오봉·여성봉 코스</div><div class="banner-subtitle">송추계곡 출발 · 여성봉(504m) → 오봉(660m) · 가족·입문자 추천 · 원점회귀</div></div>
+<span class="banner-badge">초급</span>
+</div>
+<div class="tab-bar">
+<button class="tab-btn active" onclick="switchTab('beginner','overview')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab-btn" onclick="switchTab('beginner','route')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('beginner','map')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab-btn" onclick="switchTab('beginner','tips')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</div>
+<!-- overview -->
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="tab-beginner-overview">
 <div class="kpi-grid beginner">
 <div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-val">9.5km</div><div class="kpi-label">왕복 거리</div></div>
 <div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-val">4~5h</div><div class="kpi-label">소요 시간</div></div>
@@ -708,10 +720,25 @@
 <tr><td>P</td><td>원점회귀</td><td>160m</td><td>9.5km</td><td><span class="cp-badge br">종료</span></td></tr>
 </tbody></table>
 </div>
-</div></div></div></div></div>
+</div></div></div>
+<!-- route -->
+<!-- map -->
+<!-- tips -->
+</div></div>
 <!-- 중급 -->
 <div class="course-panel" id="panel-inter">
-<div class="main-container"><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="tab-inter-overview">
+<div class="main-container">
+<div class="course-banner inter">
+<div><div class="banner-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 중급 — 도봉탐방센터→신선대 왕복</div><div class="banner-subtitle">도봉산역 출발 · 천축사·마당바위 → 신선대(714m) · 도봉산 대표 코스</div></div>
+<span class="banner-badge">중급</span>
+</div>
+<div class="tab-bar">
+<button class="tab-btn active" onclick="switchTab('inter','overview')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab-btn" onclick="switchTab('inter','route')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('inter','map')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab-btn" onclick="switchTab('inter','tips')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="tab-inter-overview">
 <div class="kpi-grid inter">
 <div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-val">7.0km</div><div class="kpi-label">왕복 거리</div></div>
 <div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-val">3~4h</div><div class="kpi-label">소요 시간</div></div>
@@ -824,10 +851,22 @@
 <tr><td>P</td><td>도봉산역 원점</td><td>75m</td><td>7.0km</td><td><span class="cp-badge br">종료</span></td></tr>
 </tbody></table>
 </div>
-</div></div></div></div></div>
+</div></div></div>
+</div></div>
 <!-- 고급 -->
 <div class="course-panel" id="panel-adv">
-<div class="main-container"><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="tab-adv-overview">
+<div class="main-container">
+<div class="course-banner adv">
+<div><div class="banner-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 고급 — 다락능선 Y계곡 종주</div><div class="banner-subtitle">망월사역 → 다락능선 → Y계곡 → 신선대 → 도봉산역 (편도 종주형)</div></div>
+<span class="banner-badge">고급</span>
+</div>
+<div class="tab-bar">
+<button class="tab-btn active" onclick="switchTab('adv','overview')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab-btn" onclick="switchTab('adv','route')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('adv','map')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab-btn" onclick="switchTab('adv','tips')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="tab-adv-overview">
 <div class="kpi-grid adv">
 <div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-val">7.2km</div><div class="kpi-label">편도(종주)</div></div>
 <div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-val">4~5h</div><div class="kpi-label">소요 시간</div></div>
@@ -949,7 +988,8 @@
 <tr><td>E</td><td>도봉산역</td><td>75m</td><td>7.2km</td><td><span class="cp-badge br">종료·지하철</span></td></tr>
 </tbody></table>
 </div>
-</div></div></div></div></div>
+</div></div></div>
+</div></div>
 <!-- Photo Gallery Grid -->
 </main>
 <section class="photo-gallery-section">

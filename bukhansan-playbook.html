@@ -554,7 +554,7 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 </style>
-</link><meta content="assets/img/yangmingshan/og.png" property="og:image"/><meta content="assets/img/yangmingshan/og.png" name="twitter:image"/></head>
+</link><meta content="assets/img/brand-og.png" property="og:image"/><meta content="assets/img/brand-og.png" name="twitter:image"/></head>
 <body>
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <div class="app-wrapper">
@@ -616,12 +616,33 @@
 <!-- ============================================================ -->
 <main class="wrap" id="mainContent">
 <main class="wrap" id="mainContent">
-<div class="course-panel beginner active" id="panel-beginner"><div class="tabs-nav">
+<div class="course-panel beginner active" id="panel-beginner">
+<div class="course-header">
+<div class="course-header-top">
+<div>
+<div class="course-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 비봉 능선 코스</div>
+<div class="course-subtitle">불광역 → 족두리봉 → 향로봉 → 비봉 → 사모바위 → 승가사 → 구기탐방지원센터</div>
+</div>
+<span class="course-tag">초급 · 왕복</span>
+</div>
+<div class="kpi-grid">
+<div class="kpi-card"><span class="kpi-label">📏 거리</span><span class="kpi-val">약 8km</span></div>
+<div class="kpi-card"><span class="kpi-label">⏱ 소요시간</span><span class="kpi-val">3~4시간</span></div>
+<div class="kpi-card"><span class="kpi-label">⬆ 최고도</span><span class="kpi-val">560m</span></div>
+<div class="kpi-card"><span class="kpi-label">📈 누적 상승</span><span class="kpi-val">약 500m</span></div>
+<div class="kpi-card"><span class="kpi-label">🔥 난이도</span><span class="kpi-val">하~중하</span></div>
+<div class="kpi-card"><span class="kpi-label">🅿 주차</span><span class="kpi-val">불광역 (지하철)</span></div>
+</div>
+</div>
+<!-- TABS -->
+<div class="tabs-nav">
 <button class="tab-btn active" onclick="switchTab(this,'beginner','overview')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
 <button class="tab-btn" onclick="switchTab(this,'beginner','route')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
 <button class="tab-btn" onclick="switchTab(this,'beginner','map')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도 · 체크포인트</button>
 <button class="tab-btn" onclick="switchTab(this,'beginner','tips')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 안전</button>
-</div><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-pane active" id="tab-beginner-overview">
+</div>
+<!-- 개요 TAB -->
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-pane active" id="tab-beginner-overview">
 <div class="chart-wrap">
 <div class="chart-title">📈 고도 프로파일</div>
 <svg class="chart-svg" style="height:180px" viewbox="0 0 700 180">
@@ -821,16 +842,6 @@
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)">📱</div><div class="tip-card-title">앱 &amp; 정보</div><div class="tip-card-body">스마트국립공원(공식앱), 산림청 산행지도, 기상청 날씨 앱 활용. 탐방안내소 ☎02-909-0497</div></div>
 </div>
 <div class="section-title">🚇 대중교통 안내</div>
-<div class="table-wrap">
-<table>
-<thead><tr><th>방향</th><th>수단</th><th>노선</th><th>하차</th></tr></thead>
-<tbody>
-<tr><td>출발</td><td>지하철</td><td>6호선</td><td>불광역 9번 출구</td></tr>
-<tr><td>귀가</td><td>버스</td><td>7022·7211번</td><td>구파발역(3호선) 환승</td></tr>
-<tr><td>귀가(대안)</td><td>택시/카카오</td><td>-</td><td>구기탐방지원센터 앞</td></tr>
-</tbody>
-</table>
-</div>
 </div></div><div class="playbook-sidebar-col"><div class="tab-pane" id="tab-beginner-map">
 <div class="map-wrap">
 <div class="chart-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 코스 개념도 — 비봉 능선</div>
@@ -905,16 +916,49 @@
 </tbody>
 </table>
 </div>
-</div></div></div></div><!-- /beginner panel -->
+</div><div class="table-wrap">
+<table>
+<thead><tr><th>방향</th><th>수단</th><th>노선</th><th>하차</th></tr></thead>
+<tbody>
+<tr><td>출발</td><td>지하철</td><td>6호선</td><td>불광역 9번 출구</td></tr>
+<tr><td>귀가</td><td>버스</td><td>7022·7211번</td><td>구파발역(3호선) 환승</td></tr>
+<tr><td>귀가(대안)</td><td>택시/카카오</td><td>-</td><td>구기탐방지원센터 앞</td></tr>
+</tbody>
+</table>
+</div></div></div>
+<!-- 경로 안내 TAB -->
+<!-- 지도 TAB -->
+<!-- 팁 TAB -->
+</div><!-- /beginner panel -->
 <!-- ============================================================ -->
 <!-- 중급 PANEL -->
 <!-- ============================================================ -->
-<div class="course-panel intermediate" id="panel-intermediate"><div class="tabs-nav">
+<div class="course-panel intermediate" id="panel-intermediate">
+<div class="course-header">
+<div class="course-header-top">
+<div>
+<div class="course-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 백운대 정상 코스</div>
+<div class="course-subtitle">북한산성탐방지원센터 → 대서문 → 보리사 → 위문 → 백운대 → 하루재 → 백운대탐방지원센터</div>
+</div>
+<span class="course-tag">중급 · 왕복형</span>
+</div>
+<div class="kpi-grid">
+<div class="kpi-card"><span class="kpi-label">📏 거리</span><span class="kpi-val">약 9.4km</span></div>
+<div class="kpi-card"><span class="kpi-label">⏱ 소요시간</span><span class="kpi-val">4~5시간</span></div>
+<div class="kpi-card"><span class="kpi-label">⬆ 최고도</span><span class="kpi-val">836.5m</span></div>
+<div class="kpi-card"><span class="kpi-label">📈 누적 상승</span><span class="kpi-val">약 750m</span></div>
+<div class="kpi-card"><span class="kpi-label">🔥 난이도</span><span class="kpi-val">중</span></div>
+<div class="kpi-card"><span class="kpi-label">🅿 주차</span><span class="kpi-val">북한산성 주차장</span></div>
+</div>
+</div>
+<div class="tabs-nav">
 <button class="tab-btn active" onclick="switchTab(this,'intermediate','overview')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
 <button class="tab-btn" onclick="switchTab(this,'intermediate','route')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
 <button class="tab-btn" onclick="switchTab(this,'intermediate','map')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도 · 체크포인트</button>
 <button class="tab-btn" onclick="switchTab(this,'intermediate','tips')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 안전</button>
-</div><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-pane active" id="tab-intermediate-overview">
+</div>
+<!-- 개요 -->
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-pane active" id="tab-intermediate-overview">
 <div class="chart-wrap">
 <div class="chart-title">📈 고도 프로파일</div>
 <svg class="chart-svg" style="height:180px" viewbox="0 0 700 180">
@@ -1097,16 +1141,6 @@
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-intermediate-bg)">📱</div><div class="tip-card-title">앱 &amp; 예약</div><div class="tip-card-body">국립공원 탐방예약 불필요(일반 코스). 스마트국립공원 앱. 탐방안내소 ☎02-909-0497</div></div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg> 대중교통</div>
-<div class="table-wrap">
-<table>
-<thead><tr><th>방향</th><th>수단</th><th>노선/역</th><th>비고</th></tr></thead>
-<tbody>
-<tr><td>출발</td><td>지하철+버스</td><td>구파발역(3호선) → 704번</td><td>산성입구 하차</td></tr>
-<tr><td>귀가</td><td>경전철</td><td>우이신설선 북한산우이역</td><td>우이동 도착 후 도보 20분</td></tr>
-<tr><td>귀가(대안)</td><td>버스</td><td>우이동에서 다양한 버스</td><td>4호선 미아사거리 방향</td></tr>
-</tbody>
-</table>
-</div>
 </div></div><div class="playbook-sidebar-col"><div class="tab-pane" id="tab-intermediate-map">
 <div class="map-wrap">
 <div class="chart-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 코스 개념도 — 백운대 정상</div>
@@ -1180,16 +1214,49 @@
 </tbody>
 </table>
 </div>
-</div></div></div></div><!-- /intermediate panel -->
+</div><div class="table-wrap">
+<table>
+<thead><tr><th>방향</th><th>수단</th><th>노선/역</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td>출발</td><td>지하철+버스</td><td>구파발역(3호선) → 704번</td><td>산성입구 하차</td></tr>
+<tr><td>귀가</td><td>경전철</td><td>우이신설선 북한산우이역</td><td>우이동 도착 후 도보 20분</td></tr>
+<tr><td>귀가(대안)</td><td>버스</td><td>우이동에서 다양한 버스</td><td>4호선 미아사거리 방향</td></tr>
+</tbody>
+</table>
+</div></div></div>
+<!-- 경로 -->
+<!-- 지도 -->
+<!-- 팁 -->
+</div><!-- /intermediate panel -->
 <!-- ============================================================ -->
 <!-- 고급 PANEL -->
 <!-- ============================================================ -->
-<div class="course-panel advanced" id="panel-advanced"><div class="tabs-nav">
+<div class="course-panel advanced" id="panel-advanced">
+<div class="course-header">
+<div class="course-header-top">
+<div>
+<div class="course-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 만경대 능선 종주</div>
+<div class="course-subtitle">우이동 → 도선사 → 하루재 → 백운대(836.5m) → 위문 → 만경대(799.5m) → 노적봉 → 용암문 → 대남문 → 구기계곡</div>
+</div>
+<span class="course-tag">고급 · 종주</span>
+</div>
+<div class="kpi-grid">
+<div class="kpi-card"><span class="kpi-label">📏 거리</span><span class="kpi-val">약 12km</span></div>
+<div class="kpi-card"><span class="kpi-label">⏱ 소요시간</span><span class="kpi-val">6~8시간</span></div>
+<div class="kpi-card"><span class="kpi-label">⬆ 최고도</span><span class="kpi-val">836.5m</span></div>
+<div class="kpi-card"><span class="kpi-label">📈 누적 상승</span><span class="kpi-val">약 1,100m</span></div>
+<div class="kpi-card"><span class="kpi-label">🔥 난이도</span><span class="kpi-val">상 (고급)</span></div>
+<div class="kpi-card"><span class="kpi-label">🏕 형태</span><span class="kpi-val">A→B 종주</span></div>
+</div>
+</div>
+<div class="tabs-nav">
 <button class="tab-btn active" onclick="switchTab(this,'advanced','overview')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
 <button class="tab-btn" onclick="switchTab(this,'advanced','route')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
 <button class="tab-btn" onclick="switchTab(this,'advanced','map')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도 · 체크포인트</button>
 <button class="tab-btn" onclick="switchTab(this,'advanced','tips')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 안전</button>
-</div><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-pane active" id="tab-advanced-overview">
+</div>
+<!-- 개요 -->
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-pane active" id="tab-advanced-overview">
 <div class="chart-wrap">
 <div class="chart-title">📈 고도 프로파일</div>
 <svg class="chart-svg" style="height:190px" viewbox="0 0 700 190">
@@ -1384,16 +1451,6 @@
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-advanced-bg)">💪</div><div class="tip-card-title">체력 기준</div><div class="tip-card-body">월 4회 이상 등산 경험자 권장. 누적 상승 1,100m, 12km. 하산 시 무릎 충격 크므로 사전 하체 근력 훈련.</div></div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg> 대중교통 (A→B 종주)</div>
-<div class="table-wrap">
-<table>
-<thead><tr><th>방향</th><th>수단</th><th>노선/역</th><th>소요 시간</th></tr></thead>
-<tbody>
-<tr><td>출발</td><td>우이신설경전철</td><td>북한산우이역</td><td>신설동역 환승</td></tr>
-<tr><td>귀가</td><td>버스</td><td>7022·7211번</td><td>구파발역(3호선) 20분</td></tr>
-<tr><td>귀가(빠른 대안)</td><td>택시</td><td>-</td><td>구기탐방센터 → 구파발역 10분</td></tr>
-</tbody>
-</table>
-</div>
 </div></div><div class="playbook-sidebar-col"><div class="tab-pane" id="tab-advanced-map">
 <div class="map-wrap">
 <div class="chart-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 코스 개념도 — 만경대 능선 종주</div>
@@ -1475,7 +1532,20 @@
 </tbody>
 </table>
 </div>
-</div></div></div></div><!-- /advanced panel -->
+</div><div class="table-wrap">
+<table>
+<thead><tr><th>방향</th><th>수단</th><th>노선/역</th><th>소요 시간</th></tr></thead>
+<tbody>
+<tr><td>출발</td><td>우이신설경전철</td><td>북한산우이역</td><td>신설동역 환승</td></tr>
+<tr><td>귀가</td><td>버스</td><td>7022·7211번</td><td>구파발역(3호선) 20분</td></tr>
+<tr><td>귀가(빠른 대안)</td><td>택시</td><td>-</td><td>구기탐방센터 → 구파발역 10분</td></tr>
+</tbody>
+</table>
+</div></div></div>
+<!-- 경로 -->
+<!-- 지도 -->
+<!-- 팁 -->
+</div><!-- /advanced panel -->
 </main></main></div><!-- /container -->
 </main>
 </div><!-- /app-wrapper -->

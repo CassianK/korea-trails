@@ -553,7 +553,7 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 </style>
-<meta content="assets/img/yangmingshan/og.png" property="og:image"/><meta content="assets/img/yangmingshan/og.png" name="twitter:image"/></head>
+<meta content="assets/img/brand-og.png" property="og:image"/><meta content="assets/img/brand-og.png" name="twitter:image"/></head>
 <body>
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="site-header">
@@ -634,7 +634,14 @@
 <div class="main-content">
 <!-- ===== 초급 ===== -->
 <main class="wrap" id="mainContent">
-<div class="course-panel active easy" id="panel-easy"><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="easy-overview">
+<div class="course-panel active easy" id="panel-easy">
+<div class="tab-nav">
+<button class="tab-btn active" onclick="switchTab('easy','overview')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab-btn" onclick="switchTab('easy','route')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('easy','map')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab-btn" onclick="switchTab('easy','tips')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="easy-overview">
 <div class="course-banner">
 <span class="banner-emoji"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></span>
 <div>
@@ -732,9 +739,17 @@
 <tr><td>5</td><td class="cp-name">용연폭포 (제2)</td><td>330m</td><td>3.7km</td><td>💧 최고 절경 낙차 10m</td></tr>
 <tr><td>🏁</td><td class="cp-name">내원동 반환점</td><td>350m</td><td>4.8km</td><td>🔄 벤치, 귀환 지점</td></tr>
 </tbody></table></div>
-</div></div></div></div>
+</div></div></div>
+</div>
 <!-- ===== 중급 ===== -->
-<div class="course-panel mid" id="panel-mid"><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="mid-overview">
+<div class="course-panel mid" id="panel-mid">
+<div class="tab-nav">
+<button class="tab-btn active" onclick="switchTab('mid','overview')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab-btn" onclick="switchTab('mid','route')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('mid','map')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab-btn" onclick="switchTab('mid','tips')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="mid-overview">
 <div class="course-banner">
 <span class="banner-emoji"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg></span>
 <div>
@@ -839,9 +854,17 @@
 <tr><td>6</td><td class="cp-name">용연폭포</td><td>330m</td><td>7.2km</td><td>💧 제2폭포</td></tr>
 <tr><td>🏁</td><td class="cp-name">상의주차장 귀환</td><td>250m</td><td>10.1km</td><td>✅ 종료</td></tr>
 </tbody></table></div>
-</div></div></div></div>
+</div></div></div>
+</div>
 <!-- ===== 고급 ===== -->
-<div class="course-panel hard" id="panel-hard"><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="hard-overview">
+<div class="course-panel hard" id="panel-hard">
+<div class="tab-nav">
+<button class="tab-btn active" onclick="switchTab('hard','overview')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab-btn" onclick="switchTab('hard','route')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('hard','map')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab-btn" onclick="switchTab('hard','tips')"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="hard-overview">
 <div class="course-banner">
 <span class="banner-emoji"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
 <div>
@@ -955,7 +978,8 @@
 <tr><td>8</td><td class="cp-name">대전사</td><td>260m</td><td>12.6km</td><td>⛩ 음료 구매 가능</td></tr>
 <tr><td>🏁</td><td class="cp-name">상의주차장</td><td>250m</td><td>13.5km</td><td>✅ 종주 완료</td></tr>
 </tbody></table></div>
-</div></div></div></div>
+</div></div></div>
+</div>
 </main></div>
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">

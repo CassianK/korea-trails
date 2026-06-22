@@ -554,7 +554,7 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 </style>
-</link><meta content="assets/img/yangmingshan/og.png" property="og:image"/><meta content="assets/img/yangmingshan/og.png" name="twitter:image"/></head>
+</link><meta content="assets/img/brand-og.png" property="og:image"/><meta content="assets/img/brand-og.png" name="twitter:image"/></head>
 <body>
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <!-- HERO -->
@@ -593,12 +593,64 @@
 </div>
 <!-- ════ BEGINNER ════ -->
 <main class="wrap" id="mainContent">
-<div class="course-panel active" id="panel-beginner"><div class="tabs">
+<div class="course-panel active" id="panel-beginner">
+<div class="container">
+<!-- STATS -->
+<div class="stats-grid">
+<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">5.7km</div><div class="stat-label">총 거리</div></div>
+<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">1.5h</div><div class="stat-label">소요시간</div></div>
+<div class="stat-card"><div class="stat-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="stat-value">430m</div><div class="stat-label">최고지점</div></div>
+<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">280m</div><div class="stat-label">누적상승</div></div>
+<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~320</div><div class="stat-label">칼로리(kcal)</div></div>
+<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">쉬움</div><div class="stat-label">난이도</div></div>
+</div>
+<!-- DESC -->
+<div class="course-desc">
+<div class="course-desc-header">
+<span class="course-level-badge badge-beginner"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 초급</span>
+<h2>계곡 산책코스 — 자재암·하백운대·선녀탕</h2>
+</div>
+<p>일주문에서 자재암을 거쳐 하백운대·중백운대에 오른 뒤 선녀탕 계곡으로 되돌아오는 원점회귀 코스입니다. 계곡을 따라 걷는 구간이 많아 여름에도 시원하고, 가을 단풍이 특히 아름답습니다. 등산 초보자·어린이·어르신 모두 부담 없이 즐길 수 있는 소요산의 대표 입문 코스입니다.</p>
+</div>
+<!-- ELEVATION -->
+<div class="elevation-section">
+<div class="section-title">📊 고도 프로파일</div>
+<div class="elevation-wrap">
+<svg preserveaspectratio="none" viewbox="0 0 700 160">
+<defs>
+<lineargradient id="grad-b" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#437a22" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#437a22" stop-opacity="0.05"></stop>
+</lineargradient>
+</defs>
+<path d="M0,150 L0,130 C60,128 100,125 130,110 C160,95 175,80 200,70 C225,60 240,55 260,50 C280,45 300,48 320,55 C340,62 370,75 400,85 C430,95 460,100 500,105 C540,110 580,115 620,125 C650,130 680,140 700,145 L700,150 Z" fill="url(#grad-b)" fill-opacity="1" stroke="#437a22" stroke-width="2.5"></path>
+<!-- Waypoints -->
+<circle cx="0" cy="130" fill="#437a22" r="5"></circle>
+<circle cx="130" cy="110" fill="#437a22" r="5"></circle>
+<circle cx="200" cy="70" fill="#437a22" r="6"></circle>
+<circle cx="260" cy="50" fill="#2d5217" r="7"></circle>
+<circle cx="400" cy="85" fill="#437a22" r="5"></circle>
+<circle cx="700" cy="145" fill="#437a22" r="5"></circle>
+<!-- Labels -->
+<text fill="currentColor" font-size="9" opacity="0.8" text-anchor="start" x="0" y="125">매표소</text>
+<text fill="currentColor" font-size="9" opacity="0.8" text-anchor="middle" x="130" y="105">자재암</text>
+<text fill="currentColor" font-size="9" opacity="0.8" text-anchor="middle" x="200" y="65">하백운대</text>
+<text fill="currentColor" font-size="9" font-weight="bold" text-anchor="middle" x="260" y="44">중백운대</text>
+<text fill="currentColor" font-size="7" opacity="0.7" text-anchor="middle" x="260" y="55">430m</text>
+<text fill="currentColor" font-size="9" opacity="0.8" text-anchor="middle" x="400" y="80">선녀탕</text>
+<text fill="currentColor" font-size="9" opacity="0.8" text-anchor="end" x="700" y="140">일주문</text>
+</svg>
+</div>
+</div>
+<!-- TABS -->
+<div class="tabs">
 <button class="tab-btn active" onclick="switchTab('b','route',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
 <button class="tab-btn" onclick="switchTab('b','map',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 코스 지도</button>
 <button class="tab-btn" onclick="switchTab('b','peaks',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 주요 명소</button>
 <button class="tab-btn" onclick="switchTab('b','tips',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 안전</button>
-</div><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-panel active" id="b-route">
+</div>
+<!-- ROUTE TAB -->
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-panel active" id="b-route">
 <!-- Segment 1 -->
 <div class="route-card" onclick="toggleCard(this)">
 <div class="route-card-header">
@@ -714,11 +766,6 @@
 <li>서울역 기준 약 70분 소요</li>
 <li>도착 후 도보 15분이면 일주문</li>
 </ul>
-<table class="transport-table"><thead><tr><th>수단</th><th>경로</th></tr></thead><tbody>
-<tr><td>전철</td><td>1호선 소요산역 1번출구</td></tr>
-<tr><td>버스</td><td>36번(수유역), 39번(도봉산역), 53번(전곡-덕정)</td></tr>
-<tr><td>승용차</td><td>3호선 소요산IC → 소요산 사거리 우회전</td></tr>
-</tbody></table>
 </div>
 <div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>초급 필수 장비</h2>
 <ul>
@@ -827,15 +874,73 @@
 </tbody>
 </table>
 </div>
-</div></div></div></div>
+</div><table class="transport-table"><thead><tr><th>수단</th><th>경로</th></tr></thead><tbody>
+<tr><td>전철</td><td>1호선 소요산역 1번출구</td></tr>
+<tr><td>버스</td><td>36번(수유역), 39번(도봉산역), 53번(전곡-덕정)</td></tr>
+<tr><td>승용차</td><td>3호선 소요산IC → 소요산 사거리 우회전</td></tr>
+</tbody></table></div></div>
+<!-- MAP TAB -->
+<!-- PEAKS TAB -->
+<!-- TIPS TAB -->
+</div>
+</div>
 <!-- ════ END BEGINNER ════ -->
 <!-- ════ INTERMEDIATE ════ -->
-<div class="course-panel" id="panel-intermediate"><div class="tabs">
+<div class="course-panel" id="panel-intermediate">
+<div class="container">
+<div class="stats-grid">
+<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">6.5km</div><div class="stat-label">총 거리</div></div>
+<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">2~3h</div><div class="stat-label">소요시간</div></div>
+<div class="stat-card"><div class="stat-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="stat-value">500m</div><div class="stat-label">최고지점</div></div>
+<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">460m</div><div class="stat-label">누적상승</div></div>
+<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~550</div><div class="stat-label">칼로리(kcal)</div></div>
+<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">보통</div><div class="stat-label">난이도</div></div>
+</div>
+<div class="course-desc">
+<div class="course-desc-header">
+<span class="course-level-badge badge-intermediate"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 중급</span>
+<h2>백운대 능선코스 — 3백운대 + 칼바위</h2>
+</div>
+<p>일주문 → 자재암 → 하·중·상백운대 → 칼바위 → 선녀탕으로 하산하는 원점회귀 코스(약 6.5km, 2~3시간). 소요산의 백미인 칼바위 능선 암릉을 경험할 수 있는 코스로, 하백·중·상백운대를 모두 밟고 칼바위의 짜릿한 조망을 즐길 수 있습니다. 단, 칼바위 구간은 아찔한 암릉이므로 등산화와 장갑은 필수입니다.</p>
+</div>
+<div class="elevation-section">
+<div class="section-title">📊 고도 프로파일</div>
+<div class="elevation-wrap">
+<svg preserveaspectratio="none" viewbox="0 0 700 160">
+<defs>
+<lineargradient id="grad-i" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#da7101" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#da7101" stop-opacity="0.05"></stop>
+</lineargradient>
+</defs>
+<path d="M0,148 L0,130 C50,128 90,125 120,112 C145,100 165,85 185,72 C200,62 215,55 235,47 C250,40 262,36 275,32 C285,29 298,30 310,38 C325,47 345,58 370,72 C400,88 440,100 490,115 C530,125 580,132 640,138 L700,142 L700,150 Z" fill="url(#grad-i)" stroke="#da7101" stroke-width="2.5"></path>
+<circle cx="0" cy="130" fill="#da7101" r="5"></circle>
+<circle cx="120" cy="112" fill="#da7101" r="5"></circle>
+<circle cx="185" cy="72" fill="#da7101" r="5"></circle>
+<circle cx="235" cy="47" fill="#da7101" r="5"></circle>
+<circle cx="275" cy="32" fill="#b05700" r="7"></circle>
+<circle cx="370" cy="72" fill="#c05500" r="6"></circle>
+<circle cx="490" cy="115" fill="#da7101" r="5"></circle>
+<circle cx="700" cy="142" fill="#da7101" r="5"></circle>
+<text fill="currentColor" font-size="9" x="0" y="126">매표소</text>
+<text fill="currentColor" font-size="9" text-anchor="middle" x="120" y="108">자재암</text>
+<text fill="currentColor" font-size="9" text-anchor="middle" x="185" y="68">하백운대</text>
+<text fill="currentColor" font-size="9" text-anchor="middle" x="235" y="43">중백운대</text>
+<text fill="currentColor" font-size="9" font-weight="bold" text-anchor="middle" x="275" y="27">상백운대</text>
+<text fill="currentColor" font-size="7" opacity="0.7" text-anchor="middle" x="275" y="38">500m</text>
+<text fill="currentColor" font-size="9" font-weight="bold" text-anchor="middle" x="370" y="67">칼바위</text>
+<text fill="currentColor" font-size="9" text-anchor="middle" x="490" y="110">선녀탕</text>
+<text fill="currentColor" font-size="9" text-anchor="end" x="700" y="138">일주문</text>
+</svg>
+</div>
+</div>
+<div class="tabs">
 <button class="tab-btn active" onclick="switchTab('i','route',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
 <button class="tab-btn" onclick="switchTab('i','map',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 코스 지도</button>
 <button class="tab-btn" onclick="switchTab('i','peaks',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 주요 명소</button>
 <button class="tab-btn" onclick="switchTab('i','tips',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 안전</button>
-</div><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-panel active" id="i-route">
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-panel active" id="i-route">
 <div class="route-card" onclick="toggleCard(this)">
 <div class="route-card-header">
 <div class="route-step step-intermediate">1</div>
@@ -987,15 +1092,70 @@
 </tbody>
 </table>
 </div>
-</div></div></div></div>
+</div></div></div>
+</div>
+</div>
 <!-- ════ END INTERMEDIATE ════ -->
 <!-- ════ ADVANCED ════ -->
-<div class="course-panel" id="panel-advanced"><div class="tabs">
+<div class="course-panel" id="panel-advanced">
+<div class="container">
+<div class="stats-grid">
+<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">8.1km</div><div class="stat-label">총 거리</div></div>
+<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">4~5h</div><div class="stat-label">소요시간</div></div>
+<div class="stat-card"><div class="stat-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="stat-value">587m</div><div class="stat-label">최고지점</div></div>
+<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">650m</div><div class="stat-label">누적상승</div></div>
+<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~1020</div><div class="stat-label">칼로리(kcal)</div></div>
+<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">어려움</div><div class="stat-label">난이도</div></div>
+</div>
+<div class="course-desc">
+<div class="course-desc-header">
+<span class="course-level-badge badge-advanced"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 고급</span>
+<h2>의상대 완주코스 — 전봉우리 일주 (8.1km)</h2>
+</div>
+<p>소요산의 모든 주요 봉우리를 한 번에 밟는 완전 일주 코스(약 8.1km, 4~5시간). 일주문 → 자재암 → 하·중·상백운대 → 칼바위 → 나한대 → 의상대(정상 587m) → 공주봉 → 구절터 → 일주문의 말굽형 순환 코스입니다. 산악투어·블랙야크 100대 명산 인증 코스로, 소요산의 모든 조망과 암릉을 경험할 수 있는 최고급 코스입니다.</p>
+</div>
+<div class="elevation-section">
+<div class="section-title">📊 고도 프로파일</div>
+<div class="elevation-wrap">
+<svg preserveaspectratio="none" viewbox="0 0 700 160">
+<defs>
+<lineargradient id="grad-a" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#a12c7b" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#a12c7b" stop-opacity="0.05"></stop>
+</lineargradient>
+</defs>
+<path d="M0,148 L0,132 C40,130 70,127 95,118 C115,110 130,100 148,88 C163,78 175,69 190,61 C202,53 212,47 222,42 C230,37 240,34 248,30 C256,27 264,27 272,29 C282,32 295,38 308,30 C318,23 326,16 336,10 C342,6 348,5 355,4 C360,3 366,4 372,8 C382,15 392,26 405,40 C420,56 437,70 455,82 C472,92 490,100 510,108 C535,118 560,124 590,132 L640,138 L700,142 L700,150 Z" fill="url(#grad-a)" stroke="#a12c7b" stroke-width="2.5"></path>
+<!-- Points -->
+<circle cx="0" cy="132" fill="#a12c7b" r="4"></circle>
+<circle cx="95" cy="118" fill="#a12c7b" r="4"></circle>
+<circle cx="190" cy="61" fill="#a12c7b" r="5"></circle>
+<circle cx="248" cy="30" fill="#a12c7b" r="5"></circle>
+<circle cx="272" cy="29" fill="#a12c7b" r="5"></circle>
+<circle cx="308" cy="30" fill="#7b1a5c" r="6"></circle>
+<circle cx="355" cy="4" fill="#7b1a5c" r="8" stroke="white" stroke-width="2"></circle>
+<circle cx="405" cy="40" fill="#7b1a5c" r="6"></circle>
+<circle cx="510" cy="108" fill="#a12c7b" r="5"></circle>
+<circle cx="700" cy="142" fill="#a12c7b" r="4"></circle>
+<text fill="currentColor" font-size="8" x="0" y="128">매표소</text>
+<text fill="currentColor" font-size="8" text-anchor="middle" x="95" y="114">자재암</text>
+<text fill="currentColor" font-size="8" text-anchor="middle" x="190" y="57">하백운대</text>
+<text fill="currentColor" font-size="8" text-anchor="middle" x="248" y="25">상백운대</text>
+<text fill="currentColor" font-size="8" font-weight="bold" text-anchor="middle" x="308" y="25">칼바위</text>
+<text fill="currentColor" font-size="9" font-weight="bold" text-anchor="middle" x="355" y="-2">의상대</text>
+<text fill="currentColor" font-size="7" opacity="0.8" text-anchor="middle" x="355" y="9">587m ★</text>
+<text fill="currentColor" font-size="8" font-weight="bold" text-anchor="middle" x="405" y="35">공주봉</text>
+<text fill="currentColor" font-size="8" text-anchor="middle" x="510" y="103">구절터</text>
+<text fill="currentColor" font-size="8" text-anchor="end" x="700" y="138">일주문</text>
+</svg>
+</div>
+</div>
+<div class="tabs">
 <button class="tab-btn active" onclick="switchTab('a','route',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
 <button class="tab-btn" onclick="switchTab('a','map',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 코스 지도</button>
 <button class="tab-btn" onclick="switchTab('a','peaks',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 주요 명소</button>
 <button class="tab-btn" onclick="switchTab('a','tips',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 안전</button>
-</div><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-panel active" id="a-route">
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-panel active" id="a-route">
 <div class="route-card" onclick="toggleCard(this)">
 <div class="route-card-header">
 <div class="route-step step-advanced">1</div>
@@ -1199,7 +1359,9 @@
 </tbody>
 </table>
 </div>
-</div></div></div></div>
+</div></div></div>
+</div>
+</div>
 <!-- ════ END ADVANCED ════ -->
 <!-- Photo Gallery Grid -->
 </main>
