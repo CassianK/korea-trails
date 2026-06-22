@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "assets": [
     {
       "id": "icons-sprite",
@@ -11,41 +11,6 @@
       "license": "Creative Commons CC0"
     },
     {
-      "id": "og-yangmingshan",
-      "path": "assets/img/yangmingshan/og.png",
-      "type": "image/png",
-      "dimensions": "1200x630",
-      "purpose": "Social sharing open-graph card for Yangmingshan Playbook",
-      "source": "Gemini Image Generator",
-      "ai_generated": true,
-      "ai_high_fidelity": true,
-      "caption": "Misty ridge trail of Yangmingshan Qixingshan peak under golden hour light",
-      "alt": {
-        "ko": "황금빛 일출 아래 안개 낀 양명산 칠성산 능선 등산로 풍경",
-        "en": "Scenic misty hiking trail along the ridge of Yangmingshan Qixingshan peak under soft morning sunlight"
-      }
-    },
-    {
-      "id": "hero-video-yangmingshan",
-      "path": "assets/video/yangmingshan/hero.mp4",
-      "type": "video/mp4",
-      "duration": "10s",
-      "dimensions": "1280x720",
-      "purpose": "Desktop cinematic ambient background loop on landing page hero",
-      "source": "AI-generated panoramic crop & slow cinematic pan process",
-      "ai_generated": true,
-      "size_bytes": 839680
-    },
-    {
-      "id": "hero-poster-yangmingshan",
-      "path": "assets/video/yangmingshan/hero-poster.jpg",
-      "type": "image/jpeg",
-      "dimensions": "1280x720",
-      "purpose": "Fallback poster and mobile background image for landing page hero",
-      "source": "AI-generated panoramic image crop",
-      "ai_generated": true
-    },
-    {
       "id": "og-bukhansan",
       "path": "assets/img/bukhansan/og.png",
       "type": "image/png",
@@ -53,6 +18,26 @@
       "purpose": "Social sharing open-graph card for Bukhansan Playbook",
       "source": "Composite of actual hero photo with branding and text overlay",
       "ai_generated": true
+    },
+    {
+      "id": "hero-video-bukhansan",
+      "path": "assets/video/bukhansan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Bukhansan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 490570
+    },
+    {
+      "id": "hero-poster-bukhansan",
+      "path": "assets/video/bukhansan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Bukhansan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     },
     {
       "id": "og-deogyusan",
@@ -64,6 +49,26 @@
       "ai_generated": true
     },
     {
+      "id": "hero-video-deogyusan",
+      "path": "assets/video/deogyusan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Deogyusan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1852148
+    },
+    {
+      "id": "hero-poster-deogyusan",
+      "path": "assets/video/deogyusan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Deogyusan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
       "id": "og-dobongsan",
       "path": "assets/img/dobongsan/og.png",
       "type": "image/png",
@@ -71,6 +76,26 @@
       "purpose": "Social sharing open-graph card for Dobongsan Playbook",
       "source": "Composite of actual hero photo with branding and text overlay",
       "ai_generated": true
+    },
+    {
+      "id": "hero-video-dobongsan",
+      "path": "assets/video/dobongsan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Dobongsan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1433062
+    },
+    {
+      "id": "hero-poster-dobongsan",
+      "path": "assets/video/dobongsan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Dobongsan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     },
     {
       "id": "og-gayasan",
@@ -82,6 +107,26 @@
       "ai_generated": true
     },
     {
+      "id": "hero-video-gayasan",
+      "path": "assets/video/gayasan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Gayasan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1250640
+    },
+    {
+      "id": "hero-poster-gayasan",
+      "path": "assets/video/gayasan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Gayasan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
       "id": "og-gyeryongsan",
       "path": "assets/img/gyeryongsan/og.png",
       "type": "image/png",
@@ -89,6 +134,26 @@
       "purpose": "Social sharing open-graph card for Gyeryongsan Playbook",
       "source": "Composite of actual hero photo with branding and text overlay",
       "ai_generated": true
+    },
+    {
+      "id": "hero-video-gyeryongsan",
+      "path": "assets/video/gyeryongsan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Gyeryongsan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1150507
+    },
+    {
+      "id": "hero-poster-gyeryongsan",
+      "path": "assets/video/gyeryongsan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Gyeryongsan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     },
     {
       "id": "og-hallasan",
@@ -100,6 +165,26 @@
       "ai_generated": true
     },
     {
+      "id": "hero-video-hallasan",
+      "path": "assets/video/hallasan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Hallasan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1497729
+    },
+    {
+      "id": "hero-poster-hallasan",
+      "path": "assets/video/hallasan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Hallasan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
       "id": "og-jirisan",
       "path": "assets/img/jirisan/og.png",
       "type": "image/png",
@@ -107,6 +192,26 @@
       "purpose": "Social sharing open-graph card for Jirisan Playbook",
       "source": "Composite of actual hero photo with branding and text overlay",
       "ai_generated": true
+    },
+    {
+      "id": "hero-video-jirisan",
+      "path": "assets/video/jirisan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Jirisan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1707279
+    },
+    {
+      "id": "hero-poster-jirisan",
+      "path": "assets/video/jirisan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Jirisan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     },
     {
       "id": "og-juwangsan",
@@ -118,6 +223,26 @@
       "ai_generated": true
     },
     {
+      "id": "hero-video-juwangsan",
+      "path": "assets/video/juwangsan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Juwangsan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1649101
+    },
+    {
+      "id": "hero-poster-juwangsan",
+      "path": "assets/video/juwangsan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Juwangsan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
       "id": "og-myeongseongsan",
       "path": "assets/img/myeongseongsan/og.png",
       "type": "image/png",
@@ -125,6 +250,26 @@
       "purpose": "Social sharing open-graph card for Myeongseongsan Playbook",
       "source": "Composite of actual hero photo with branding and text overlay",
       "ai_generated": true
+    },
+    {
+      "id": "hero-video-myeongseongsan",
+      "path": "assets/video/myeongseongsan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Myeongseongsan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 769874
+    },
+    {
+      "id": "hero-poster-myeongseongsan",
+      "path": "assets/video/myeongseongsan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Myeongseongsan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     },
     {
       "id": "og-naejangsan",
@@ -136,6 +281,26 @@
       "ai_generated": true
     },
     {
+      "id": "hero-video-naejangsan",
+      "path": "assets/video/naejangsan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Naejangsan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1649101
+    },
+    {
+      "id": "hero-poster-naejangsan",
+      "path": "assets/video/naejangsan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Naejangsan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
       "id": "og-odaesan",
       "path": "assets/img/odaesan/og.png",
       "type": "image/png",
@@ -143,6 +308,26 @@
       "purpose": "Social sharing open-graph card for Odaesan Playbook",
       "source": "Composite of actual hero photo with branding and text overlay",
       "ai_generated": true
+    },
+    {
+      "id": "hero-video-odaesan",
+      "path": "assets/video/odaesan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Odaesan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1649101
+    },
+    {
+      "id": "hero-poster-odaesan",
+      "path": "assets/video/odaesan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Odaesan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     },
     {
       "id": "og-seoraksan",
@@ -154,6 +339,26 @@
       "ai_generated": true
     },
     {
+      "id": "hero-video-seoraksan",
+      "path": "assets/video/seoraksan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Seoraksan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1510209
+    },
+    {
+      "id": "hero-poster-seoraksan",
+      "path": "assets/video/seoraksan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Seoraksan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
       "id": "og-sikjangsan",
       "path": "assets/img/sikjangsan/og.png",
       "type": "image/png",
@@ -161,6 +366,26 @@
       "purpose": "Social sharing open-graph card for Sikjangsan Playbook",
       "source": "Composite of actual hero photo with branding and text overlay",
       "ai_generated": true
+    },
+    {
+      "id": "hero-video-sikjangsan",
+      "path": "assets/video/sikjangsan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Sikjangsan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 575511
+    },
+    {
+      "id": "hero-poster-sikjangsan",
+      "path": "assets/video/sikjangsan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Sikjangsan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     },
     {
       "id": "og-sobaeksan",
@@ -172,6 +397,26 @@
       "ai_generated": true
     },
     {
+      "id": "hero-video-sobaeksan",
+      "path": "assets/video/sobaeksan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Sobaeksan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 636090
+    },
+    {
+      "id": "hero-poster-sobaeksan",
+      "path": "assets/video/sobaeksan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Sobaeksan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
       "id": "og-soyosan",
       "path": "assets/img/soyosan/og.png",
       "type": "image/png",
@@ -179,6 +424,26 @@
       "purpose": "Social sharing open-graph card for Soyosan Playbook",
       "source": "Composite of actual hero photo with branding and text overlay",
       "ai_generated": true
+    },
+    {
+      "id": "hero-video-soyosan",
+      "path": "assets/video/soyosan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Soyosan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 581209
+    },
+    {
+      "id": "hero-poster-soyosan",
+      "path": "assets/video/soyosan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Soyosan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     },
     {
       "id": "og-taebaeksan",
@@ -190,6 +455,26 @@
       "ai_generated": true
     },
     {
+      "id": "hero-video-taebaeksan",
+      "path": "assets/video/taebaeksan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Taebaeksan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 750064
+    },
+    {
+      "id": "hero-poster-taebaeksan",
+      "path": "assets/video/taebaeksan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Taebaeksan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
       "id": "og-wolchulsan",
       "path": "assets/img/wolchulsan/og.png",
       "type": "image/png",
@@ -197,6 +482,26 @@
       "purpose": "Social sharing open-graph card for Wolchulsan Playbook",
       "source": "Composite of actual hero photo with branding and text overlay",
       "ai_generated": true
+    },
+    {
+      "id": "hero-video-wolchulsan",
+      "path": "assets/video/wolchulsan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Wolchulsan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 575511
+    },
+    {
+      "id": "hero-poster-wolchulsan",
+      "path": "assets/video/wolchulsan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Wolchulsan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     },
     {
       "id": "og-woraksan",
@@ -208,6 +513,26 @@
       "ai_generated": true
     },
     {
+      "id": "hero-video-woraksan",
+      "path": "assets/video/woraksan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Woraksan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 575511
+    },
+    {
+      "id": "hero-poster-woraksan",
+      "path": "assets/video/woraksan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Woraksan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
       "id": "og-xueshan",
       "path": "assets/img/xueshan/og.png",
       "type": "image/png",
@@ -215,6 +540,55 @@
       "purpose": "Social sharing open-graph card for Xueshan Playbook",
       "source": "Composite of actual hero photo with branding and text overlay",
       "ai_generated": true
+    },
+    {
+      "id": "hero-video-xueshan",
+      "path": "assets/video/xueshan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Xueshan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 953016
+    },
+    {
+      "id": "hero-poster-xueshan",
+      "path": "assets/video/xueshan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Xueshan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
+      "id": "og-yangmingshan",
+      "path": "assets/img/yangmingshan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Yangmingshan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "hero-video-yangmingshan",
+      "path": "assets/video/yangmingshan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Yangmingshan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1522133
+    },
+    {
+      "id": "hero-poster-yangmingshan",
+      "path": "assets/video/yangmingshan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Yangmingshan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     },
     {
       "id": "og-yushan",
@@ -226,44 +600,24 @@
       "ai_generated": true
     },
     {
-      "id": "hero-video-seoraksan",
-      "path": "assets/video/seoraksan/hero.mp4",
+      "id": "hero-video-yushan",
+      "path": "assets/video/yushan/hero.mp4",
       "type": "video/mp4",
-      "duration": "10s",
+      "duration": "12s",
       "dimensions": "1280x720",
-      "purpose": "Desktop cinematic ambient background loop on Seoraksan playbook hero",
-      "source": "AI-generated panoramic crop & slow cinematic pan process",
-      "ai_generated": true,
-      "size_bytes": 857364
+      "purpose": "Desktop cinematic ambient background loop on Yushan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1292217
     },
     {
-      "id": "hero-poster-seoraksan",
-      "path": "assets/video/seoraksan/hero-poster.jpg",
+      "id": "hero-poster-yushan",
+      "path": "assets/video/yushan/hero-poster.jpg",
       "type": "image/jpeg",
       "dimensions": "1280x720",
-      "purpose": "Fallback poster and mobile background image for Seoraksan playbook hero",
-      "source": "AI-generated panoramic image crop",
-      "ai_generated": true
-    },
-    {
-      "id": "hero-video-bukhansan",
-      "path": "assets/video/bukhansan/hero.mp4",
-      "type": "video/mp4",
-      "duration": "10s",
-      "dimensions": "1280x720",
-      "purpose": "Desktop cinematic ambient background loop on Bukhansan playbook hero",
-      "source": "AI-generated panoramic crop & slow cinematic pan process",
-      "ai_generated": true,
-      "size_bytes": 1123215
-    },
-    {
-      "id": "hero-poster-bukhansan",
-      "path": "assets/video/bukhansan/hero-poster.jpg",
-      "type": "image/jpeg",
-      "dimensions": "1280x720",
-      "purpose": "Fallback poster and mobile background image for Bukhansan playbook hero",
-      "source": "AI-generated panoramic image crop",
-      "ai_generated": true
+      "purpose": "Fallback poster and mobile background image for Yushan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     }
   ]
 }
