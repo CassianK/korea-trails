@@ -11,6 +11,8 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [Theodore Nguyen](https://www.pexels.com/@thejourneyofframes) via [pexels](https://pexels.com).
 
 ## 북한산 (Bukhansan)
+- **OG Card (assets/img/bukhansan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/bukhansan/hero.mp4)**: AI-generated video (slow cinematic panning on actual photo).
 
 - **Hero Header**: Photo by Dokyung Kim (User-contributed / Local).
 - **Gallery 1**: Photo by Dokyung Kim (User-contributed / Local).
@@ -50,6 +52,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 
 ## 덕유산 (Deogyusan)
+- **OG Card (assets/img/deogyusan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [Anthony Taewan Kim](https://www.pexels.com/@anthony-taewan-kim-1326772885) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -58,6 +61,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [kevin yung](https://www.pexels.com/@kevin-yung-2152346613) via [pexels](https://pexels.com).
 
 ## 도봉산 (Dobongsan)
+- **OG Card (assets/img/dobongsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by Dokyung Kim (User-contributed / Local).
 - **Gallery 1**: Photo by Dokyung Kim (User-contributed / Local).
@@ -144,6 +148,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [TimePRO TV](https://www.pexels.com/@timepro-tv-2148736540) via [pexels](https://pexels.com).
 
 ## 가야산 (Gayasan)
+- **OG Card (assets/img/gayasan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -152,6 +157,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 
 ## 계룡산 (Gyeryongsan)
+- **OG Card (assets/img/gyeryongsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -160,6 +166,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 
 ## 한라산 (Hallasan)
+- **OG Card (assets/img/hallasan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [Julien Manival](https://unsplash.com/@julien_manival) via [unsplash](https://unsplash.com).
 - **Gallery 1**: Photo by [shuping zhao](https://unsplash.com/@suping1555) via [unsplash](https://unsplash.com).
@@ -168,6 +175,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [Muhammad Rahiman Abdulmanab](https://unsplash.com/@mdrhmn) via [unsplash](https://unsplash.com).
 
 ## 지리산 (Jirisan)
+- **OG Card (assets/img/jirisan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -176,6 +184,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 
 ## 주왕산 (Juwangsan)
+- **OG Card (assets/img/juwangsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -200,6 +209,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [창균 이](https://www.pexels.com/@722721370) via [pexels](https://pexels.com).
 
 ## 명성산 (Myeongseongsan)
+- **OG Card (assets/img/myeongseongsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [Flavio Mori](https://unsplash.com/@flvision_) via [Unsplash](https://unsplash.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/photo/rocky-mountain-with-plants-18959280/) via [Pexels](https://pexels.com).
@@ -208,6 +218,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [Joel M B Marrinan](https://www.pexels.com/photo/red-temple-near-green-trees-under-blue-sky-5863417/) via [Pexels](https://pexels.com).
 
 ## 내장산 (Naejangsan)
+- **OG Card (assets/img/naejangsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [Nuhyil Ahammed](https://www.pexels.com/@nuhyil-ahammed-282191113) via [pexels](https://pexels.com).
@@ -216,6 +227,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [Vasilij Zajcev](https://www.pexels.com/@vasilij-zajcev-3061980) via [pexels](https://pexels.com).
 
 ## 오대산 (Odaesan)
+- **OG Card (assets/img/odaesan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -224,6 +236,8 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 
 ## 설악산 (Seoraksan)
+- **OG Card (assets/img/seoraksan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/seoraksan/hero.mp4)**: AI-generated video (slow cinematic panning on actual photo).
 
 - **Hero Header**: Photo by [Austin Curtis](https://unsplash.com/@afcurtis) via [unsplash](https://unsplash.com).
 - **Gallery 1**: Photo by [Austin Curtis](https://unsplash.com/@afcurtis) via [unsplash](https://unsplash.com).
@@ -232,6 +246,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [Minku Kang](https://unsplash.com/@minkus) via [unsplash](https://unsplash.com).
 
 ## 식장산 (Sikjangsan)
+- **OG Card (assets/img/sikjangsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -240,6 +255,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 
 ## 소백산 (Sobaeksan)
+- **OG Card (assets/img/sobaeksan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [Pan soo Yi](https://www.pexels.com/@pan-soo-yi-9278113) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
@@ -248,6 +264,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [Kemal Güneş](https://www.pexels.com/@wkgunes) via [pexels](https://pexels.com).
 
 ## 소요산 (Soyosan)
+- **OG Card (assets/img/soyosan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by Dokyung Kim (User-contributed / Local).
 - **Gallery 1**: Photo by Dokyung Kim (User-contributed / Local).
@@ -261,6 +278,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 9**: Photo by Dokyung Kim (User-contributed / Local).
 
 ## 태백산 (Taebaeksan)
+- **OG Card (assets/img/taebaeksan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/photo/scenic-view-of-the-snowy-mountains-14170848/) via [Pexels](https://pexels.com).
 - **Gallery 1**: Photo by [대정 김](https://www.pexels.com/photo/temple-near-forest-and-with-garden-11525000/) via [Pexels](https://pexels.com).
@@ -269,6 +287,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/photo/drone-shot-of-hills-15113686/) via [Pexels](https://pexels.com).
 
 ## 월출산 (Wolchulsan)
+- **OG Card (assets/img/wolchulsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [Kwangho Cha](https://www.pexels.com/@sudal) via [pexels](https://pexels.com).
@@ -277,6 +296,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [대정 김](https://www.pexels.com/@daejeung) via [pexels](https://pexels.com).
 
 ## 월악산 (Woraksan)
+- **OG Card (assets/img/woraksan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [Kwangho Cha](https://www.pexels.com/@sudal) via [pexels](https://pexels.com).
@@ -285,6 +305,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [Suki Lee](https://www.pexels.com/@suki-lee-110686949) via [pexels](https://pexels.com).
 
 ## 설산 (Xueshan)
+- **OG Card (assets/img/xueshan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [小小 兵](https://www.pexels.com/photo/aerial-view-of-lush-mountain-ridge-in-taiwan-34434574/) via [Pexels](https://pexels.com).
 - **Gallery 1**: Photo by [P Hsuan Wang](https://www.pexels.com/photo/grass-on-hill-11893668/) via [Pexels](https://pexels.com).
@@ -305,6 +326,7 @@ This document acknowledges and credits the talented photographers whose beautifu
 
 
 ## 위산 (Yushan)
+- **OG Card (assets/img/yushan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 
 - **Hero Header**: Photo by [小小 兵](https://www.pexels.com/photo/breathtaking-mountain-view-above-clouds-in-taiwan-34434573/) via [Pexels](https://pexels.com).
 - **Gallery 1**: Photo by [P Hsuan Wang](https://www.pexels.com/photo/tents-pitched-on-a-mountaintop-12279808/) via [Pexels](https://pexels.com).

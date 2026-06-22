@@ -44,6 +44,226 @@
       "purpose": "Fallback poster and mobile background image for landing page hero",
       "source": "AI-generated panoramic image crop",
       "ai_generated": true
+    },
+    {
+      "id": "og-bukhansan",
+      "path": "assets/img/bukhansan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Bukhansan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-deogyusan",
+      "path": "assets/img/deogyusan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Deogyusan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-dobongsan",
+      "path": "assets/img/dobongsan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Dobongsan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-gayasan",
+      "path": "assets/img/gayasan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Gayasan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-gyeryongsan",
+      "path": "assets/img/gyeryongsan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Gyeryongsan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-hallasan",
+      "path": "assets/img/hallasan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Hallasan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-jirisan",
+      "path": "assets/img/jirisan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Jirisan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-juwangsan",
+      "path": "assets/img/juwangsan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Juwangsan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-myeongseongsan",
+      "path": "assets/img/myeongseongsan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Myeongseongsan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-naejangsan",
+      "path": "assets/img/naejangsan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Naejangsan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-odaesan",
+      "path": "assets/img/odaesan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Odaesan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-seoraksan",
+      "path": "assets/img/seoraksan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Seoraksan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-sikjangsan",
+      "path": "assets/img/sikjangsan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Sikjangsan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-sobaeksan",
+      "path": "assets/img/sobaeksan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Sobaeksan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-soyosan",
+      "path": "assets/img/soyosan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Soyosan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-taebaeksan",
+      "path": "assets/img/taebaeksan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Taebaeksan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-wolchulsan",
+      "path": "assets/img/wolchulsan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Wolchulsan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-woraksan",
+      "path": "assets/img/woraksan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Woraksan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-xueshan",
+      "path": "assets/img/xueshan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Xueshan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "og-yushan",
+      "path": "assets/img/yushan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Yushan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "hero-video-seoraksan",
+      "path": "assets/video/seoraksan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "10s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Seoraksan playbook hero",
+      "source": "AI-generated panoramic crop & slow cinematic pan process",
+      "ai_generated": true,
+      "size_bytes": 857364
+    },
+    {
+      "id": "hero-poster-seoraksan",
+      "path": "assets/video/seoraksan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Seoraksan playbook hero",
+      "source": "AI-generated panoramic image crop",
+      "ai_generated": true
+    },
+    {
+      "id": "hero-video-bukhansan",
+      "path": "assets/video/bukhansan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "10s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Bukhansan playbook hero",
+      "source": "AI-generated panoramic crop & slow cinematic pan process",
+      "ai_generated": true,
+      "size_bytes": 1123215
+    },
+    {
+      "id": "hero-poster-bukhansan",
+      "path": "assets/video/bukhansan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Bukhansan playbook hero",
+      "source": "AI-generated panoramic image crop",
+      "ai_generated": true
     }
   ]
 }
