@@ -881,11 +881,15 @@
 <header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M6 34c6-10 11-16 18-16 4 0 8 2 10 7 2-1 4-2 8-2" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M7 39h34" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M16 17l4-7M23 15l4-8M31 15l5-6" stroke="white" stroke-linecap="round" stroke-width="2.5"></path></svg></div><div><h1>명성산</h1><p>산정호수 · 억새군락지 · 삼각봉 능선의 대표 가을 산행지</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
 <section class="hero hero-bleed">
 <!-- Background Picture -->
-<picture class="hero-picture">
+<picture class="hero-picture" id="heroFallbackImage">
 <source sizes="100vw" srcset="assets/img/myeongseongsan/hero-640.avif 640w, assets/img/myeongseongsan/hero-1024.avif 1024w, assets/img/myeongseongsan/hero-1600.avif 1600w, assets/img/myeongseongsan/hero-2400.avif 2400w" type="image/avif"/>
 <source sizes="100vw" srcset="assets/img/myeongseongsan/hero-640.webp 640w, assets/img/myeongseongsan/hero-1024.webp 1024w, assets/img/myeongseongsan/hero-1600.webp 1600w, assets/img/myeongseongsan/hero-2400.webp 2400w" type="image/webp"/>
 <img alt="명성산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Myeongseongsan mountain peaks and ridges" class="hero-img" sizes="100vw" src="assets/img/myeongseongsan/hero-1600.jpg" srcset="assets/img/myeongseongsan/hero-640.jpg 640w, assets/img/myeongseongsan/hero-1024.jpg 1024w, assets/img/myeongseongsan/hero-1600.jpg 1600w, assets/img/myeongseongsan/hero-2400.jpg 2400w"/>
 </picture>
+<!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
+<video id="heroVideo" class="hero-bg-video" muted loop playsinline poster="assets/video/myeongseongsan/hero-poster.jpg" preload="none" style="display: none;">
+  <source src="assets/video/myeongseongsan/hero.mp4" type="video/mp4">
+</video>
 <div class="hero-overlay"></div>
 <div class="hero-content">
 <div class="hero-badge"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 명성산 플레이북</div>
@@ -1136,6 +1140,30 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
 })();
+</script>
+<!-- Desktop Cinematic Video Lazy Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-bleed'));
+  }
+});
 </script>
 </body>
 </html>
