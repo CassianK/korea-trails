@@ -315,6 +315,8 @@ p{text-wrap:pretty}
   .table-wrap{overflow-x:auto}
 }
 
+
+
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
   position: relative;
@@ -769,33 +771,27 @@ p{text-wrap:pretty}
 </header>
 <!-- HERO -->
 <section class="hero hero-bleed">
-<!-- Background Picture -->
-<picture class="hero-picture">
-<source sizes="100vw" srcset="assets/img/bukhansan/hero-640.avif 640w, assets/img/bukhansan/hero-1024.avif 1024w, assets/img/bukhansan/hero-1600.avif 1600w, assets/img/bukhansan/hero-2400.avif 2400w" type="image/avif"/>
-<source sizes="100vw" srcset="assets/img/bukhansan/hero-640.webp 640w, assets/img/bukhansan/hero-1024.webp 1024w, assets/img/bukhansan/hero-1600.webp 1600w, assets/img/bukhansan/hero-2400.webp 2400w" type="image/webp"/>
-<img alt="북한산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Bukhansan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/bukhansan/hero-1600.jpg" srcset="assets/img/bukhansan/hero-640.jpg 640w, assets/img/bukhansan/hero-1024.jpg 1024w, assets/img/bukhansan/hero-1600.jpg 1600w, assets/img/bukhansan/hero-2400.jpg 2400w"/>
-</picture>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<div class="hero-badge">🏔 서울 도심 속 명산 · 국립공원</div>
-<h1 class="hero-title">북한산 등산 가이드</h1>
-<p class="hero-desc">백운대(836.5m) · 인수봉(810.5m) · 만경대(799.5m) 삼각봉우리 — 세계 단위면적당 탐방객 최다 국립공원의 모든 코스를 난이도별로 만나보세요.</p>
-<div class="hero-stats">
-<div class="hero-stat"><span class="hero-stat-val">836.5m</span><span class="hero-stat-label">최고봉 백운대</span></div>
-<div class="hero-stat"><span class="hero-stat-val">205km</span><span class="hero-stat-label">전체 탐방로</span></div>
-<div class="hero-stat"><span class="hero-stat-val">76.9㎢</span><span class="hero-stat-label">공원 면적</span></div>
-<div class="hero-stat"><span class="hero-stat-val">3코스</span><span class="hero-stat-label">난이도별 추천</span></div>
-</div>
-<svg class="hero-mountain" preserveaspectratio="none" viewbox="0 0 800 160">
-<path d="M0,160 L100,80 L180,110 L260,50 L340,90 L400,20 L460,70 L540,40 L620,85 L700,55 L800,100 L800,160 Z" fill="currentColor"></path>
-</svg>
-</div>
-<!-- Hero Credit Overlay -->
-<div class="photo-credit hero-credit">
-<span class="credit-author">Photo by <a href="https://unsplash.com/@gouyelliot" rel="noopener" target="_blank">Elliot Gouy</a></span>
-<span class="credit-divider">/</span>
-<span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">unsplash</a></span>
-</div>
+  
+  <!-- Background Picture -->
+  <picture class="hero-picture">
+    <source type="image/avif" srcset="assets/img/bukhansan/hero-640.avif 640w, assets/img/bukhansan/hero-1024.avif 1024w, assets/img/bukhansan/hero-1600.avif 1600w, assets/img/bukhansan/hero-2400.avif 2400w" sizes="100vw">
+    <source type="image/webp" srcset="assets/img/bukhansan/hero-640.webp 640w, assets/img/bukhansan/hero-1024.webp 1024w, assets/img/bukhansan/hero-1600.webp 1600w, assets/img/bukhansan/hero-2400.webp 2400w" sizes="100vw">
+    <img src="assets/img/bukhansan/hero-1600.jpg" srcset="assets/img/bukhansan/hero-640.jpg 640w, assets/img/bukhansan/hero-1024.jpg 1024w, assets/img/bukhansan/hero-1600.jpg 1600w, assets/img/bukhansan/hero-2400.jpg 2400w" sizes="100vw" alt="북한산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Bukhansan mountain peaks and ridges" class="hero-img">
+  </picture>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    
+<div class="hero-badge">🏔 서울 도심 속 명산 · 국립공원
+  </div>
+  
+  <!-- Hero Credit Overlay -->
+  <div class="photo-credit hero-credit">
+    <span class="credit-author">Photo by Dokyung Kim</span>
+    <span class="credit-divider">/</span>
+    <span class="credit-source">Local</span>
+  </div>
+
 </section>
 <!-- DIFFICULTY SELECTOR -->
 <div class="selector-section">
@@ -1759,57 +1755,340 @@ p{text-wrap:pretty}
 </div><!-- /container -->
 </main>
 </div><!-- /app-wrapper -->
+
+
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-<span class="section-title-icon">📸</span> 북한산의 사계 &amp; 명소
+  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+    <span class="section-title-icon">📸</span> 북한산의 사계 &amp; 명소
   </h3>
-<div class="gallery-grid">
-<!-- Gallery Image Button 1 -->
-<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Bukhansan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@vignesh-srivatsav-857495254' target='_blank' rel='noopener'&gt;vignesh srivatsav&lt;/a&gt; on pexels" data-index="0">
-<picture class="gallery-picture">
-<source srcset="assets/img/bukhansan/g1.avif" type="image/avif"/>
-<source srcset="assets/img/bukhansan/g1.webp" type="image/webp"/>
-<img alt="북한산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/bukhansan/g1.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">북한산 등산코스</span>
-</div>
-</button>
-<!-- Gallery Image Button 2 -->
-<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Bukhansan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
-<picture class="gallery-picture">
-<source srcset="assets/img/bukhansan/g2.avif" type="image/avif"/>
-<source srcset="assets/img/bukhansan/g2.webp" type="image/webp"/>
-<img alt="북한산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/bukhansan/g2.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">북한산 절경</span>
-</div>
-</button>
-<!-- Gallery Image Button 3 -->
-<button aria-haspopup="dialog" aria-label="Harmonious view of Bukhansan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@saksham-vikram-2148641748' target='_blank' rel='noopener'&gt;Saksham Vikram&lt;/a&gt; on pexels" data-index="2">
-<picture class="gallery-picture">
-<source srcset="assets/img/bukhansan/g3.avif" type="image/avif"/>
-<source srcset="assets/img/bukhansan/g3.webp" type="image/webp"/>
-<img alt="북한산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/bukhansan/g3.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">북한산 풍경</span>
-</div>
-</button>
-<!-- Gallery Image Button 4 -->
-<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Bukhansan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@thejourneyofframes' target='_blank' rel='noopener'&gt;Theodore Nguyen&lt;/a&gt; on pexels" data-index="3">
-<picture class="gallery-picture">
-<source srcset="assets/img/bukhansan/g4.avif" type="image/avif"/>
-<source srcset="assets/img/bukhansan/g4.webp" type="image/webp"/>
-<img alt="북한산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/bukhansan/g4.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">북한산 탐방로</span>
-</div>
-</button>
-</div>
+  <div class="gallery-grid">
+    
+    <!-- Gallery Image Button 1 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 1) 크게 보기" data-index="0" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g1.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g1.webp">
+        <img src="assets/img/bukhansan/g1.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 1)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 등산코스</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 2 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 2) 크게 보기" data-index="1" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g2.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g2.webp">
+        <img src="assets/img/bukhansan/g2.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 2)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 절경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 3 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 3) 크게 보기" data-index="2" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g3.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g3.webp">
+        <img src="assets/img/bukhansan/g3.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 3)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 풍경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 4 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 4) 크게 보기" data-index="3" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g4.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g4.webp">
+        <img src="assets/img/bukhansan/g4.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 4)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 탐방로</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 5 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 5) 크게 보기" data-index="4" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g5.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g5.webp">
+        <img src="assets/img/bukhansan/g5.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 5)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 6 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 6) 크게 보기" data-index="5" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g6.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g6.webp">
+        <img src="assets/img/bukhansan/g6.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 6)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 7 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 7) 크게 보기" data-index="6" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g7.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g7.webp">
+        <img src="assets/img/bukhansan/g7.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 7)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 8 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 8) 크게 보기" data-index="7" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g8.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g8.webp">
+        <img src="assets/img/bukhansan/g8.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 8)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 9 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 9) 크게 보기" data-index="8" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g9.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g9.webp">
+        <img src="assets/img/bukhansan/g9.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 9)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 10 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 10) 크게 보기" data-index="9" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g10.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g10.webp">
+        <img src="assets/img/bukhansan/g10.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 10)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 11 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 11) 크게 보기" data-index="10" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g11.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g11.webp">
+        <img src="assets/img/bukhansan/g11.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 11)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 12 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 12) 크게 보기" data-index="11" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g12.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g12.webp">
+        <img src="assets/img/bukhansan/g12.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 12)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 13 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 13) 크게 보기" data-index="12" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g13.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g13.webp">
+        <img src="assets/img/bukhansan/g13.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 13)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 14 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 14) 크게 보기" data-index="13" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g14.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g14.webp">
+        <img src="assets/img/bukhansan/g14.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 14)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 15 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 15) 크게 보기" data-index="14" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g15.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g15.webp">
+        <img src="assets/img/bukhansan/g15.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 15)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 16 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 16) 크게 보기" data-index="15" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g16.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g16.webp">
+        <img src="assets/img/bukhansan/g16.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 16)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 17 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 17) 크게 보기" data-index="16" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g17.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g17.webp">
+        <img src="assets/img/bukhansan/g17.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 17)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 18 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 18) 크게 보기" data-index="17" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g18.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g18.webp">
+        <img src="assets/img/bukhansan/g18.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 18)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 19 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 19) 크게 보기" data-index="18" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g19.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g19.webp">
+        <img src="assets/img/bukhansan/g19.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 19)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 20 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 20) 크게 보기" data-index="19" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g20.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g20.webp">
+        <img src="assets/img/bukhansan/g20.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 20)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 21 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 21) 크게 보기" data-index="20" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g21.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g21.webp">
+        <img src="assets/img/bukhansan/g21.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 21)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 22 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 22) 크게 보기" data-index="21" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g22.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g22.webp">
+        <img src="assets/img/bukhansan/g22.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 22)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 23 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 23) 크게 보기" data-index="22" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g23.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g23.webp">
+        <img src="assets/img/bukhansan/g23.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 23)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 24 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 24) 크게 보기" data-index="23" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g24.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g24.webp">
+        <img src="assets/img/bukhansan/g24.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 24)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 25 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 25) 크게 보기" data-index="24" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g25.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g25.webp">
+        <img src="assets/img/bukhansan/g25.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 25)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 26 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 26) 크게 보기" data-index="25" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g26.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g26.webp">
+        <img src="assets/img/bukhansan/g26.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 26)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 27 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Bukhansan hike (Photo 27) 크게 보기" data-index="26" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/bukhansan/g27.avif">
+        <source type="image/webp" srcset="assets/img/bukhansan/g27.webp">
+        <img src="assets/img/bukhansan/g27.jpg" alt="북한산 산행 중에 촬영한 자연 풍경 (사진 27)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">북한산 전경</span>
+      </div>
+    </button>
+
+  </div>
 </section>
 <script>
 // Theme toggle
@@ -1856,18 +2135,21 @@ function toggleCard(header){
   card.classList.toggle('open');
 }
 </script>
+
+
 <!-- Lightbox Dialog Overlay -->
-<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
-<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
-<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
-<button aria-label="다음 이미지" class="lightbox-next">❯</button>
-<div class="lightbox-content">
-<figure class="lightbox-figure">
-<figcaption class="lightbox-caption"></figcaption>
-</figure>
-<div class="photo-credit lightbox-credit"></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
+  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
+  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
+  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
+  <div class="lightbox-content">
+    <figure class="lightbox-figure">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <div class="photo-credit lightbox-credit"></div>
+  </div>
 </div>
-</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');
