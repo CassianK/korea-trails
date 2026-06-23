@@ -14,9 +14,13 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:image" content="assets/img/brand-og.png">
 <meta name="twitter:image" content="assets/img/brand-og.png">
+<link rel="alternate" hreflang="ko" href="index.html">
+<link rel="alternate" hreflang="en" href="en/index.html">
+<link rel="alternate" hreflang="x-default" href="index.html">
 
 <!-- Core CSS from Design System -->
 <link rel="stylesheet" href="assets/css/design-system.css">
+<script src="assets/js/i18n.js"></script>
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
 
 <style>
@@ -244,6 +248,10 @@
     <a href="https://github.com/Trinos-Strategy/korea-trails" target="_blank" class="header-nav-link">GitHub</a>
   </nav>
   <div class="header-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="changeLanguage('ko')" aria-label="한국어" aria-pressed="true">KO</button>
+      <button class="lang-btn" onclick="changeLanguage('en')" aria-label="English" aria-pressed="false">EN</button>
+    </div>
     <button class="theme-btn" id="themeBtn" aria-label="테마 전환">◐</button>
   </div>
 </header>

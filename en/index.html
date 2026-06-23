@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Korea Trails — Hiking Playbooks of Korea & Asia</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="Premium outdoor guide for hiking famous mountains in Korea and Asia. Complete course information, interactive maps, transit directions, and hiking tips.">
+<meta property="og:title" content="Korea Trails — Hiking Playbooks of Korea & Asia">
+<meta property="og:description" content="Premium outdoor guide for hiking famous mountains in Korea and Asia. Complete course information, interactive maps, transit directions, and hiking tips.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://trinos-strategy.github.io/korea-trails/">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="assets/img/brand-og.png">
+<meta name="twitter:image" content="assets/img/brand-og.png">
+<link rel="alternate" hreflang="ko" href="../index.html">
+<link rel="alternate" hreflang="en" href="index.html">
+<link rel="alternate" hreflang="x-default" href="../index.html">
+
+<!-- Core CSS from Design System -->
+<link rel="stylesheet" href="../assets/css/design-system.css">
+<script src="../assets/js/i18n.js"></script>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+
+<style>
+  /* Local index-specific overrides to match Sleek Modern Explorer aesthetic */
+  .hero-cinematic {
+    position: relative;
+    min-height: 520px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: var(--space-12) 0;
+    background-color: #09090b; /* Fallback dark bg */
+    border-bottom: 1px solid var(--border);
+  }
+  @media (min-width: 1024px) {
+    .hero-cinematic {
+      min-height: min(88vh, 920px);
+      padding: var(--space-16) 0;
+    }
+  }
+
+  .hero-bg-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.05);
+    transition: transform var(--transition-slow);
+  }
+  
+  /* Scroll parallax for hero background */
+  @media (min-width: 1024px) {
+    .hero-bg-img {
+      will-change: transform;
+    }
+  }
+
+  .hero-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(9, 9, 11, 0.45) 0%,
+      rgba(9, 9, 11, 0.75) 60%,
+      var(--bg) 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Cinematic Vignette */
+  .hero-cinematic::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+      circle,
+      transparent 30%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .hero-content-wrap {
+    position: relative;
+    z-index: 4;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero-title-giant {
+    font-family: var(--font-display);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: #ffffff; /* Contrast on dark hero overlay */
+    font-size: clamp(2.5rem, 5vw, 5.5rem);
+    margin-bottom: var(--space-4);
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+  }
+
+  .hero-desc-large {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: rgba(244, 244, 245, 0.85); /* Light gray for readability */
+    max-width: 60ch;
+    margin: 0 auto var(--space-8);
+    line-height: 1.65;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Micro grain effect */
+  .grain-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .search-hero-input {
+    background-color: rgba(24, 24, 27, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff !important;
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-full);
+    width: 100%;
+    max-width: 520px;
+    box-shadow: var(--shadow-lg);
+    font-size: var(--text-base);
+    backdrop-filter: blur(8px);
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  [data-theme="light"] .search-hero-input {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(9, 9, 11, 0.1);
+    color: #09090b !important;
+  }
+  
+  .search-hero-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.35);
+  }
+  
+  .filter-bar-card {
+    border-radius: var(--radius-2xl);
+    padding: var(--space-5) var(--space-6);
+    margin-top: calc(-1 * var(--space-8));
+    position: relative;
+    z-index: 10;
+  }
+  
+  .filter-select {
+    background-color: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .filter-select:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+
+  .national-map-container {
+    height: 480px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: var(--space-8);
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .leaflet-popup-tip {
+    background: var(--surface) !important;
+  }
+</style>
+</head>
+<body>
+
+<a href="#mainContent" class="skip-link">Skip to main content</a>
+
+<header class="site-header">
+  <div class="logo-wrap">
+    <svg class="logo-svg" viewBox="0 0 36 36" fill="none" aria-label="Korea Trails">
+  <defs>
+    <linearGradient id="grad36_sun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#be123c"/>
+    </linearGradient>
+    <linearGradient id="grad36_mt" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="grad36_wind" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <circle cx="18" cy="18" r="16" stroke="#ca8a04" stroke-width="0.5" stroke-dasharray="1 2" opacity="0.4"/>
+  <circle cx="27" cy="10" r="2.2" fill="url(#grad36_sun)"/>
+  <circle cx="9" cy="10" r="2.2" fill="#fbbf24"/>
+  <path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-width="0.8" stroke-linejoin="round"/>
+  <path d="M2 22 Q12 14 18 20 T34 16" stroke="url(#grad36_wind)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M4 18 Q14 24 20 16 T32 22" stroke="url(#grad36_wind)" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" stroke="#0284c7" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+</svg>
+    <a href="index.html" class="logo-text">Korea Trails</a>
+  </div>
+  <nav class="header-nav" aria-label="Main Navigation">
+    <a href="index.html" class="header-nav-link active">Home</a>
+    <a href="#mountainGrid" class="header-nav-link">Explore Mountains</a>
+    <a href="https://github.com/Trinos-Strategy/korea-trails" target="_blank" class="header-nav-link">GitHub</a>
+  </nav>
+  <div class="header-right">
+    <div class="lang-toggle">
+      <button class="lang-btn" onclick="changeLanguage('ko')" aria-label="Korean" aria-pressed="false">KO</button>
+      <button class="lang-btn active" onclick="changeLanguage('en')" aria-label="English" aria-pressed="true">EN</button>
+    </div>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle Theme">◐</button>
+  </div>
+</header>
+
+<main id="mainContent">
+  <!-- Cinematic Hero Section -->
+  <section class="hero-cinematic">
+    <!-- Background Picture -->
+    <div class="hero-bg-wrap">
+      <picture id="heroFallbackImage">
+        <source srcset="../assets/img/seoraksan/hero-640.webp 640w, assets/img/seoraksan/hero-1024.webp 1024w, assets/img/seoraksan/hero-1600.webp 1600w" type="image/webp" sizes="100vw">
+        <img src="../assets/img/seoraksan/hero-1600.jpg" srcset="../assets/img/seoraksan/hero-640.jpg 640w, assets/img/seoraksan/hero-1024.jpg 1024w, assets/img/seoraksan/hero-1600.jpg 1600w" sizes="100vw" alt="Seoraksan Daecheongbong Peak granite rocks and majestic morning fog" class="hero-bg-img" loading="eager" decoding="async">
+      </picture>
+      <!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
+      <video id="heroVideo" class="hero-bg-video" muted loop playsinline poster="../assets/video/seoraksan/hero-poster.jpg" preload="none" style="display: none;">
+        <source src="../assets/video/seoraksan/hero.mp4" type="video/mp4">
+      </video>
+      <div id="videoCredit" style="display: none; position: absolute; bottom: 16px; right: 16px; font-size: 11px; color: rgba(255,255,255,0.4); z-index: 10; pointer-events: none;">Background Video: AI Generated</div>
+      <div class="hero-gradient-overlay"></div>
+      <div class="grain-overlay"></div>
+    </div>
+
+    <div class="hero-content-wrap">
+      <div class="wrap">
+        <div class="hero-badge">
+          <svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"/></svg>
+          Premium Outdoor Guide
+        </div>
+        <h1 class="hero-title-giant">Conquer the Peaks of<br>Korea & Asia</h1>
+        <p class="hero-desc-large">
+          The ultimate outdoor guide with elevation profiles, dark-mode compatible maps, and detailed public transit information.
+        </p>
+        
+        <!-- Integrated Search Input in Hero -->
+        <div class="search-hero-container">
+          <input 
+            type="search" 
+            id="searchInput" 
+            class="search-hero-input" 
+            placeholder="Search mountain name, elevation, region, or description..." 
+            aria-label="Search mountains">
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value">26</div>
+            <div class="hero-stat-label">Registered Peaks</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">26</div>
+            <div class="hero-stat-label">Playbooks Completed</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value">4 Levels</div>
+            <div class="hero-stat-label">Difficulty Levels</div>
+          </div>
+        </div>
+      <div style="position: absolute; bottom: 12px; right: var(--space-6); font-size: 10px; opacity: 0.6; color: #ffffff; pointer-events: none; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
+        Ambient loop generated by Gemini
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Grid Section -->
+  <section class="grid-section" style="padding-top: 0;">
+    <div class="wrap">
+      
+      <!-- Filters Card Panel -->
+      <div class="card filter-bar-card">
+        <div class="filter-bar-content">
+          <div class="filter-group">
+            <div class="filter-select-wrapper">
+              <svg class="filter-icon"><use href="../assets/icons/icons.svg#icon-location"/></svg>
+              <select id="regionSelect" class="filter-select" aria-label="Filter by Region">
+                <option value="all">Region: All</option>
+                <option value="korea">South Korea</option>
+                <option value="Gangwon">Gangwon</option>
+                <option value="Gyeonggi">Gyeonggi/Seoul</option>
+                <option value="Chungcheong">Chungcheong</option>
+                <option value="Gyeongsang">Gyeongsang</option>
+                <option value="Jeolla">Jeolla</option>
+                <option value="Jeju">Jeju</option>
+                <option value="Taiwan">Taiwan</option>
+              </select>
+            </div>
+
+            <div class="filter-select-wrapper">
+              <svg class="filter-icon"><use href="../assets/icons/icons.svg#icon-lightning"/></svg>
+              <select id="diffSelect" class="filter-select" aria-label="Filter by Difficulty">
+                <option value="all">Difficulty: All</option>
+                <option value="easy">Beginner</option>
+                <option value="medium">Intermediate</option>
+                <option value="hard">Advanced</option>
+                <option value="expert">Expert</option>
+              </select>
+            </div>
+
+            <div class="filter-select-wrapper">
+              <svg class="filter-icon"><use href="../assets/icons/icons.svg#icon-book"/></svg>
+              <select id="doneSelect" class="filter-select" aria-label="Filter by Playbook Status">
+                <option value="all">Playbook: All</option>
+                <option value="done">Completed (26)</option>
+                <option value="pending">Coming Soon (0)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-sort-group">
+            <select id="sortSelect" class="filter-select" aria-label="Sort By">
+              <option value="elevation-desc">Elevation (Highest)</option>
+              <option value="elevation-asc">Elevation (Lowest)</option>
+              <option value="name-asc">Name (A-Z)</option>
+              <option value="difficulty-asc">Difficulty (Lowest)</option>
+              <option value="difficulty-desc">Difficulty (Highest)</option>
+            </select>
+            <span id="resultsCount" class="filter-results-count"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive National Map Accordion (Collapsible) -->
+      <div class="accordion" style="margin-top: var(--space-6); margin-bottom: var(--space-6);">
+        <button class="accordion-header" id="mapToggleBtn" aria-expanded="false" aria-controls="nationalMapPanel">
+          <span style="font-family: var(--font-display); font-weight: 800; font-size: var(--text-base); display: flex; align-items: center; gap: 8px;">
+            <svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"/></svg> Show Interactive National Map (Korea & Asia)
+          </span>
+        </button>
+        <div class="accordion-content" id="nationalMapPanel" aria-hidden="true" style="padding: 0;">
+          <div id="nationalMap" class="national-map-container" style="height: 450px; border: none; border-radius: 0;"></div>
+        </div>
+      </div>
+
+      <!-- Card Grid Container -->
+      <div class="mountain-grid" id="mountainGrid" style="margin-top: var(--space-6);"></div>
+
+    </div>
+  </section>
+</main>
+
+<footer style="border-top:1px solid var(--border); padding: var(--space-8) var(--space-6); text-align: center; background-color: var(--surface);">
+  <div class="wrap">
+    <p style="font-size: var(--text-xs); color: var(--muted); line-height: 1.8;">
+      Korea Trails — National Hiking Playbook · National Park Reservation: <a href="https://reservation.knps.or.kr" target="_blank" rel="noopener">knps.or.kr</a><br>
+      © 2026 Korea Trails. All rights reserved.
+    </p>
+  </div>
+</footer>
+
+<script>
+// Global Mount Data Source
+window.MOUNTAINS = [
+  // ── South Korea ──
+  {id:'seoraksan',     name:'Seoraksan',     alt:'1,708m', region:'Gangwon', dist:'10km', time:'7-9 hours',  diff:'hard',   done:true,  url:'seoraksan-playbook.html',     desc:'Seoraksan Daecheongbong Peak. Korea\'s premier rocky mountain trail including the Dinosaur Ridge. Breathtaking views in all four seasons.', lat: 38.1189, lng: 128.4650},
+  {id:'hallasan',      name:'Hallasan',      alt:'1,950m', region:'Jeju', dist:'9km',  time:'8-10 hours', diff:'hard',   done:true,  url:'hallasan-playbook.html',      desc:'The highest peak in South Korea. View the Baekrokdam crater lake via the Seongpanak or Gwaneumsa trails. Draws over a million hikers annually.', lat: 33.3617, lng: 126.5292},
+  {id:'jirisan',       name:'Jirisan',       alt:'1,915m', region:'Jeolla', dist:'24km', time:'2 Days (1 Night)', diff:'expert', done:true,  url:'jirisan-playbook.html',       desc:'The largest mountainous national park in South Korea. A 25km ridge trek from Nogodan to Cheonwangbong Peak. Features 4 national park visitor trails.', lat: 35.3369, lng: 127.7306},
+  {id:'bukhansan',     name:'Bukhansan',     alt:'836m',   region:'Gyeonggi', dist:'8km',  time:'4-5 hours',  diff:'medium', done:true,  url:'bukhansan-playbook.html',     desc:'National park north of Seoul. Majestic granite peaks of Baegundae and Insubong. Highly accessible from downtown Seoul.', lat: 37.6586, lng: 126.9778},
+  {id:'sobaeksan',     name:'Sobaeksan',     alt:'1,440m', region:'Chungcheong', dist:'12km', time:'6-7 hours',  diff:'medium', done:true,  url:'sobaeksan-playbook.html',     desc:'The scenic ridge connecting Yeonhwabong and Birobong. Renowned for its royal azalea fields in spring. Trail passes via Jungnyeong Pass.', lat: 36.9427, lng: 128.4722},
+  {id:'gayasan',       name:'Gayasan',       alt:'1,433m', region:'Gyeongsang', dist:'10km', time:'5-6 hours',  diff:'medium', done:true,  url:'gayasan-playbook.html',       desc:'A sacred mountain housing the historic Haeinsa Temple. Experience the spiritual energy of the Tripitaka Koreana at Sangwangbong Peak.', lat: 35.8236, lng: 128.1219},
+  {id:'odaesan',       name:'Odaesan',       alt:'1,563m', region:'Gangwon', dist:'11km', time:'5-6 hours',  diff:'medium', done:true,  url:'odaesan-playbook.html',       desc:'Integrate your hike with historic temple visits to Woljeongsa and Sangwonsa. The high plateau ridge of Birobong Peak is highly impressive.', lat: 37.7989, lng: 128.5639},
+  {id:'naejangsan',    name:'Naejangsan',    alt:'763m',   region:'Jeolla', dist:'8km',  time:'4-5 hours',  diff:'easy',   done:true,  url:'naejangsan-playbook.html',    desc:'South Korea\'s top autumn foliage destination. The Naejangsa maple tunnel is nationwide famous. Cable car service is available.', lat: 35.4336, lng: 126.8856},
+  {id:'chiaksan',      name:'Chiaksan',      alt:'1,288m', region:'Gangwon', dist:'11.5km',time:'6 hours',    diff:'hard',   done:true,  url:'chiaksan-playbook.html',      desc:'Wonju\'s Chiaksan. The steep ascent to Birobong Peak is one of the most challenging trails in Gangwon Province.', lat: 37.3686, lng: 128.0531},
+  {id:'deogyusan',     name:'Deogyusan',     alt:'1,614m', region:'Jeolla', dist:'12km', time:'6-7 hours',  diff:'medium', done:true,  url:'deogyusan-playbook.html',     desc:'Hyangjeokbong Peak. Famous for its beautiful winter snowscapes and ski slopes. Connected with Muju Deogyusan Resort.', lat: 35.8617, lng: 127.7472},
+  {id:'gyeryongsan',   name:'Gyeryongsan',   alt:'845m',   region:'Chungcheong', dist:'7km',  time:'4 hours',    diff:'easy',   done:true,  url:'gyeryongsan-playbook.html',   desc:'A famous mountain in the Chungcheong region. Rocky ridges of Sambulbong and Gwaneumbong Peaks, with Gapsa and Donghaksa temples.', lat: 36.3533, lng: 127.2081},
+  {id:'wolchulsan',    name:'Wolchulsan',    alt:'809m',   region:'Jeolla', dist:'7km',  time:'4-5 hours',  diff:'hard',   done:true,  url:'wolchulsan-playbook.html',    desc:'Known as the Geumgangsan of the south. Dramatic granite rock formations around Cheonhwangbong Peak, featuring a thrilling suspension bridge.', lat: 34.7892, lng: 126.6975},
+  {id:'mudeungsan',    name:'Mudeungsan',    alt:'1,187m', region:'Jeolla', dist:'12.4km', time:'6 hours',  diff:'medium', done:true,  url:'mudeungsan-playbook.html',    desc:'The guardian mountain of Gwangju. Stunning columnar joint formations of Seoseokdae and Ipseokdae. Designated a national park in 2013.', lat: 35.1336, lng: 127.0089},
+  {id:'duryunsan',     name:'Duryunsan',     alt:'703m',   region:'Jeolla', dist:'5.9km', time:'4 hours 30 mins',diff:'medium', done:true,  url:'duryunsan-playbook.html',     desc:'A scenic mountain set behind Haenam\'s Daeheungsa Temple. Ocean views of the South Sea from Garyeonbong Peak. Cable car available.', lat: 34.4817, lng: 126.6231},
+  {id:'minjusan',      name:'Minjujisan',    alt:'1,242m', region:'Chungcheong', dist:'8km',   time:'3 hours 30 mins',diff:'medium', done:true,  url:'minjusan-playbook.html',      desc:'Minjujisan in Yeongdong, Chungbuk. Samdobong Peak marks the three-way border of Chungcheong, Jeolla, and Gyeongsang provinces.', lat: 36.0356, lng: 127.8719},
+  {id:'sikjangsan',    name:'Sikjangsan',    alt:'598m',   region:'Chungcheong', dist:'6km',  time:'3 hours',    diff:'easy',   done:true,  url:'sikjangsan-playbook.html',    desc:'Sikjangsan on the east of Daejeon. Perfect for a day hike near the city, offering panoramic night views of downtown Daejeon.', lat: 36.3117, lng: 127.4819},
+  {id:'woraksan',      name:'Woraksan',      alt:'1,097m', region:'Chungcheong', dist:'9km',  time:'5-6 hours',  diff:'hard',   done:true,  url:'woraksan-playbook.html',      desc:'Overlooking the beautiful scenic vistas of Chungjuho Lake. The rocky ridge trail up Yeongbong Peak offers an exhilarating challenge.', lat: 36.8833, lng: 128.0931},
+  {id:'dobongsan',     name:'Dobongsan',     alt:'740m',   region:'Gyeonggi', dist:'7km',  time:'3-4 hours',  diff:'medium', done:true,  url:'dobongsan-playbook.html',     desc:'A popular rocky peak behind Seoul\'s Dobong-gu. Majestic granite formations of Jaunbong and Manjangbong Peaks in Bukhansan National Park.', lat: 37.6992, lng: 127.0156},
+  {id:'soyosan',       name:'Soyosan',       alt:'587m',   region:'Gyeonggi', dist:'6km',  time:'3 hours',    diff:'easy',   done:true,  url:'soyosan-playbook.html',       desc:'Soyosan in Dongducheon, Gyeonggi. Renowned for Jajaeam Hermitage valley and autumn colors. A favorite day hike in the Seoul metro area.', lat: 37.9436, lng: 127.0789},
+  {id:'juwangsan',     name:'Juwangsan',     alt:'721m',   region:'Gyeongsang', dist:'8km',  time:'4-5 hours',  diff:'easy',   done:true,  url:'juwangsan-playbook.html',     desc:'Juwangsan in Cheongsong. Explore deep valleys of Jubangcheon and waterfalls. The historic Juwanggul Cave offers a mystical atmosphere.', lat: 36.4022, lng: 129.0628},
+  {id:'myeongseongsan',name:'Myeongseongsan',alt:'922m',   region:'Gyeonggi', dist:'8km',  time:'4-5 hours',  diff:'medium', done:true,  url:'myeongseongsan-playbook.html',desc:'Bordering Pocheon and Cheorwon. Famous for its sprawling silver grass fields in autumn, overlooking scenic Sanjeong Lake.', lat: 38.1067, lng: 127.3117},
+  {id:'unaksan',       name:'Unaksan',       alt:'937.5m', region:'Gyeonggi', dist:'4km',  time:'2 hours 30 mins',diff:'hard',   done:true,  url:'unaksan-playbook.html',       desc:'One of Gyeonggi\'s five sacred peaks, bordering Gapyeong and Pocheon. Spectacular crags, historic Hyeongdeungsa Temple, and autumn foliage.', lat: 37.9163, lng: 127.3188},
+  {id:'taebaeksan',    name:'Taebaeksan',    alt:'1,567m', region:'Gangwon', dist:'10km', time:'5-6 hours',  diff:'medium', done:true,  url:'taebaeksan-playbook.html',    desc:'Cheonjedan altar on the high plateau. Famous for winter snowscapes and ancient yew trees. A key section of the Baekdudaegan ridge.', lat: 37.0983, lng: 128.9136},
+  // ── Taiwan ──
+  {id:'yushan',        name:'Yushan (Jade Mountain)', alt:'3,952m', region:'Taiwan', dist:'11km', time:'2 Days (1 Night)', diff:'expert', done:true,  url:'yushan-playbook.html',        desc:'The highest peak in Taiwan and Northeast Asia. Summit sunrise attempt after staying at Paiyun Lodge. Permit required.', lat: 23.4700, lng: 120.9575},
+  {id:'xueshan',       name:'Xueshan (Snow Mountain)', alt:'3,886m', region:'Taiwan', dist:'11km', time:'2 Days (1 Night)', diff:'expert', done:true,  url:'xueshan-playbook.html',       desc:'Taiwan\'s second-highest peak. Scenic glacial cirques, ancient black forest, and alpine vegetation. Accessible from Taichung/Lishan.', lat: 24.3850, lng: 121.2319},
+  {id:'yangmingshan',  name:'Yangmingshan',  alt:'1,120m',region:'Taiwan',dist:'8km', time:'4-5 hours',  diff:'easy',   done:true,  url:'yangmingshan-playbook.html',  desc:'Volcanic national park near Taipei. Panoramas of the active fumaroles at Qixing Mountain. Famous for spring azaleas and sulfur hot springs.', lat: 25.1672, lng: 121.5742},
+];
+</script>
+
+<!-- Combined design-system styles & custom client script -->
+<script src="../assets/js/app.js"></script>
+
+<!-- Leaflet CDN Lazy Initer for Landing Map -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const mapToggleBtn = document.getElementById('mapToggleBtn');
+  let mapInstance = null;
+
+  function loadLeaflet(callback) {
+    if (window.L) {
+      callback();
+      return;
+    }
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+    link.crossOrigin = '';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+    script.crossOrigin = '';
+    script.onload = callback;
+    document.head.appendChild(script);
+  }
+
+  if (mapToggleBtn) {
+    mapToggleBtn.addEventListener('click', () => {
+      const accordion = mapToggleBtn.closest('.accordion');
+      const isExpanded = accordion.classList.contains('open');
+
+      if (isExpanded) {
+        loadLeaflet(() => {
+          if (!mapInstance) {
+            mapInstance = L.map('nationalMap', {
+              scrollWheelZoom: false
+            }).setView([30.0, 124.0], 5);
+
+            // Base Layer
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+              attribution: 'Esri, Maxar',
+              maxZoom: 17
+            }).addTo(mapInstance);
+
+            const DIFF_LABEL = { easy: 'Beginner', medium: 'Intermediate', hard: 'Advanced', expert: 'Expert' };
+
+            // Add Markers
+            window.MOUNTAINS.forEach(m => {
+              const markerColor = m.diff === 'easy' ? '#10b981' : 
+                                  m.diff === 'medium' ? '#f97316' : 
+                                  m.diff === 'hard' ? '#ef4444' : '#b91c1c';
+                                  
+              const marker = L.circleMarker([m.lat, m.lng], {
+                radius: 7,
+                fillColor: markerColor,
+                color: '#fff',
+                weight: 1.5,
+                fillOpacity: 0.9
+              });
+
+              const popupHtml = `
+                <div style="font-family: var(--font-body); padding: 4px;">
+                  <h4 style="margin: 0 0 4px 0; font-size: 14px; font-weight: 800;">${m.name}</h4>
+                  <div style="font-size: 11px; margin-bottom: 2px; display: inline-flex; align-items: center; gap: 4px;">
+                    <svg class="icon-svg" style="width: 12px; height: 12px;"><use href="../assets/icons/icons.svg#icon-mountain"/></svg>
+                    Elevation: <strong>${m.alt}</strong>
+                  </div>
+                  <div style="font-size: 11px; margin-bottom: 6px; display: inline-flex; align-items: center; gap: 4px;">
+                    <svg class="icon-svg" style="width: 12px; height: 12px;"><use href="../assets/icons/icons.svg#icon-lightning"/></svg>
+                    Difficulty: <strong>${DIFF_LABEL[m.diff]}</strong>
+                  </div>
+                  ${m.done 
+                    ? `<a href="${m.url}" style="font-size: 11px; font-weight: 700; color: var(--primary); display: inline-flex; align-items: center; gap: 4px;">
+                         <svg class="icon-svg" style="width: 12px; height: 12px;"><use href="../assets/icons/icons.svg#icon-book"/></svg>
+                         View Playbook
+                       </a>` 
+                    : `<span style="font-size: 11px; color: var(--faint);">⏳ Coming Soon</span>`
+                  }
+                </div>
+              `;
+
+              marker.bindPopup(popupHtml);
+              marker.addTo(mapInstance);
+            });
+          }
+          
+          // Fix Leaflet viewport dimensions
+          setTimeout(() => {
+            if (mapInstance) mapInstance.invalidateSize();
+          }, 150);
+        });
+      }
+    });
+  }
+
+  // Desktop Cinematic Video Lazy Loader
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().then(() => {
+            const credit = document.getElementById('videoCredit');
+            if (credit) credit.style.display = 'block';
+          }).catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-cinematic'));
+  }
+});
+</script>
+</body>
+</html>
