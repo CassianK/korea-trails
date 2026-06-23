@@ -204,3 +204,22 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 3**: Photo by [P Hsuan Wang](https://www.pexels.com/photo/people-on-a-mountain-peak-above-clouds-12279813/) via [Pexels](https://pexels.com).
 - **Gallery 4**: Photo by [P Hsuan Wang](https://www.pexels.com/photo/group-of-backpackers-in-mountains-12247773/) via [Pexels](https://pexels.com).
 
+## Original Works by Cassian Kim (CC BY-NC 4.0) / 본인 저작물 (CC BY-NC 4.0 준용)
+
+### English:
+Some of the hiking photos and tracking videos on this site are original works photographed and produced by Cassian Kim (Dokyung Kim), with the videos published on the YouTube channel Cassian Kim. They may be used for non-commercial purposes only, and credit must be given to the source and author (Cassian Kim / Cassian Kim) upon use. (CC BY-NC 4.0 standard applied)
+
+- **Bukhansan**: Hero Header, Gallery 1, Gallery 2
+- **Dobongsan**: Hero Header, Gallery 1
+- **Soyosan**: Hero Header, Gallery 1, Gallery 2, Gallery 3
+- **All Playbook Pages**: YouTube Shorts route tracking videos.
+
+### 한국어:
+본 사이트의 일부 등산 사진과 트래킹 영상은 Cassian Kim이 직접 촬영·제작한 저작물이며, 영상은 유튜브 채널 Cassian Kim에 게시되어 있습니다. 비상업적 목적에 한해 이용할 수 있으며, 이용 시 반드시 출처와 저작자(Cassian Kim / Cassian Kim)를 표시해야 합니다. (CC BY-NC 4.0 준용)
+
+- **북한산**: 히어로 헤더, 갤러리 1, 갤러리 2
+- **도봉산**: 히어로 헤더, 갤러리 1
+- **소요산**: 히어로 헤더, 갤러리 1, 갤러리 2, 갤러리 3
+- **모든 명산 플레이북**: 유튜브 쇼츠 트래킹 영상.
+
+
