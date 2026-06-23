@@ -610,7 +610,30 @@
     ],
     "file": "yangmingshan-playbook.html",
     "done": true,
-    "season_signature": "봄철 진달래·유황 온천 화산 경관",
+    "hero_present": false
+  },
+  {
+    "id": "unaksan",
+    "name_ko": "운악산",
+    "name_en": "Unaksan",
+    "name_hanja": "雲岳山",
+    "region": "경기",
+    "country": "KR",
+    "altitude_m": 937.5,
+    "landmarks": [
+      "망경대",
+      "현등사",
+      "병풍바위",
+      "눈썹바위",
+      "무지치폭포"
+    ],
+    "search_terms": [
+      "Unaksan",
+      "Unaksan Mountain"
+    ],
+    "file": "unaksan-playbook.html",
+    "done": true,
+    "season_signature": "가을 단풍·겨울 빙벽",
     "hero_present": false
   }
 ]
