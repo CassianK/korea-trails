@@ -575,7 +575,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fillOpacity: 0.95
       });
 
-      const youtubeId = s.youtube ? s.youtube.split('v=')[1] : null;
+      const youtubeId = (s.youtube && s.youtube.length > 0) ? s.youtube[0] : null;
       let youtubeHtml = '';
       if (youtubeId) {
         youtubeHtml = `
@@ -588,17 +588,20 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
       }
 
+      const countryLabel = s.country === 'KR' ? '대한민국' : s.country === 'US' ? '미국' : s.country === 'AU' ? '호주' : s.country === 'Taiwan' ? '대만' : s.country;
+      const watchUrl = youtubeId ? 'https://www.youtube.com/watch?v=' + youtubeId : '';
+
       const popupHtml = `
         <div style="font-family: var(--font-body); padding: 4px; width: 240px;">
           <h4 style="margin: 0 0 4px 0; font-size: 14px; font-weight: 800;">${icon} ${s.name_ko}</h4>
-          <div style="font-size: 11px; margin-bottom: 2px;">국가: <strong>${s.country === 'South Korea' ? '대한민국' : s.country === 'United States' ? '미국' : s.country === 'Australia' ? '호주' : s.country === 'Taiwan' ? '대만' : s.country}</strong></div>
-          <div style="font-size: 11px; margin-bottom: 2px;">거리: <strong>${s.distance_km}km</strong> (${s.type})</div>
+          <div style="font-size: 11px; margin-bottom: 2px;">국가: <strong>${countryLabel}</strong></div>
+          <div style="font-size: 11px; margin-bottom: 2px;">거리: <strong>${s.distance_km || 0}km</strong> (${s.type || '—'})</div>
           ${youtubeHtml}
           <div style="margin-top: var(--space-2); display: flex; justify-content: space-between;">
             <a href="activities.html?spot=${s.id}" style="font-size: 11px; font-weight: 700; color: var(--primary); display: inline-block;">
               상세 정보 보기 &rarr;
             </a>
-            ${s.youtube ? `<a href="${s.youtube}" target="_blank" rel="noopener" style="font-size: 11px; color: var(--muted); display: inline-block;">유튜브로 열기</a>` : ''}
+            ${watchUrl ? `<a href="${watchUrl}" target="_blank" rel="noopener" style="font-size: 11px; color: var(--muted); display: inline-block;">유튜브로 열기</a>` : ''}
           </div>
         </div>
       `;
@@ -685,7 +688,7 @@ document.addEventListener('DOMContentLoaded', () => {
             type: 'activities',
             id: s.id,
             name: `${icon} ${s.name_ko}`,
-            meta: `${label} · 거리: ${s.distance_km}km · ${s.region}`,
+            meta: `${label} · 거리: ${s.distance_km || 0}km · ${s.region}`,
             lat: s.lat,
             lng: s.lng
           });
