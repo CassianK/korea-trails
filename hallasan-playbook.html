@@ -100,7 +100,7 @@
 
 /* MAP SVG */
 .map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
-.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
 .map-svg{width:100%;height:auto;max-height:520px;}
 
 /* TIPS GRID */
@@ -556,29 +556,13 @@
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="site-header">
 <div class="logo-wrap">
-<svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
-<defs>
-<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
-<stop offset="0%" stop-color="#f43f5e"></stop>
-<stop offset="100%" stop-color="#be123c"></stop>
-</lineargradient>
-<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
-<stop offset="0%" stop-color="#0f172a"></stop>
-<stop offset="100%" stop-color="#0d9488"></stop>
-</lineargradient>
-<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
-<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-</lineargradient>
-</defs>
-<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
-<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
-<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
-<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
-<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
-<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+<svg aria-label="Korea Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
 </svg>
 <span class="logo-text">한라산 플레이북</span>
 </div>
@@ -632,13 +616,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="beginner-overview">
 <div class="section-title"><div class="section-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><span>초급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">11.6km</div><div class="stat-label">영실↑ 어리목↓ 환종주</div></div>
-<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">4~5h</div><div class="stat-label">소요 시간</div></div>
-<div class="stat-card"><div class="stat-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="stat-value">1,700m</div><div class="stat-label">윗세오름·남벽분기점</div></div>
-<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">±420m</div><div class="stat-label">누적 고도차</div></div>
-<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~1,000</div><div class="stat-label">예상 칼로리</div></div>
-<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★☆☆☆</div><div class="stat-label">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">영실↑ 어리목↓ 환종주</span>
+<span class="pill-value">11.6km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">4~5h</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">윗세오름·남벽분기점</span>
+<span class="pill-value">1,700m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">±420m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~1,000</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 2단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-easy"></span>
+<span class="segment active-easy"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elevation-wrap">
 <h2>📊 고도 프로파일 — 영실↑ 어리목↓ 환종주</h2>
@@ -686,7 +702,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">출</span>
-<div class="acc-tw"><div class="acc-title">영실 탐방로 입구 출발</div><div class="acc-meta">해발 1,280m · 서귀포시 하원동</div></div>
+<div class="acc-tw"><div class="acc-title">영실 탐방로 입구 출발</div><div class="acc-meta-chips"><span class="meta-chip">⛰ 해발 1,280m</span><span class="meta-chip">📍 서귀포시 하원동</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -697,7 +713,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">1</span>
-<div class="acc-tw"><div class="acc-title">영실 탐방로 입구 → 병풍바위</div><div class="acc-meta">약 1.5km · 50분 · 고도 ↑300m (깔딱고개)</div></div>
+<div class="acc-tw"><div class="acc-title">영실 탐방로 입구 → 병풍바위</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.5km</span><span class="meta-chip">⏱ 50분</span><span class="meta-chip">⏱ 고도 ↑300m (깔딱고개)</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -709,7 +725,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">2</span>
-<div class="acc-tw"><div class="acc-title">병풍바위 → 선작지왓 → 윗세오름 대피소</div><div class="acc-meta">약 1.3km · 50분 · 완만한 평원</div></div>
+<div class="acc-tw"><div class="acc-title">병풍바위 → 선작지왓 → 윗세오름 대피소</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.3km</span><span class="meta-chip">⏱ 50분</span><span class="meta-chip">📍 완만한 평원</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -721,7 +737,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">3</span>
-<div class="acc-tw"><div class="acc-title">윗세오름 → 남벽분기점 (선택 조망)</div><div class="acc-meta">왕복 약 1km · 30분 · 백록담 남벽 조망</div></div>
+<div class="acc-tw"><div class="acc-title">윗세오름 → 남벽분기점 (선택 조망)</div><div class="acc-meta-chips"><span class="meta-chip">📏 왕복 약 1km</span><span class="meta-chip">⏱ 30분</span><span class="meta-chip">📍 백록담 남벽 조망</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -733,7 +749,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">4</span>
-<div class="acc-tw"><div class="acc-title">남벽분기점 → 만세동산 → 사제비동산 → 어리목</div><div class="acc-meta">약 4.7km · 1시간 40분 · 하산</div></div>
+<div class="acc-tw"><div class="acc-title">남벽분기점 → 만세동산 → 사제비동산 → 어리목</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 4.7km</span><span class="meta-chip">⏱ 1시간 40분</span><span class="meta-chip">📍 하산</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -792,21 +808,151 @@
 </svg>
 </div>
 <div class="section-title"><div class="section-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
-<div class="cp-wrap">
-<table class="cp-table">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>영실 탐방로 입구</td><td>1,280m</td><td>0km</td><td><span class="badge b-start">출발점</span></td><td>화장실·주차장</td></tr>
-<tr><td>2</td><td>깔딱고개 (급경사 시작)</td><td>1,400m</td><td>0.5km</td><td><span class="badge b-landmark">주의구간</span></td><td>—</td></tr>
-<tr><td>3</td><td>병풍바위 (오백나한)</td><td>1,580m</td><td>1.5km</td><td><span class="badge b-landmark">명소</span></td><td>조망·쉼터</td></tr>
-<tr><td>4</td><td>선작지왓 (고산 평원)</td><td>1,630m</td><td>2.3km</td><td><span class="badge b-landmark">경관</span></td><td>—</td></tr>
-<tr><td>5</td><td>윗세오름 대피소</td><td>1,700m</td><td>2.8km</td><td><span class="badge b-shelter">대피소</span></td><td>매점·화장실·음수</td></tr>
-<tr><td>6</td><td>남벽분기점</td><td>1,600m</td><td>3.3km</td><td><span class="badge b-control">갈림길</span></td><td>조망대</td></tr>
-<tr><td>7</td><td>만세동산</td><td>1,580m</td><td>4.5km</td><td><span class="badge b-landmark">능선</span></td><td>—</td></tr>
-<tr><td>8</td><td>사제비동산</td><td>1,400m</td><td>6.5km</td><td><span class="badge b-landmark">능선</span></td><td>—</td></tr>
-<tr><td>9</td><td>어리목 탐방로 입구</td><td>970m</td><td>7.6km</td><td><span class="badge b-start">종점</span></td><td>주차장·버스정류장</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">영실 탐방로 입구</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,280m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실·주차장
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">깔딱고개 (급경사 시작)</span>
+<span class="badge badge-landmark">주의구간</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,400m</span>
+<span class="meta-item">📏 누적 0.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">병풍바위 (오백나한)</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,580m</span>
+<span class="meta-item">📏 누적 1.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 조망·쉼터
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">선작지왓 (고산 평원)</span>
+<span class="badge badge-landmark">경관</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,630m</span>
+<span class="meta-item">📏 누적 2.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">윗세오름 대피소</span>
+<span class="badge badge-shelter">대피소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,700m</span>
+<span class="meta-item">📏 누적 2.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 매점·화장실·음수
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">남벽분기점</span>
+<span class="badge badge-landmark">갈림길</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,600m</span>
+<span class="meta-item">📏 누적 3.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 조망대
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">만세동산</span>
+<span class="badge badge-landmark">능선</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,580m</span>
+<span class="meta-item">📏 누적 4.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">사제비동산</span>
+<span class="badge badge-landmark">능선</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,400m</span>
+<span class="meta-item">📏 누적 6.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">어리목 탐방로 입구</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 970m</span>
+<span class="meta-item">📏 누적 7.6km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차장·버스정류장
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div></div></main>
@@ -821,13 +967,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="intermediate-overview">
 <div class="section-title"><div class="section-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg></div><span>중급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">19.2km</div><div class="stat-label">왕복 거리</div></div>
-<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">8~10h</div><div class="stat-label">소요 시간</div></div>
-<div class="stat-card"><div class="stat-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="stat-value">1,947m</div><div class="stat-label">백록담 정상</div></div>
-<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">1,300m</div><div class="stat-label">누적 고도차</div></div>
-<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~2,500</div><div class="stat-label">예상 칼로리</div></div>
-<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★★☆☆</div><div class="stat-label">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">왕복 거리</span>
+<span class="pill-value">19.2km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">8~10h</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">백록담 정상</span>
+<span class="pill-value">1,947m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">1,300m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~2,500</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 3단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elevation-wrap">
 <h2>📊 고도 프로파일 — 성판악 백록담 왕복</h2>
@@ -876,7 +1054,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">출</span>
-<div class="acc-tw"><div class="acc-title">성판악탐방지원센터 출발</div><div class="acc-meta">해발 750m · 제주시 조천읍 516로</div></div>
+<div class="acc-tw"><div class="acc-title">성판악탐방지원센터 출발</div><div class="acc-meta-chips"><span class="meta-chip">⛰ 해발 750m</span><span class="meta-chip">📍 제주시 조천읍 516로</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -888,19 +1066,19 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">1</span>
-<div class="acc-tw"><div class="acc-title">성판악 → 속밭대피소</div><div class="acc-meta">약 3.8km · 1시간 20분 · 고도 ↑300m</div></div>
+<div class="acc-tw"><div class="acc-title">성판악 → 속밭대피소</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 3.8km</span><span class="meta-chip">⏱ 1시간 20분</span><span class="meta-chip">⏱ 고도 ↑300m</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
 <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg easy"><div class="diff-fill" style="width:30%"></div></div></div>
-<p class="acc-desc">넓고 완만한 탐방로가 이어집니다. 울창한 제주 난대림·구상나무 숲을 지나며 걷습니다. 속밭대피소에서 화장실 이용·물 보충 가능. 초반 워밍업 구간.</p>
+<p class="acc-desc">넓고 완만한 탐방로가 이어집니다. 울창한 제주 난대림·구상나무 숲을 지나며 걷습니다.</p><p class="acc-desc">속밭대피소에서 화장실 이용·물 보충 가능. 초반 워밍업 구간.</p>
 <div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 속밭대피소에서 간식 섭취 및 스트레칭 권장. 이후 고도가 점점 높아집니다.</div>
 </div>
 </div>
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">2</span>
-<div class="acc-tw"><div class="acc-title">속밭대피소 → 사라오름 입구 → 진달래밭대피소</div><div class="acc-meta">약 4.0km · 1시간 30분 · 고도 ↑450m</div></div>
+<div class="acc-tw"><div class="acc-title">속밭대피소 → 사라오름 입구 → 진달래밭대피소</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 4.0km</span><span class="meta-chip">⏱ 1시간 30분</span><span class="meta-chip">⏱ 고도 ↑450m</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -912,19 +1090,19 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">3</span>
-<div class="acc-tw"><div class="acc-title">진달래밭대피소 → 백록담 정상</div><div class="acc-meta">약 1.8km · 1시간 30분 · 고도 ↑550m (급경사)</div></div>
+<div class="acc-tw"><div class="acc-title">진달래밭대피소 → 백록담 정상</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.8km</span><span class="meta-chip">⏱ 1시간 30분</span><span class="meta-chip">⏱ 고도 ↑550m (급경사)</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
 <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg hard"><div class="diff-fill" style="width:75%"></div></div></div>
-<p class="acc-desc">진달래밭부터 정상까지가 가장 힘든 구간입니다. 암반·돌길·급경사가 반복됩니다. 정상에서 백록담 화구호 전망 및 360도 파노라마. 정상석 인증샷 대기 시간 30분~1시간 이상.</p>
+<p class="acc-desc">진달래밭부터 정상까지가 가장 힘든 구간입니다. 암반·돌길·급경사가 반복됩니다.</p><p class="acc-desc">정상에서 백록담 화구호 전망 및 360도 파노라마. 정상석 인증샷 대기 시간 30분~1시간 이상.</p>
 <div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 정상 구간 기상 급변 빈번. 강풍·안개·비 대비 방풍재킷 필수. 겨울 아이젠 착용 구간.</div>
 </div>
 </div>
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">4</span>
-<div class="acc-tw"><div class="acc-title">백록담 → 성판악 (하산)</div><div class="acc-meta">9.6km · 3시간~3시간 30분 · 원점 하산</div></div>
+<div class="acc-tw"><div class="acc-title">백록담 → 성판악 (하산)</div><div class="acc-meta-chips"><span class="meta-chip">📏 9.6km</span><span class="meta-chip">⏱ 3시간~3시간 30분</span><span class="meta-chip">📍 원점 하산</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -981,21 +1159,151 @@
 </svg>
 </div>
 <div class="section-title"><div class="section-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
-<div class="cp-wrap">
-<table class="cp-table">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>성판악탐방지원센터</td><td>750m</td><td>0km</td><td><span class="badge b-start">출발점</span></td><td>주차·화장실·안내소</td></tr>
-<tr><td>2</td><td>속밭대피소</td><td>1,050m</td><td>3.8km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실·음수대</td></tr>
-<tr><td>3</td><td>사라오름 분기점</td><td>1,310m</td><td>5.8km</td><td><span class="badge b-landmark">갈림길</span></td><td>—</td></tr>
-<tr><td>4</td><td>사라오름 (선택)</td><td>1,322m</td><td>6.5km</td><td><span class="badge b-landmark">분화구</span></td><td>전망대</td></tr>
-<tr><td>5</td><td>진달래밭대피소</td><td>1,500m</td><td>7.3km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실·음수·쉼터</td></tr>
-<tr><td>6</td><td>진달래밭 통제소</td><td>1,500m</td><td>7.3km</td><td><span class="badge b-control">입산통제</span></td><td>—</td></tr>
-<tr><td>7</td><td>정상 직전 암반 구간</td><td>1,850m</td><td>8.8km</td><td><span class="badge b-landmark">급경사</span></td><td>—</td></tr>
-<tr><td>8</td><td>백록담 (정상)</td><td>1,947m</td><td>9.6km</td><td><span class="badge b-summit">정상</span></td><td>표지석·전망대</td></tr>
-<tr><td>9</td><td>성판악 귀환</td><td>750m</td><td>19.2km</td><td><span class="badge b-start">종점</span></td><td>주차장·식당</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">성판악탐방지원센터</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 750m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·화장실·안내소
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">속밭대피소</span>
+<span class="badge badge-shelter">대피소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,050m</span>
+<span class="meta-item">📏 누적 3.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실·음수대
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">사라오름 분기점</span>
+<span class="badge badge-landmark">갈림길</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,310m</span>
+<span class="meta-item">📏 누적 5.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">사라오름 (선택)</span>
+<span class="badge badge-landmark">분화구</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,322m</span>
+<span class="meta-item">📏 누적 6.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 전망대
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">진달래밭대피소</span>
+<span class="badge badge-shelter">대피소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,500m</span>
+<span class="meta-item">📏 누적 7.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실·음수·쉼터
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">진달래밭 통제소</span>
+<span class="badge badge-landmark">입산통제</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,500m</span>
+<span class="meta-item">📏 누적 7.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">정상 직전 암반 구간</span>
+<span class="badge badge-temple">급경사</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,850m</span>
+<span class="meta-item">📏 누적 8.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">백록담 (정상)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,947m</span>
+<span class="meta-item">📏 누적 9.6km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 표지석·전망대
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">성판악 귀환</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 750m</span>
+<span class="meta-item">📏 누적 19.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차장·식당
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div>
@@ -1010,13 +1318,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="advanced-overview">
 <div class="section-title"><div class="section-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><span>고급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">18.3km</div><div class="stat-label">편도 종주 거리</div></div>
-<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">9~11h</div><div class="stat-label">소요 시간</div></div>
-<div class="stat-card"><div class="stat-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="stat-value">1,947m</div><div class="stat-label">백록담 정상</div></div>
-<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">1,350m</div><div class="stat-label">누적 고도차</div></div>
-<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~3,000</div><div class="stat-label">예상 칼로리</div></div>
-<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★★★★</div><div class="stat-label">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">편도 종주 거리</span>
+<span class="pill-value">18.3km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">9~11h</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">백록담 정상</span>
+<span class="pill-value">1,947m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">1,350m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~3,000</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 5단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elevation-wrap">
 <h2>📊 고도 프로파일 — 관음사↑ 성판악↓ 종주</h2>
@@ -1074,7 +1414,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">출</span>
-<div class="acc-tw"><div class="acc-title">관음사탐방지원센터 출발</div><div class="acc-meta">해발 620m · 제주시 아라동</div></div>
+<div class="acc-tw"><div class="acc-title">관음사탐방지원센터 출발</div><div class="acc-meta-chips"><span class="meta-chip">⛰ 해발 620m</span><span class="meta-chip">📍 제주시 아라동</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1086,7 +1426,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">1</span>
-<div class="acc-tw"><div class="acc-title">관음사 → 탐라계곡</div><div class="acc-meta">약 3.2km · 1시간 10분 · 고도 ↑300m</div></div>
+<div class="acc-tw"><div class="acc-title">관음사 → 탐라계곡</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 3.2km</span><span class="meta-chip">⏱ 1시간 10분</span><span class="meta-chip">⏱ 고도 ↑300m</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1098,19 +1438,19 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">2</span>
-<div class="acc-tw"><div class="acc-title">탐라계곡 → 개미등 → 삼각봉대피소</div><div class="acc-meta">약 2.8km · 2시간 · 고도 ↑700m (최급경사)</div></div>
+<div class="acc-tw"><div class="acc-title">탐라계곡 → 개미등 → 삼각봉대피소</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.8km</span><span class="meta-chip">⏱ 2시간</span><span class="meta-chip">⏱ 고도 ↑700m (최급경사)</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
 <div class="diff-wrap"><div class="diff-label">난이도</div><div class="diff-bg xhard"><div class="diff-fill" style="width:95%"></div></div></div>
-<p class="acc-desc">관음사 코스 최고 난이도 구간. 개미등이라 불리는 가파른 능선 오르막이 끊임없이 이어집니다. 계단·암릉이 반복되며 700m 고도를 높입니다. 삼각봉대피소(1,500m)에서 반드시 충분한 휴식.</p>
+<p class="acc-desc">관음사 코스 최고 난이도 구간. 개미등이라 불리는 가파른 능선 오르막이 끊임없이 이어집니다.</p><p class="acc-desc">계단·암릉이 반복되며 700m 고도를 높입니다. 삼각봉대피소(1,500m)에서 반드시 충분한 휴식.</p>
 <div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 이 코스의 핵심 난이도 구간. 무릎 보호대·스틱 없이는 정상 등정 후 부상 위험. 삼각봉 통제소에서 통과 시간 확인 필수.</div>
 </div>
 </div>
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">3</span>
-<div class="acc-tw"><div class="acc-title">삼각봉대피소 → 용진각 현수교 → 백록담 정상</div><div class="acc-meta">약 2.7km · 1시간 30분 · 고도 ↑447m</div></div>
+<div class="acc-tw"><div class="acc-title">삼각봉대피소 → 용진각 현수교 → 백록담 정상</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.7km</span><span class="meta-chip">⏱ 1시간 30분</span><span class="meta-chip">⏱ 고도 ↑447m</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1122,7 +1462,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">4</span>
-<div class="acc-tw"><div class="acc-title">백록담 → 진달래밭대피소 → 속밭대피소 → 성판악</div><div class="acc-meta">9.6km · 3시간~3시간 30분 · 하산</div></div>
+<div class="acc-tw"><div class="acc-title">백록담 → 진달래밭대피소 → 속밭대피소 → 성판악</div><div class="acc-meta-chips"><span class="meta-chip">📏 9.6km</span><span class="meta-chip">⏱ 3시간~3시간 30분</span><span class="meta-chip">📍 하산</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1190,24 +1530,199 @@
 </svg>
 </div>
 <div class="section-title"><div class="section-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트 (종주)</span></div>
-<div class="cp-wrap">
-<table class="cp-table">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>관음사탐방지원센터</td><td>620m</td><td>0km</td><td><span class="badge b-start">출발점</span></td><td>주차·화장실·안내소</td></tr>
-<tr><td>2</td><td>탐라계곡 목교</td><td>920m</td><td>3.2km</td><td><span class="badge b-landmark">계곡</span></td><td>쉼터</td></tr>
-<tr><td>3</td><td>개미등 급경사 시작</td><td>1,100m</td><td>4.0km</td><td><span class="badge b-landmark">주의구간</span></td><td>—</td></tr>
-<tr><td>4</td><td>삼각봉대피소</td><td>1,500m</td><td>6.0km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실·음수</td></tr>
-<tr><td>5</td><td>삼각봉 통제소</td><td>1,500m</td><td>6.0km</td><td><span class="badge b-control">입산통제</span></td><td>—</td></tr>
-<tr><td>6</td><td>용진각 현수교</td><td>1,650m</td><td>7.0km</td><td><span class="badge b-landmark">명소</span></td><td>—</td></tr>
-<tr><td>7</td><td>북벽 / 장구목</td><td>1,850m</td><td>7.8km</td><td><span class="badge b-landmark">절경</span></td><td>—</td></tr>
-<tr><td>8</td><td>백록담 (정상)</td><td>1,947m</td><td>8.7km</td><td><span class="badge b-summit">정상</span></td><td>표지석·전망대</td></tr>
-<tr><td>9</td><td>진달래밭대피소</td><td>1,500m</td><td>10.9km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실·음수</td></tr>
-<tr><td>10</td><td>사라오름 분기점</td><td>1,310m</td><td>12.5km</td><td><span class="badge b-landmark">갈림길</span></td><td>—</td></tr>
-<tr><td>11</td><td>속밭대피소</td><td>1,050m</td><td>14.5km</td><td><span class="badge b-shelter">대피소</span></td><td>화장실</td></tr>
-<tr><td>12</td><td>성판악탐방지원센터</td><td>750m</td><td>18.3km</td><td><span class="badge b-start">종점</span></td><td>주차장·버스·식당</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">관음사탐방지원센터</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 620m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·화장실·안내소
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">탐라계곡 목교</span>
+<span class="badge badge-landmark">계곡</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 920m</span>
+<span class="meta-item">📏 누적 3.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 쉼터
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">개미등 급경사 시작</span>
+<span class="badge badge-landmark">주의구간</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,100m</span>
+<span class="meta-item">📏 누적 4.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">삼각봉대피소</span>
+<span class="badge badge-shelter">대피소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,500m</span>
+<span class="meta-item">📏 누적 6.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실·음수
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">삼각봉 통제소</span>
+<span class="badge badge-landmark">입산통제</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,500m</span>
+<span class="meta-item">📏 누적 6.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">용진각 현수교</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,650m</span>
+<span class="meta-item">📏 누적 7.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">북벽 / 장구목</span>
+<span class="badge badge-temple">절경</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,850m</span>
+<span class="meta-item">📏 누적 7.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">백록담 (정상)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,947m</span>
+<span class="meta-item">📏 누적 8.7km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 표지석·전망대
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">진달래밭대피소</span>
+<span class="badge badge-shelter">대피소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,500m</span>
+<span class="meta-item">📏 누적 10.9km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실·음수
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">10</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">사라오름 분기점</span>
+<span class="badge badge-landmark">갈림길</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,310m</span>
+<span class="meta-item">📏 누적 12.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">11</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">속밭대피소</span>
+<span class="badge badge-shelter">대피소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,050m</span>
+<span class="meta-item">📏 누적 14.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">12</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">성판악탐방지원센터</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 750m</span>
+<span class="meta-item">📏 누적 18.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차장·버스·식당
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div>
