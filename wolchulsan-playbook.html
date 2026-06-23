@@ -100,7 +100,7 @@
 
 /* MAP SVG */
 .map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
-.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
 .map-svg{width:100%;height:auto;max-height:520px;}
 
 /* TIPS GRID */
@@ -557,29 +557,13 @@
 <!-- HEADER -->
 <header class="site-header">
 <div class="logo">
-<svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
-<defs>
-<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
-<stop offset="0%" stop-color="#f43f5e"></stop>
-<stop offset="100%" stop-color="#be123c"></stop>
-</lineargradient>
-<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
-<stop offset="0%" stop-color="#0f172a"></stop>
-<stop offset="100%" stop-color="#0d9488"></stop>
-</lineargradient>
-<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
-<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-</lineargradient>
-</defs>
-<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
-<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
-<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
-<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
-<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
-<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+<svg aria-label="Korea Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
 </svg>
 <div>
 <div class="logo-text">월출산</div>
@@ -837,19 +821,119 @@
 </div>
 </div></div><div class="playbook-sidebar-col"><div class="cp-wrap">
 <h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 체크포인트 목록</h2>
-</div><div class="cp-table-wrap">
-<table class="cp-table">
-<thead><tr><th>#</th><th>지점명</th><th>고도(m)</th><th>누적(km)</th><th>시설</th></tr></thead>
-<tbody>
-<tr><td>출발</td><td>천황탐방지원센터</td><td>80</td><td>0</td><td>주차·화장실·매점</td></tr>
-<tr><td>1</td><td>천황교</td><td>100</td><td>0.3</td><td>-</td></tr>
-<tr><td>2</td><td>천황사 삼거리</td><td>160</td><td>0.6</td><td>이정표·벤치</td></tr>
-<tr><td>3</td><td>구름다리 삼거리</td><td>430</td><td>1.2</td><td>이정표</td></tr>
-<tr><td>4</td><td>🌉 구름다리</td><td>510</td><td>1.5</td><td>포토스팟·조망</td></tr>
-<tr><td>5</td><td>사자봉 전망대</td><td>540</td><td>1.8</td><td>조망대</td></tr>
-<tr><td>하산</td><td>천황탐방지원센터</td><td>80</td><td>3.3</td><td>화장실</td></tr>
-</tbody>
-</table>
+</div><div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천황탐방지원센터</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 80</span>
+<span class="meta-item">📏 누적 0</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·화장실·매점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천황교</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 100</span>
+<span class="meta-item">📏 누적 0.3</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천황사 삼거리</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 160</span>
+<span class="meta-item">📏 누적 0.6</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표·벤치
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">구름다리 삼거리</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 430</span>
+<span class="meta-item">📏 누적 1.2</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">🌉 구름다리</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 510</span>
+<span class="meta-item">📏 누적 1.5</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 포토스팟·조망
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">사자봉 전망대</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 540</span>
+<span class="meta-item">📏 누적 1.8</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 조망대
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천황탐방지원센터</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 80</span>
+<span class="meta-item">📏 누적 3.3</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실
+      </div>
+</div>
+</div>
 </div></div></div>
 </div>
 <!-- ═══════════════════ 중급 패널 ═══════════════════ -->
@@ -998,23 +1082,183 @@
 </div>
 </div></div><div class="playbook-sidebar-col"><div class="cp-wrap">
 <h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 체크포인트 목록</h2>
-</div><div class="cp-table-wrap">
-<table class="cp-table">
-<thead><tr><th>#</th><th>지점명</th><th>고도(m)</th><th>누적(km)</th><th>주요 특징</th></tr></thead>
-<tbody>
-<tr><td>출</td><td>천황탐방지원센터</td><td>80</td><td>0</td><td>주차·화장실·매점</td></tr>
-<tr><td>1</td><td>천황교</td><td>100</td><td>0.3</td><td>-</td></tr>
-<tr><td>2</td><td>천황사 삼거리</td><td>160</td><td>0.6</td><td>이정표</td></tr>
-<tr><td>3</td><td>구름다리 삼거리</td><td>430</td><td>1.2</td><td>이정표</td></tr>
-<tr><td>4</td><td>🌉 구름다리</td><td>510</td><td>1.5</td><td>조망·포토스팟</td></tr>
-<tr><td>5</td><td>육형제바위</td><td>660</td><td>1.9</td><td>명소</td></tr>
-<tr><td>6</td><td>통천문</td><td>760</td><td>2.2</td><td>바위굴·협곡</td></tr>
-<tr><td>7</td><td><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 천황봉 정상</td><td>809</td><td>2.5</td><td>정상석·조망·식사</td></tr>
-<tr><td>8</td><td>바람재 삼거리</td><td>700</td><td>3.0</td><td>이정표</td></tr>
-<tr><td>9</td><td>💧 바람폭포</td><td>350</td><td>4.5</td><td>폭포·세족 (여름)</td></tr>
-<tr><td>도</td><td>천황탐방지원센터</td><td>80</td><td>6.7</td><td>화장실·주차</td></tr>
-</tbody>
-</table>
+</div><div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천황탐방지원센터</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 80</span>
+<span class="meta-item">📏 누적 0</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·화장실·매점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천황교</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 100</span>
+<span class="meta-item">📏 누적 0.3</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천황사 삼거리</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 160</span>
+<span class="meta-item">📏 누적 0.6</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">구름다리 삼거리</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 430</span>
+<span class="meta-item">📏 누적 1.2</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">🌉 구름다리</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 510</span>
+<span class="meta-item">📏 누적 1.5</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 조망·포토스팟
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">육형제바위</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 660</span>
+<span class="meta-item">📏 누적 1.9</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 명소
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">통천문</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 760</span>
+<span class="meta-item">📏 누적 2.2</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 바위굴·협곡
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천황봉 정상</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 809</span>
+<span class="meta-item">📏 누적 2.5</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석·조망·식사
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">바람재 삼거리</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 700</span>
+<span class="meta-item">📏 누적 3.0</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">10</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">💧 바람폭포</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 350</span>
+<span class="meta-item">📏 누적 4.5</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 폭포·세족 (여름)
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">11</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천황탐방지원센터</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 80</span>
+<span class="meta-item">📏 누적 6.7</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실·주차
+      </div>
+</div>
+</div>
 </div></div></div>
 </div>
 <!-- ═══════════════════ 고급 패널 ═══════════════════ -->
@@ -1171,24 +1415,199 @@
 </div>
 </div></div><div class="playbook-sidebar-col"><div class="cp-wrap">
 <h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 체크포인트 목록</h2>
-</div><div class="cp-table-wrap">
-<table class="cp-table">
-<thead><tr><th>#</th><th>지점명</th><th>고도(m)</th><th>누적(km)</th><th>주요 특징</th></tr></thead>
-<tbody>
-<tr><td>출</td><td>천황탐방지원센터(A)</td><td>80</td><td>0</td><td>주차·화장실·매점</td></tr>
-<tr><td>1</td><td>천황사 삼거리</td><td>160</td><td>0.6</td><td>이정표</td></tr>
-<tr><td>2</td><td>🌉 구름다리</td><td>510</td><td>1.5</td><td>조망·포토스팟</td></tr>
-<tr><td>3</td><td>육형제바위</td><td>660</td><td>1.9</td><td>명소</td></tr>
-<tr><td>4</td><td>통천문</td><td>760</td><td>2.2</td><td>바위굴</td></tr>
-<tr><td>5</td><td><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 천황봉 (정상)</td><td>809</td><td>2.5</td><td>정상석·360°조망</td></tr>
-<tr><td>6</td><td>바람재 삼거리</td><td>700</td><td>3.0</td><td>이정표·휴식</td></tr>
-<tr><td>7</td><td>🗿 구정봉</td><td>711</td><td>4.0</td><td>마애여래좌상(국보)</td></tr>
-<tr><td>8</td><td>남근바위·큰바위얼굴</td><td>680</td><td>4.5</td><td>명소</td></tr>
-<tr><td>9</td><td>🌾 억새밭(미왕재)</td><td>450</td><td>5.5</td><td>가을 절경</td></tr>
-<tr><td>10</td><td>도갑사 입구</td><td>120</td><td>8.5</td><td>사찰·국보 해탈문</td></tr>
-<tr><td>도</td><td>⛩ 도갑사 주차장(B)</td><td>90</td><td>9.5</td><td>주차·식당·택시</td></tr>
-</tbody>
-</table>
+</div><div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천황탐방지원센터(A)</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 80</span>
+<span class="meta-item">📏 누적 0</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·화장실·매점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천황사 삼거리</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 160</span>
+<span class="meta-item">📏 누적 0.6</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">🌉 구름다리</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 510</span>
+<span class="meta-item">📏 누적 1.5</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 조망·포토스팟
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">육형제바위</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 660</span>
+<span class="meta-item">📏 누적 1.9</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 명소
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">통천문</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 760</span>
+<span class="meta-item">📏 누적 2.2</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 바위굴
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천황봉 (정상)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 809</span>
+<span class="meta-item">📏 누적 2.5</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석·360°조망
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">바람재 삼거리</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 700</span>
+<span class="meta-item">📏 누적 3.0</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표·휴식
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">🗿 구정봉</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 711</span>
+<span class="meta-item">📏 누적 4.0</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 마애여래좌상(국보)
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">남근바위·큰바위얼굴</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 680</span>
+<span class="meta-item">📏 누적 4.5</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 명소
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">10</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">🌾 억새밭(미왕재)</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 450</span>
+<span class="meta-item">📏 누적 5.5</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 가을 절경
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">11</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">도갑사 입구</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 120</span>
+<span class="meta-item">📏 누적 8.5</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 사찰·국보 해탈문
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">12</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">⛩ 도갑사 주차장(B)</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 90</span>
+<span class="meta-item">📏 누적 9.5</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·식당·택시
+      </div>
+</div>
+</div>
 </div></div></div>
 </div>
 <!-- Photo Gallery Grid -->
