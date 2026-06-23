@@ -100,7 +100,7 @@
 
 /* MAP SVG */
 .map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
-.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
 .map-svg{width:100%;height:auto;max-height:520px;}
 
 /* TIPS GRID */
@@ -556,29 +556,13 @@
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="hdr">
 <div class="logo">
-<svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
-<defs>
-<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
-<stop offset="0%" stop-color="#f43f5e"></stop>
-<stop offset="100%" stop-color="#be123c"></stop>
-</lineargradient>
-<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
-<stop offset="0%" stop-color="#0f172a"></stop>
-<stop offset="100%" stop-color="#0d9488"></stop>
-</lineargradient>
-<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
-<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-</lineargradient>
-</defs>
-<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
-<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
-<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
-<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
-<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
-<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+<svg aria-label="Korea Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
 </svg>
 <span class="logo-txt">무등산 플레이북</span>
 </div>
@@ -632,13 +616,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="beginner-ov">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><span>초급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="si">📏</div><div class="sv">8.0km</div><div class="sl">코스 길이</div></div>
-<div class="stat-card"><div class="si">⏱</div><div class="sv">3h10m</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">617m</div><div class="sl">최고 고도</div></div>
-<div class="stat-card"><div class="si">📈</div><div class="sv">±467m</div><div class="sl">누적 고도차</div></div>
-<div class="stat-card"><div class="si">🔥</div><div class="sv">~640</div><div class="sl">예상 칼로리</div></div>
-<div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">코스 길이</span>
+<span class="pill-value">8.0km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">3h10m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">최고 고도</span>
+<span class="pill-value">617m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">±467m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~640</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 1단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-easy"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elev-wrap">
 <h2>📊 고도 프로파일 — 당산나무 코스 (증심사~중머리재 원점회귀)</h2>
@@ -661,7 +677,7 @@
 <div class="ic"><h2>코스 특징</h2><ul><li>증심사입구(150m)에서 당산나무(350m)까지는 경사가 완만하나, 이후 중머리재(617m)까지는 돌길이 이어지며 고도가 가파르게 상승합니다.</li><li>⚠️ 당산나무 이후 돌너덜지대 미끄러짐 주의</li><li>⚠️ 중머리재 부근 바람 강함</li></ul></div>
 </div><div class="tc" id="beginner-rt">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
-<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">증심사 탐방지원센터 → 증심사</div><div class="acc-m">약 0.9km · 22분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">증심사 탐방지원센터에서 출발하여 증심사(해발 220m)로 향합니다. 천년고찰. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 증심사 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">증심사 → 당산나무</div><div class="acc-m">약 1.4km · 35분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">증심사에서 출발하여 당산나무(해발 350m)로 향합니다. 수령 500년 보호수. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 당산나무 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">당산나무 → 중머리재</div><div class="acc-m">약 1.7km · 42분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">당산나무에서 출발하여 중머리재(해발 617m)로 향합니다. 넓은 평지 고개, 1차 기점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 중머리재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">중머리재 → 당산나무 복귀</div><div class="acc-m">약 1.7km · 25분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">중머리재에서 출발하여 당산나무 복귀(해발 350m)로 향합니다. 하산길 경유. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 당산나무 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">당산나무 복귀 → 증심사 탐방지원센터 복귀</div><div class="acc-m">약 2.3km · 34분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">당산나무 복귀에서 출발하여 증심사 탐방지원센터 복귀(해발 150m)로 향합니다. 원점회귀 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 증심사 탐방지원센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
+<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">증심사 탐방지원센터 → 증심사</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.9km</span><span class="meta-chip">⏱ 22분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">증심사 탐방지원센터에서 출발하여 증심사(해발 220m)로 향합니다. 천년고찰. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 증심사 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">증심사 → 당산나무</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.4km</span><span class="meta-chip">⏱ 35분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">증심사에서 출발하여 당산나무(해발 350m)로 향합니다. 수령 500년 보호수. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 당산나무 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">당산나무 → 중머리재</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.7km</span><span class="meta-chip">⏱ 42분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">당산나무에서 출발하여 중머리재(해발 617m)로 향합니다. 넓은 평지 고개, 1차 기점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 중머리재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">중머리재 → 당산나무 복귀</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.7km</span><span class="meta-chip">⏱ 25분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">중머리재에서 출발하여 당산나무 복귀(해발 350m)로 향합니다. 하산길 경유. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 당산나무 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">당산나무 복귀 → 증심사 탐방지원센터 복귀</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.3km</span><span class="meta-chip">⏱ 34분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">당산나무 복귀에서 출발하여 증심사 탐방지원센터 복귀(해발 150m)로 향합니다. 원점회귀 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 증심사 탐방지원센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
 </div><div class="tc" id="beginner-tp">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
 <div class="tg">
@@ -714,11 +730,103 @@
 </svg>
 </div>
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
-<div class="cp-wrap">
-<table class="cpt">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody><tr><td>1</td><td>증심사 탐방지원센터</td><td>150m</td><td>0.0km</td><td><span class="bdg b-st">출발</span></td><td>산행 기점, 공원 안내소</td></tr><tr><td>2</td><td>증심사</td><td>220m</td><td>0.9km</td><td><span class="bdg b-te">사찰</span></td><td>천년고찰</td></tr><tr><td>3</td><td>당산나무</td><td>350m</td><td>2.3km</td><td><span class="bdg b-sk">일반</span></td><td>수령 500년 보호수</td></tr><tr><td>4</td><td>중머리재</td><td>617m</td><td>4.0km</td><td><span class="bdg b-am">정상</span></td><td>넓은 평지 고개, 1차 기점</td></tr><tr><td>5</td><td>당산나무 복귀</td><td>350m</td><td>5.7km</td><td><span class="bdg b-sk">일반</span></td><td>하산길 경유</td></tr><tr><td>6</td><td>증심사 탐방지원센터 복귀</td><td>150m</td><td>8.0km</td><td><span class="bdg b-st">도착</span></td><td>원점회귀 완료</td></tr></tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">증심사 탐방지원센터</span>
+<span class="badge badge-trailhead">출발</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 150m</span>
+<span class="meta-item">📏 누적 0.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 산행 기점, 공원 안내소
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">증심사</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 220m</span>
+<span class="meta-item">📏 누적 0.9km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 천년고찰
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">당산나무</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 350m</span>
+<span class="meta-item">📏 누적 2.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 수령 500년 보호수
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">중머리재</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 617m</span>
+<span class="meta-item">📏 누적 4.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 넓은 평지 고개, 1차 기점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">당산나무 복귀</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 350m</span>
+<span class="meta-item">📏 누적 5.7km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 하산길 경유
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">증심사 탐방지원센터 복귀</span>
+<span class="badge badge-trailhead">도착</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 150m</span>
+<span class="meta-item">📏 누적 8.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 원점회귀 완료
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div></div></main>
@@ -733,13 +841,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="intermediate-ov">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg></div><span>중급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="si">📏</div><div class="sv">12.4km</div><div class="sl">코스 길이</div></div>
-<div class="stat-card"><div class="si">⏱</div><div class="sv">6h00m</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1100m</div><div class="sl">최고 고도</div></div>
-<div class="stat-card"><div class="si">📈</div><div class="sv">±950m</div><div class="sl">누적 고도차</div></div>
-<div class="stat-card"><div class="si">🔥</div><div class="sv">~992</div><div class="sl">예상 칼로리</div></div>
-<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">코스 길이</span>
+<span class="pill-value">12.4km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">6h00m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">최고 고도</span>
+<span class="pill-value">1100m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">±950m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~992</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 3단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elev-wrap">
 <h2>📊 고도 프로파일 — 새인봉-입석대 코스 (증심교~새인봉~장불재~입석대~서석대)</h2>
@@ -763,7 +903,7 @@
 <div class="ic"><h2>코스 특징</h2><ul><li>새인봉까지 가파른 계단과 능선길을 타고 오른 뒤, 서인봉과 장불재(900m)를 지나 서석대(1100m)까지 꾸준한 급경사가 이어집니다.</li><li>⚠️ 새인봉 급경사 철계단 및 난간 구간 주의</li><li>⚠️ 서석대 부근 겨울철 상습 결빙 및 강풍</li></ul></div>
 </div><div class="tc" id="intermediate-rt">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
-<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">증심사 탐방지원센터 → 새인봉</div><div class="acc-m">약 2.2km · 55분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">증심사 탐방지원센터에서 출발하여 새인봉(해발 490m)로 향합니다. 기암절벽 조망점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 새인봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">새인봉 → 서인봉</div><div class="acc-m">약 0.9km · 22분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">새인봉에서 출발하여 서인봉(해발 611m)로 향합니다. 중머리재 직전 봉우리. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 서인봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">서인봉 → 장불재</div><div class="acc-m">약 1.9km · 47분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">서인봉에서 출발하여 장불재(해발 900m)로 향합니다. 쉼터 및 대피소, 주상절리 조망처. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 장불재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">장불재 → 입석대</div><div class="acc-m">약 0.4km · 10분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">장불재에서 출발하여 입석대(해발 1017m)로 향합니다. 주상절리대 (천연기념물). 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 입석대 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">입석대 → 서석대</div><div class="acc-m">약 0.5km · 12분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">입석대에서 출발하여 서석대(해발 1100m)로 향합니다. 일반인 등반 최고점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 서석대 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">6</span><div class="acc-tw"><div class="acc-t">서석대 → 중머리재</div><div class="acc-m">약 2.5km · 37분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">서석대에서 출발하여 중머리재(해발 617m)로 향합니다. 하산 능선길 합류점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 중머리재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">7</span><div class="acc-tw"><div class="acc-t">중머리재 → 증심사 탐방지원센터 복귀</div><div class="acc-m">약 4.0km · 60분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">중머리재에서 출발하여 증심사 탐방지원센터 복귀(해발 150m)로 향합니다. 하산 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 증심사 탐방지원센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
+<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">증심사 탐방지원센터 → 새인봉</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.2km</span><span class="meta-chip">⏱ 55분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">증심사 탐방지원센터에서 출발하여 새인봉(해발 490m)로 향합니다. 기암절벽 조망점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 새인봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">새인봉 → 서인봉</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.9km</span><span class="meta-chip">⏱ 22분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">새인봉에서 출발하여 서인봉(해발 611m)로 향합니다. 중머리재 직전 봉우리. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 서인봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">서인봉 → 장불재</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.9km</span><span class="meta-chip">⏱ 47분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">서인봉에서 출발하여 장불재(해발 900m)로 향합니다. 쉼터 및 대피소, 주상절리 조망처. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 장불재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">장불재 → 입석대</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.4km</span><span class="meta-chip">⏱ 10분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">장불재에서 출발하여 입석대(해발 1017m)로 향합니다. 주상절리대 (천연기념물). 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 입석대 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">입석대 → 서석대</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.5km</span><span class="meta-chip">⏱ 12분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">입석대에서 출발하여 서석대(해발 1100m)로 향합니다. 일반인 등반 최고점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 서석대 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">6</span><div class="acc-tw"><div class="acc-t">서석대 → 중머리재</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.5km</span><span class="meta-chip">⏱ 37분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">서석대에서 출발하여 중머리재(해발 617m)로 향합니다. 하산 능선길 합류점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 중머리재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">7</span><div class="acc-tw"><div class="acc-t">중머리재 → 증심사 탐방지원센터 복귀</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 4.0km</span><span class="meta-chip">⏱ 60분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">중머리재에서 출발하여 증심사 탐방지원센터 복귀(해발 150m)로 향합니다. 하산 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 증심사 탐방지원센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
 </div><div class="tc" id="intermediate-tp">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
 <div class="tg">
@@ -813,11 +953,135 @@
 </svg>
 </div>
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
-<div class="cp-wrap">
-<table class="cpt">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody><tr><td>1</td><td>증심사 탐방지원센터</td><td>150m</td><td>0.0km</td><td><span class="bdg b-st">출발</span></td><td>기점 출발</td></tr><tr><td>2</td><td>새인봉</td><td>490m</td><td>2.2km</td><td><span class="bdg b-sk">일반</span></td><td>기암절벽 조망점</td></tr><tr><td>3</td><td>서인봉</td><td>611m</td><td>3.1km</td><td><span class="bdg b-sk">일반</span></td><td>중머리재 직전 봉우리</td></tr><tr><td>4</td><td>장불재</td><td>900m</td><td>5.0km</td><td><span class="bdg b-sk">쉼터</span></td><td>쉼터 및 대피소, 주상절리 조망처</td></tr><tr><td>5</td><td>입석대</td><td>1017m</td><td>5.4km</td><td><span class="bdg b-sk">일반</span></td><td>주상절리대 (천연기념물)</td></tr><tr><td>6</td><td>서석대</td><td>1100m</td><td>5.9km</td><td><span class="bdg b-am">정상</span></td><td>일반인 등반 최고점</td></tr><tr><td>7</td><td>중머리재</td><td>617m</td><td>8.4km</td><td><span class="bdg b-sk">쉼터</span></td><td>하산 능선길 합류점</td></tr><tr><td>8</td><td>증심사 탐방지원센터 복귀</td><td>150m</td><td>12.4km</td><td><span class="bdg b-st">도착</span></td><td>하산 완료</td></tr></tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">증심사 탐방지원센터</span>
+<span class="badge badge-trailhead">출발</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 150m</span>
+<span class="meta-item">📏 누적 0.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 기점 출발
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">새인봉</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 490m</span>
+<span class="meta-item">📏 누적 2.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 기암절벽 조망점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">서인봉</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 611m</span>
+<span class="meta-item">📏 누적 3.1km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 중머리재 직전 봉우리
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">장불재</span>
+<span class="badge badge-shelter">쉼터</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 900m</span>
+<span class="meta-item">📏 누적 5.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 쉼터 및 대피소, 주상절리 조망처
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">입석대</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1017m</span>
+<span class="meta-item">📏 누적 5.4km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주상절리대 (천연기념물)
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">서석대</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1100m</span>
+<span class="meta-item">📏 누적 5.9km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 일반인 등반 최고점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">중머리재</span>
+<span class="badge badge-shelter">쉼터</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 617m</span>
+<span class="meta-item">📏 누적 8.4km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 하산 능선길 합류점
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">증심사 탐방지원센터 복귀</span>
+<span class="badge badge-trailhead">도착</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 150m</span>
+<span class="meta-item">📏 누적 12.4km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 하산 완료
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div>
@@ -833,13 +1097,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="advanced-ov">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><span>고급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="si">📏</div><div class="sv">14.6km</div><div class="sl">코스 길이</div></div>
-<div class="stat-card"><div class="si">⏱</div><div class="sv">7h00m</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1100m</div><div class="sl">최고 고도</div></div>
-<div class="stat-card"><div class="si">📈</div><div class="sv">±720m</div><div class="sl">누적 고도차</div></div>
-<div class="stat-card"><div class="si">🔥</div><div class="sv">~1168</div><div class="sl">예상 칼로리</div></div>
-<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★☆</div><div class="sl">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">코스 길이</span>
+<span class="pill-value">14.6km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">7h00m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">최고 고도</span>
+<span class="pill-value">1100m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">±720m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~1168</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 4단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elev-wrap">
 <h2>📊 고도 프로파일 — 원효사-규봉암 코스 (원효사~꼬막재~규봉암~장불재~서석대 종주)</h2>
@@ -869,7 +1165,7 @@
 <div class="ic"><h2>코스 특징</h2><ul><li>원효사(380m)에서 규봉암(950m)까지는 비교적 완만한 능선길이나, 장불재를 경유해 서석대(1100m)로 향하는 구간 및 옛길 하산로는 급경사 너덜지대입니다.</li><li>⚠️ 14.6km 장거리 산행에 따른 체력 분배 조절 필요</li><li>⚠️ 규봉암 부근 낙석 및 너덜지대 주의</li></ul></div>
 </div><div class="tc" id="advanced-rt">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
-<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">원효사 탐방지원센터 → 꼬막재</div><div class="acc-m">약 2.0km · 50분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">원효사 탐방지원센터에서 출발하여 꼬막재(해발 738m)로 향합니다. 완만한 흙길 고개. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 꼬막재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">꼬막재 → 신선대 입구</div><div class="acc-m">약 2.1km · 52분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">꼬막재에서 출발하여 신선대 입구(해발 850m)로 향합니다. 능선 합류부. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 신선대 입구 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">신선대 입구 → 규봉암 (광석대)</div><div class="acc-m">약 1.5km · 37분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">신선대 입구에서 출발하여 규봉암 (광석대)(해발 950m)로 향합니다. 암벽 아래 천년암자, 3대 석경. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 규봉암 (광석대) 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">규봉암 (광석대) → 장불재</div><div class="acc-m">약 1.8km · 27분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">규봉암 (광석대)에서 출발하여 장불재(해발 900m)로 향합니다. 억새 평원 교차점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 장불재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">장불재 → 서석대</div><div class="acc-m">약 0.9km · 22분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">장불재에서 출발하여 서석대(해발 1100m)로 향합니다. 일반 최고점 도달. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 서석대 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">6</span><div class="acc-tw"><div class="acc-t">서석대 → 목교</div><div class="acc-m">약 0.5km · 7분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">서석대에서 출발하여 목교(해발 990m)로 향합니다. 옛길 갈림길. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 목교 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">7</span><div class="acc-tw"><div class="acc-t">목교 → 원효사 탐방지원센터 복귀</div><div class="acc-m">약 5.8km · 87분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">목교에서 출발하여 원효사 탐방지원센터 복귀(해발 380m)로 향합니다. 원효사 옛길 하산 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 원효사 탐방지원센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
+<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">원효사 탐방지원센터 → 꼬막재</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.0km</span><span class="meta-chip">⏱ 50분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">원효사 탐방지원센터에서 출발하여 꼬막재(해발 738m)로 향합니다. 완만한 흙길 고개. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 꼬막재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">꼬막재 → 신선대 입구</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.1km</span><span class="meta-chip">⏱ 52분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">꼬막재에서 출발하여 신선대 입구(해발 850m)로 향합니다. 능선 합류부. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 신선대 입구 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">신선대 입구 → 규봉암 (광석대)</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.5km</span><span class="meta-chip">⏱ 37분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">신선대 입구에서 출발하여 규봉암 (광석대)(해발 950m)로 향합니다. 암벽 아래 천년암자, 3대 석경. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 규봉암 (광석대) 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">규봉암 (광석대) → 장불재</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.8km</span><span class="meta-chip">⏱ 27분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">규봉암 (광석대)에서 출발하여 장불재(해발 900m)로 향합니다. 억새 평원 교차점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 장불재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">장불재 → 서석대</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.9km</span><span class="meta-chip">⏱ 22분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">장불재에서 출발하여 서석대(해발 1100m)로 향합니다. 일반 최고점 도달. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 서석대 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">6</span><div class="acc-tw"><div class="acc-t">서석대 → 목교</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.5km</span><span class="meta-chip">⏱ 7분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">서석대에서 출발하여 목교(해발 990m)로 향합니다. 옛길 갈림길. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 목교 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">7</span><div class="acc-tw"><div class="acc-t">목교 → 원효사 탐방지원센터 복귀</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 5.8km</span><span class="meta-chip">⏱ 87분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">목교에서 출발하여 원효사 탐방지원센터 복귀(해발 380m)로 향합니다. 원효사 옛길 하산 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 원효사 탐방지원센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
 </div><div class="tc" id="advanced-tp">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
 <div class="tg">
@@ -941,11 +1237,135 @@
 </svg>
 </div>
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트 (환종주)</span></div>
-<div class="cp-wrap">
-<table class="cpt">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody><tr><td>1</td><td>원효사 탐방지원센터</td><td>380m</td><td>0.0km</td><td><span class="bdg b-st">출발</span></td><td>원효사 기점 출발</td></tr><tr><td>2</td><td>꼬막재</td><td>738m</td><td>2.0km</td><td><span class="bdg b-sk">쉼터</span></td><td>완만한 흙길 고개</td></tr><tr><td>3</td><td>신선대 입구</td><td>850m</td><td>4.1km</td><td><span class="bdg b-sk">일반</span></td><td>능선 합류부</td></tr><tr><td>4</td><td>규봉암 (광석대)</td><td>950m</td><td>5.6km</td><td><span class="bdg b-te">사찰</span></td><td>암벽 아래 천년암자, 3대 석경</td></tr><tr><td>5</td><td>장불재</td><td>900m</td><td>7.4km</td><td><span class="bdg b-sk">쉼터</span></td><td>억새 평원 교차점</td></tr><tr><td>6</td><td>서석대</td><td>1100m</td><td>8.3km</td><td><span class="bdg b-am">정상</span></td><td>일반 최고점 도달</td></tr><tr><td>7</td><td>목교</td><td>990m</td><td>8.8km</td><td><span class="bdg b-sk">일반</span></td><td>옛길 갈림길</td></tr><tr><td>8</td><td>원효사 탐방지원센터 복귀</td><td>380m</td><td>14.6km</td><td><span class="bdg b-st">도착</span></td><td>원효사 옛길 하산 완료</td></tr></tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">원효사 탐방지원센터</span>
+<span class="badge badge-trailhead">출발</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 380m</span>
+<span class="meta-item">📏 누적 0.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 원효사 기점 출발
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">꼬막재</span>
+<span class="badge badge-shelter">쉼터</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 738m</span>
+<span class="meta-item">📏 누적 2.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 완만한 흙길 고개
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">신선대 입구</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 850m</span>
+<span class="meta-item">📏 누적 4.1km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 능선 합류부
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">규봉암 (광석대)</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 950m</span>
+<span class="meta-item">📏 누적 5.6km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 암벽 아래 천년암자, 3대 석경
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">장불재</span>
+<span class="badge badge-shelter">쉼터</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 900m</span>
+<span class="meta-item">📏 누적 7.4km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 억새 평원 교차점
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">서석대</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1100m</span>
+<span class="meta-item">📏 누적 8.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 일반 최고점 도달
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">목교</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 990m</span>
+<span class="meta-item">📏 누적 8.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 옛길 갈림길
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">원효사 탐방지원센터 복귀</span>
+<span class="badge badge-trailhead">도착</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 380m</span>
+<span class="meta-item">📏 누적 14.6km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 원효사 옛길 하산 완료
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div>
