@@ -208,6 +208,8 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 4**: Photo by [Kwangho Cha](https://www.pexels.com/@sudal) via [pexels](https://pexels.com).
 
 ## 무등산 (무등산)
+- **OG Card (assets/img/mudeungsan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
+- **Cinematic Ambient Loop (assets/video/mudeungsan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
 
 - **Hero Header**: Photo by [Kemal Güneş](https://www.pexels.com/@wkgunes) via [pexels](https://pexels.com).
 - **Gallery 1**: Photo by [Kwangho Cha](https://www.pexels.com/@sudal) via [pexels](https://pexels.com).
