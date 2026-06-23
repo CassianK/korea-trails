@@ -1316,10 +1316,122 @@ function toggleAcc(item){
   item.closest('.accordion').querySelectorAll('.acc-item').forEach(function(a){a.classList.remove('open');});
   if(!isOpen)item.classList.add('open');
 }
-</script><div aria-hidden="true" aria-label="View larger image" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1"><button aria-label="Close Gallery" class="lightbox-close">×</button><button aria-label="Previous image" class="lightbox-prev">❮</button><button aria-label="Next image" class="lightbox-next">❯</button><div class="lightbox-content"><figure class="lightbox-figure"><figcaption class="lightbox-caption"></figcaption></figure><div class="photo-credit lightbox-credit"></div></div></div><script>
+</script><div aria-hidden="true" aria-label="View larger image" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1"><button aria-label="Close Gallery" class="lightbox-close">×</button><button aria-label="Previous image" class="lightbox-prev">❮</button><button aria-label="Next image" class="lightbox-next">❯</button><div class="lightbox-content"><figure class="lightbox-figure"><figcaption class="lightbox-caption"></figcaption></figure><div class="photo-credit lightbox-credit"></div>
+      <!-- Location Map Integration [D] -->
+      <div style="text-align: center; margin-top: var(--space-3);">
+        <button id="lightboxGeoBtn" class="lightbox-geo-btn" style="display: none;">📍 View photo location</button>
+      </div>
+      <div id="lightboxMapWrap" class="lightbox-map-wrap">
+        <div id="lightboxMap" class="lightbox-map"></div>
+      </div></div></div><script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');
   const lightbox = document.getElementById('lightbox');
+  // --- Lightbox Location Map Integration [D] ---
+  let photoGeoData = null;
+  let galleryMapData = null;
+  let lightboxMapInstance = null;
+  const geoBtn = document.getElementById('lightboxGeoBtn');
+  const mapWrap = document.getElementById('lightboxMapWrap');
+  
+  // Dynamic Leaflet Loader for lightbox
+  function loadLeafletForLightbox(callback) {
+    if (window.L) {
+      callback();
+      return;
+    }
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = callback;
+    document.head.appendChild(script);
+  }
+
+  async function loadGeoDatabases() {
+    try {
+      const relPath = document.documentElement.lang === 'en' ? '../' : '';
+      if (!photoGeoData) {
+        const res = await fetch(relPath + '_orchestration/photo-geo.json');
+        photoGeoData = await res.json();
+      }
+      if (!galleryMapData) {
+        const res = await fetch(relPath + '_orchestration/gallery-to-original.json');
+        galleryMapData = await res.json();
+      }
+    } catch (e) {
+      console.error("Failed to load photo geo databases:", e);
+    }
+  }
+
+  loadGeoDatabases();
+  
+  function checkAndShowLocation(imgSrc) {
+    if (!geoBtn || !mapWrap) return;
+    
+    // Hide map and button initially
+    geoBtn.style.display = 'none';
+    mapWrap.style.display = 'none';
+    if (lightboxMapInstance) {
+      lightboxMapInstance.remove();
+      lightboxMapInstance = null;
+    }
+    
+    if (!photoGeoData || !galleryMapData) {
+      // Retry loading if databases not ready
+      loadGeoDatabases().then(() => checkAndShowLocation(imgSrc));
+      return;
+    }
+    
+    // Normalize path to match JSON keys
+    const cleanSrc = imgSrc.replace(/^(\.\.\/)+/, '');
+    const m_id = cleanSrc.split('/')[2]; // e.g. bukhansan
+    const originalPath = galleryMapData[m_id] ? galleryMapData[m_id][cleanSrc] : null;
+    
+    if (!originalPath) return;
+    
+    const geoInfo = photoGeoData.find(item => item.original === originalPath);
+    if (!geoInfo) return;
+    
+    // Show geo location button
+    geoBtn.style.display = 'inline-flex';
+    
+    // Setup button click action
+    geoBtn.onclick = () => {
+      if (mapWrap.style.display === 'block') {
+        mapWrap.style.display = 'none';
+        if (lightboxMapInstance) {
+          lightboxMapInstance.remove();
+          lightboxMapInstance = null;
+        }
+        return;
+      }
+      
+      mapWrap.style.display = 'block';
+      loadLeafletForLightbox(() => {
+        if (lightboxMapInstance) lightboxMapInstance.remove();
+        
+        lightboxMapInstance = L.map('lightboxMap', {
+          scrollWheelZoom: false
+        }).setView([geoInfo.lat, geoInfo.lng], 15);
+        
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Esri, Maxar'
+        }).addTo(lightboxMapInstance);
+        
+        L.marker([geoInfo.lat, geoInfo.lng]).addTo(lightboxMapInstance)
+          .bindPopup('Photo location')
+          .openPopup();
+          
+        setTimeout(() => {
+          lightboxMapInstance.invalidateSize();
+        }, 200);
+      });
+    };
+  }
   if (!lightbox || galleryItems.length === 0) return;
   
   const closeBtn = lightbox.querySelector('.lightbox-close');
@@ -1351,7 +1463,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     figureContainer.insertBefore(clonedPic, captionEl);
     captionEl.textContent = captionText;
-    
+
+    checkAndShowLocation(img.getAttribute('src'));    
     const creditData = item.getAttribute('data-credit') || '';
     if (creditData && creditEl) {
       creditEl.innerHTML = creditData;
@@ -1366,6 +1479,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   
   const closeLightbox = () => {
+    if (lightboxMapInstance) {
+      lightboxMapInstance.remove();
+      lightboxMapInstance = null;
+    }
+    if (geoBtn) geoBtn.style.display = 'none';
+    if (mapWrap) mapWrap.style.display = 'none';
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     if (lastActiveElement) lastActiveElement.focus();
@@ -1773,11 +1892,18 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="yangmingshan-playbook.html" style="color: var(--muted); text-decoration: none;">Yangmingshan</a>
       </div>
     </div>
+    <div class="sitemap-col">
+      <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Themes</div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+        <a href="cycling.html" style="color: var(--muted); text-decoration: none;">Cycling Routes</a>
+        <a href="map.html" style="color: var(--muted); text-decoration: none;">Interactive Map</a>
+      </div>
+    </div>
   </div>
 
   <p style="font-size: var(--text-xs); color: var(--muted); line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto;">
     Korea Trails — National Hiking Playbook · National Park Reservation: <a href="https://reservation.knps.or.kr" rel="noopener" target="_blank" style="color: var(--primary); text-decoration: underline;">knps.or.kr</a><br/>
-    Some of the hiking photos and tracking videos on this site are original works photographed and produced by Cassian Kim, with the videos published on the YouTube channel Cassian Kim. They may be used for non-commercial purposes only, and credit must be given to the source and author (Cassian Kim / Cassian Kim) upon use. (CC BY-NC 4.0 standard applied)<br/>
+    Some of the hiking photos and tracking videos on this site are original works photographed and produced by Dokyung Kim, with the videos published on the YouTube channel Dokyung Kim (@DK2560). They may be used for non-commercial purposes only, and credit must be given to the source and author (Dokyung Kim) upon use. (CC BY-NC 4.0 standard applied)<br/>
     © 2026 Korea Trails. All Rights Reserved.
   </p>
 </div>
@@ -1805,7 +1931,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </button>
     </div>
     
-    <nav class="nav-drawer-menu" aria-label="Drawer Navigation">
+        <nav class="nav-drawer-menu" aria-label="Drawer Navigation">
       <a href="../index.html" class="nav-drawer-link">
         <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
         Home
@@ -1814,17 +1940,17 @@ document.addEventListener('DOMContentLoaded', () => {
         <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="m8 3-7 18h22L16 7l-4 7-4-11Z"></path></svg>
         Mountain List
       </a>
-      <a href="sitemap.html#regions" class="nav-drawer-link">
+      <a href="cycling.html" class="nav-drawer-link">
+        <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"/></svg>
+        Cycling
+      </a>
+      <a href="map.html" class="nav-drawer-link">
         <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        By Region
+        Interactive Map
       </a>
       <a href="sitemap.html" class="nav-drawer-link">
         <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
         Sitemap
-      </a>
-      <a href="https://github.com/Trinos-Strategy/korea-trails" target="_blank" rel="noopener noreferrer" class="nav-drawer-link">
-        <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-        GitHub
       </a>
     </nav>
     

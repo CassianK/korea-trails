@@ -19,6 +19,42 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://trinos-strategy.github.io/korea-trails/cycling.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://trinos-strategy.github.io/korea-trails/cycling.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://trinos-strategy.github.io/korea-trails/en/cycling.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://trinos-strategy.github.io/korea-trails/cycling.html"/>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://trinos-strategy.github.io/korea-trails/en/cycling.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://trinos-strategy.github.io/korea-trails/cycling.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://trinos-strategy.github.io/korea-trails/en/cycling.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://trinos-strategy.github.io/korea-trails/cycling.html"/>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://trinos-strategy.github.io/korea-trails/map.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://trinos-strategy.github.io/korea-trails/map.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://trinos-strategy.github.io/korea-trails/en/map.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://trinos-strategy.github.io/korea-trails/map.html"/>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://trinos-strategy.github.io/korea-trails/en/map.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://trinos-strategy.github.io/korea-trails/map.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://trinos-strategy.github.io/korea-trails/en/map.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://trinos-strategy.github.io/korea-trails/map.html"/>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://trinos-strategy.github.io/korea-trails/sitemap.html</loc>
     <xhtml:link rel="alternate" hreflang="ko" href="https://trinos-strategy.github.io/korea-trails/sitemap.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://trinos-strategy.github.io/korea-trails/en/sitemap.html"/>

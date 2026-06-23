@@ -1,0 +1,17 @@
+[
+  {
+    "id": "yangmingshan-loop",
+    "name_ko": "양명산 순환 코스",
+    "name_en": "Yangmingshan Loop Route",
+    "country": "Taiwan",
+    "region": "Taipei",
+    "lat": 25.1562,
+    "lng": 121.5479,
+    "distance_km": 35.5,
+    "type": "Road",
+    "photos": [],
+    "youtube": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "desc_ko": "양명산 국립공원의 울창한 숲과 유황 온천 지대를 통과하는 도전적이고 아름다운 순환 로드 사이클 코스입니다.",
+    "desc_en": "A challenging and scenic loop road cycling route traversing through the lush forests and active sulfur hot spring areas of Yangmingshan National Park."
+  }
+]
