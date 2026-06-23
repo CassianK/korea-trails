@@ -556,12 +556,29 @@
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="hdr">
 <div class="logo">
-<svg aria-label="가야산 플레이북" class="logo-svg" fill="none" viewbox="0 0 36 36">
-<rect fill="var(--pri)" height="36" rx="8" width="36"></rect>
-<!-- mountain silhouette with rocky peaks -->
-<path d="M3 30 L10 18 L15 22 L18 12 L21 16 L24 10 L27 16 L33 30Z" fill="white" fill-opacity=".9"></path>
-<path d="M18 12 L20 8 L22 12" fill="white"></path>
-<circle cx="24" cy="9" fill="white" fill-opacity=".7" r="2"></circle>
+<svg class="logo-svg" viewbox="0 0 36 36" fill="none" aria-label="가야산 플레이북">
+  <defs>
+    <linearGradient id="grad36_sun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#be123c"/>
+    </linearGradient>
+    <linearGradient id="grad36_mt" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+    <linearGradient id="grad36_wind" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"/>
+    </linearGradient>
+  </defs>
+  <circle cx="18" cy="18" r="16" stroke="#ca8a04" stroke-width="0.5" stroke-dasharray="1 2" opacity="0.4"/>
+  <circle cx="27" cy="10" r="2.2" fill="url(#grad36_sun)"/>
+  <circle cx="9" cy="10" r="2.2" fill="#fbbf24"/>
+  <path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-width="0.8" stroke-linejoin="round"/>
+  <path d="M2 22 Q12 14 18 20 T34 16" stroke="url(#grad36_wind)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M4 18 Q14 24 20 16 T32 22" stroke="url(#grad36_wind)" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
+  <path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" stroke="#0284c7" stroke-width="1.2" stroke-linecap="round" fill="none"/>
 </svg>
 <span class="logo-txt">가야산 플레이북</span>
 </div>
