@@ -1319,7 +1319,7 @@ function toggleAcc(item){
 </script><div aria-hidden="true" aria-label="View larger image" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1"><button aria-label="Close Gallery" class="lightbox-close">×</button><button aria-label="Previous image" class="lightbox-prev">❮</button><button aria-label="Next image" class="lightbox-next">❯</button><div class="lightbox-content"><figure class="lightbox-figure"><figcaption class="lightbox-caption"></figcaption></figure><div class="photo-credit lightbox-credit"></div>
       <!-- Location Map Integration [D] -->
       <div style="text-align: center; margin-top: var(--space-3);">
-        <button id="lightboxGeoBtn" class="lightbox-geo-btn" style="display: none;">📍 View Photo Location</button>
+        <button id="lightboxGeoBtn" class="lightbox-geo-btn" style="display: none;">📍 View photo location</button>
       </div>
       <div id="lightboxMapWrap" class="lightbox-map-wrap">
         <div id="lightboxMap" class="lightbox-map"></div>
@@ -1423,7 +1423,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }).addTo(lightboxMapInstance);
         
         L.marker([geoInfo.lat, geoInfo.lng]).addTo(lightboxMapInstance)
-          .bindPopup(document.documentElement.lang === 'en' ? 'Photo Spot' : '촬영 장소')
+          .bindPopup('Photo location')
           .openPopup();
           
         setTimeout(() => {
@@ -1903,7 +1903,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   <p style="font-size: var(--text-xs); color: var(--muted); line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto;">
     Korea Trails — National Hiking Playbook · National Park Reservation: <a href="https://reservation.knps.or.kr" rel="noopener" target="_blank" style="color: var(--primary); text-decoration: underline;">knps.or.kr</a><br/>
-    Some of the hiking photos and tracking videos on this site are original works photographed and produced by Dokyung Kim(김도경), with the videos published on the YouTube channel Dokyung Kim (@DK2560). They may be used for non-commercial purposes only, and credit must be given to the source and author (Dokyung Kim(김도경)) upon use. (CC BY-NC 4.0 standard applied)<br/>
+    Some of the hiking photos and tracking videos on this site are original works photographed and produced by Dokyung Kim, with the videos published on the YouTube channel Dokyung Kim (@DK2560). They may be used for non-commercial purposes only, and credit must be given to the source and author (Dokyung Kim) upon use. (CC BY-NC 4.0 standard applied)<br/>
     © 2026 Korea Trails. All Rights Reserved.
   </p>
 </div>
