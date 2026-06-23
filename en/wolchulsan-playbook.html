@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wolchulsan National Park Hiking Playbook</title>
+<meta content="A guide to Wolchulsan National Park, one of South Korea's best mountains. Provides detailed routes, real maps, and tips for Beginner 🅿 Cheonhwang Trailhead, Intermediate 🅿 Cheonhwang Trailhead, and Advanced 🅿 Cheonhwang Trailhead courses." name="description"/>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/design-system.css" rel="stylesheet"/>
+<style>
+/* COURSE SELECTOR */
+.course-selector {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+.course-btn {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.course-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.course-btn.active.beginner, .course-btn.active-beginner {
+  background: var(--success-highlight);
+  color: var(--success);
+  border-color: var(--success);
+}
+.course-btn.active.intermediate, .course-btn.active-intermediate {
+  background: var(--color-gold-highlight);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+.course-btn.active.advanced, .course-btn.active-advanced {
+  background: var(--warning-highlight);
+  color: var(--warning);
+  border-color: var(--warning);
+}
+
+.intermediate .section-title-icon{background:var(--color-gold-highlight);}
+.advanced .section-title-icon{background:var(--color-warning-highlight);}
+
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-8);}
+.acc-item{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;}
+.acc-header{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-4) var(--space-5);cursor:pointer;user-select:none;width:100%;text-align:left;}
+.acc-header:hover{background:var(--color-surface-offset);}
+.acc-num{width:28px;height:28px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:var(--text-xs);font-weight:700;flex-shrink:0;}
+.beginner .acc-num{background:var(--color-success-highlight);color:var(--color-success);}
+.intermediate .acc-num{background:var(--color-gold-highlight);color:var(--color-gold);}
+.advanced .acc-num{background:var(--color-warning-highlight);color:var(--color-warning);}
+.acc-title-wrap{flex:1;}
+.acc-title{font-weight:700;font-size:var(--text-base);line-height:1.3;}
+.acc-meta{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:2px;}
+.acc-chevron{color:var(--color-text-faint);transition:transform var(--transition);flex-shrink:0;}
+.acc-item.open .acc-chevron{transform:rotate(180deg);}
+.acc-body{display:none;padding:0 var(--space-5) var(--space-5);border-top:1px solid var(--color-divider);}
+.acc-item.open .acc-body{display:block;}
+.acc-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;margin-bottom:var(--space-4);}
+
+/* DIFF BAR */
+.diff-bar-wrap{margin-bottom:var(--space-4);}
+.diff-label{font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-1);}
+.diff-bar-bg{height:6px;background:var(--color-surface-dynamic);border-radius:var(--radius-full);overflow:hidden;}
+.diff-bar-fill{height:100%;border-radius:var(--radius-full);}
+.diff-easy .diff-bar-fill{background:var(--color-success);}
+.diff-medium .diff-bar-fill{background:var(--color-gold);}
+.diff-hard .diff-bar-fill{background:var(--color-warning);}
+.diff-expert .diff-bar-fill{background:var(--color-error);}
+
+/* TIP / WARN BOX */
+.tip-box{background:var(--color-primary-highlight);border-left:3px solid var(--color-primary);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-primary);margin-bottom:var(--space-3);line-height:1.6;}
+.warn-box{background:var(--color-warning-highlight);border-left:3px solid var(--color-warning);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-warning);margin-bottom:var(--space-3);line-height:1.6;}
+
+/* CHECKPOINT TABLE */
+.cp-table-wrap{overflow-x:auto;margin-bottom:var(--space-8);}
+.cp-table{width:100%;border-collapse:collapse;font-size:var(--text-sm);}
+.cp-table th{text-align:left;font-weight:700;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);padding:var(--space-2) var(--space-4);border-bottom:2px solid var(--color-divider);white-space:nowrap;}
+.cp-table td{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-divider);vertical-align:middle;}
+.cp-table tr:last-child td{border-bottom:none;}
+.cp-table tr:hover td{background:var(--color-surface-offset);}
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;}
+.badge-summit{background:var(--color-warning-highlight);color:var(--color-warning);}
+.badge-shelter{background:var(--color-primary-highlight);color:var(--color-primary);}
+.badge-temple{background:var(--color-success-highlight);color:var(--color-success);}
+.badge-trailhead{background:var(--color-surface-dynamic);color:var(--color-text-muted);}
+.badge-landmark{background:var(--color-gold-highlight);color:var(--color-gold);}
+
+/* MAP SVG */
+.map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
+.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-svg{width:100%;height:auto;max-height:520px;}
+
+/* TIPS GRID */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-4);margin-bottom:var(--space-8);}
+.tip-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);}
+.tip-card-icon{font-size:1.5rem;margin-bottom:var(--space-3);}
+.tip-card h4{font-weight:700;margin-bottom:var(--space-2);}
+.tip-card ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-1);}
+.tip-card ul li{font-size:var(--text-sm);color:var(--color-text-muted);padding-left:var(--space-4);position:relative;}
+.tip-card ul li::before{content:"·";position:absolute;left:var(--space-2);color:var(--color-text-faint);}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .site-header{padding:var(--space-3) var(--space-4);}
+  .main{padding:var(--space-6) var(--space-4);}
+  .hero{padding:var(--space-8) var(--space-4) var(--space-6);}
+  .tab-bar{padding:0 var(--space-4);}
+  .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .course-selector{gap:var(--space-2);}
+  .course-btn{padding:var(--space-2) var(--space-4);font-size:var(--text-xs);}
+}
+
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style>
+<meta content="../assets/img/wolchulsan/og.png" property="og:image"/><meta content="../assets/img/wolchulsan/og.png" name="twitter:image"/><script src="../assets/js/i18n.js"></script><link href="../wolchulsan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/wolchulsan-playbook.html" hreflang="en" rel="alternate"/><link href="../wolchulsan-playbook.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+<!-- HEADER -->
+<header class="site-header">
+<div class="logo">
+<svg aria-label="Wolchulsan National Park Logo" class="logo-svg" fill="none" viewbox="0 0 36 36">
+<defs>
+<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#f43f5e"></stop>
+<stop offset="100%" stop-color="#be123c"></stop>
+</lineargradient>
+<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
+<stop offset="0%" stop-color="#0f172a"></stop>
+<stop offset="100%" stop-color="#0d9488"></stop>
+</lineargradient>
+<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
+<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
+<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
+<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
+<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
+<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+</svg>
+<div>
+<div class="logo-text">Wolchulsan National Park</div>
+<div class="logo-sub">Geumgangsan Mountain of Honam · Cheonhwangbong Peak 809m</div>
+</div>
+</div>
+<div class="header-right">
+<div class="lang-toggle">
+<button aria-label="Korean" aria-pressed="false" class="lang-btn" onclick="changeLanguage('ko')">KO</button>
+<button aria-label="English" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+</div><button aria-label="Toggle Theme" class="theme-btn" data-theme-toggle="">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</header>
+<!-- HERO -->
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture" id="heroFallbackImage">
+<source sizes="100vw" srcset="../assets/img/wolchulsan/hero-640.avif 640w, assets/img/wolchulsan/hero-1024.avif 1024w, assets/img/wolchulsan/hero-1600.avif 1600w, assets/img/wolchulsan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="../assets/img/wolchulsan/hero-640.webp 640w, assets/img/wolchulsan/hero-1024.webp 1024w, assets/img/wolchulsan/hero-1600.webp 1600w, assets/img/wolchulsan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="Wolchulsan National Park's peak and the majestic mountain range create a grand natural landscape / Majestic natural landscape of Wolchulsan mountain peaks and ridges" class="hero-img" sizes="100vw" src="../assets/img/wolchulsan/hero-1600.jpg" srcset="../assets/img/wolchulsan/hero-640.jpg 640w, assets/img/wolchulsan/hero-1024.jpg 1024w, assets/img/wolchulsan/hero-1600.jpg 1600w, assets/img/wolchulsan/hero-2400.jpg 2400w"/>
+</picture>
+<!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
+<video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="../assets/video/wolchulsan/hero-poster.jpg" preload="none" style="display: none;">
+<source src="../assets/video/wolchulsan/hero.mp4" type="video/mp4"/>
+</video>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Wolchulsan National Park Playbook</div>
+<h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">Wolchulsan National Park Hiking Playbook</h1>
+<p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">A guide to Wolchulsan National Park, one of South Korea's best mountains. Provides detailed routes, real maps, and tips for Beginner 🅿 Cheonhwang Trailhead, Intermediate 🅿 Cheonhwang Trailhead, and Advanced 🅿 Cheonhwang Trailhead courses.</p>
+<!-- Course Selector Buttons -->
+<div class="course-selector">
+<button class="course-btn diff-btn beginner beginner active" onclick="selectCourse('beginner',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner: 🅿 Depart from Cheonhwang Visitor Center</button>
+<button class="course-btn diff-btn intermediate mid" onclick="selectCourse('mid',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate: 🅿 Depart from Cheonhwang Visitor Center</button>
+<button class="course-btn diff-btn advanced adv" onclick="selectCourse('adv',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Advanced: 🅿 Depart from Cheonhwang Information Center</button>
+</div>
+</div>
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" rel="noopener" target="_blank">Jeonggyusong Nui MALAMA</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
+</section>
+<!-- COURSE SELECTOR -->
+<div class="course-selector">
+<button class="course-btn beginner active" onclick="selectCourse('beginner')">
+<span class="course-dot"></span> <svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner — Cloud Bridge Course</button>
+<button class="course-btn mid" onclick="selectCourse('mid')">
+<span class="course-dot"></span> <svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate — Cheonhwangbong Loop Course</button>
+<button class="course-btn adv" onclick="selectCourse('adv')">
+<span class="course-dot"></span> <svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Advanced — Cheonhwang~Dogap Traverse</button>
+</div>
+═══════════════════ Beginner Panel ═══════════════════
+<main class="wrap" id="mainContent">
+<div class="course-panel beginner-panel active" id="panel-beginner">
+<div class="course-strip">
+<div class="course-strip-inner">
+<span class="course-level-badge"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner</span>
+<div>
+<div class="course-strip-name">Cloud Bridge Experience Course</div>
+<div class="course-strip-detail">Cheonhwang Visitor Center → Cloud Bridge → Return to Start · 3.3km · 2h 30m</div>
+</div>
+</div>
+</div>
+<div class="tabs-container">
+<div class="tabs">
+<button class="tab-btn active" onclick="switchTab(this,'beginner','overview')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button>
+<button class="tab-btn" onclick="switchTab(this,'beginner','route')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button>
+<button class="tab-btn" onclick="switchTab(this,'beginner','map')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button>
+<button class="tab-btn" onclick="switchTab(this,'beginner','tips')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button>
+</div>
+</div>
+Overview
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content">
+<div class="tab-pane active" id="beginner-overview">
+<div class="section-header"><h2>Course Overview</h2><div class="section-divider"></div></div>
+<div class="summary-grid">
+<div class="summary-card"><div class="summary-icon">📏</div><div class="summary-val">3.3km</div><div class="summary-lbl">Total Distance (One-way Round Trip)</div></div>
+<div class="summary-card"><div class="summary-icon">⏱</div><div class="summary-val">2h 30m</div><div class="summary-lbl">Estimated Duration</div></div>
+<div class="summary-card"><div class="summary-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="summary-val">510m</div><div class="summary-lbl">Highest Altitude Reached</div></div>
+<div class="summary-card"><div class="summary-icon">📈</div><div class="summary-val">430m</div><div class="summary-lbl">Cumulative Elevation Gain</div></div>
+<div class="summary-card"><div class="summary-icon">🌡</div><div class="summary-val">Down</div><div class="summary-lbl">Overall Difficulty</div></div>
+<div class="summary-card"><div class="summary-icon">👥</div><div class="summary-val">All ages</div><div class="summary-lbl">Recommended For</div></div>
+</div>
+<div class="elevation-wrap">
+<h2>📊 Elevation Profile</h2>
+<svg class="elevation-svg" preserveaspectratio="none" viewbox="0 0 700 180">
+<defs><lineargradient id="bg1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#2d7a3a" stop-opacity=".35"></stop><stop offset="100%" stop-color="#2d7a3a" stop-opacity=".04"></stop></lineargradient></defs>
+<polygon fill="url(#bg1)" points="0,160 0,130 100,90 200,70 280,40 350,28 420,40 500,70 600,90 700,130 700,160"></polygon>
+<polyline fill="none" points="0,130 100,90 200,70 280,40 350,28 420,40 500,70 600,90 700,130" stroke="#2d7a3a" stroke-linecap="round" stroke-width="2.5"></polyline>
+<circle cx="350" cy="28" fill="#2d7a3a" r="5"></circle>
+<text fill="#2d7a3a" font-family="Satoshi,sans-serif" font-size="11" text-anchor="middle" x="350" y="20">Cloud Bridge 510m</text>
+<text fill="#aaa" font-family="Satoshi,sans-serif" font-size="10" x="10" y="175">80m from Start</text>
+<text fill="#aaa" font-family="Satoshi,sans-serif" font-size="10" text-anchor="end" x="680" y="175">Arrival 80m</text>
+</svg>
+</div>
+<div class="section-header"><h2>Course Flow</h2><div class="section-divider"></div></div>
+<div class="course-flow">
+<span class="flow-item">🅿 Cheonhwangsa Temple Parking Lot (80m)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">Cheonhwangsa Temple Samgeori (160m)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">🌉 Cloud Bridge (510m)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">Sajabong Peak Observatory (540m)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">Cloud Bridge Descent</span><span class="flow-arrow">▶</span>
+<span class="flow-item">🅿 Return to starting point (80m)</span>
+</div>
+<p style="font-size:var(--text-sm);color:var(--color-text-muted);">This is the most popular short course to experience Wolchulsan National Park's iconic Gureumdari (Cloud Bridge) (510m above sea level, 120m high, 54m long). Although the distance is short, there are steep sections, so allow ample time.</p>
+</div>
+Route
+<div class="tab-pane" id="beginner-route">
+<div class="section-header"><h2>Sectional Route Guide</h2><div class="section-divider"></div></div>
+<div class="segments">
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header">
+<div class="segment-num">Start</div>
+<div class="segment-title">🅿 Depart from Cheonhwang Trailhead Information Center</div>
+<div class="segment-meta">0km · 80m</div>
+<span class="segment-chevron">▼</span>
+</div>
+<div class="segment-body">
+<p class="segment-desc">280-43 Cheonhwangsaro, Yeongam-eup, Yeongam-gun, Jeollanam-do. Park at Cheonhwangsa parking lot (paid) and enter the mountain at the visitor center. Check for restrooms, convenience stores, and trail maps.</p>
+<div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:10%"></div></div></div>
+<div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Parking fee: Passenger cars approx. 3,000~4,000 won. Recommended to pick up a course map at the visitor center.</div>
+</div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header">
+<div class="segment-num">1</div>
+<div class="segment-title">Visitor Center → Cheonhwangsa Temple Three-way Intersection</div>
+<div class="segment-meta">0.6km · 10min · 160m</div>
+<span class="segment-chevron">▼</span>
+</div>
+<div class="segment-body">
+<p class="segment-desc">From the trail entrance, cross Cheonhwanggyo Bridge and gently ascend along the stream. Pass through a camellia tree cluster, which is the initial warm-up section. At the three-way intersection, choose the Cloud Bridge direction (left).</p>
+<div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:25%"></div></div></div>
+<div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Camellia colonies bloom in February-March. Move leisurely while listening to the sound of the stream.</div>
+</div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header">
+<div class="segment-num">2</div>
+<div class="segment-title">Samgeori (Three-way Intersection) → Gureumdari (Cloud Bridge)</div>
+<div class="segment-meta">0.8km · 40min · 510m</div>
+<span class="segment-chevron">▼</span>
+</div>
+<div class="segment-body">
+<p class="segment-desc">Steep uphill section. Stairs climbing through rock crevices and rope sections are continuous. Reach Cloud Bridge installed on the Maebong-Sajabong Peak ridge. From 120m above ground, you can view the Naju Plain in Jeollanam-do and the South Sea.</p>
+<div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:70%"></div></div></div>
+<div class="warn-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Cloud Bridge may have one-way traffic times. Temporarily closed during strong winds. As it is narrow (1m wide), yielding is essential.</div>
+<div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Cloud Bridge is 54m long. Even walking slowly, it takes 3 minutes. If you have acrophobia, take a deep breath before crossing.</div>
+</div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header">
+<div class="segment-num">3</div>
+<div class="segment-title">Cloud Bridge → Sajabong Peak Observatory</div>
+<div class="segment-meta">0.3km · 15min · 540m</div>
+<span class="segment-chevron">▼</span>
+</div>
+<div class="segment-body">
+<p class="segment-desc">A short climb towards Sajabong Peak from the other side of Cloud Bridge leads to an open rock ridge observatory. From here, you can view the entire Wolchulsan National Park ridge, stretching from Cheonhwangbong Peak to Gujeongbong Peak and Dogapbong Peak.</p>
+<div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:45%"></div></div></div>
+<div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Top photo spot. Golden view without backlight from 7-9 AM.</div>
+</div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header">
+<div class="segment-num">Down</div>
+<div class="segment-title">Return to starting point descent</div>
+<div class="segment-meta">1.6km · 50min</div>
+<span class="segment-chevron">▼</span>
+</div>
+<div class="segment-body">
+<p class="segment-desc">Descend the same way you came up. Using hiking poles is recommended due to the significant impact on knees during descent. It is also possible to change the descent route at the three-way intersection towards Baram Falls (right) (+0.4km).</p>
+<div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:30%"></div></div></div>
+<div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>If it rains during descent, the rock face is very slippery. Prepare waterproof trekking shoes or gaiters.</div>
+</div>
+</div>
+</div>
+</div>
+Map
+<div class="tab-pane" id="beginner-map">
+<div class="section-header"><h2>Course Map</h2><div class="section-divider"></div></div>
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Cloud Bridge Course (3.3km)</h2>
+<div class="map-svg-wrap">
+<svg font-family="Satoshi,sans-serif" style="max-height:400px" viewbox="0 0 600 380" width="100%">
+<rect fill="var(--color-surface-2)" height="380" rx="8" width="600"></rect>
+<!-- terrain lines -->
+<path d="M0,300 Q150,280 300,200 Q420,140 600,120" fill="none" stroke="var(--color-divider)" stroke-dasharray="4,3" stroke-width="1"></path>
+<path d="M0,340 Q200,320 400,240 Q500,200 600,180" fill="none" stroke="var(--color-divider)" stroke-dasharray="4,3" stroke-width="1"></path>
+<!-- trail path -->
+<path d="M100,330 Q150,300 200,260 Q250,220 300,180 Q340,155 380,140" fill="none" stroke="#2d7a3a" stroke-linecap="round" stroke-width="3"></path>
+<!-- return -->
+<path d="M380,140 Q340,155 300,180 Q250,220 200,260 Q150,300 100,330" fill="none" stroke="#2d7a3a" stroke-dasharray="5,4" stroke-linecap="round" stroke-width="1.5"></path>
+<!-- trailhead -->
+<circle cx="100" cy="330" fill="#2d7a3a" opacity=".9" r="10"></circle>
+<text fill="white" font-size="9" font-weight="700" text-anchor="middle" x="100" y="333">P</text>
+<text fill="var(--color-text-muted)" font-size="10" x="118" y="340">Cheonhwang Visitor Center</text>
+<text fill="var(--color-text-faint)" font-size="9" x="118" y="352">80m</text>
+<!-- junction -->
+<circle cx="220" cy="248" fill="white" r="6" stroke="#2d7a3a" stroke-width="2"></circle>
+<text fill="var(--color-text-muted)" font-size="10" x="230" y="244">Cheonhwangsa Temple Samgeori (Three-way Intersection)</text>
+<text fill="var(--color-text-faint)" font-size="9" x="230" y="256">160m</text>
+<!-- cloud bridge -->
+<rect fill="#2d7a3a" height="14" opacity=".9" rx="4" width="50" x="355" y="128"></rect>
+<text fill="white" font-size="8" font-weight="700" text-anchor="middle" x="380" y="139">Cloud Bridge</text>
+<text fill="#2d7a3a" font-size="9" text-anchor="middle" x="380" y="155">510m</text>
+<!-- viewpoint -->
+<path d="M390,118 L395,108 L400,118 Z" fill="var(--color-beginner)"></path>
+<text fill="var(--color-text-muted)" font-size="9" x="405" y="112">Sajabong Peak Observatory</text>
+<text fill="var(--color-text-faint)" font-size="9" x="405" y="122">540m</text>
+<!-- wind falls side note -->
+<circle cx="260" cy="290" fill="none" r="4" stroke="var(--color-text-faint)" stroke-width="1.5"></circle>
+<text fill="var(--color-text-faint)" font-size="9" x="268" y="294">Baram Falls (Alternative Descent)</text>
+<path d="M258,290 Q240,295 220,248" fill="none" stroke="var(--color-text-faint)" stroke-dasharray="3,2" stroke-width="1"></path>
+<!-- compass -->
+<g transform="translate(540,40)">
+<circle fill="var(--color-surface)" r="22" stroke="var(--color-border)" stroke-width="1.5"></circle>
+<text fill="var(--color-adv)" font-size="10" font-weight="700" text-anchor="middle" y="-10">N</text>
+<text fill="var(--color-text-faint)" font-size="8" text-anchor="middle" y="15">S</text>
+<text fill="var(--color-text-faint)" font-size="8" text-anchor="middle" x="-13" y="5">W</text>
+<text fill="var(--color-text-faint)" font-size="8" text-anchor="middle" x="13" y="5">E</text>
+<line stroke="var(--color-text-faint)" stroke-width="1" y1="-14" y2="14"></line>
+<line stroke="var(--color-text-faint)" stroke-width="1" x1="-14" x2="14"></line>
+</g>
+<!-- legend -->
+<g transform="translate(20,20)">
+<line stroke="#2d7a3a" stroke-width="2.5" x2="20" y1="8" y2="8"></line>
+<text fill="var(--color-text-muted)" font-size="10" x="25" y="12">Hiking Trail</text>
+<line stroke="#2d7a3a" stroke-dasharray="4,3" stroke-width="1.5" x2="20" y1="24" y2="24"></line>
+<text fill="var(--color-text-muted)" font-size="10" x="25" y="28">Descent Route</text>
+</g>
+</svg>
+</div>
+</div>
+</div>
+Tip
+<div class="tab-pane" id="beginner-tips">
+<div class="section-header"><h2>Tips &amp; Precautions</h2><div class="section-divider"></div></div>
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg></div><div class="tip-card-title">Hiking Gear</div><ul><li>Trekking shoes (rocky sections present)</li><li>1 or more trekking poles recommended</li><li>Gloves (Rope section)</li><li>Water 1L or more</li><li>Trail Food·Snacks</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg></div><div class="tip-card-title">Photo Spot</div><ul><li>View from Cloud Bridge (Naju Plain)</li><li>Sajabong Peak Observatory Ridge</li><li>Cheonhwangsa Temple Camellia Colony (Feb-Mar)</li><li>Spring Azalea Rock Ridge (April)</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg></div><div class="tip-card-title">Safety Precautions</div><ul><li>Cloud Bridge controlled during strong winds or rain</li><li>Caution: Slippery rock surfaces</li><li>No hiking after sunset</li><li>Hold children's hands when accompanying them</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg></div><div class="tip-card-title">Transportation Guide</div><ul><li>KTX from Yongsan to Mokpo (2h), then bus</li><li>Yeongam Intercity Bus Terminal → Cheonhwangsa local bus</li><li>Mokpo Station → Yeongam Intercity Bus (approx. 30 min)</li><li>By car: Enter Yeongam IC</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🌸</div><div class="tip-card-title">Recommended Season</div><ul><li>Spring (March-May): Camellia, Azalea</li><li>Summer (June-August): Cool valleys</li><li>Autumn (September-November): Autumn Foliage and Silver Grass</li><li>Winter (December-February): Snow-covered rocky ridges</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🍽</div><div class="tip-card-title">Nearby Restaurants</div><ul><li>Yeongam Galnaktang (Ribs + Octopus Soup)</li><li>Yeongam Salted Shrimp and Dried Croaker Set Meal</li><li>Gangjin Hanjeongsik (Korean Set Meal)</li><li>Wild vegetable set meal near Cheonhwangsa Temple</li></ul></div>
+</div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="cp-wrap">
+<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Checkpoint List</h2>
+</div><div class="cp-table-wrap">
+<table class="cp-table">
+<thead><tr><th>#</th><th>Point Name</th><th>Elevation (m)</th><th>Cumulative (km)</th><th>Facilities</th></tr></thead>
+<tbody>
+<tr><td>Departure</td><td>Cheonhwang Visitor Center</td><td>80</td><td>0</td><td>Parking·Restroom·Shop</td></tr>
+<tr><td>1</td><td>Cheonhwanggyo Bridge</td><td>100</td><td>0.3</td><td>-</td></tr>
+<tr><td>2</td><td>Cheonhwangsa Temple Samgeori (Three-way Intersection)</td><td>160</td><td>0.6</td><td>Signpost · Bench</td></tr>
+<tr><td>3</td><td>Cloud Bridge Samgeori</td><td>430</td><td>1.2</td><td>Signpost</td></tr>
+<tr><td>4</td><td>🌉 Cloud Bridge</td><td>510</td><td>1.5</td><td>Photo Spot·Viewpoint</td></tr>
+<tr><td>5</td><td>Sajabong Peak Observatory</td><td>540</td><td>1.8</td><td>Observation deck</td></tr>
+<tr><td>Descent</td><td>Cheonhwang Visitor Center</td><td>80</td><td>3.3</td><td>Restroom</td></tr>
+</tbody>
+</table>
+</div></div></div>
+</div>
+═══════════════════ Intermediate Panel ═══════════════════
+<div class="course-panel mid-panel" id="panel-mid">
+<div class="course-strip">
+<div class="course-strip-inner">
+<span class="course-level-badge"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate</span>
+<div>
+<div class="course-strip-name">Cheonhwangbong Loop Course</div>
+<div class="course-strip-detail">Cheonhwang Visitor Center → Cloud Bridge → Cheonhwangbong Peak (809m) → Baram Falls → Return to Start · 6.7km · 4h</div>
+</div>
+</div>
+</div>
+<div class="tabs-container">
+<div class="tabs">
+<button class="tab-btn active" onclick="switchTab(this,'mid','overview')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button>
+<button class="tab-btn" onclick="switchTab(this,'mid','route')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button>
+<button class="tab-btn" onclick="switchTab(this,'mid','map')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button>
+<button class="tab-btn" onclick="switchTab(this,'mid','tips')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button>
+</div>
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content">
+<div class="tab-pane active" id="mid-overview">
+<div class="section-header"><h2>Course Overview</h2><div class="section-divider"></div></div>
+<div class="summary-grid">
+<div class="summary-card"><div class="summary-icon">📏</div><div class="summary-val">6.7km</div><div class="summary-lbl">Total Distance (Loop)</div></div>
+<div class="summary-card"><div class="summary-icon">⏱</div><div class="summary-val">4h</div><div class="summary-lbl">Estimated Duration</div></div>
+<div class="summary-card"><div class="summary-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="summary-val">809m</div><div class="summary-lbl">Cheonhwangbong Peak Summit</div></div>
+<div class="summary-card"><div class="summary-icon">📈</div><div class="summary-val">754m</div><div class="summary-lbl">Cumulative Elevation Gain</div></div>
+<div class="summary-card"><div class="summary-icon">🌡</div><div class="summary-val">Upper</div><div class="summary-lbl">Overall Difficulty</div></div>
+<div class="summary-card"><div class="summary-icon">👥</div><div class="summary-val">Experienced</div><div class="summary-lbl">Recommended For</div></div>
+</div>
+<div class="elevation-wrap">
+<h2>📊 Elevation Profile</h2>
+<svg class="elevation-svg" preserveaspectratio="none" viewbox="0 0 700 180">
+<defs><lineargradient id="bg2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#1a5fa8" stop-opacity=".35"></stop><stop offset="100%" stop-color="#1a5fa8" stop-opacity=".04"></stop></lineargradient></defs>
+<polygon fill="url(#bg2)" points="0,160 0,148 80,100 160,72 260,38 340,14 430,38 520,70 600,100 650,125 700,148 700,160"></polygon>
+<polyline fill="none" points="0,148 80,100 160,72 260,38 340,14 430,38 520,70 600,100 650,125 700,148" stroke="#1a5fa8" stroke-linecap="round" stroke-width="2.5"></polyline>
+<circle cx="340" cy="14" fill="#1a5fa8" r="5"></circle>
+<text fill="#1a5fa8" font-family="Satoshi,sans-serif" font-size="11" text-anchor="middle" x="340" y="9">Cheonhwangbong Peak 809m</text>
+<circle cx="200" cy="58" fill="#1a5fa8" opacity=".7" r="4"></circle>
+<text fill="#1a5fa8" font-family="Satoshi,sans-serif" font-size="9" text-anchor="middle" x="200" y="53">Cloud Bridge 510m</text>
+<text fill="#aaa" font-family="Satoshi,sans-serif" font-size="10" x="10" y="175">80m from Start</text>
+<text fill="#aaa" font-family="Satoshi,sans-serif" font-size="10" text-anchor="end" x="690" y="175">Arrival 80m</text>
+</svg>
+</div>
+<div class="section-header"><h2>Course Flow</h2><div class="section-divider"></div></div>
+<div class="course-flow">
+<span class="flow-item">🅿 Cheonhwang Trailhead (80m)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">Cheonhwangsa Temple Samgeori (Three-way Intersection)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">🌉 Cloud Bridge (510m)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">Tongcheonmun Gate Three-way Intersection</span><span class="flow-arrow">▶</span>
+<span class="flow-item"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Cheonhwangbong Peak (809m)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">Baramjae Pass</span><span class="flow-arrow">▶</span>
+<span class="flow-item">💧 Baram Falls</span><span class="flow-arrow">▶</span>
+<span class="flow-item">🅿 Starting point (80m)</span>
+</div>
+<p style="font-size:var(--text-sm);color:var(--color-text-muted);">The most popular circular course to conquer Cheonhwangbong (809m), the highest peak of Wolchulsan National Park. The ascent passes through Gureumdari, and the descent passes through Baram Falls, allowing you to experience various landscapes at once. With a total elevation gain of 754m, it requires considerable physical exertion.</p>
+</div>
+<div class="tab-pane" id="mid-route">
+<div class="section-header"><h2>Sectional Route Guide</h2><div class="section-divider"></div></div>
+<div class="segments">
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header"><div class="segment-num">Start</div><div class="segment-title">🅿 Depart from Cheonhwang Trailhead Information Center</div><div class="segment-meta">0km · 80m</div><span class="segment-chevron">▼</span></div>
+<div class="segment-body"><p class="segment-desc">Start the hike from Cheonhwangsa Temple parking lot. Early morning departure recommended (6-7 AM). Essential to check currently restricted sections at the visitor center.</p><div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:10%"></div></div></div><div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Departing after 12 PM may result in darkness during descent. Departure between 6 AM and 8 AM is recommended.</div></div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header"><div class="segment-num">1</div><div class="segment-title">Visitor Center → Cloud Bridge</div><div class="segment-meta">1.5km · 50min · 510m</div><span class="segment-chevron">▼</span></div>
+<div class="segment-body"><p class="segment-desc">After crossing Cheonhwanggyo Bridge and passing the camellia colony along the stream, a steep rocky ridge ascent. Take sufficient time for views and rest at the cloud bridge (510m) between Maebong Peak and Sajabong Peak.</p><div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:65%"></div></div></div><div class="warn-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Cloud Bridge may be closed due to strong winds. If closed, detour towards Baram Falls.</div></div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header"><div class="segment-num">2</div><div class="segment-title">Cloud Bridge → Tongcheonmun Samgeori</div><div class="segment-meta">0.7km · 40min · 760m</div><span class="segment-chevron">▼</span></div>
+<div class="segment-body"><p class="segment-desc">The steepest rock ridge section after Cloud Bridge. After passing Yukhyeongjebawi Rock and the Tongcheonmun rock cave, you'll reach a junction just before Cheonhwangbong Peak. This section includes climbing with your hands on the rock face, so fold your trekking poles.</p><div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:90%"></div></div></div><div class="warn-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Most dangerous section. Many rock-slipping accidents occur when it rains. Refrain from climbing in rainy weather.</div><div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Yukyeongjebawi and Tongcheonmun are key attractions of Wolchulsan National Park. Take your time to enjoy them as you move along.</div></div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header"><div class="segment-num">3</div><div class="segment-title"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Cheonhwangbong Peak Summit (809m)</div><div class="segment-meta">0.3km · 15min</div><span class="segment-chevron">▼</span></div>
+<div class="segment-body"><p class="segment-desc">The highest peak of Wolchulsan National Park. A place where ancestral rites were performed since the Silla Dynasty. On clear days, enjoy a 360° view of Naju Plain, Mokpo, and the Southern Sea. After reaching the summit, take ample rest and have a meal.</p><div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:30%"></div></div></div><div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Summit feels 5-8℃ colder than the base of the mountain. Windproof jacket essential. Wind is very strong.</div></div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header"><div class="segment-num">4</div><div class="segment-title">Cheonhwangbong Peak → Baram Falls → Descend to starting point</div><div class="segment-meta">3.2km · 80min</div><span class="segment-chevron">▼</span></div>
+<div class="segment-body"><p class="segment-desc">Descend from Baramjae Samgeori towards Baram Falls. Follow the valley down, and you can wash your feet at Baram Falls in summer. Return to the starting point from Cheonhwangsa Samgeori.</p><div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:40%"></div></div></div><div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>There is no drinking fountain near Baram Falls. Prepare enough water. Be careful of slippery rocks when approaching the waterfall.</div></div>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="mid-map">
+<div class="section-header"><h2>Course Map</h2><div class="section-divider"></div></div>
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Cheonhwangbong Loop Course (6.7km)</h2>
+<div class="map-svg-wrap">
+<svg font-family="Satoshi,sans-serif" style="max-height:420px" viewbox="0 0 620 400" width="100%">
+<rect fill="var(--color-surface-2)" height="400" rx="8" width="620"></rect>
+<path d="M0,330 Q150,300 300,220 Q430,155 620,110" fill="none" stroke="var(--color-divider)" stroke-dasharray="4,3" stroke-width="1"></path>
+<!-- uphill via cloud bridge -->
+<path d="M100,350 Q160,310 200,270 Q240,230 290,200 Q330,175 370,145 Q400,125 430,100" fill="none" stroke="#1a5fa8" stroke-linecap="round" stroke-width="3"></path>
+<!-- downhill via wind falls -->
+<path d="M430,100 Q430,150 410,200 Q390,250 350,290 Q300,330 220,355 Q170,365 100,350" fill="none" stroke="#1a5fa8" stroke-dasharray="6,4" stroke-linecap="round" stroke-width="2"></path>
+<!-- trailhead -->
+<circle cx="100" cy="350" fill="#1a5fa8" opacity=".9" r="10"></circle>
+<text fill="white" font-size="9" font-weight="700" text-anchor="middle" x="100" y="353">P</text>
+<text fill="var(--color-text-muted)" font-size="10" x="118" y="360">Cheonhwang Visitor Center 80m</text>
+<!-- cloud bridge -->
+<rect fill="#1a5fa8" height="13" opacity=".85" rx="4" width="50" x="255" y="190"></rect>
+<text fill="white" font-size="8" font-weight="700" text-anchor="middle" x="280" y="200">Cloud Bridge</text>
+<text fill="#1a5fa8" font-size="8" text-anchor="middle" x="280" y="213">510m</text>
+<!-- tunnel -->
+<circle cx="380" cy="145" fill="white" r="5" stroke="#1a5fa8" stroke-width="2"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="392" y="140">Tongcheonmun Gate</text>
+<!-- summit -->
+<circle cx="430" cy="100" fill="#1a5fa8" r="12"></circle>
+<text fill="white" font-size="9" font-weight="700" text-anchor="middle" x="430" y="103">▲</text>
+<text fill="#1a5fa8" font-size="11" font-weight="700" x="450" y="96">Cheonhwangbong Peak 809m</text>
+<!-- wind falls -->
+<circle cx="340" cy="295" fill="white" r="6" stroke="#1a5fa8" stroke-width="1.5"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="352" y="300">💧 Baram Falls</text>
+<!-- compass -->
+<g transform="translate(560,40)">
+<circle fill="var(--color-surface)" r="22" stroke="var(--color-border)" stroke-width="1.5"></circle>
+<text fill="var(--color-adv)" font-size="10" font-weight="700" text-anchor="middle" y="-10">N</text>
+<text fill="var(--color-text-faint)" font-size="8" text-anchor="middle" y="15">S</text>
+<text fill="var(--color-text-faint)" font-size="8" text-anchor="middle" x="-13" y="5">W</text>
+<text fill="var(--color-text-faint)" font-size="8" text-anchor="middle" x="13" y="5">E</text>
+<line stroke="var(--color-text-faint)" stroke-width="1" y1="-14" y2="14"></line>
+<line stroke="var(--color-text-faint)" stroke-width="1" x1="-14" x2="14"></line>
+</g>
+<!-- legend -->
+<g transform="translate(20,20)">
+<line stroke="#1a5fa8" stroke-width="2.5" x2="20" y1="8" y2="8"></line>
+<text fill="var(--color-text-muted)" font-size="10" x="25" y="12">Uphill</text>
+<line stroke="#1a5fa8" stroke-dasharray="5,3" stroke-width="1.5" x2="20" y1="24" y2="24"></line>
+<text fill="var(--color-text-muted)" font-size="10" x="25" y="28">Downhill</text>
+</g>
+</svg>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="mid-tips">
+<div class="section-header"><h2>Tips &amp; Precautions</h2><div class="section-divider"></div></div>
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg></div><div class="tip-card-title">Essential Gear</div><ul><li>Hiking boots (specialized for rock ridges recommended)</li><li>1 pair of trekking poles</li><li>Windbreaker, extra top</li><li>Water 1.5~2L</li><li>Energy bar, packed lunch</li><li>First aid kit, knee protectors</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🕐</div><div class="tip-card-title">Time Planning</div><ul><li>Recommended to depart between 6-7 AM</li><li>Target arrival at Cheonhwangbong Peak: 10-11 AM</li><li>Summit meal/rest 30-40 minutes</li><li>Aim to complete descent before 15:00</li><li>Strictly no entry after sunset</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">⛔</div><div class="tip-card-title">Dangerous Section</div><ul><li>Rock face section just before Tongcheonmun Gate is most dangerous</li><li>Cloud Bridge frequently closed due to strong winds</li><li>Accidents increase sharply during rain or icy conditions</li><li>Slippery rocks at the bottom of Baram Falls</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🌡</div><div class="tip-card-title">Weather/Temperature</div><ul><li>Summit feels 5-8℃ colder</li><li>Frequent morning fog in spring and autumn</li><li>Caution: Afternoon thunderstorms in summer</li><li>Crampons are essential during winter icing</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🏥</div><div class="tip-card-title">Emergency Contact</div><ul><li>Wolchulsan National Park: 061-473-5210</li><li>Yeongam Police Station: 061-470-0112</li><li>When requesting 119 rescue, provide your location coordinates</li><li>Prepare a satellite positioning app (mountain map)</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🚗</div><div class="tip-card-title">Parking·Transportation</div><ul><li>Cheonhwangsa Temple Parking Lot: 280-43 Cheonhwangsa-ro, Yeongam-eup</li><li>Parking fee for passenger cars 3,000~4,000 won</li><li>Yeongam IC → Cheonhwangsa approx. 15 min</li><li>Public Transportation: Yeongam Terminal → Cheonhwangsa Temple local bus</li></ul></div>
+</div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="cp-wrap">
+<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Checkpoint List</h2>
+</div><div class="cp-table-wrap">
+<table class="cp-table">
+<thead><tr><th>#</th><th>Point Name</th><th>Elevation (m)</th><th>Cumulative (km)</th><th>Key Features</th></tr></thead>
+<tbody>
+<tr><td>Start</td><td>Cheonhwang Visitor Center</td><td>80</td><td>0</td><td>Parking·Restroom·Shop</td></tr>
+<tr><td>1</td><td>Cheonhwanggyo Bridge</td><td>100</td><td>0.3</td><td>-</td></tr>
+<tr><td>2</td><td>Cheonhwangsa Temple Samgeori (Three-way Intersection)</td><td>160</td><td>0.6</td><td>Signpost</td></tr>
+<tr><td>3</td><td>Cloud Bridge Samgeori</td><td>430</td><td>1.2</td><td>Signpost</td></tr>
+<tr><td>4</td><td>🌉 Cloud Bridge</td><td>510</td><td>1.5</td><td>Viewpoint·Photo spot</td></tr>
+<tr><td>5</td><td>Yukyeongjebawi</td><td>660</td><td>1.9</td><td>Attractions</td></tr>
+<tr><td>6</td><td>Tongcheonmun Gate</td><td>760</td><td>2.2</td><td>Rock Cave and Gorge</td></tr>
+<tr><td>7</td><td><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Cheonhwangbong Peak Summit</td><td>809</td><td>2.5</td><td>Summit marker·view·meal</td></tr>
+<tr><td>8</td><td>Baramjae Samgeori (Three-way Intersection)</td><td>700</td><td>3.0</td><td>Signpost</td></tr>
+<tr><td>9</td><td>💧 Baram Falls</td><td>350</td><td>4.5</td><td>Waterfall·Foot Bath (Summer)</td></tr>
+<tr><td>Province</td><td>Cheonhwang Visitor Center</td><td>80</td><td>6.7</td><td>Restroom·Parking</td></tr>
+</tbody>
+</table>
+</div></div></div>
+</div>
+═══════════════════ Advanced Panel ═══════════════════
+<div class="course-panel adv-panel" id="panel-adv">
+<div class="course-strip">
+<div class="course-strip-inner">
+<span class="course-level-badge"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Advanced</span>
+<div>
+<div class="course-strip-name">Cheonhwang~Dogap Traverse Course</div>
+<div class="course-strip-detail">Cheonhwang Visitor Center → Cheonhwangbong Peak (809m) → Gujeongbong Peak (710m) → Reed Field → Dogapsa Temple · 9.5km · 6h 30m · One-way</div>
+</div>
+</div>
+</div>
+<div class="tabs-container">
+<div class="tabs">
+<button class="tab-btn active" onclick="switchTab(this,'adv','overview')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button>
+<button class="tab-btn" onclick="switchTab(this,'adv','route')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button>
+<button class="tab-btn" onclick="switchTab(this,'adv','map')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button>
+<button class="tab-btn" onclick="switchTab(this,'adv','tips')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button>
+</div>
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content">
+<div class="tab-pane active" id="adv-overview">
+<div class="section-header"><h2>Course Overview</h2><div class="section-divider"></div></div>
+<div class="summary-grid">
+<div class="summary-card"><div class="summary-icon">📏</div><div class="summary-val">9.5km</div><div class="summary-lbl">Total Distance (One-way)</div></div>
+<div class="summary-card"><div class="summary-icon">⏱</div><div class="summary-val">6h 30m</div><div class="summary-lbl">Estimated Duration</div></div>
+<div class="summary-card"><div class="summary-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="summary-val">809m</div><div class="summary-lbl">Cheonhwangbong Peak Highest Point</div></div>
+<div class="summary-card"><div class="summary-icon">🏛</div><div class="summary-val">710m</div><div class="summary-lbl">Gujeongbong Peak</div></div>
+<div class="summary-card"><div class="summary-icon">🌡</div><div class="summary-val">Advanced</div><div class="summary-lbl">Overall Difficulty</div></div>
+<div class="summary-card"><div class="summary-icon">🚗</div><div class="summary-val">Vehicle Retrieval</div><div class="summary-lbl">One-way A→B</div></div>
+</div>
+<div class="elevation-wrap">
+<h2>📊 Elevation Profile</h2>
+<svg class="elevation-svg" preserveaspectratio="none" viewbox="0 0 700 180">
+<defs><lineargradient id="bg3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#b8251a" stop-opacity=".35"></stop><stop offset="100%" stop-color="#b8251a" stop-opacity=".04"></stop></lineargradient></defs>
+<polygon fill="url(#bg3)" points="0,160 0,150 70,115 140,80 210,20 280,50 350,45 420,70 490,90 560,110 620,135 700,155 700,160"></polygon>
+<polyline fill="none" points="0,150 70,115 140,80 210,20 280,50 350,45 420,70 490,90 560,110 620,135 700,155" stroke="#b8251a" stroke-linecap="round" stroke-width="2.5"></polyline>
+<circle cx="210" cy="20" fill="#b8251a" r="5"></circle>
+<text fill="#b8251a" font-family="Satoshi,sans-serif" font-size="11" text-anchor="middle" x="210" y="13">Cheonhwangbong Peak 809m</text>
+<circle cx="350" cy="45" fill="#b8251a" opacity=".7" r="4"></circle>
+<text fill="#b8251a" font-family="Satoshi,sans-serif" font-size="9" text-anchor="middle" x="350" y="38">Gujeongbong Peak 710m</text>
+<circle cx="490" cy="90" fill="#b8251a" opacity=".6" r="4"></circle>
+<text fill="#b8251a" font-family="Satoshi,sans-serif" font-size="9" text-anchor="middle" x="490" y="83">Reed Field</text>
+<text fill="#aaa" font-family="Satoshi,sans-serif" font-size="10" x="10" y="175">80m from Start</text>
+<text fill="#aaa" font-family="Satoshi,sans-serif" font-size="10" text-anchor="end" x="690" y="175">Dogapsa Temple 90m</text>
+</svg>
+</div>
+<div class="section-header"><h2>Course Flow</h2><div class="section-divider"></div></div>
+<div class="course-flow">
+<span class="flow-item">🅿 Cheonhwang Trailhead (80m)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">🌉 Cloud Bridge (510m)</span><span class="flow-arrow">▶</span>
+<span class="flow-item"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Cheonhwangbong Peak (809m)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">Baramjae Samgeori (Three-way Intersection)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">🗿 Gujeongbong Peak (710m)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">🌾 Reed Field (Miwangjae)</span><span class="flow-arrow">▶</span>
+<span class="flow-item">⛩ Dogapsa Temple (90m)</span>
+</div>
+<p style="font-size:var(--text-sm);color:var(--color-text-muted);">Full traverse of Wolchulsan National Park. Traverse the entire main ridge from Cheonhwangbong to Gujeongbong and Eoksaebat, experiencing cultural and natural attractions such as Namgeunbawi and the Rock-carved Seated Buddha (National Treasure No. 144) all at once. This is a one-way course, so two cars or a taxi are essential.</p>
+</div>
+<div class="tab-pane" id="adv-route">
+<div class="section-header"><h2>Sectional Route Guide</h2><div class="section-divider"></div></div>
+<div class="segments">
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header"><div class="segment-num">Start</div><div class="segment-title">🅿 Depart from Cheonhwang Trailhead Information Center</div><div class="segment-meta">0km · 80m</div><span class="segment-chevron">▼</span></div>
+<div class="segment-body"><p class="segment-desc">It is common to park one car in the Dogapsa Temple parking lot in advance and then start from the Cheonhwangsa Temple parking lot. Alternatively, call a taxi from Dogapsa Temple on the day.</p><div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:10%"></div></div></div><div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Strongly recommended to depart early morning between 5-6 AM. The 9.5km course takes over 6.5 hours to complete.</div></div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header"><div class="segment-num">1</div><div class="segment-title">Visitor Center → Cheonhwangbong Peak</div><div class="segment-meta">2.5km · 2h 30m · 809m</div><span class="segment-chevron">▼</span></div>
+<div class="segment-body"><p class="segment-desc">Ascend via Cloud Bridge (510m). After passing the Tongcheonmun rock cave and Yukhyeongjebawi Rock, you will reach the summit of Cheonhwangbong Peak. This is the steepest section, so energy management is important.</p><div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:95%"></div></div></div><div class="warn-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Do not overexert yourself at the beginning of the traverse. It's only 2.5km to the summit, but 7km remains after that.</div></div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header"><div class="segment-num">2</div><div class="segment-title">Cheonhwangbong Peak → Baramjae Samgeori (Three-way Intersection)</div><div class="segment-meta">0.5km · 20min · 700m</div><span class="segment-chevron">▼</span></div>
+<div class="segment-body"><p class="segment-desc">Descend south from Cheonhwangbong Peak summit. Proceed towards Dogapsa Temple at Baramjae Samgeori. The direction of Baram Falls (left) is not part of this course.</p><div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:40%"></div></div></div><div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Baramjae Pass offers an open view. After a short break, check the signpost for Dogap Temple direction.</div></div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header"><div class="segment-num">3</div><div class="segment-title">Baramjae Pass → Gujeongbong Peak (710m)</div><div class="segment-meta">1.5km · 50min · 710m</div><span class="segment-chevron">▼</span></div>
+<div class="segment-body"><p class="segment-desc">Wolchulsan National Park's third peak, Gujeongbong (710.8m). Below the peak is National Treasure No. 144, the Rock-carved Seated Buddha (600m above sea level, the highest among Korea's National Treasures). View Namgeunbawi and Keunbawi Eolgul.</p><div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:65%"></div></div></div><div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>The Seated Rock-carved Buddha is also accessible via the Myeongsa Trail. The pumpkin-shaped rock carvings on the bedrock at Gujeongbong Peak offer a spectacular view.</div></div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header"><div class="segment-num">4</div><div class="segment-title">Gujeongbong Peak → Eulalia Field (Miwangjae)</div><div class="segment-meta">1.5km · 40min</div><span class="segment-chevron">▼</span></div>
+<div class="segment-body"><p class="segment-desc">Gentle descent along the ridge. The Miwangjae eulalia field peaks in September-October. In autumn, it offers Wolchulsan National Park's best scenery, with eulalia blending with the rock ridges.</p><div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:35%"></div></div></div><div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Weekends during the silver grass season (September-October) are very crowded. Weekday visits are recommended.</div></div>
+</div>
+<div class="segment-card" onclick="toggleSegment(this)">
+<div class="segment-header"><div class="segment-num">5</div><div class="segment-title">Reed Field → Arrive at Dogapsa Temple ⛩</div><div class="segment-meta">3.5km · 90min · 90m</div><span class="segment-chevron">▼</span></div>
+<div class="segment-body"><p class="segment-desc">Descend through the forest path from the Reed Field to Dogapsa Temple. Dogapsa Temple was founded by National Preceptor Doseon of Silla. You can view Haetalmun Gate of Dogapsa Temple, National Treasure No. 50. Retrieve your vehicle or take a taxi from the Dogapsa Temple parking lot.</p><div class="diff-bar-wrap"><span class="diff-bar-label">Difficulty</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:30%"></div></div></div><div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Entry to Dogapsa Temple is not permitted outside of visiting hours (09:00~18:00). After arrival, supplementary meals are available at restaurants around Dogapsa Temple.</div></div>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="adv-map">
+<div class="section-header"><h2>Course Map</h2><div class="section-divider"></div></div>
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Cheonhwang~Dogap Traverse Course (9.5km)</h2>
+<div class="map-svg-wrap">
+<svg font-family="Satoshi,sans-serif" style="max-height:420px" viewbox="0 0 700 400" width="100%">
+<rect fill="var(--color-surface-2)" height="400" rx="8" width="700"></rect>
+<!-- terrain -->
+<path d="M0,350 Q200,330 400,260 Q550,210 700,180" fill="none" stroke="var(--color-divider)" stroke-dasharray="4,3" stroke-width="1"></path>
+<!-- route -->
+<path d="M60,360 Q100,320 150,280 Q190,245 230,180 Q255,150 280,110 Q310,145 330,160 Q370,185 410,210 Q460,235 510,260 Q560,285 610,315 Q640,335 660,360" fill="none" stroke="#b8251a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<!-- trailhead A -->
+<circle cx="60" cy="360" fill="#b8251a" opacity=".9" r="10"></circle>
+<text fill="white" font-size="9" font-weight="700" text-anchor="middle" x="60" y="363">A</text>
+<text fill="var(--color-text-muted)" font-size="10" x="76" y="355">Cheonhwang Trail 80m</text>
+<!-- cloud bridge -->
+<rect fill="#b8251a" height="12" opacity=".7" rx="4" width="50" x="198" y="234"></rect>
+<text fill="white" font-size="8" text-anchor="middle" x="223" y="243">Cloud Bridge</text>
+<!-- summit -->
+<circle cx="280" cy="110" fill="#b8251a" r="14"></circle>
+<text fill="white" font-size="10" font-weight="700" text-anchor="middle" x="280" y="113">▲</text>
+<text fill="#b8251a" font-size="12" font-weight="700" x="300" y="106">Cheonhwangbong Peak 809m</text>
+<!-- wind jct -->
+<circle cx="312" cy="150" fill="white" r="5" stroke="#b8251a" stroke-width="1.5"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="322" y="154">Baramjae Pass</text>
+<!-- gujung -->
+<circle cx="410" cy="210" fill="#b8251a" opacity=".8" r="8"></circle>
+<text fill="white" font-size="8" font-weight="700" text-anchor="middle" x="410" y="213">▲</text>
+<text fill="#b8251a" font-size="10" x="422" y="207">Gujeongbong Peak 710m</text>
+<!-- maae buddha -->
+<text fill="var(--color-text-faint)" font-size="8" x="430" y="222">🗿 Seated Buddha Engraved on Rock (National Treasure)</text>
+<!-- reeds -->
+<circle cx="510" cy="260" fill="white" r="6" stroke="#b8251a" stroke-width="1.5"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="522" y="265">🌾 Reed Field</text>
+<!-- dogapsa B -->
+<circle cx="660" cy="360" fill="#b8251a" opacity=".9" r="10"></circle>
+<text fill="white" font-size="9" font-weight="700" text-anchor="middle" x="660" y="363">B</text>
+<text fill="var(--color-text-muted)" font-size="10" text-anchor="middle" x="640" y="378">⛩ Dogapsa Temple 90m</text>
+<!-- distance markers -->
+<text fill="var(--color-text-faint)" font-size="9" text-anchor="middle" x="350" y="390">← 9.5km, 6h 30min →</text>
+<!-- compass -->
+<g transform="translate(640,40)">
+<circle fill="var(--color-surface)" r="22" stroke="var(--color-border)" stroke-width="1.5"></circle>
+<text fill="var(--color-adv)" font-size="10" font-weight="700" text-anchor="middle" y="-10">N</text>
+<text fill="var(--color-text-faint)" font-size="8" text-anchor="middle" y="15">S</text>
+<text fill="var(--color-text-faint)" font-size="8" text-anchor="middle" x="-13" y="5">W</text>
+<text fill="var(--color-text-faint)" font-size="8" text-anchor="middle" x="13" y="5">E</text>
+<line stroke="var(--color-text-faint)" stroke-width="1" y1="-14" y2="14"></line>
+<line stroke="var(--color-text-faint)" stroke-width="1" x1="-14" x2="14"></line>
+</g>
+</svg>
+</div>
+</div>
+</div>
+<div class="tab-pane" id="adv-tips">
+<div class="section-header"><h2>Tips &amp; Precautions</h2><div class="section-divider"></div></div>
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg></div><div class="tip-card-title">Essential Gear</div><ul><li>Hiking boots (strong ankle support)</li><li>1 pair of trekking poles</li><li>Windbreaker + 2 extra tops</li><li>Water 2L or more</li><li>Plenty of high-calorie lunch and snacks</li><li>Headlamp (for emergencies)</li><li>Winter: Crampons, gloves, winter clothing</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🚗</div><div class="tip-card-title">One-way Vehicle Plan</div><ul><li>2 vehicles: Park 1 vehicle at Dogapsa Temple in advance</li><li>Taxi: Dogapsa Temple to Cheonhwangsa Temple approx. 20~25 min</li><li>Dogapsa Temple Address: 8 Dogap-ri, Gunseo-myeon, Yeongam-gun, Jeollanam-do</li><li>Yeongam Call Taxi: 061-473-0082</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📅</div><div class="tip-card-title">Recommended Season</div><ul><li>Spring (April-May): Azalea, Royal Azalea Rock Ridge</li><li>Autumn (October): Silver Grass Fields at their Peak</li><li>Winter traverse: Depart after sunrise and ice has melted</li><li>Summer: Stay hydrated, aim to complete by morning</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🏛</div><div class="tip-card-title">Cultural and Historical Sights</div><ul><li>Seated Rock-carved Buddha (National Treasure No. 144, 600m above sea level)</li><li>Dogapsa Temple Haetalmun Gate (National Treasure No. 50)</li><li>Gujeongbong Peak Big Rock Face</li><li>Cheonhwangbong Peak Silla Cheonje Altar Site</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">⏰</div><div class="tip-card-title">Time Planning</div><ul><li>Must depart between 5:30 and 6:00</li><li>Target arrival at Cheonhwangbong Peak: 8:30-9:30 AM</li><li>Target arrival at Gujeongbong Peak: 11:00</li><li>Dogapsa Temple Descent Completion: 14:00~15:00</li><li>Total Duration: 6.5~8h</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🆘</div><div class="tip-card-title">Emergency Response</div><ul><li>National Park Emergency: 061-473-5210</li><li>119 Location: Inform them of the nearest checkpoint</li><li>Difficult to evacuate between Tongcheonmun Gate and Baramjae Pass in case of injury</li><li>Share your route and estimated descent time with acquaintances before hiking</li></ul></div>
+</div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="cp-wrap">
+<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Checkpoint List</h2>
+</div><div class="cp-table-wrap">
+<table class="cp-table">
+<thead><tr><th>#</th><th>Point Name</th><th>Elevation (m)</th><th>Cumulative (km)</th><th>Key Features</th></tr></thead>
+<tbody>
+<tr><td>Start</td><td>Cheonhwang Visitor Center (A)</td><td>80</td><td>0</td><td>Parking·Restroom·Shop</td></tr>
+<tr><td>1</td><td>Cheonhwangsa Temple Samgeori (Three-way Intersection)</td><td>160</td><td>0.6</td><td>Signpost</td></tr>
+<tr><td>2</td><td>🌉 Cloud Bridge</td><td>510</td><td>1.5</td><td>Viewpoint·Photo spot</td></tr>
+<tr><td>3</td><td>Yukyeongjebawi</td><td>660</td><td>1.9</td><td>Attractions</td></tr>
+<tr><td>4</td><td>Tongcheonmun Gate</td><td>760</td><td>2.2</td><td>Rock Cave</td></tr>
+<tr><td>5</td><td><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Cheonhwangbong Peak (Summit)</td><td>809</td><td>2.5</td><td>Summit marker·360°view</td></tr>
+<tr><td>6</td><td>Baramjae Samgeori (Three-way Intersection)</td><td>700</td><td>3.0</td><td>Signpost · Rest</td></tr>
+<tr><td>7</td><td>🗿 Gujeongbong Peak</td><td>711</td><td>4.0</td><td>Seated Rock-carved Buddha (National Treasure)</td></tr>
+<tr><td>8</td><td>Namgeunbawi Rock, Keunbawi Eolgul Rock</td><td>680</td><td>4.5</td><td>Attractions</td></tr>
+<tr><td>9</td><td>🌾 Reed Field (Miwangjae)</td><td>450</td><td>5.5</td><td>Autumn Scenery</td></tr>
+<tr><td>10</td><td>Dogapsa Temple Entrance</td><td>120</td><td>8.5</td><td>Temple, National Treasure Haetalmun Gate</td></tr>
+<tr><td>Province</td><td>⛩ Dogapsa Temple Parking Lot (B)</td><td>90</td><td>9.5</td><td>Parking·Restaurant·Taxi</td></tr>
+</tbody>
+</table>
+</div></div></div>
+</div>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg></span>Wolchulsan National Park's Four Seasons &amp; Attractions</h2>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="View Wolchulsan National Park Hiking Course Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@sudal' target='_blank' rel='noopener'&gt;Kwangho Cha&lt;/a&gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="../assets/img/wolchulsan/g1.avif" type="image/avif"/>
+<source srcset="../assets/img/wolchulsan/g1.webp" type="image/webp">
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/wolchulsan/g1.jpg"/>
+</source></picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Wolchulsan National Park Hiking Course</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="View Wolchulsan National Park Scenic Views Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@suki-lee-110686949' target='_blank' rel='noopener'&gt;Suki Lee&lt;/a&gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="../assets/img/wolchulsan/g2.avif" type="image/avif"/>
+<source srcset="../assets/img/wolchulsan/g2.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/wolchulsan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Wolchulsan National Park Scenic Views</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="View Wolchulsan National Park Scenery Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@suki-lee-110686949' target='_blank' rel='noopener'&gt;Suki Lee&lt;/a&gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="../assets/img/wolchulsan/g3.avif" type="image/avif"/>
+<source srcset="../assets/img/wolchulsan/g3.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/wolchulsan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Wolchulsan National Park Scenery</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="View Wolchulsan National Park Trail Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@daejeung' target='_blank' rel='noopener'&gt;Daejeong Kim&lt;/a&gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="../assets/img/wolchulsan/g4.avif" type="image/avif"/>
+<source srcset="../assets/img/wolchulsan/g4.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/wolchulsan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Wolchulsan National Park Trail</span>
+</div>
+</button>
+</div>
+</section>
+</main>
+<footer>
+<p>Wolchulsan National Park Hiking Information · Before your actual hike, please be sure to check the official national park website for any trail closures.</p>
+<p style="margin-top:var(--space-2)">knps.or.kr/parksvc/10/40/index.do (Wolchulsan National Park)</p>
+</footer>
+<script>
+(function(){
+  const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
+  let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+  r.setAttribute('data-theme',d);
+  if(t)t.addEventListener('click',()=>{
+    d=d==='dark'?'light':'dark';
+    r.setAttribute('data-theme',d);
+    t.innerHTML=d==='dark'?
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+  });
+})();
+
+function selectCourse(course){
+  document.querySelectorAll('.course-panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.course-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+course).classList.add('active');
+  document.querySelectorAll('.course-btn.'+course).forEach(b=>b.classList.add('active'));
+}
+
+function switchTab(btn,course,tab){
+  const panel=document.getElementById('panel-'+course);
+  panel.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  panel.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  const target=panel.querySelector('#'+course+'-'+tab);
+  if(target)target.classList.add('active');
+}
+
+function toggleSegment(card){
+  card.classList.toggle('open');
+}
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="View Image Larger" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="Close Gallery" class="lightbox-close">×</button>
+<button aria-label="Previous Image" class="lightbox-prev">❮</button>
+<button aria-label="Next Image" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
+</script>
+<script>
+// Unified course switcher override for rebranding compatibility
+(function() {
+  const switcher = function(lv, btn) {
+    document.querySelectorAll('.course-btn').forEach(b => {
+      b.classList.remove('active');
+    });
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      const targetBtn = document.querySelector('.course-btn.' + lv) || document.querySelector('.course-btn[onclick*="' + lv + '"]');
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+    document.querySelectorAll('.course-panel, .panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    const panel = document.getElementById('panel-' + lv) || 
+                  document.getElementById('course-' + lv) || 
+                  document.getElementById(lv) ||
+                  document.querySelector('.course-panel.' + lv) ||
+                  document.querySelector('.panel.' + lv);
+    if (panel) {
+      panel.classList.add('active');
+      setTimeout(() => {
+        panel.querySelectorAll('.diff-bar-fill').forEach(b => {
+          const w = b.style.width;
+          if (w && w !== '0%') {
+            b.style.width = '0%';
+            requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = w; }));
+          }
+        });
+      }, 50);
+    }
+  };
+  window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
+})();
+</script>
+<!-- Desktop Cinematic Video Lazy Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-bleed'));
+  }
+});
+</script>
+</body>
+</html>
