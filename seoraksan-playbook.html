@@ -562,29 +562,13 @@
 <!-- HEADER -->
 <header class="site-header">
 <div class="logo-wrap">
-<svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
-<defs>
-<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
-<stop offset="0%" stop-color="#f43f5e"></stop>
-<stop offset="100%" stop-color="#be123c"></stop>
-</lineargradient>
-<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
-<stop offset="0%" stop-color="#0f172a"></stop>
-<stop offset="100%" stop-color="#0d9488"></stop>
-</lineargradient>
-<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
-<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-</lineargradient>
-</defs>
-<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
-<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
-<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
-<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
-<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
-<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+<svg aria-label="Korea Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
 </svg>
 <span class="logo-text">설악산 플레이북</span>
 </div>
@@ -641,13 +625,50 @@
 </nav>
 <main class="main"><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="beginner-overview">
 <div class="section-title"><div class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><span>초급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">7.6km</div><div class="stat-label">왕복 거리</div></div>
-<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">3~4h</div><div class="stat-label">소요 시간</div></div>
-<div class="stat-card"><div class="stat-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="stat-value">873m</div><div class="stat-label">울산바위 정상</div></div>
-<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">±600m</div><div class="stat-label">누적 고도</div></div>
-<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~900</div><div class="stat-label">예상 칼로리</div></div>
-<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★☆☆☆</div><div class="stat-label">난이도</div></div>
+<div class="course-stats-summary">
+  <div class="stat-pill">
+    <span class="pill-icon">📏</span>
+    <span class="pill-label">왕복 거리</span>
+    <span class="pill-value">7.6km</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">⏱</span>
+    <span class="pill-label">소요 시간</span>
+    <span class="pill-value">3~4시간</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+    <span class="pill-label">울산바위 정상</span>
+    <span class="pill-value">873m</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">📈</span>
+    <span class="pill-label">누적 고도</span>
+    <span class="pill-value">±600m</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">🔥</span>
+    <span class="pill-label">예상 칼로리</span>
+    <span class="pill-value">~900 kcal</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">⭐</span>
+    <span class="pill-label">난이도</span>
+    <div class="difficulty-meter" aria-label="난이도: 2단계 (초급)">
+      <div class="meter-segments">
+        <span class="segment active-easy"></span>
+        <span class="segment active-easy"></span>
+        <span class="segment"></span>
+        <span class="segment"></span>
+        <span class="segment"></span>
+      </div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">🍂</span>
+    <span class="pill-label">추천 계절</span>
+    <span class="pill-value">가을 (10월)</span>
+  </div>
 </div>
 <div class="elevation-wrap">
 <h2>📊 고도 프로파일 — 울산바위 코스</h2>
@@ -694,7 +715,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">출</span>
-<div class="acc-title-wrap"><div class="acc-title">소공원 탐방지원센터 출발</div><div class="acc-meta">해발 200m · 기점</div></div>
+<div class="acc-title-wrap"><div class="acc-title">소공원 탐방지원센터 출발</div><div class="acc-meta-chips"><span class="meta-chip">⛰ 해발 200m</span><span class="meta-chip">🚩 기점</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -706,7 +727,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">1</span>
-<div class="acc-title-wrap"><div class="acc-title">소공원 → 신흥사 → 흔들바위</div><div class="acc-meta">약 1.5km · 40분 · 고도 ↑200m</div></div>
+<div class="acc-title-wrap"><div class="acc-title">소공원 → 신흥사 → 흔들바위</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.5km</span><span class="meta-chip">⏱ 40분</span><span class="meta-chip">📈 고도 ↑200m</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -718,7 +739,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">2</span>
-<div class="acc-title-wrap"><div class="acc-title">흔들바위 → 울산바위 정상</div><div class="acc-meta">약 0.8km · 40분 · 고도 ↑300m (계단 구간)</div></div>
+<div class="acc-title-wrap"><div class="acc-title">흔들바위 → 울산바위 정상</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.8km</span><span class="meta-chip">⏱ 40분</span><span class="meta-chip">📈 고도 ↑300m (계단)</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -730,7 +751,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">3</span>
-<div class="acc-title-wrap"><div class="acc-title">울산바위 정상 → 흔들바위 → 비룡폭포 방면</div><div class="acc-meta">약 2.3km · 1시간 10분 · 하산</div></div>
+<div class="acc-title-wrap"><div class="acc-title">울산바위 정상 → 흔들바위 → 비룡폭포 방면</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.3km</span><span class="meta-chip">⏱ 1시간 10분</span><span class="meta-chip">📉 하산</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -742,7 +763,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">도</span>
-<div class="acc-title-wrap"><div class="acc-title">소공원 도착 · 하산 완료</div><div class="acc-meta">해발 200m · 종점</div></div>
+<div class="acc-title-wrap"><div class="acc-title">소공원 도착 · 하산 완료</div><div class="acc-meta-chips"><span class="meta-chip">⛰ 해발 200m</span><span class="meta-chip">🏁 종점</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -800,20 +821,135 @@
 </svg>
 </div>
 <div class="section-title"><div class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
-<div class="cp-table-wrap">
-<table class="cp-table">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>소공원 탐방지원센터</td><td>200m</td><td>0km</td><td><span class="badge badge-trailhead">출발점</span></td><td>주차·화장실·매점</td></tr>
-<tr><td>2</td><td>신흥사</td><td>280m</td><td>0.8km</td><td><span class="badge badge-temple">사찰</span></td><td>음수대·화장실</td></tr>
-<tr><td>3</td><td>흔들바위</td><td>530m</td><td>1.8km</td><td><span class="badge badge-landmark">명소</span></td><td>쉼터·전망</td></tr>
-<tr><td>4</td><td>울산바위 입구 계단</td><td>650m</td><td>2.2km</td><td><span class="badge badge-shelter">갈림길</span></td><td>—</td></tr>
-<tr><td>5</td><td>울산바위 정상</td><td>873m</td><td>2.6km</td><td><span class="badge badge-summit">정상</span></td><td>전망대·표지석</td></tr>
-<tr><td>6</td><td>비룡폭포 갈림길</td><td>340m</td><td>5.2km</td><td><span class="badge badge-landmark">갈림길</span></td><td>—</td></tr>
-<tr><td>7</td><td>비룡폭포 (선택)</td><td>310m</td><td>6.4km</td><td><span class="badge badge-landmark">명소</span></td><td>쉼터·전망대</td></tr>
-<tr><td>8</td><td>소공원 귀환</td><td>200m</td><td>7.6km</td><td><span class="badge badge-trailhead">종점</span></td><td>식당·주차장</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+  <div class="timeline-item start">
+    <div class="timeline-marker">1</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">소공원 탐방지원센터</span>
+        <span class="badge badge-trailhead">출발점</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 200m</span>
+        <span class="meta-item">📏 누적 0km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 주차·화장실·매점
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">2</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">신흥사</span>
+        <span class="badge badge-temple">사찰</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 280m</span>
+        <span class="meta-item">📏 누적 0.8km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 음수대·화장실
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">3</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">흔들바위</span>
+        <span class="badge badge-landmark">명소</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 530m</span>
+        <span class="meta-item">📏 누적 1.8km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 쉼터·전망
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">4</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">울산바위 입구 계단</span>
+        <span class="badge badge-shelter">갈림길</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 650m</span>
+        <span class="meta-item">📏 누적 2.2km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> —
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item summit">
+    <div class="timeline-marker">5</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">울산바위 정상</span>
+        <span class="badge badge-summit">정상</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 873m</span>
+        <span class="meta-item">📏 누적 2.6km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 전망대·표지석
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">6</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">비룡폭포 갈림길</span>
+        <span class="badge badge-landmark">갈림길</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 340m</span>
+        <span class="meta-item">📏 누적 5.2km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> —
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">7</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">비룡폭포 (선택)</span>
+        <span class="badge badge-landmark">명소</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 310m</span>
+        <span class="meta-item">📏 누적 6.4km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 쉼터·전망대
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item end">
+    <div class="timeline-marker">8</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">소공원 귀환</span>
+        <span class="badge badge-trailhead">종점</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 200m</span>
+        <span class="meta-item">📏 누적 7.6km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 식당·주차장
+      </div>
+    </div>
+  </div>
 </div>
 </div></div></div></main>
 </div>
@@ -827,13 +963,50 @@
 </nav>
 <main class="main"><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="intermediate-overview">
 <div class="section-title"><div class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg></div><span>중급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">10km</div><div class="stat-label">왕복 거리</div></div>
-<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">7~9h</div><div class="stat-label">소요 시간</div></div>
-<div class="stat-card"><div class="stat-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="stat-value">1,708m</div><div class="stat-label">대청봉 정상</div></div>
-<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">1,260m</div><div class="stat-label">누적 고도차</div></div>
-<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~2,200</div><div class="stat-label">예상 칼로리</div></div>
-<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★★★☆</div><div class="stat-label">난이도</div></div>
+<div class="course-stats-summary">
+  <div class="stat-pill">
+    <span class="pill-icon">📏</span>
+    <span class="pill-label">왕복 거리</span>
+    <span class="pill-value">10km</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">⏱</span>
+    <span class="pill-label">소요 시간</span>
+    <span class="pill-value">7~9시간</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+    <span class="pill-label">대청봉 정상</span>
+    <span class="pill-value">1,708m</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">📈</span>
+    <span class="pill-label">누적 고도차</span>
+    <span class="pill-value">1,260m</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">🔥</span>
+    <span class="pill-label">예상 칼로리</span>
+    <span class="pill-value">~2,200 kcal</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">⭐</span>
+    <span class="pill-label">난이도</span>
+    <div class="difficulty-meter" aria-label="난이도: 4단계 (중급)">
+      <div class="meter-segments">
+        <span class="segment active-medium"></span>
+        <span class="segment active-medium"></span>
+        <span class="segment active-medium"></span>
+        <span class="segment active-medium"></span>
+        <span class="segment"></span>
+      </div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">🍂</span>
+    <span class="pill-label">추천 계절</span>
+    <span class="pill-value">가을 (10월)</span>
+  </div>
 </div>
 <div class="elevation-wrap">
 <h2>📊 고도 프로파일 — 오색 대청봉 왕복</h2>
@@ -881,7 +1054,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">출</span>
-<div class="acc-title-wrap"><div class="acc-title">남설악탐방지원센터(오색) 출발</div><div class="acc-meta">해발 450m · 양양군 서면 오색리</div></div>
+<div class="acc-title-wrap"><div class="acc-title">남설악탐방지원센터(오색) 출발</div><div class="acc-meta-chips"><span class="meta-chip">⛰ 해발 450m</span><span class="meta-chip">🚩 기점</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -893,7 +1066,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">1</span>
-<div class="acc-title-wrap"><div class="acc-title">오색 → OK쉼터</div><div class="acc-meta">약 2km · 1시간 20분 · 고도 ↑450m</div></div>
+<div class="acc-title-wrap"><div class="acc-title">오색 → OK쉼터</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2km</span><span class="meta-chip">⏱ 1시간 20분</span><span class="meta-chip">📈 고도 ↑450m</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -905,7 +1078,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">2</span>
-<div class="acc-title-wrap"><div class="acc-title">OK쉼터 → 설악폭포 상단 → 대청봉</div><div class="acc-meta">약 3km · 2시간 10분 · 고도 ↑800m</div></div>
+<div class="acc-title-wrap"><div class="acc-title">OK쉼터 → 설악폭포 상단 → 대청봉</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 3km</span><span class="meta-chip">⏱ 2시간 10분</span><span class="meta-chip">📈 고도 ↑800m</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -917,7 +1090,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">3</span>
-<div class="acc-title-wrap"><div class="acc-title">대청봉 → 중청대피소 (선택 휴식)</div><div class="acc-meta">0.6km · 20분 · 해발 1,676m</div></div>
+<div class="acc-title-wrap"><div class="acc-title">대청봉 → 중청대피소 (선택 휴식)</div><div class="acc-meta-chips"><span class="meta-chip">📏 0.6km</span><span class="meta-chip">⏱ 20분</span><span class="meta-chip">⛰ 해발 1,676m</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -929,7 +1102,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">4</span>
-<div class="acc-title-wrap"><div class="acc-title">대청봉 → 오색 (하산)</div><div class="acc-meta">5km · 2시간 30분 · 고도 ↓1,260m</div></div>
+<div class="acc-title-wrap"><div class="acc-title">대청봉 → 오색 (하산)</div><div class="acc-meta-chips"><span class="meta-chip">📏 5km</span><span class="meta-chip">⏱ 2시간 30분</span><span class="meta-chip">📉 고도 ↓1,260m</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -984,20 +1157,135 @@
 </svg>
 </div>
 <div class="section-title"><div class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
-<div class="cp-table-wrap">
-<table class="cp-table">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>남설악탐방지원센터(오색)</td><td>450m</td><td>0km</td><td><span class="badge badge-trailhead">출발점</span></td><td>주차·화장실·안내소</td></tr>
-<tr><td>2</td><td>오색약수터</td><td>460m</td><td>0.2km</td><td><span class="badge badge-landmark">명소</span></td><td>음수대</td></tr>
-<tr><td>3</td><td>OK쉼터</td><td>900m</td><td>2.0km</td><td><span class="badge badge-shelter">쉼터</span></td><td>벤치·간이화장실</td></tr>
-<tr><td>4</td><td>설악폭포 상단</td><td>1,280m</td><td>3.2km</td><td><span class="badge badge-landmark">조망</span></td><td>—</td></tr>
-<tr><td>5</td><td>대청봉</td><td>1,708m</td><td>5.0km</td><td><span class="badge badge-summit">정상</span></td><td>표지석·전망대</td></tr>
-<tr><td>6</td><td>중청봉</td><td>1,676m</td><td>5.2km</td><td><span class="badge badge-summit">봉우리</span></td><td>—</td></tr>
-<tr><td>7</td><td>중청대피소</td><td>1,676m</td><td>5.6km</td><td><span class="badge badge-shelter">대피소</span></td><td>매점·야외휴식</td></tr>
-<tr><td>8</td><td>오색 귀환</td><td>450m</td><td>10.0km</td><td><span class="badge badge-trailhead">종점</span></td><td>식당·주차장</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+  <div class="timeline-item start">
+    <div class="timeline-marker">1</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">남설악탐방지원센터(오색)</span>
+        <span class="badge badge-trailhead">출발점</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 450m</span>
+        <span class="meta-item">📏 누적 0km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 주차·화장실·안내소
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">2</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">오색약수터</span>
+        <span class="badge badge-landmark">명소</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 460m</span>
+        <span class="meta-item">📏 누적 0.2km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 음수대
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">3</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">OK쉼터</span>
+        <span class="badge badge-shelter">쉼터</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 900m</span>
+        <span class="meta-item">📏 누적 2.0km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 벤치·간이화장실
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">4</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">설악폭포 상단</span>
+        <span class="badge badge-landmark">조망</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 1,280m</span>
+        <span class="meta-item">📏 누적 3.2km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> —
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item summit">
+    <div class="timeline-marker">5</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">대청봉</span>
+        <span class="badge badge-summit">정상</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 1,708m</span>
+        <span class="meta-item">📏 누적 5.0km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 표지석·전망대
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">6</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">중청봉</span>
+        <span class="badge badge-summit">봉우리</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 1,676m</span>
+        <span class="meta-item">📏 누적 5.2km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> —
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">7</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">중청대피소</span>
+        <span class="badge badge-shelter">대피소</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 1,676m</span>
+        <span class="meta-item">📏 누적 5.6km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 매점·야외휴식
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item end">
+    <div class="timeline-marker">8</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">오색 귀환</span>
+        <span class="badge badge-trailhead">종점</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">⛰ 해발 450m</span>
+        <span class="meta-item">📏 누적 10.0km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 식당·주차장
+      </div>
+    </div>
+  </div>
 </div>
 </div></div></div></main>
 </div>
@@ -1011,13 +1299,50 @@
 </nav>
 <main class="main"><div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="advanced-overview">
 <div class="section-title"><div class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><span>고급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">~24km</div><div class="stat-label">편도 거리</div></div>
-<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">1박 2일</div><div class="stat-label">소요 일정</div></div>
-<div class="stat-card"><div class="stat-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="stat-value">1,708m</div><div class="stat-label">대청봉 정상</div></div>
-<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">~2,200m</div><div class="stat-label">누적 고도차</div></div>
-<div class="stat-card"><div class="stat-icon">🏕</div><div class="stat-value">소청대피소</div><div class="stat-label">1박 지점</div></div>
-<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">★★★★★</div><div class="stat-label">난이도</div></div>
+<div class="course-stats-summary">
+  <div class="stat-pill">
+    <span class="pill-icon">📏</span>
+    <span class="pill-label">편도 거리</span>
+    <span class="pill-value">~24km</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">⏱</span>
+    <span class="pill-label">소요 일정</span>
+    <span class="pill-value">1박 2일</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+    <span class="pill-label">대청봉 정상</span>
+    <span class="pill-value">1,708m</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">📈</span>
+    <span class="pill-label">누적 고도차</span>
+    <span class="pill-value">~2,200m</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">🏕</span>
+    <span class="pill-label">1박 지점</span>
+    <span class="pill-value">소청대피소</span>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">⭐</span>
+    <span class="pill-label">난이도</span>
+    <div class="difficulty-meter" aria-label="난이도: 5단계 (고급)">
+      <div class="meter-segments">
+        <span class="segment active-hard"></span>
+        <span class="segment active-hard"></span>
+        <span class="segment active-hard"></span>
+        <span class="segment active-hard"></span>
+        <span class="segment active-hard"></span>
+      </div>
+    </div>
+  </div>
+  <div class="stat-pill">
+    <span class="pill-icon">🍂</span>
+    <span class="pill-label">추천 계절</span>
+    <span class="pill-value">봄~가을 (5~10월)</span>
+  </div>
 </div>
 <div class="elevation-wrap">
 <h2>📊 고도 프로파일 — 내외설악 관통 종주 (백담사→대청봉→소공원)</h2>
@@ -1083,7 +1408,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">출</span>
-<div class="acc-title-wrap"><div class="acc-title">백담사 출발</div><div class="acc-meta">해발 400m · 인제군 용대리 셔틀버스 이용</div></div>
+<div class="acc-title-wrap"><div class="acc-title">백담사 출발</div><div class="acc-meta-chips"><span class="meta-chip">📅 1일차</span><span class="meta-chip">⛰ 해발 400m</span><span class="meta-chip">🚩 기점</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1095,7 +1420,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">1</span>
-<div class="acc-title-wrap"><div class="acc-title">백담사 → 영시암 → 수렴동대피소</div><div class="acc-meta">약 6km · 2시간 30분 · 고도 ↑300m</div></div>
+<div class="acc-title-wrap"><div class="acc-title">백담사 → 영시암 → 수렴동대피소</div><div class="acc-meta-chips"><span class="meta-chip">📅 1일차</span><span class="meta-chip">📏 약 6km</span><span class="meta-chip">⏱ 2시간 30분</span><span class="meta-chip">📈 고도 ↑300m</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1107,7 +1432,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">2</span>
-<div class="acc-title-wrap"><div class="acc-title">수렴동대피소 → 봉정암</div><div class="acc-meta">약 4km · 2시간 · 고도 ↑750m</div></div>
+<div class="acc-title-wrap"><div class="acc-title">수렴동대피소 → 봉정암</div><div class="acc-meta-chips"><span class="meta-chip">📅 1일차</span><span class="meta-chip">📏 약 4km</span><span class="meta-chip">⏱ 2시간</span><span class="meta-chip">📈 고도 ↑750m</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1119,7 +1444,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">3</span>
-<div class="acc-title-wrap"><div class="acc-title">봉정암 → 소청봉 → 소청대피소 (1박)</div><div class="acc-meta">약 1.7km · 1시간 · 고도 ↑450m</div></div>
+<div class="acc-title-wrap"><div class="acc-title">봉정암 → 소청봉 → 소청대피소 (1박)</div><div class="acc-meta-chips"><span class="meta-chip">📅 1일차</span><span class="meta-chip">📏 약 1.7km</span><span class="meta-chip">⏱ 1시간</span><span class="meta-chip">📈 고도 ↑450m</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1137,7 +1462,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">4</span>
-<div class="acc-title-wrap"><div class="acc-title">소청대피소 → 대청봉 (일출 산행)</div><div class="acc-meta">0.6km · 30분 · 고도 ↑68m</div></div>
+<div class="acc-title-wrap"><div class="acc-title">소청대피소 → 대청봉 (일출 산행)</div><div class="acc-meta-chips"><span class="meta-chip">📅 2일차</span><span class="meta-chip">📏 0.6km</span><span class="meta-chip">⏱ 30분</span><span class="meta-chip">📈 고도 ↑68m</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1149,7 +1474,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">5</span>
-<div class="acc-title-wrap"><div class="acc-title">대청봉 → 중청대피소 → 희운각대피소</div><div class="acc-meta">2.4km · 1시간 30분 · 고도 ↓500m</div></div>
+<div class="acc-title-wrap"><div class="acc-title">대청봉 → 중청대피소 → 희운각대피소</div><div class="acc-meta-chips"><span class="meta-chip">📅 2일차</span><span class="meta-chip">📏 2.4km</span><span class="meta-chip">⏱ 1시간 30분</span><span class="meta-chip">📉 고도 ↓500m</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1161,7 +1486,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">6</span>
-<div class="acc-title-wrap"><div class="acc-title">희운각대피소 → 천불동계곡 → 양폭대피소</div><div class="acc-meta">약 3.5km · 2시간 · 고도 ↓700m</div></div>
+<div class="acc-title-wrap"><div class="acc-title">희운각대피소 → 천불동계곡 → 양폭대피소</div><div class="acc-meta-chips"><span class="meta-chip">📅 2일차</span><span class="meta-chip">📏 약 3.5km</span><span class="meta-chip">⏱ 2시간</span><span class="meta-chip">📉 고도 ↓700m</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1173,7 +1498,7 @@
 <div class="acc-item">
 <div class="acc-header" onclick="toggleAcc(this)">
 <span class="acc-num">7</span>
-<div class="acc-title-wrap"><div class="acc-title">양폭대피소 → 비선대 → 신흥사 → 소공원</div><div class="acc-meta">약 5km · 1시간 40분 · 고도 ↓300m</div></div>
+<div class="acc-title-wrap"><div class="acc-title">양폭대피소 → 비선대 → 신흥사 → 소공원</div><div class="acc-meta-chips"><span class="meta-chip">📅 2일차</span><span class="meta-chip">📏 약 5km</span><span class="meta-chip">⏱ 1시간 40분</span><span class="meta-chip">📉 고도 ↓300m</span></div></div>
 <svg class="acc-chevron" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1245,27 +1570,262 @@
 </svg>
 </div>
 <div class="section-title"><div class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트 (1박 2일)</span></div>
-<div class="cp-table-wrap">
-<table class="cp-table">
-<thead><tr><th>일차</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1일</td><td>백담사</td><td>400m</td><td>0km</td><td><span class="badge badge-temple">사찰</span></td><td>셔틀버스·화장실·매점</td></tr>
-<tr><td>1일</td><td>영시암</td><td>570m</td><td>3.5km</td><td><span class="badge badge-temple">암자</span></td><td>음수대</td></tr>
-<tr><td>1일</td><td>수렴동대피소</td><td>700m</td><td>6.0km</td><td><span class="badge badge-shelter">대피소</span></td><td>숙박·매점·음수</td></tr>
-<tr><td>1일</td><td>봉정암</td><td>1,244m</td><td>10.1km</td><td><span class="badge badge-temple">암자</span></td><td>물·쉼터</td></tr>
-<tr><td>1일</td><td>소청봉</td><td>1,708m</td><td>11.4km</td><td><span class="badge badge-summit">봉우리</span></td><td>—</td></tr>
-<tr><td>1박</td><td>소청대피소</td><td>1,640m</td><td>11.8km</td><td><span class="badge badge-shelter">대피소</span></td><td>숙박·식수·매점</td></tr>
-<tr><td>2일</td><td>대청봉 🌅</td><td>1,708m</td><td>12.4km</td><td><span class="badge badge-summit">정상</span></td><td>표지석·전망대</td></tr>
-<tr><td>2일</td><td>중청봉</td><td>1,676m</td><td>12.6km</td><td><span class="badge badge-summit">봉우리</span></td><td>—</td></tr>
-<tr><td>2일</td><td>중청대피소</td><td>1,676m</td><td>13.0km</td><td><span class="badge badge-shelter">대피소</span></td><td>매점·음식</td></tr>
-<tr><td>2일</td><td>희운각대피소</td><td>1,190m</td><td>14.7km</td><td><span class="badge badge-shelter">대피소</span></td><td>매점·화장실</td></tr>
-<tr><td>2일</td><td>천당폭포</td><td>800m</td><td>17.5km</td><td><span class="badge badge-landmark">명소</span></td><td>—</td></tr>
-<tr><td>2일</td><td>양폭대피소</td><td>620m</td><td>18.5km</td><td><span class="badge badge-shelter">대피소</span></td><td>쉼터</td></tr>
-<tr><td>2일</td><td>비선대</td><td>340m</td><td>20.6km</td><td><span class="badge badge-landmark">명승지</span></td><td>화장실</td></tr>
-<tr><td>2일</td><td>신흥사</td><td>280m</td><td>22.5km</td><td><span class="badge badge-temple">사찰</span></td><td>음수·화장실</td></tr>
-<tr><td>2일</td><td>소공원(설악동)</td><td>200m</td><td>23.9km</td><td><span class="badge badge-trailhead">종점</span></td><td>버스·식당·주차장</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+  <div class="timeline-item start">
+    <div class="timeline-marker">1</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">백담사</span>
+        <span class="badge badge-temple">사찰</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 1일차</span>
+        <span class="meta-item">⛰ 해발 400m</span>
+        <span class="meta-item">📏 누적 0km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 셔틀버스·화장실·매점
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">2</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">영시암</span>
+        <span class="badge badge-temple">암자</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 1일차</span>
+        <span class="meta-item">⛰ 해발 570m</span>
+        <span class="meta-item">📏 누적 3.5km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 음수대
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">3</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">수렴동대피소</span>
+        <span class="badge badge-shelter">대피소</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 1일차</span>
+        <span class="meta-item">⛰ 해발 700m</span>
+        <span class="meta-item">📏 누적 6.0km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 숙박·매점·음수
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">4</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">봉정암</span>
+        <span class="badge badge-temple">암자</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 1일차</span>
+        <span class="meta-item">⛰ 해발 1,244m</span>
+        <span class="meta-item">📏 누적 10.1km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 물·쉼터
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">5</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">소청봉</span>
+        <span class="badge badge-summit">봉우리</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 1일차</span>
+        <span class="meta-item">⛰ 해발 1,708m</span>
+        <span class="meta-item">📏 누적 11.4km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> —
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">6</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">소청대피소</span>
+        <span class="badge badge-shelter">대피소</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 1박</span>
+        <span class="meta-item">⛰ 해발 1,640m</span>
+        <span class="meta-item">📏 누적 11.8km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 숙박·식수·매점
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item summit">
+    <div class="timeline-marker">7</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">대청봉 🌅</span>
+        <span class="badge badge-summit">정상</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 2일차</span>
+        <span class="meta-item">⛰ 해발 1,708m</span>
+        <span class="meta-item">📏 누적 12.4km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 표지석·전망대
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">8</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">중청봉</span>
+        <span class="badge badge-summit">봉우리</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 2일차</span>
+        <span class="meta-item">⛰ 해발 1,676m</span>
+        <span class="meta-item">📏 누적 12.6km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> —
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">9</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">중청대피소</span>
+        <span class="badge badge-shelter">대피소</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 2일차</span>
+        <span class="meta-item">⛰ 해발 1,676m</span>
+        <span class="meta-item">📏 누적 13.0km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 매점·음식
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">10</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">희운각대피소</span>
+        <span class="badge badge-shelter">대피소</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 2일차</span>
+        <span class="meta-item">⛰ 해발 1,190m</span>
+        <span class="meta-item">📏 누적 14.7km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 매점·화장실
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">11</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">천당폭포</span>
+        <span class="badge badge-landmark">명소</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 2일차</span>
+        <span class="meta-item">⛰ 해발 800m</span>
+        <span class="meta-item">📏 누적 17.5km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> —
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">12</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">양폭대피소</span>
+        <span class="badge badge-shelter">대피소</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 2일차</span>
+        <span class="meta-item">⛰ 해발 620m</span>
+        <span class="meta-item">📏 누적 18.5km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 쉼터
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">13</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">비선대</span>
+        <span class="badge badge-landmark">명승지</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 2일차</span>
+        <span class="meta-item">⛰ 해발 340m</span>
+        <span class="meta-item">📏 누적 20.6km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 화장실
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-marker">14</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">신흥사</span>
+        <span class="badge badge-temple">사찰</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 2일차</span>
+        <span class="meta-item">⛰ 해발 280m</span>
+        <span class="meta-item">📏 누적 22.5km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 음수·화장실
+      </div>
+    </div>
+  </div>
+  <div class="timeline-item end">
+    <div class="timeline-marker">15</div>
+    <div class="timeline-content">
+      <div class="timeline-header">
+        <span class="checkpoint-name">소공원(설악동)</span>
+        <span class="badge badge-trailhead">종점</span>
+      </div>
+      <div class="timeline-meta">
+        <span class="meta-item">📅 2일차</span>
+        <span class="meta-item">⛰ 해발 200m</span>
+        <span class="meta-item">📏 누적 23.9km</span>
+      </div>
+      <div class="timeline-features">
+        <span class="feature-label">편의시설:</span> 버스·식당·주차장
+      </div>
+    </div>
+  </div>
 </div>
 </div></div></div></main>
 </div>
@@ -1278,8 +1838,8 @@
 <!-- Gallery Image Button 1 -->
 <button aria-haspopup="dialog" aria-label="설악산 등산코스 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@afcurtis' target='_blank' rel='noopener'&gt;Austin Curtis&lt;/a&gt; on unsplash" data-index="0">
 <picture class="gallery-picture">
-<source srcset="assets/img/seoraksan/g1.avif" type="image/avif">
-<source srcset="assets/img/seoraksan/g1.webp" type="image/webp"/>
+<source srcset="assets/img/seoraksan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/seoraksan/g1.webp" type="image/webp">
 <img alt="" class="gallery-img" decoding="async" loading="lazy" src="assets/img/seoraksan/g1.jpg"/>
 </source></picture>
 <div class="gallery-caption-overlay">
