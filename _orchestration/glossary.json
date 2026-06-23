@@ -1,0 +1,186 @@
+{
+  "mountains": {
+    "bukhansan": {
+      "ko": "북한산",
+      "en": "Bukhansan National Park"
+    },
+    "chiaksan": {
+      "ko": "치악산",
+      "en": "Chiaksan National Park"
+    },
+    "deogyusan": {
+      "ko": "덕유산",
+      "en": "Deogyusan National Park"
+    },
+    "dobongsan": {
+      "ko": "도봉산",
+      "en": "Dobongsan National Park"
+    },
+    "duryunsan": {
+      "ko": "두륜산",
+      "en": "Duryunsan Provincial Park"
+    },
+    "gayasan": {
+      "ko": "가야산",
+      "en": "Gayasan National Park"
+    },
+    "gyeryongsan": {
+      "ko": "계룡산",
+      "en": "Gyeryongsan National Park"
+    },
+    "hallasan": {
+      "ko": "한라산",
+      "en": "Hallasan National Park"
+    },
+    "jirisan": {
+      "ko": "지리산",
+      "en": "Jirisan National Park"
+    },
+    "juwangsan": {
+      "ko": "주왕산",
+      "en": "Juwangsan National Park"
+    },
+    "minjusan": {
+      "ko": "민주지산",
+      "en": "Minjujisan Mountain"
+    },
+    "mudeungsan": {
+      "ko": "무등산",
+      "en": "Mudeungsan National Park"
+    },
+    "myeongseongsan": {
+      "ko": "명성산",
+      "en": "Myeongseongsan Mountain"
+    },
+    "naejangsan": {
+      "ko": "내장산",
+      "en": "Naejangsan National Park"
+    },
+    "odaesan": {
+      "ko": "오대산",
+      "en": "Odaesan National Park"
+    },
+    "seoraksan": {
+      "ko": "설악산",
+      "en": "Seoraksan National Park"
+    },
+    "sikjangsan": {
+      "ko": "식장산",
+      "en": "Sikjangsan Mountain"
+    },
+    "sobaeksan": {
+      "ko": "소백산",
+      "en": "Sobaeksan National Park"
+    },
+    "soyosan": {
+      "ko": "소요산",
+      "en": "Soyosan Mountain"
+    },
+    "taebaeksan": {
+      "ko": "태백산",
+      "en": "Taebaeksan National Park"
+    },
+    "unaksan": {
+      "ko": "운악산",
+      "en": "Unaksan Mountain"
+    },
+    "wolchulsan": {
+      "ko": "월출산",
+      "en": "Wolchulsan National Park"
+    },
+    "woraksan": {
+      "ko": "월악산",
+      "en": "Woraksan National Park"
+    },
+    "xueshan": {
+      "ko": "설산",
+      "en": "Xueshan (Snow Mountain)"
+    },
+    "yangmingshan": {
+      "ko": "양명산",
+      "en": "Yangmingshan National Park"
+    },
+    "yushan": {
+      "ko": "위산",
+      "en": "Yushan (Jade Mountain)"
+    }
+  },
+  "ui": {
+    "skip_link": {
+      "ko": "본문 바로가기",
+      "en": "Skip to main content"
+    },
+    "home": {
+      "ko": "홈",
+      "en": "Home"
+    },
+    "explore_mountains": {
+      "ko": "명산 탐색",
+      "en": "Explore Mountains"
+    },
+    "beginner": {
+      "ko": "초급",
+      "en": "Beginner"
+    },
+    "intermediate": {
+      "ko": "중급",
+      "en": "Intermediate"
+    },
+    "advanced": {
+      "ko": "고급",
+      "en": "Advanced"
+    },
+    "expert": {
+      "ko": "전문가",
+      "en": "Expert"
+    },
+    "total_distance": {
+      "ko": "총 거리",
+      "en": "Total Distance"
+    },
+    "duration": {
+      "ko": "소요시간",
+      "en": "Duration"
+    },
+    "peak_elevation": {
+      "ko": "최고지점",
+      "en": "Peak Elevation"
+    },
+    "elevation_gain": {
+      "ko": "누적상승",
+      "en": "Elevation Gain"
+    },
+    "calories": {
+      "ko": "칼로리",
+      "en": "Calories"
+    },
+    "difficulty": {
+      "ko": "난이도",
+      "en": "Difficulty"
+    },
+    "course_guide": {
+      "ko": "코스 안내",
+      "en": "Course Guide"
+    },
+    "preparation": {
+      "ko": "준비물",
+      "en": "Preparation & Gear"
+    },
+    "transportation": {
+      "ko": "교통편",
+      "en": "Transportation"
+    },
+    "hiking_tips": {
+      "ko": "등산 팁",
+      "en": "Hiking Tips"
+    },
+    "theme_toggle": {
+      "ko": "테마 전환",
+      "en": "Toggle Theme"
+    },
+    "dark_mode_toggle": {
+      "ko": "다크모드 전환",
+      "en": "Toggle Dark Mode"
+    }
+  }
+}

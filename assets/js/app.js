@@ -86,9 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const diffSelect = document.getElementById('diffSelect');
     const doneSelect = document.getElementById('doneSelect');
     const sortSelect = document.getElementById('sortSelect');
-    const resultsCount = document.getElementById('resultsCount');
-
-    const DIFF_LABEL = { easy: '초급', medium: '중급', hard: '고급', expert: '전문가' };
+    const resultsCount = document.getElementById('resultsCount');    const isEnglish = document.documentElement.lang === 'en';
+    const assetPrefix = isEnglish ? '../' : '';
+    const DIFF_LABEL = isEnglish 
+      ? { easy: 'Beginner', medium: 'Intermediate', hard: 'Advanced', expert: 'Expert' }
+      : { easy: '초급', medium: '중급', hard: '고급', expert: '전문가' };
     const DIFF_CLASS = { easy: 'diff-easy', medium: 'diff-medium', hard: 'diff-hard', expert: 'diff-expert' };
 
     // Function to parse integer elevation (e.g. "1,708m" -> 1708)
@@ -118,7 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
                              m.desc.toLowerCase().includes(query);
         
         // Region filter
-        const matchesRegion = region === 'all' || m.region === region || (region === 'korea' && m.region !== '대만');
+        const taiwanName = isEnglish ? 'taiwan' : '대만';
+        const matchesRegion = region === 'all' || m.region.toLowerCase() === region.toLowerCase() || (region === 'korea' && m.region.toLowerCase() !== taiwanName);
         
         // Difficulty filter
         const matchesDiff = difficulty === 'all' || m.diff === difficulty;
@@ -138,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (sort === 'elevation-asc') {
           return parseElevation(a.alt) - parseElevation(b.alt);
         } else if (sort === 'name-asc') {
-          return a.name.localeCompare(b.name, 'ko');
+          return a.name.localeCompare(b.name, isEnglish ? 'en' : 'ko');
         } else if (sort === 'difficulty-asc') {
           return getDifficultyWeight(a.diff) - getDifficultyWeight(b.diff);
         } else if (sort === 'difficulty-desc') {
@@ -149,12 +152,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Update Results Counter
       if (resultsCount) {
-        resultsCount.textContent = `검색 결과: ${filtered.length}개`;
+        resultsCount.textContent = isEnglish ? `Results: ${filtered.length}` : `검색 결과: ${filtered.length}개`;
       }
 
       // Handle Empty State
       if (filtered.length === 0) {
-        gridContainer.innerHTML = `
+        gridContainer.innerHTML = isEnglish ? `
+          <div style="grid-column: 1/-1; text-align: center; padding: var(--space-12) 0; color: var(--muted);">
+            <div style="font-size: 3rem; margin-bottom: var(--space-4);">🏔️</div>
+            <h3 style="font-size: var(--text-lg); font-weight: 800; margin-bottom: var(--space-2); color: var(--text);">No mountains match the criteria</h3>
+            <p style="font-size: var(--text-sm); color: var(--muted);">Try a different query or filters.</p>
+          </div>
+        ` : `
           <div style="grid-column: 1/-1; text-align: center; padding: var(--space-12) 0; color: var(--muted);">
             <div style="font-size: 3rem; margin-bottom: var(--space-4);">🏔️</div>
             <h3 style="font-size: var(--text-lg); font-weight: 800; margin-bottom: var(--space-2); color: var(--text);">검색 조건에 맞는 산이 없습니다</h3>
@@ -169,10 +178,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <article class="card card-hoverable mountain-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
           <div class="card-thumbnail-wrap" style="position: relative; width: 100%; height: 180px; overflow: hidden; background-color: var(--surface2);">
             <picture>
-              <source srcset="assets/img/${m.id}/g1-640.webp" type="image/webp">
+              <source srcset="${assetPrefix}assets/img/${m.id}/g1-640.webp" type="image/webp">
               <img 
-                src="assets/img/${m.id}/g1-640.jpg" 
-                alt="${m.name} 등산로 전경" 
+                src="${assetPrefix}assets/img/${m.id}/g1-640.jpg" 
+                alt="${m.name} ${isEnglish ? 'trail panorama' : '등산로 전경'}" 
                 class="card-thumbnail" 
                 style="width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition);" 
                 loading="lazy" 
@@ -199,19 +208,19 @@ document.addEventListener('DOMContentLoaded', () => {
  
             <div style="display: flex; gap: var(--space-4); border-top: 1px solid var(--border); padding-top: var(--space-4); margin-bottom: var(--space-4);">
               <div style="flex: 1;">
-                <div style="font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 800;">거리</div>
+                <div style="font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 800;">${isEnglish ? 'Distance' : '거리'}</div>
                 <div style="font-weight: 700; font-size: var(--text-sm); color: var(--text); margin-top: 2px;">🥾 ${m.dist}</div>
               </div>
               <div style="flex: 1;">
-                <div style="font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 800;">시간</div>
+                <div style="font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 800;">${isEnglish ? 'Time' : '시간'}</div>
                 <div style="font-weight: 700; font-size: var(--text-sm); color: var(--text); margin-top: 2px;">⏱ ${m.time}</div>
               </div>
             </div>
-
+ 
             <div>
               ${m.done
-                ? `<a href="${m.url}" class="btn btn-primary" style="width: 100%; text-decoration: none;">🗺 플레이북 보기</a>`
-                : `<div class="btn btn-secondary" style="width: 100%; cursor: not-allowed; opacity: 0.6;">⏳ 플레이북 준비 중</div>`
+                ? `<a href="${m.url}" class="btn btn-primary" style="width: 100%; text-decoration: none;">🗺 ${isEnglish ? 'View Playbook' : '플레이북 보기'}</a>`
+                : `<div class="btn btn-secondary" style="width: 100%; cursor: not-allowed; opacity: 0.6;">⏳ ${isEnglish ? 'Coming Soon' : '플레이북 준비 중'}</div>`
               }
             </div>
           </div>

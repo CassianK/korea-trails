@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>설산 등산 플레이북</title>
 <meta content="대한민국 최고의 명산 중 하나인 설산 국립공원 가이드. 초급 369산장 체험 코스, 중급 1박 2일 설산 주봉 코스, 고급 확장 종주·홀리릿지급 코스 코스의 상세 경로, 실사 지도 및 팁을 제공합니다." name="description"/>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/><link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/design-system.css" rel="stylesheet"/>
 <style>
   :root {
@@ -875,10 +875,36 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 </style>
-<meta content="assets/img/xueshan/og.png" property="og:image"/><meta content="assets/img/xueshan/og.png" name="twitter:image"/></head>
+<meta content="assets/img/xueshan/og.png" property="og:image"/><meta content="assets/img/xueshan/og.png" name="twitter:image"/><script src="assets/js/i18n.js"></script><link href="xueshan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/xueshan-playbook.html" hreflang="en" rel="alternate"/><link href="xueshan-playbook.html" hreflang="x-default" rel="alternate"/></head>
 <body>
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
-<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M8 34c4-5 8-10 13-10 4 0 6 3 8 6 2-2 5-5 9-5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M6 39h36" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M14 19l4-5M24 16l3-4M31 18l4-5" stroke="white" stroke-linecap="round" stroke-width="2.4"></path></svg></div><div><h1>설산</h1><p>Xueshan · 대만 제2고봉 3,886m · 369산장 중심 대표 고산 코스</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
+<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
+<defs>
+<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#f43f5e"></stop>
+<stop offset="100%" stop-color="#be123c"></stop>
+</lineargradient>
+<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
+<stop offset="0%" stop-color="#0f172a"></stop>
+<stop offset="100%" stop-color="#0d9488"></stop>
+</lineargradient>
+<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
+<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
+<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
+<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
+<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
+<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+</svg></div><div><h1>설산</h1><p>Xueshan · 대만 제2고봉 3,886m · 369산장 중심 대표 고산 코스</p></div></div><div class="lang-toggle">
+<button aria-label="한국어" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('ko')">KO</button>
+<button aria-label="English" aria-pressed="false" class="lang-btn" onclick="changeLanguage('en')">EN</button>
+</div><button class="theme-btn" id="themeBtn">◐</button></div></header>
 <section class="hero hero-bleed">
 <!-- Background Picture -->
 <picture class="hero-picture" id="heroFallbackImage">
@@ -887,8 +913,8 @@
 <img alt="설산 국립공원의 대표 명소인 설산 주봉와 아름다운 산세 풍경 / Beautiful landscape of Xueshan Main Peak and majestic mountain ridges in Xueshan National Park" class="hero-img" sizes="100vw" src="assets/img/xueshan/hero-1600.jpg" srcset="assets/img/xueshan/hero-640.jpg 640w, assets/img/xueshan/hero-1024.jpg 1024w, assets/img/xueshan/hero-1600.jpg 1600w, assets/img/xueshan/hero-2400.jpg 2400w"/>
 </picture>
 <!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
-<video id="heroVideo" class="hero-bg-video" muted loop playsinline poster="assets/video/xueshan/hero-poster.jpg" preload="none" style="display: none;">
-  <source src="assets/video/xueshan/hero.mp4" type="video/mp4">
+<video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="assets/video/xueshan/hero-poster.jpg" preload="none" style="display: none;">
+<source src="assets/video/xueshan/hero.mp4" type="video/mp4"/>
 </video>
 <div class="hero-overlay"></div>
 <div class="hero-content">

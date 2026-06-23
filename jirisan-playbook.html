@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>지리산 등산 플레이북 — 초·중·고급 3코스</title>
 <meta content="대한민국 최고의 명산 중 하나인 지리산 국립공원 가이드. 초급 고도 프로파일, 고급 고도 프로파일 코스의 상세 경로, 실사 지도 및 팁을 제공합니다." name="description"/>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&amp;f[]=cabinet-grotesk@400,500,700,800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/><link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&amp;f[]=cabinet-grotesk@400,500,700,800&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/design-system.css" rel="stylesheet"/>
 <style>
 :root {
@@ -557,7 +557,7 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 </style>
-<meta content="assets/img/jirisan/og.png" property="og:image"/><meta content="assets/img/jirisan/og.png" name="twitter:image"/></head>
+<meta content="assets/img/jirisan/og.png" property="og:image"/><meta content="assets/img/jirisan/og.png" name="twitter:image"/><script src="assets/js/i18n.js"></script><link href="jirisan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/jirisan-playbook.html" hreflang="en" rel="alternate"/><link href="jirisan-playbook.html" hreflang="x-default" rel="alternate"/></head>
 <body>
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="site-header hero-bleed">
@@ -568,20 +568,43 @@
 <img alt="지리산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Jirisan mountain peaks and ridges" class="hero-img" sizes="100vw" src="assets/img/jirisan/hero-1600.jpg" srcset="assets/img/jirisan/hero-640.jpg 640w, assets/img/jirisan/hero-1024.jpg 1024w, assets/img/jirisan/hero-1600.jpg 1600w, assets/img/jirisan/hero-2400.jpg 2400w"/>
 </picture>
 <!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
-<video id="heroVideo" class="hero-bg-video" muted loop playsinline poster="assets/video/jirisan/hero-poster.jpg" preload="none" style="display: none;">
-  <source src="assets/video/jirisan/hero.mp4" type="video/mp4">
+<video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="assets/video/jirisan/hero-poster.jpg" preload="none" style="display: none;">
+<source src="assets/video/jirisan/hero.mp4" type="video/mp4"/>
 </video>
 <div class="hero-overlay"></div>
 <div class="hero-content">
-<div class="hero-badge"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"/></svg> 지리산 플레이북</div>
+<div class="hero-badge"><svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
+<defs>
+<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#f43f5e"></stop>
+<stop offset="100%" stop-color="#be123c"></stop>
+</lineargradient>
+<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
+<stop offset="0%" stop-color="#0f172a"></stop>
+<stop offset="100%" stop-color="#0d9488"></stop>
+</lineargradient>
+<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
+<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
+<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
+<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
+<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
+<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+</svg> 지리산 플레이북</div>
 <h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">지리산 등산 플레이북</h1>
 <p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
       대한민국 최고의 명산 중 하나인 지리산 국립공원 가이드. 초급 고도 프로파일, 고급 고도 프로파일 코스의 상세 경로, 실사 지도 및 팁을 제공합니다.
     </p>
 <!-- Course Selector Buttons -->
 <div class="course-selector">
-<button class="course-btn diff-btn beginner beg active" onclick="selectLevel('beg',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"/></svg> 초급: 고도 프로파일</button>
-<button class="course-btn diff-btn advanced advanced" onclick="selectLevel('advanced',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"/></svg> 고급: 고도 프로파일</button>
+<button class="course-btn diff-btn beginner beg active" onclick="selectLevel('beg',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 초급: 고도 프로파일</button>
+<button class="course-btn diff-btn advanced advanced" onclick="selectLevel('advanced',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 고급: 고도 프로파일</button>
 </div>
 </div>
 <div class="photo-credit hero-credit">
@@ -589,12 +612,15 @@
 <span class="credit-divider">/</span>
 <span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
 </div>
-</header>
+<div class="lang-toggle">
+<button aria-label="한국어" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('ko')">KO</button>
+<button aria-label="English" aria-pressed="false" class="lang-btn" onclick="changeLanguage('en')">EN</button>
+</div></header>
 <!-- ═══════════════════════ 코스 비교표 ═══════════════════════ -->
 <div style="max-width:900px;margin:var(--space-8) auto 0;padding:0 var(--space-4);">
 <div class="cmp-wrap">
 <table>
-<thead><tr><th>항목</th><th><span class="badge-beg"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"/></svg> 초급</span></th><th><span class="badge-int"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"/></svg> 중급</span></th><th><span class="badge-adv"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"/></svg> 고급</span></th></tr></thead>
+<thead><tr><th>항목</th><th><span class="badge-beg"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 초급</span></th><th><span class="badge-int"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 중급</span></th><th><span class="badge-adv"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 고급</span></th></tr></thead>
 <tbody>
 <tr><td style="font-weight:700;">코스명</td><td>노고단 왕복</td><td>백무동 천왕봉 왕복</td><td>성중종주 (성삼재→중산리)</td></tr>
 <tr><td style="font-weight:700;">거리</td><td>왕복 약 9.4km</td><td>왕복 약 15km</td><td>약 32.5km (편도)</td></tr>
@@ -612,15 +638,15 @@
 <main class="wrap" id="mainContent">
 <div class="course-panel beg-panel active" id="beg-panel">
 <div class="tabs">
-<button class="active" onclick="showTab('beg','b-overview',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"/></svg> 개요</button>
-<button onclick="showTab('beg','b-route',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"/></svg> 경로 안내</button>
-<button onclick="showTab('beg','b-map',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"/></svg> 지도</button>
-<button onclick="showTab('beg','b-tips',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"/></svg> 팁 &amp; 준비</button>
+<button class="active" onclick="showTab('beg','b-overview',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button onclick="showTab('beg','b-route',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button onclick="showTab('beg','b-map',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button onclick="showTab('beg','b-tips',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 준비</button>
 </div>
 <!-- 초급 개요 -->
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-panel active" id="b-overview">
 <div class="hero-card">
-<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"/></svg> 초급 코스 — 성삼재 → 노고단 왕복</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 초급 코스 — 성삼재 → 노고단 왕복</h2>
 <p class="tagline">해발 1,100m에서 출발하는 대한민국 가장 쉬운 고산 탐방</p>
 <div class="stat-row">
 <div class="stat"><div class="val">~9.4 km</div><div class="lbl">왕복 거리</div></div>
@@ -675,7 +701,7 @@
 <span style="color:#bbb;"> ─ 왕복 하산 ─▶ </span>
 <span style="color:var(--c1);font-weight:800;">🅿성삼재 귀환</span>
 </div>
-<div class="warn-box" style="margin-top:var(--space-4);"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"/></svg> 노고단 정상 탐방은 <strong>국립공원공단 사전 예약 필수</strong>입니다. reservation.knps.or.kr에서 예약 후 QR코드로 입장.</div>
+<div class="warn-box" style="margin-top:var(--space-4);"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 노고단 정상 탐방은 <strong>국립공원공단 사전 예약 필수</strong>입니다. reservation.knps.or.kr에서 예약 후 QR코드로 입장.</div>
 </div><div class="tab-panel" id="b-route">
 <div class="sec-title">구간별 상세 경로</div>
 <div class="stages">
@@ -690,7 +716,7 @@
 <li>주차: 성삼재 주차장 (중형 기준 최초 1시간 1,100원, 이후 10분당 300원)</li>
 <li>대중교통: 구례구역/구례공용버스터미널 → 성삼재 행 버스 (제한 운행)</li>
 <li>휴게소, 화장실 완비 — 등산 시작 전 준비 가능</li></ul>
-<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"/></svg> 주말·성수기에는 성삼재까지 차량 통제 발생 → 하부 주차 후 셔틀 이용 필수 확인</div>
+<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 주말·성수기에는 성삼재까지 차량 통제 발생 → 하부 주차 후 셔틀 이용 필수 확인</div>
 </div>
 </div>
 <div class="stage" id="bs1">
@@ -704,7 +730,7 @@
 <ul><li>성삼재에서 포장된 탐방로 따라 북동방향 진입</li>
 <li>넓고 평탄한 흙·모래길 — 유모차 수준의 완만한 경사</li>
 <li>무넹기(통나무길 갈림지점): 성삼재 전망대·섬진강 파노라마 조망</li></ul>
-<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"/></svg> 무넹기 = 물이 넘어가는 지점. 철쭉·원추리 군락지 통과</div>
+<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 무넹기 = 물이 넘어가는 지점. 철쭉·원추리 군락지 통과</div>
 </div>
 </div>
 <div class="stage" id="bs2">
@@ -719,7 +745,7 @@
 <li>주변으로 구상나무·철쭉·억새 군락 전개</li>
 <li>노고단 대피소(1,440m): 음료·간식 판매, 화장실, 탐방 안내판</li>
 <li>대피소에서 QR코드 확인 후 노고단 고개·정상 입장</li></ul>
-<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"/></svg> 이 구간부터 기온 급강하 가능 — 바람막이 필수</div>
+<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 이 구간부터 기온 급강하 가능 — 바람막이 필수</div>
 </div>
 </div>
 <div class="stage" id="bs3">
@@ -734,7 +760,7 @@
 <li>지리산 3대 주봉 중 가장 쉽게 오를 수 있는 봉우리</li>
 <li>조망: 반야봉·천왕봉 능선 전체, 섬진강, 화엄사 계곡</li>
 <li>사계절: 봄 철쭉, 여름 야생화, 가을 억새, 겨울 설경 유명</li></ul>
-<div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"/></svg> 정상 탐방 예약 없으면 대피소에서 회귀 — 반드시 사전 예약</div>
+<div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 정상 탐방 예약 없으면 대피소에서 회귀 — 반드시 사전 예약</div>
 </div>
 </div>
 <div class="stage" id="bs4">
@@ -748,14 +774,14 @@
 <ul><li>올라온 경로 그대로 하산 — 무넹기 갈림에서 <b>임도(완만한 길)</b> 선택 가능</li>
 <li>임도 경로는 약 300m 더 길지만 경사 없이 편안한 하산</li>
 <li>성삼재 도착 후 휴게소에서 식사 및 간식 이용 가능</li></ul>
-<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"/></svg> 하산 후 구례 시내: 다슬기탕, 산채비빔밥, 재첩국 등 지리산 먹거리</div>
+<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 하산 후 구례 시내: 다슬기탕, 산채비빔밥, 재첩국 등 지리산 먹거리</div>
 </div>
 </div>
 </div>
 </div><div class="tab-panel" id="b-tips">
 <div class="sec-title">준비물 &amp; 안전 정보</div>
 <div class="tips-grid">
-<div class="tip-card"><div class="t-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"/></svg></div><h2 style="color:var(--c1);">필수 장비</h2><ul><li>가벼운 등산화 또는 트레킹화</li><li>방풍 자켓 (정상 기온 급강하)</li><li>등산 스틱 (선택)</li><li>모자·선글라스</li></ul></div>
+<div class="tip-card"><div class="t-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2 style="color:var(--c1);">필수 장비</h2><ul><li>가벼운 등산화 또는 트레킹화</li><li>방풍 자켓 (정상 기온 급강하)</li><li>등산 스틱 (선택)</li><li>모자·선글라스</li></ul></div>
 <div class="tip-card"><div class="t-icon">🧴</div><h2 style="color:var(--c1);">음식 &amp; 수분</h2><ul><li>물 1~1.5L 지참</li><li>노고단 대피소 음료 구매 가능</li><li>가벼운 간식 지참</li><li>성삼재 휴게소 식사 가능</li></ul></div>
 <div class="tip-card"><div class="t-icon">📅</div><h2 style="color:var(--c1);">사전 예약</h2><ul><li>노고단 탐방 예약 필수</li><li>reservation.knps.or.kr</li><li>예약 후 QR코드 입장</li><li>입산 시간: 하절기 03:00~</li></ul></div>
 <div class="tip-card"><div class="t-icon">🌸</div><h2 style="color:var(--c1);">베스트 시즌</h2><ul><li>봄(5~6월): 철쭉 개화</li><li>여름(7~8월): 야생화</li><li>가을(10월): 단풍·억새</li><li>겨울: 설경 (아이젠 필수)</li></ul></div>
@@ -816,24 +842,21 @@
 </div>
 </div></div></div>
 <!-- 초급 경로 -->
-
 <!-- 초급 지도 -->
-
 <!-- 초급 팁 -->
-
 </div>
 <!-- ═══════════════════════ 중급 코스 ═══════════════════════ -->
 <div class="course-panel int-panel" id="int-panel">
 <div class="tabs">
-<button class="active" onclick="showTab('int','i-overview',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"/></svg> 개요</button>
-<button onclick="showTab('int','i-route',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"/></svg> 경로 안내</button>
-<button onclick="showTab('int','i-map',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"/></svg> 지도</button>
-<button onclick="showTab('int','i-tips',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"/></svg> 팁 &amp; 준비</button>
+<button class="active" onclick="showTab('int','i-overview',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button onclick="showTab('int','i-route',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button onclick="showTab('int','i-map',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button onclick="showTab('int','i-tips',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 준비</button>
 </div>
 <!-- 중급 개요 -->
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-panel active" id="i-overview">
 <div class="hero-card int-hero">
-<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"/></svg> 중급 코스 — 백무동 → 천왕봉 왕복 (당일)</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 중급 코스 — 백무동 → 천왕봉 왕복 (당일)</h2>
 <p class="tagline">남한 육지 최고봉 1,915m — 당일 완등 도전코스</p>
 <div class="stat-row">
 <div class="stat"><div class="val">~15 km</div><div class="lbl">왕복 거리</div></div>
@@ -902,7 +925,7 @@
 <li>공영주차장 이용 (유료) — 새벽 출발 필수 (04:00~06:00)</li>
 <li>탐방지원센터에서 입산신고 권장</li>
 <li>입산 가능 시간: 하절기 03:00~ / 동절기 04:00~</li></ul>
-<div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"/></svg> 천왕봉 당일 완등 목표 시 04:00~05:00 출발 필수</div>
+<div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 천왕봉 당일 완등 목표 시 04:00~05:00 출발 필수</div>
 </div>
 </div>
 <div class="stage" id="is1">
@@ -917,7 +940,7 @@
 <li>참샘~하봉(3.5km): 능선 합류 후 가파른 계단·돌길 시작</li>
 <li>하봉 통과 후 주능선 — 지리 10경 중 하나인 낙조대 조망</li>
 <li>장터목 대피소(1,655m): 식수·음식 판매, 화장실 완비</li></ul>
-<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"/></svg> 장터목 대피소에서 20~30분 충분한 휴식 후 정상 도전</div>
+<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 장터목 대피소에서 20~30분 충분한 휴식 후 정상 도전</div>
 </div>
 </div>
 <div class="stage" id="is2">
@@ -933,7 +956,7 @@
 <li><b>개선문</b>(천연 석문) 통과 — 지리산의 상징적 지점</li>
 <li>천왕봉(1,915m): 정상석, 범왕대, 일출·운해 명소</li>
 <li>조망: 구름 아래 지리산 전 능선, 남해, 대청호</li></ul>
-<div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"/></svg> 최고 난이도 구간 — 무릎 보호대·스틱 필수, 에너지 보충 후 시작</div>
+<div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 최고 난이도 구간 — 무릎 보호대·스틱 필수, 에너지 보충 후 시작</div>
 </div>
 </div>
 <div class="stage" id="is3">
@@ -948,16 +971,16 @@
 <li>세석대피소(1,580m): 지리산 최대 평원, 전망·식수 보충</li>
 <li>세석 → 백무동 하산: 2시간 30분, 계곡 따라 하산</li>
 <li>한신계곡: 한신폭포, 오층폭포 등 가을 단풍 절경</li></ul>
-<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"/></svg> 원점 회귀 원할 경우 천왕봉에서 장터목으로 돌아와 백무동 하산 (같은 경로)</div>
+<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 원점 회귀 원할 경우 천왕봉에서 장터목으로 돌아와 백무동 하산 (같은 경로)</div>
 </div>
 </div>
 </div>
 </div><div class="tab-panel" id="i-tips">
 <div class="sec-title">준비물 &amp; 안전 정보</div>
 <div class="tips-grid">
-<div class="tip-card"><div class="t-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"/></svg></div><h2 style="color:var(--c2);">필수 장비</h2><ul><li>등산화 (방수, 고지대 대비)</li><li>등산 스틱 (장터목~천왕봉 필수)</li><li>무릎 보호대</li><li>헤드랜턴 (새벽 출발 필수)</li></ul></div>
+<div class="tip-card"><div class="t-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2 style="color:var(--c2);">필수 장비</h2><ul><li>등산화 (방수, 고지대 대비)</li><li>등산 스틱 (장터목~천왕봉 필수)</li><li>무릎 보호대</li><li>헤드랜턴 (새벽 출발 필수)</li></ul></div>
 <div class="tip-card"><div class="t-icon">🥩</div><h2 style="color:var(--c2);">체력 관리</h2><ul><li>출발 전 충분한 수면</li><li>행동식 넉넉히 지참</li><li>물 2L 이상</li><li>장터목 도착 후 30분 휴식</li></ul></div>
-<div class="tip-card"><div class="t-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"/></svg></div><h2 style="color:var(--c2);">안전 주의</h2><ul><li>장터목→천왕봉 최고 난이도</li><li>하산 시 무릎 충격 주의</li><li>악천후 시 즉시 하산</li><li>체력 70% 이상에서 출발 판단</li></ul></div>
+<div class="tip-card"><div class="t-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg></div><h2 style="color:var(--c2);">안전 주의</h2><ul><li>장터목→천왕봉 최고 난이도</li><li>하산 시 무릎 충격 주의</li><li>악천후 시 즉시 하산</li><li>체력 70% 이상에서 출발 판단</li></ul></div>
 <div class="tip-card"><div class="t-icon">🌅</div><h2 style="color:var(--c2);">일출 산행</h2><ul><li>천왕봉 일출: 전국 명소</li><li>새벽 04:00 백무동 출발</li><li>일출 시각 약 1시간 전 정상 도착</li><li>방한복 필수 (정상 기온 10°C↓)</li></ul></div>
 </div>
 </div></div><div class="playbook-sidebar-col"><div class="tab-panel" id="i-map">
@@ -1014,24 +1037,21 @@
 </div>
 </div></div></div>
 <!-- 중급 경로 -->
-
 <!-- 중급 지도 -->
-
 <!-- 중급 팁 -->
-
 </div>
 <!-- ═══════════════════════ 고급 코스 ═══════════════════════ -->
 <div class="course-panel adv-panel" id="adv-panel">
 <div class="tabs">
-<button class="active" onclick="showTab('adv','a-overview',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"/></svg> 개요</button>
-<button onclick="showTab('adv','a-route',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"/></svg> 경로 안내</button>
-<button onclick="showTab('adv','a-map',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"/></svg> 지도</button>
-<button onclick="showTab('adv','a-tips',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"/></svg> 팁 &amp; 준비</button>
+<button class="active" onclick="showTab('adv','a-overview',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button onclick="showTab('adv','a-route',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button onclick="showTab('adv','a-map',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button onclick="showTab('adv','a-tips',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 준비</button>
 </div>
 <!-- 고급 개요 -->
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-panel active" id="a-overview">
 <div class="hero-card adv-hero">
-<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"/></svg> 고급 코스 — 성중종주 (성삼재→중산리, 1박2일)</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 고급 코스 — 성중종주 (성삼재→중산리, 1박2일)</h2>
 <p class="tagline">대한민국 최고 종주 코스 — 32.5km 지리산 주능선 완주</p>
 <div class="stat-row">
 <div class="stat"><div class="val">~32.5 km</div><div class="lbl">편도 총거리</div></div>
@@ -1092,7 +1112,7 @@
 <span style="color:var(--c3);font-weight:800;">★천왕봉</span>
 <span style="color:#bbb;">→중산리 하산</span>
 </div>
-<div class="warn-box" style="margin-top:var(--space-4);"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"/></svg> <strong>대피소 사전 예약 필수</strong>: reservation.knps.or.kr — 매달 1일 10:00 다음달 예약 오픈. 주말 예약은 수초 내 마감. 침낭 개인 지참 필수 (담요 미지급).</div>
+<div class="warn-box" style="margin-top:var(--space-4);"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> <strong>대피소 사전 예약 필수</strong>: reservation.knps.or.kr — 매달 1일 10:00 다음달 예약 오픈. 주말 예약은 수초 내 마감. 침낭 개인 지참 필수 (담요 미지급).</div>
 </div><div class="tab-panel" id="a-route">
 <div class="sec-title">구간별 상세 경로 (1박 2일)</div>
 <div class="stages">
@@ -1109,8 +1129,8 @@
 <li><b>반야봉 → 화개재(뱀사골삼거리)</b>: 2km / 45분 — 급격한 내리막</li>
 <li><b>화개재 → 연하천 대피소(1,470m)</b>: 2.5km / 1h — 주능선 평탄 구간</li>
 <li><b>연하천 → 벽소령 대피소(1,320m)</b>: 3km / 1h30 — 연하선경 통과</li></ul>
-<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"/></svg> 임걸령 샘터에서 반드시 식수 보충 — 이후 연하천까지 샘터 없음</div>
-<div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"/></svg> 벽소령 대피소 17:00 이전 도착 권장. 체력 소진 시 연하천 대피소 변경 가능.</div>
+<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 임걸령 샘터에서 반드시 식수 보충 — 이후 연하천까지 샘터 없음</div>
+<div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 벽소령 대피소 17:00 이전 도착 권장. 체력 소진 시 연하천 대피소 변경 가능.</div>
 </div>
 </div>
 <div class="stage" id="as1">
@@ -1124,7 +1144,7 @@
 <li>침낭: 개인 지참 필수 (담요 미제공)</li>
 <li>귀마개 권장 (코골이 등 소음)</li>
 <li>내일 일정: 벽소령 → 세석 → 장터목 → 천왕봉 → 중산리 (약 14km)</li></ul>
-<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"/></svg> 2일차 천왕봉 일출 목표 시 새벽 03:00~04:00 출발, 침낭 온도 -5~0°C 대 필요</div>
+<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 2일차 천왕봉 일출 목표 시 새벽 03:00~04:00 출발, 침낭 온도 -5~0°C 대 필요</div>
 </div>
 </div>
 <div class="stage" id="as2">
@@ -1139,15 +1159,15 @@
 <li><b>세석 → 장터목 대피소(1,655m)</b>: 3.4km / 1.5h — 능선 완만 구간</li>
 <li><b>장터목 → 천왕봉(1,915m)</b>: 1.7km / 1h — 최고 난이도 구간 (개선문 통과)</li>
 <li><b>천왕봉 → 법계사 → 칼바위 → 중산리(600m)</b>: 7.8km / 3.5h — 길고 가파른 하산</li></ul>
-<div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"/></svg> 중산리 하산 구간 7.8km는 무릎 충격 누적 최대 — 무릎 보호대 필수</div>
-<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"/></svg> 중산리 도착 후 교통: 산청 시외버스 또는 택시 이용, 성삼재까지 차량 회수 필요 (셔틀 서비스 이용 권장)</div>
+<div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 중산리 하산 구간 7.8km는 무릎 충격 누적 최대 — 무릎 보호대 필수</div>
+<div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 중산리 도착 후 교통: 산청 시외버스 또는 택시 이용, 성삼재까지 차량 회수 필요 (셔틀 서비스 이용 권장)</div>
 </div>
 </div>
 </div>
 </div><div class="tab-panel" id="a-tips">
 <div class="sec-title">종주 핵심 준비</div>
 <div class="tips-grid">
-<div class="tip-card"><div class="t-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"/></svg></div><h2 style="color:var(--c3);">필수 장비</h2><ul><li>30L 이상 배낭</li><li>침낭 (-5~0°C 대응)</li><li>코펠·버너·가스·수저</li><li>헤드랜턴+예비 배터리</li><li>무릎보호대·스패츠</li><li>아이젠 (겨울)</li></ul></div>
+<div class="tip-card"><div class="t-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2 style="color:var(--c3);">필수 장비</h2><ul><li>30L 이상 배낭</li><li>침낭 (-5~0°C 대응)</li><li>코펠·버너·가스·수저</li><li>헤드랜턴+예비 배터리</li><li>무릎보호대·스패츠</li><li>아이젠 (겨울)</li></ul></div>
 <div class="tip-card"><div class="t-icon">🏕</div><h2 style="color:var(--c3);">대피소 예약</h2><ul><li>reservation.knps.or.kr</li><li>매달 1일 10:00 오픈</li><li>주말 수초 내 마감</li><li>1인당 13,000원</li><li>슬리퍼 지참 (내부 전용)</li></ul></div>
 <div class="tip-card"><div class="t-icon">💧</div><h2 style="color:var(--c3);">식수 전략</h2><ul><li>출발 시 1L 지참</li><li>임걸령→세석 구간 집중 보충</li><li>연하천·세석·장터목 보충</li><li>결빙기 샘터 동결 주의</li></ul></div>
 <div class="tip-card"><div class="t-icon">🥘</div><h2 style="color:var(--c3);">식량 계획</h2><ul><li>1일차: 햇반·라면·스팸</li><li>2일차: 행동식+간단 조식</li><li>행동식: 에너지바·연양갱·젤리</li><li>개인 쓰레기 전량 수거</li></ul></div>
@@ -1228,16 +1248,13 @@
 </div>
 </div></div></div>
 <!-- 고급 경로 -->
-
 <!-- 고급 지도 -->
-
 <!-- 고급 팁 -->
-
 </div>
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
 <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-<span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"/></svg></span> 지리산의 사계 &amp; 명소
+<span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 지리산의 사계 &amp; 명소
   </h2>
 <div class="gallery-grid">
 <!-- Gallery Image Button 1 -->

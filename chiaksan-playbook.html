@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>치악산 등산 플레이북</title>
 <meta content="대한민국 최고의 명산 중 하나인 치악산국립공원 가이드. 초급, 중급, 고급 코스의 상세 경로, 실사 지도 및 팁을 제공합니다." name="description"/>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/><link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/design-system.css" rel="stylesheet"/>
 <style>
 /* COURSE SELECTOR */
@@ -551,20 +551,41 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 </style>
-<meta content="assets/img/chiaksan/og.png" property="og:image"/><meta content="assets/img/chiaksan/og.png" name="twitter:image"/></head>
+<meta content="assets/img/chiaksan/og.png" property="og:image"/><meta content="assets/img/chiaksan/og.png" name="twitter:image"/><script src="assets/js/i18n.js"></script><link href="chiaksan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/chiaksan-playbook.html" hreflang="en" rel="alternate"/><link href="chiaksan-playbook.html" hreflang="x-default" rel="alternate"/></head>
 <body>
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="hdr">
 <div class="logo">
-<svg aria-label="치악산 플레이북" class="logo-svg" fill="none" viewbox="0 0 36 36">
-<rect fill="var(--pri)" height="36" rx="8" width="36"></rect>
-<!-- 5 peaks silhouette -->
-<path d="M3 27 Q7 22 10 18 Q12 14 14 10 Q15.5 7 16 5 Q17 7 18 11 Q20 15 22 18 Q24 15 26 12 Q27.5 10 28 8 Q29 10 30 14 Q31 18 33 27" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-<circle cx="16" cy="5" fill="white" r="2.2"></circle>
+<svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
+<defs>
+<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#f43f5e"></stop>
+<stop offset="100%" stop-color="#be123c"></stop>
+</lineargradient>
+<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
+<stop offset="0%" stop-color="#0f172a"></stop>
+<stop offset="100%" stop-color="#0d9488"></stop>
+</lineargradient>
+<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
+<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
+<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
+<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
+<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
+<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
 </svg>
 <span class="logo-txt">치악산 플레이북</span>
 </div>
-<button aria-label="테마 전환" class="thm-btn" data-thm="">
+<div class="lang-toggle">
+<button aria-label="한국어" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('ko')">KO</button>
+<button aria-label="English" aria-pressed="false" class="lang-btn" onclick="changeLanguage('en')">EN</button>
+</div><button aria-label="테마 전환" class="thm-btn" data-thm="">
 <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
 </header>

@@ -6,11 +6,11 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>소요산 등산 플레이북</title>
 <meta content="대한민국 최고의 명산 중 하나인 소요산 국립공원 가이드. 초급 📊 고도 프로파일, 중급 📊 고도 프로파일, 고급 📊 고도 프로파일 코스의 상세 경로, 실사 지도 및 팁을 제공합니다." name="description"/>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&amp;display=swap" rel="stylesheet"/>
+<link href="assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/><link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/design-system.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=Black+Han+Sans&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=Black+Han+Sans&amp;display=swap" rel="stylesheet"/>
 <style>
 /* COURSE SELECTOR */
 .course-selector {
@@ -731,9 +731,47 @@
   text-decoration: underline;
 }
 </style>
-</link><meta content="assets/img/soyosan/og.png" property="og:image"/><meta content="assets/img/soyosan/og.png" name="twitter:image"/></head>
+<meta content="assets/img/soyosan/og.png" property="og:image"/><meta content="assets/img/soyosan/og.png" name="twitter:image"/><script src="assets/js/i18n.js"></script><link href="soyosan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/soyosan-playbook.html" hreflang="en" rel="alternate"/><link href="soyosan-playbook.html" hreflang="x-default" rel="alternate"/></head>
 <body>
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
+<!-- HEADER -->
+<header class="site-header">
+<div class="logo-wrap">
+<svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
+<defs>
+<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#f43f5e"></stop>
+<stop offset="100%" stop-color="#be123c"></stop>
+</lineargradient>
+<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
+<stop offset="0%" stop-color="#0f172a"></stop>
+<stop offset="100%" stop-color="#0d9488"></stop>
+</lineargradient>
+<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
+<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
+<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
+<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
+<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
+<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+</svg>
+<span class="logo-text">소요산 플레이북</span>
+</div>
+<div class="header-right">
+<div class="lang-toggle">
+<button aria-label="한국어" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('ko')">KO</button>
+<button aria-label="English" aria-pressed="false" class="lang-btn" onclick="changeLanguage('en')">EN</button>
+</div><button aria-label="다크모드 전환" class="theme-btn" data-theme-toggle="">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</header>
 <!-- HERO -->
 <section class="hero hero-bleed">
 <!-- Background Picture -->
@@ -743,8 +781,8 @@
 <img alt="소요산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Soyosan mountain peaks and ridges" class="hero-img" sizes="100vw" src="assets/img/soyosan/hero-1600.jpg" srcset="assets/img/soyosan/hero-640.jpg 640w, assets/img/soyosan/hero-1024.jpg 1024w, assets/img/soyosan/hero-1600.jpg 1600w, assets/img/soyosan/hero-2400.jpg 2400w"/>
 </picture>
 <!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
-<video id="heroVideo" class="hero-bg-video" muted loop playsinline poster="assets/video/soyosan/hero-poster.jpg" preload="none" style="display: none;">
-  <source src="assets/video/soyosan/hero.mp4" type="video/mp4">
+<video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="assets/video/soyosan/hero-poster.jpg" preload="none" style="display: none;">
+<source src="assets/video/soyosan/hero.mp4" type="video/mp4"/>
 </video>
 <div class="hero-overlay"></div>
 <div class="hero-content">
@@ -1030,7 +1068,7 @@
 <text fill="var(--color-text-muted)" font-size="11" text-anchor="middle" x="250" y="30">▶ 소요산역 방향 (남)</text>
 <text fill="var(--color-text-faint)" font-size="10" transform="rotate(-90,30,200)" x="30" y="200">포천 방면</text>
 </svg>
-<div class="leaflet-map" id="map-beginner" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="소요산 초급 계곡 산책코스 실사 지도"></div>
+<div aria-label="소요산 초급 계곡 산책코스 실사 지도" class="leaflet-map" id="map-beginner" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
 <div class="map-legend">
 <div class="legend-item"><div class="legend-dot" style="background:#437a22"></div>등산로(실선)</div>
@@ -1250,7 +1288,7 @@
 <text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="14" y="4">E</text>
 </g>
 </svg>
-<div class="leaflet-map" id="map-intermediate" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="소요산 중급 백운대 능선코스 실사 지도"></div>
+<div aria-label="소요산 중급 백운대 능선코스 실사 지도" class="leaflet-map" id="map-intermediate" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
 <div class="map-legend">
 <div class="legend-item"><div class="legend-dot" style="background:#da7101"></div>등산로</div>
@@ -1512,7 +1550,7 @@
 </g>
 <text fill="var(--color-text-muted)" font-size="11" text-anchor="middle" x="250" y="22">말굽형 시계방향 일주 코스 8.1km</text>
 </svg>
-<div class="leaflet-map" id="map-advanced" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="소요산 고급 의상대 완주코스 실사 지도"></div>
+<div aria-label="소요산 고급 의상대 완주코스 실사 지도" class="leaflet-map" id="map-advanced" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
 <div class="map-legend">
 <div class="legend-item"><div class="legend-dot" style="background:#a12c7b"></div>전체 등산로</div>
@@ -1655,196 +1693,194 @@
 </button>
 </div>
 </section>
-
 <section class="video-section">
-  <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-    <span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 내 트래킹 영상
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 내 트래킹 영상
   </h2>
-  <div class="video-grid">
-    <!-- Video Card 1 -->
-    <div class="video-card">
-      <div id="shorts-HuzexupXWM0" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-HuzexupXWM0', 'HuzexupXWM0', '소요산 트래킹')" aria-label="소요산 트래킹 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/HuzexupXWM0/hqdefault.jpg" alt="소요산 트래킹 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">소요산 트래킹</span>
-        <a class="video-link" href="https://youtube.com/shorts/HuzexupXWM0" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 2 -->
-    <div class="video-card">
-      <div id="shorts-ASSAHfoC0Q4" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-ASSAHfoC0Q4', 'ASSAHfoC0Q4', '새소리')" aria-label="새소리 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/ASSAHfoC0Q4/hqdefault.jpg" alt="새소리 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">새소리</span>
-        <a class="video-link" href="https://youtube.com/shorts/ASSAHfoC0Q4" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 3 -->
-    <div class="video-card">
-      <div id="shorts-QhETC_XL_h4" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-QhETC_XL_h4', 'QhETC_XL_h4', '새소리 2')" aria-label="새소리 2 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/QhETC_XL_h4/hqdefault.jpg" alt="새소리 2 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">새소리 2</span>
-        <a class="video-link" href="https://youtube.com/shorts/QhETC_XL_h4" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 4 -->
-    <div class="video-card">
-      <div id="shorts-2KnijiRywpE" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-2KnijiRywpE', '2KnijiRywpE', '새소리 3')" aria-label="새소리 3 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/2KnijiRywpE/hqdefault.jpg" alt="새소리 3 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">새소리 3</span>
-        <a class="video-link" href="https://youtube.com/shorts/2KnijiRywpE" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 5 -->
-    <div class="video-card">
-      <div id="shorts-dakqMbjfcP8" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-dakqMbjfcP8', 'dakqMbjfcP8', '긴꼬리제비나비')" aria-label="긴꼬리제비나비 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/dakqMbjfcP8/hqdefault.jpg" alt="긴꼬리제비나비 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">긴꼬리제비나비</span>
-        <a class="video-link" href="https://youtube.com/shorts/dakqMbjfcP8" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 6 -->
-    <div class="video-card">
-      <div id="shorts-CJ4KMp_rYqQ" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-CJ4KMp_rYqQ', 'CJ4KMp_rYqQ', '제비나비 2')" aria-label="제비나비 2 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/CJ4KMp_rYqQ/hqdefault.jpg" alt="제비나비 2 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">제비나비 2</span>
-        <a class="video-link" href="https://youtube.com/shorts/CJ4KMp_rYqQ" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 7 -->
-    <div class="video-card">
-      <div id="shorts-BsPpue3ox1Y" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-BsPpue3ox1Y', 'BsPpue3ox1Y', '청띠신선나비')" aria-label="청띠신선나비 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/BsPpue3ox1Y/hqdefault.jpg" alt="청띠신선나비 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">청띠신선나비</span>
-        <a class="video-link" href="https://youtube.com/shorts/BsPpue3ox1Y" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 8 -->
-    <div class="video-card">
-      <div id="shorts-VWT3BQ0w_Yw" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-VWT3BQ0w_Yw', 'VWT3BQ0w_Yw', '나비 3')" aria-label="나비 3 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/VWT3BQ0w_Yw/hqdefault.jpg" alt="나비 3 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">나비 3</span>
-        <a class="video-link" href="https://youtube.com/shorts/VWT3BQ0w_Yw" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 9 -->
-    <div class="video-card">
-      <div id="shorts-8bBBvKqGB78" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-8bBBvKqGB78', '8bBBvKqGB78', '노린재')" aria-label="노린재 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/8bBBvKqGB78/hqdefault.jpg" alt="노린재 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">노린재</span>
-        <a class="video-link" href="https://youtube.com/shorts/8bBBvKqGB78" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 10 -->
-    <div class="video-card">
-      <div id="shorts-qBhBODJvVIo" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-qBhBODJvVIo', 'qBhBODJvVIo', '화장실 점거한 여치들')" aria-label="화장실 점거한 여치들 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/qBhBODJvVIo/hqdefault.jpg" alt="화장실 점거한 여치들 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">화장실 점거한 여치들</span>
-        <a class="video-link" href="https://youtube.com/shorts/qBhBODJvVIo" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 11 -->
-    <div class="video-card">
-      <div id="shorts-SvXrG-hKFLU" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-SvXrG-hKFLU', 'SvXrG-hKFLU', '홍단 딱정벌레')" aria-label="홍단 딱정벌레 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/SvXrG-hKFLU/hqdefault.jpg" alt="홍단 딱정벌레 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">홍단 딱정벌레</span>
-        <a class="video-link" href="https://youtube.com/shorts/SvXrG-hKFLU" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 12 -->
-    <div class="video-card">
-      <div id="shorts-yy8X9meEcQM" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-yy8X9meEcQM', 'yy8X9meEcQM', '꼬마산 개구리')" aria-label="꼬마산 개구리 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/yy8X9meEcQM/hqdefault.jpg" alt="꼬마산 개구리 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">꼬마산 개구리</span>
-        <a class="video-link" href="https://youtube.com/shorts/yy8X9meEcQM" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 13 -->
-    <div class="video-card">
-      <div id="shorts-yTtuOOH6h4U" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-yTtuOOH6h4U', 'yTtuOOH6h4U', '버섯')" aria-label="버섯 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/yTtuOOH6h4U/hqdefault.jpg" alt="버섯 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">버섯</span>
-        <a class="video-link" href="https://youtube.com/shorts/yTtuOOH6h4U" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-    <!-- Video Card 14 -->
-    <div class="video-card">
-      <div id="shorts-qP09anuR4bA" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-qP09anuR4bA', 'qP09anuR4bA', '버섯 2')" aria-label="버섯 2 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/qP09anuR4bA/hqdefault.jpg" alt="버섯 2 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">버섯 2</span>
-        <a class="video-link" href="https://youtube.com/shorts/qP09anuR4bA" target="_blank" rel="noopener noreferrer">원본 쇼츠 보기 ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="video-grid">
+<!-- Video Card 1 -->
+<div class="video-card">
+<div class="video-container" id="shorts-HuzexupXWM0">
+<button aria-label="소요산 트래킹 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-HuzexupXWM0', 'HuzexupXWM0', '소요산 트래킹')">
+<img alt="소요산 트래킹 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/HuzexupXWM0/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">소요산 트래킹</span>
+<a class="video-link" href="https://youtube.com/shorts/HuzexupXWM0" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="video-card">
+<div class="video-container" id="shorts-ASSAHfoC0Q4">
+<button aria-label="새소리 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-ASSAHfoC0Q4', 'ASSAHfoC0Q4', '새소리')">
+<img alt="새소리 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/ASSAHfoC0Q4/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">새소리</span>
+<a class="video-link" href="https://youtube.com/shorts/ASSAHfoC0Q4" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="video-card">
+<div class="video-container" id="shorts-QhETC_XL_h4">
+<button aria-label="새소리 2 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-QhETC_XL_h4', 'QhETC_XL_h4', '새소리 2')">
+<img alt="새소리 2 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/QhETC_XL_h4/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">새소리 2</span>
+<a class="video-link" href="https://youtube.com/shorts/QhETC_XL_h4" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 4 -->
+<div class="video-card">
+<div class="video-container" id="shorts-2KnijiRywpE">
+<button aria-label="새소리 3 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-2KnijiRywpE', '2KnijiRywpE', '새소리 3')">
+<img alt="새소리 3 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/2KnijiRywpE/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">새소리 3</span>
+<a class="video-link" href="https://youtube.com/shorts/2KnijiRywpE" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 5 -->
+<div class="video-card">
+<div class="video-container" id="shorts-dakqMbjfcP8">
+<button aria-label="긴꼬리제비나비 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-dakqMbjfcP8', 'dakqMbjfcP8', '긴꼬리제비나비')">
+<img alt="긴꼬리제비나비 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/dakqMbjfcP8/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">긴꼬리제비나비</span>
+<a class="video-link" href="https://youtube.com/shorts/dakqMbjfcP8" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 6 -->
+<div class="video-card">
+<div class="video-container" id="shorts-CJ4KMp_rYqQ">
+<button aria-label="제비나비 2 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-CJ4KMp_rYqQ', 'CJ4KMp_rYqQ', '제비나비 2')">
+<img alt="제비나비 2 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/CJ4KMp_rYqQ/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">제비나비 2</span>
+<a class="video-link" href="https://youtube.com/shorts/CJ4KMp_rYqQ" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 7 -->
+<div class="video-card">
+<div class="video-container" id="shorts-BsPpue3ox1Y">
+<button aria-label="청띠신선나비 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-BsPpue3ox1Y', 'BsPpue3ox1Y', '청띠신선나비')">
+<img alt="청띠신선나비 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/BsPpue3ox1Y/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">청띠신선나비</span>
+<a class="video-link" href="https://youtube.com/shorts/BsPpue3ox1Y" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 8 -->
+<div class="video-card">
+<div class="video-container" id="shorts-VWT3BQ0w_Yw">
+<button aria-label="나비 3 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-VWT3BQ0w_Yw', 'VWT3BQ0w_Yw', '나비 3')">
+<img alt="나비 3 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/VWT3BQ0w_Yw/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">나비 3</span>
+<a class="video-link" href="https://youtube.com/shorts/VWT3BQ0w_Yw" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 9 -->
+<div class="video-card">
+<div class="video-container" id="shorts-8bBBvKqGB78">
+<button aria-label="노린재 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-8bBBvKqGB78', '8bBBvKqGB78', '노린재')">
+<img alt="노린재 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/8bBBvKqGB78/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">노린재</span>
+<a class="video-link" href="https://youtube.com/shorts/8bBBvKqGB78" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 10 -->
+<div class="video-card">
+<div class="video-container" id="shorts-qBhBODJvVIo">
+<button aria-label="화장실 점거한 여치들 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-qBhBODJvVIo', 'qBhBODJvVIo', '화장실 점거한 여치들')">
+<img alt="화장실 점거한 여치들 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/qBhBODJvVIo/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">화장실 점거한 여치들</span>
+<a class="video-link" href="https://youtube.com/shorts/qBhBODJvVIo" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 11 -->
+<div class="video-card">
+<div class="video-container" id="shorts-SvXrG-hKFLU">
+<button aria-label="홍단 딱정벌레 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-SvXrG-hKFLU', 'SvXrG-hKFLU', '홍단 딱정벌레')">
+<img alt="홍단 딱정벌레 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/SvXrG-hKFLU/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">홍단 딱정벌레</span>
+<a class="video-link" href="https://youtube.com/shorts/SvXrG-hKFLU" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 12 -->
+<div class="video-card">
+<div class="video-container" id="shorts-yy8X9meEcQM">
+<button aria-label="꼬마산 개구리 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-yy8X9meEcQM', 'yy8X9meEcQM', '꼬마산 개구리')">
+<img alt="꼬마산 개구리 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/yy8X9meEcQM/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">꼬마산 개구리</span>
+<a class="video-link" href="https://youtube.com/shorts/yy8X9meEcQM" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 13 -->
+<div class="video-card">
+<div class="video-container" id="shorts-yTtuOOH6h4U">
+<button aria-label="버섯 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-yTtuOOH6h4U', 'yTtuOOH6h4U', '버섯')">
+<img alt="버섯 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/yTtuOOH6h4U/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">버섯</span>
+<a class="video-link" href="https://youtube.com/shorts/yTtuOOH6h4U" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+<!-- Video Card 14 -->
+<div class="video-card">
+<div class="video-container" id="shorts-qP09anuR4bA">
+<button aria-label="버섯 2 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-qP09anuR4bA', 'qP09anuR4bA', '버섯 2')">
+<img alt="버섯 2 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/qP09anuR4bA/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">버섯 2</span>
+<a class="video-link" href="https://youtube.com/shorts/qP09anuR4bA" rel="noopener noreferrer" target="_blank">원본 쇼츠 보기 ↗</a>
+</div>
+</div>
+</div>
 </section>
 <script>
 (function(){
